@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Maitrizz - Révise ton concours CRPE",
@@ -15,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" data-theme="maitrizz">
+    <html lang="fr" data-theme="maitrizz" className={outfit.variable}>
       <body className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>

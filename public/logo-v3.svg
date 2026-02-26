@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Glow sur le gem -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fond très sombre -->
+  <rect width="100" height="100" rx="20" fill="#07061a"/>
+
+  <!-- 4 facettes du gem — lumière venant de droite -->
+  <g filter="url(#glow)">
+    <!-- Face NW : indigo profond -->
+    <polygon points="50,13 21,50 50,50" fill="#4338ca"/>
+    <!-- Face NE : indigo clair (éclairé) -->
+    <polygon points="50,13 50,50 79,50" fill="#818cf8"/>
+    <!-- Face SW : orange sombre -->
+    <polygon points="21,50 50,87 50,50" fill="#b45309"/>
+    <!-- Face SE : orange vif (éclairé) -->
+    <polygon points="50,50 50,87 79,50" fill="#fb923c"/>
+  </g>
+
+  <!-- Arêtes discrètes par-dessus (sans filtre, net) -->
+  <polygon points="50,13 79,50 50,87 21,50"
+           fill="none" stroke="rgba(255,255,255,0.13)" stroke-width="0.9"/>
+  <line x1="50" y1="13" x2="50" y2="87"
+        stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
+  <line x1="21" y1="50" x2="79" y2="50"
+        stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
+
+  <!-- Point brillant au sommet -->
+  <circle cx="50" cy="13" r="2.2" fill="white" opacity="0.85"/>
+
+</svg>

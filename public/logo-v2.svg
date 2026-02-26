@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+
+  <!-- Fond indigo profond, coins arrondis -->
+  <rect width="100" height="100" rx="24" fill="#312e81"/>
+
+  <!-- M stylisé — trait blanc épais, arrondi, ouvert en bas -->
+  <path d="M14,76 L14,28 L50,54 L86,28 L86,76"
+        fill="none"
+        stroke="white"
+        stroke-width="9"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Étoile orange entre les deux pics -->
+  <path d="M50,26 L51.8,30.6 L56.7,30.8 L52.9,33.9 L54.1,38.7 L50,36 L45.9,38.7 L47.1,33.9 L43.3,30.8 L48.2,30.6 Z"
+        fill="#fb923c"/>
+
+</svg>

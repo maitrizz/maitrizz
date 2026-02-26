@@ -6,26 +6,54 @@
 @plugin "daisyui/theme" {
   name: "maitrizz";
   default: true;
-  --color-base-100: #f8fafc;
-  --color-base-200: #f1f5f9;
-  --color-base-300: #e2e8f0;
-  --color-base-content: #1e293b;
-  --color-primary: #4f46e5;
+
+  /* Base — crème chaude */
+  --color-base-100: #fdf6ee;
+  --color-base-200: #f3e8d4;
+  --color-base-300: #e5d5b8;
+  --color-base-content: #2a1f45;
+
+  /* Primary — bleu-violet doux (pervenche) */
+  --color-primary: #7b6fd4;
   --color-primary-content: #ffffff;
-  --color-secondary: #38bdf8;
-  --color-secondary-content: #0c1829;
-  --color-accent: #fb923c;
-  --color-accent-content: #1c0800;
-  --color-neutral: #334155;
-  --color-neutral-content: #f8fafc;
-  --color-info: #38bdf8;
+
+  /* Secondary — lavande claire */
+  --color-secondary: #bdb5f0;
+  --color-secondary-content: #1a1640;
+
+  /* Accent — pêche chaude */
+  --color-accent: #d4607c;
+  --color-accent-content: #ffffff;
+
+  /* Neutral — violet profond pour footer */
+  --color-neutral: #2a1f45;
+  --color-neutral-content: #fdf6ee;
+
+  --color-info: #60a5fa;
   --color-success: #22c55e;
   --color-warning: #facc15;
   --color-error: #ef4444;
-  --rounded-box: 0.75rem;
-  --rounded-btn: 0.5rem;
+
+  --rounded-box: 1rem;
+  --rounded-btn: 0.625rem;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit, system-ui, sans-serif);
+}
+
+/* Quadrillage sur fond clair (lignes violet léger) */
+.grid-paper {
+  background-image:
+    linear-gradient(rgba(123, 111, 212, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123, 111, 212, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Quadrillage sur fond sombre/coloré (lignes blanches) */
+.grid-paper-light {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
