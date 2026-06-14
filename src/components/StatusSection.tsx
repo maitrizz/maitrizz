@@ -39,63 +39,108 @@ export default function StatusSection() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-3 gap-6 items-start">
 
-            {/* Disponible maintenant */}
-            <div className="bg-white rounded-lg p-8" style={{ border: "1px solid rgba(58,107,80,0.35)" }}>
-              <div className="flex items-center gap-2 mb-6">
-                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#3a6b50" }} />
-                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#3a6b50", fontFamily: "var(--font-inter)" }}>
-                  Disponible dès maintenant
+            {/* ── Épreuves écrites d'admissibilité ── */}
+            <div className="bg-white rounded-lg overflow-hidden opacity-45" style={{ border: "1px dashed #e8e2d9" }}>
+              <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid #f2ede6" }}>
+                <p className="font-black text-base-content" style={{ fontFamily: "var(--font-fraunces, Georgia, serif)" }}>
+                  Épreuves écrites d&apos;admissibilité
                 </p>
+                <span className="text-xs font-semibold text-base-content/40 uppercase tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
+                  Bientôt
+                </span>
               </div>
-              <p className="text-lg font-black text-base-content mb-5">
-                Épreuve orale d&apos;admission : Entretien avec le jury
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Connaissance du système éducatif", "Mises en situation professionnelle"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-sm font-medium px-4 py-1.5 rounded"
-                    style={{ backgroundColor: "rgba(58,107,80,0.10)", color: "#2d5a40", fontFamily: "var(--font-inter)" }}
-                  >
-                    {tag}
-                  </span>
+              <div className="p-5 space-y-2">
+                {["Français", "Mathématiques", "Histoire-Géo / Sciences & technologies / Arts", "LVE"].map((tag) => (
+                  <div key={tag} className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-base-300" />
+                    <span className="text-sm text-base-content/35 font-medium" style={{ fontFamily: "var(--font-inter)" }}>{tag}</span>
+                  </div>
                 ))}
               </div>
             </div>
 
-            {/* Bientôt */}
-            <div className="bg-white rounded-lg p-8 opacity-55" style={{ border: "1px dashed #e8e2d9" }}>
-              <div className="flex items-center gap-2 mb-6">
-                <span className="w-2 h-2 bg-base-300 rounded-full" />
-                <p className="text-xs font-bold text-base-content/40 uppercase tracking-widest" style={{ fontFamily: "var(--font-inter)" }}>Bientôt</p>
+            {/* ── Épreuves orales d'admission ── */}
+            <div className="bg-white rounded-lg overflow-hidden" style={{ border: "1px solid rgba(58,107,80,0.35)" }}>
+              <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid rgba(58,107,80,0.12)" }}>
+                <p className="font-black text-base-content" style={{ fontFamily: "var(--font-fraunces, Georgia, serif)" }}>
+                  Épreuves orales d&apos;admission
+                </p>
+                <span
+                  className="text-xs font-semibold px-3 py-1 rounded whitespace-nowrap"
+                  style={{ backgroundColor: "rgba(58,107,80,0.10)", color: "#3a6b50", fontFamily: "var(--font-inter)" }}
+                >
+                  En cours
+                </span>
               </div>
-              <div className="space-y-5">
-                <div>
-                  <p className="text-xs font-semibold text-base-content/35 mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-inter)" }}>Épreuves écrites</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {["Français", "Mathématiques", "Histoire-Géo", "Sciences & techniques", "Arts", "LVE"].map((tag) => (
-                      <span key={tag} className="bg-base-200 text-base-content/35 text-xs font-medium px-3 py-1 rounded">{tag}</span>
+              <div className="p-5 space-y-4">
+                {/* Leçon */}
+                <div className="opacity-40">
+                  <p className="text-xs font-bold text-base-content/50 uppercase tracking-wider mb-2" style={{ fontFamily: "var(--font-inter)" }}>
+                    Leçon
+                  </p>
+                  <div className="space-y-1.5">
+                    {["Français", "Mathématiques"].map((tag) => (
+                      <div key={tag} className="flex items-center gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-base-300" />
+                        <span className="text-sm font-medium text-base-content" style={{ fontFamily: "var(--font-inter)" }}>{tag}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
+                {/* Entretien */}
                 <div>
-                  <p className="text-xs font-semibold text-base-content/35 mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-inter)" }}>Épreuves orales</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {["Leçon Français", "Leçon Mathématiques", "EPS", "Motivation"].map((tag) => (
-                      <span key={tag} className="bg-base-200 text-base-content/35 text-xs font-medium px-3 py-1 rounded">{tag}</span>
-                    ))}
+                  <p className="text-xs font-bold text-base-content/50 uppercase tracking-wider mb-2" style={{ fontFamily: "var(--font-inter)" }}>
+                    Entretien avec le jury
+                  </p>
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#3a6b50" }} />
+                      <span className="text-sm font-medium text-base-content" style={{ fontFamily: "var(--font-inter)" }}>
+                        Connaissance du système éducatif / MSP
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2.5 opacity-40">
+                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-base-300" />
+                      <span className="text-sm font-medium text-base-content" style={{ fontFamily: "var(--font-inter)" }}>EPS</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 opacity-40">
+                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-base-300" />
+                      <span className="text-sm font-medium text-base-content" style={{ fontFamily: "var(--font-inter)" }}>Motivation</span>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <p className="text-xs font-semibold text-base-content/35 mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-inter)" }}>Espace personnel</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {["Suivi de progression", "Statistiques détaillées", "Historique des entraînements"].map((tag) => (
-                      <span key={tag} className="bg-base-200 text-base-content/35 text-xs font-medium px-3 py-1 rounded">{tag}</span>
-                    ))}
+                {/* LVE */}
+                <div className="opacity-40">
+                  <p className="text-xs font-bold text-base-content/50 uppercase tracking-wider mb-2" style={{ fontFamily: "var(--font-inter)" }}>
+                    LVE
+                  </p>
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-base-300" />
+                    <span className="text-sm font-medium text-base-content" style={{ fontFamily: "var(--font-inter)" }}>Langue vivante étrangère</span>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* ── Fonctionnalités ── */}
+            <div className="bg-white rounded-lg overflow-hidden opacity-45" style={{ border: "1px dashed #e8e2d9" }}>
+              <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid #f2ede6" }}>
+                <p className="font-black text-base-content" style={{ fontFamily: "var(--font-fraunces, Georgia, serif)" }}>
+                  Fonctionnalités
+                </p>
+                <span className="text-xs font-semibold text-base-content/40 uppercase tracking-wide" style={{ fontFamily: "var(--font-inter)" }}>
+                  Bientôt
+                </span>
+              </div>
+              <div className="p-5 space-y-2">
+                {["Suivi de progression", "Statistiques détaillées", "Historique des entraînements", "Simulateur de notes", "Défis entre candidats"].map((tag) => (
+                  <div key={tag} className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-base-300" />
+                    <span className="text-sm text-base-content/35 font-medium" style={{ fontFamily: "var(--font-inter)" }}>{tag}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -105,7 +150,6 @@ export default function StatusSection() {
 
       {/* Section équipe — fond sombre */}
       <section className="bg-neutral grid-paper-light py-24 relative overflow-hidden">
-        {/* Ornements discrets */}
         <div
           className="absolute top-12 right-[16%] w-20 h-20 rounded-full pointer-events-none hidden lg:block"
           style={{ border: "1px solid rgba(250,248,244,0.08)" }}

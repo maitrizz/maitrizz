@@ -4,23 +4,6 @@ export default function HeroSection() {
   return (
     <section className="bg-base-100 grid-paper min-h-[88vh] flex items-center relative overflow-hidden">
 
-      {/* Ornements académiques discrets */}
-      <div
-        className="absolute top-12 right-[14%] w-28 h-28 rounded-full pointer-events-none hidden lg:block"
-        style={{ border: "1px solid rgba(30,58,110,0.10)" }}
-      />
-      <div
-        className="absolute bottom-16 left-[7%] w-10 h-10 pointer-events-none hidden lg:block"
-        style={{ border: "1px solid rgba(184,154,47,0.22)" }}
-      />
-      <div
-        className="absolute top-[38%] left-[11%] w-2 h-2 rounded-full pointer-events-none hidden lg:block"
-        style={{ backgroundColor: "#1e3a6e", opacity: 0.25 }}
-      />
-      <div
-        className="absolute bottom-[28%] right-[8%] w-1.5 h-1.5 rounded-full pointer-events-none hidden lg:block"
-        style={{ backgroundColor: "#b89a2f", opacity: 0.35 }}
-      />
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-24 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

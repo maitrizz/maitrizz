@@ -13,7 +13,7 @@ export default function Footer() {
               MAITRIZZ
             </p>
             <p className="text-neutral-content/40 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
-              La prépa CRPE qui te veut du bien.
+              Réussis ton CRPE.
             </p>
           </div>
 
