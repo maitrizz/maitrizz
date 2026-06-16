@@ -18,6 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.maitrizz.fr"),
   title: "Maitrizz - Révise ton concours CRPE",
   description:
     "Plateforme de révision pour le concours CRPE (professeurs des écoles). Fiches, quiz et exercices pour réussir le concours INSPE.",

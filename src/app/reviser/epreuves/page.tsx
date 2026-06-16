@@ -1,16 +1,8 @@
 import Link from "next/link";
 
-function LockIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-base-content/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-    </svg>
-  );
-}
-
 function PenIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-base-content/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
     </svg>
   );
@@ -50,24 +42,26 @@ export default function EpreuvesPage() {
       {/* Contenu */}
       <div className="bg-base-100 max-w-5xl mx-auto px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {/* Épreuves écrites — verrouillé */}
-          <div className="bg-base-100 border-2 border-base-300 rounded-2xl p-8 flex flex-col gap-5 opacity-50 cursor-not-allowed">
-            <div className="w-12 h-12 bg-base-200 rounded-xl flex items-center justify-center">
+          {/* Épreuves écrites — actif */}
+          <Link
+            href="/reviser/epreuves/ecrites"
+            className="bg-base-100 grid-paper border-2 border-base-300 rounded-2xl p-8 flex flex-col gap-5 hover:border-primary/40 hover:shadow-lg transition-all duration-200 group"
+          >
+            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
               <PenIcon />
             </div>
             <div>
-              <h2 className="text-2xl font-black text-base-content mb-1">
+              <h2 className="text-2xl font-black text-base-content group-hover:text-primary transition-colors mb-1">
                 Épreuves écrites
               </h2>
               <p className="text-sm text-base-content/55 leading-relaxed">
                 Français, Mathématiques — préparation aux écrits d&apos;admissibilité.
               </p>
             </div>
-            <div className="flex items-center gap-2 mt-auto">
-              <LockIcon />
-              <span className="text-xs font-medium text-base-content/40">Bientôt disponible</span>
-            </div>
-          </div>
+            <span className="text-sm font-semibold text-primary mt-auto">
+              Accéder →
+            </span>
+          </Link>
 
           {/* Épreuves orales — actif */}
           <Link
