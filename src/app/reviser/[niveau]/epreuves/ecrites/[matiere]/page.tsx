@@ -78,7 +78,7 @@ export default async function MatierePage({
                   >
                     <div className="flex items-start justify-between gap-2">
                       <h3 className="text-base font-black text-base-content group-hover:text-primary transition-colors leading-snug">
-                        Notion {fiche.numero} — {fiche.title}
+                        {fiche.numero > 0 ? `Notion ${fiche.numero} — ${fiche.title}` : fiche.title}
                       </h3>
                     </div>
                     <p className="text-sm text-base-content/55 leading-relaxed line-clamp-2">

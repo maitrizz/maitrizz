@@ -7,7 +7,7 @@ export function FicheHeader({ fiche }: { fiche: Fiche }) {
         Maitrizz · CRPE · {fiche.partie}
       </p>
       <h1 className="text-2xl sm:text-3xl font-black mb-2">
-        Notion {fiche.numero} — {fiche.title}
+        {fiche.numero > 0 ? `Notion ${fiche.numero} — ${fiche.title}` : fiche.title}
       </h1>
       <p className="text-sm opacity-80 leading-relaxed">{fiche.subtitle}</p>
       {fiche.badges.length > 0 && (

@@ -32,6 +32,10 @@ import {
   ficheCultureLitteraireL3,
   ficheCultureLitteraireM2,
 } from "./francais/culture-litteraire";
+import {
+  ficheMethodologieL3,
+  ficheMethodologieM2,
+} from "./francais/methodologie-de-l-epreuve";
 
 export type { Matiere, Niveau };
 export { NIVEAUX, NIVEAU_LABELS, isValidNiveau };
@@ -66,12 +70,14 @@ const MATHEMATIQUES: Fiche[] = [ficheNumerationSystemesDeBases];
 const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjugueesPassivePronominale, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesPonctuation, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres];
 
 const FRANCAIS_L3: Fiche[] = [
+  ficheMethodologieL3,
   ...FRANCAIS_COMMUN,
   ficheConstruirePlanL3,
   ficheRedigerDeveloppementL3,
   ficheCultureLitteraireL3,
 ];
 const FRANCAIS_M2: Fiche[] = [
+  ficheMethodologieM2,
   ...FRANCAIS_COMMUN,
   ficheConstruirePlanM2,
   ficheRedigerDeveloppementM2,

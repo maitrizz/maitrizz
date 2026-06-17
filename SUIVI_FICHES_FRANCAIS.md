@@ -4,6 +4,12 @@
 
 Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Audit** (passe éditoriale charte §9, voir `CHARTE_FRANCAIS.md`).
 
+## Méthodologie (numéro 0, en tête de parcours)
+
+| #  | Notion | MEF | Audit §9 |
+|----|--------|-----|----------|
+| 00 | Méthodologie de l'épreuve écrite (L3 et M2, contenus distincts) | ✅ | ✅ |
+
 ## Partie 1 — Grammaire / Orthographe
 
 | #  | Notion | MEF | Audit §9 |

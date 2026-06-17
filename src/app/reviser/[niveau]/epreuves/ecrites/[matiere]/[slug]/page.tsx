@@ -74,7 +74,7 @@ export default async function FichePage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LearningResource",
-    name: `Notion ${fiche.numero} — ${fiche.title}`,
+    name: fiche.numero > 0 ? `Notion ${fiche.numero} — ${fiche.title}` : fiche.title,
     description: fiche.metaDescription,
     inLanguage: "fr",
     isAccessibleForFree: true,
@@ -115,14 +115,14 @@ export default async function FichePage({
           <div className="flex items-center justify-between gap-4 pt-4 border-t border-base-300">
             {prev ? (
               <Link href={`${base}/${prev.slug}`} className="btn btn-ghost btn-sm">
-                ← Notion {prev.numero} — {prev.title}
+                ← {prev.numero > 0 ? `Notion ${prev.numero} — ${prev.title}` : prev.title}
               </Link>
             ) : (
               <span />
             )}
             {next ? (
               <Link href={`${base}/${next.slug}`} className="btn btn-ghost btn-sm">
-                Notion {next.numero} — {next.title} →
+                {next.numero > 0 ? `Notion ${next.numero} — ${next.title}` : next.title} →
               </Link>
             ) : (
               <span />
