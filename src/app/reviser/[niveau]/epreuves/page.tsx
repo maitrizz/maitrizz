@@ -1,15 +1,40 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { NIVEAUX, isValidNiveau } from "./ecrites/[matiere]/data";
 
-function GraduationIcon() {
+export async function generateStaticParams() {
+  return NIVEAUX.map((niveau) => ({ niveau }));
+}
+
+function PenIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
     </svg>
   );
 }
 
-export default function ReviserPage() {
+function MicIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+    </svg>
+  );
+}
+
+export default async function EpreuvesPage({
+  params,
+}: {
+  params: Promise<{ niveau: string }>;
+}) {
+  const { niveau } = await params;
+
+  if (!isValidNiveau(niveau)) {
+    notFound();
+  }
+
+  const base = `/reviser/${niveau}`;
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -19,13 +44,15 @@ export default function ReviserPage() {
           <div className="flex items-center gap-2 text-white/50 text-sm mb-4">
             <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
             <span>›</span>
-            <span className="text-white/90 font-medium">Réviser</span>
+            <Link href="/reviser" className="hover:text-white transition-colors">Réviser</Link>
+            <span>›</span>
+            <span className="text-white/90 font-medium">Épreuves</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-2">
-            Choisissez votre concours
+            Type d&apos;épreuves
           </h1>
           <p className="text-white/70 text-lg">
-            CRPE — Concours de Recrutement des Professeurs des Écoles
+            Choisissez l&apos;épreuve que vous souhaitez préparer.
           </p>
         </div>
       </div>
@@ -33,45 +60,45 @@ export default function ReviserPage() {
       {/* Contenu */}
       <div className="bg-base-100 max-w-5xl mx-auto px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {/* L3 */}
+          {/* Épreuves écrites — actif */}
           <Link
-            href="/reviser/l3/epreuves"
+            href={`${base}/epreuves/ecrites`}
             className="bg-base-100 grid-paper border-2 border-base-300 rounded-2xl p-8 flex flex-col gap-5 hover:border-primary/40 hover:shadow-lg transition-all duration-200 group"
           >
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-              <GraduationIcon />
+              <PenIcon />
             </div>
             <div>
               <h2 className="text-2xl font-black text-base-content group-hover:text-primary transition-colors mb-1">
-                Concours L3
+                Épreuves écrites
               </h2>
               <p className="text-sm text-base-content/55 leading-relaxed">
-                Accessible dès la licence (bac+3). Nouveau format depuis la réforme 2026.
+                Français, Mathématiques — préparation aux écrits d&apos;admissibilité.
               </p>
             </div>
             <span className="text-sm font-semibold text-primary mt-auto">
-              Commencer →
+              Accéder →
             </span>
           </Link>
 
-          {/* M2 */}
+          {/* Épreuves orales — actif */}
           <Link
-            href="/reviser/m2/epreuves"
+            href={`${base}/epreuves/orales`}
             className="bg-base-100 grid-paper border-2 border-base-300 rounded-2xl p-8 flex flex-col gap-5 hover:border-primary/40 hover:shadow-lg transition-all duration-200 group"
           >
-            <div className="w-12 h-12 bg-secondary/40 rounded-xl flex items-center justify-center">
-              <GraduationIcon />
+            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+              <MicIcon />
             </div>
             <div>
               <h2 className="text-2xl font-black text-base-content group-hover:text-primary transition-colors mb-1">
-                Concours M2
+                Épreuves orales
               </h2>
               <p className="text-sm text-base-content/55 leading-relaxed">
-                Réservé aux candidats en fin de master 2. Maintenu jusqu'en 2027.
+                Leçon, entretien avec le jury, connaissance du système éducatif.
               </p>
             </div>
             <span className="text-sm font-semibold text-primary mt-auto">
-              Commencer →
+              Accéder →
             </span>
           </Link>
         </div>
