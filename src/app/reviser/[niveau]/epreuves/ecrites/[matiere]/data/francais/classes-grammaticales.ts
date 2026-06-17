@@ -6,7 +6,7 @@ const OBJECTIFS = [
   { id: "e2", label: "Je connais les 10 classes grammaticales (5 variables, 5 invariables) et leurs principales sous-classes" },
   { id: "e3", label: "Je distingue un adverbe d'un adjectif grâce au test de variabilité (accord au féminin pluriel)" },
   { id: "e4", label: "Je sais analyser les mots-caméléons (tout, comme, que, si) selon leur contexte d'emploi" },
-  { id: "e5", label: "J'utilise la terminologie officielle 2015 : déterminant (et non « adjectif possessif / démonstratif / indéfini »)" },
+  { id: "e5", label: "J'utilise la terminologie officielle 2020 : déterminant (et non « adjectif possessif / démonstratif / indéfini »)" },
   { id: "e6", label: "Je sais qu'un infinitif reste un verbe, même quand il est employé comme un nom (par exemple comme sujet)" },
   { id: "e7", label: "Je sais identifier et corriger une erreur de nature dans une copie de candidat" },
 ];
@@ -153,7 +153,7 @@ export const ficheClassesGrammaticales: Fiche = {
                         "**Exclamatif ou interrogatif :** « **quel** talent ! », « **quelle** heure ? »",
                       ],
                       piege:
-                        "Terminologie 2015 : « mon », « ce », « chaque »… sont des **déterminants**, et non plus des « adjectifs possessifs, démonstratifs ou indéfinis ».",
+                        "Terminologie 2020 : « mon », « ce », « chaque »… sont des **déterminants**, et non plus des « adjectifs possessifs, démonstratifs ou indéfinis ».",
                       test: "Le mot est-il directement suivi d'un nom (ou d'un adjectif puis d'un nom) ? Si oui : déterminant.",
                     },
                     {
@@ -388,7 +388,7 @@ export const ficheClassesGrammaticales: Fiche = {
               type: "piegeCard",
               variant: "orange",
               title: "Piège n°3 · Terminologie : déterminant, pas adjectif",
-              badge: "Terminologie officielle 2015",
+              badge: "Terminologie officielle 2020",
               faux: "« mon », « ce », « chaque » = adjectifs possessif / démonstratif / indéfini",
               vrai: "Ce sont tous des DÉTERMINANTS. La classe « adjectif » ne couvre plus les mots qui introduisent un nom.",
               methode: "Règle simple : le mot introduit un nom sans le qualifier → déterminant. Il qualifie le nom (exprime une qualité) → adjectif qualificatif.",
@@ -569,7 +569,7 @@ export const ficheClassesGrammaticales: Fiche = {
                   options: ["Adjectif indéfini", "Déterminant indéfini", "Pronom indéfini", "Adverbe"],
                   correctIndex: 1,
                   explanation:
-                    "« Chaque » introduit le nom « élève » sans le qualifier → déterminant. Terminologie officielle 2015 : on ne dit plus « adjectif indéfini ».",
+                    "« Chaque » introduit le nom « élève » sans le qualifier → déterminant. Terminologie officielle 2020 : on ne dit plus « adjectif indéfini ».",
                 },
                 {
                   objectifId: "e3",
@@ -585,7 +585,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     "« rapidement » ne s'accorde jamais (rapidement/rapidements est impossible) → c'est un adverbe de manière, qui modifie un verbe.",
                 },
                 {
-                  objectifId: "e2",
+                  objectifId: "e1",
                   question: "Dans « La maison dont il parle », quelle est la nature de « dont » ?",
                   options: ["Pronom relatif", "Conjonction de subordination", "Adverbe", "Déterminant"],
                   correctIndex: 0,
@@ -1080,8 +1080,8 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   type: "checklist",
                   items: [
-                    { text: "Ancienne terminologie (avant 2015) : « adjectif indéfini », tolérée avec réserve", bad: true },
-                    { text: "Terminologie officielle (programmes 2015) : DÉTERMINANT INDÉFINI" },
+                    { text: "Ancienne terminologie (avant 2020) : « adjectif indéfini », à éviter", bad: true },
+                    { text: "Terminologie officielle (2020) : DÉTERMINANT INDÉFINI" },
                   ],
                 },
                 { type: "note", text: "Règle : tout ce qui introduit un nom est un déterminant, quelle que soit sa sous-classe." },
@@ -1154,7 +1154,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   question: "Comment appelle-t-on les anciens « adjectifs indéfinis / possessifs » ?",
                   answer:
-                    "Ce sont tous des **DÉTERMINANTS** (terminologie officielle depuis 2015). Déterminant indéfini, possessif, démonstratif…",
+                    "Ce sont tous des **DÉTERMINANTS** (terminologie officielle depuis 2020). Déterminant indéfini, possessif, démonstratif…",
                 },
                 {
                   question: "Test rapide : comment distinguer adverbe et adjectif ?",

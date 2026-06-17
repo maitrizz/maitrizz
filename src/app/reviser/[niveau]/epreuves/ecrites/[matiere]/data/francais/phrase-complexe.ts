@@ -424,7 +424,7 @@ export const fichePhraseComplexe: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
             },
             {
               type: "quizBlock",
@@ -502,6 +502,19 @@ export const fichePhraseComplexe: Fiche = {
                   correctIndex: 1,
                   explanation:
                     "« si » dépend du verbe de questionnement « me demande », sans antécédent : interrogative indirecte, COD de « me demande ».",
+                },
+                {
+                  objectifId: "pc7",
+                  question: "Quelle est la première étape de la méthode pour analyser une phrase complexe ?",
+                  options: [
+                    "Nommer la nature et la fonction de chaque proposition",
+                    "Compter les verbes conjugués",
+                    "Identifier l'introducteur de chaque subordonnée",
+                    "Délimiter chaque proposition",
+                  ],
+                  correctIndex: 1,
+                  explanation:
+                    "La méthode en 4 étapes commence par compter les verbes conjugués, puis délimiter, identifier l'introducteur, et enfin nommer nature et fonction.",
                 },
               ],
             },

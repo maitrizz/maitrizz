@@ -14,16 +14,16 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
-| 01 | Classes grammaticales | ✅ | ⬜ (rattrapage : corriger « terminologie 2015 » → 2020) |
-| 02 | Fonctions syntaxiques | ✅ | ⬜ (rattrapage) |
-| 03 | Groupe nominal | ✅ | ⬜ (rattrapage) |
-| 04 | Groupe verbal | ✅ | ⬜ (rattrapage) |
-| 05 | Phrase complexe | ✅ | ⬜ (rattrapage) |
-| 06 | Modes et temps | ✅ | ⬜ (rattrapage) |
-| 07 | Temps du passé | ✅ | ⬜ (rattrapage) |
-| 08 | Présent / futur / conditionnel / subjonctif | ✅ | ⬜ (rattrapage) |
-| 09 | Formes passive et pronominale | ✅ | ⬜ (rattrapage) |
-| 10 | Accords dans le GN et le GV | ✅ | ⬜ (rattrapage) |
+| 01 | Classes grammaticales | ✅ | ✅ (2015 → 2020 corrigé, quiz e1 couvert) |
+| 02 | Fonctions syntaxiques | ✅ | ✅ |
+| 03 | Groupe nominal | ✅ | ✅ |
+| 04 | Groupe verbal | ✅ | ✅ |
+| 05 | Phrase complexe | ✅ | ✅ (quiz pc7 ajouté) |
+| 06 | Modes et temps | ✅ | ✅ |
+| 07 | Temps du passé | ✅ | ✅ |
+| 08 | Présent / futur / conditionnel / subjonctif | ✅ | ✅ |
+| 09 | Formes passive et pronominale | ✅ | ✅ |
+| 10 | Accords dans le GN et le GV | ✅ | ✅ |
 | 11 | Accord du participe passé | ✅ | ✅ |
 | 12 | Homophones grammaticaux et ponctuation | ✅ | ✅ |
 | 13 | Cohérence textuelle | ✅ | ✅ |
@@ -50,5 +50,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 
 ---
 
-## CHANTIER À NE PAS OUBLIER
-**Rattrapage d'audit §9 sur les notions 01-10** (déjà en ligne, jamais auditées au jugement). À faire dans une session dédiée. Premier point repéré : notion 01 cite « terminologie 2015 » au lieu de **2020**.
+## CHANTIER TERMINÉ
+**Rattrapage d'audit §9 sur les notions 01-10 : FAIT.** Les 10 fiches sont saines (terminologie 2020, conditionnel = temps de l'indicatif, périmètre nature/fonction, renvois corrects, pas de tirets cadratins ni d'annales non sourcées). Corrections appliquées : notion 01 (« 2015 » → « 2020 » partout, « tolérée avec réserve » → « à éviter », question de quiz re-rattachée à l'objectif e1) ; notion 05 (ajout d'une question de quiz couvrant l'objectif pc7, annonce 8 → 9 questions).
+
+**Les 21 notions + la fiche méthodologie (L3/M2) sont désormais produites ET auditées §9.**
