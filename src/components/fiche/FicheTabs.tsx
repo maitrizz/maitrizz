@@ -7,6 +7,7 @@ import type { FicheTabGroup } from "./types";
 export function FicheTabs({ tabGroups, ficheSlug }: { tabGroups: FicheTabGroup[]; ficheSlug: string }) {
   const [activeGroup, setActiveGroup] = useState(tabGroups[0]?.id);
   const [activeTab, setActiveTab] = useState(tabGroups[0]?.tabs[0]?.id);
+  const showGroupTabs = tabGroups.length > 1;
 
   function selectTab(tabId: string) {
     const group = tabGroups.find((g) => g.tabs.some((tab) => tab.id === tabId));
@@ -18,25 +19,27 @@ export function FicheTabs({ tabGroups, ficheSlug }: { tabGroups: FicheTabGroup[]
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2 sticky top-16 z-10 bg-base-100/95 backdrop-blur-sm py-2 -mx-1 px-1 border-b border-base-200">
-        <div className="grid grid-cols-3 gap-2">
-          {tabGroups.map((group) => (
-            <button
-              key={group.id}
-              type="button"
-              onClick={() => {
-                setActiveGroup(group.id);
-                setActiveTab(group.tabs[0]?.id);
-              }}
-              className={
-                activeGroup === group.id
-                  ? "px-3 py-2.5 rounded-xl border-2 border-primary bg-primary text-primary-content text-sm font-bold text-center transition-colors"
-                  : "px-3 py-2.5 rounded-xl border-2 border-base-300 bg-base-100 text-base-content/70 text-sm font-bold text-center transition-colors hover:border-primary/40 hover:text-primary"
-              }
-            >
-              {group.icon} {group.label}
-            </button>
-          ))}
-        </div>
+        {showGroupTabs && (
+          <div className="grid grid-cols-3 gap-2">
+            {tabGroups.map((group) => (
+              <button
+                key={group.id}
+                type="button"
+                onClick={() => {
+                  setActiveGroup(group.id);
+                  setActiveTab(group.tabs[0]?.id);
+                }}
+                className={
+                  activeGroup === group.id
+                    ? "px-3 py-2.5 rounded-xl border-2 border-primary bg-primary text-primary-content text-sm font-bold text-center transition-colors"
+                    : "px-3 py-2.5 rounded-xl border-2 border-base-300 bg-base-100 text-base-content/70 text-sm font-bold text-center transition-colors hover:border-primary/40 hover:text-primary"
+                }
+              >
+                {group.icon} {group.label}
+              </button>
+            ))}
+          </div>
+        )}
 
         {tabGroups.map((group) => (
           <div

@@ -6,14 +6,15 @@ import type { Niveau } from "@/lib/niveau";
  *
  * Mise en forme des sources "M_methodologie_M2" et "M_methodologie_L3" du dossier
  * contenu. Les deux concours divergent fortement (M2 : épreuve autonome de 3 h ;
- * L3 : épreuve mixte français + maths de 4 h, programme cycle 4 seul) : la fabrique
+ * L3 : épreuve mixte français + maths de 4 h, cycle 4 et ouverture possible vers
+ * l'étude de la langue au lycée) : la fabrique
  * ficheMethodologie(niveau) injecte donc des sections entières propres au niveau.
  *
  * Charte appliquée à la mise en forme : références d'annales précises et statistiques
  * non sourçables retirées ; citations de rapports de jury adoucies (sans année) ;
  * barèmes par partie présentés comme estimations (non officiels), conformément aux
  * sources ; cadres réglementaires conservés (Arrêté du 25 janvier 2021 pour le M2 ;
- * Arrêté du 17 avril 2025 et sujet zéro 2026 pour le L3).
+ * Arrêté du 17 avril 2025 et sujet zéro officiel pour le L3).
  */
 
 const OBJECTIFS = [
@@ -48,7 +49,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
     metaTitle:
       "Méthodologie de l'épreuve écrite de français (CRPE) · Fiche de révision | Maitrizz",
     metaDescription: l3
-      ? "Méthodologie du CRPE L3 : épreuve commune français et mathématiques (4 h), barème, note éliminatoire, trois sous-parties de français (grammaire, lexique, rédaction), programme cycle 4, stratégie et gestion du temps. Conseils, exercices et auto-évaluation."
+      ? "Méthodologie du CRPE L3 : épreuve commune français et mathématiques (4 h), barème, note éliminatoire, trois sous-parties de français (grammaire, lexique, rédaction), programme de français, stratégie et gestion du temps. Conseils, exercices et auto-évaluation."
       : "Méthodologie de l'épreuve écrite de français du CRPE M2 (3 h) : format, barème, les trois parties (étude de la langue, lexique, réflexion rédigée), programme, stratégie et gestion du temps. Conseils, exercices et auto-évaluation.",
     tabGroups: [
       {
@@ -65,29 +66,35 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                 type: "sommaireApercu",
                 title: "Le programme en 4 étapes",
                 intro:
-                  "Avant de commencer, il faut savoir précisément ce que l'on attend de vous. Cette fiche présente le cadre de l'épreuve, les attentes du jury, ainsi que des conseils pour aborder chaque partie, notamment en matière de gestion du temps.",
+                  "Avant de commencer, il faut savoir précisément ce que l’on attend de vous. Cette fiche présente le cadre de l’épreuve, les attentes du jury, ainsi que des conseils pour aborder chaque partie, notamment en matière de gestion du temps.",
                 items: [
                   {
                     number: "①",
-                    title: "L'épreuve et son cadre",
+                    title: l3
+                      ? "L'épreuve commune et son cadre"
+                      : "L'épreuve de français et son cadre",
                     text: l3
                       ? "Une épreuve commune français + maths de 4 h, son barème et sa note éliminatoire."
                       : "Une épreuve de français de 3 h, son barème et sa note éliminatoire.",
                   },
                   {
                     number: "②",
-                    title: "Les trois parties",
-                    text: "Étude de la langue, lexique, rédaction : ce que chacune attend précisément.",
+                    title: l3
+                      ? "Les trois sous-parties de français"
+                      : "Les trois parties de l'épreuve de français",
+                    text: l3
+                      ? "Étude de la langue, lexique, rédaction : les attendus de chaque sous-partie."
+                      : "Étude de la langue, lexique, rédaction : les attendus de chaque partie.",
                   },
                   {
                     number: "③",
                     title: "La stratégie",
-                    text: "Lire le texte efficacement, choisir un ordre de traitement, soigner la langue partout.",
+                    text: "Lire le texte avec méthode, repérer ce que chaque question demande, rédiger des réponses claires et justifiées.",
                   },
                   {
                     number: "④",
                     title: "La gestion du temps",
-                    text: "Une répartition réaliste pour ne jamais laisser de partie vide, surtout la rédaction.",
+                    text: "Des conseils testés et approuvés pour garder le rythme et ne pas bâcler la rédaction.",
                   },
                 ],
               },
@@ -95,7 +102,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
           },
           {
             id: "cours",
-            label: "Cours",
+            label: "Cadre de l'épreuve",
             icon: "",
             blocks: [
               {
@@ -104,7 +111,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                 icon: "",
                 title: "Avant de commencer",
                 text: l3
-                  ? "L'épreuve écrite de français du CRPE L3 est intégrée à une épreuve commune de 4 heures qui comprend aussi les mathématiques. Elle évalue la maîtrise disciplinaire de la langue (grammaire, lexique, expression écrite) sur le seul programme de cycle 4. Ce n'est pas une épreuve pédagogique : ni didactique, ni référence aux programmes de l'école."
+                  ? "Au CRPE L3, le français fait partie d'une épreuve commune avec les mathématiques, d'une durée totale de 4 heures. La partie français vérifie votre maîtrise de la langue : grammaire, lexique, compréhension et expression écrite. Les questions s'appuient surtout sur le programme du cycle 4, mais certaines notions de lycée peuvent aider à affiner l'analyse. Il ne s'agit pas d'une épreuve pédagogique : on ne vous demande ni didactique, ni séquence de classe."
                   : "L'épreuve écrite de français est une épreuve d'admissibilité du CRPE M2. Elle teste votre maîtrise disciplinaire de la langue (grammaire, lexique, réflexion littéraire). Ce n'est pas une épreuve pédagogique : ni didactique, ni séquences d'enseignement. Comprendre ce qu'on demande dans chaque partie, c'est déjà gagner des points.",
               },
               {
@@ -149,8 +156,11 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           ["Notation", "20 points au total : 10 points français + 10 points maths, chaque partie ramenée sur 10"],
                           ["Note éliminatoire", "Inférieure ou égale à 2,5/10 sur la partie français ou sur la partie maths : élimine du concours"],
                           ["Texte support (français)", "Extrait de roman, de nouvelle ou d'essai, de 500 mots maximum"],
-                          ["Programme de référence", "Programme de français du cycle 4 en vigueur à la rentrée 2025, exclusivement"],
-                          ["Cadre réglementaire", "Arrêté du 17 avril 2025 (CRPE externe bac+3, sessions 2026 et suivantes)"],
+                          ["Programme de référence", "Programme de français du cycle 4, avec ouverture possible vers l'étude de la langue au lycée (2de et 1re)"],
+                          [
+                            "Cadre réglementaire",
+                            "[Arrêté du 17 avril 2025](https://www.legifrance.gouv.fr/search/all?query=Arr%C3%AAt%C3%A9%20du%2017%20avril%202025%20CRPE%20externe%20bac%2B3) (CRPE externe bac+3, sessions 2026 et suivantes)",
+                          ],
                         ],
                       },
                       {
@@ -169,16 +179,9 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           ["Coefficient", "5 (partagé avec les maths)", "1"],
                           ["Points français", "10 points", "20 points"],
                           ["Note éliminatoire", "Inférieure ou égale à 2,5/10", "Inférieure ou égale à 5/20"],
-                          ["Programme", "Cycle 4 uniquement", "Cycle 4 et étude de la langue au lycée"],
-                          ["Rédaction", "Environ 30 lignes (réponse argumentée sur le texte)", "Environ 40 lignes (réflexion structurée)"],
+                          ["Programme", "Cycle 4, avec ouverture possible vers l'étude de la langue au lycée", "Cycle 4 et étude de la langue au lycée"],
+                          ["Rédaction", "Environ 30 lignes (réponse argumentée sur le texte)", "Réflexion structurée, longueur fixée par la consigne"],
                         ],
-                      },
-                      {
-                        type: "callout",
-                        variant: "info",
-                        icon: "💡",
-                        title: "Préparez le L3, pas le M2",
-                        text: "Ces informations situent simplement votre épreuve. Vous passez le CRPE L3 : préparez-vous sur son programme (cycle 4) et son format, pas sur ceux du M2.",
                       },
                     ]
                   : [
@@ -192,7 +195,10 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           ["Note éliminatoire", "Inférieure ou égale à 5/20 : élimine du concours, quelle que soit la note globale"],
                           ["Texte support", "Extrait littéraire ou d'essai de 400 à 600 mots, inédit, d'une œuvre contemporaine ou patrimoniale"],
                           ["Programme de référence", "Programme de français du cycle 4 et étude de la langue au lycée"],
-                          ["Cadre réglementaire", "Arrêté du 25 janvier 2021 (CRPE rénové, sessions 2022 et suivantes)"],
+                          [
+                            "Cadre réglementaire",
+                            "[Arrêté du 25 janvier 2021](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000043075701) (CRPE rénové, sessions 2022 et suivantes)",
+                          ],
                         ],
                       },
                       {
@@ -230,67 +236,89 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                     icon: "⚠️",
                     title: "Un barème estimé, non officiel",
                     text: l3
-                      ? "Le barème exact par sous-partie n'est pas communiqué officiellement. Les points indiqués (environ 6, 4 et 10) sont estimés d'après la structure du sujet zéro 2026 et les textes réglementaires : ils peuvent varier."
+                      ? "Le barème exact par sous-partie n'est pas communiqué officiellement. D'après le sujet zéro officiel et le sujet de la session 2026, on est généralement autour de 6 points en grammaire, 4 en lexique et 10 en rédaction. La répartition peut bouger un peu selon les sujets, mais ces ordres de grandeur restent utiles pour gérer son temps."
                       : "Le barème exact par partie n'est pas communiqué officiellement. Les points indiqués (environ 8, 4 et 8) sont une estimation d'après les sujets et les rapports de jury : ils peuvent varier selon les sessions et les groupements.",
                   },
+                  ...(l3
+                    ? [
+                        {
+                          type: "callout" as const,
+                          variant: "info" as const,
+                          icon: "💡",
+                          title: "Le bon réflexe",
+                          text: "À chaque question, demandez-vous : « Qu'est-ce que le jury veut vérifier ici ? » Une réponse juste ne suffit pas toujours : il faut montrer que vous savez nommer, justifier et vous appuyer sur le texte.",
+                        },
+                      ]
+                    : []),
                   {
                     type: "table",
-                    title: l3 ? "Sous-partie 1, Grammaire : ce qu'on teste" : "Partie 1, Étude de la langue : ce qu'on teste",
-                    headers: ["Type de question", "Ce qu'on attend"],
-                    rows: [
-                      ["Identifier nature et fonction", "Nommer la classe grammaticale et la fonction dans la phrase, avec justification (voir notions 01 et 02)."],
-                      ["Analyser mode et temps d'un verbe", "Nommer le mode et le temps, justifier la valeur en contexte : « est à l'imparfait de l'indicatif, valeur de... »."],
-                      ["Analyser une proposition subordonnée", "Nommer la nature (relative, conjonctive...) et la fonction (voir notion 05)."],
-                      ["Justifier un accord, une terminaison", "Donner la règle appliquée et les éléments qui commandent l'accord (notions 10-11)."],
-                      ["Questions d'orthographe", "Appliquer la règle, distinguer les homophones par un critère de substitution (notion 12)."],
-                    ],
-                  },
-                  {
-                    type: "table",
-                    title: l3 ? "Sous-partie 2, Lexique : ce qu'on teste" : "Partie 2, Lexique : ce qu'on teste",
-                    headers: ["Type de question", "Ce qu'on attend"],
+                    title: l3 ? "Comprendre ce que le jury cherche vraiment" : "Partie 1, Étude de la langue : ce qu'on teste",
+                    headers: l3
+                      ? ["Sous-partie", "Ce que le jury vérifie", "Ce qui fait gagner des points", "Ce qui fait perdre des points"]
+                      : ["Type de question", "Ce qu'on attend"],
                     rows: l3
                       ? [
-                          ["Analyser la formation d'un mot", "Identifier préfixe, suffixe, radical, et expliquer le sens apporté (notion 16)."],
-                          ["Donner le sens contextuel", "Expliquer le sens précis dans le contexte, distinguer sens propre et figuré (notion 17)."],
-                          ["Synonyme ou antonyme contextuel", "Proposer un terme qui conviendrait dans ce contexte précis, pas un synonyme générique."],
-                          ["Construire une famille de mots", "Donner plusieurs mots de la même famille en indiquant leur classe."],
-                          ["Identifier un champ lexical", "Relever les termes, nommer le thème, expliquer son rôle dans le texte."],
+                          [
+                            "1 · Grammaire",
+                            "Est-ce que vous maîtrisez vraiment les outils de la langue : nature, fonction, temps, proposition, accord, ponctuation ?",
+                            "Une réponse courte mais complète : le bon terme grammatical, une justification, un appui précis dans la phrase.",
+                            "Une réponse non justifiée, une terminologie approximative, une confusion sur la notion demandée, ou une règle récitée sans l'appliquer à l'extrait.",
+                          ],
+                          [
+                            "2 · Lexique",
+                            "Est-ce que vous comprenez les mots dans le texte : sens en contexte, formation, famille, nuance, champ lexical ?",
+                            "Une réponse ajustée au passage : on relit la phrase, on explique la nuance, on choisit un synonyme qui fonctionnerait vraiment.",
+                            "Une réponse déconnectée du contexte, un synonyme trop large, ou un relevé de mots sans expliquer leur effet dans le passage.",
+                          ],
+                          [
+                            "3 · Rédaction",
+                            "Est-ce que vous avez compris la question et le texte, puis construit une réponse organisée et lisible ?",
+                            "Une copie qui répond vraiment au sujet : mini-plan, idées nettes, citations courtes expliquées, apports culturels utiles, conclusion claire.",
+                            "Un résumé, une paraphrase du texte, une réflexion générale plaquée, des citations accumulées, ou une copie correcte mais qui ne répond pas précisément à la question.",
+                          ],
                         ]
                       : [
-                          ["Formation des mots", "Identifier préfixe, suffixe, radical, étymologie, et expliquer le sens apporté (notion 16)."],
-                          ["Sens contextuel d'un mot", "Expliquer le sens précis dans le contexte, distinguer sens propre et figuré (notion 17)."],
-                          ["Relations sémantiques", "Synonyme, antonyme, hyperonyme, champ lexical, avec justification (notion 17)."],
-                          ["Figures de style", "Identifier, nommer et expliquer l'effet produit dans le texte (notion 18)."],
-                          ["Registres", "Identifier le registre et le justifier par des indices textuels (notion 18)."],
+                          ["Identifier nature et fonction", "Nommer la classe grammaticale et la fonction dans la phrase, avec justification (voir notions 01 et 02)."],
+                          ["Analyser mode et temps d'un verbe", "Nommer le mode et le temps, justifier la valeur en contexte : « est à l'imparfait de l'indicatif, valeur de... »."],
+                          ["Analyser une proposition subordonnée", "Nommer la nature (relative, conjonctive...) et la fonction (voir notion 05)."],
+                          ["Justifier un accord, une terminaison", "Donner la règle appliquée et les éléments qui commandent l'accord (notions 10-11)."],
+                          ["Questions d'orthographe", "Appliquer la règle, distinguer les homophones par un critère de substitution (notion 12)."],
                         ],
                   },
-                  {
-                    type: "table",
-                    title: l3 ? "Sous-partie 3, Rédaction : la plus importante" : "Partie 3, Réflexion rédigée : ce qu'on teste",
-                    headers: ["Élément", "Détail"],
-                    rows: l3
-                      ? [
-                          ["Nature de l'exercice", "Développement argumenté structuré en réponse à une question posée sur le texte. Ni résumé, ni commentaire composé, ni dissertation."],
-                          ["Longueur attendue", "Environ 30 lignes. En dessous de 20 lignes, la copie est très pénalisée."],
-                          ["Format", "Introduction (contextualiser et annoncer la réponse), développement en paragraphes, conclusion courte. Pas de plan dialectique obligatoire."],
-                          ["L'appui sur le texte", "La question porte sur le texte : on s'y réfère, on cite brièvement, on analyse. Le texte est le centre, pas un prétexte."],
-                          ["Ce que le jury évalue", "Compréhension du texte, cohérence du raisonnement, structuration, correction de la langue, richesse du vocabulaire."],
-                        ]
-                      : [
-                          ["Nature de l'exercice", "Réflexion personnelle structurée sur une thématique littéraire suscitée par le texte. Pas un résumé, pas un commentaire."],
-                          ["Format attendu", "Introduction, développement en parties, conclusion. Environ 40 lignes."],
-                          ["Les trois appuis", "1) le texte support (cité et analysé), 2) des lectures personnelles (titre et auteur), 3) une culture générale (arts, histoire, cinéma...)."],
-                          ["Ce que le jury évalue", "Qualité du raisonnement, développement des références, maîtrise de la langue, structuration du propos."],
-                        ],
-                  },
+                  ...(!l3
+                    ? [
+                        {
+                          type: "table" as const,
+                          title: "Partie 2, Lexique : ce qu'on teste",
+                          headers: ["Type de question", "Ce qu'on attend"],
+                          rows: [
+                            ["Formation des mots", "Identifier préfixe, suffixe, radical, étymologie, et expliquer le sens apporté (notion 16)."],
+                            ["Sens contextuel d'un mot", "Expliquer le sens précis dans le contexte, distinguer sens propre et figuré (notion 17)."],
+                            ["Relations sémantiques", "Synonyme, antonyme, hyperonyme, champ lexical, avec justification (notion 17)."],
+                            ["Figures de style", "Identifier, nommer et expliquer l'effet produit dans le texte (notion 18)."],
+                            ["Registres", "Identifier le registre et le justifier par des indices textuels (notion 18)."],
+                          ],
+                        },
+                        {
+                          type: "table" as const,
+                          title: "Partie 3, Réflexion rédigée : ce qu'on teste",
+                          headers: ["Élément", "Détail"],
+                          rows: [
+                            ["Nature de l'exercice", "Une réflexion organisée à partir d'une question liée au texte. On ne vous demande pas un commentaire composé : il faut répondre au sujet, construire deux ou trois idées, les appuyer sur le texte et sur quelques références personnelles."],
+                            ["Format attendu", "Introduction, développement en parties, conclusion. La longueur attendue dépend de la consigne du sujet."],
+                            ["Les trois appuis", "1) le texte support (cité et analysé), 2) des lectures personnelles (titre et auteur), 3) une culture générale (arts, histoire, cinéma...)."],
+                            ["Ce que le jury évalue", "Qualité du raisonnement, développement des références, maîtrise de la langue, structuration du propos."],
+                          ],
+                        },
+                      ]
+                    : []),
                   {
                     type: "callout",
                     variant: "info",
                     icon: "💡",
                     title: l3 ? "La rédaction L3 répond à une question sur le texte" : "La Partie 3 n'est pas un commentaire",
                     text: l3
-                      ? "En L3, la rédaction répond directement à une question portant sur le texte : votre analyse du texte est au centre. Ne transposez pas la méthode du M2, où la Partie 3 est une réflexion plus large. Détail aux notions 19 à 21."
+                      ? "En L3, la rédaction répond directement à une question portant sur le texte : votre analyse du texte est au centre. Ne transposez pas la méthode du M2, où la Partie 3 est une réflexion plus large. Ici, on pose le cadre ; la méthode détaillée de la Partie 3 sera vue plus loin, dans les notions 19 à 21."
                       : "La Partie 3 est une réflexion personnelle sur une thématique suscitée par le texte, pas un résumé de ce que dit l'auteur. Le texte est un appui parmi d'autres. Détail aux notions 19 à 21.",
                   },
                 ],
@@ -303,11 +331,11 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                   ? [
                       {
                         type: "paragraph",
-                        text: "Le concours L3 s'appuie **exclusivement** sur le programme de français du cycle 4 (5e, 4e, 3e) en vigueur à la rentrée 2025. Le programme de lycée n'est pas au programme de ce concours.",
+                        text: "Pour le concours L3, le socle reste le programme de français du cycle 4 (5e, 4e, 3e). Les notions d'étude de la langue vues au lycée (2de et 1re) peuvent aussi être utiles, surtout pour affiner une analyse grammaticale ou stylistique.",
                       },
                       {
                         type: "table",
-                        title: "Programme de cycle 4 à l'écrit",
+                        title: "Programme de français à l'écrit",
                         headers: ["Domaine", "Notions concernées"],
                         rows: [
                           ["Grammaire", "Classes et fonctions, phrase simple et complexe, modes et temps, accords (notions 01-11)."],
@@ -317,18 +345,11 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           ["Expression écrite", "Rédaction argumentée, cohérence, structuration, correction de la langue."],
                         ],
                       },
-                      {
-                        type: "callout",
-                        variant: "warning",
-                        icon: "⚠️",
-                        title: "Ce qui relève du lycée ne tombe pas en L3",
-                        text: "La phonologie, l'énonciation avancée, les registres littéraires au sens du lycée et l'étymologie gréco-latine approfondie relèvent du programme de lycée (M2). Ne dispersez pas votre préparation sur ces notions.",
-                      },
                     ]
                   : [
                       {
                         type: "paragraph",
-                        text: "L'épreuve s'appuie sur deux sources officielles : connaître leur périmètre, c'est connaître le cadre exact des questions.",
+                        text: "Pour le M2, les questions peuvent venir de deux ensembles de notions : le programme de français du cycle 4 et l'étude de la langue au lycée.",
                       },
                       {
                         type: "table",
@@ -345,6 +366,49 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                         icon: "⚠️",
                         title: "Le lycée ajoute des notions",
                         text: "Le programme de lycée ajoute des notions peu abordées au collège : énonciation, cohérence textuelle, étude des registres, système des temps dans le récit. Elles reviennent régulièrement en Partie 1 (voir notions 13-15).",
+                      },
+                    ],
+              },
+              {
+                type: "subsection",
+                number: "④",
+                title: "La gestion du temps",
+                blocks: l3
+                  ? [
+                      {
+                        type: "paragraph",
+                        text: "Le concours L3 se caractérise par une épreuve combinée français-mathématiques : la difficulté n'est pas seulement de réussir chaque partie, mais de gérer les 4 heures sans se laisser absorber par l'une d'elles. C'est déterminant. Quand le temps que vous vous étiez fixé est écoulé, passez à la suite, même si vous n'avez pas terminé : cela évite les parties vides par perfectionnisme et optimise votre note.",
+                      },
+                      {
+                        type: "table",
+                        title: "Conseils concrets le jour de l'épreuve",
+                        headers: ["Situation", "Ce qu'il faut faire", "Si vous bloquez"],
+                        rows: [
+                          ["Début d'épreuve", "Écrire vos horaires limites au brouillon : fin de grammaire/lexique, début de rédaction, passage aux maths.", "Ne commencez pas à rédiger sans avoir lu toutes les questions : vous risqueriez de perdre le fil du sujet."],
+                          ["Question de grammaire difficile", "Répondre avec ce que vous savez : terme grammatical, justification, appui dans la phrase.", "Laissez un blanc propre ou une réponse courte, puis passez à la suite. Une question ne doit pas manger la rédaction."],
+                          ["Rédaction", "Garder un vrai temps pour un mini-plan, deux ou trois paragraphes, une conclusion et une relecture.", "Si le temps manque, faites plus simple : une idée par paragraphe, citation courte, explication nette."],
+                          ["Passage aux maths", "Changer de discipline à l'heure prévue, même si le français pourrait encore être amélioré.", "Mieux vaut un français imparfait et des maths traitées qu'un français peaufiné et une partie maths trop vide."],
+                        ],
+                      },
+                      {
+                        type: "callout",
+                        variant: "warning",
+                        icon: "⚠️",
+                        title: "La règle à retenir",
+                        text: "Une copie équilibrée vaut mieux qu'une sous-partie brillante et une autre presque vide. Le détail de la répartition horaire est donné dans l'onglet Conseils pratiques.",
+                      },
+                    ]
+                  : [
+                      {
+                        type: "paragraph",
+                        text: "L'épreuve M2 dure 3 heures : il faut avancer assez vite dans l'étude de la langue et le lexique pour garder un vrai temps de rédaction.",
+                      },
+                      {
+                        type: "callout",
+                        variant: "warning",
+                        icon: "⚠️",
+                        title: "La règle à retenir",
+                        text: "Une copie complète vaut mieux qu'une Partie 1 très travaillée et une Partie 3 presque vide. Le détail de la répartition horaire est donné dans l'onglet Conseils pratiques.",
                       },
                     ],
               },
@@ -397,29 +461,26 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                 methode: "Souligner le verbe de consigne de chaque question avant de répondre.",
               },
               {
-                type: "primaireBox",
-                title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-                text: "Cette épreuve évalue votre maîtrise de la langue, celle que vous transmettrez. Un futur enseignant qui maîtrise l'orthographe, la grammaire et l'expression écrite est attendu : le jury garde cet horizon en tête à chaque correction.\n\n**Ce que vous devez savoir dire :** « Bien écrire et bien analyser la langue, c'est la base du métier : je ne peux enseigner que ce que je maîtrise solidement moi-même. »",
-              },
-              {
                 type: "ctaBox",
-                text: "Cadre bien en tête ? Passez à la méthode et à la gestion du temps.",
-                buttonLabel: "Voir la méthode pas-à-pas",
+                text: "Cadre bien en tête ? Passez aux conseils pratiques.",
+                buttonLabel: "Voir les conseils pratiques",
                 targetTab: "methode",
               },
             ],
           },
           {
             id: "methode",
-            label: "Méthode",
+            label: "Conseils pratiques",
             icon: "",
             blocks: [
               {
                 type: "callout",
                 variant: "success",
                 icon: "",
-                title: "Trois démarches",
-                text: "Lire le texte efficacement, choisir un ordre de traitement, répartir son temps. Chacune se termine par un checkpoint.",
+                title: "Le jour de l'épreuve",
+                text: l3
+                  ? "Voici les gestes à appliquer concrètement : lire sans se disperser, commencer par son point fort, fixer des limites de temps et préserver un vrai bloc pour le français comme pour les maths."
+                  : "Voici les gestes à appliquer concrètement : lire sans se disperser, commencer par son point fort, fixer des limites de temps et préserver un vrai temps de rédaction.",
               },
               {
                 type: "rappelExpress",
@@ -472,56 +533,32 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                 ],
               },
               {
-                type: "exerciceCard",
-                variant: "standard",
-                title: "Checkpoint : à vous de jouer",
-                badge: "30 secondes",
-                question: "Pourquoi lire toutes les questions avant de relire le texte en détail ?",
-                correction: [
-                  { type: "line", text: "Pour **savoir ce qu'on cherche** : on annote alors uniquement ce qui sert les questions, au lieu de perdre du temps à tout souligner." },
-                  { type: "note", text: "Lecture active comprise ? Sinon, revoyez l'étape ①." },
-                ],
-              },
-              {
                 type: "methodeGroup",
                 number: "②",
                 title: l3 ? "Choisir l'ordre des deux disciplines" : "Choisir l'ordre des parties",
-                intro: "**Il n'y a pas d'ordre imposé.** Deux stratégies, selon votre profil.",
+                intro: l3
+                  ? "**Il n'y a pas d'ordre imposé.** Le bon ordre, c'est souvent celui qui commence par votre point fort, à condition d'être très strict sur le temps."
+                  : "**Il n'y a pas d'ordre imposé.** Le bon ordre, c'est souvent celui qui commence par votre point fort, à condition de respecter les durées prévues.",
                 steps: [
                   {
                     number: "1",
                     text: l3
-                      ? "**Ordre conseillé** : tout le français (sous-parties 1, 2 puis 3), puis les maths. La lecture du texte nourrit la rédaction, et finir le français en bloc évite de perdre le fil."
-                      : "**Ordre naturel** : Partie 1, puis 2, puis 3. La lecture approfondie du texte pour les deux premières parties nourrit la troisième.",
-                    example: { lines: [l3 ? "Français en bloc, puis maths" : "Partie 1 → Partie 2 → Partie 3"] },
+                      ? "**Commencer par votre point fort** : choisissez le français si vous entrez facilement dans le texte et la rédaction ; choisissez les maths si vous y gagnez plus vite des points sûrs."
+                      : "**Commencer par son point fort** : Parties 1-2 d'abord si vous êtes solide en langue ; Partie 3 d'abord si vous rédigez mieux l'esprit frais.",
+                    example: { lines: [l3 ? "Français puis maths, ou maths puis français : les deux se défendent." : "Parties 1-2 puis 3, ou Partie 3 puis 1-2."] },
                   },
                   {
                     number: "2",
                     text: l3
-                      ? "**Points forts d'abord** : les maths d'abord pour les candidats très à l'aise, qui sécurisent ces points avant de se concentrer sur la rédaction."
-                      : "**Partie 3 d'abord** : pour les candidats plus solides en culture littéraire qu'en grammaire, afin de rédiger l'esprit frais.",
-                    example: { lines: [l3 ? "Maths, puis français" : "Partie 3 → Partie 1 → Partie 2"] },
+                      ? "**Écrire une heure limite avant de commencer** : par exemple, « à 2 h 05, je passe aux maths » ou « à 1 h 50, je passe au français ». Cette limite n'est pas décorative : elle vous protège."
+                      : "**Écrire une heure limite avant de commencer** : par exemple, « à 1 h 40, je passe à la Partie 3 ». Cette limite n'est pas décorative : elle vous protège.",
+                    example: { lines: [l3 ? "Quand l'heure limite arrive, on change de discipline." : "Quand l'heure limite arrive, on change de partie."] },
                   },
                   {
                     number: "💡",
-                    text: "**Quel que soit l'ordre choisi**, ne laisser aucune partie vide et garder le temps prévu pour la rédaction.",
-                    warn: "⚠️ Une partie non traitée coûte cher et peut faire basculer sous la barre éliminatoire.",
+                    text: "**Le piège du point fort**, c'est d'y rester trop longtemps pour viser la copie parfaite. On cherche la meilleure note globale, pas une sous-partie impeccable.",
+                    warn: "⚠️ Quand le temps prévu est écoulé, passez à la suite, même si ce n'est pas parfait.",
                   },
-                ],
-              },
-              {
-                type: "exerciceCard",
-                variant: "standard",
-                title: "Checkpoint : à vous de jouer",
-                badge: "30 secondes",
-                question: l3
-                  ? "Vous êtes plus à l'aise en maths qu'en rédaction. Quel ordre choisir, sans piège ?"
-                  : "Vous êtes plus à l'aise en culture littéraire qu'en grammaire. Quel ordre est possible ?",
-                correction: [
-                  { type: "line", text: l3
-                    ? "Commencer par les **maths** pour sécuriser ces points, puis le français, sans jamais rogner sur le temps de la rédaction (la moitié de la note de français)."
-                    : "Commencer par la **Partie 3** pour rédiger l'esprit frais, puis les Parties 1 et 2, en respectant les durées prévues." },
-                  { type: "note", text: "Stratégie claire ? Direction le dernier checkpoint." },
                 ],
               },
               {
@@ -532,15 +569,14 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                 preBlocks: [
                   {
                     type: "formulaBlock",
-                    title: l3 ? "Répartition recommandée sur 4 heures" : "Répartition recommandée sur 3 heures",
+                    title: l3 ? "Répartition recommandée pour le français" : "Répartition recommandée sur 3 heures",
                     lines: l3
                       ? [
-                          "0 h 00 à 0 h 10 (10 min) : lecture active du texte et de toutes les questions.",
-                          "0 h 10 à 0 h 55 (45 min) : sous-partie 1, grammaire.",
-                          "0 h 55 à 1 h 20 (25 min) : sous-partie 2, lexique.",
-                          "1 h 20 à 2 h 10 (50 min) : sous-partie 3, rédaction (5 min de plan, 40 min de rédaction, 5 min de relecture).",
-                          "2 h 10 à 3 h 45 (95 min) : mathématiques.",
-                          "3 h 45 à 4 h 00 (15 min) : relecture globale des deux parties.",
+                          "10 min : lecture active du texte et de toutes les questions.",
+                          "40 à 45 min : sous-partie 1, grammaire.",
+                          "20 à 25 min : sous-partie 2, lexique.",
+                          "50 à 55 min : sous-partie 3, rédaction (plan rapide, rédaction, relecture).",
+                          "Soit environ 2 h pour le français. Les mathématiques se placent avant ou après, selon votre stratégie, mais avec leur propre bloc de temps protégé.",
                         ]
                       : [
                           "0 h 00 à 0 h 10 (10 min) : lecture active du texte et survol des questions.",
@@ -549,14 +585,12 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           "1 h 40 à 2 h 45 (65 min) : Partie 3, réflexion rédigée (5 min de plan, 50 min de rédaction, 10 min de relecture).",
                           "2 h 45 à 3 h 00 (15 min) : relecture globale.",
                         ],
-                    note: "Ces repères supposent un traitement dans l'ordre proposé. Si vous changez l'ordre, conservez les mêmes durées totales par partie.",
+                    note: l3
+                      ? "Ces repères ne disent pas dans quel ordre commencer : ils donnent seulement le temps à réserver au français. Si vous commencez par les maths, gardez ce bloc français intact ensuite."
+                      : "Ces repères supposent un traitement dans l'ordre proposé. Si vous changez l'ordre, conservez les mêmes durées totales par partie.",
                   },
                 ],
                 steps: [
-                  {
-                    number: "1",
-                    text: "**Bloquer le temps de la rédaction d'abord**, puis répartir le reste : c'est la partie à ne jamais sacrifier.",
-                  },
                   {
                     number: "💡",
                     text: "**Si vous êtes en retard** : arrêter la partie en cours, passer à la rédaction, viser une introduction, une ou deux parties et une conclusion courte.",
@@ -564,460 +598,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                   },
                 ],
               },
-              {
-                type: "exerciceCard",
-                variant: "standard",
-                title: "Checkpoint : à vous de jouer",
-                badge: "30 secondes",
-                question: l3
-                  ? "À 1 h 20 de la fin, vous n'avez pas commencé la rédaction. Que faire ?"
-                  : "À 30 minutes de la fin, vous n'avez pas commencé la Partie 3. Que faire ?",
-                correction: [
-                  { type: "line", text: "Arrêter la partie en cours, passer immédiatement à la rédaction avec un plan minimal (deux idées), et viser une introduction, un ou deux paragraphes et une conclusion courte. Une rédaction partielle vaut bien mieux que rien." },
-                  { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
-                ],
-              },
-              {
-                type: "ctaBox",
-                text: "Méthode bien en tête ? Testez-vous.",
-                buttonLabel: "Lancer le Quiz éclair",
-                targetTab: "quiz",
-              },
             ],
-          },
-        ],
-      },
-      {
-        id: "pratiquer",
-        label: "Pratiquer",
-        icon: "",
-        tabs: [
-          {
-            id: "quiz",
-            label: "Quiz éclair",
-            icon: "",
-            blocks: [
-              {
-                type: "callout",
-                variant: "info",
-                icon: "",
-                title: "Avant de passer aux exercices",
-                text: "7 questions rapides pour vérifier que le cadre et la stratégie sont bien en tête. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-              },
-              {
-                type: "quizBlock",
-                questions: [
-                  {
-                    objectifId: "me1",
-                    question: l3
-                      ? "La partie français du CRPE L3 comporte :"
-                      : "L'épreuve écrite de français du CRPE M2 comporte :",
-                    options: l3
-                      ? ["une seule partie", "trois sous-parties : grammaire, lexique, rédaction", "deux parties", "uniquement une rédaction"]
-                      : ["une seule partie", "trois parties : étude de la langue, lexique, réflexion rédigée", "deux parties", "uniquement une dictée"],
-                    correctIndex: 1,
-                    explanation: "Trois parties ancrées dans le même texte support : étude de la langue, lexique, rédaction.",
-                  },
-                  {
-                    objectifId: "me2",
-                    question: l3
-                      ? "Quelle note est éliminatoire en L3 ?"
-                      : "Quelle note est éliminatoire en M2 ?",
-                    options: l3
-                      ? ["une note inférieure ou égale à 2,5/10 sur le français ou les maths", "seulement une moyenne sous 10", "aucune", "une note sous 8/10"]
-                      : ["une note inférieure ou égale à 5/20", "seulement une moyenne sous 10", "aucune", "une note sous 8/20"],
-                    correctIndex: 0,
-                    explanation: l3
-                      ? "La note de 2,5/10 est éliminatoire pour chaque discipline, indépendamment de l'autre."
-                      : "Une note inférieure ou égale à 5/20 élimine du concours, quelle que soit la moyenne.",
-                  },
-                  {
-                    objectifId: "me3",
-                    question: "Une réponse de grammaire réduite à un seul mot, sans justification :",
-                    options: ["rapporte tous les points", "ne rapporte pas tous les points", "est recommandée pour gagner du temps", "suffit toujours"],
-                    correctIndex: 1,
-                    explanation: "Les réponses se rédigent en phrases complètes, avec justification, même en grammaire et en lexique.",
-                  },
-                  {
-                    objectifId: "me4",
-                    question: "Avant de répondre, la bonne première étape est :",
-                    options: ["répondre dans l'ordre sans lire le texte", "lire le texte puis toutes les questions, en soulignant les verbes de consigne", "annoter tout le texte en détail", "commencer par la rédaction sans plan"],
-                    correctIndex: 1,
-                    explanation: "Une lecture active (texte puis questions, verbes de consigne soulignés) oriente tout le travail.",
-                  },
-                  {
-                    objectifId: "me5",
-                    question: l3 ? "L'ordre de traitement des deux disciplines est :" : "L'ordre de traitement des parties est :",
-                    options: ["imposé par le sujet", "libre : à choisir selon son profil, sans laisser de partie vide", "toujours la rédaction en dernier obligatoirement", "sans importance, on improvise"],
-                    correctIndex: 1,
-                    explanation: "Aucun ordre n'est imposé : on choisit selon ses points forts, en ne laissant jamais de partie vide.",
-                  },
-                  {
-                    objectifId: "me6",
-                    question: "La rédaction doit être :",
-                    options: ["traitée seulement s'il reste du temps", "protégée par un temps réservé dès le départ", "réduite à quelques lignes", "remplacée par un résumé"],
-                    correctIndex: 1,
-                    explanation: l3
-                      ? "La rédaction vaut environ la moitié de la note de français : on lui réserve son temps."
-                      : "La Partie 3 vaut autant que la Partie 1 : on ne la sacrifie pas.",
-                  },
-                  {
-                    objectifId: "me7",
-                    question: "La qualité de la langue est évaluée :",
-                    options: ["seulement dans la rédaction", "sur toute la copie", "nulle part", "seulement en grammaire"],
-                    correctIndex: 1,
-                    explanation: "Orthographe, syntaxe, ponctuation et lisibilité comptent sur l'ensemble de la copie : on garde du temps pour relire.",
-                  },
-                ],
-              },
-              {
-                type: "ctaBox",
-                text: "Quiz terminé ? Direction l'Application.",
-                buttonLabel: "Voir l'Application",
-                targetTab: "appli",
-              },
-            ],
-          },
-          {
-            id: "appli",
-            label: "Application",
-            icon: "",
-            blocks: [
-              {
-                type: "callout",
-                variant: "success",
-                text: "Progression en 3 niveaux. Corrigez chaque exercice avant de passer au suivant.",
-              },
-              {
-                type: "niveauBanner",
-                level: "echauffement",
-                stars: "★☆☆",
-                label: "Niveau 1 : Connaître le cadre",
-                sub: "Format, barème, note éliminatoire",
-              },
-              {
-                type: "exerciceCard",
-                variant: "standard",
-                level: "echauffement",
-                title: "Exercice 1 : Le cadre de mon épreuve",
-                objectifTag: "Cadre",
-                question: l3
-                  ? "Donnez : a) la durée totale de l'épreuve · b) le nombre de points de la partie français · c) la note éliminatoire · d) le programme de référence."
-                  : "Donnez : a) la durée de l'épreuve · b) la notation et le coefficient · c) la note éliminatoire · d) le programme de référence.",
-                correction: [
-                  { type: "line", text: l3
-                    ? "a) 4 heures (français et maths) · b) 10 points · c) une note inférieure ou égale à 2,5/10 sur l'une des deux parties · d) le programme de cycle 4 uniquement."
-                    : "a) 3 heures · b) 20 points, coefficient 1 · c) une note inférieure ou égale à 5/20 · d) le cycle 4 et l'étude de la langue au lycée." },
-                ],
-              },
-              {
-                type: "exerciceCard",
-                variant: "standard",
-                level: "echauffement",
-                title: "Exercice 2 : À quelle partie ?",
-                objectifTag: "Les parties",
-                question:
-                  "À quelle partie rattacher chaque tâche ?\na) justifier l'accord d'un participe passé · b) donner le sens contextuel d'un mot · c) répondre à une question par un développement argumenté",
-                correction: [
-                  { type: "line", text: "a) grammaire (étude de la langue) · b) lexique · c) rédaction (Partie 3)." },
-                ],
-              },
-              {
-                type: "niveauBanner",
-                level: "n2",
-                stars: "★★☆",
-                label: "Niveau 2 : Stratégie et temps",
-                sub: "Ordre, répartition, priorités",
-              },
-              {
-                type: "exerciceCard",
-                variant: "standard",
-                level: "n2",
-                title: "Exercice 3 : Répartir le temps",
-                enonce: l3
-                  ? "Vous traitez le français avant les maths."
-                  : "Vous traitez les parties dans l'ordre naturel.",
-                question: l3
-                  ? "Proposez une répartition réaliste de vos 4 heures (lecture, grammaire, lexique, rédaction, maths, relecture)."
-                  : "Proposez une répartition réaliste de vos 3 heures (lecture, P1, P2, P3, relecture).",
-                correction: [
-                  { type: "line", text: l3
-                    ? "Par exemple : 10 min de lecture, 45 min de grammaire, 25 min de lexique, 50 min de rédaction, 95 min de maths, 15 min de relecture."
-                    : "Par exemple : 10 min de lecture, 60 min de Partie 1, 30 min de Partie 2, 65 min de Partie 3, 15 min de relecture." },
-                  { type: "line", text: "L'essentiel est de réserver le temps de la rédaction et de prévoir une relecture finale." },
-                ],
-              },
-              {
-                type: "exerciceCard",
-                variant: "standard",
-                level: "n2",
-                title: "Exercice 4 : Que corriger dans cette réponse ?",
-                enonce: "Réponse d'un candidat à une question de grammaire : « COD, imparfait, adjectif. »",
-                question: "Quel est le défaut, et que faut-il faire ?",
-                correction: [
-                  { type: "line", text: "C'est une **liste de mots sans phrase ni justification** : elle ne rapporte pas tous les points. Il faut rédiger en phrases complètes, nommer précisément et justifier en s'appuyant sur le texte." },
-                ],
-              },
-              {
-                type: "niveauBanner",
-                level: "n3",
-                stars: "★★★",
-                label: "Niveau 3 : Gérer l'imprévu",
-                sub: "Retard, priorités, note éliminatoire",
-              },
-              {
-                type: "exerciceCard",
-                variant: "standard",
-                level: "n3",
-                title: "Exercice 5 : Protocole d'urgence",
-                enonce: l3
-                  ? "À 1 h 20 de la fin, ni la rédaction ni les maths ne sont assez avancées."
-                  : "À 30 minutes de la fin, la Partie 3 n'est pas commencée.",
-                question: "Quelles priorités vous fixez-vous, et pourquoi ?",
-                correction: [
-                  { type: "line", text: l3
-                    ? "Sécuriser d'abord de quoi éviter les deux notes éliminatoires : une rédaction structurée même courte (introduction, un ou deux paragraphes, conclusion) et quelques exercices de maths avec la démarche posée."
-                    : "Arrêter la partie en cours et rédiger une Partie 3 même partielle : introduction, au moins une partie, conclusion courte." },
-                  { type: "line", text: "Raison : une partie vierge coûte le plus cher et peut faire basculer sous la barre éliminatoire." },
-                ],
-              },
-            ],
-          },
-          {
-            id: "crpe",
-            label: "Type CRPE",
-            icon: "",
-            blocks: [
-              {
-                type: "callout",
-                variant: "success",
-                icon: "",
-                text: l3
-                  ? "Voici l'architecture de la partie français, calquée sur le sujet zéro officiel publié pour la session 2026."
-                  : "Voici l'architecture type de l'épreuve, conforme au format officiel.",
-              },
-              {
-                type: "exerciceCard",
-                variant: "annale",
-                badge: l3 ? "✦ D'après le sujet zéro 2026" : "✦ Format identique au concours",
-                title: l3 ? "Architecture de la partie français" : "Architecture de l'épreuve",
-                enonce: l3
-                  ? "Un texte support (extrait de roman, de nouvelle ou d'essai, 500 mots maximum), suivi de trois sous-parties."
-                  : "Un texte support (400 à 600 mots), suivi de trois parties.",
-                question: "Reconstituez la structure et le rôle de chaque partie.",
-                correction: [
-                  { type: "table",
-                    headers: ["Partie", "Nature", "Points (estimation)"],
-                    rows: l3
-                      ? [
-                          ["1 · Grammaire", "Nature et fonction, formes verbales, subordonnées, accords", "~6 pts"],
-                          ["2 · Lexique", "Formation d'un mot, sens contextuel, famille, synonymes/antonymes", "~4 pts"],
-                          ["3 · Rédaction", "Développement argumenté en réponse à une question sur le texte (~30 lignes)", "~10 pts"],
-                        ]
-                      : [
-                          ["1 · Étude de la langue", "Grammaire, syntaxe, orthographe, sur le texte", "~8 pts"],
-                          ["2 · Lexique", "Formation, sens, figures, registres", "~4 pts"],
-                          ["3 · Réflexion rédigée", "Réflexion structurée avec appuis (texte, lectures, culture)", "~8 pts"],
-                        ],
-                  },
-                  { type: "note", text: l3
-                    ? "Le sujet zéro confirme que la rédaction représente environ la moitié de la note de français : c'est la sous-partie la plus importante."
-                    : "Les barèmes par partie ne sont pas officiels : ces points sont une estimation." },
-                ],
-              },
-              {
-                type: "exerciceCard",
-                variant: "crpe",
-                title: "S'entraîner en conditions réelles",
-                enonce: l3
-                  ? "Le sujet zéro officiel 2026 est disponible sur devenirenseignant.gouv.fr."
-                  : "Des sujets et rapports de jury sont disponibles sur devenirenseignant.gouv.fr et les sites des rectorats.",
-                question: "Comment s'entraîner utilement avant le concours ?",
-                correction: [
-                  { type: "line", text: l3
-                    ? "Faire le sujet zéro en 4 heures chrono au moins une fois, s'entraîner séparément sur la rédaction (environ 50 minutes), se corriger en vérifiant l'ancrage dans le texte et la langue, et cibler les notions faibles (01 à 18)."
-                    : "Faire au moins deux ou trois sujets complets en 3 heures chrono, se corriger à l'aide des rapports de jury, identifier ses points faibles et cibler les notions correspondantes (01 à 21)." },
-                  { type: "note", text: "La gestion du temps ne s'improvise pas : elle s'automatise par l'entraînement." },
-                ],
-              },
-            ],
-          },
-          {
-            id: "cote-prof",
-            label: "Côté prof",
-            icon: "",
-            blocks: [
-              {
-                type: "callout",
-                variant: "warning",
-                icon: "",
-                text: "Ces situations reproduisent des **erreurs fréquentes** repérées dans les rapports de jury. Savoir ce qui pénalise, c'est savoir l'éviter.",
-              },
-              {
-                type: "exerciceCard",
-                variant: "err-type",
-                title: "Erreur 1 · La copie inachevée",
-                enonce: l3
-                  ? "Un candidat soigne la grammaire et le lexique, puis n'écrit que cinq lignes de rédaction faute de temps."
-                  : "Un candidat soigne les Parties 1 et 2, puis n'écrit que quelques lignes en Partie 3.",
-                question: "Pourquoi est-ce coûteux, et comment l'éviter ?",
-                correction: [
-                  {
-                    type: "checklist",
-                    items: [
-                      { text: l3 ? "La rédaction vaut environ la moitié de la note de français : la bâcler coûte très cher" : "La Partie 3 vaut environ un tiers des points : la bâcler coûte très cher", bad: true },
-                      { text: "Une partie quasi vierge peut faire approcher la note éliminatoire" },
-                      { text: "À faire : réserver le temps de la rédaction dès le départ et s'y tenir" },
-                    ],
-                  },
-                ],
-              },
-              {
-                type: "exerciceCard",
-                variant: "err-type",
-                title: "Erreur 2 · La réponse non rédigée",
-                enonce: "Un candidat répond aux questions de langue par des listes : « passé simple, COD, subordonnée ».",
-                question: "Identifiez et corrigez le défaut.",
-                correction: [
-                  {
-                    type: "checklist",
-                    items: [
-                      { text: "Une liste de mots sans phrase ni justification ne rapporte pas tous les points", bad: true },
-                      { text: "Le jury attend des réponses rédigées et justifiées, même pour identifier une nature" },
-                      { text: "À faire : nommer précisément, justifier, et ancrer la réponse dans le texte" },
-                    ],
-                  },
-                ],
-              },
-              {
-                type: "exerciceCard",
-                variant: "err-type",
-                title: l3 ? "Erreur 3 · La méthode M2 plaquée sur le L3" : "Erreur 3 · La Partie 3 traitée comme un résumé",
-                enonce: l3
-                  ? "Un candidat rédige une réflexion personnelle large et oublie de répondre à la question posée sur le texte."
-                  : "Un candidat résume le texte au lieu de développer une réflexion personnelle.",
-                question: "Identifiez et corrigez le défaut.",
-                correction: [
-                  {
-                    type: "checklist",
-                    items: [
-                      { text: l3 ? "En L3, la rédaction répond à une question sur le texte : la réflexion large hors-sujet est pénalisée" : "La Partie 3 n'est pas un résumé : paraphraser le texte ne construit aucune réflexion", bad: true },
-                      { text: l3 ? "Le texte est le centre de la réponse, pas un prétexte" : "Le texte est un appui de la réflexion, pas l'objet à résumer" },
-                      { text: "À faire : relire la consigne et vérifier que chaque paragraphe y répond (notions 19-21)" },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "reviser",
-        label: "Réviser",
-        icon: "",
-        tabs: [
-          {
-            id: "flash",
-            label: "Flashcards",
-            icon: "",
-            blocks: [
-              {
-                type: "callout",
-                variant: "info",
-                icon: "",
-                text: "Cliquez sur chaque carte pour révéler la réponse. Essayez de répondre dans votre tête avant.",
-              },
-              {
-                type: "flashcardDeck",
-                cards: [
-                  {
-                    question: l3 ? "Quel est le cadre de l'épreuve (L3) ?" : "Quel est le cadre de l'épreuve (M2) ?",
-                    answer: l3
-                      ? "Épreuve commune français + maths, **4 heures**, 10 points par discipline, coefficient 5. Note inférieure ou égale à **2,5/10** par partie : éliminatoire."
-                      : "Épreuve de français, **3 heures**, 20 points, coefficient 1. Note inférieure ou égale à **5/20** : éliminatoire.",
-                    astuce: "⚠️ Ne jamais laisser une partie vide : finir l'épreuve est prioritaire.",
-                  },
-                  {
-                    question: "Quelles sont les trois parties de français ?",
-                    answer:
-                      "1) **Étude de la langue** (grammaire) · 2) **Lexique** · 3) **Rédaction**, toutes ancrées dans le même texte support.",
-                    astuce: "💡 Chaque réponse s'appuie sur le texte.",
-                  },
-                  {
-                    question: l3 ? "Sur quel programme porte le L3 ?" : "Sur quel programme porte le M2 ?",
-                    answer: l3
-                      ? "Le programme de **cycle 4 uniquement**. La phonologie, l'énonciation avancée et les registres au sens du lycée n'y sont pas."
-                      : "Le **cycle 4** et l'**étude de la langue au lycée** (énonciation, cohérence textuelle, registres, système des temps).",
-                  },
-                  {
-                    question: "Comment lire le texte efficacement ?",
-                    answer:
-                      "Une lecture globale, puis la lecture de **toutes les questions** (verbes de consigne soulignés) avant de relire et d'annoter seulement l'utile.",
-                    astuce: "💡 Repérer tôt la question de rédaction pour la laisser mûrir.",
-                  },
-                  {
-                    question: "Quelle est la priorité dans la gestion du temps ?",
-                    answer:
-                      "Réserver le temps de la **rédaction** dès le départ : c'est la partie la plus lourde et celle qu'on sacrifie le plus souvent à tort.",
-                    astuce: "⚠️ Même quelques lignes valent mieux qu'une partie vide.",
-                  },
-                  {
-                    question: "Où la qualité de la langue est-elle évaluée ?",
-                    answer:
-                      "Sur **toute la copie** : orthographe, accords, ponctuation, lisibilité, y compris dans les réponses de grammaire et de lexique.",
-                    astuce: "💡 Garder les dernières minutes pour relire.",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: "memo",
-            label: "Mémo",
-            icon: "",
-            blocks: [
-              {
-                type: "mindmapLite",
-                center: { title: "L'épreuve", subtitle: l3 ? "écrite (L3)" : "écrite (M2)" },
-                branches: [
-                  {
-                    title: "Cadre",
-                    lines: l3
-                      ? ["4 h, français + maths", "10 pts français, coeff. 5", "Éliminatoire : 2,5/10", "Cycle 4 uniquement"]
-                      : ["3 h, 20 pts, coeff. 1", "Éliminatoire : 5/20", "Cycle 4 + lycée"],
-                    variant: "blue",
-                  },
-                  {
-                    title: "Trois parties",
-                    lines: ["Grammaire", "Lexique", "Rédaction"],
-                    variant: "green",
-                  },
-                  {
-                    title: "Stratégie",
-                    lines: ["Lire texte puis questions", "Ordre libre selon profil", "Langue soignée partout"],
-                    variant: "green",
-                  },
-                  {
-                    title: "Pièges classiques",
-                    lines: ["Sacrifier la rédaction", "Réponses non rédigées", "Répondre sans lire la consigne"],
-                    variant: "yellow",
-                  },
-                  {
-                    title: "Renvois",
-                    lines: ["Grammaire et lexique : notions 01-18", "Partie 3 : notions 19-21"],
-                    variant: "purple",
-                    dashed: true,
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: "autoeval",
-            label: "Auto-évaluation",
-            icon: "",
-            blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
           },
         ],
       },

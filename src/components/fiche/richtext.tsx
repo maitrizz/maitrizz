@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import type { RichText as RichTextValue } from "./types";
 
-const INLINE_REGEX = /(\*\*.+?\*\*|~~.+?~~|\*.+?\*)/g;
+const INLINE_REGEX = /(\[[^\]]+\]\(https?:\/\/[^)\s]+\)|\*\*.+?\*\*|~~.+?~~|\*.+?\*)/g;
 
 function parseInline(line: string, keyPrefix: string) {
   return line
@@ -11,6 +11,20 @@ function parseInline(line: string, keyPrefix: string) {
       const key = `${keyPrefix}-${i}`;
       if (part.startsWith("**") && part.endsWith("**")) {
         return <strong key={key}>{part.slice(2, -2)}</strong>;
+      }
+      const linkMatch = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/);
+      if (linkMatch) {
+        return (
+          <a
+            key={key}
+            href={linkMatch[2]}
+            target="_blank"
+            rel="noreferrer"
+            className="link link-primary font-medium"
+          >
+            {linkMatch[1]}
+          </a>
+        );
       }
       if (part.startsWith("~~") && part.endsWith("~~")) {
         return <s key={key}>{part.slice(2, -2)}</s>;
