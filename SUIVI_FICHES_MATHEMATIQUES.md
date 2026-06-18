@@ -41,7 +41,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
 | 15 | Périmètres, aires, volumes et conversions (fusion N17 + N18 + N32 + effets k²/k³ de N20) | ✅ | ✅ (fusion faite : N17 socle + losange de N18 + effets k/k²/k³ de N20 ; N32 redondant écarté ; calculs vérifiés) |
-| 16 | Durées, masses, grandeurs composées (N19) | ⬜ | ⬜ |
+| 16 | Durées, masses, grandeurs composées (N19) | ✅ | ✅ (MEF + charte en une passe ; renvoi N°13 pour le volet proportionnalité ; annales adoucies ; calculs vérifiés) |
 
 ## Partie 4 — Espace et géométrie plane
 
