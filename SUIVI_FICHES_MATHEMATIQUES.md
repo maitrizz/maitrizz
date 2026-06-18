@@ -50,7 +50,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | 17 | Repérage et coordonnées dans le plan (N21) | ✅ | ✅ (MEF + charte en une passe ; question 3.1-e reformulée en question ouverte ; renvoi N°14 ; annales adoucies ; calculs vérifiés) |
 | 18 | Droites, angles, parallélisme (N22) | ✅ | ✅ (MEF + charte en une passe ; angles exprimés en clair ; annales adoucies ; calculs vérifiés) |
 | 19 | Triangles, quadrilatères, polygones (fusion N23 + N25) | ✅ | ✅ (fusion faite : triangles N25 + parallélogrammes N23 ; méthode vectorielle écartée (hors M2) au profit des milieux ; renvoi N°18 pour constructions ; calculs vérifiés) |
-| 20 | Cercle (N24) | ⬜ | ⬜ |
+| 20 | Cercle (N24) | ✅ | ✅ (MEF + charte en une passe ; renvois N°18 (constructions) et N°21 (Pythagore) ; annales adoucies ; calculs vérifiés) |
 | 21 | Théorème de Pythagore (N26) | ⬜ | ⬜ |
 | 22 | Théorème de Thalès et similitude (N27 + homothétie de N20) | ⬜ | ⬜ |
 | 23 | Trigonométrie du triangle rectangle (N28) | ⬜ | ⬜ |
