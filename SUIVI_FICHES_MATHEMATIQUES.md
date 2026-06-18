@@ -24,7 +24,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | 06 | Divisibilité, PGCD, PPCM, nombres premiers (N06) | ✅ | ✅ (MEF + charte en une passe ; annales adoucies ; calculs vérifiés) |
 | 07 | Dénombrement (N07) | ✅ | ✅ (MEF + charte en une passe ; annales adoucies ; calculs vérifiés) |
 | 08 | Calcul littéral (N08) | ✅ | ✅ (MEF + charte en une passe ; annales adoucies ; exercice « géoplans » incohérent écarté au profit de « programmes rivaux » ; calculs vérifiés) |
-| 09 | Équations, inéquations, systèmes (N09) | ⬜ | ⬜ |
+| 09 | Équations, inéquations, systèmes (N09) | ✅ | ✅ (MEF + charte en une passe ; intervalles + valeur absolue marqués « Seconde » pour la dérivation L3 ; annales adoucies ; calculs vérifiés) |
 | 10 | Suites numériques (N10) | ⬜ | ⬜ |
 
 ## Partie 2 — Organisation, données, fonctions
