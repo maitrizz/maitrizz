@@ -61,8 +61,11 @@ export const MATIERE_LABELS: Record<Matiere, string> = {
   francais: "Français",
 };
 
-// Mathématiques : identique pour les deux concours (L3 et M2).
-const MATHEMATIQUES: Fiche[] = [ficheNumerationSystemesDeBases];
+// Mathématiques : chantier M2 en cours (plan dans SUIVI_FICHES_MATHEMATIQUES.md).
+// La version L3 sera dérivée du M2 plus tard ; en attendant la liste L3 reste vide
+// (la page matière affiche « arrivent très bientôt » quand la liste est vide).
+const MATHEMATIQUES_M2: Fiche[] = [ficheNumerationSystemesDeBases];
+const MATHEMATIQUES_L3: Fiche[] = [];
 
 // Français : notions 01-18 communes L3/M2. La divergence commence à la
 // notion 19 (Partie 3) — les fiches propres à chaque niveau sont ajoutées
@@ -85,8 +88,8 @@ const FRANCAIS_M2: Fiche[] = [
 ];
 
 const FICHES: Record<Niveau, Record<Matiere, Fiche[]>> = {
-  l3: { mathematiques: MATHEMATIQUES, francais: FRANCAIS_L3 },
-  m2: { mathematiques: MATHEMATIQUES, francais: FRANCAIS_M2 },
+  l3: { mathematiques: MATHEMATIQUES_L3, francais: FRANCAIS_L3 },
+  m2: { mathematiques: MATHEMATIQUES_M2, francais: FRANCAIS_M2 },
 };
 
 export function isValidMatiere(value: string): value is Matiere {
