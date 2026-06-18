@@ -47,7 +47,7 @@ export default async function MatierePage({
             <span className="text-white/90 font-medium">{label}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-2">
-            Écrit — {label}
+            Écrit : {label}
           </h1>
           <p className="text-white/70 text-lg">
             Toutes les fiches de révision, classées par grande partie du programme.
@@ -78,7 +78,7 @@ export default async function MatierePage({
                   >
                     <div className="flex items-start justify-between gap-2">
                       <h3 className="text-base font-black text-base-content group-hover:text-primary transition-colors leading-snug">
-                        {fiche.numero > 0 ? `Notion ${fiche.numero} — ${fiche.title}` : fiche.title}
+                        {fiche.numero > 0 ? `Notion ${fiche.numero} : ${fiche.title}` : fiche.title}
                       </h3>
                     </div>
                     <p className="text-sm text-base-content/55 leading-relaxed line-clamp-2">

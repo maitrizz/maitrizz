@@ -45,7 +45,7 @@ export function AutoEvalChecklist({
   return (
     <div className="rounded-xl border-2 border-base-300 overflow-hidden">
       <div className="bg-primary text-primary-content px-4 py-3 font-bold text-sm">
-        ✅ Auto-évaluation — Cochez ce que vous maîtrisez
+        Auto-évaluation : Cochez ce que vous maîtrisez
       </div>
       <div className="flex flex-col">
         {items.map((item) => {

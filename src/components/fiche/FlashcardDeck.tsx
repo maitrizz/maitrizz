@@ -62,7 +62,7 @@ export function FlashcardDeck({ cards }: { cards: FlashcardItem[] }) {
         <p className="font-bold text-secondary">Toutes les cartes maîtrisées !</p>
         <p className="text-sm text-base-content/60">
           {total - struggled.size} / {total} maîtrisées dès la première lecture.
-          {struggled.size > 0 && ` ${struggled.size} carte(s) ont demandé une relecture — c'est normal, l'essentiel est de les revoir.`}
+          {struggled.size > 0 && ` ${struggled.size} carte(s) ont demandé une relecture, c'est normal, l'essentiel est de les revoir.`}
         </p>
         <button type="button" onClick={restart} className="btn btn-primary btn-sm mt-2">
           🔄 Recommencer le deck
