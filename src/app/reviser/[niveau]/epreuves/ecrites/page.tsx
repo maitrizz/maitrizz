@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Matiere } from "@/components/fiche/types";
 import {
   MATIERES,
   MATIERE_LABELS,
@@ -22,7 +23,7 @@ function LockIcon() {
 
 function MathsIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m-6 5h6m-6 5h3M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" />
     </svg>
   );
@@ -30,11 +31,25 @@ function MathsIcon() {
 
 function FrancaisIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-base-content/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
     </svg>
   );
 }
+
+function SciencesIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3v5.25L4.5 17.25A2.25 2.25 0 006.44 21h11.12a2.25 2.25 0 001.94-3.75L14.25 8.25V3m-4.5 0h4.5m-4.5 0H9m5.25 0H15m-6 9h6" />
+    </svg>
+  );
+}
+
+const MATIERE_ICONS: Record<Matiere, () => React.JSX.Element> = {
+  mathematiques: MathsIcon,
+  francais: FrancaisIcon,
+  sciences: SciencesIcon,
+};
 
 export default async function EcritesPage({
   params,
@@ -77,6 +92,7 @@ export default async function EcritesPage({
           {MATIERES.map((matiere) => {
             const fiches = getFicheMetas(niveau, matiere);
             const label = MATIERE_LABELS[matiere];
+            const Icon = MATIERE_ICONS[matiere];
 
             if (fiches.length === 0) {
               return (
@@ -84,8 +100,8 @@ export default async function EcritesPage({
                   key={matiere}
                   className="bg-base-100 border-2 border-base-300 rounded-2xl p-8 flex flex-col gap-5 opacity-50 cursor-not-allowed"
                 >
-                  <div className="w-12 h-12 bg-base-200 rounded-xl flex items-center justify-center">
-                    <FrancaisIcon />
+                  <div className="w-12 h-12 bg-base-200 rounded-xl flex items-center justify-center text-base-content/40">
+                    <Icon />
                   </div>
                   <div>
                     <h2 className="text-2xl font-black text-base-content mb-1">{label}</h2>
@@ -107,8 +123,8 @@ export default async function EcritesPage({
                 href={`/reviser/${niveau}/epreuves/ecrites/${matiere}`}
                 className="bg-base-100 grid-paper border-2 border-base-300 rounded-2xl p-8 flex flex-col gap-5 hover:border-primary/40 hover:shadow-lg transition-all duration-200 group"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <MathsIcon />
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <Icon />
                 </div>
                 <div>
                   <h2 className="text-2xl font-black text-base-content group-hover:text-primary transition-colors mb-1">

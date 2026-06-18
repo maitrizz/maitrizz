@@ -231,7 +231,7 @@ export type FicheBadge = {
   variant: "hot" | "info";
 };
 
-export type Matiere = "mathematiques" | "francais";
+export type Matiere = "mathematiques" | "francais" | "sciences";
 
 export type Fiche = {
   slug: string;

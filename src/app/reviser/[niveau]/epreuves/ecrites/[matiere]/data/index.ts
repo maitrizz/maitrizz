@@ -2,6 +2,10 @@ import type { Fiche, FicheBadge, Matiere } from "@/components/fiche/types";
 import type { Niveau } from "@/lib/niveau";
 import { NIVEAUX, NIVEAU_LABELS, isValidNiveau } from "@/lib/niveau";
 import { ficheNumerationSystemesDeBases } from "./mathematiques/numeration-systemes-de-bases";
+import { ficheNombresRelatifs } from "./mathematiques/nombres-relatifs";
+import { ficheFractionsDecimaux } from "./mathematiques/fractions-decimaux";
+import { fichePuissancesRacinesReels } from "./mathematiques/puissances-racines-reels";
+import { ficheCalculNumeriquePriorites } from "./mathematiques/calcul-numerique-priorites";
 import { ficheClassesGrammaticales } from "./francais/classes-grammaticales";
 import { ficheFonctionsSyntaxiques } from "./francais/fonctions-syntaxiques";
 import { ficheGroupeNominalExpansions } from "./francais/groupe-nominal-expansions";
@@ -36,6 +40,10 @@ import {
   ficheMethodologieL3,
   ficheMethodologieM2,
 } from "./francais/methodologie-de-l-epreuve";
+import {
+  ficheUniteDiversiteVivantL3,
+  ficheUniteDiversiteVivantM2,
+} from "./sciences/unite-et-diversite-du-vivant";
 
 export type { Matiere, Niveau };
 export { NIVEAUX, NIVEAU_LABELS, isValidNiveau };
@@ -54,17 +62,18 @@ export type PartieGroup = {
   fiches: FicheMeta[];
 };
 
-export const MATIERES: Matiere[] = ["mathematiques", "francais"];
+export const MATIERES: Matiere[] = ["mathematiques", "francais", "sciences"];
 
 export const MATIERE_LABELS: Record<Matiere, string> = {
   mathematiques: "Mathématiques",
   francais: "Français",
+  sciences: "Sciences et technologie",
 };
 
 // Mathématiques : chantier M2 en cours (plan dans SUIVI_FICHES_MATHEMATIQUES.md).
 // La version L3 sera dérivée du M2 plus tard ; en attendant la liste L3 reste vide
 // (la page matière affiche « arrivent très bientôt » quand la liste est vide).
-const MATHEMATIQUES_M2: Fiche[] = [ficheNumerationSystemesDeBases];
+const MATHEMATIQUES_M2: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites];
 const MATHEMATIQUES_L3: Fiche[] = [];
 
 // Français : notions 01-18 communes L3/M2. La divergence commence à la
@@ -87,13 +96,21 @@ const FRANCAIS_M2: Fiche[] = [
   ficheCultureLitteraireM2,
 ];
 
+// Sciences et technologie : chantier en cours (plan dans SUIVI_FICHES_SCIENCES.md).
+// Contenu source déjà différencié L3/M2 (18 modules). Le cours disciplinaire et
+// les séances sont communs ; ce qui diffère par niveau (rubrique « Préparer
+// l'épreuve », profondeur, auteurs) est injecté par la fabrique de chaque module.
+// Module pilote en ligne : 01 Unité et diversité du vivant.
+const SCIENCES_L3: Fiche[] = [ficheUniteDiversiteVivantL3];
+const SCIENCES_M2: Fiche[] = [ficheUniteDiversiteVivantM2];
+
 const FICHES: Record<Niveau, Record<Matiere, Fiche[]>> = {
-  l3: { mathematiques: MATHEMATIQUES_L3, francais: FRANCAIS_L3 },
-  m2: { mathematiques: MATHEMATIQUES_M2, francais: FRANCAIS_M2 },
+  l3: { mathematiques: MATHEMATIQUES_L3, francais: FRANCAIS_L3, sciences: SCIENCES_L3 },
+  m2: { mathematiques: MATHEMATIQUES_M2, francais: FRANCAIS_M2, sciences: SCIENCES_M2 },
 };
 
 export function isValidMatiere(value: string): value is Matiere {
-  return value === "mathematiques" || value === "francais";
+  return value === "mathematiques" || value === "francais" || value === "sciences";
 }
 
 export function getFiches(niveau: Niveau, matiere: Matiere): Fiche[] {
