@@ -34,7 +34,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | 11 | Statistiques descriptives (N11) | ✅ | ✅ (MEF + charte en une passe ; variance/écart-type marqués « Seconde » ; annales adoucies ; calculs vérifiés) |
 | 12 | Probabilités (N12) | ✅ | ✅ (MEF + charte en une passe ; simulation tableur incluse ; annales adoucies ; calculs vérifiés) |
 | 13 | Proportionnalité et pourcentages (fusion N13 + N14 + échelle de N20 ; inclure la notion de ratio, attendu 2020) | ✅ | ✅ (fusion faite : proportionnalité + pourcentages + échelle développée de N20 + ratio ajouté ; annales adoucies ; calculs vérifiés) |
-| 14 | Fonctions : notion, linéaires et affines (fusion N15 + N16) | ⬜ | ⬜ |
+| 14 | Fonctions : notion, linéaires et affines (fusion N15 + N16) | ✅ | ✅ (fusion faite : notion de fonction + linéaires/affines ; lien proportionnalité ; annales adoucies ; calculs vérifiés) |
 
 ## Partie 3 — Grandeurs et mesures
 
