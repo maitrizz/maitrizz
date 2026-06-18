@@ -1,6 +1,6 @@
 import type { Fiche } from "@/components/fiche/types";
 
-// Objectifs de la fiche — utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
+// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
 const OBJECTIFS = [
   { id: "e1", label: "Je sais convertir n'importe quel entier d'une base quelconque vers la base 10 (méthode des puissances)" },
   { id: "e2", label: "Je sais convertir de la base 10 vers une base quelconque (divisions successives)" },
@@ -15,7 +15,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
   slug: "numeration-systemes-de-bases",
   matiere: "mathematiques",
   numero: 1,
-  partie: "Partie 1 — Nombres et calcul",
+  partie: "Partie 1 : Nombres et calcul",
   title: "Numération · Systèmes de bases",
   subtitle:
     "Comprendre la numération décimale · Convertir entre bases · Lire et écrire tout entier · Notations scientifiques et préfixes",
@@ -24,19 +24,19 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
     { label: "Programme Seconde · Nombres et calculs", variant: "info" },
   ],
-  metaTitle: "Numération et systèmes de bases (CRPE) — Fiche de révision | Maitrizz",
+  metaTitle: "Numération et systèmes de bases (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
     "Fiche CRPE complète sur la numération : principe positionnel, conversions binaire/octal/hexadécimal, notation scientifique, préfixes du SI et règles d'écriture en lettres. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
       label: "Découvrir",
-      icon: "📖",
+      icon: "",
       tabs: [
     {
       id: "vue-d-ensemble",
       label: "Vue d'ensemble",
-      icon: "🗺️",
+      icon: "",
       blocks: [
         {
           type: "sommaireApercu",
@@ -65,7 +65,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             {
               number: "⑤",
               title: "Écriture en lettres",
-              text: "Les règles d'accord de cent, vingt et mille — sources d'erreurs fréquentes.",
+              text: "Les règles d'accord de cent, vingt et mille, sources d'erreurs fréquentes.",
             },
           ],
         },
@@ -74,23 +74,23 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "cours",
       label: "Cours",
-      icon: "📚",
+      icon: "",
       blocks: [
         {
           type: "callout",
           variant: "info",
-          icon: "🧠",
+          icon: "",
           title: "Avant de commencer",
-          text: "Vous utilisez les nombres depuis l'enfance. Ce Cours va rendre visible ce que vous faites déjà sans y penser — puis étendre ce mécanisme à d'autres bases. **Lisez-le en entier avant de passer à la Méthode.**",
+          text: "Vous utilisez les nombres depuis l'enfance. Ce Cours va rendre visible ce que vous faites déjà sans y penser, puis étendre ce mécanisme à d'autres bases. **Lisez-le en entier avant de passer à la Méthode.**",
         },
         {
           type: "subsection",
           number: "①",
-          title: "Le principe positionnel — la valeur dépend de la position",
+          title: "Le principe positionnel : la valeur dépend de la position",
           blocks: [
             {
               type: "paragraph",
-              text: "**12** et **21** utilisent les mêmes chiffres mais ne valent pas la même chose. La différence, c'est la **position**. Dans notre système, chaque rang vaut 10 fois le rang à sa droite — c'est pour ça qu'on appelle ça le système **décimal**.",
+              text: "**12** et **21** utilisent les mêmes chiffres mais ne valent pas la même chose. La différence, c'est la **position**. Dans notre système, chaque rang vaut 10 fois le rang à sa droite, c'est pour ça qu'on appelle ça le système **décimal**.",
             },
             {
               type: "highlightBox",
@@ -122,7 +122,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                   title: "⚠️ Le zéro occupant",
                   variant: "warning",
                   lines: [
-                    "Dans **4 062**, le zéro n'est pas « rien » — il *occupe* la position des centaines et décale le 4 à la position des milliers.",
+                    "Dans **4 062**, le zéro n'est pas « rien », il *occupe* la position des centaines et décale le 4 à la position des milliers.",
                     "4 062 = 4×1000 + 0×100 + 6×10 + 2",
                     "Sans lui : 462 ≠ 4062. En binaire : 1001₂ ≠ 11₂.",
                   ],
@@ -131,8 +131,8 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                   title: "Additif vs positionnel",
                   variant: "neutral",
                   lines: [
-                    "Système **romain** (additif) : la valeur d'un symbole est fixe — VIII = 5+1+1+1 = 8.",
-                    "Système **décimal** (positionnel) : même chiffre, valeur différente selon la position — le 1 dans 100 vaut 100, dans 10 vaut 10, dans 1 vaut 1.",
+                    "Système **romain** (additif) : la valeur d'un symbole est fixe, VIII = 5+1+1+1 = 8.",
+                    "Système **décimal** (positionnel) : même chiffre, valeur différente selon la position, le 1 dans 100 vaut 100, dans 10 vaut 10, dans 1 vaut 1.",
                     "En romain : IV = 5−1 = 4 (symbole plus petit avant plus grand → soustraction).",
                   ],
                 },
@@ -143,7 +143,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "subsection",
           number: "②",
-          title: "L'indice de base — lire 1101₂ sans se tromper",
+          title: "L'indice de base : lire 1101₂ sans se tromper",
           blocks: [
             {
               type: "paragraph",
@@ -163,14 +163,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
               type: "callout",
               variant: "warning",
               title: "⚠️ Piège classique",
-              text: "1101₂ ≠ 1101. Sans l'indice, on lirait « mille cent un ». Avec l'indice ₂, c'est un binaire qui vaut 13. **Repérer l'indice avant tout calcul — c'est le réflexe numéro 1.**",
+              text: "1101₂ ≠ 1101. Sans l'indice, on lirait « mille cent un ». Avec l'indice ₂, c'est un binaire qui vaut 13. **Repérer l'indice avant tout calcul, c'est le réflexe numéro 1.**",
             },
           ],
         },
         {
           type: "subsection",
           number: "③",
-          title: "Les autres bases — même principe, autre rythme",
+          title: "Les autres bases : même principe, autre rythme",
           blocks: [
             {
               type: "paragraph",
@@ -188,19 +188,19 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             },
             {
               type: "paragraph",
-              text: "En base 2, on n'a que 0 et 1 — dès qu'on veut écrire 2, on n'a plus de chiffre disponible : on passe au rang suivant et on écrit **10₂**. Même logique qu'en base 10 où après 9 on écrit 10.",
+              text: "En base 2, on n'a que 0 et 1, dès qu'on veut écrire 2, on n'a plus de chiffre disponible : on passe au rang suivant et on écrit **10₂**. Même logique qu'en base 10 où après 9 on écrit 10.",
             },
             {
               type: "cardGrid",
               columns: 3,
               cards: [
                 {
-                  title: "Base 10 — décimal",
+                  title: "Base 10 : décimal",
                   variant: "info",
                   lines: ["Chiffres : **0 à 9**", "Passage au rang : tous les **10**", "Notation : 345"],
                 },
                 {
-                  title: "Base 2 — binaire",
+                  title: "Base 2 : binaire",
                   variant: "success",
                   lines: [
                     "Chiffres : **0 et 1**",
@@ -210,7 +210,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                   ],
                 },
                 {
-                  title: "Base 16 — hexadécimal",
+                  title: "Base 16 : hexadécimal",
                   variant: "warning",
                   lines: [
                     "Chiffres : **0–9 puis A–F**",
@@ -224,7 +224,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             {
               type: "highlightBox",
               variant: "neutral",
-              title: "La même formule dans chaque base — chiffre × base^position",
+              title: "La même formule dans chaque base : chiffre × base^position",
               blocks: [
                 {
                   type: "formulaBlock",
@@ -242,17 +242,17 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "subsection",
           number: "④",
-          title: "Notation scientifique et préfixes — lire les très grands et très petits nombres",
+          title: "Notation scientifique et préfixes : lire les très grands et très petits nombres",
           blocks: [
             {
               type: "highlightBox",
               variant: "marine",
-              icon: "📐",
+              icon: "",
               title: "La notation scientifique",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Forme : **a × 10ⁿ** avec **1 ≤ a < 10** et n entier.\nOn l'utilise pour éviter d'écrire des dizaines de zéros — et pour comparer des grandeurs très différentes.",
+                  text: "Forme : **a × 10ⁿ** avec **1 ≤ a < 10** et n entier.\nOn l'utilise pour éviter d'écrire des dizaines de zéros, et pour comparer des grandeurs très différentes.",
                 },
                 {
                   type: "cardGrid",
@@ -279,8 +279,8 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             {
               type: "highlightBox",
               variant: "neutral",
-              icon: "📏",
-              title: "Les préfixes du Système International (SI) — ils s'appliquent à toutes les unités",
+              icon: "",
+              title: "Les préfixes du Système International (SI) : ils s'appliquent à toutes les unités",
               blocks: [
                 {
                   type: "paragraph",
@@ -295,7 +295,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                     ["kilo", "k", "10³", "1 000", "km, kg, ko, kW"],
                     ["hecto", "h", "10²", "100", "hm, hg, ha"],
                     ["déca", "da", "10¹", "10", "dam, dag, dal"],
-                    ["**unité de base**", "—", "**10⁰**", "**1**", "m, g, l, s, octet…"],
+                    ["**unité de base**", "", "**10⁰**", "**1**", "m, g, l, s, octet…"],
                     ["déci", "d", "10⁻¹", "0,1", "dm, dg, dl"],
                     ["centi", "c", "10⁻²", "0,01", "cm, cg, cl"],
                     ["milli", "m", "10⁻³", "0,001", "mm, mg, ms, ml"],
@@ -314,8 +314,8 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             {
               type: "callout",
               variant: "info",
-              icon: "🔌",
-              title: "Bit et octet — spécifiques au numérique",
+              icon: "",
+              title: "Bit et octet : spécifiques au numérique",
               text: "Un **bit** = le plus petit élément d'information, vaut 0 ou 1. · Un **octet** = 8 bits.\nLes préfixes SI s'appliquent aux octets : 1 Go = 10⁹ octets = 8 × 10⁹ bits\n*Exemple : une clé USB de 8 Go → 8 × 10⁹ × 8 = **6,4 × 10¹⁰ bits***",
             },
           ],
@@ -323,13 +323,13 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "subsection",
           number: "⑤",
-          title: "Écriture en lettres — les 3 règles d'accord",
+          title: "Écriture en lettres : les 3 règles d'accord",
           blocks: [
             {
               type: "highlightBox",
               variant: "marine",
-              icon: "📝",
-              title: "Les 3 règles — tout le reste s'en déduit",
+              icon: "",
+              title: "Les 3 règles : tout le reste s'en déduit",
               blocks: [
                 {
                   type: "comparisonGrid",
@@ -346,7 +346,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                     },
                     {
                       label: "MILLE",
-                      good: "Toujours invariable — jamais de -s\n2 000 → deux **mille** · 5 000 → cinq **mille** · jamais *deux ~~milles~~*",
+                      good: "Toujours invariable, jamais de -s\n2 000 → deux **mille** · 5 000 → cinq **mille** · jamais *deux ~~milles~~*",
                     },
                   ],
                 },
@@ -357,7 +357,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
               columns: 2,
               cards: [
                 {
-                  title: "📌 Tirets",
+                  title: "Tirets",
                   variant: "info",
                   lines: [
                     "Réforme 1990 + arrêté 2021 : tirets généralisés autorisés.",
@@ -365,7 +365,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                   ],
                 },
                 {
-                  title: "🇫🇷 Bizarrerie du français",
+                  title: "Bizarrerie du français",
                   variant: "warning",
                   lines: [
                     "70 = soixante-dix (60+10)",
@@ -391,16 +391,16 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "piegeCard",
           variant: "rouge",
-          title: "⚠️ Piège n°1 — Ne pas voir l'indice de base",
+          title: "⚠️ Piège n°1 : Ne pas voir l'indice de base",
           badge: "Erreur très fréquente",
           faux: "Lire 1101₂ comme « mille cent un »",
-          vrai: "Le ₂ indique la base 2 — ce nombre vaut **13** en décimal, pas 1101.",
+          vrai: "Le ₂ indique la base 2, ce nombre vaut **13** en décimal, pas 1101.",
           methode: "Réflexe : chercher l'indice avant tout calcul. Sans indice → base 10.",
         },
         {
           type: "piegeCard",
           variant: "rouge",
-          title: "Piège n°2 — Lire les restes dans le mauvais sens",
+          title: "Piège n°2 : Lire les restes dans le mauvais sens",
           badge: "Erreur n°1 en conversion",
           faux: "Convertir 13 → base 2 : restes 1,0,1,1 → écrire 1011₂",
           vrai: "On lit de BAS en HAUT → **1101₂**. Vérification : 8+4+0+1 = 13 ✓",
@@ -409,7 +409,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "piegeCard",
           variant: "orange",
-          title: "Piège n°3 — Oublier les zéros intercalaires",
+          title: "Piège n°3 : Oublier les zéros intercalaires",
           badge: "Très fréquent",
           faux: "45 = 32+8+4+1 → écrire 10111₂ (zéro oublié en position 1)",
           vrai: "Positions occupées : 5,3,2,0 → positions vides : 4 et 1 → **101101₂**",
@@ -417,13 +417,13 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         },
         {
           type: "primaireBox",
-          title: "🏫 Ce que ça donne à l'école primaire — le regard du futur enseignant",
-          text: "**Maternelle :** construction du nombre comme cardinal (dénombrer) et ordinal (rang). Pas encore de système positionnel.\n\n**CP-CE2 :** le principe positionnel s'installe. L'élève apprend que dans 34, le « 3 » vaut 30. Outil clé : le tableau de numération (centaines/dizaines/unités). Obstacle documenté par Éduscol : le **zéro occupant** — un enfant écrit « 105 » pour « 1050 » parce qu'il n'entend pas le zéro des dizaines.\n\n**Ce que vous devez savoir dire :** « Notre système est positionnel et décimal — la valeur d'un chiffre dépend de sa position, chaque rang vaut 10 fois le précédent. Travailler en base 2 ou 5 au collège permet aux élèves de prendre conscience de ce principe en le voyant dans un autre contexte. »",
+          title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
+          text: "**Maternelle :** construction du nombre comme cardinal (dénombrer) et ordinal (rang). Pas encore de système positionnel.\n\n**CP-CE2 :** le principe positionnel s'installe. L'élève apprend que dans 34, le « 3 » vaut 30. Outil clé : le tableau de numération (centaines/dizaines/unités). Obstacle documenté par Éduscol : le **zéro occupant**, un enfant écrit « 105 » pour « 1050 » parce qu'il n'entend pas le zéro des dizaines.\n\n**Ce que vous devez savoir dire :** « Notre système est positionnel et décimal, la valeur d'un chiffre dépend de sa position, chaque rang vaut 10 fois le précédent. Travailler en base 2 ou 5 au collège permet aux élèves de prendre conscience de ce principe en le voyant dans un autre contexte. »",
         },
         {
           type: "ctaBox",
           text: "Cours bien en tête ? Passez à la méthode →",
-          buttonLabel: "🔢 Voir la méthode pas-à-pas",
+          buttonLabel: "Voir la méthode pas-à-pas",
           targetTab: "methode",
         },
       ],
@@ -431,18 +431,18 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "methode",
       label: "Méthode",
-      icon: "🔢",
+      icon: "",
       blocks: [
         {
           type: "callout",
           variant: "success",
-          icon: "🤝",
+          icon: "",
           title: "Si cette notion vous a toujours semblé abstraite, vous êtes au bon endroit",
-          text: "Chaque méthode ci-dessous part de ce que vous faites déjà sans y penser avec les nombres décimaux : on le rend visible, puis on l'applique à d'autres bases. **Trois types de questions** peuvent tomber au concours — on les traite dans l'ordre, et chacune se termine par une vérification rapide pour avancer en confiance.",
+          text: "Chaque méthode ci-dessous part de ce que vous faites déjà sans y penser avec les nombres décimaux : on le rend visible, puis on l'applique à d'autres bases. **Trois types de questions** peuvent tomber au concours, on les traite dans l'ordre, et chacune se termine par une vérification rapide pour avancer en confiance.",
         },
         {
           type: "rappelExpress",
-          title: "⚡ Rappel express — deux notions que vous utiliserez dans les méthodes ci-dessous",
+          title: "Rappel express : deux notions que vous utiliserez dans les méthodes ci-dessous",
           blocks: [
             {
               type: "paragraph",
@@ -451,7 +451,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             {
               type: "formulaBlock",
               lines: [
-                "2⁰ = 1 (tout nombre à la puissance 0 vaut 1 — convention à retenir)",
+                "2⁰ = 1 (tout nombre à la puissance 0 vaut 1, convention à retenir)",
                 "2¹ = 2",
                 "2² = 2 × 2 = 4",
                 "2³ = 2 × 2 × 2 = 8",
@@ -481,14 +481,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "methodeGroup",
           number: "①",
-          title: "Lire un nombre en base b — le convertir en décimal",
+          title: "Lire un nombre en base b : le convertir en décimal",
           intro:
-            "**Question typique :** « Convertir 1101₂ en base 10. »\n**Bonne nouvelle :** vous savez déjà faire ça — vous le faites en base 10 sans y penser. On va d'abord rendre visible ce que vous faites mentalement avec 345, puis appliquer exactement la même logique à 1101₂.",
+            "**Question typique :** « Convertir 1101₂ en base 10. »\n**Bonne nouvelle :** vous savez déjà faire ça, vous le faites en base 10 sans y penser. On va d'abord rendre visible ce que vous faites mentalement avec 345, puis appliquer exactement la même logique à 1101₂.",
           preBlocks: [
             {
               type: "highlightBox",
               variant: "neutral",
-              title: "Ce que vous faites déjà en base 10 avec 345 — sans le formaliser",
+              title: "Ce que vous faites déjà en base 10 avec 345 : sans le formaliser",
               blocks: [
                 {
                   type: "cardGrid",
@@ -517,7 +517,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                 },
                 {
                   type: "paragraph",
-                  text: "👉 **La règle :** chaque chiffre est multiplié par **10 élevé à sa position** (0 à droite, 1 ensuite, 2 ensuite…). On additionne. C'est tout.\nEn base 2, on fait exactement la même chose — mais on multiplie par **2 élevé à sa position** au lieu de 10.",
+                  text: "**La règle :** chaque chiffre est multiplié par **10 élevé à sa position** (0 à droite, 1 ensuite, 2 ensuite…). On additionne. C'est tout.\nEn base 2, on fait exactement la même chose, mais on multiplie par **2 élevé à sa position** au lieu de 10.",
                 },
               ],
             },
@@ -550,14 +550,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             },
             {
               number: "3",
-              text: "**Additionner — comme pour 300+40+5, on additionne les valeurs.**",
+              text: "**Additionner, comme pour 300+40+5, on additionne les valeurs.**",
               example: {
                 lines: ["  8 + 4 + 0 + 1  =  **13**", "", "  ✓  1101₂  =  13  en décimal"],
               },
             },
             {
               number: "💡",
-              text: "**Mémorisez les puissances de 2 — elles remplacent les \"centaines, dizaines, unités\" de la base 10.**",
+              text: "**Mémorisez les puissances de 2, elles remplacent les \"centaines, dizaines, unités\" de la base 10.**",
               example: {
                 lines: [
                   "  2⁰ =   1    (comme 10⁰ = 1    → les \"unités\")",
@@ -579,7 +579,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "exerciceCard",
           variant: "standard",
-          title: "✅ Checkpoint — à vous de jouer",
+          title: "Checkpoint : à vous de jouer",
           badge: "30 secondes",
           question: "Convertir 110₂ en base 10, en détaillant le calcul comme ci-dessus.",
           correction: [
@@ -595,7 +595,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           number: "②",
           title: "Convertir un nombre décimal vers une autre base",
           intro:
-            "**Question typique :** « Convertir 13 en base 2. »\n**Idée de base :** on va diviser le nombre par la base, encore et encore. Les restes qu'on collecte en chemin forment le résultat — mais dans le sens inverse de lecture.",
+            "**Question typique :** « Convertir 13 en base 2. »\n**Idée de base :** on va diviser le nombre par la base, encore et encore. Les restes qu'on collecte en chemin forment le résultat, mais dans le sens inverse de lecture.",
           steps: [
             {
               number: "1",
@@ -607,7 +607,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                   "         (on reprend ça)     (on garde ça)",
                 ],
               },
-              exampleNote: "Vérification : 2 × 6 = 12, et 12 + 1 = 13 ✓ — ce reste (1) sera l'un des chiffres du résultat.",
+              exampleNote: "Vérification : 2 × 6 = 12, et 12 + 1 = 13 ✓, ce reste (1) sera l'un des chiffres du résultat.",
             },
             {
               number: "2",
@@ -619,13 +619,13 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                   "   3 ÷ 2  =  1   reste  **1**   ← 3e  reste (position 2)",
                   "   1 ÷ 2  =  0   reste  **1**   ← 4e  reste (position 3)",
                   "                   ↑",
-                  "              STOP — quotient = 0",
+                  "              STOP, quotient = 0",
                 ],
               },
             },
             {
               number: "3",
-              text: "**Lire les restes de BAS en HAUT — le dernier reste est le chiffre le plus à gauche.**",
+              text: "**Lire les restes de BAS en HAUT, le dernier reste est le chiffre le plus à gauche.**",
               example: {
                 lines: [
                   "  Restes obtenus (de haut en bas) :   1   0   1   1",
@@ -641,7 +641,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                   type: "callout",
                   variant: "warning",
                   title: "Pourquoi de bas en haut ?",
-                  text: "Le 1er reste correspond à la position 0 (les unités) — il va donc le plus à droite. Le dernier reste correspond à la position la plus haute — il va le plus à gauche. D'où la lecture inversée.",
+                  text: "Le 1er reste correspond à la position 0 (les unités), il va donc le plus à droite. Le dernier reste correspond à la position la plus haute, il va le plus à gauche. D'où la lecture inversée.",
                 },
               ],
             },
@@ -655,14 +655,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                   "        =  **13  ✓**   ← on retrouve bien le nombre de départ",
                 ],
               },
-              warn: "⚠️ Ne jamais sauter la vérification — 10 secondes max. Si le résultat ne correspond pas, vous avez lu les restes dans le mauvais sens. C'est l'erreur numéro 1.",
+              warn: "⚠️ Ne jamais sauter la vérification, 10 secondes max. Si le résultat ne correspond pas, vous avez lu les restes dans le mauvais sens. C'est l'erreur numéro 1.",
             },
           ],
         },
         {
           type: "exerciceCard",
           variant: "standard",
-          title: "✅ Checkpoint — à vous de jouer",
+          title: "Checkpoint : à vous de jouer",
           badge: "30 secondes",
           question: "Convertir 9 en base 2 par divisions successives.",
           correction: [
@@ -674,20 +674,20 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "methodeGroup",
           number: "③",
-          title: "Écrire un nombre en toutes lettres — ou le lire",
+          title: "Écrire un nombre en toutes lettres : ou le lire",
           intro:
-            "**Question typique :** « Écrire 4 507 en toutes lettres » ou « Quel nombre est quatre-vingt-douze ? »\nLa procédure est simple — c'est l'orthographe qui piège. Les 3 règles ci-dessous suffisent.",
+            "**Question typique :** « Écrire 4 507 en toutes lettres » ou « Quel nombre est quatre-vingt-douze ? »\nLa procédure est simple, c'est l'orthographe qui piège. Les 3 règles ci-dessous suffisent.",
           steps: [
             {
-              number: "→",
+              number: "1",
               text: "**Écrire rang par rang de gauche à droite, ignorer les zéros.**",
               example: {
                 lines: ["  4 507  →  quatre mille  cinq cent  sept", "               (0 dizaines → on l'ignore)"],
               },
             },
             {
-              number: "📌",
-              text: "**Les 3 règles d'accord à mémoriser — tout le reste s'en déduit.**",
+              number: "2",
+              text: "**Les 3 règles d'accord à mémoriser, tout le reste s'en déduit.**",
               extra: [
                 {
                   type: "table",
@@ -709,7 +709,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "exerciceCard",
           variant: "standard",
-          title: "✅ Checkpoint — à vous de jouer",
+          title: "Checkpoint : à vous de jouer",
           badge: "30 secondes",
           question: "Écrire 91 en toutes lettres.",
           correction: [
@@ -720,7 +720,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "ctaBox",
           text: "Méthode bien en tête ? Testez-vous →",
-          buttonLabel: "🧪 Lancer le Quiz éclair",
+          buttonLabel: "Lancer le Quiz éclair",
           targetTab: "quiz",
         },
       ],
@@ -730,19 +730,19 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "pratiquer",
       label: "Pratiquer",
-      icon: "🎯",
+      icon: "",
       tabs: [
     {
       id: "quiz",
       label: "Quiz éclair",
-      icon: "🧪",
+      icon: "",
       blocks: [
         {
           type: "callout",
           variant: "info",
-          icon: "🧪",
+          icon: "",
           title: "Avant de passer aux exercices",
-          text: "11 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Chaque réponse alimente votre suivi de maîtrise — retrouvez le détail objectif par objectif dans l'onglet **Auto-évaluation**, avec la date de votre prochaine révision.",
+          text: "11 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Chaque réponse alimente votre suivi de maîtrise, retrouvez le détail objectif par objectif dans l'onglet **Auto-évaluation**, avec la date de votre prochaine révision.",
         },
         {
           type: "quizBlock",
@@ -758,7 +758,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
               ],
               correctIndex: 1,
               explanation:
-                "L'indice ₂ indique la **base**, pas une opération à effectuer. Sans repérer cet indice, on lirait à tort « mille cent un » — c'est le piège n°1 de cette notion.",
+                "L'indice ₂ indique la **base**, pas une opération à effectuer. Sans repérer cet indice, on lirait à tort « mille cent un », c'est le piège n°1 de cette notion.",
             },
             {
               objectifId: "e1",
@@ -781,7 +781,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                 "Pour convertir un nombre décimal en base 2 par divisions successives, dans quel ordre faut-il lire les restes obtenus ?",
               options: [
                 "De haut en bas, dans l'ordre où on les calcule",
-                "De bas en haut — le dernier reste calculé devient le chiffre le plus à gauche",
+                "De bas en haut, le dernier reste calculé devient le chiffre le plus à gauche",
                 "Seul le dernier reste compte, les autres sont ignorés",
                 "Dans n'importe quel ordre, le résultat est le même",
               ],
@@ -846,7 +846,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
               ],
               correctIndex: 1,
               explanation:
-                "C'est le **zéro occupant** : sans lui, 462 ≠ 4062. Il occupe la position des centaines et décale le 4 à la position des milliers — un point d'appui essentiel pour comprendre les difficultés des élèves de cycle 2.",
+                "C'est le **zéro occupant** : sans lui, 462 ≠ 4062. Il occupe la position des centaines et décale le 4 à la position des milliers, un point d'appui essentiel pour comprendre les difficultés des élèves de cycle 2.",
             },
             {
               objectifId: "e6",
@@ -867,7 +867,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "ctaBox",
           text: "Quiz terminé ? Direction l'Application pour des exercices plus complets →",
-          buttonLabel: "🎯 Voir l'Application",
+          buttonLabel: "Voir l'Application",
           targetTab: "appli",
         },
       ],
@@ -875,7 +875,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "appli",
       label: "Application",
-      icon: "🎯",
+      icon: "",
       blocks: [
         {
           type: "callout",
@@ -885,15 +885,15 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "niveauBanner",
           level: "echauffement",
-          stars: "✅",
-          label: "Échauffement — Je vérifie que j'ai compris le Cours",
+          stars: "",
+          label: "Échauffement : Je vérifie que j'ai compris le Cours",
           sub: "Questions directes, une seule chose à la fois",
         },
         {
           type: "exerciceCard",
           variant: "standard",
           level: "echauffement",
-          title: "Question 1 — L'indice de base",
+          title: "Question 1 : L'indice de base",
           question:
             "Pour chaque nombre, dire dans quelle base il est écrit et ce que ça signifie :\na) 101₂   b) 1F₁₆   c) 347   d) 25₈",
           correction: [
@@ -907,21 +907,21 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           type: "exerciceCard",
           variant: "standard",
           level: "echauffement",
-          title: "Question 2 — Valeur positionnelle en base 10",
+          title: "Question 2 : Valeur positionnelle en base 10",
           question: "Dans le nombre **4 253**, quelle est la valeur du chiffre…\na) 4   b) 2   c) 5   d) 3",
           correction: [
             { type: "line", label: "a)", text: "Le **4** est en position 3 → 4 × 10³ = 4 × 1000 = **4 000**" },
             { type: "line", label: "b)", text: "Le **2** est en position 2 → 2 × 10² = 2 × 100 = **200**" },
             { type: "line", label: "c)", text: "Le **5** est en position 1 → 5 × 10¹ = 5 × 10 = **50**" },
             { type: "line", label: "d)", text: "Le **3** est en position 0 → 3 × 10⁰ = 3 × 1 = **3**" },
-            { type: "note", text: "Vérification : 4000 + 200 + 50 + 3 = 4 253 ✓ — c'est exactement ce qu'on va faire en base 2." },
+            { type: "note", text: "Vérification : 4000 + 200 + 50 + 3 = 4 253 ✓, c'est exactement ce qu'on va faire en base 2." },
           ],
         },
         {
           type: "exerciceCard",
           variant: "standard",
           level: "echauffement",
-          title: "Question 3 — Premiers pas en binaire",
+          title: "Question 3 : Premiers pas en binaire",
           question: "Convertir en base 10 ces nombres binaires très simples :\na) 1₂   b) 10₂   c) 100₂   d) 11₂   e) 101₂",
           correction: [
             { type: "line", label: "a)", text: "1₂ = 1×2⁰ = 1×1 = **1**" },
@@ -931,7 +931,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             { type: "line", label: "e)", text: "101₂ = 1×2² + 0×2¹ + 1×2⁰ = 4+0+1 = **5**" },
             {
               type: "note",
-              text: "**Vous voyez le schéma ?** 1₂=1, 10₂=2, 100₂=4 — en base 2, chaque fois qu'on ajoute un 0 à droite, on double la valeur. Comme en base 10 ajouter un 0 multiplie par 10.",
+              text: "**Vous voyez le schéma ?** 1₂=1, 10₂=2, 100₂=4, en base 2, chaque fois qu'on ajoute un 0 à droite, on double la valeur. Comme en base 10 ajouter un 0 multiplie par 10.",
             },
           ],
         },
@@ -939,7 +939,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           type: "exerciceCard",
           variant: "standard",
           level: "echauffement",
-          title: "Question 4 — Écriture en lettres",
+          title: "Question 4 : Écriture en lettres",
           objectifTag: "Écriture en lettres",
           question: "Écrire en lettres, en faisant attention aux accords :\na) 80   b) 81   c) 200   d) 205   e) 2 000",
           correction: [
@@ -954,14 +954,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           type: "niveauBanner",
           level: "n1",
           stars: "★☆☆",
-          label: "Niveau 1 — Calcul direct",
+          label: "Niveau 1 : Calcul direct",
           sub: "Application immédiate du Cours",
         },
         {
           type: "exerciceCard",
           variant: "standard",
           level: "n1",
-          title: "Exercice 1 — Conversion base 2 → décimal",
+          title: "Exercice 1 : Conversion base 2 → décimal",
           objectifTag: "Conversion base b → décimal",
           question: "Convertir en base 10, en explicitant les calculs :\na) 1010₂   b) 11111₂   c) 100001₂",
           correction: [
@@ -970,7 +970,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             { type: "line", label: "c)", text: "100001₂ = 32+1 = **33**" },
             {
               type: "note",
-              text: "**⚠️ c)** Les quatre zéros intermédiaires contribuent 0 à la somme — à noter explicitement pour ne pas les oublier.",
+              text: "**⚠️ c)** Les quatre zéros intermédiaires contribuent 0 à la somme, à noter explicitement pour ne pas les oublier.",
             },
           ],
         },
@@ -978,7 +978,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           type: "exerciceCard",
           variant: "standard",
           level: "n1",
-          title: "Exercice 2 — Conversion décimal → base 2",
+          title: "Exercice 2 : Conversion décimal → base 2",
           objectifTag: "Conversion décimal → base b",
           question: "Convertir en binaire par divisions successives :\na) 19   b) 42   c) 100",
           correction: [
@@ -991,7 +991,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           type: "exerciceCard",
           variant: "standard",
           level: "n1",
-          title: "Exercice 3 — Hexadécimal ↔ décimal",
+          title: "Exercice 3 : Hexadécimal ↔ décimal",
           objectifTag: "Chiffres hexadécimaux A–F",
           question: "a) Convertir 1F₁₆ en décimal.   b) Convertir 255 en hexadécimal.",
           correction: [
@@ -999,7 +999,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             { type: "line", label: "b)", text: "255÷16=15 r15 · 15÷16=0 r15 → restes = 15,15 = F,F → **FF₁₆**" },
             {
               type: "note",
-              text: "**Remarque :** FF₁₆ = 255₁₀ est la valeur maximale d'un octet (8 bits). Utile pour les questions sur le codage numérique (N°37).",
+              text: "**Remarque :** FF₁₆ = 255₁₀ est la valeur maximale d'un octet (8 bits). Utile pour les questions sur le codage numérique.",
             },
           ],
         },
@@ -1007,14 +1007,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           type: "niveauBanner",
           level: "n2",
           stars: "★★☆",
-          label: "Niveau 2 — Mise en contexte",
+          label: "Niveau 2 : Mise en contexte",
           sub: "Problèmes concrets, plusieurs étapes",
         },
         {
           type: "exerciceCard",
           variant: "standard",
           level: "n2",
-          title: "Exercice 4 — Numération et valeur positionnelle",
+          title: "Exercice 4 : Numération et valeur positionnelle",
           objectifTag: "Analyser une erreur d'élève",
           enonce:
             "En CE2, une enseignante demande à ses élèves d'écrire « quatre mille soixante-deux » en chiffres. Trois élèves rendent : Léa → 4062 · Paul → 4620 · Sami → 40062.",
@@ -1025,7 +1025,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             {
               type: "line",
               label: "b)",
-              text: "**Paul (4620)** confond « soixante-deux » avec 620 — obstacle de la numération orale française (60+2 est entendu comme « six-deux »). **Sami (40062)** ajoute un zéro superflu pour les centaines ET les dizaines — obstacle du zéro intercalaire : il écrit 0 à toutes les positions qu'il « n'entend pas ».",
+              text: "**Paul (4620)** confond « soixante-deux » avec 620, obstacle de la numération orale française (60+2 est entendu comme « six-deux »). **Sami (40062)** ajoute un zéro superflu pour les centaines ET les dizaines, obstacle du zéro intercalaire : il écrit 0 à toutes les positions qu'il « n'entend pas ».",
             },
             {
               type: "line",
@@ -1034,7 +1034,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             },
             {
               type: "note",
-              text: "**🏫 Angle CRPE :** distinguer les deux obstacles (numération orale vs zéro intercalaire) montre une connaissance didactique qui valorise la copie.",
+              text: "**Angle CRPE :** distinguer les deux obstacles (numération orale vs zéro intercalaire) montre une connaissance didactique qui valorise la copie.",
             },
           ],
         },
@@ -1042,7 +1042,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           type: "exerciceCard",
           variant: "standard",
           level: "n2",
-          title: "Exercice 5 — Notation scientifique et préfixes",
+          title: "Exercice 5 : Notation scientifique et préfixes",
           question:
             "a) Écrire 0,000 047 en notation scientifique.\nb) Une clé USB stocke 8 Go. Exprimer cette capacité en octets puis en bits.\nc) La distance Terre-Lune est de 3,84×10⁵ km. L'exprimer en mètres en notation scientifique.",
           correction: [
@@ -1059,14 +1059,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
           type: "niveauBanner",
           level: "n3",
           stars: "★★★",
-          label: "Niveau 3 — Raisonnement ouvert",
+          label: "Niveau 3 : Raisonnement ouvert",
           sub: "Justification · démonstration · question ouverte",
         },
         {
           type: "exerciceCard",
           variant: "standard",
           level: "n3",
-          title: "Exercice 6 — Bases et raisonnement",
+          title: "Exercice 6 : Bases et raisonnement",
           question:
             "a) Montrer que tout nombre entier naturel peut s'écrire sous la forme d'une somme de puissances distinctes de 2 (écriture binaire).\nb) En base b, combien de nombres distincts peut-on écrire avec exactement n chiffres ?\nc) Quel est le plus grand nombre entier qu'on peut écrire avec 8 chiffres en base 2 ? Qu'est-ce que cela représente en informatique ?",
           correction: [
@@ -1092,17 +1092,17 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "crpe",
       label: "Type CRPE",
-      icon: "📄",
+      icon: "",
       blocks: [
         {
           type: "callout",
           variant: "success",
-          text: "Ces exercices reproduisent exactement le format des sujets officiels. Les sujets issus d'annales réelles sont identifiés par le badge ✦ ANNALE.",
+          text: "Ces exercices reproduisent exactement le format des sujets officiels. Les sujets issus d'annales réelles sont identifiés par le badge ANNALE.",
         },
         {
           type: "exerciceCard",
           variant: "crpe",
-          title: "📄 Type CRPE · Exercice 7",
+          title: "Type CRPE · Exercice 7",
           enonce:
             "Dans une classe de CM2, un enseignant travaille sur la numération dans différentes bases. Il propose l'activité suivante : « En base 5, on utilise les chiffres 0, 1, 2, 3, 4. Écrire les nombres de 0 à 12 en base 5, puis calculer 23₅ + 14₅. »",
           question:
@@ -1127,15 +1127,15 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             },
             {
               type: "paragraph",
-              text: "**3.** Travailler en base 5 permet aux élèves de *décontextualiser* la numération décimale — ils prennent conscience que le principe positionnel est une structure, pas une évidence. Ils comprennent que « 10 » signifie simplement « une unité d'ordre supérieur », quelle que soit la base. Cela renforce la compréhension des retenues dans les algorithmes opératoires (Éduscol, guide numération).",
+              text: "**3.** Travailler en base 5 permet aux élèves de *décontextualiser* la numération décimale, ils prennent conscience que le principe positionnel est une structure, pas une évidence. Ils comprennent que « 10 » signifie simplement « une unité d'ordre supérieur », quelle que soit la base. Cela renforce la compréhension des retenues dans les algorithmes opératoires (Éduscol, guide numération).",
             },
           ],
         },
         {
           type: "exerciceCard",
-          variant: "annale",
-          title: "📄 Type CRPE · Exercice 8",
-          badge: "✦ D'après INSPE Strasbourg",
+          variant: "crpe",
+          title: "Type CRPE · Exercice 8",
+          badge: "Type concours",
           enonce:
             "Parties A et B indépendantes.\n**Partie A :** Un nombre est écrit 1010102 en base 2.\n**Partie B :** Convertir 255 en base 2 et en base 16.",
           question:
@@ -1165,7 +1165,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "cote-prof",
       label: "Côté prof",
-      icon: "🔴",
+      icon: "",
       blocks: [
         {
           type: "callout",
@@ -1175,7 +1175,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "exerciceCard",
           variant: "err-type",
-          title: "🔴 Erreur type · Exercice 9",
+          title: "Erreur type · Exercice 9",
           enonce: "**Copie d'un candidat :** Convertir 13 en base 2.\n*Réponse produite :*",
           enonceCode: [
             "13 ÷ 2 = 6 reste 1",
@@ -1202,14 +1202,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             },
             {
               type: "note",
-              text: "**⚠️ Erreur systématique :** c'est l'erreur n°1 sur la méthode des divisions successives. La règle « on lit de bas en haut » doit être un automatisme — le mnémo « fusée qui décolle » aide à la mémoriser.",
+              text: "**⚠️ Erreur systématique :** c'est l'erreur n°1 sur la méthode des divisions successives. La règle « on lit de bas en haut » doit être un automatisme, le mnémo « fusée qui décolle » aide à la mémoriser.",
             },
           ],
         },
         {
           type: "exerciceCard",
           variant: "err-type",
-          title: "🔴 Erreur type · Exercice 10",
+          title: "Erreur type · Exercice 10",
           enonce:
             "**Copie d'un candidat :** Convertir 45 en binaire.\n*Réponse produite :* « 45 = 32+8+5 = 2⁵+2³+5 → **10111₂** »",
           question: "Identifier toutes les erreurs dans ce raisonnement et écrire la correction complète.",
@@ -1220,11 +1220,11 @@ export const ficheNumerationSystemesDeBases: Fiche = {
               items: [
                 {
                   bad: true,
-                  text: "**Erreur 1 :** 32+8+5 ≠ 45 (32+8=40, pas 45). La décomposition est fausse — le candidat n'a pas terminé le travail.",
+                  text: "**Erreur 1 :** 32+8+5 ≠ 45 (32+8=40, pas 45). La décomposition est fausse, le candidat n'a pas terminé le travail.",
                 },
                 {
                   bad: true,
-                  text: "**Erreur 2 :** même si la décomposition était correcte, « 5 » n'est pas une puissance de 2 — on ne peut pas l'utiliser directement en binaire.",
+                  text: "**Erreur 2 :** même si la décomposition était correcte, « 5 » n'est pas une puissance de 2, on ne peut pas l'utiliser directement en binaire.",
                 },
                 { text: "**Bonne décomposition :** 45 = 32+8+4+1 = 2⁵+2³+2²+2⁰" },
                 { text: "**Positions occupées :** 5, 3, 2, 0 → 1 aux positions 5,3,2,0 et 0 aux positions 4,1" },
@@ -1241,7 +1241,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
         {
           type: "exerciceCard",
           variant: "err-type",
-          title: "🔴 Erreur type · Exercice 11 — Analyse didactique",
+          title: "Erreur type · Exercice 11 : Analyse didactique",
           enonce:
             "Un élève de CE2 écrit : « quatre-vingt-douze = 4 0 0 9 2 » (il place chaque mot dans une case du tableau de numération). Il obtient ainsi un nombre à 5 chiffres.",
           question:
@@ -1260,7 +1260,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             {
               type: "line",
               label: "c)",
-              text: "En français, « quatre-vingt-douze » = 4×20+12 — une logique additive vigesimale (base 20), héritée du gaulois. Elle entre en conflit avec la logique décimale de position : un élève qui a compris « cinquante = 5 dizaines » ne peut pas généraliser directement à « quatre-vingt = 4 fois 20 ». C'est un obstacle documenté, absent dans d'autres langues (anglais : ninety-two = logique directe).",
+              text: "En français, « quatre-vingt-douze » = 4×20+12, une logique additive vigesimale (base 20), héritée du gaulois. Elle entre en conflit avec la logique décimale de position : un élève qui a compris « cinquante = 5 dizaines » ne peut pas généraliser directement à « quatre-vingt = 4 fois 20 ». C'est un obstacle documenté, absent dans d'autres langues (anglais : ninety-two = logique directe).",
             },
           ],
         },
@@ -1271,12 +1271,12 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "reviser",
       label: "Réviser",
-      icon: "⚡",
+      icon: "",
       tabs: [
     {
       id: "flash",
       label: "Flashcards",
-      icon: "⚡",
+      icon: "",
       blocks: [
         {
           type: "callout",
@@ -1289,14 +1289,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
             {
               question: "Quelle est la différence entre un système de numération additif et un système positionnel ?",
               answer:
-                "Dans un système **additif**, la valeur de chaque symbole est fixe — on additionne les valeurs (ex. romain : VII = 7). Dans un système **positionnel**, la valeur d'un chiffre dépend de sa position — le même chiffre vaut des quantités différentes selon sa place (ex. le 3 dans 305 vaut 300, dans 53 vaut 3).",
+                "Dans un système **additif**, la valeur de chaque symbole est fixe, on additionne les valeurs (ex. romain : VII = 7). Dans un système **positionnel**, la valeur d'un chiffre dépend de sa position, le même chiffre vaut des quantités différentes selon sa place (ex. le 3 dans 305 vaut 300, dans 53 vaut 3).",
               astuce:
                 "**Méthode :** donner un exemple concret de chaque type, et expliquer pourquoi le système positionnel est plus puissant pour le calcul.",
             },
             {
               question: "Pourquoi dit-on que le zéro est « l'invention la plus importante » de la numération ?",
               answer:
-                "Le zéro remplit deux rôles fondamentaux dans la numération positionnelle : 1) il **occupe une position vide** (sans lui, 105 et 15 seraient indistinguables) ; 2) il permet les **calculs posés** (l'algorithme de la division euclidienne repose sur l'idée de « poser 0 »). Les systèmes additifs (romain) n'ont pas de zéro — c'est pourquoi le calcul y est difficile.",
+                "Le zéro remplit deux rôles fondamentaux dans la numération positionnelle : 1) il **occupe une position vide** (sans lui, 105 et 15 seraient indistinguables) ; 2) il permet les **calculs posés** (l'algorithme de la division euclidienne repose sur l'idée de « poser 0 »). Les systèmes additifs (romain) n'ont pas de zéro, c'est pourquoi le calcul y est difficile.",
             },
             {
               question: "Que représente FF₁₆ en décimal ? Quel lien avec l'informatique ?",
@@ -1336,14 +1336,14 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "memo",
       label: "Mémo",
-      icon: "🧠",
+      icon: "",
       blocks: [
         {
           type: "callout",
           variant: "info",
-          icon: "🧠",
+          icon: "",
           title: "Toute la notion, en un coup d'œil",
-          text: "Voici la carte mentale complète de cette fiche — un excellent outil pour réviser rapidement avant le jour J, une fois que vous avez travaillé chaque partie.",
+          text: "Voici la carte mentale complète de cette fiche, un excellent outil pour réviser rapidement avant le jour J, une fois que vous avez travaillé chaque partie.",
         },
         {
           type: "mindmapLite",
@@ -1391,7 +1391,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     {
       id: "autoeval",
       label: "Auto-évaluation",
-      icon: "✅",
+      icon: "",
       blocks: [
         {
           type: "autoEvalChecklist",
