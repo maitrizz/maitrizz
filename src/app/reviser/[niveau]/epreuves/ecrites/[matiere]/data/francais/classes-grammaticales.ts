@@ -3,10 +3,10 @@ import type { Fiche } from "@/components/fiche/types";
 // Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
 const OBJECTIFS = [
   { id: "e1", label: "Je comprends que la nature d'un mot est stable : elle ne change pas selon la phrase (à la différence de la fonction, traitée à part)" },
-  { id: "e2", label: "Je connais les 10 classes grammaticales (5 variables, 5 invariables) et leurs principales sous-classes" },
+  { id: "e2", label: "Je connais les 9 classes grammaticales de référence et le repère mnémotechnique des 10 entrées avec l'onomatopée" },
   { id: "e3", label: "Je distingue un adverbe d'un adjectif grâce au test de variabilité (accord au féminin pluriel)" },
   { id: "e4", label: "Je sais analyser les mots-caméléons (tout, comme, que, si) selon leur contexte d'emploi" },
-  { id: "e5", label: "J'utilise la terminologie officielle 2020 : déterminant (et non « adjectif possessif / démonstratif / indéfini »)" },
+  { id: "e5", label: "J'utilise la terminologie grammaticale de référence : déterminant (et non « adjectif possessif / démonstratif / indéfini »)" },
   { id: "e6", label: "Je sais qu'un infinitif reste un verbe, même quand il est employé comme un nom (par exemple comme sujet)" },
   { id: "e7", label: "Je sais identifier et corriger une erreur de nature dans une copie de candidat" },
 ];
@@ -21,11 +21,11 @@ export const ficheClassesGrammaticales: Fiche = {
     "Identifier la nature de tout mot ou groupe : la question de classe grammaticale qui tombe chaque année",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
-    { label: "Cycle 3-4 · BOEN 2020 · Terminologie grammaticale", variant: "info" },
+    { label: "Cycle 3-4 · Terminologie grammaticale", variant: "info" },
   ],
   metaTitle: "Classes grammaticales (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les classes grammaticales : les natures de mots (nom, déterminant, adjectif, pronom, verbe, adverbe, préposition, conjonction, interjection, onomatopée), mots-caméléons (tout, comme, que, si) et pièges fréquents. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE complète sur les classes grammaticales : les natures de mots (nom, déterminant, adjectif, pronom, verbe, adverbe, préposition, conjonction, interjection), le cas de l'onomatopée, les mots-caméléons (tout, comme, que, si) et les pièges fréquents. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -39,27 +39,27 @@ export const ficheClassesGrammaticales: Fiche = {
           blocks: [
             {
               type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
+              title: "Ce qu'il faut maîtriser",
               items: [
                 {
                   number: "①",
-                  title: "La nature (classe grammaticale) d'un mot",
-                  text: "Dans la phrase comme dans le dictionnaire, « beau » reste un adjectif : la nature d'un mot ne change jamais.",
+                  title: "Comprendre ce qu'on vous demande",
+                  text: "Identifier la nature d'un mot, ce n'est pas donner sa fonction : on dit ce qu'il est, pas le rôle qu'il joue dans la phrase.",
                 },
                 {
                   number: "②",
                   title: "Les 5 classes grammaticales variables",
-                  text: "Nom, déterminant, adjectif, pronom, verbe : celles qui peuvent s'accorder.",
+                  text: "Nom, déterminant, adjectif, pronom, verbe : elles peuvent varier selon le genre, le nombre ou la personne.",
                 },
                 {
                   number: "③",
-                  title: "Les 5 classes grammaticales invariables",
-                  text: "Adverbe, préposition, conjonction, interjection, onomatopée : celles qui ne changent jamais de forme.",
+                  title: "Les classes grammaticales invariables",
+                  text: "Adverbe, préposition, conjonction, interjection : les classes retenues par la [terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download). Pour mémoriser, on ajoute souvent l'onomatopée, rattachée à l'interjection.",
                 },
                 {
                   number: "④",
-                  title: "Les mots-caméléons",
-                  text: "tout, comme, que, si : quatre mots qui changent de nature selon ce qui les entoure.",
+                  title: "Justifier les cas qui piègent",
+                  text: "tout, comme, que, si, avant, fort... : le jury attend une réponse appuyée sur le contexte, pas une nature apprise isolément.",
                 },
               ],
             },
@@ -75,7 +75,7 @@ export const ficheClassesGrammaticales: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Verbe, adjectif, nom... ce ne sont pas des notions nouvelles. Pour le CRPE, il faut être au clair sur ces notions, mais surtout être méthodique : face à un mot souligné, on se pose toujours les mêmes questions, jusqu'à ce que ça devienne automatique, presque comme un algorithme.",
+              text: "Verbe, adjectif, nom... vous connaissez déjà les mots. Ce qui fait gagner des points au concours, c'est la précision : nommer la bonne classe grammaticale, employer la [terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download), puis justifier avec un vrai indice de la phrase. Une réponse courte peut être excellente si elle est exacte et prouvée.",
             },
             {
               type: "subsection",
@@ -84,7 +84,7 @@ export const ficheClassesGrammaticales: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "La **classe grammaticale** (ou nature) d'un mot, c'est **ce qu'il est**, quel que soit le **contexte** : « chanter » est toujours un verbe, « beau » est toujours un adjectif. C'est une information **stable**, qu'on retrouve dans le dictionnaire.\n\n⚠️ À ne pas confondre avec la **fonction** (le rôle du mot dans la phrase : sujet, complément…), qui est une autre notion. **Cette fiche porte uniquement sur la nature.**",
+                  text: "La **classe grammaticale** (ou nature) d'un mot, c'est **ce qu'il est**, quel que soit le **contexte** : « chanter » est toujours un verbe, « beau » est toujours un adjectif. C'est une information **stable**, qu'on retrouve dans le dictionnaire.\n\n⚠️ À ne pas confondre avec la **fonction**, qui désigne le **rôle du mot ou du groupe dans la phrase** : sujet, COD, complément circonstanciel, attribut… Par exemple, « le chat » reste un groupe nominal par nature, mais il peut être sujet dans « Le chat dort » ou COD dans « Je regarde le chat ». **Cette fiche porte uniquement sur la nature.**",
                 },
                 {
                   type: "highlightBox",
@@ -106,7 +106,7 @@ export const ficheClassesGrammaticales: Fiche = {
                   variant: "warning",
                   icon: "⚠️",
                   title: "Le réflexe à avoir",
-                  text: "Face à un mot souligné dans un sujet de concours, posez-vous toujours la même question : **« Qu'est-ce que c'est ? »** (quelle est sa **nature** ?). Et justifiez par un test (variabilité, remplacement, suppression), jamais « au feeling ».",
+                  text: "Face à un mot souligné dans un sujet de concours, posez-vous toujours la même question : **« Qu'est-ce que c'est ? »** (quelle est sa **nature** ?). Puis justifiez par un test : variabilité, remplacement, suppression.",
                 },
               ],
             },
@@ -153,7 +153,7 @@ export const ficheClassesGrammaticales: Fiche = {
                         "**Exclamatif ou interrogatif :** « **quel** talent ! », « **quelle** heure ? »",
                       ],
                       piege:
-                        "Terminologie 2020 : « mon », « ce », « chaque »… sont des **déterminants**, et non plus des « adjectifs possessifs, démonstratifs ou indéfinis ».",
+                        "[Terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download) : « mon », « ce », « chaque »… sont des **déterminants**, et non plus des « adjectifs possessifs, démonstratifs ou indéfinis ».\n\nAttention aussi à « du ». Dans « du pain » ou « du courage », il introduit une quantité qu'on ne compte pas précisément : c'est un **article partitif**. Dans « le chien du voisin », il signifie « de + le » : ce n'est pas un article partitif, mais une **forme contractée** introduisant un complément. Le bon réflexe : remplacer mentalement par « de le » et regarder si « du » appartient à un groupe introduit par « de ».",
                       test: "Le mot est-il directement suivi d'un nom (ou d'un adjectif puis d'un nom) ? Si oui : déterminant.",
                     },
                     {
@@ -216,11 +216,11 @@ export const ficheClassesGrammaticales: Fiche = {
             {
               type: "subsection",
               number: "③",
-              title: "Les 5 classes invariables : elles ne changent jamais de forme",
+              title: "Les classes invariables : elles ne changent jamais de forme",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Une classe est dite **invariable** quand le mot garde toujours la même forme, quel que soit le contexte. Cinq classes sont invariables : **adverbe, préposition, conjonction, interjection, onomatopée**.\n\n💡 *Repère :* la terminologie officielle (Éduscol, 2020) ne compte en réalité que **9 classes**. L'**onomatopée** n'en est pas une à part entière : elle est rattachée à l'**interjection**. Le découpage « 5 + 5 » est un simple repère de mémorisation.",
+                  text: "Une classe est dite **invariable** quand le mot garde toujours la même forme, quel que soit le contexte. Dans la [terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download), les classes invariables à connaître ici sont : **adverbe, préposition, conjonction, interjection**.\n\n💡 *Repère de mémorisation :* on retient souvent **5 classes variables + 5 entrées invariables** pour apprendre la liste. Ce repère compte l'**onomatopée** à part. Mais dans la dernière terminologie grammaticale officielle ([Éduscol, 2020](https://eduscol.education.fr/document/1872/download)), l'onomatopée est rattachée à l'**interjection** : officiellement, il n'y a donc plus **10 classes grammaticales**, mais **9**. L'onomatopée se reconnaît dans une phrase, mais elle ne forme pas une classe autonome.",
                 },
                 {
                   type: "notionCardGrid",
@@ -293,8 +293,8 @@ export const ficheClassesGrammaticales: Fiche = {
                         "Le mot est-il isolé par une exclamation ou une virgule, sans lien syntaxique avec le reste de la phrase ? Si oui : interjection.",
                     },
                     {
-                      title: "Onomatopée",
-                      definition: "Imite un son. La terminologie officielle (Éduscol, 2020) la rattache à l'interjection. Rare à l'épreuve.",
+                      title: "Onomatopée (cas de l'interjection)",
+                      definition: "Imite un son. Dans la [terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download), elle est rattachée à l'interjection. Rare à l'épreuve, mais facile à reconnaître.",
                       sousClasses: "**Sous-classes :** plouf, crac, pschitt, boum, coin-coin, tic-tac",
                       exemples: ["« **Boum** ! la porte claqua » : onomatopée imitant un bruit"],
                       test: "Même comportement que l'interjection : isolée, sans lien syntaxique avec le reste de la phrase.",
@@ -311,6 +311,23 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   type: "paragraph",
                   text: "Certains mots très fréquents changent de classe grammaticale selon leur emploi. La méthode est toujours la même : **regarder ce qui précède et ce qui suit le mot** avant de conclure.",
+                },
+                {
+                  type: "highlightBox",
+                  variant: "marine",
+                  title: "Algorithme express : identifier un mot-caméléon",
+                  blocks: [
+                    {
+                      type: "formulaBlock",
+                      lines: [
+                        "1. Il est suivi d'un nom ou d'un groupe nominal ? → penser **déterminant** ou **préposition** selon le mot.",
+                        "2. Il introduit une proposition avec un verbe conjugué ? → penser **conjonction de subordination**.",
+                        "3. Il remplace un nom ou un groupe nominal ? → penser **pronom**.",
+                        "4. Il modifie un adjectif, un verbe ou toute la phrase ? → penser **adverbe**.",
+                      ],
+                      note: "On ne choisit pas la nature du mot seul : on observe sa construction dans la phrase.",
+                    },
+                  ],
                 },
                 {
                   type: "highlightBox",
@@ -364,6 +381,52 @@ export const ficheClassesGrammaticales: Fiche = {
                   variant: "info",
                   text: "Pour chacun de ces mots, la nature ne se devine pas isolément : c'est **l'environnement immédiat** (le mot juste avant, le mot juste après) qui tranche.",
                 },
+                {
+                  type: "highlightBox",
+                  variant: "marine",
+                  title: "Zoom sur « que » : le mot-caméléon à surveiller",
+                  blocks: [
+                    {
+                      type: "cardGrid",
+                      columns: 2,
+                      variant: "warning",
+                      cards: [
+                        {
+                          title: "Après un verbe",
+                          lines: [
+                            "« Je pense **que** tu as raison. »",
+                            "→ **conjonction de subordination**",
+                            "Elle introduit une proposition complétive.",
+                          ],
+                        },
+                        {
+                          title: "Après un nom",
+                          lines: [
+                            "« Le livre **que** je lis. »",
+                            "→ **pronom relatif**",
+                            "Il reprend le nom placé avant lui.",
+                          ],
+                        },
+                        {
+                          title: "En exclamation",
+                          lines: [
+                            "« **Que** c'est beau ! »",
+                            "→ **adverbe exclamatif**",
+                            "Il marque l'intensité.",
+                          ],
+                        },
+                        {
+                          title: "Dans une comparaison",
+                          lines: [
+                            "« Il est plus grand **que** moi. »",
+                            "→ **conjonction de subordination**",
+                            "Elle introduit le second terme de la comparaison.",
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
               ],
             },
             {
@@ -388,7 +451,7 @@ export const ficheClassesGrammaticales: Fiche = {
               type: "piegeCard",
               variant: "orange",
               title: "Piège n°3 · Terminologie : déterminant, pas adjectif",
-              badge: "Terminologie officielle 2020",
+              badge: "Formulation attendue",
               faux: "« mon », « ce », « chaque » = adjectifs possessif / démonstratif / indéfini",
               vrai: "Ce sont tous des DÉTERMINANTS. La classe « adjectif » ne couvre plus les mots qui introduisent un nom.",
               methode: "Règle simple : le mot introduit un nom sans le qualifier → déterminant. Il qualifie le nom (exprime une qualité) → adjectif qualificatif.",
@@ -445,7 +508,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Le réflexe clé : tester d'abord la variabilité. Variable → nom, déterminant, adjectif, pronom ou verbe. Invariable → adverbe, préposition, conjonction ou interjection.",
+                  text: "⚠️ Le réflexe clé : tester d'abord la variabilité. Variable → nom, déterminant, adjectif, pronom ou verbe. Invariable → adverbe, préposition, conjonction ou interjection. Pour mémoriser, on peut ajouter l'onomatopée dans la famille des invariables, mais elle se traite comme un cas de l'interjection.",
                 },
               ],
             },
@@ -477,7 +540,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   number: "💡",
                   text: "**Vérifier avec le test rapide de la classe envisagée** (carte 💡 Test du Cours) avant de valider votre réponse.",
-                  warn: "⚠️ Une nature ne se devine pas « au feeling » : elle se justifie par un test (variabilité, remplacement, suppression…).",
+                  warn: "⚠️ Une nature se justifie par un test précis : variabilité, remplacement, suppression…",
                 },
               ],
             },
@@ -500,7 +563,7 @@ export const ficheClassesGrammaticales: Fiche = {
               number: "②",
               title: "Traiter un mot-caméléon (tout, comme, que, si)",
               intro:
-                "**Question typique :** « Quelle est la nature de « tout » dans : Tout le monde regardait ? »\nMême démarche pour les 4 mots-caméléons : on regarde immédiatement ce qui suit (et parfois ce qui précède), puis on applique la grille de l'étape ④ du Cours.",
+                "**Question typique :** « Quelle est la nature de « tout » dans : Tout le monde regardait ? »\nMême démarche pour les 4 mots-caméléons : on ne part jamais du mot seul. On observe sa construction, puis on suit l'algorithme express vu dans le Cours.",
               steps: [
                 {
                   number: "1",
@@ -511,7 +574,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 },
                 {
                   number: "2",
-                  text: "**Appliquer la grille de l'étape ④ :** tout + nom → déterminant · tout seul (remplace un nom) → pronom · tout + adjectif → adverbe (idem pour comme/que/si, voir Cours).",
+                  text: "**Choisir la bonne piste :** le mot introduit-il un nom ou un groupe nominal ? une proposition avec verbe conjugué ? remplace-t-il un nom ? modifie-t-il un adjectif, un verbe ou la phrase ?",
                   example: {
                     lines: ["« Tout » + « le monde » (nom) → **déterminant indéfini**"],
                   },
@@ -569,7 +632,7 @@ export const ficheClassesGrammaticales: Fiche = {
                   options: ["Adjectif indéfini", "Déterminant indéfini", "Pronom indéfini", "Adverbe"],
                   correctIndex: 1,
                   explanation:
-                    "« Chaque » introduit le nom « élève » sans le qualifier → déterminant. Terminologie officielle 2020 : on ne dit plus « adjectif indéfini ».",
+                    "« Chaque » introduit le nom « élève » sans le qualifier → déterminant. [Terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download) : on ne dit plus « adjectif indéfini ».",
                 },
                 {
                   objectifId: "e3",
@@ -734,7 +797,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 { type: "line", label: "f)", text: "**deux** → déterminant numéral cardinal" },
                 {
                   type: "note",
-                  text: "⚠️ Piège : « du » peut être article partitif (« du pain ») ou contraction « de + le » (« le chien du voisin », CDN). Contextualiser.",
+                  text: "⚠️ Piège : « du » peut être **article partitif** quand il introduit une quantité non comptable (« du pain », « du courage »). Il peut aussi être la contraction de **de + le** dans un groupe introduit par « de » (« le chien du voisin » = le chien **de le** voisin, complément du nom). Il faut donc regarder le groupe dans lequel il apparaît.",
                 },
               ],
             },
@@ -752,7 +815,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 { type: "line", text: "**rien** → pronom indéfini" },
                 { type: "line", text: "**auquel** → pronom relatif" },
                 { type: "line", text: "**ceux** → pronom démonstratif" },
-                { type: "line", text: "**te** → pronom personnel clitique (2e pers. sing.)" },
+                { type: "line", text: "**te** → pronom personnel (2e personne du singulier)" },
                 { type: "line", text: "**chacun** → pronom indéfini" },
                 { type: "line", text: "**qui** → pronom relatif (ou interrogatif selon contexte)" },
               ],
@@ -871,12 +934,12 @@ export const ficheClassesGrammaticales: Fiche = {
                   rows: [
                     ["Une femme", "Groupe nominal (GN) : déterminant + nom"],
                     ["tenant", "Participe présent (forme verbale non conjuguée)"],
-                    ["d'une dizaine d'années", "Groupe nominal prépositionnel"],
+                    ["d'une dizaine d'années", "Groupe nominal prépositionnel : groupe nominal introduit par une préposition (« de »)"],
                     ["baissés", "Participe passé employé comme adjectif"],
                     ["avant", "Préposition"],
                   ],
                 },
-                { type: "note", text: "⚠️ Piège : « tenant » = participe présent ≠ gérondif (« en tenant ») ≠ adjectif verbal (« une eau courante », qui s'accorde)." },
+                { type: "note", text: "⚠️ Piège : « tenant » est un **participe présent** : il garde la forme en -ant et ne s'accorde pas. Le **gérondif** se reconnaît à « en » + participe présent (« en tenant »). L'**adjectif verbal**, lui, fonctionne comme un adjectif et s'accorde avec le nom (« une eau courante », « des élèves souriantes »)." },
               ],
             },
             {
@@ -893,7 +956,7 @@ export const ficheClassesGrammaticales: Fiche = {
                   type: "table",
                   headers: ["Mot / groupe", "Nature"],
                   rows: [
-                    ["sur la terre", "Groupe nominal prépositionnel"],
+                    ["sur la terre", "Groupe nominal prépositionnel : GN introduit par la préposition « sur »"],
                     ["Partout", "Adverbe de lieu"],
                     ["hélas", "Interjection"],
                     ["grandes", "Adjectif qualificatif"],
@@ -913,7 +976,7 @@ export const ficheClassesGrammaticales: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format des sujets officiels : extrait littéraire, identification de la nature des mots, formulation jury. Les exercices calqués sur des sujets récents portent le badge ✦.",
+              text: "Ces exercices reproduisent le format concours : extrait littéraire, identification de la nature des mots, formulation jury. Les exercices calqués sur des sujets récents portent le badge ✦.",
             },
             {
               type: "exerciceCard",
@@ -928,7 +991,7 @@ export const ficheClassesGrammaticales: Fiche = {
                   headers: ["Mot / groupe", "Nature"],
                   rows: [
                     ["lointaines", "Adjectif qualificatif"],
-                    ["de marbre", "GN prépositionnel"],
+                    ["de marbre", "GN prépositionnel, introduit par « de »"],
                     ["où", "Pronom relatif"],
                     ["toujours", "Adverbe de temps"],
                   ],
@@ -970,14 +1033,14 @@ export const ficheClassesGrammaticales: Fiche = {
               title: "Exercice 3 : Marguerite Yourcenar, Comment Wang-Fô fut sauvé",
               enonce:
                 "« … un <u>tapis dont</u> elles savaient par cœur le dessin » · « les provinces <u>de l'Empire</u> » · « Tu <u>m'</u>as menti, Wang-Fô, <u>vieil imposteur</u> »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
-              question: "Format identique au concours · Donnez la nature : « <u>dont</u> » · « <u>de l'Empire</u> » · « <u>m'</u> » · « <u>vieil imposteur</u> »",
+              question: "Donnez la nature : « <u>dont</u> » · « <u>de l'Empire</u> » · « <u>m'</u> » · « <u>vieil imposteur</u> »",
               correction: [
                 {
                   type: "table",
                   headers: ["Mot / groupe", "Nature"],
                   rows: [
                     ["dont", "Pronom relatif"],
-                    ["de l'Empire", "GN prépositionnel"],
+                    ["de l'Empire", "GN prépositionnel, introduit par « de »"],
                     ["m'", "Pronom personnel (1re pers. sing., forme élidée de « me »)"],
                     ["vieil imposteur", "Groupe nominal"],
                   ],
@@ -996,7 +1059,7 @@ export const ficheClassesGrammaticales: Fiche = {
               enonce:
                 "« <u>Écrire</u> n'est pas tout à fait un choix : <u>c'</u>est un aveu d'impuissance. <u>On</u> écrit parce qu'on ne sait par quel autre biais attraper le réel. <u>Vivre</u>, sans l'écriture, me va mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
               question:
-                "Format identique au concours · Donnez la nature de : « <u>Écrire</u> » · « <u>c'</u> » · « <u>On</u> » · « <u>Vivre</u> »",
+                "Donnez la nature de : « <u>Écrire</u> » · « <u>c'</u> » · « <u>On</u> » · « <u>Vivre</u> »",
               correction: [
                 {
                   type: "table",
@@ -1080,8 +1143,8 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   type: "checklist",
                   items: [
-                    { text: "Ancienne terminologie (avant 2020) : « adjectif indéfini », à éviter", bad: true },
-                    { text: "Terminologie officielle (2020) : DÉTERMINANT INDÉFINI" },
+                    { text: "Ancienne appellation : « adjectif indéfini », à éviter", bad: true },
+                    { text: "[Terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download) : DÉTERMINANT INDÉFINI" },
                   ],
                 },
                 { type: "note", text: "Règle : tout ce qui introduit un nom est un déterminant, quelle que soit sa sous-classe." },
@@ -1154,7 +1217,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   question: "Comment appelle-t-on les anciens « adjectifs indéfinis / possessifs » ?",
                   answer:
-                    "Ce sont tous des **DÉTERMINANTS** (terminologie officielle depuis 2020). Déterminant indéfini, possessif, démonstratif…",
+                    "Ce sont tous des **DÉTERMINANTS** ([terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download)). Déterminant indéfini, possessif, démonstratif…",
                 },
                 {
                   question: "Test rapide : comment distinguer adverbe et adjectif ?",
@@ -1190,8 +1253,8 @@ export const ficheClassesGrammaticales: Fiche = {
                   variant: "blue",
                 },
                 {
-                  title: "5 classes invariables",
-                  lines: ["Adverbe · Préposition", "Conjonction", "Interjection · Onomatopée"],
+                  title: "Invariables",
+                  lines: ["Officiel : adverbe · préposition", "Conjonction · interjection", "Mémo : + onomatopée"],
                   variant: "green",
                 },
                 {
