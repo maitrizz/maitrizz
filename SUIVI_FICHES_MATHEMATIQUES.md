@@ -17,10 +17,10 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
 | 01 | Numération et systèmes de bases (N01) | ✅ | ✅ (rattrapage fait : cadratins retirés, emojis décoratifs retirés, `icon:` vidés, annales adoucies, renvoi N°37 supprimé ; calculs vérifiés justes) |
-| 02 | Nombres relatifs (N02) | ⬜ | ⬜ |
-| 03 | Fractions et décimaux (N03) | ⬜ | ⬜ |
-| 04 | Puissances, racines, réels (N04) | ⬜ | ⬜ |
-| 05 | Calcul numérique et priorités (N05) | ⬜ | ⬜ |
+| 02 | Nombres relatifs (N02) | ✅ | ✅ (MEF + charte en une passe) |
+| 03 | Fractions et décimaux (N03) | ✅ | ✅ (MEF + charte en une passe) |
+| 04 | Puissances, racines, réels (N04) | ✅ | ✅ (MEF + charte ; cycle 4, pas Seconde) |
+| 05 | Calcul numérique et priorités (N05) | ✅ | ✅ (MEF + charte ; recul primaire condensé) |
 | 06 | Divisibilité, PGCD, PPCM, nombres premiers (N06) | ⬜ | ⬜ |
 | 07 | Dénombrement (N07) | ⬜ | ⬜ |
 | 08 | Calcul littéral (N08) | ⬜ | ⬜ |
