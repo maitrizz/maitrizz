@@ -31,7 +31,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
-| 11 | Statistiques descriptives (N11) | ⬜ | ⬜ |
+| 11 | Statistiques descriptives (N11) | ✅ | ✅ (MEF + charte en une passe ; variance/écart-type marqués « Seconde » ; annales adoucies ; calculs vérifiés) |
 | 12 | Probabilités (N12) | ⬜ | ⬜ |
 | 13 | Proportionnalité et pourcentages (fusion N13 + N14 + échelle de N20 ; inclure la notion de ratio, attendu 2020) | ⬜ | ⬜ |
 | 14 | Fonctions : notion, linéaires et affines (fusion N15 + N16) | ⬜ | ⬜ |
