@@ -65,7 +65,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                 type: "sommaireApercu",
                 title: "Le programme en 4 étapes",
                 intro:
-                  "Comprendre précisément ce qu'on attend de vous, c'est déjà gagner des points. Cette fiche pose le cadre de l'épreuve avant d'entrer, avec les notions, dans le détail de chaque partie.",
+                  "Avant de commencer, il faut savoir précisément ce que l'on attend de vous. Cette fiche présente le cadre de l'épreuve, les attentes du jury, ainsi que des conseils pour aborder chaque partie, notamment en matière de gestion du temps.",
                 items: [
                   {
                     number: "①",
