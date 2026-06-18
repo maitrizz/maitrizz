@@ -47,7 +47,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
-| 17 | Repérage et coordonnées dans le plan (N21) | ⬜ | ⬜ |
+| 17 | Repérage et coordonnées dans le plan (N21) | ✅ | ✅ (MEF + charte en une passe ; question 3.1-e reformulée en question ouverte ; renvoi N°14 ; annales adoucies ; calculs vérifiés) |
 | 18 | Droites, angles, parallélisme (N22) | ⬜ | ⬜ |
 | 19 | Triangles, quadrilatères, polygones (fusion N23 + N25) | ⬜ | ⬜ |
 | 20 | Cercle (N24) | ⬜ | ⬜ |

@@ -17,6 +17,7 @@ import { ficheProportionnalitePourcentages } from "./mathematiques/proportionnal
 import { ficheFonctionsLineairesAffines } from "./mathematiques/fonctions-lineaires-affines";
 import { fichePerimetresAiresVolumes } from "./mathematiques/perimetres-aires-volumes";
 import { ficheDureesMassesGrandeursComposees } from "./mathematiques/durees-masses-grandeurs-composees";
+import { ficheReperageCoordonnees } from "./mathematiques/reperage-coordonnees";
 import { ficheClassesGrammaticales } from "./francais/classes-grammaticales";
 import { ficheFonctionsSyntaxiques } from "./francais/fonctions-syntaxiques";
 import { ficheGroupeNominalExpansions } from "./francais/groupe-nominal-expansions";
@@ -84,7 +85,7 @@ export const MATIERE_LABELS: Record<Matiere, string> = {
 // Mathématiques : chantier M2 en cours (plan dans SUIVI_FICHES_MATHEMATIQUES.md).
 // La version L3 sera dérivée du M2 plus tard ; en attendant la liste L3 reste vide
 // (la page matière affiche « arrivent très bientôt » quand la liste est vide).
-const MATHEMATIQUES_M2: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptives, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees];
+const MATHEMATIQUES_M2: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptives, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees];
 const MATHEMATIQUES_L3: Fiche[] = [];
 
 // Français : notions 01-18 communes L3/M2. La divergence commence à la
