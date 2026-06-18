@@ -23,7 +23,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | 05 | Calcul numérique et priorités (N05) | ✅ | ✅ (MEF + charte ; recul primaire condensé) |
 | 06 | Divisibilité, PGCD, PPCM, nombres premiers (N06) | ✅ | ✅ (MEF + charte en une passe ; annales adoucies ; calculs vérifiés) |
 | 07 | Dénombrement (N07) | ✅ | ✅ (MEF + charte en une passe ; annales adoucies ; calculs vérifiés) |
-| 08 | Calcul littéral (N08) | ⬜ | ⬜ |
+| 08 | Calcul littéral (N08) | ✅ | ✅ (MEF + charte en une passe ; annales adoucies ; exercice « géoplans » incohérent écarté au profit de « programmes rivaux » ; calculs vérifiés) |
 | 09 | Équations, inéquations, systèmes (N09) | ⬜ | ⬜ |
 | 10 | Suites numériques (N10) | ⬜ | ⬜ |
 
