@@ -10,7 +10,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
-| 00 | Méthodologie de l'épreuve écrite de maths (M2) | ⬜ | ⬜ |
+| 00 | Méthodologie de l'épreuve écrite de maths (M2) | ✅ | ✅ (RÉDIGÉE sur sources officielles juin 2026 : devenirenseignant.gouv.fr bac+5 (3 h, coeff 1, /20, ≤5 éliminatoire, ≥3 exercices indépendants, QCM + réponses construites), Arrêté 25 janvier 2021, programme cycle 4 + Nombres-et-calculs Seconde ; **point clé : écrit purement disciplinaire, didactique passée à l'oral de leçon** ; calculatrice mode examen (à confirmer convocation) ; pas de stats d'admission ni annales précises ; câblée en tête du parcours M2) |
 
 ## Partie 1 — Nombres et calcul
 
