@@ -529,6 +529,24 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
         </div>
       );
 
+    case "schema":
+      return (
+        <figure className="flex flex-col items-center gap-2 my-1">
+          <div
+            className="w-full rounded-xl border-2 border-base-300 bg-base-100 p-3 sm:p-4"
+            style={block.maxWidth ? { maxWidth: block.maxWidth, marginInline: "auto" } : undefined}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={block.src} alt={block.alt} className="w-full h-auto" loading="lazy" />
+          </div>
+          {block.caption && (
+            <figcaption className="text-xs text-base-content/60 leading-relaxed text-center max-w-2xl">
+              <RichText text={block.caption} />
+            </figcaption>
+          )}
+        </figure>
+      );
+
     default:
       return null;
   }

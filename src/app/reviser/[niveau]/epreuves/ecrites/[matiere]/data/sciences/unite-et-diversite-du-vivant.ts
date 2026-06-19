@@ -169,6 +169,13 @@ const coursBlocks: Block[] = [
             text: "Un groupe emboîté (un clade) rassemble un ancêtre commun et tous ses descendants. Ce sont les **caractères partagés dérivés** (les synapomorphies) qui définissent un groupe : la présence d'un crâne, de quatre membres, de poils...",
           },
           {
+            type: "schema",
+            src: "/fiches/sciences/groupes-emboites.svg",
+            alt: "Diagramme en groupes emboîtés : les Vertébrés (caractère : colonne vertébrale, exemple le Requin) contiennent les Tétrapodes (quatre membres, exemple la Grenouille), qui contiennent les Amniotes (œuf à amnios, exemples reptiles et oiseaux), qui contiennent les Mammifères (poils et glandes mammaires, exemples le Dauphin et l'Homme).",
+            caption: "Chaque groupe est emboîté dans le précédent et défini par un caractère nouveau. L'Homme et le Dauphin (mammifères) sont plus proches l'un de l'autre que du Requin.",
+            maxWidth: 560,
+          },
+          {
             type: "table",
             headers: ["Groupe", "Caractère partagé dérivé"],
             rows: [

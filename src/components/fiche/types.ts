@@ -206,7 +206,11 @@ export type Block =
     }
 
   // Encadré d'appel à l'action vers un autre onglet
-  | { type: "ctaBox"; text: RichText; buttonLabel: string; targetTab: string };
+  | { type: "ctaBox"; text: RichText; buttonLabel: string; targetTab: string }
+
+  // Schéma ou illustration : image (SVG/PNG) servie depuis /public, avec légende.
+  // `alt` est obligatoire (accessibilité). `maxWidth` en pixels (défaut : pleine largeur).
+  | { type: "schema"; src: string; alt: string; caption?: RichText; maxWidth?: number };
 
 /* ────────────────────────────────────────────────────────────
    Onglets et fiche
