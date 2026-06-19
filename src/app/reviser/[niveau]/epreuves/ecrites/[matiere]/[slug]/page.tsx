@@ -108,7 +108,7 @@ export default async function FichePage({
 
         <FicheHeader fiche={fiche} />
 
-        <FicheTabs tabGroups={fiche.tabGroups} ficheSlug={fiche.slug} />
+        <FicheTabs tabGroups={fiche.tabGroups} ficheSlug={fiche.slug} niveau={niveau} matiere={matiere} />
 
         {/* Navigation précédent / suivant */}
         {(prev || next) && (

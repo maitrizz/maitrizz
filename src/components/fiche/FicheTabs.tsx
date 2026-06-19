@@ -2,9 +2,20 @@
 
 import { useState } from "react";
 import { RenderBlock } from "./blocks/RenderBlock";
+import { FicheRouteProvider } from "./FicheRouteContext";
 import type { FicheTabGroup } from "./types";
 
-export function FicheTabs({ tabGroups, ficheSlug }: { tabGroups: FicheTabGroup[]; ficheSlug: string }) {
+export function FicheTabs({
+  tabGroups,
+  ficheSlug,
+  niveau,
+  matiere,
+}: {
+  tabGroups: FicheTabGroup[];
+  ficheSlug: string;
+  niveau: string;
+  matiere: string;
+}) {
   const [activeGroup, setActiveGroup] = useState(tabGroups[0]?.id);
   const [activeTab, setActiveTab] = useState(tabGroups[0]?.tabs[0]?.id);
   const showGroupTabs = tabGroups.length > 1;
@@ -17,6 +28,7 @@ export function FicheTabs({ tabGroups, ficheSlug }: { tabGroups: FicheTabGroup[]
   }
 
   return (
+    <FicheRouteProvider value={{ niveau, matiere }}>
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2 sticky top-16 z-10 bg-base-100/95 backdrop-blur-sm py-2 -mx-1 px-1 border-b border-base-200">
         {showGroupTabs && (
@@ -77,5 +89,6 @@ export function FicheTabs({ tabGroups, ficheSlug }: { tabGroups: FicheTabGroup[]
         </div>
       ))}
     </div>
+    </FicheRouteProvider>
   );
 }

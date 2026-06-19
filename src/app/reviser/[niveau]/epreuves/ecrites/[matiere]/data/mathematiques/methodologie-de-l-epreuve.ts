@@ -143,7 +143,7 @@ export const ficheMethodologieMathematiques: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "Un exercice de Scratch ou de tableur est presque toujours présent : il ne faut jamais l'impasser (voir notion 27). Les problèmes en contexte mobilisent souvent la proportionnalité (notion 13), la géométrie (notions 21 à 23) ou les grandeurs (notions 15 et 16).",
+                  text: "Un exercice de Scratch ou de tableur est presque toujours présent : il ne faut jamais l'impasser (voir la [notion 27, Algorithmique et Scratch](fiche:algorithmique-scratch-tableur)). Les problèmes en contexte mobilisent souvent la proportionnalité (notion 13), la géométrie (notions 21 à 23) ou les grandeurs (notions 15 et 16).",
                 },
               ],
             },
