@@ -3,7 +3,7 @@ import type { Fiche } from "@/components/fiche/types";
 // Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
 const OBJECTIFS = [
   { id: "f1", label: "Je distingue la nature (ce qu'est le mot) et la fonction (son rôle dans la phrase), et je donne toujours les deux" },
-  { id: "f2", label: "Je connais les principales fonctions : sujet, attribut, COD, COI, COS, attribut du COD, CC, CDN, épithète, apposition, apostrophe" },
+  { id: "f2", label: "Je connais les principales fonctions : sujet, attribut, COD, COI, COS, attribut du COD, complément d'agent, CC, CDN, épithète, apposition, apostrophe" },
   { id: "f3", label: "J'applique les 4 tests de repérage : encadrement « c'est…qui », question, pronominalisation, mobilité + suppression" },
   { id: "f4", label: "Je distingue COD et COI grâce à la préposition, et je connais les verbes transitifs indirects (obéir à, jouer de…)" },
   { id: "f5", label: "Je distingue l'attribut du sujet (verbe d'état) de l'épithète détachée (sans verbe d'état)" },
@@ -21,11 +21,11 @@ export const ficheFonctionsSyntaxiques: Fiche = {
     "Identifier le rôle de chaque mot ou groupe dans la phrase : la question du tableau nature + fonction",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
-    { label: "Cycle 4 + lycée · BOEN n°1 du 22 janvier 2019", variant: "info" },
+    { label: "Cycle 4 + lycée", variant: "info" },
   ],
   metaTitle: "Fonctions syntaxiques (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les fonctions syntaxiques : sujet, attribut du sujet, COD, COI, COS, attribut du COD, complément circonstanciel, complément du nom, épithète, apposition, apostrophe. Les 4 tests de repérage, pièges fréquents, méthode, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE complète sur les fonctions syntaxiques : sujet, attribut du sujet, COD, COI, COS, attribut du COD, complément d'agent, complément circonstanciel, complément du nom, épithète, apposition, apostrophe. Les tests de repérage, pièges fréquents, méthode, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -75,7 +75,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Identifier une fonction, ce n'est pas deviner : c'est appliquer des tests. Face à un groupe souligné, on se pose toujours les mêmes questions (sujet ? complément du verbe ? circonstance ?) jusqu'à ce que ça devienne un réflexe. Cette fiche porte sur la fonction ; la nature est traitée dans la notion 1.",
+              text: "Identifier une fonction, c'est comprendre le rôle d'un mot ou d'un groupe dans la phrase. Il n'y a pas de hasard : on suit toujours le même chemin, presque comme un algorithme, jusqu'à ce que les réflexes deviennent automatiques. Face à un groupe souligné, demandez-vous d'abord s'il dépend du verbe, d'un nom ou de l'ensemble de la phrase, puis affinez : sujet, complément du verbe, attribut, complément circonstanciel… Cette fiche porte sur la **fonction** ; la **nature** a été travaillée dans la [notion 1](classes-grammaticales).",
             },
             {
               type: "subsection",
@@ -84,7 +84,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "La **fonction** syntaxique d'un mot ou d'un groupe, c'est son **rôle dans la phrase** : sujet, complément, attribut… Elle **dépend du contexte** et peut varier (le même mot est sujet ici, COD ailleurs).\n\nÀ ne pas confondre avec la **nature**, qui est stable (voir notion 1). Au concours, la réponse complète donne **toujours les deux** : nature ET fonction.",
+                  text: "La **nature** d'un mot ou d'un groupe correspond à ce qu'il est : nom, verbe, adjectif, groupe nominal… Elle est **stable** et ne change pas selon la phrase (voir la [notion 1](classes-grammaticales)).\n\nLa **fonction** syntaxique, elle, correspond à son **rôle dans la phrase** : sujet, complément, attribut… Elle **dépend du contexte** et peut varier. Un même groupe nominal peut par exemple être sujet dans « Le chat dort » et COD dans « Je regarde le chat ». Au concours, la réponse complète donne **toujours les deux** : nature ET fonction.",
                 },
               ],
             },
@@ -95,7 +95,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Ces fonctions se définissent par rapport au **verbe** : elles disent ce que le groupe fait autour de lui (sujet, complément d'objet, attribut, circonstance).",
+                  text: "Ces fonctions se définissent par rapport au **verbe**. Pour les mémoriser, on peut les ranger dans cet ordre : qui commande le verbe (sujet), ce que le verbe complète (COD, COI, COS), ce qu'il attribue (attribut du sujet ou du COD), ce qui agit au passif (complément d'agent), puis les circonstances (CC).",
                 },
                 {
                   type: "notionCardGrid",
@@ -107,22 +107,12 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                       sousClasses: "**Natures possibles :** GN · pronom · infinitif · proposition subordonnée",
                       exemples: [
                         "« **Le chat** dort » : GN, sujet de « dort »",
+                        "« **Il** dort » : pronom personnel, sujet de « dort »",
                         "« **Écrire** est un plaisir » : verbe à l'infinitif, sujet de « est »",
                         "« **Que tu partes** m'attriste » : proposition subordonnée conjonctive, sujet de « attriste »",
                       ],
                       piege: "Sujet postposé (inversé) fréquent en poésie : « Monte **une humble flamme** » → « une humble flamme » est sujet, pas COD.",
                       test: "Encadrement « c'est… qui » : « C'est le chat qui dort ».",
-                    },
-                    {
-                      title: "Attribut du sujet",
-                      definition: "Qualité ou identité attribuée au sujet par l'intermédiaire d'un verbe d'état (être, paraître, sembler, devenir, rester, demeurer, avoir l'air, passer pour).",
-                      sousClasses: "**Natures possibles :** adjectif qualificatif · GN · pronom · adverbe (« debout »)",
-                      exemples: [
-                        "« Il semble **fatigué** » : adjectif qualificatif, attribut du sujet « il »",
-                        "« Il devient **professeur** » : GN, attribut du sujet « il »",
-                      ],
-                      piege: "Sans verbe d'état, ce n'est pas un attribut mais une épithète. Ne pas confondre non plus avec l'attribut du COD.",
-                      test: "Remplacer par « être + adjectif » : « Il semble fatigué » équivaut à « Il est fatigué ».",
                     },
                     {
                       title: "COD",
@@ -131,6 +121,9 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                       exemples: [
                         "« Elle mange **une pomme** » : GN, COD de « mange »",
                         "« Il **la** mange » : pronom personnel, COD de « mange »",
+                        "« Elle aime **lire** » : verbe à l'infinitif, COD de « aime »",
+                        "« Je pense **que tu as raison** » : proposition subordonnée conjonctive, COD de « pense »",
+                        "« Je me demande **où il va** » : proposition interrogative indirecte, COD de « demande »",
                       ],
                       piege: "Verbes faussement directs : obéir À, nuire À, ressembler À, pardonner À. Ils sont en réalité transitifs indirects (COI).",
                       test: "« qui ? / quoi ? » sans préposition. Pronominalisation par le/la/les. Passif souvent possible (« une pomme est mangée »).",
@@ -138,23 +131,38 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     {
                       title: "COI",
                       definition: "Complément d'objet indirect : complète un verbe transitif indirect, introduit par une préposition (à, de).",
-                      sousClasses: "**Natures possibles :** GN prépositionnel · pronom clitique (lui, leur, y, en) · proposition subordonnée prépositionnelle",
+                      sousClasses: "**Natures possibles :** GN prépositionnel · pronom personnel placé avant le verbe (lui, leur, y, en) · proposition subordonnée prépositionnelle",
                       exemples: [
                         "« Il pense **à ses vacances** » : GN prépositionnel, COI de « penser à »",
                         "« Elle **lui** parle » : pronom personnel, COI de « parler à »",
+                        "« Je tiens **à ce que tu viennes** » : proposition subordonnée prépositionnelle, COI de « tiens »",
                       ],
-                      piege: "Les pronoms clitiques absorbent la préposition : « m' » dans « Tu m'as menti » est COI (mentir À quelqu'un).",
+                      piege: "Certains pronoms personnels placés avant le verbe cachent la préposition : « m' » dans « Tu m'as menti » est COI, car on dit « mentir à quelqu'un ».",
                       test: "« à / de qui ? quoi ? ». Pronominalisation : à + personne → lui/leur · de + chose → en · à + lieu → y. Passif impossible.",
                     },
                     {
                       title: "COS",
                       definition: "Complément d'objet second : le second complément quand un COD et un COI coexistent.",
-                      sousClasses: "**Natures possibles :** GN prépositionnel · pronom clitique",
+                      sousClasses: "**Natures possibles :** GN prépositionnel · pronom personnel placé avant le verbe",
                       exemples: [
                         "« Il offre **des fleurs** (GN, COD) **à sa mère** (GN prépositionnel, COS) »",
+                        "« Il **lui** offre des fleurs » : pronom personnel, COS de « offre »",
                       ],
                       piege: "Rare au concours. Ne pas le confondre avec un COI seul : le COS suppose un COD à côté.",
                       test: "Schéma verbe + COD + COS. Le COS répond à « à qui ? » en présence d'un COD.",
+                    },
+                    {
+                      title: "Attribut du sujet",
+                      definition: "Qualité ou identité attribuée au sujet par l'intermédiaire d'un verbe d'état (être, paraître, sembler, devenir, rester, demeurer, avoir l'air, passer pour).",
+                      sousClasses: "**Natures possibles :** adjectif qualificatif · GN · pronom · adverbe (« debout »)",
+                      exemples: [
+                        "« Il semble **fatigué** » : adjectif qualificatif, attribut du sujet « il »",
+                        "« Il devient **professeur** » : GN, attribut du sujet « il »",
+                        "« Ce livre est **le mien** » : pronom possessif, attribut du sujet « ce livre »",
+                        "« Il est resté **debout** » : adverbe, attribut du sujet « il »",
+                      ],
+                      piege: "Pour avoir un attribut du sujet, il faut un verbe d'état qui relie le sujet à une qualité ou une identité : « Il semble fatigué ». Sans ce verbe d'état, l'adjectif est une épithète : « Fatigué, il rentre ». Attention aussi à l'attribut du COD : il ne qualifie pas le sujet, mais le COD. Exemple : dans « Je trouve ce livre intéressant », « intéressant » qualifie « ce livre » (COD), pas « je ».",
+                      test: "Remplacer par « être + adjectif » : « Il semble fatigué » équivaut à « Il est fatigué ».",
                     },
                     {
                       title: "Attribut du COD",
@@ -163,9 +171,21 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                       exemples: [
                         "« Je **le** crois **sincère** » : « sincère » adjectif qualificatif, attribut du COD « le »",
                         "« Ils ont élu Marie **présidente** » : « présidente » nom, attribut du COD « Marie »",
+                        "« Je le croyais **parti** » : participe passé, attribut du COD « le »",
                       ],
-                      piege: "Ne pas confondre avec l'épithète liée : « Je trouve ce livre **intéressant** » (attribut du COD) n'est pas « un livre intéressant » (épithète).",
+                      piege: "Ne pas confondre avec l'épithète liée : la nuance est fine. Dans « Je trouve ce livre **intéressant** », « intéressant » est attribut du COD, car il apporte une information sur le COD « ce livre » par l'intermédiaire du verbe « trouve ». Dans « un livre intéressant », « intéressant » est épithète liée : il appartient directement au groupe nominal « un livre intéressant », sans passer par un verbe.",
                       test: "« COD + être + attribut » : « Je le crois sincère » donne « il est sincère ».",
+                    },
+                    {
+                      title: "Complément d'agent",
+                      definition: "Dans une phrase à la voix passive, groupe qui indique qui accomplit l'action subie par le sujet.",
+                      sousClasses: "**Natures possibles :** GN prépositionnel introduit par « par » ou « de » · pronom",
+                      exemples: [
+                        "« La souris est mangée **par le chat** » : GN prépositionnel, complément d'agent du verbe passif « est mangée »",
+                        "« Ce roman est apprécié **de tous** » : pronom indéfini, complément d'agent du verbe passif « est apprécié »",
+                      ],
+                      piege: "Tous les groupes introduits par « par » ne sont pas des compléments d'agent. Dans « Il passe par Paris », « par Paris » indique le lieu : c'est un CC. Le complément d'agent apparaît avec un verbe au passif et correspond au sujet de la phrase active.",
+                      test: "Transformer au passif puis revenir à l'actif : « La souris est mangée par le chat » → « Le chat mange la souris ». « Le chat » accomplit l'action : c'est le complément d'agent.",
                     },
                     {
                       title: "Complément circonstanciel (CC)",
@@ -174,7 +194,10 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                       exemples: [
                         "« **Demain**, il part » : adverbe, CC de temps",
                         "« Il agit **avec courage** » : GN prépositionnel, CC de manière",
+                        "« Il part **demain matin** » : GN sans préposition, CC de temps",
+                        "« **Quand il pleut**, il lit » : proposition subordonnée circonstancielle, CC de temps",
                       ],
+                      astuce: "**Types fréquents :** temps (quand ?), lieu (où ?), manière (comment ?), cause (pourquoi ? à cause de quoi ?), but (dans quel but ?), condition (à quelle condition ?), concession (malgré quoi ?), moyen (avec quoi ?).",
                       piege: "Un complément non supprimable n'est pas un CC libre mais un complément essentiel : « Il habite **à Paris** » (« Il habite » seul est bancal).",
                       test: "Double test : mobilité en tête de phrase ET suppression sans rendre la phrase incorrecte. Les deux doivent fonctionner.",
                     },
@@ -201,7 +224,9 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                       sousClasses: "**Natures possibles :** GN prépositionnel · proposition subordonnée relative · infinitif prépositionnel · adjectif (épithète)",
                       exemples: [
                         "« le livre **de Pierre** » : GN prépositionnel, CDN du nom « livre »",
-                        "« un acte **de courage** » : GN prépositionnel, CDN du nom « acte »",
+                        "« le livre **que je lis** » : proposition subordonnée relative, expansion du nom « livre »",
+                        "« le désir **de partir** » : infinitif prépositionnel, CDN du nom « désir »",
+                        "« une maison **bleue** » : adjectif qualificatif, épithète du nom « maison »",
                       ],
                       piege: "Ne pas confondre avec le CC : « Il part **avec courage** » (CC, mobile) n'est pas « un acte **de courage** » (CDN, non mobile). Même préposition, deux fonctions : « de Paris » est CDN dans « la gare de Paris », CC dans « Elle revient de Paris ».",
                       test: "Non mobile hors du GN : « De Pierre le livre » est impossible.",
@@ -212,6 +237,8 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                       sousClasses: "**Natures possibles :** adjectif qualificatif · participe passé · participe présent (détachée)",
                       exemples: [
                         "« un **grand** homme » : adjectif qualificatif, épithète liée du nom « homme »",
+                        "« une porte **fermée** » : participe passé, épithète liée du nom « porte »",
+                        "« une eau **courante** » : participe présent employé comme adjectif verbal, épithète liée du nom « eau »",
                         "« **Seul**, il repartit » : adjectif qualificatif, épithète détachée du sujet « il »",
                       ],
                       piege: "Sans verbe d'état entre le nom et l'adjectif, c'est une épithète, jamais un attribut du sujet.",
@@ -223,7 +250,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                       sousClasses: "**Natures possibles :** GN · adjectif qualificatif",
                       exemples: [
                         "« Hugo, **grand poète romantique**, vécut longtemps » : GN, apposition à « Hugo »",
-                        "« Paris, **capitale de la France**, est magnifique » : GN, apposition à « Paris »",
+                        "« Paul, **ravi**, sourit » : adjectif qualificatif, apposition à « Paul »",
                       ],
                       piege: "Différente du CDN (pas de virgule) et de l'apostrophe (qui interpelle sans lien syntaxique).",
                       test: "Entre virgules, supprimable, et désigne la même réalité que le nom.",
@@ -234,6 +261,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                       sousClasses: "**Natures possibles :** GN · pronom",
                       exemples: [
                         "« **Mes amis**, écoutez-moi » : GN, apostrophe (aucune fonction syntaxique)",
+                        "« **Toi**, viens ici » : pronom personnel, apostrophe",
                         "« Tu m'as menti, **vieil imposteur** » : GN, apostrophe",
                       ],
                       piege: "N'a **aucune** fonction syntaxique : il faut le signaler explicitement. À ne pas confondre avec l'apposition, qui a un lien avec un nom.",
@@ -246,17 +274,37 @@ export const ficheFonctionsSyntaxiques: Fiche = {
             {
               type: "subsection",
               number: "④",
-              title: "Les 4 tests de repérage à automatiser",
+              title: "Tester une fonction : un exemple complet",
               blocks: [
                 {
+                  type: "paragraph",
+                  text: "Les tests servent surtout quand plusieurs analyses semblent possibles. On part d'une phrase, on isole le groupe à analyser, puis on vérifie son rôle par manipulation. Exemple de départ : « Le soir, les enfants regardent un film. »",
+                },
+                {
                   type: "table",
-                  headers: ["Test", "Comment l'appliquer", "Ce qu'il identifie"],
+                  headers: ["Groupe à analyser", "Manipulation utile", "Conclusion"],
                   rows: [
-                    ["Encadrement « c'est… qui »", "« C'est [groupe] qui [verbe] » : si ça fonctionne, c'est le sujet", "Sujet (même inversé, même infinitif)"],
-                    ["Question « qui ? / quoi ? »", "Poser la question après le verbe : sans préposition → COD ; avec à / de → COI", "COD ou COI"],
-                    ["Pronominalisation", "le/la/les → COD · lui/leur → COI · y → lieu ou COI · en → partitif ou COI de", "COD, COI, complément de lieu"],
-                    ["Mobilité + suppression", "Déplacer en tête de phrase ET supprimer : si les deux marchent → CC libre ; sinon → complément essentiel", "CC libre ou complément essentiel"],
+                    [
+                      "« les enfants »",
+                      "Encadrement : « Ce sont les enfants qui regardent un film. » Le groupe commande aussi l'accord du verbe.",
+                      "Sujet du verbe « regardent ».",
+                    ],
+                    [
+                      "« un film »",
+                      "Question après le verbe : les enfants regardent quoi ? « un film ». Pronominalisation : « Les enfants le regardent. »",
+                      "COD du verbe « regardent ».",
+                    ],
+                    [
+                      "« Le soir »",
+                      "Déplacement et suppression : « Les enfants regardent un film le soir » ; « Les enfants regardent un film ». La phrase reste correcte.",
+                      "Complément circonstanciel de temps.",
+                    ],
                   ],
+                },
+                {
+                  type: "callout",
+                  variant: "warning",
+                  text: "⚠️ Le test de la question ne suffit pas toujours. Dans « Il habite à Lyon », « à Lyon » répond à « où ? », mais il n'est pas supprimable : « Il habite » est incomplet. Ce n'est donc pas un CC libre, mais un complément essentiel de lieu.",
                 },
               ],
             },
@@ -276,7 +324,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               badge: "Très fréquent",
               faux: "Dans « Tu m'as menti », « m' » est analysé comme COD.",
               vrai: "« mentir À quelqu'un » est un verbe transitif indirect : « m' » est donc **COI**.",
-              methode: "Remplacer le pronom par le GN : « Tu as menti à moi » fait apparaître la préposition, donc COI. Les pronoms clitiques (m', t', lui…) absorbent la préposition.",
+              methode: "Remplacer le pronom par le GN : « Tu as menti à moi » fait apparaître la préposition, donc COI. Les pronoms personnels placés avant le verbe (m', t', lui…) peuvent cacher cette préposition.",
             },
             {
               type: "piegeCard",
@@ -322,55 +370,93 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              title: "Une démarche, quatre tests",
-              text: "Face à un groupe souligné, on identifie sa fonction par éliminations, en appliquant les 4 tests dans l'ordre. Un checkpoint clôt la méthode pour avancer en confiance.",
+              title: "Une démarche par hypothèses",
+              text: "Face à un groupe souligné, on commence par le situer : dépend-il du verbe de la phrase ou d'un nom ? Ce premier tri évite de chercher un COD là où il faut reconnaître un complément du nom, ou de prendre une épithète pour un attribut.",
             },
             {
-              type: "rappelExpress",
-              title: "Rappel express : les 4 tests",
-              blocks: [
+              type: "methodeGroup",
+              number: "①",
+              title: "Faire le premier tri : verbe ou nom ?",
+              intro:
+                "**Question typique :** « Donnez la fonction du groupe souligné. »\nAvant de nommer la fonction, on regarde où le groupe se rattache dans la phrase.",
+              steps: [
                 {
-                  type: "formulaBlock",
-                  lines: [
-                    "Encadrement « c'est… qui » → sujet",
-                    "Question « qui ? quoi ? » après le verbe → COD (sans préposition) ou COI (avec préposition)",
-                    "Pronominalisation → le/la/les = COD · lui/leur = COI · y = lieu · en = de + chose",
-                    "Mobilité + suppression → CC libre (si les deux marchent) ou complément essentiel (si l'un échoue)",
-                  ],
+                  number: "1",
+                  text: "**Le groupe dépend-il du verbe ?** Il peut faire l'action, compléter le verbe, recevoir une qualité par le verbe, ou préciser les circonstances de l'action.",
+                  example: { lines: ["« Les enfants regardent <u>un film</u> » → le groupe complète « regardent » → fonction liée au verbe"] },
                 },
                 {
-                  type: "callout",
-                  variant: "warning",
-                  text: "⚠️ La réponse complète au concours donne toujours la **nature ET la fonction**, jamais l'une sans l'autre.",
+                  number: "2",
+                  text: "**Le groupe dépend-il d'un nom ?** Il fait partie d'un groupe nominal, précise un nom ou ajoute une information sur ce nom.",
+                  example: { lines: ["« le livre <u>de Paul</u> » → le groupe complète le nom « livre » → fonction dans le groupe nominal"] },
+                },
+                {
+                  number: "3",
+                  text: "**Le groupe interpelle-t-il quelqu'un ?** Il ne dépend alors ni du verbe ni d'un nom : c'est une apostrophe.",
+                  example: { lines: ["« <u>Mes amis</u>, écoutez-moi » → apostrophe"] },
                 },
               ],
             },
             {
               type: "methodeGroup",
-              number: "①",
-              title: "Identifier la fonction d'un groupe pas à pas",
+              number: "②",
+              title: "Si le groupe dépend du verbe",
               intro:
-                "**Question typique :** « Donnez la fonction du groupe souligné. »\nOn part du verbe et on applique les tests dans l'ordre.",
+                "On cherche alors parmi les fonctions construites autour du verbe : sujet, COD, COI, attribut, complément d'agent, complément circonstanciel.",
               steps: [
                 {
                   number: "1",
-                  text: "**Le groupe est-il le sujet ?** Tester l'encadrement « c'est… qui ».",
-                  example: { lines: ["« Le soleil se couchait » → « C'est le soleil qui se couchait » → sujet"] },
+                  text: "**Si le groupe semble commander le verbe**, tester l'encadrement « c'est… qui ».",
+                  example: { lines: ["« <u>Le soleil</u> se couchait » → « C'est le soleil qui se couchait » → sujet"] },
                 },
                 {
                   number: "2",
-                  text: "**Sinon, complète-t-il le verbe ?** Poser « qui ? quoi ? » : sans préposition → COD ; avec à / de → COI. Vérifier par la pronominalisation.",
-                  example: { lines: ["« Elle parle à son ami » → « Elle lui parle » → COI"] },
+                  text: "**Si le groupe semble compléter le verbe**, poser la question après le verbe : sans préposition → COD ; avec à / de → COI. Vérifier par la pronominalisation.",
+                  example: { lines: ["« Elle parle <u>à son ami</u> » → « Elle lui parle » → COI"] },
                 },
                 {
                   number: "3",
-                  text: "**Sinon, précise-t-il une circonstance ?** Tester mobilité + suppression : si les deux marchent → CC ; sinon, complément essentiel.",
-                  example: { lines: ["« Rapidement, il referma la porte » → mobile et supprimable → CC de manière"] },
+                  text: "**Si le groupe donne une qualité ou une identité par le verbe**, vérifier s'il s'agit d'un attribut : attribut du sujet après un verbe d'état, attribut du COD si la qualité porte sur le COD.",
+                  example: { lines: ["« Il semble <u>fatigué</u> » → attribut du sujet ; « Je trouve ce livre <u>intéressant</u> » → attribut du COD"] },
+                },
+                {
+                  number: "4",
+                  text: "**Si la phrase est au passif**, le groupe introduit par « par » ou « de » peut être complément d'agent : il indique qui accomplit l'action.",
+                  example: { lines: ["« La souris est mangée <u>par le chat</u> » → complément d'agent"] },
+                },
+                {
+                  number: "5",
+                  text: "**Si le groupe indique une circonstance**, tester mobilité + suppression : si les deux marchent → CC ; sinon, complément essentiel.",
+                  example: { lines: ["« <u>Rapidement</u>, il referma la porte » → mobile et supprimable → CC de manière"] },
                 },
                 {
                   number: "💡",
-                  text: "**Sinon, est-il dans un groupe nominal ou rattaché à un nom ?** CDN, épithète, apposition. Et s'il interpelle l'interlocuteur sans lien syntaxique : apostrophe.",
+                  text: "**Si aucune manipulation ne convient**, revenir au premier tri : le groupe dépend peut-être d'un nom, ou il s'agit d'une apostrophe.",
                   warn: "⚠️ Une fonction se justifie toujours par un test, jamais « au feeling ».",
+                },
+              ],
+            },
+            {
+              type: "methodeGroup",
+              number: "③",
+              title: "Si le groupe dépend d'un nom",
+              intro:
+                "On ne cherche plus un complément du verbe : on regarde comment le groupe enrichit le nom. Les fonctions à vérifier sont surtout le complément du nom, l'épithète et l'apposition.",
+              steps: [
+                {
+                  number: "1",
+                  text: "**Le groupe complète le nom avec une préposition ou une relative ?** C'est souvent un complément du nom.",
+                  example: { lines: ["« le livre <u>de Paul</u> » → CDN du nom « livre »"] },
+                },
+                {
+                  number: "2",
+                  text: "**L'adjectif est directement lié au nom ?** C'est une épithète liée. S'il est séparé par une virgule, c'est une épithète détachée.",
+                  example: { lines: ["« une <u>belle</u> robe » → épithète liée du nom « robe »", "« <u>Fatigué</u>, l'enfant s'endormit » → épithète détachée du nom « enfant »"] },
+                },
+                {
+                  number: "3",
+                  text: "**Le groupe est détaché par des virgules et désigne la même réalité que le nom ?** C'est une apposition.",
+                  example: { lines: ["« Hugo, <u>grand poète romantique</u>, vécut longtemps » → apposition à « Hugo »"] },
                 },
               ],
             },
@@ -487,7 +573,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                   options: ["Attribut du sujet", "Épithète liée", "Attribut du COD", "COD"],
                   correctIndex: 2,
                   explanation:
-                    "« sincère » qualifie le COD « le » via le verbe « croire » : c'est un attribut du COD (« il est sincère »).",
+                    "« sincère » ne qualifie pas le sujet « je » : il qualifie le COD « le » via le verbe « croire ». C'est donc un attribut du COD ; la reformulation donne « il est sincère ».",
                 },
               ],
             },
@@ -597,15 +683,15 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "echauffement",
-              title: "Exercice 6 : Le test de pronominalisation",
+              title: "Exercice 6 : Complément du verbe ou circonstance ?",
               question:
-                "Appliquez la pronominalisation pour identifier la fonction :\na) « Il téléphone à sa mère. »   b) « Elle parle de son voyage. »   c) « Ils habitent à Paris. »   d) « Il mange du pain. »",
+                "Identifiez la fonction du groupe souligné en justifiant par la question après le verbe et, si besoin, par la suppression :\na) « Il téléphone <u>à sa mère</u>. »   b) « Elle raconte <u>son voyage</u>. »   c) « Ils habitent <u>à Paris</u>. »   d) « <u>Le matin</u>, il lit. »",
               correction: [
-                { type: "line", label: "a)", text: "« Il lui téléphone » → COI (à + personne → lui)" },
-                { type: "line", label: "b)", text: "« Elle en parle » → COI (de + chose → en)" },
-                { type: "line", label: "c)", text: "« Ils y habitent » → complément essentiel de lieu (non supprimable, donc pas un CC libre)" },
-                { type: "line", label: "d)", text: "« Il en mange » → COD partitif (du → en)" },
-                { type: "note", text: "⚠️ « y » peut pronominaliser un CC de lieu supprimable (« Il y travaille ») ou un complément essentiel de lieu (« Il y habite »). Le test de suppression départage." },
+                { type: "line", label: "a)", text: "**à sa mère** → COI du verbe « téléphone » : il téléphone à qui ? à sa mère." },
+                { type: "line", label: "b)", text: "**son voyage** → COD du verbe « raconte » : elle raconte quoi ? son voyage, sans préposition." },
+                { type: "line", label: "c)", text: "**à Paris** → complément essentiel de lieu : il habite où ? à Paris ; « Ils habitent » seul est incomplet." },
+                { type: "line", label: "d)", text: "**Le matin** → CC de temps : le groupe est supprimable (« il lit ») et déplaçable (« il lit le matin »)." },
+                { type: "note", text: "⚠️ La question après le verbe aide à repérer COD et COI, mais elle ne suffit pas pour les lieux : il faut aussi tester la suppression." },
               ],
             },
             {
@@ -630,12 +716,12 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               level: "echauffement",
               title: "Exercice 8 : Toutes fonctions mêlées",
               question:
-                "Identifiez la fonction du groupe souligné :\na) « Je <u>le</u> crois <u>sincère</u>. »   b) « Il offre <u>des roses</u> <u>à sa femme</u>. »   c) « <u>Épuisée</u>, elle s'endormit. »   d) « Ils ont élu Marie <u>présidente</u>. »",
+                "Identifiez la fonction du groupe souligné :\na) « Je <u>le</u> crois <u>sincère</u>. »   b) « Il offre <u>des roses</u> <u>à sa femme</u>. »   c) « <u>Épuisée</u>, elle s'endormit. »   d) « Ils ont élu Paola <u>présidente</u>. »",
               correction: [
-                { type: "line", label: "a)", text: "**sincère** → attribut du COD « le » (« il est sincère »)" },
+                { type: "line", label: "a)", text: "**sincère** → attribut du COD « le » : ce n'est pas « je » qui est sincère, mais « le » (« il est sincère »)" },
                 { type: "line", label: "b)", text: "**des roses** → COD ; **à sa femme** → COS" },
                 { type: "line", label: "c)", text: "**Épuisée** → épithète détachée du sujet « elle » (pas de verbe d'état)" },
-                { type: "line", label: "d)", text: "**présidente** → attribut du COD « Marie » (« Marie est présidente »)" },
+                { type: "line", label: "d)", text: "**présidente** → attribut du COD « Paola » (« Paola est présidente »)" },
               ],
             },
             {
@@ -653,9 +739,9 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               question:
                 "Justifiez la fonction par un test grammatical explicite :\na) « Elle aime son métier. » (COD ?)\nb) « Il obéit à ses parents. » (COI ?)\nc) « Les enfants jouent dehors. » (sujet ?)",
               correction: [
-                { type: "line", label: "a)", text: "**son métier** = COD : « elle aime quoi ? » sans préposition ; « Elle l'aime » ; passif « son métier est aimé »." },
-                { type: "line", label: "b)", text: "**à ses parents** = COI : « à qui ? » avec préposition ; « Il leur obéit » ; passif impossible." },
-                { type: "line", label: "c)", text: "**Les enfants** = sujet : « C'est les enfants qui jouent dehors »." },
+                { type: "line", label: "a)", text: "**son métier** → COD du verbe « aime ». Deux tests le confirment : 1) question après le verbe : « elle aime quoi ? » → « son métier », sans préposition ; 2) pronominalisation : « Elle l'aime ». Le groupe complète directement le verbe." },
+                { type: "line", label: "b)", text: "**à ses parents** → COI du verbe « obéit ». Deux tests le confirment : 1) question après le verbe : « il obéit à qui ? » → « à ses parents » ; 2) pronominalisation : « Il leur obéit ». La préposition « à » est imposée par le verbe « obéir à »." },
+                { type: "line", label: "c)", text: "**Les enfants** → sujet du verbe « jouent ». Test : encadrement par « c'est… qui » → « Ce sont les enfants qui jouent dehors ». Le groupe commande l'accord du verbe à la 3e personne du pluriel." },
               ],
             },
             {
@@ -695,7 +781,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               title: "Exercice 12 : Verbes transitifs indirects",
               objectifTag: "COD / COI",
               question:
-                "Ces verbes sont souvent pris pour des transitifs directs. Donnez la vraie fonction :\na) « Il ressemble <u>à son père</u>. »   b) « Elle nuit <u>à ses intérêts</u>. »   c) « Il joue <u>de la guitare</u>. »   d) « Ils ont besoin <u>de repos</u>. »",
+                "Identifiez la fonction du groupe souligné. Attention à la préposition qui introduit le groupe : elle fait partie de la construction du verbe et peut changer l'analyse.\na) « Il ressemble <u>à son père</u>. »   b) « Elle nuit <u>à ses intérêts</u>. »   c) « Il joue <u>de la guitare</u>. »   d) « Ils ont besoin <u>de repos</u>. »",
               correction: [
                 { type: "line", label: "a)", text: "**à son père** → COI (ressembler À ; « Il lui ressemble »)" },
                 { type: "line", label: "b)", text: "**à ses intérêts** → COI (nuire À ; « Elle y nuit »)" },
@@ -1057,7 +1143,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               title: "Exercice 29 : Marguerite Yourcenar, Nouvelles orientales",
               enonce:
                 "« un <u>tapis dont</u> elles savaient par cœur le dessin » · « les provinces <u>de l'Empire</u> » · « Tu <u>m'</u>as menti, Wang-Fô, <u>vieil imposteur</u> »\n*(Marguerite Yourcenar, Comment Wang-Fô fut sauvé, Nouvelles orientales, 1963)*",
-              question: "Format identique au concours · Précisez la nature et la fonction : « <u>dont</u> » · « <u>de l'Empire</u> » · « <u>m'</u> » · « <u>vieil imposteur</u> »",
+              question: "Précisez la nature et la fonction : « <u>dont</u> » · « <u>de l'Empire</u> » · « <u>m'</u> » · « <u>vieil imposteur</u> »",
               correction: [
                 {
                   type: "table",
@@ -1065,7 +1151,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                   rows: [
                     ["dont", "Pronom relatif", "CDN du nom « dessin » (dépronominalisé : « le dessin de ce tapis »)"],
                     ["de l'Empire", "GN prépositionnel", "CDN du nom « provinces »"],
-                    ["m'", "Pronom personnel clitique (1re pers. sing.)", "COI du verbe « mentir » (mentir À quelqu'un)"],
+                    ["m'", "Pronom personnel (1re personne du singulier)", "COI du verbe « mentir » (mentir À quelqu'un)"],
                     ["vieil imposteur", "Groupe nominal", "Apostrophe (interpelle l'interlocuteur, aucun lien syntaxique)"],
                   ],
                 },
@@ -1080,7 +1166,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               enonce:
                 "« <u>Écrire</u> n'<u>est</u> pas tout à fait un choix : c'<u>est</u> un aveu d'impuissance. On <u>écrit</u> parce qu'on ne sait par quel autre biais attraper le réel. Vivre, sans l'écriture, me <u>va</u> mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
               question:
-                "Format identique au concours · Identifiez les sujets des verbes soulignés, leur nature et leur fonction : « <u>est</u> » (1re occ.) · « <u>est</u> » (2e occ.) · « <u>écrit</u> » · « <u>va</u> »",
+                "Identifiez les sujets des verbes soulignés, leur nature et leur fonction : « <u>est</u> » (1re occ.) · « <u>est</u> » (2e occ.) · « <u>écrit</u> » · « <u>va</u> »",
               correction: [
                 {
                   type: "table",
@@ -1126,7 +1212,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
             {
               type: "callout",
               variant: "warning",
-              text: "Ces exercices reproduisent des erreurs fréquentes relevées dans les copies. Repérer ce qui cloche dans une copie, c'est aussi ce que vous ferez plus tard avec vos élèves.",
+              text: "Ces exercices reprennent des erreurs fréquentes relevées dans les copies. Identifier l'erreur d'analyse, la corriger et l'expliquer clairement fait aussi partie des gestes professionnels à construire pour enseigner la grammaire.",
             },
             {
               type: "exerciceCard",
@@ -1223,9 +1309,9 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               type: "flashcardDeck",
               cards: [
                 {
-                  question: "Quels sont les 4 tests pour identifier la fonction d'un groupe ?",
+                  question: "Quelle démarche suivre pour identifier la fonction d'un groupe ?",
                   answer:
-                    "1. Encadrement « c'est… qui » → sujet.\n2. Question « qui ? quoi ? » après le verbe → COD (sans préposition) ou COI (avec préposition).\n3. Pronominalisation → le/la/les = COD · lui/leur = COI · y = lieu · en = de + chose.\n4. Mobilité + suppression → CC libre (si les deux marchent) ou complément essentiel.",
+                    "1. Repérer à quoi le groupe se rattache : au verbe, à un nom, ou à l'interlocuteur.\n2. S'il dépend du verbe : chercher sujet, COD/COI, attribut, complément d'agent ou CC.\n3. S'il dépend d'un nom : chercher CDN, épithète ou apposition.\n4. Justifier avec une manipulation adaptée : « c'est… qui », question après le verbe, passif, déplacement/suppression.",
                 },
                 {
                   question: "Comment distinguer attribut du sujet et épithète détachée ?",
@@ -1254,7 +1340,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                 {
                   question: "« m' » dans « Tu m'as menti » : COD ou COI ?",
                   answer:
-                    "**COI**. Le verbe « mentir » se construit avec un COI (mentir à quelqu'un). La préposition est absorbée par la forme clitique : « m' » = « à moi ».",
+                    "**COI**. Le verbe « mentir » se construit avec un COI (mentir à quelqu'un). Avec « m' », la préposition n'apparaît plus directement : on retrouve l'idée de « à moi ».",
                   astuce: "⚠️ Erreur très fréquente : beaucoup de candidats répondent COD.",
                 },
                 {
@@ -1289,7 +1375,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                 },
                 {
                   title: "Liées au verbe",
-                  lines: ["Sujet · attribut du sujet", "COD · COI · COS", "Attribut du COD · CC"],
+                  lines: ["Sujet · COD · COI · COS", "Attribut du sujet · attribut du COD", "Complément d'agent · CC"],
                   variant: "blue",
                 },
                 {
@@ -1298,8 +1384,8 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                   variant: "green",
                 },
                 {
-                  title: "Les 4 tests",
-                  lines: ["Encadrement « c'est… qui »", "Question qui ? quoi ?", "Pronominalisation", "Mobilité + suppression"],
+                  title: "Démarche",
+                  lines: ["Dépend du verbe ?", "Dépend d'un nom ?", "Justifier par une manipulation"],
                   variant: "green",
                 },
                 {
