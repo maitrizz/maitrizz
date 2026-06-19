@@ -88,14 +88,14 @@ export const ficheModesEtTemps: Fiche = {
                 },
                 {
                   type: "table",
-                  headers: ["Mode", "Personnel ?", "Temps principaux"],
+                  headers: ["Mode", "Personnel ?", "Temps principaux", "Exemple"],
                   rows: [
-                    ["Indicatif", "Oui (avec sujet)", "Présent, imparfait, passé simple, passé composé, plus-que-parfait, futur, futur antérieur, conditionnel présent, conditionnel passé"],
-                    ["Subjonctif", "Oui (avec sujet)", "Présent, passé, imparfait (littéraire)"],
-                    ["Impératif", "Oui (sans sujet exprimé)", "Présent, passé"],
-                    ["Infinitif", "Non", "Présent, passé"],
-                    ["Participe", "Non", "Présent, passé"],
-                    ["Gérondif", "Non", "Présent (en + participe présent)"],
+                    ["Indicatif", "Oui (avec sujet)", "Présent, imparfait, passé simple, passé composé, plus-que-parfait, futur, futur antérieur, conditionnel présent, conditionnel passé", "« Il vient. »"],
+                    ["Subjonctif", "Oui (avec sujet)", "Présent, passé, imparfait (littéraire)", "« Il faut qu'il vienne. »"],
+                    ["Impératif", "Oui (sans sujet exprimé)", "Présent, passé", "« Viens ! »"],
+                    ["Infinitif", "Non", "Présent, passé", "« venir »"],
+                    ["Participe", "Non", "Présent, passé", "« venant », « venu »"],
+                    ["Gérondif", "Non", "Présent (en + participe présent)", "« en venant »"],
                   ],
                 },
                 {
@@ -103,7 +103,7 @@ export const ficheModesEtTemps: Fiche = {
                   variant: "warning",
                   icon: "⚠️",
                   title: "Le statut du conditionnel",
-                  text: "Dans la terminologie grammaticale de référence retenue (Éduscol récent), le conditionnel n'est pas un mode autonome : c'est un **temps de l'indicatif** (conditionnel présent, conditionnel passé). On répond donc « **indicatif, conditionnel présent** » ou « **indicatif, conditionnel passé** ». L'appellation traditionnelle « mode conditionnel » subsiste dans certains usages scolaires : on peut la mentionner, mais ce n'est pas la formulation retenue.",
+                  text: "Dans la [terminologie grammaticale de référence publiée par Éduscol](https://eduscol.education.gouv.fr/media/67998/download?attachment=), le conditionnel n'est pas un mode autonome : c'est un **temps de l'indicatif** (conditionnel présent, conditionnel passé). On répond donc « **indicatif, conditionnel présent** » ou « **indicatif, conditionnel passé** ». L'appellation traditionnelle « mode conditionnel » subsiste dans certains usages scolaires : on peut la mentionner, mais ce n'est pas la formulation retenue.",
                 },
                 {
                   type: "callout",
@@ -164,7 +164,7 @@ export const ficheModesEtTemps: Fiche = {
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Clé de lecture : passé composé = auxiliaire au présent (« a vu ») ; plus-que-parfait = auxiliaire à l'imparfait (« avait vu »). Ne pas confondre non plus « il est parti » (passé composé, verbe de mouvement) avec une voix passive.",
+                  text: "⚠️ Clé de lecture : passé composé = auxiliaire au présent (« a vu ») ; plus-que-parfait = auxiliaire à l'imparfait (« avait vu »).",
                 },
               ],
             },
@@ -270,28 +270,8 @@ export const ficheModesEtTemps: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              title: "Une démarche en 4 questions",
-              text: "Face à une forme verbale, on se pose toujours les mêmes questions, dans l'ordre. Une seconde méthode traite les formes ambiguës (le « r » du conditionnel, l'auxiliaire des temps composés).",
-            },
-            {
-              type: "rappelExpress",
-              title: "Rappel express : les 4 questions",
-              blocks: [
-                {
-                  type: "formulaBlock",
-                  lines: [
-                    "Q1. La forme est-elle conjuguée ou non conjuguée ?",
-                    "Q2. Quel est le mode ? (contexte : que/bien que + volonté ou doute → subjonctif · ordre sans sujet exprimé → impératif · sinon indicatif)",
-                    "Q3. Quel est le temps ? (terminaison pour les formes simples ; auxiliaire pour les formes composées ; le « r » distingue le conditionnel présent de l'imparfait, tous deux temps de l'indicatif)",
-                    "Q4. Quelle est la valeur dans ce contexte ? (notions 7 et 8)",
-                  ],
-                },
-                {
-                  type: "callout",
-                  variant: "warning",
-                  text: "⚠️ Une forme non conjuguée (infinitif, participe, gérondif) s'arrête à Q1 : on donne sa nature, pas un mode ni un temps personnel.",
-                },
-              ],
+              title: "Le bon ordre d'analyse",
+              text: "Pour identifier une forme verbale, avancez toujours dans le même ordre : vérifiez si elle est conjuguée, puis déterminez son mode, son temps et sa valeur. Chaque réponse doit être justifiée par un indice précis : la terminaison, l'auxiliaire ou le contexte. La valeur des temps est approfondie dans les notions 7 et 8.",
             },
             {
               type: "methodeGroup",
@@ -314,7 +294,7 @@ export const ficheModesEtTemps: Fiche = {
                 },
                 {
                   number: "💡",
-                  text: "**Quelle valeur ?** Préciser dans le contexte (ici, une information rapportée sans certitude). L'analyse détaillée des valeurs relève des notions 7 et 8.",
+                  text: "**Quelle valeur ?** Ici, la forme présente une information rapportée sans certitude.\n\n**Réponse attendue :** « serait » est conjugué à l'indicatif, au conditionnel présent. Il exprime ici une information non confirmée.",
                   warn: "⚠️ « -ait » fait spontanément penser à l'imparfait : ne pas oublier de chercher le « r » du conditionnel.",
                 },
               ],
@@ -326,7 +306,7 @@ export const ficheModesEtTemps: Fiche = {
               badge: "30 secondes",
               question: "Donnez le mode et le temps de « viendrait ».",
               correction: [
-                { type: "line", text: "« viendrait » contient un « r » avant la terminaison ; test « nous » : « nous viendrions » (-rions) → **conditionnel présent**." },
+                { type: "line", text: "**Réponse attendue :** « viendrait » est conjugué à l'indicatif, au conditionnel présent. Le test « nous viendrions » fait apparaître la terminaison -rions." },
                 { type: "note", text: "Trouvé du premier coup ? Vous tenez la méthode. Sinon, reprenez Q2 et Q3." },
               ],
             },
@@ -335,22 +315,22 @@ export const ficheModesEtTemps: Fiche = {
               number: "②",
               title: "Trancher une forme ambiguë",
               intro:
-                "**Question typique :** « Donnez le mode et le temps de la forme soulignée. »\nDeux tests règlent l'essentiel des hésitations.",
+                "**Question typique :** Donnez le mode et le temps des formes soulignées dans « Ce traitement <u>réduirait</u> les risques », « Elle <u>avait relu</u> le dossier » et « Il <u>vint</u> aussitôt ».\nChaque exemple correspond à une difficulté différente.",
               steps: [
                 {
                   number: "1",
                   text: "**Forme simple en -ait :** appliquer le test « nous » pour départager imparfait (-ions) et conditionnel (-rions).",
-                  example: { lines: ["« réduirait » → « nous réduirions » → conditionnel présent"] },
+                  example: { lines: ["**Réponse attendue :** « réduirait » est conjugué à l'indicatif, au conditionnel présent. Test : « nous réduirions »."] },
                 },
                 {
                   number: "2",
                   text: "**Forme composée (deux mots) :** lire le temps de l'auxiliaire.",
-                  example: { lines: ["« avait relu » → auxiliaire « avait » (imparfait) → plus-que-parfait"] },
+                  example: { lines: ["**Réponse attendue :** « avait relu » est conjugué à l'indicatif, au plus-que-parfait. L'auxiliaire « avait » est à l'imparfait."] },
                 },
                 {
                   number: "💡",
                   text: "**Forme irrégulière isolée :** revenir à l'infinitif, puis au mode et au temps.",
-                  example: { lines: ["« vint » → venir → indicatif passé simple"] },
+                  example: { lines: ["**Réponse attendue :** « vint » est conjugué à l'indicatif, au passé simple du verbe « venir »."] },
                 },
               ],
             },
@@ -361,7 +341,7 @@ export const ficheModesEtTemps: Fiche = {
               badge: "30 secondes",
               question: "Mode et temps de « était parti » ?",
               correction: [
-                { type: "line", text: "Forme composée : auxiliaire « était » (imparfait de être) + participe passé → **plus-que-parfait** de l'indicatif." },
+                { type: "line", text: "**Réponse attendue :** « était parti » est conjugué à l'indicatif, au plus-que-parfait. L'auxiliaire « était » est à l'imparfait." },
                 { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
               ],
             },
@@ -472,7 +452,7 @@ export const ficheModesEtTemps: Fiche = {
                   ],
                   correctIndex: 1,
                   explanation:
-                    "On vérifie d'abord si la forme est conjuguée. Une forme non conjuguée (infinitif, participe, gérondif) n'a pas de mode ni de temps personnel à indiquer.",
+                    "On vérifie d'abord si la forme est conjuguée. Si elle ne l'est pas, on précise s'il s'agit d'un infinitif, d'un participe ou d'un gérondif, sans lui attribuer une personne ni un temps de conjugaison.",
                 },
               ],
             },
@@ -583,7 +563,7 @@ export const ficheModesEtTemps: Fiche = {
               title: "Exercice 5 : Passés simples irréguliers",
               objectifTag: "Formes irrégulières",
               question:
-                "Donnez l'infinitif, le mode et le temps de chaque forme :\na) « fut »   b) « vint »   c) « fit »   d) « put »   e) « sut »   f) « dit »",
+                "Donnez l'infinitif, le mode et le temps de chaque forme :\na) « fut »   b) « vint »   c) « fit »   d) « put »   e) « sut »   f) « prit »",
               correction: [
                 {
                   type: "table",
@@ -594,10 +574,9 @@ export const ficheModesEtTemps: Fiche = {
                     ["fit", "faire", "Indicatif · passé simple"],
                     ["put", "pouvoir", "Indicatif · passé simple"],
                     ["sut", "savoir", "Indicatif · passé simple"],
-                    ["dit", "dire", "Indicatif · passé simple (ou présent selon le contexte)"],
+                    ["prit", "prendre", "Indicatif · passé simple"],
                   ],
                 },
-                { type: "note", text: "⚠️ « dit » peut être présent (« il dit la vérité ») ou passé simple (« il dit alors… ») : le contexte tranche." },
               ],
             },
             {
@@ -666,9 +645,9 @@ export const ficheModesEtTemps: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 9 · Extrait littéraire : Émile Zola",
+              title: "Exercice 9 · Relever les formes conjuguées",
               enonce:
-                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »\n*(Émile Zola, Germinal, 1885)*",
+                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »",
               question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
               correction: [
                 {
@@ -679,16 +658,16 @@ export const ficheModesEtTemps: Fiche = {
                     ["se hâtait", "Indicatif", "Imparfait"],
                   ],
                 },
-                { type: "note", text: "⚠️ « tenant », « baissés », « pressée », « atteindre » sont des formes non conjuguées : pas de mode ni de temps personnel à indiquer." },
+                { type: "note", text: "⚠️ « tenant », « baissés », « pressée » et « atteindre » sont des formes non conjuguées : elles ne font pas partie du relevé demandé." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 10 · Extrait littéraire : Colette",
+              title: "Exercice 10 · Relever les imparfaits",
               enonce:
-                "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »\n*(Colette, La Maison de Claudine, 1922)*",
+                "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »",
               question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
               correction: [
                 {
@@ -701,7 +680,7 @@ export const ficheModesEtTemps: Fiche = {
                     ["disait", "Indicatif", "Imparfait"],
                   ],
                 },
-                { type: "note", text: "💡 « jouer » est un infinitif (forme non conjuguée) : pas de mode ni de temps personnel. La valeur de ces imparfaits est traitée aux notions 7 et 8." },
+                { type: "note", text: "💡 « jouer » est un infinitif : cette forme non conjuguée ne fait pas partie du relevé. La valeur des imparfaits est traitée dans les notions 7 et 8." },
               ],
             },
             {
@@ -710,7 +689,7 @@ export const ficheModesEtTemps: Fiche = {
               level: "n3",
               title: "Exercice 11 · Extrait littéraire : Marguerite Yourcenar",
               enonce:
-                "« J'ai vu se rouvrir les portes qui me séparaient du monde, je suis monté sur la terrasse, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
+                "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
               question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
               correction: [
                 {
@@ -723,16 +702,16 @@ export const ficheModesEtTemps: Fiche = {
                     ["étaient", "Indicatif", "Imparfait"],
                   ],
                 },
-                { type: "note", text: "💡 « se rouvrir », « regarder » (s'ils figurent dans l'extrait) sont des infinitifs : formes non conjuguées." },
+                { type: "note", text: "💡 « se rouvrir » et « regarder » sont des infinitifs : ces formes non conjuguées ne font pas partie du relevé." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 12 · Extrait littéraire : Victor Hugo",
+              title: "Exercice 12 · Présent et infinitif",
               enonce:
-                "« Insensées choses qui nous font rêver ! Monte en moi une humble flamme. »\n*(Victor Hugo)*",
+                "« Les choses insensées nous font rêver ; une humble flamme monte en moi. »",
               question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
               correction: [
                 {
@@ -740,10 +719,10 @@ export const ficheModesEtTemps: Fiche = {
                   headers: ["Verbe", "Mode", "Temps"],
                   rows: [
                     ["font", "Indicatif", "Présent"],
-                    ["Monte", "Indicatif", "Présent"],
+                    ["monte", "Indicatif", "Présent"],
                   ],
                 },
-                { type: "note", text: "⚠️ « rêver » est un infinitif : forme non conjuguée, pas de mode ni de temps personnel." },
+                { type: "note", text: "⚠️ « rêver » est un infinitif : cette forme non conjuguée ne fait pas partie du relevé." },
               ],
             },
           ],
@@ -757,14 +736,14 @@ export const ficheModesEtTemps: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format de la question sur le verbe de la Partie 1 : extrait littéraire, identification du mode et du temps, formulation jury. Les exercices calqués sur des sujets récents portent le badge ✦. La valeur (3e élément attendu) est approfondie aux notions 7 et 8.",
+              text: "Ces exercices reprennent les formulations du concours pour identifier le mode et le temps d'une forme verbale. Lorsqu'un extrait provient d'un sujet récent mais que la question a été adaptée à cette notion, le badge le précise. La valeur des temps est approfondie dans les notions 7 et 8.",
             },
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 1 : Émile Zola, Germinal",
+              title: "Exercice 1 : Passé simple et imparfait",
               enonce:
-                "« Une femme <u>passa</u>, tenant par la main un petit garçon. Elle <u>se hâtait</u>, les yeux baissés. »\n*(Émile Zola, Germinal, 1885)*",
+                "« Une femme <u>passa</u>, tenant par la main un petit garçon. Elle <u>se hâtait</u>, les yeux baissés. »",
               question: "Donnez le mode et le temps de « passa » et « se hâtait ».",
               correction: [
                 {
@@ -781,9 +760,9 @@ export const ficheModesEtTemps: Fiche = {
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 2 : Colette, La Maison de Claudine",
+              title: "Exercice 2 : Deux imparfaits",
               enonce:
-                "« Ma mère, dont le regard ne <u>vieillissait</u> pas, <u>regardait</u> les enfants jouer dans le jardin. »\n*(Colette, La Maison de Claudine, 1922)*",
+                "« Ma mère, dont le regard ne <u>vieillissait</u> pas, <u>regardait</u> les enfants jouer dans le jardin. »",
               question: "Donnez le mode et le temps de « vieillissait » et « regardait ».",
               correction: [
                 {
@@ -810,11 +789,11 @@ export const ficheModesEtTemps: Fiche = {
             {
               type: "exerciceCard",
               variant: "annale",
-              badge: "✦ Format concours récent",
+              badge: "Entraînement adapté d'un sujet récent",
               title: "Exercice 4 : Marguerite Yourcenar, Comment Wang-Fô fut sauvé",
               enonce:
-                "« J'<u>ai vu</u> se rouvrir les portes qui me <u>séparaient</u> du monde ; je <u>suis monté</u> sur la terrasse. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
-              question: "Format identique au concours · Donnez le mode et le temps de « ai vu », « séparaient » et « suis monté ».",
+                "« À seize ans, j'<u>ai vu</u> se rouvrir les portes qui me <u>séparaient</u> du monde : je <u>suis monté</u> sur la terrasse du palais pour regarder les nuages. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
+              question: "Donnez le mode et le temps de « ai vu », « séparaient » et « suis monté ».",
               correction: [
                 {
                   type: "table",
@@ -825,17 +804,17 @@ export const ficheModesEtTemps: Fiche = {
                     ["suis monté", "Indicatif", "Passé composé"],
                   ],
                 },
-                { type: "note", text: "💡 « suis monté » est un passé composé (auxiliaire « être » au présent), à ne pas confondre avec une voix passive." },
+                { type: "note", text: "💡 « se rouvrir » et « regarder » sont des infinitifs : ils ne font pas partie des formes soulignées à analyser." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "annale",
-              badge: "✦ Format concours récent",
+              badge: "Entraînement adapté d'un sujet récent",
               title: "Exercice 5 : Lola Lafon, Quand tu écouteras cette chanson",
               enonce:
                 "« On <u>écrit</u> parce qu'on ne <u>sait</u> par quel autre biais attraper le réel. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Format identique au concours · Donnez le mode et le temps de « écrit » et « sait ».",
+              question: "Donnez le mode et le temps de « écrit » et « sait ».",
               correction: [
                 {
                   type: "table",
@@ -973,7 +952,7 @@ export const ficheModesEtTemps: Fiche = {
                 {
                   question: "Comment identifier une forme verbale ? (les 4 questions)",
                   answer:
-                    "Q1 : conjuguée ou non ? Q2 : quel mode ? Q3 : quel temps ? Q4 : quelle valeur ?\nUne forme non conjuguée (infinitif, participe, gérondif) s'arrête à Q1 : on donne seulement sa nature.",
+                    "Q1 : conjuguée ou non ? Q2 : quel mode ? Q3 : quel temps ? Q4 : quelle valeur ?\nSi la forme n'est pas conjuguée, on précise s'il s'agit d'un infinitif, d'un participe ou d'un gérondif, sans lui attribuer une personne ni un temps de conjugaison.",
                 },
                 {
                   question: "Comment identifier la forme du conditionnel ?",
