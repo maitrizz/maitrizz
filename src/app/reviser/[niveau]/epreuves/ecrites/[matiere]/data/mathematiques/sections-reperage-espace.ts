@@ -60,7 +60,7 @@ export const ficheSectionsReperageEspace: Fiche = {
               type: "callout",
               variant: "info",
               title: "Visualiser dans l'espace",
-              text: "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche, et le repérage sur la sphère fait le pont avec la géographie. Les calculs de volumes sont traités dans la fiche N°15.",
+              text: "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche, et le repérage sur la sphère fait le pont avec la géographie. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes).",
             },
             {
               type: "subsection",

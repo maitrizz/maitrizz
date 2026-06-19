@@ -59,7 +59,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
               type: "callout",
               variant: "info",
               title: "La fiche des situations concrètes",
-              text: "Combien de temps dure un trajet ? À quelle vitesse roule ce véhicule ? Quelle masse de farine pour cette recette ? La difficulté : les durées ne se calculent pas en base 10 (1 h = 60 min, pas 100), et les grandeurs composées (vitesse, densité, débit) mettent en jeu deux unités à la fois. Le volet proportionnalité de ces grandeurs est détaillé dans la fiche N°13 ; ici, on se concentre sur les conversions et le maniement des unités.",
+              text: "Combien de temps dure un trajet ? À quelle vitesse roule ce véhicule ? Quelle masse de farine pour cette recette ? La difficulté : les durées ne se calculent pas en base 10 (1 h = 60 min, pas 100), et les grandeurs composées (vitesse, densité, débit) mettent en jeu deux unités à la fois. Le volet proportionnalité de ces grandeurs est détaillé dans la [fiche N°13](fiche:proportionnalite-pourcentages) ; ici, on se concentre sur les conversions et le maniement des unités.",
             },
             {
               type: "subsection",
@@ -214,7 +214,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2, les élèves manipulent des durées concrètes (compter des jours, lire l'heure sur une horloge) et comparent des masses à la balance, sans calcul formel.\n\nAu cycle 3, les programmes introduisent le calcul sur les durées (addition, soustraction) et les premières grandeurs composées, comme la vitesse au CM2, abordée via un tableau de proportionnalité distance/temps avant la formule.\n\nCe que le jury attend : savoir expliquer pourquoi 1h 30min n'est pas 1,3 h, et distinguer durée et heure (instant). Montrer que la vitesse est une grandeur quotient, qu'on peut introduire par la proportionnalité (fiche N°13) avant d'écrire v = d ÷ t.",
+              text: "Au cycle 2, les élèves manipulent des durées concrètes (compter des jours, lire l'heure sur une horloge) et comparent des masses à la balance, sans calcul formel.\n\nAu cycle 3, les programmes introduisent le calcul sur les durées (addition, soustraction) et les premières grandeurs composées, comme la vitesse au CM2, abordée via un tableau de proportionnalité distance/temps avant la formule.\n\nCe que le jury attend : savoir expliquer pourquoi 1h 30min n'est pas 1,3 h, et distinguer durée et heure (instant). Montrer que la vitesse est une grandeur quotient, qu'on peut introduire par la proportionnalité ([fiche N°13](fiche:proportionnalite-pourcentages)) avant d'écrire v = d ÷ t.",
             },
             {
               type: "ctaBox",

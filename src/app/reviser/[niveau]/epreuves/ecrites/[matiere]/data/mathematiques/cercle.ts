@@ -60,7 +60,7 @@ export const ficheCercle: Fiche = {
               type: "callout",
               variant: "info",
               title: "Le cercle apparaît toujours en configuration",
-              text: "Au CRPE, le cercle est rarement isolé : une tangente qui le frôle, un triangle inscrit, un angle au centre double de l'angle inscrit. Ce sont ces configurations, et la façon de les exploiter dans un raisonnement, qui font la différence. Le théorème de Pythagore (fiche N°21) est souvent mobilisé avec la tangente.",
+              text: "Au CRPE, le cercle est rarement isolé : une tangente qui le frôle, un triangle inscrit, un angle au centre double de l'angle inscrit. Ce sont ces configurations, et la façon de les exploiter dans un raisonnement, qui font la différence. Le théorème de Pythagore ([fiche N°21](fiche:theoreme-de-pythagore)) est souvent mobilisé avec la tangente.",
             },
             {
               type: "subsection",
@@ -143,7 +143,7 @@ export const ficheCercle: Fiche = {
                   type: "callout",
                   variant: "info",
                   title: "💡 Mémo",
-                  text: "circonscrIT → sommets (médiatrices) ; inscrIT → bIssectrIces → côtés. Les deux constructions sont détaillées dans la fiche N°18.",
+                  text: "circonscrIT → sommets (médiatrices) ; inscrIT → bIssectrIces → côtés. Les deux constructions sont détaillées dans la [fiche N°18](fiche:droites-angles-parallelisme).",
                 },
                 {
                   type: "highlightBox",
@@ -265,7 +265,7 @@ export const ficheCercle: Fiche = {
                 },
                 {
                   number: "2",
-                  text: "**Appliquer Pythagore (fiche N°21).**",
+                  text: "**Appliquer Pythagore ([fiche N°21](fiche:theoreme-de-pythagore)).**",
                   example: { lines: ["OA² = OT² + AT² = 36 + 64 = 100 → OA = 10 cm"] },
                 },
                 {

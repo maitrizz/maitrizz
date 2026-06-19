@@ -111,10 +111,11 @@ Vérification faite ligne à ligne contre les deux programmes officiels (extract
 
 ## Reste-à-faire avant production
 
-1. Créer `CHARTE_MATHEMATIQUES.md` (fork de `CHARTE_FRANCAIS.md` + section conventions/terminologie maths + cadre M2/L3).
+1. ~~Créer `CHARTE_MATHEMATIQUES.md`~~ **Fait** (existe : conventions/terminologie maths + grille d'audit §8.1 mécanique et §8.2 jugement).
 2. Séparation technique dans `data/index.ts` : créer `MATHEMATIQUES_M2` câblée sur `m2`, laisser `l3.mathematiques` vide ou en placeholder le temps du chantier.
 3. MEF + audit §9 en **une seule passe par fiche** (écrire juste du premier coup, condensation comprise), pour éviter le rattrapage qu'on a connu en français.
-4. Audit mécanique (charte §8.1) en une passe globale sur les 27 fiches à la fin.
+4. Audit mécanique (charte §8.1) en une passe globale sur les 28 fiches (00 + 27). **Fait, propre** : aucun tiret cadratin, aucune multiplication `x`/`*` (× partout), séparateur décimal en virgule, aucune datation d'annale, aucun `[À VÉRIFIER]`, aucun emoji décoratif. Les `\d.\d` détectés sont des numéros d'exercices (1.1, 2.1…), pas des décimaux.
+4bis. **Hyperliens (fait)** : socle technique ajouté (syntaxe `[texte](fiche:slug)` rendue en lien Next via `FicheRouteContext`, niveau/matière résolus automatiquement ; liens externes `http(s)` en nouvel onglet). 25 renvois internes « fiche N°X / N°X » liés automatiquement (script `os.listdir` car le chemin contient `[niveau]`/`[matiere]`, incompatible `glob`), + renvois de la méthodologie (notions 13/15/16/21/23, 09-11, 27) ; source officielle (Arrêté 25 janvier 2021) liée dans la méthodologie. Renvois « par partie » : voir cardGrid de la méthodologie.
 5. Rattrapage d'audit de la fiche 01 (déjà en ligne avant la démarche systématique). **Fait.**
 6. Cadratins des gabarits/composants (« Écrit — X », « Notion N — titre », auto-éval, flashcards) : **corrigés** dans `page.tsx`, `[slug]/page.tsx`, `FicheHeader.tsx`, `AutoEvalChecklist.tsx`, `FlashcardDeck.tsx`. Plus aucun cadratin rendu. Concernait toutes les fiches (français compris).
 7. Reste (phase design) : emojis décoratifs encore présents dans des composants partagés (ex. `FlashcardDeck.tsx` : 🎉, 🔄) et cadratins dans des commentaires de code (`types.ts`, `progress.ts`, non rendus).

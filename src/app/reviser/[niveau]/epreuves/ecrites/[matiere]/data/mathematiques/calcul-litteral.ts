@@ -783,7 +783,7 @@ export const ficheCalculLitteral: Fiche = {
                 { type: "line", label: "2.2", text: "Bob : (x − 1)(x + 4) = x² + 4x − x − 4 = x² + 3x − 4." },
                 { type: "line", label: "2.3", text: "Oui : les deux se réduisent à x² + 3x − 4, identiques pour tout x." },
                 { type: "line", label: "3.1", text: "x² + 3x − 4 = (x − 1)(x + 4) (vérification : x² + 4x − x − 4 = x² + 3x − 4)." },
-                { type: "line", label: "3.2", text: "(x − 1)(x + 4) = 0 ⟺ x = 1 ou x = −4 (propriété du produit nul, détaillée en N°9)." },
+                { type: "line", label: "3.2", text: "(x − 1)(x + 4) = 0 ⟺ x = 1 ou x = −4 (propriété du produit nul, détaillée en [N°9](fiche:equations-inequations-systemes))." },
                 { type: "line", label: "4.1", text: "Programmes de calcul au cycle 4 (BOEN 2020), domaine calcul littéral : point d'entrée dans l'algèbre, ils donnent du sens à la variable et montrent que l'algèbre prouve ce que l'arithmétique illustre." },
                 { type: "line", label: "4.2", text: "« Tu as vérifié pour 4 valeurs : c'est utile pour détecter une erreur, mais pas une preuve. En montrant que les deux expressions se réduisent à x² + 3x − 4, on prouve l'égalité pour tout x en une seule fois. »" },
               ],

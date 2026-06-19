@@ -60,7 +60,7 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
               type: "callout",
               variant: "info",
               title: "Le passage du 2D au 3D",
-              text: "Les solides sont présents dans presque tous les sujets : reconnaître un solide à partir de son patron, calculer une aire, identifier des vues. La difficulté n'est pas le calcul, c'est le passage du plan à l'espace : visualiser un solide depuis son patron, comprendre ce qu'est une vue, et ne pas confondre aire latérale et aire totale. Les calculs de volumes sont traités dans la fiche N°15.",
+              text: "Les solides sont présents dans presque tous les sujets : reconnaître un solide à partir de son patron, calculer une aire, identifier des vues. La difficulté n'est pas le calcul, c'est le passage du plan à l'espace : visualiser un solide depuis son patron, comprendre ce qu'est une vue, et ne pas confondre aire latérale et aire totale. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes).",
             },
             {
               type: "subsection",

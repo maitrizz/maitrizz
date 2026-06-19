@@ -60,7 +60,7 @@ export const ficheReperageCoordonnees: Fiche = {
               type: "callout",
               variant: "info",
               title: "Le langage commun de la géométrie et des fonctions",
-              text: "Placer un point, calculer une distance, trouver un milieu, tracer une droite y = ax + b : ces compétences reviennent dans presque tous les sujets, souvent au détour d'un exercice de fonctions ou de géométrie. C'est aussi une compétence transversale (sciences, statistiques, géographie). L'équation y = ax + b est celle des fonctions affines (fiche N°14) ; ici, on l'exploite géométriquement dans le repère.",
+              text: "Placer un point, calculer une distance, trouver un milieu, tracer une droite y = ax + b : ces compétences reviennent dans presque tous les sujets, souvent au détour d'un exercice de fonctions ou de géométrie. C'est aussi une compétence transversale (sciences, statistiques, géographie). L'équation y = ax + b est celle des fonctions affines ([fiche N°14](fiche:fonctions-lineaires-affines)) ; ici, on l'exploite géométriquement dans le repère.",
             },
             {
               type: "subsection",

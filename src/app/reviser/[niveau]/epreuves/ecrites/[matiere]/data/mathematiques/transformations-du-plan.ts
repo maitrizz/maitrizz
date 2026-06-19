@@ -173,7 +173,7 @@ export const ficheTransformationsDuPlan: Fiche = {
                         "Conservé : angles, forme, orientation (si k > 0).",
                         "Non conservé : longueurs (×|k|), aires (×k²).",
                       ],
-                      note: "Cas particuliers : k = 1 donne l'identité, k = −1 la symétrie centrale de centre O, k = 2 un agrandissement de rapport 2. Le lien avec Thalès et la similitude est détaillé dans la fiche N°22.",
+                      note: "Cas particuliers : k = 1 donne l'identité, k = −1 la symétrie centrale de centre O, k = 2 un agrandissement de rapport 2. Le lien avec Thalès et la similitude est détaillé dans la [fiche N°22](fiche:theoreme-de-thales-similitude).",
                     },
                   ],
                 },

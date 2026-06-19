@@ -76,7 +76,7 @@ export const ficheEquationsInequationsSystemes: Fiche = {
               type: "callout",
               variant: "info",
               title: "Pourquoi résoudre des équations ?",
-              text: "Une ceinture de 90 cm, deux morceaux, le premier deux fois plus long que le second. On pourrait tâtonner, ou écrire : si le second fait x cm, le premier fait 2x, et x + 2x = 90, donc x = 30.\n\nVoilà l'essence d'une équation : traduire une situation par une expression, puis trouver la valeur inconnue qui la vérifie. Dans la fiche N°8, les lettres étaient des variables (on généralisait) ; ici ce sont des inconnues, une valeur précise à trouver. Cette fiche couvre les équations du 1er degré, les systèmes, les inéquations, et deux notions du programme de Seconde (intervalles et valeur absolue).",
+              text: "Une ceinture de 90 cm, deux morceaux, le premier deux fois plus long que le second. On pourrait tâtonner, ou écrire : si le second fait x cm, le premier fait 2x, et x + 2x = 90, donc x = 30.\n\nVoilà l'essence d'une équation : traduire une situation par une expression, puis trouver la valeur inconnue qui la vérifie. Dans la [fiche N°8](fiche:calcul-litteral), les lettres étaient des variables (on généralisait) ; ici ce sont des inconnues, une valeur précise à trouver. Cette fiche couvre les équations du 1er degré, les systèmes, les inéquations, et deux notions du programme de Seconde (intervalles et valeur absolue).",
             },
             {
               type: "subsection",
@@ -166,7 +166,7 @@ export const ficheEquationsInequationsSystemes: Fiche = {
                     },
                     {
                       type: "paragraph",
-                      text: "On utilise souvent la factorisation (fiche N°8) pour obtenir une forme produit = 0. Exemple : x² − 9 = 0 → x² − 3² = 0 → (x + 3)(x − 3) = 0 → x = −3 ou x = 3.",
+                      text: "On utilise souvent la factorisation ([fiche N°8](fiche:calcul-litteral)) pour obtenir une forme produit = 0. Exemple : x² − 9 = 0 → x² − 3² = 0 → (x + 3)(x − 3) = 0 → x = −3 ou x = 3.",
                     },
                   ],
                 },

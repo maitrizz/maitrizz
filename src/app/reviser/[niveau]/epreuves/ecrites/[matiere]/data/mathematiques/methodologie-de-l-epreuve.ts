@@ -143,7 +143,7 @@ export const ficheMethodologieMathematiques: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "Un exercice de Scratch ou de tableur est presque toujours présent : il ne faut jamais l'impasser (voir la [notion 27, Algorithmique et Scratch](fiche:algorithmique-scratch-tableur)). Les problèmes en contexte mobilisent souvent la proportionnalité (notion 13), la géométrie (notions 21 à 23) ou les grandeurs (notions 15 et 16).",
+                  text: "Un exercice de Scratch ou de tableur est presque toujours présent : il ne faut jamais l'impasser (voir la [notion 27, Algorithmique et Scratch](fiche:algorithmique-scratch-tableur)). Les problèmes en contexte mobilisent souvent la proportionnalité ([notion 13](fiche:proportionnalite-pourcentages)), la géométrie (notions [21](fiche:theoreme-de-pythagore) à [23](fiche:trigonometrie-triangle-rectangle)) ou les grandeurs (notions [15](fiche:perimetres-aires-volumes) et [16](fiche:durees-masses-grandeurs-composees)).",
                 },
               ],
             },
@@ -204,7 +204,7 @@ export const ficheMethodologieMathematiques: Fiche = {
                   variant: "warning",
                   icon: "⚠️",
                   title: "Le programme de Seconde ajoute quelques notions",
-                  text: "Au-delà du cycle 4, certaines notions relèvent de la Seconde et peuvent apparaître : suites, intervalles et valeur absolue, quartiles, variance et écart-type. Elles sont signalées « Seconde » dans les fiches concernées (notions 09 à 11).",
+                  text: "Au-delà du cycle 4, certaines notions relèvent de la Seconde et peuvent apparaître : suites, intervalles et valeur absolue, quartiles, variance et écart-type. Elles sont signalées « Seconde » dans les fiches concernées (notions [09](fiche:equations-inequations-systemes), [10](fiche:suites-numeriques) et [11](fiche:statistiques-descriptives)).",
                 },
               ],
             },
@@ -232,7 +232,7 @@ export const ficheMethodologieMathematiques: Fiche = {
               title: "Piège n°3 · impasser Scratch ou le tableur",
               badge: "À corriger",
               faux: "Sauter l'exercice d'algorithmique en pensant qu'il est secondaire.",
-              vrai: "Un exercice de Scratch ou de tableur est presque toujours présent et se traite souvent vite : c'est des points accessibles (voir notion 27).",
+              vrai: "Un exercice de Scratch ou de tableur est presque toujours présent et se traite souvent vite : c'est des points accessibles (voir la [notion 27](fiche:algorithmique-scratch-tableur)).",
               methode: "Repérer cet exercice dès le début et le traiter quand l'énergie est encore là.",
             },
             {

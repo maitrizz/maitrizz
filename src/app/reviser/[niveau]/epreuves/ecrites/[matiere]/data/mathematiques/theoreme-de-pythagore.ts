@@ -60,7 +60,7 @@ export const ficheTheoremeDePythagore: Fiche = {
               type: "callout",
               variant: "info",
               title: "Le théorème le plus utilisé de la géométrie",
-              text: "Pythagore ne sert pas qu'à calculer une longueur : il permet de démontrer qu'un triangle est rectangle (réciproque), qu'il ne l'est pas (contraposée), et de résoudre des problèmes dans les solides (diagonale d'un cube, hauteur d'une pyramide). Le jury attend trois choses : l'énoncer rigoureusement, maîtriser réciproque et contraposée, et soigner la rédaction. La racine carrée (fiche N°4) intervient naturellement ici.",
+              text: "Pythagore ne sert pas qu'à calculer une longueur : il permet de démontrer qu'un triangle est rectangle (réciproque), qu'il ne l'est pas (contraposée), et de résoudre des problèmes dans les solides (diagonale d'un cube, hauteur d'une pyramide). Le jury attend trois choses : l'énoncer rigoureusement, maîtriser réciproque et contraposée, et soigner la rédaction. La racine carrée ([fiche N°4](fiche:puissances-racines-reels)) intervient naturellement ici.",
             },
             {
               type: "subsection",
@@ -237,7 +237,7 @@ export const ficheTheoremeDePythagore: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Pythagore est introduit en 4e (cycle 4), pas à l'école primaire. En CM, les élèves calculent périmètres et aires et construisent des figures, sans le théorème. Des élèves curieux peuvent croiser le triplet (3, 4, 5) dans des problèmes de construction.\n\nCe qu'il faut maîtriser pour le CRPE : énoncer les trois formes (directe, réciproque, contraposée), distinguer ce qu'on cherche à prouver, calculer une longueur, résoudre en 3D en deux étapes. Le jury valorise la rédaction : « par le théorème de Pythagore appliqué au triangle ABC rectangle en A », pas un calcul nu.\n\nC'est aussi l'un des rares contextes où la racine carrée intervient naturellement à l'école : l'occasion de revoir √(a²) = a pour a ≥ 0 (fiche N°4).",
+              text: "Pythagore est introduit en 4e (cycle 4), pas à l'école primaire. En CM, les élèves calculent périmètres et aires et construisent des figures, sans le théorème. Des élèves curieux peuvent croiser le triplet (3, 4, 5) dans des problèmes de construction.\n\nCe qu'il faut maîtriser pour le CRPE : énoncer les trois formes (directe, réciproque, contraposée), distinguer ce qu'on cherche à prouver, calculer une longueur, résoudre en 3D en deux étapes. Le jury valorise la rédaction : « par le théorème de Pythagore appliqué au triangle ABC rectangle en A », pas un calcul nu.\n\nC'est aussi l'un des rares contextes où la racine carrée intervient naturellement à l'école : l'occasion de revoir √(a²) = a pour a ≥ 0 ([fiche N°4](fiche:puissances-racines-reels)).",
             },
             {
               type: "ctaBox",

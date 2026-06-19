@@ -61,7 +61,7 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
               type: "callout",
               variant: "info",
               title: "Le cœur de la géométrie plane",
-              text: "Le jury ne veut pas du vocabulaire récité : il veut voir que vous savez définir, distinguer et raisonner sur ces figures. Un carré n'est pas « un rectangle aux côtés égaux » au sens flou : c'est précisément un losange qui a un angle droit (ou un rectangle aux côtés consécutifs égaux). Cette rigueur de définition est exactement ce qu'on attend d'un futur enseignant. La somme des angles d'un polygone et les constructions à la règle et au compas (médiatrice, bissectrice) sont détaillées dans la fiche N°18.",
+              text: "Le jury ne veut pas du vocabulaire récité : il veut voir que vous savez définir, distinguer et raisonner sur ces figures. Un carré n'est pas « un rectangle aux côtés égaux » au sens flou : c'est précisément un losange qui a un angle droit (ou un rectangle aux côtés consécutifs égaux). Cette rigueur de définition est exactement ce qu'on attend d'un futur enseignant. La somme des angles d'un polygone et les constructions à la règle et au compas (médiatrice, bissectrice) sont détaillées dans la [fiche N°18](fiche:droites-angles-parallelisme).",
             },
             {
               type: "subsection",
@@ -224,7 +224,7 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "Constructions à la règle et au compas (médiatrice, bissectrice, perpendiculaire) : voir la fiche N°18. Triangle équilatéral de côté a : tracer [AB], puis deux arcs de rayon a centrés en A et B ; leur intersection donne C.",
+                  text: "Constructions à la règle et au compas (médiatrice, bissectrice, perpendiculaire) : voir la [fiche N°18](fiche:droites-angles-parallelisme). Triangle équilatéral de côté a : tracer [AB], puis deux arcs de rayon a centrés en A et B ; leur intersection donne C.",
                 },
               ],
             },

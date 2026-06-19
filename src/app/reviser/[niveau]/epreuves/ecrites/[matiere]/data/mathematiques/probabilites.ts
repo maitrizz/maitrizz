@@ -645,7 +645,7 @@ export const ficheProbabilites: Fiche = {
                 { type: "line", label: "a)", text: "{3, 6, 9, 12, 15, 18} → 6 valeurs → P = 6/20 = 3/10." },
                 { type: "line", label: "b)", text: "{5, 10, 15, 20} → 4 valeurs → P = 4/20 = 1/5." },
                 { type: "line", label: "c)", text: "A ∩ B = multiples de 15 = {15} → 1 valeur. P(A ∪ B) = 6/20 + 4/20 − 1/20 = 9/20." },
-                { type: "line", label: "d)", text: "P(multiple de 15) = 1/20 (lien avec le PPCM, fiche N°6)." },
+                { type: "line", label: "d)", text: "P(multiple de 15) = 1/20 (lien avec le PPCM, [fiche N°6](fiche:divisibilite-pgcd-ppcm))." },
               ],
             },
             {
