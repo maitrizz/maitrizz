@@ -28,7 +28,7 @@ import { ficheTransformationsDuPlan } from "./mathematiques/transformations-du-p
 import { ficheSolidesPatronsRepresentation } from "./mathematiques/solides-patrons-representation";
 import { ficheSectionsReperageEspace } from "./mathematiques/sections-reperage-espace";
 import { ficheAlgorithmiqueScratchTableur } from "./mathematiques/algorithmique-scratch-tableur";
-import { ficheMethodologieMathematiques } from "./mathematiques/methodologie-de-l-epreuve";
+import { ficheMethodologieMathematiquesM2, ficheMethodologieMathematiquesL3 } from "./mathematiques/methodologie-de-l-epreuve";
 import { ficheClassesGrammaticales } from "./francais/classes-grammaticales";
 import { ficheFonctionsSyntaxiques } from "./francais/fonctions-syntaxiques";
 import { ficheGroupeNominalExpansions } from "./francais/groupe-nominal-expansions";
@@ -96,8 +96,13 @@ export const MATIERE_LABELS: Record<Matiere, string> = {
 // Mathématiques : chantier M2 en cours (plan dans SUIVI_FICHES_MATHEMATIQUES.md).
 // La version L3 sera dérivée du M2 plus tard ; en attendant la liste L3 reste vide
 // (la page matière affiche « arrivent très bientôt » quand la liste est vide).
-const MATHEMATIQUES_M2: Fiche[] = [ficheMethodologieMathematiques, ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptives, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspace, ficheAlgorithmiqueScratchTableur];
-const MATHEMATIQUES_L3: Fiche[] = [];
+// Maths : les 27 notions disciplinaires (cycle 4 + Seconde) sont communes L3/M2.
+// Seul le cadre de l'épreuve diffère (méthodologie propre à chaque niveau).
+// La dérivation L3 fine (retrait du contenu « Seconde », du bloc sphère, ajout des
+// vecteurs) est signalée dans les fiches et reste à faire (cf. SUIVI_FICHES_MATHEMATIQUES.md).
+const MATHEMATIQUES_NOTIONS: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptives, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspace, ficheAlgorithmiqueScratchTableur];
+const MATHEMATIQUES_M2: Fiche[] = [ficheMethodologieMathematiquesM2, ...MATHEMATIQUES_NOTIONS];
+const MATHEMATIQUES_L3: Fiche[] = [ficheMethodologieMathematiquesL3, ...MATHEMATIQUES_NOTIONS];
 
 // Français : notions 01-18 communes L3/M2. La divergence commence à la
 // notion 19 (Partie 3) — les fiches propres à chaque niveau sont ajoutées

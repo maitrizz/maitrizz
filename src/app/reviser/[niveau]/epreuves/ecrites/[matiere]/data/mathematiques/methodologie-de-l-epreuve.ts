@@ -1,15 +1,19 @@
 import type { Fiche } from "@/components/fiche/types";
+import type { Niveau } from "@/lib/niveau";
 
 /**
  * Méthodologie de l'épreuve écrite de mathématiques (numéro 0, en tête de parcours).
+ * Fabrique ficheMethodologie(niveau) : les deux concours divergent sur le cadre.
  *
  * Rédigée à partir des sources officielles (juin 2026) :
- * - devenirenseignant.gouv.fr, « Les épreuves des concours externes bac+5 » :
- *   épreuve écrite de mathématiques, 3 h, coefficient 1, notée sur 20, note <= 5
- *   éliminatoire, « un ensemble d'au moins trois exercices indépendants ».
- * - Arrêté du 25 janvier 2021 (CRPE rénové, sessions 2022 et suivantes), cadre M2.
+ * - M2 (bac+5), devenirenseignant.gouv.fr : épreuve écrite de mathématiques, 3 h,
+ *   coefficient 1, notée sur 20, note <= 5 éliminatoire, « un ensemble d'au moins
+ *   trois exercices indépendants ». Arrêté du 25 janvier 2021.
+ * - L3 (bac+3), devenirenseignant.gouv.fr : épreuve écrite COMMUNE français +
+ *   mathématiques, 4 h, coefficient 5, notée sur 20 (maths = 10 points), note
+ *   <= 2,5/10 sur une partie éliminatoire. Arrêté du 17 avril 2025 (sessions 2026 et +).
  * - Programme de référence : cycle 4 (BOEN n°31 du 30 juillet 2020) + partie
- *   « Nombres et calculs » du programme de Seconde.
+ *   « Nombres et calculs » du programme de Seconde (le M2 ; le L3 vise le cycle 4).
  *
  * Charte appliquée : aucune statistique d'admission ni référence d'annale précise
  * non sourçable ; barèmes par exercice présentés comme variables (non officiels,
@@ -21,29 +25,36 @@ import type { Fiche } from "@/components/fiche/types";
 const OBJECTIFS = [
   { id: "me1", label: "Je connais le cadre de l'épreuve : durée, coefficient, barème, note éliminatoire" },
   { id: "me2", label: "Je sais que l'écrit est constitué d'au moins trois exercices indépendants" },
-  { id: "me3", label: "Je connais le programme de référence (cycle 4 et « Nombres et calculs » de Seconde)" },
+  { id: "me3", label: "Je connais le programme de référence (cycle 4, complété par « Nombres et calculs » de Seconde au M2)" },
   { id: "me4", label: "Je sais que l'écrit est disciplinaire : la didactique est évaluée à l'oral, pas ici" },
   { id: "me5", label: "Je repère les types d'exercices qui reviennent et je commence par mes points forts" },
-  { id: "me6", label: "Je répartis mon temps sur les trois heures et je ne laisse aucun exercice vide" },
+  { id: "me6", label: "Je répartis mon temps sur la durée de l'épreuve et je ne laisse aucun exercice vide" },
   { id: "me7", label: "Je rédige et je justifie chaque réponse, et je vérifie par un ordre de grandeur" },
 ];
 
-export const ficheMethodologieMathematiques: Fiche = {
+function ficheMethodologie(niveau: Niveau): Fiche {
+  const l3 = niveau === "l3";
+  return {
   slug: "methodologie-de-l-epreuve",
   matiere: "mathematiques",
   numero: 0,
   partie: "Méthodologie",
   title: "Méthodologie de l'épreuve écrite de mathématiques",
-  subtitle:
-    "Comprendre le cadre de l'épreuve, ce que le jury évalue, et gérer ses 3 heures sur des exercices indépendants",
+  subtitle: l3
+    ? "Comprendre l'épreuve commune français et mathématiques, ce que le jury évalue, et gérer ses 4 heures"
+    : "Comprendre le cadre de l'épreuve, ce que le jury évalue, et gérer ses 3 heures sur des exercices indépendants",
   badges: [
     { label: "Point de départ du parcours", variant: "hot" },
-    { label: "Épreuve écrite de mathématiques · 3 h", variant: "info" },
+    {
+      label: l3 ? "Épreuve commune français + maths · 4 h" : "Épreuve écrite de mathématiques · 3 h",
+      variant: "info",
+    },
   ],
   metaTitle:
     "Méthodologie de l'épreuve écrite de mathématiques (CRPE) · Fiche de révision | Maitrizz",
-  metaDescription:
-    "Méthodologie de l'épreuve écrite de mathématiques du CRPE M2 (3 h) : format, coefficient, barème, note éliminatoire, exercices indépendants, programme de référence (cycle 4 et Seconde), ce que le jury évalue, stratégie et gestion du temps. Conseils et auto-évaluation.",
+  metaDescription: l3
+    ? "Méthodologie de la partie mathématiques du CRPE L3 : épreuve commune français et mathématiques (4 h), barème, note éliminatoire, exercices indépendants, programme de référence (cycle 4), ce que le jury évalue, stratégie et gestion du temps. Conseils et auto-évaluation."
+    : "Méthodologie de l'épreuve écrite de mathématiques du CRPE M2 (3 h) : format, coefficient, barème, note éliminatoire, exercices indépendants, programme de référence (cycle 4 et Seconde), ce que le jury évalue, stratégie et gestion du temps. Conseils et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -61,7 +72,7 @@ export const ficheMethodologieMathematiques: Fiche = {
               intro:
                 "Avant de réviser les notions, il faut savoir précisément ce que l'on attend de vous. Cette fiche présente le cadre officiel de l'épreuve, ce que le jury évalue, les types d'exercices qui reviennent, et une stratégie de gestion du temps.",
               items: [
-                { number: "①", title: "Le cadre de l'épreuve", text: "Une épreuve de 3 h, son coefficient, son barème et sa note éliminatoire." },
+                { number: "①", title: "Le cadre de l'épreuve", text: l3 ? "Une épreuve commune français + maths de 4 h, son barème et sa note éliminatoire." : "Une épreuve de 3 h, son coefficient, son barème et sa note éliminatoire." },
                 { number: "②", title: "La structure des sujets", text: "Au moins trois exercices indépendants, et les domaines qui reviennent." },
                 { number: "③", title: "Ce que le jury évalue", text: "Connaissances, raisonnement, rédaction. La didactique, elle, est à l'oral." },
                 { number: "④", title: "La stratégie et le temps", text: "Choisir l'ordre des exercices, justifier, vérifier, ne rien laisser vide." },
@@ -79,7 +90,9 @@ export const ficheMethodologieMathematiques: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "L'épreuve écrite de mathématiques est une épreuve d'admissibilité du CRPE. Elle vérifie votre maîtrise disciplinaire : connaître les notions du programme et savoir les mobiliser, en raisonnant et en rédigeant clairement. Ce n'est pas une épreuve pédagogique : depuis la réforme, la didactique et l'analyse de productions d'élèves ne sont plus à l'écrit, elles sont évaluées à l'oral (épreuve de leçon).",
+              text: l3
+                ? "Au CRPE L3, les mathématiques font partie d'une épreuve commune avec le français, d'une durée totale de 4 heures. La partie mathématiques vérifie votre maîtrise disciplinaire : connaître les notions du programme et savoir les mobiliser, en raisonnant et en rédigeant clairement. Ce n'est pas une épreuve pédagogique : la didactique et l'analyse de productions d'élèves ne sont pas à l'écrit, elles sont évaluées à l'oral (épreuve de leçon)."
+                : "L'épreuve écrite de mathématiques est une épreuve d'admissibilité du CRPE. Elle vérifie votre maîtrise disciplinaire : connaître les notions du programme et savoir les mobiliser, en raisonnant et en rédigeant clairement. Ce n'est pas une épreuve pédagogique : depuis la réforme, la didactique et l'analyse de productions d'élèves ne sont plus à l'écrit, elles sont évaluées à l'oral (épreuve de leçon).",
             },
             {
               type: "subsection",
@@ -90,25 +103,40 @@ export const ficheMethodologieMathematiques: Fiche = {
                   type: "table",
                   title: "Format général",
                   headers: ["Caractéristique", "Détail"],
-                  rows: [
-                    ["Durée", "3 heures"],
-                    ["Notation", "20 points, coefficient 1"],
-                    ["Note éliminatoire", "Inférieure ou égale à 5/20 : élimine du concours, quelle que soit la note globale"],
-                    ["Structure", "Un ensemble d'au moins trois exercices indépendants (questions à choix multiples et questions à réponse construite)"],
-                    ["Programme de référence", "Programme de mathématiques du cycle 4, et partie « Nombres et calculs » du programme de Seconde"],
-                    ["Calculatrice", "Autorisée, en mode examen (à confirmer sur la convocation de votre session)"],
-                    [
-                      "Cadre réglementaire",
-                      "[Arrêté du 25 janvier 2021](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000043075701) (CRPE rénové, sessions 2022 et suivantes)",
-                    ],
-                  ],
+                  rows: l3
+                    ? [
+                        ["Durée", "4 heures pour l'épreuve commune français + mathématiques"],
+                        ["Notation", "20 points au total, coefficient 5 : 10 points pour le français, 10 points pour les mathématiques"],
+                        ["Note éliminatoire", "Inférieure ou égale à 2,5/10 sur la partie mathématiques (ou sur le français) : élimine du concours"],
+                        ["Structure (maths)", "Plusieurs exercices ou problèmes indépendants (questions à choix multiples et questions à réponse construite)"],
+                        ["Programme de référence", "Programme de mathématiques du cycle 4"],
+                        ["Calculatrice", "Autorisée, en mode examen (à confirmer sur la convocation de votre session)"],
+                        [
+                          "Cadre réglementaire",
+                          "[Arrêté du 17 avril 2025](https://www.legifrance.gouv.fr/search/all?query=Arr%C3%AAt%C3%A9%20du%2017%20avril%202025%20CRPE%20externe%20bac%2B3) (CRPE externe bac+3, sessions 2026 et suivantes)",
+                        ],
+                      ]
+                    : [
+                        ["Durée", "3 heures"],
+                        ["Notation", "20 points, coefficient 1"],
+                        ["Note éliminatoire", "Inférieure ou égale à 5/20 : élimine du concours, quelle que soit la note globale"],
+                        ["Structure", "Un ensemble d'au moins trois exercices indépendants (questions à choix multiples et questions à réponse construite)"],
+                        ["Programme de référence", "Programme de mathématiques du cycle 4, et partie « Nombres et calculs » du programme de Seconde"],
+                        ["Calculatrice", "Autorisée, en mode examen (à confirmer sur la convocation de votre session)"],
+                        [
+                          "Cadre réglementaire",
+                          "[Arrêté du 25 janvier 2021](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000043075701) (CRPE rénové, sessions 2022 et suivantes)",
+                        ],
+                      ],
                 },
                 {
                   type: "callout",
                   variant: "warning",
                   icon: "⚠️",
                   title: "La note éliminatoire est absolue",
-                  text: "Une note inférieure ou égale à 5/20 élimine du concours, quelle que soit la moyenne. Comme les exercices sont indépendants, la priorité est d'en traiter le plus possible : une copie qui aborde tous les exercices vaut mieux qu'un seul exercice parfait et le reste laissé vide.",
+                  text: l3
+                    ? "Une note inférieure ou égale à 2,5/10 sur la partie mathématiques élimine du concours, et c'est indépendant du français : une excellente note en français ne compense pas des maths trop faibles. Comme les exercices sont indépendants, la priorité est d'en traiter le plus possible."
+                    : "Une note inférieure ou égale à 5/20 élimine du concours, quelle que soit la moyenne. Comme les exercices sont indépendants, la priorité est d'en traiter le plus possible : une copie qui aborde tous les exercices vaut mieux qu'un seul exercice parfait et le reste laissé vide.",
                 },
                 {
                   type: "callout",
@@ -185,7 +213,9 @@ export const ficheMethodologieMathematiques: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Le socle est le programme de mathématiques du cycle 4 (5e, 4e, 3e), organisé en cinq thèmes. S'y ajoute la partie « Nombres et calculs » du programme de Seconde, qui apporte quelques notions au-delà du collège.",
+                  text: l3
+                    ? "Le programme de référence est celui des mathématiques du cycle 4 (5e, 4e, 3e), organisé en cinq thèmes."
+                    : "Le socle est le programme de mathématiques du cycle 4 (5e, 4e, 3e), organisé en cinq thèmes. S'y ajoute la partie « Nombres et calculs » du programme de Seconde, qui apporte quelques notions au-delà du collège.",
                 },
                 {
                   type: "table",
@@ -203,8 +233,10 @@ export const ficheMethodologieMathematiques: Fiche = {
                   type: "callout",
                   variant: "warning",
                   icon: "⚠️",
-                  title: "Le programme de Seconde ajoute quelques notions",
-                  text: "Au-delà du cycle 4, certaines notions relèvent de la Seconde et peuvent apparaître : suites, intervalles et valeur absolue, quartiles, variance et écart-type. Elles sont signalées « Seconde » dans les fiches concernées (notions [09](fiche:equations-inequations-systemes), [10](fiche:suites-numeriques) et [11](fiche:statistiques-descriptives)).",
+                  title: l3 ? "Le contenu « Seconde » est hors programme pour vous" : "Le programme de Seconde ajoute quelques notions",
+                  text: l3
+                    ? "Certaines fiches signalent un contenu « Seconde » (suites, intervalles et valeur absolue, quartiles, variance et écart-type) : il relève du concours M2, pas du L3 dont le programme se limite au cycle 4. Vous pouvez ignorer ces passages marqués « Seconde » dans les fiches concernées (notions [09](fiche:equations-inequations-systemes), [10](fiche:suites-numeriques) et [11](fiche:statistiques-descriptives))."
+                    : "Au-delà du cycle 4, certaines notions relèvent de la Seconde et peuvent apparaître : suites, intervalles et valeur absolue, quartiles, variance et écart-type. Elles sont signalées « Seconde » dans les fiches concernées (notions [09](fiche:equations-inequations-systemes), [10](fiche:suites-numeriques) et [11](fiche:statistiques-descriptives)).",
                 },
               ],
             },
@@ -276,7 +308,9 @@ export const ficheMethodologieMathematiques: Fiche = {
                 {
                   type: "formulaBlock",
                   lines: [
-                    "Ne jamais laisser un exercice vide : la note de 5/20 est éliminatoire.",
+                    l3
+                      ? "Ne jamais laisser un exercice vide : la note de 2,5/10 sur la partie maths est éliminatoire."
+                      : "Ne jamais laisser un exercice vide : la note de 5/20 est éliminatoire.",
                     "Les exercices sont indépendants : commencer par les plus sûrs.",
                     "Justifier et rédiger chaque réponse, même courte.",
                     "Vérifier chaque résultat par un ordre de grandeur et une unité.",
@@ -339,19 +373,29 @@ export const ficheMethodologieMathematiques: Fiche = {
             {
               type: "methodeGroup",
               number: "③",
-              title: "Répartir ses 3 heures",
+              title: l3 ? "Répartir le temps des maths dans les 4 heures" : "Répartir ses 3 heures",
               intro: "**Repères indicatifs**, à ajuster selon le nombre d'exercices et le barème. L'essentiel : garder une marge de relecture.",
               preBlocks: [
                 {
                   type: "formulaBlock",
-                  title: "Répartition recommandée sur 3 heures",
-                  lines: [
-                    "0 h 00 à 0 h 10 (10 min) : survol de tout le sujet et repérage des questions rapides.",
-                    "0 h 10 à 0 h 40 (30 min) : QCM et questions rapides (Scratch, tableur, cours).",
-                    "0 h 40 à 2 h 30 (110 min) : les exercices à réponse construite, du plus sûr au plus difficile.",
-                    "2 h 30 à 3 h 00 (30 min) : reprise des questions laissées et relecture (résultats, unités, langue).",
-                  ],
-                  note: "Avec quatre à six exercices, cela laisse environ 20 à 30 minutes par exercice construit. À moduler selon le barème indiqué sur le sujet.",
+                  title: l3 ? "Répartition recommandée pour la partie maths (environ 2 h)" : "Répartition recommandée sur 3 heures",
+                  lines: l3
+                    ? [
+                        "5 min : survol de tous les exercices de maths et repérage des questions rapides.",
+                        "20 min : QCM et questions rapides (Scratch, tableur, cours).",
+                        "75 min : les exercices à réponse construite, du plus sûr au plus difficile.",
+                        "20 min : reprise des questions laissées et relecture (résultats, unités, langue).",
+                        "Soit environ 2 h pour les maths. Le français occupe l'autre moitié des 4 h, avec son propre bloc de temps protégé.",
+                      ]
+                    : [
+                        "0 h 00 à 0 h 10 (10 min) : survol de tout le sujet et repérage des questions rapides.",
+                        "0 h 10 à 0 h 40 (30 min) : QCM et questions rapides (Scratch, tableur, cours).",
+                        "0 h 40 à 2 h 30 (110 min) : les exercices à réponse construite, du plus sûr au plus difficile.",
+                        "2 h 30 à 3 h 00 (30 min) : reprise des questions laissées et relecture (résultats, unités, langue).",
+                      ],
+                  note: l3
+                    ? "Ne pas laisser le français ou les maths absorber tout le temps : la note de 2,5/10 par partie est éliminatoire. Réserver un vrai bloc à chaque discipline."
+                    : "Avec quatre à six exercices, cela laisse environ 20 à 30 minutes par exercice construit. À moduler selon le barème indiqué sur le sujet.",
                 },
               ],
               steps: [
@@ -413,4 +457,8 @@ export const ficheMethodologieMathematiques: Fiche = {
       ],
     },
   ],
-};
+  };
+}
+
+export const ficheMethodologieMathematiquesM2 = ficheMethodologie("m2");
+export const ficheMethodologieMathematiquesL3 = ficheMethodologie("l3");
