@@ -67,7 +67,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
-| 27 | Algorithmique, Scratch, tableur, GeoGebra (à créer, absent des sources) | ⬜ | ⬜ |
+| 27 | Algorithmique, Scratch, tableur, GeoGebra (à créer, absent des sources) | ✅ | ✅ (CRÉÉE de zéro, périmètre architecture N°33 : algorithme/variable/séquence, boucles + conditionnelles, Scratch (stylo, polygone tourner de 360/n, boucles imbriquées, lecture de script), tableur (formules, référence relative/absolue $, SI, SOMME/MOYENNE), GeoGebra ; pièges angle extérieur, $ oublié, affectation≠égalité ; codage binaire N°34 laissé écarté ; recul cycle 3 pensée informatique ; calculs/scripts vérifiés) |
 
 ---
 

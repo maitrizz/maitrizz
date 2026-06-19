@@ -27,6 +27,7 @@ import { ficheTrigonometrieTriangleRectangle } from "./mathematiques/trigonometr
 import { ficheTransformationsDuPlan } from "./mathematiques/transformations-du-plan";
 import { ficheSolidesPatronsRepresentation } from "./mathematiques/solides-patrons-representation";
 import { ficheSectionsReperageEspace } from "./mathematiques/sections-reperage-espace";
+import { ficheAlgorithmiqueScratchTableur } from "./mathematiques/algorithmique-scratch-tableur";
 import { ficheClassesGrammaticales } from "./francais/classes-grammaticales";
 import { ficheFonctionsSyntaxiques } from "./francais/fonctions-syntaxiques";
 import { ficheGroupeNominalExpansions } from "./francais/groupe-nominal-expansions";
@@ -94,7 +95,7 @@ export const MATIERE_LABELS: Record<Matiere, string> = {
 // Mathématiques : chantier M2 en cours (plan dans SUIVI_FICHES_MATHEMATIQUES.md).
 // La version L3 sera dérivée du M2 plus tard ; en attendant la liste L3 reste vide
 // (la page matière affiche « arrivent très bientôt » quand la liste est vide).
-const MATHEMATIQUES_M2: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptives, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspace];
+const MATHEMATIQUES_M2: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptives, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspace, ficheAlgorithmiqueScratchTableur];
 const MATHEMATIQUES_L3: Fiche[] = [];
 
 // Français : notions 01-18 communes L3/M2. La divergence commence à la
