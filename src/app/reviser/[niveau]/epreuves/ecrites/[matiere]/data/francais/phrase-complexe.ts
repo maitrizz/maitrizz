@@ -49,7 +49,7 @@ export const fichePhraseComplexe: Fiche = {
                 {
                   number: "②",
                   title: "Juxtaposition, coordination, subordination",
-                  text: "Trois façons de relier les propositions entre elles, à reconnaître avant de nommer.",
+                  text: "Trois façons de relier les propositions entre elles.",
                 },
                 {
                   number: "③",
@@ -74,8 +74,8 @@ export const fichePhraseComplexe: Fiche = {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de commencer",
-              text: "Le jury demande de **délimiter et nommer chaque proposition**. La démarche est toujours la même : compter les verbes conjugués, découper, identifier l'introducteur, nommer nature et fonction. Cette fiche porte sur l'architecture de la phrase complexe. La fonction précise d'un pronom relatif (par exemple « dont ») se trouve par dépronominalisation et relève des fonctions (notions 2 et 3) : on y renvoie quand c'est utile.",
+              title: "La méthode",
+              text: "Pour analyser une phrase complexe, il faut **délimiter et nommer chaque proposition**. Procédez toujours dans le même ordre : repérez les verbes conjugués, délimitez les propositions, identifiez comment elles sont reliées, puis donnez la nature et la fonction de chacune.",
             },
             {
               type: "subsection",
@@ -94,10 +94,10 @@ export const fichePhraseComplexe: Fiche = {
                     {
                       type: "formulaBlock",
                       lines: [
-                        "« Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. » → 1 verbe conjugué (se hâtait) : phrase simple",
-                        "« On écrit parce qu'on ne sait par quel biais attraper le réel. » → 2 verbes conjugués (écrit, sait) : phrase complexe",
+                        "« Elle se hâtait, pressée d'atteindre sa maison. » → 1 verbe conjugué (se hâtait) : phrase simple",
+                        "« On écrit parce qu'on cherche à saisir le réel. » → 2 verbes conjugués (écrit, cherche) : phrase complexe",
                       ],
-                      note: "« baissés », « pressée », « atteindre », « attraper » sont des formes non conjuguées : elles ne comptent pas (voir l'étape ④).",
+                      note: "« pressée », « atteindre » et « saisir » sont des formes non conjuguées : elles ne comptent pas ici, car elles n'ont pas de sujet propre distinct (voir l'étape ④).",
                     },
                   ],
                 },
@@ -179,13 +179,14 @@ export const fichePhraseComplexe: Fiche = {
                     },
                     {
                       title: "Interrogative indirecte",
-                      definition: "Introduite par un mot interrogatif, après un verbe de questionnement (savoir, demander, ignorer…). Elle rapporte une question sans guillemets.",
+                      definition: "Introduite par un mot interrogatif, après un verbe exprimant une question, un savoir ou une ignorance (demander, savoir, ignorer…). Elle rapporte une question sans guillemets.",
                       sousClasses: "**Introducteurs :** si · qui · comment · où · par quel…",
                       exemples: [
                         "« Je me demande **s'il viendra** » : interrogative indirecte, COD du verbe « me demande »",
+                        "« On ne sait **par quel biais attraper le réel** » : interrogative indirecte partielle construite autour d'un infinitif, COD de « sait »",
                       ],
                       piege: "À ne pas confondre avec la relative : l'interrogative indirecte n'a pas d'antécédent et dépend d'un verbe de questionnement.",
-                      test: "Pas d'antécédent + verbe de questionnement introducteur : interrogative indirecte.",
+                      test: "Pas d'antécédent + mot interrogatif dépendant d'un verbe comme demander, savoir ou ignorer : interrogative indirecte.",
                     },
                     {
                       title: "Subordonnée infinitive",
@@ -232,7 +233,7 @@ export const fichePhraseComplexe: Fiche = {
                     ["Infinitif", "-er, -ir, -re, -oir ; invariable", "Sujet, COD, complément du nom, CC de but (pour + infinitif)", "« **Vivre**, sans l'écriture, me va mal » : sujet de « va »"],
                     ["Participe présent", "radical + -ant, sans « en », invariable", "Épithète détachée du sujet ou d'un nom", "« Une femme passa, **tenant** son enfant » : épithète détachée"],
                     ["Gérondif", "« en » + -ant, invariable, même sujet", "CC de manière, temps, cause, moyen", "« Il rentra **en chantant** » : CC de manière"],
-                    ["Participe passé", "-é, -i, -u ; s'accorde avec le nom", "Épithète liée ou détachée", "« les yeux **baissés** » : épithète liée de « yeux »"],
+                    ["Participe passé", "-é, -i, -u ; s'accorde avec le nom", "Épithète liée ou détachée, ou noyau d'une participiale", "« une élève **épuisée** » : épithète liée ; « **Le rideau levé**, le spectacle commença » : participiale"],
                   ],
                 },
                 {
@@ -328,24 +329,24 @@ export const fichePhraseComplexe: Fiche = {
               number: "①",
               title: "Analyser une phrase complexe pas à pas",
               intro:
-                "**Exemple :** « On écrit parce qu'on ne sait par quel biais attraper le réel. »\nOn applique les 4 étapes dans l'ordre.",
+                "**Exemple :** « On écrit parce qu'on cherche à saisir le réel. »\nOn applique les 4 étapes dans l'ordre.",
               steps: [
                 {
                   number: "1",
-                  text: "**Compter les verbes conjugués :** « écrit », « sait » → 2 propositions → phrase complexe.",
-                  example: { lines: ["« attraper » est un infinitif : il ne compte pas"] },
+                  text: "**Compter les verbes conjugués :** « écrit », « cherche » → 2 propositions → phrase complexe.",
+                  example: { lines: ["« saisir » est un infinitif : il ne compte pas"] },
                 },
                 {
                   number: "2",
-                  text: "**Délimiter chaque proposition :** [On écrit] [parce qu'on ne sait par quel biais attraper le réel].",
+                  text: "**Délimiter chaque proposition :** [On écrit] [parce qu'on cherche à saisir le réel].",
                 },
                 {
                   number: "3",
-                  text: "**Identifier l'introducteur :** « parce que » = locution conjonctive (circonstancielle de cause) ; « par quel biais » = mot interrogatif après « sait » (interrogative indirecte).",
+                  text: "**Identifier l'introducteur :** « parce que » est une locution conjonctive qui introduit une subordonnée circonstancielle de cause.",
                 },
                 {
                   number: "💡",
-                  text: "**Nommer nature et fonction :** [On écrit] = principale ; [parce qu'on ne sait…] = subordonnée conjonctive, CC de cause ; [par quel biais attraper le réel] = subordonnée interrogative indirecte, COD de « sait ».",
+                  text: "**Réponse attendue :** La phrase comporte deux propositions : [On écrit] est la proposition principale ; [parce qu'on cherche à saisir le réel] est une proposition subordonnée conjonctive circonstancielle, complément circonstanciel de cause. Elles sont reliées par subordination au moyen de la locution conjonctive « parce que ».",
                   warn: "⚠️ Ne pas oublier de nommer la principale, et toujours donner nature ET fonction.",
                 },
               ],
@@ -369,22 +370,19 @@ export const fichePhraseComplexe: Fiche = {
               number: "②",
               title: "Reconnaître une subordonnée sans subordonnant (infinitive ou participiale)",
               intro:
-                "**Question typique :** « Y a-t-il une subordonnée infinitive ou participiale ? »\nCes deux familles n'ont pas de mot introducteur : c'est le sujet propre qui les révèle.",
+                "**Question typique du concours :** Délimitez les propositions qui forment cette phrase complexe et précisez la manière dont elles sont reliées.\n« Ma mère regardait les enfants jouer dans le jardin. »",
               steps: [
                 {
                   number: "1",
-                  text: "**Repérer un infinitif ou un participe détaché**, puis chercher son sujet.",
-                  example: { lines: ["« Ma mère regardait les enfants jouer » → infinitif « jouer », sujet « les enfants »"] },
+                  text: "**Repérer les verbes :** « regardait » est conjugué et « jouer » est à l'infinitif.",
                 },
                 {
                   number: "2",
-                  text: "**Le sujet est-il distinct de celui de la principale ?** Si non, c'est une épithète détachée (participe) ou un groupe infinitif (infinitif), pas une subordonnée.",
-                  example: { lines: ["« les enfants » (sujet de jouer) ≠ « ma mère » (sujet de regardait) → sujet propre distinct"] },
+                  text: "**Chercher le sujet de chaque verbe :** « ma mère » est le sujet de « regardait » ; « les enfants » est le sujet de « jouer ». L'infinitif possède donc un sujet propre, distinct de celui du verbe principal.",
                 },
                 {
                   number: "💡",
-                  text: "**Pour l'infinitive, vérifier aussi le verbe introducteur** (perception ou factitif). Pour la participiale, le participe détaché à sujet propre suffit.",
-                  example: { lines: ["« regardait » est un verbe de perception → subordonnée infinitive, COD de « regardait »"] },
+                  text: "**Réponse attendue :** La phrase comporte deux propositions : [Ma mère regardait] est la proposition principale ; [les enfants jouer dans le jardin] est une proposition subordonnée infinitive, COD de « regardait ». La seconde dépend du verbe « regardait », mais elle n'est introduite par aucun mot subordonnant.",
                 },
               ],
             },
@@ -393,9 +391,10 @@ export const fichePhraseComplexe: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "« Le rideau levé, le spectacle commença. » Subordonnée participiale ou épithète détachée ?",
+              question: "« Le rideau levé, le spectacle commença. » Délimitez et nommez les propositions.",
               correction: [
-                { type: "line", text: "Le sujet de « levé » (le rideau) est distinct de celui de « commença » (le spectacle) → **subordonnée participiale**, CC de temps." },
+                { type: "line", text: "Le sujet de « levé » est « le rideau » ; le sujet de « commença » est « le spectacle ». Les deux sujets sont distincts." },
+                { type: "line", text: "**Réponse attendue :** [Le rideau levé] est une proposition subordonnée participiale, complément circonstanciel de temps ; [le spectacle commença] est la proposition principale." },
                 { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
               ],
             },
@@ -550,11 +549,11 @@ export const fichePhraseComplexe: Fiche = {
               title: "Exercice 1 : Phrase simple ou complexe ?",
               objectifTag: "Compter les propositions",
               question:
-                "Comptez les verbes conjugués uniquement :\na) « Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »   b) « Ma mère regardait les enfants jouer dans le jardin. »   c) « On écrit parce qu'on ne sait par quel biais attraper le réel. »   d) « Le rideau levé, le spectacle commença. »",
+                "Pour chaque phrase, dites si elle est simple ou complexe. Justifiez en repérant les verbes conjugués et les éventuelles formes non conjuguées à sujet propre :\na) « Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »   b) « Ma mère regardait les enfants jouer dans le jardin. »   c) « On écrit parce qu'on cherche à saisir le réel. »   d) « Le rideau levé, le spectacle commença. »",
               correction: [
-                { type: "line", label: "a)", text: "**Simple** : 1 verbe conjugué (se hâtait) ; « baissés », « pressée », « atteindre » sont des formes non conjuguées." },
+                { type: "line", label: "a)", text: "**Complexe** : [Elle se hâtait, pressée d'atteindre sa maison] est la principale ; [les yeux baissés] est une subordonnée participiale, avec le sujet propre « les yeux »." },
                 { type: "line", label: "b)", text: "**Complexe** : 1 verbe conjugué (regardait) + 1 subordonnée infinitive (« jouer », sujet propre « les enfants »)." },
-                { type: "line", label: "c)", text: "**Complexe** : 2 verbes conjugués (écrit, sait) + 1 interrogative indirecte enchâssée." },
+                { type: "line", label: "c)", text: "**Complexe** : 2 verbes conjugués (écrit, cherche), donc 2 propositions." },
                 { type: "line", label: "d)", text: "**Complexe** : 1 verbe conjugué (commença) + 1 subordonnée participiale (« levé », sujet propre « le rideau »)." },
               ],
             },
@@ -624,19 +623,19 @@ export const fichePhraseComplexe: Fiche = {
                 { type: "line", label: "a)", text: "**Épithète détachée** : sujet de « tenant » = elle (même que « passa »)." },
                 { type: "line", label: "b)", text: "**Subordonnée participiale** : sujet de « levé » = le rideau (distinct de « le spectacle »), CC de temps." },
                 { type: "line", label: "c)", text: "**Épithète détachée** : sujet de « Épuisée » = elle (même que « s'endormit »)." },
-                { type: "line", label: "d)", text: "**Subordonnée participiale** : sujet de « étant parti » = tout le monde (distinct de « elle »), CC de cause." },
+                { type: "line", label: "d)", text: "**Subordonnée participiale** : sujet de « étant parti » = tout le monde (distinct de « elle »), CC de temps, avec une nuance possible de cause." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 6 : « si » interrogatif ou conditionnel ?",
+              title: "Exercice 6 : « si » interrogatif ou conjonction de condition ?",
               question:
                 "Distinguez et justifiez :\na) « Je me demande s'il viendra. »   b) « Si elle vient, je serai heureux. »   c) « Il ignore si tout est prêt. »",
               correction: [
                 { type: "line", label: "a)", text: "**Interrogatif** : verbe de questionnement « me demande » → interrogative indirecte totale." },
-                { type: "line", label: "b)", text: "**Conditionnel** : pas de verbe de questionnement, proposition supprimable et déplaçable → circonstancielle de condition." },
+                { type: "line", label: "b)", text: "**Conjonction de condition** : la proposition est supprimable et déplaçable ; c'est une subordonnée circonstancielle de condition." },
                 { type: "line", label: "c)", text: "**Interrogatif** : verbe de questionnement « ignore » → interrogative indirecte totale." },
               ],
             },
@@ -667,7 +666,7 @@ export const fichePhraseComplexe: Fiche = {
               level: "n2",
               title: "Exercice 8 : Analyser toutes les formes non conjuguées",
               enonce:
-                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »\n*(Émile Zola, Germinal, 1885)*",
+                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »",
               question: "Donnez la nature et la fonction de chaque forme non conjuguée, et dites si elle crée une proposition.",
               correction: [
                 {
@@ -675,12 +674,12 @@ export const fichePhraseComplexe: Fiche = {
                   headers: ["Forme", "Nature", "Fonction", "Crée une proposition ?"],
                   rows: [
                     ["tenant", "Participe présent", "Épithète détachée de « femme »", "Non (même sujet)"],
-                    ["baissés", "Participe passé", "Épithète liée de « yeux »", "Non"],
+                    ["baissés", "Participe passé", "Noyau de la participiale « les yeux baissés », CC de manière", "Oui (sujet propre : « les yeux »)"],
                     ["pressée", "Participe passé", "Épithète détachée du sujet « elle »", "Non (même sujet)"],
                     ["d'atteindre", "Groupe infinitif prépositionnel", "Complément de l'adjectif « pressée »", "Non (même sujet, pas de verbe de perception)"],
                   ],
                 },
-                { type: "note", text: "Deux phrases simples : un verbe conjugué chacune (passa, se hâtait)." },
+                { type: "note", text: "La première phrase est simple. La seconde est complexe : elle contient une principale et la participiale « les yeux baissés »." },
               ],
             },
             {
@@ -694,9 +693,9 @@ export const fichePhraseComplexe: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 9 · Extrait littéraire : Colette",
+              title: "Exercice 9 · Analyse complète",
               enonce:
-                "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. »\n*(Colette, La Maison de Claudine, 1922)*",
+                "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. »",
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
                 {
@@ -704,7 +703,7 @@ export const fichePhraseComplexe: Fiche = {
                   headers: ["Proposition", "Nature et fonction"],
                   rows: [
                     ["Ma mère … regardait", "Proposition principale"],
-                    ["dont le regard ne vieillissait pas", "Subordonnée relative explicative, épithète de « mère »"],
+                    ["dont le regard ne vieillissait pas", "Subordonnée relative explicative, apposée au groupe nominal « Ma mère »"],
                     ["les enfants jouer dans le jardin", "Subordonnée infinitive, COD de « regardait » (sujet propre : « les enfants »)"],
                   ],
                 },
@@ -729,15 +728,16 @@ export const fichePhraseComplexe: Fiche = {
                     ["par quel autre biais attraper le réel", "Subordonnée interrogative indirecte partielle, COD de « sait »"],
                   ],
                 },
+                { type: "note", text: "Ici, l'interrogative indirecte est construite autour de l'infinitif « attraper ». Elle ne comporte pas de verbe conjugué, mais elle dépend du verbe « sait »." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 11 · Extrait littéraire : Marguerite Duras",
+              title: "Exercice 11 · Analyse complète",
               enonce:
-                "« Elle regardait les eaux du fleuve avec une attention que rien ne semblait pouvoir distraire. »\n*(Marguerite Duras, L'Amant, 1984)*",
+                "« Elle regardait les eaux du fleuve avec une attention que rien ne semblait pouvoir distraire. »",
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
                 {
@@ -757,18 +757,18 @@ export const fichePhraseComplexe: Fiche = {
               level: "n3",
               title: "Exercice 12 · Extrait littéraire : Marguerite Yourcenar",
               enonce:
-                "« J'ai vu se rouvrir les portes qui me séparaient du monde ; je suis monté sur la terrasse pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
-              question: "Délimitez et nommez toutes les propositions.",
+                "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
+              question: "Délimitez et donnez la nature des différentes propositions.",
               correction: [
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
                   rows: [
-                    ["j'ai vu (se rouvrir les portes…)", "Proposition principale (+ subordonnée infinitive COD)"],
+                    ["À seize ans, j'ai vu", "Proposition principale"],
                     ["se rouvrir les portes…", "Subordonnée infinitive, COD de « ai vu » (sujet propre : « les portes »)"],
                     ["qui me séparaient du monde", "Subordonnée relative déterminative, épithète de « portes »"],
-                    ["je suis monté sur la terrasse", "Proposition indépendante juxtaposée"],
-                    ["mais ils étaient moins beaux…", "Proposition indépendante coordonnée (« mais »)"],
+                    ["je suis monté sur la terrasse du palais pour regarder les nuages", "Proposition indépendante, juxtaposée à la première partie de la phrase"],
+                    ["mais ils étaient moins beaux que ceux de tes crépuscules", "Proposition indépendante, coordonnée à la précédente par « mais »"],
                   ],
                 },
                 { type: "note", text: "💡 « pour regarder les nuages » est un groupe infinitif (CC de but), pas une subordonnée infinitive : même sujet, pas de verbe de perception." },
@@ -785,34 +785,33 @@ export const fichePhraseComplexe: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format des questions sur les propositions de la Partie 1 : extrait littéraire, délimitation et nomination des propositions, formulation jury. Les exercices calqués sur des sujets récents portent le badge ✦.",
+              text: "Ces exercices reprennent les formulations du concours : délimiter les propositions et donner leur nature. Le badge ✦ signale un exercice directement tiré d'un sujet récent ; les autres sont des entraînements construits dans le même esprit.",
             },
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 1 : Colette, La Maison de Claudine",
+              title: "Exercice 1 : Infinitive et relative",
               enonce:
-                "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »\n*(Colette, La Maison de Claudine, 1922)*",
-              question: "Délimitez et nommez toutes les propositions de la première phrase.",
+                "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. »",
+              question: "Délimitez et nommez toutes les propositions.",
               correction: [
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
                   rows: [
                     ["Ma mère … regardait", "Proposition principale"],
-                    ["dont le regard ne vieillissait pas", "Subordonnée relative explicative, épithète de « mère »"],
+                    ["dont le regard ne vieillissait pas", "Subordonnée relative explicative, apposée au groupe nominal « Ma mère »"],
                     ["les enfants jouer dans le jardin", "Subordonnée infinitive, COD de « regardait »"],
                   ],
                 },
-                { type: "note", text: "⚠️ « muette », « heureuse » sont des épithètes détachées du sujet « elle », pas des propositions (pas de verbe conjugué)." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 2 : Marguerite Duras, L'Amant",
+              title: "Exercice 2 : Proposition relative",
               enonce:
-                "« Elle regardait les eaux du fleuve avec une attention que rien ne semblait pouvoir distraire. »\n*(Marguerite Duras, L'Amant, 1984)*",
+                "« Elle regardait les eaux du fleuve avec une attention que rien ne semblait pouvoir distraire. »",
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
                 {
@@ -831,7 +830,7 @@ export const fichePhraseComplexe: Fiche = {
               title: "Exercice 3 : Lola Lafon, Quand tu écouteras cette chanson",
               enonce:
                 "« On écrit parce qu'on ne sait par quel autre biais attraper le réel. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Appliquez la méthode en 4 étapes et nommez chaque proposition.",
+              question: "Délimitez les propositions et donnez leur nature.",
               correction: [
                 {
                   type: "table",
@@ -842,6 +841,7 @@ export const fichePhraseComplexe: Fiche = {
                     ["par quel autre biais attraper le réel", "Subordonnée interrogative indirecte partielle, COD de « sait »"],
                   ],
                 },
+                { type: "note", text: "L'interrogative indirecte est ici construite autour de l'infinitif « attraper » et dépend du verbe « sait »." },
               ],
             },
             {
@@ -850,29 +850,31 @@ export const fichePhraseComplexe: Fiche = {
               badge: "✦ Format concours récent",
               title: "Exercice 4 : Marguerite Yourcenar, Comment Wang-Fô fut sauvé",
               enonce:
-                "« J'ai vu se rouvrir les portes qui me séparaient du monde. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
-              question: "Format identique au concours · Délimitez et nommez les propositions ; précisez la nature de « qui ».",
+                "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
+              question: "Délimitez et donnez la nature des différentes propositions.",
               correction: [
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
                   rows: [
-                    ["J'ai vu (se rouvrir les portes…)", "Proposition principale (+ subordonnée infinitive COD)"],
+                    ["À seize ans, j'ai vu", "Proposition principale"],
                     ["se rouvrir les portes…", "Subordonnée infinitive, COD de « ai vu » (verbe de perception, sujet propre « les portes »)"],
                     ["qui me séparaient du monde", "Subordonnée relative déterminative, épithète de « portes »"],
+                    ["je suis monté sur la terrasse du palais pour regarder les nuages", "Proposition indépendante, juxtaposée à la première partie de la phrase"],
+                    ["mais ils étaient moins beaux que ceux de tes crépuscules", "Proposition indépendante, coordonnée à la précédente par « mais »"],
                   ],
                 },
-                { type: "note", text: "« qui » est un pronom relatif (nature). Sa fonction (sujet de « séparaient ») s'analyse dans la notion 2." },
+                { type: "note", text: "« pour regarder les nuages » est un groupe infinitif, CC de but, et non une proposition infinitive." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "annale",
-              badge: "✦ Format concours récent",
+              badge: "Entraînement adapté d'un sujet récent",
               title: "Exercice 5 : Lola Lafon, Quand tu écouteras cette chanson",
               enonce:
                 "« Vivre, sans l'écriture, me va mal, comme un habit trop lâche dans lequel je m'empêtre. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Format identique au concours · Délimitez et nommez toutes les propositions ; analysez « comme ».",
+              question: "Délimitez et nommez toutes les propositions, puis analysez « comme ».",
               correction: [
                 {
                   type: "table",
@@ -911,7 +913,7 @@ export const fichePhraseComplexe: Fiche = {
                   items: [
                     { text: "Erreur : subordonnée participiale annoncée sans sujet propre distinct", bad: true },
                     { text: "Le sujet de « tenant » est « elle », le même que celui de « passa »" },
-                    { text: "Réponse attendue : une seule proposition ; « tenant son enfant » = participe présent, épithète détachée de « femme »" },
+                    { text: "Réponse attendue : une seule proposition ; « tenant son enfant » = groupe participial, épithète détachée du sujet « elle »" },
                   ],
                 },
               ],
@@ -1044,11 +1046,6 @@ export const fichePhraseComplexe: Fiche = {
                 {
                   title: "6 familles de subordonnées",
                   lines: ["Relative · complétive", "Circonstancielle · interrogative indirecte", "Infinitive · participiale"],
-                  variant: "green",
-                },
-                {
-                  title: "Méthode en 4 étapes",
-                  lines: ["Compter · délimiter", "Identifier l'introducteur", "Nommer nature + fonction"],
                   variant: "green",
                 },
                 {
