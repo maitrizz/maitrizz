@@ -29,6 +29,7 @@ import { ficheSolidesPatronsRepresentation } from "./mathematiques/solides-patro
 import { ficheSectionsReperageEspace } from "./mathematiques/sections-reperage-espace";
 import { ficheAlgorithmiqueScratchTableur } from "./mathematiques/algorithmique-scratch-tableur";
 import { ficheMethodologieMathematiquesM2, ficheMethodologieMathematiquesL3 } from "./mathematiques/methodologie-de-l-epreuve";
+import { ficheVecteurs } from "./mathematiques/vecteurs";
 import { ficheClassesGrammaticales } from "./francais/classes-grammaticales";
 import { ficheFonctionsSyntaxiques } from "./francais/fonctions-syntaxiques";
 import { ficheGroupeNominalExpansions } from "./francais/groupe-nominal-expansions";
@@ -102,7 +103,15 @@ export const MATIERE_LABELS: Record<Matiere, string> = {
 // vecteurs) est signalée dans les fiches et reste à faire (cf. SUIVI_FICHES_MATHEMATIQUES.md).
 const MATHEMATIQUES_NOTIONS: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptives, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspace, ficheAlgorithmiqueScratchTableur];
 const MATHEMATIQUES_M2: Fiche[] = [ficheMethodologieMathematiquesM2, ...MATHEMATIQUES_NOTIONS];
-const MATHEMATIQUES_L3: Fiche[] = [ficheMethodologieMathematiquesL3, ...MATHEMATIQUES_NOTIONS];
+// L3 : on insère la fiche Vecteurs (programme 2025, absente du M2) après
+// Transformations (notion 24), c'est-à-dire en fin de Partie 4. Les 24 premières
+// notions, puis Vecteurs, puis les notions de Partie 5-6.
+const MATHEMATIQUES_L3: Fiche[] = [
+  ficheMethodologieMathematiquesL3,
+  ...MATHEMATIQUES_NOTIONS.slice(0, 24),
+  ficheVecteurs,
+  ...MATHEMATIQUES_NOTIONS.slice(24),
+];
 
 // Français : notions 01-18 communes L3/M2. La divergence commence à la
 // notion 19 (Partie 3) — les fiches propres à chaque niveau sont ajoutées
