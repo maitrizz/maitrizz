@@ -1,4 +1,5 @@
 import type { Fiche } from "@/components/fiche/types";
+import type { Niveau } from "@/lib/niveau";
 
 // Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
 const OBJECTIFS = [
@@ -12,7 +13,9 @@ const OBJECTIFS = [
   { id: "e8", label: "Je sais pourquoi la médiane est plus robuste que la moyenne en présence de valeurs extrêmes" },
 ];
 
-export const ficheStatistiquesDescriptives: Fiche = {
+function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
+  const l3 = niveau === "l3";
+  return {
   slug: "statistiques-descriptives",
   matiere: "mathematiques",
   numero: 11,
@@ -182,19 +185,28 @@ export const ficheStatistiquesDescriptives: Fiche = {
                 {
                   type: "table",
                   headers: ["Indicateur", "Formule", "Sur 28 élèves"],
-                  rows: [
-                    ["Étendue", "max − min", "18 − 8 = 10"],
-                    ["Écart interquartile (EIQ)", "Q3 − Q1", "14 − 11 = 3"],
-                    ["Variance (Seconde)", "Σ nᵢ × (xᵢ − x̄)² ÷ N", "≈ 5,82"],
-                    ["Écart-type (Seconde)", "√variance", "≈ 2,41"],
-                  ],
+                  rows: l3
+                    ? [
+                        ["Étendue", "max − min", "18 − 8 = 10"],
+                        ["Écart interquartile (EIQ)", "Q3 − Q1", "14 − 11 = 3"],
+                      ]
+                    : [
+                        ["Étendue", "max − min", "18 − 8 = 10"],
+                        ["Écart interquartile (EIQ)", "Q3 − Q1", "14 − 11 = 3"],
+                        ["Variance (Seconde)", "Σ nᵢ × (xᵢ − x̄)² ÷ N", "≈ 5,82"],
+                        ["Écart-type (Seconde)", "√variance", "≈ 2,41"],
+                      ],
                 },
-                {
-                  type: "callout",
-                  variant: "warning",
-                  title: "⚠️ Variance et écart-type : programme Seconde",
-                  text: "L'étendue, les quartiles et l'écart interquartile relèvent du cycle 4. La variance et l'écart-type relèvent du programme de Seconde : attendus au CRPE M2, mais à retirer lors de la future dérivation L3.",
-                },
+                ...(l3
+                  ? []
+                  : [
+                      {
+                        type: "callout" as const,
+                        variant: "warning" as const,
+                        title: "⚠️ Variance et écart-type : programme Seconde",
+                        text: "L'étendue, les quartiles et l'écart interquartile relèvent du cycle 4. La variance et l'écart-type relèvent du programme de Seconde : attendus au CRPE M2, mais à retirer lors de la future dérivation L3.",
+                      },
+                    ]),
                 {
                   type: "highlightBox",
                   variant: "neutral",
@@ -867,4 +879,8 @@ export const ficheStatistiquesDescriptives: Fiche = {
       ],
     },
   ],
-};
+  };
+}
+
+export const ficheStatistiquesDescriptivesM2 = ficheStatistiquesDescriptives("m2");
+export const ficheStatistiquesDescriptivesL3 = ficheStatistiquesDescriptives("l3");

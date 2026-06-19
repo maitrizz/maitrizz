@@ -11,7 +11,7 @@ import { ficheDenombrement } from "./mathematiques/denombrement";
 import { ficheCalculLitteral } from "./mathematiques/calcul-litteral";
 import { ficheEquationsInequationsSystemes } from "./mathematiques/equations-inequations-systemes";
 import { ficheSuitesNumeriques } from "./mathematiques/suites-numeriques";
-import { ficheStatistiquesDescriptives } from "./mathematiques/statistiques-descriptives";
+import { ficheStatistiquesDescriptivesM2, ficheStatistiquesDescriptivesL3 } from "./mathematiques/statistiques-descriptives";
 import { ficheProbabilites } from "./mathematiques/probabilites";
 import { ficheProportionnalitePourcentages } from "./mathematiques/proportionnalite-pourcentages";
 import { ficheFonctionsLineairesAffines } from "./mathematiques/fonctions-lineaires-affines";
@@ -26,7 +26,7 @@ import { ficheTheoremeDeThalesSimilitude } from "./mathematiques/theoreme-de-tha
 import { ficheTrigonometrieTriangleRectangle } from "./mathematiques/trigonometrie-triangle-rectangle";
 import { ficheTransformationsDuPlan } from "./mathematiques/transformations-du-plan";
 import { ficheSolidesPatronsRepresentation } from "./mathematiques/solides-patrons-representation";
-import { ficheSectionsReperageEspace } from "./mathematiques/sections-reperage-espace";
+import { ficheSectionsReperageEspaceM2, ficheSectionsReperageEspaceL3 } from "./mathematiques/sections-reperage-espace";
 import { ficheAlgorithmiqueScratchTableur } from "./mathematiques/algorithmique-scratch-tableur";
 import { ficheMethodologieMathematiquesM2, ficheMethodologieMathematiquesL3 } from "./mathematiques/methodologie-de-l-epreuve";
 import { ficheVecteurs } from "./mathematiques/vecteurs";
@@ -94,23 +94,26 @@ export const MATIERE_LABELS: Record<Matiere, string> = {
   sciences: "Sciences et technologie",
 };
 
-// Mathématiques : chantier M2 en cours (plan dans SUIVI_FICHES_MATHEMATIQUES.md).
-// La version L3 sera dérivée du M2 plus tard ; en attendant la liste L3 reste vide
-// (la page matière affiche « arrivent très bientôt » quand la liste est vide).
-// Maths : les 27 notions disciplinaires (cycle 4 + Seconde) sont communes L3/M2.
-// Seul le cadre de l'épreuve diffère (méthodologie propre à chaque niveau).
-// La dérivation L3 fine (retrait du contenu « Seconde », du bloc sphère, ajout des
-// vecteurs) est signalée dans les fiches et reste à faire (cf. SUIVI_FICHES_MATHEMATIQUES.md).
-const MATHEMATIQUES_NOTIONS: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptives, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspace, ficheAlgorithmiqueScratchTableur];
+// Mathématiques. Les 27 notions disciplinaires sont en grande partie communes
+// L3/M2 ; MATHEMATIQUES_NOTIONS donne l'ordre et les variantes M2.
+const MATHEMATIQUES_NOTIONS: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptivesM2, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspaceM2, ficheAlgorithmiqueScratchTableur];
 const MATHEMATIQUES_M2: Fiche[] = [ficheMethodologieMathematiquesM2, ...MATHEMATIQUES_NOTIONS];
-// L3 : on insère la fiche Vecteurs (programme 2025, absente du M2) après
-// Transformations (notion 24), c'est-à-dire en fin de Partie 4. Les 24 premières
-// notions, puis Vecteurs, puis les notions de Partie 5-6.
+
+// L3 : programme cycle 4 (2025). Dérivation fidèle à partir du M2 :
+//  - « suites » retirée (hors cycle 4) ;
+//  - statistiques et sections : variantes L3 (sans variance/écart-type, sans le bloc sphère) ;
+//  - fiche « Vecteurs » insérée après Transformations (programme 2025, absente du M2).
+// La fiche « équations » reste partagée : son contenu Seconde (intervalles, valeur absolue)
+// est trop imbriqué aux inéquations/systèmes pour être retiré proprement ; il reste
+// signalé « Seconde » et la méthodologie L3 indique de l'ignorer.
 const MATHEMATIQUES_L3: Fiche[] = [
   ficheMethodologieMathematiquesL3,
-  ...MATHEMATIQUES_NOTIONS.slice(0, 24),
-  ficheVecteurs,
-  ...MATHEMATIQUES_NOTIONS.slice(24),
+  ...MATHEMATIQUES_NOTIONS.filter((f) => f.slug !== "suites-numeriques").flatMap((f) => {
+    if (f.slug === "statistiques-descriptives") return [ficheStatistiquesDescriptivesL3];
+    if (f.slug === "sections-reperage-espace") return [ficheSectionsReperageEspaceL3];
+    if (f.slug === "transformations-du-plan") return [f, ficheVecteurs];
+    return [f];
+  }),
 ];
 
 // Français : notions 01-18 communes L3/M2. La divergence commence à la

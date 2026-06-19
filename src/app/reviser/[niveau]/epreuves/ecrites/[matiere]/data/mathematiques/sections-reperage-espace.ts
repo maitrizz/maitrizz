@@ -1,6 +1,8 @@
 import type { Fiche } from "@/components/fiche/types";
+import type { Niveau } from "@/lib/niveau";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
+// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation.
+// L'objectif e8 (repérage sur la sphère) est M2 uniquement : retiré en L3.
 const OBJECTIFS = [
   { id: "e1", label: "Je décris la section obtenue selon le plan (parallèle, perpendiculaire, oblique) sur les solides usuels" },
   { id: "e2", label: "Je sais que la section d'une pyramide par un plan parallèle à la base est semblable (pas isométrique) à la base" },
@@ -13,21 +15,28 @@ const OBJECTIFS = [
   { id: "e9", label: "Je fais le lien entre sections, vues planes et représentations des solides" },
 ];
 
-export const ficheSectionsReperageEspace: Fiche = {
+function ficheSectionsReperageEspace(niveau: Niveau): Fiche {
+  const l3 = niveau === "l3";
+  const objectifs = l3 ? OBJECTIFS.filter((o) => o.id !== "e8") : OBJECTIFS;
+  return {
   slug: "sections-reperage-espace",
   matiere: "mathematiques",
   numero: 26,
   partie: "Partie 5 : Géométrie dans l'espace",
-  title: "Sections, repérage dans l'espace et sur la sphère",
-  subtitle:
-    "Section par un plan · sections des solides usuels · repère orthonormé de l'espace · Pythagore dans l'espace · repérage sur la sphère (latitude, longitude)",
+  title: l3 ? "Sections et repérage dans l'espace" : "Sections, repérage dans l'espace et sur la sphère",
+  subtitle: l3
+    ? "Section par un plan · sections des solides usuels · repère orthonormé de l'espace · Pythagore dans l'espace"
+    : "Section par un plan · sections des solides usuels · repère orthonormé de l'espace · Pythagore dans l'espace · repérage sur la sphère (latitude, longitude)",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
-    { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
+    { label: l3 ? "Cycle 4 · Programme 2025 · Espace et géométrie" : "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Sections, repérage dans l'espace et sur la sphère (CRPE) · Fiche de révision | Maitrizz",
-  metaDescription:
-    "Fiche CRPE sur la géométrie dans l'espace : section d'un solide par un plan, sections des solides usuels, repère orthonormé de l'espace, Pythagore dans l'espace, repérage sur la sphère par latitude et longitude. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+  metaTitle: l3
+    ? "Sections et repérage dans l'espace (CRPE) · Fiche de révision | Maitrizz"
+    : "Sections, repérage dans l'espace et sur la sphère (CRPE) · Fiche de révision | Maitrizz",
+  metaDescription: l3
+    ? "Fiche CRPE sur la géométrie dans l'espace : section d'un solide par un plan, sections des solides usuels, repère orthonormé de l'espace, Pythagore dans l'espace. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation."
+    : "Fiche CRPE sur la géométrie dans l'espace : section d'un solide par un plan, sections des solides usuels, repère orthonormé de l'espace, Pythagore dans l'espace, repérage sur la sphère par latitude et longitude. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -41,12 +50,14 @@ export const ficheSectionsReperageEspace: Fiche = {
           blocks: [
             {
               type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
+              title: l3 ? "Le programme en 3 étapes" : "Le programme en 4 étapes",
               items: [
                 { number: "①", title: "Qu'est-ce qu'une section ?", text: "L'intersection d'un solide avec un plan, et la méthode pour la construire." },
                 { number: "②", title: "Sections des solides usuels", text: "Cube, prisme, pyramide, cylindre, cône : les formes à connaître." },
                 { number: "③", title: "Repère et Pythagore dans l'espace", text: "Coordonnées (x ; y ; z), distance, milieu, diagonale d'un pavé." },
-                { number: "④", title: "Repérage sur la sphère", text: "Latitude et longitude, le lien avec la géographie (M2)." },
+                ...(l3
+                  ? []
+                  : [{ number: "④", title: "Repérage sur la sphère", text: "Latitude et longitude, le lien avec la géographie (M2)." }]),
               ],
             },
           ],
@@ -60,7 +71,9 @@ export const ficheSectionsReperageEspace: Fiche = {
               type: "callout",
               variant: "info",
               title: "Visualiser dans l'espace",
-              text: "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche, et le repérage sur la sphère fait le pont avec la géographie. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes).",
+              text: l3
+                ? "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes)."
+                : "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche, et le repérage sur la sphère fait le pont avec la géographie. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes).",
             },
             {
               type: "subsection",
@@ -184,40 +197,44 @@ export const ficheSectionsReperageEspace: Fiche = {
                 },
               ],
             },
-            {
-              type: "subsection",
-              number: "④",
-              title: "Repérage sur la sphère (M2)",
-              blocks: [
-                {
-                  type: "callout",
-                  variant: "warning",
-                  title: "Au programme M2 uniquement",
-                  text: "Le repérage sur la sphère terrestre figure au programme du cycle 4 version 2020 (référence M2). Il a été retiré de la version 2025 : à ne pas reprendre pour la dérivation L3.",
-                },
-                {
-                  type: "highlightBox",
-                  variant: "marine",
-                  title: "Latitude et longitude",
-                  blocks: [
-                    {
-                      type: "formulaBlock",
-                      lines: [
-                        "Tout point de la sphère terrestre est repéré par deux angles : (latitude ; longitude).",
-                        "**Latitude** : de 0° (équateur) à 90° Nord ou Sud (les pôles).",
-                        "**Longitude** : de 0° (méridien de Greenwich) à 180° Est ou Ouest.",
-                      ],
-                      note: "Méridiens : demi-grands cercles reliant les deux pôles (longitude constante). Parallèles : cercles perpendiculaires à l'axe des pôles (latitude constante).",
-                    },
-                  ],
-                },
-                {
-                  type: "callout",
-                  variant: "info",
-                  text: "L'équateur est le seul parallèle qui soit un grand cercle (de même rayon que la sphère). Les autres parallèles sont des cercles plus petits. C'est une section de la sphère par un plan perpendiculaire à l'axe des pôles.",
-                },
-              ],
-            },
+            ...(l3
+              ? []
+              : [
+                  {
+                    type: "subsection" as const,
+                    number: "④",
+                    title: "Repérage sur la sphère (M2)",
+                    blocks: [
+                      {
+                        type: "callout" as const,
+                        variant: "warning" as const,
+                        title: "Au programme M2 uniquement",
+                        text: "Le repérage sur la sphère terrestre figure au programme du cycle 4 version 2020 (référence M2). Il a été retiré de la version 2025 : à ne pas reprendre pour la dérivation L3.",
+                      },
+                      {
+                        type: "highlightBox" as const,
+                        variant: "marine" as const,
+                        title: "Latitude et longitude",
+                        blocks: [
+                          {
+                            type: "formulaBlock" as const,
+                            lines: [
+                              "Tout point de la sphère terrestre est repéré par deux angles : (latitude ; longitude).",
+                              "**Latitude** : de 0° (équateur) à 90° Nord ou Sud (les pôles).",
+                              "**Longitude** : de 0° (méridien de Greenwich) à 180° Est ou Ouest.",
+                            ],
+                            note: "Méridiens : demi-grands cercles reliant les deux pôles (longitude constante). Parallèles : cercles perpendiculaires à l'axe des pôles (latitude constante).",
+                          },
+                        ],
+                      },
+                      {
+                        type: "callout" as const,
+                        variant: "info" as const,
+                        text: "L'équateur est le seul parallèle qui soit un grand cercle (de même rayon que la sphère). Les autres parallèles sont des cercles plus petits. C'est une section de la sphère par un plan perpendiculaire à l'axe des pôles.",
+                      },
+                    ],
+                  },
+                ]),
             {
               type: "piegeCard",
               variant: "rouge",
@@ -257,7 +274,9 @@ export const ficheSectionsReperageEspace: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 3 (CM1-6e), les élèves réalisent des coupes de solides concrets (fruits, fromages, boîtes) et observent les formes obtenues. La section d'un cube est étudiée vers la 6e-5e, le repère de l'espace en 4e.\n\nLe repérage sur la sphère relie naturellement les mathématiques et la géographie (latitude, longitude, méridiens, parallèles, fuseaux horaires) : une situation interdisciplinaire classique.\n\nPour le CRPE : savoir décrire et construire une section dans les cas usuels, calculer une diagonale ou une hauteur par Pythagore en deux étapes, et utiliser les coordonnées 3D pour une distance ou un milieu.",
+              text: l3
+                ? "Au cycle 3 (CM1-6e), les élèves réalisent des coupes de solides concrets (fruits, fromages, boîtes) et observent les formes obtenues. La section d'un cube est étudiée vers la 6e-5e, le repère de l'espace en 4e.\n\nPour le CRPE : savoir décrire et construire une section dans les cas usuels, calculer une diagonale ou une hauteur par Pythagore en deux étapes, et utiliser les coordonnées 3D pour une distance ou un milieu."
+                : "Au cycle 3 (CM1-6e), les élèves réalisent des coupes de solides concrets (fruits, fromages, boîtes) et observent les formes obtenues. La section d'un cube est étudiée vers la 6e-5e, le repère de l'espace en 4e.\n\nLe repérage sur la sphère relie naturellement les mathématiques et la géographie (latitude, longitude, méridiens, parallèles, fuseaux horaires) : une situation interdisciplinaire classique.\n\nPour le CRPE : savoir décrire et construire une section dans les cas usuels, calculer une diagonale ou une hauteur par Pythagore en deux étapes, et utiliser les coordonnées 3D pour une distance ou un milieu.",
             },
             {
               type: "ctaBox",
@@ -448,13 +467,17 @@ export const ficheSectionsReperageEspace: Fiche = {
                   correctIndex: 2,
                   explanation: "Le pied de la hauteur d'une pyramide régulière est le centre de la base.",
                 },
-                {
-                  objectifId: "e8",
-                  question: "Sur la sphère terrestre, quel parallèle est un grand cercle ?",
-                  options: ["Le méridien de Greenwich", "L'équateur", "Le cercle polaire", "Le tropique du Cancer"],
-                  correctIndex: 1,
-                  explanation: "L'équateur est le seul parallèle qui soit un grand cercle (même rayon que la sphère).",
-                },
+                ...(l3
+                  ? []
+                  : [
+                      {
+                        objectifId: "e8",
+                        question: "Sur la sphère terrestre, quel parallèle est un grand cercle ?",
+                        options: ["Le méridien de Greenwich", "L'équateur", "Le cercle polaire", "Le tropique du Cancer"],
+                        correctIndex: 1,
+                        explanation: "L'équateur est le seul parallèle qui soit un grand cercle (même rayon que la sphère).",
+                      },
+                    ]),
                 {
                   objectifId: "e9",
                   question: "La vue de dessus d'un cône de révolution est :",
@@ -735,12 +758,16 @@ export const ficheSectionsReperageEspace: Fiche = {
                   answer:
                     "Dans un repère orthonormé à trois axes perpendiculaires, par M(x ; y ; z) : x l'abscisse, y la profondeur, z la hauteur. C'est l'extension du repère du plan avec une coordonnée z.",
                 },
-                {
-                  question: "Comment repère-t-on un point sur la sphère terrestre ? (M2)",
-                  answer:
-                    "Par sa latitude (0° à l'équateur, jusqu'à 90° N ou S aux pôles) et sa longitude (0° au méridien de Greenwich, jusqu'à 180° E ou O). Méridiens : demi-grands cercles reliant les pôles ; parallèles : cercles à latitude constante.",
-                  astuce: "L'équateur est le seul parallèle qui soit un grand cercle. Notion au programme M2 (retirée en 2025).",
-                },
+                ...(l3
+                  ? []
+                  : [
+                      {
+                        question: "Comment repère-t-on un point sur la sphère terrestre ? (M2)",
+                        answer:
+                          "Par sa latitude (0° à l'équateur, jusqu'à 90° N ou S aux pôles) et sa longitude (0° au méridien de Greenwich, jusqu'à 180° E ou O). Méridiens : demi-grands cercles reliant les pôles ; parallèles : cercles à latitude constante.",
+                        astuce: "L'équateur est le seul parallèle qui soit un grand cercle. Notion au programme M2 (retirée en 2025).",
+                      },
+                    ]),
                 {
                   question: "Diagonale d'une face d'un cube et grande diagonale : les distinguer.",
                   answer:
@@ -790,12 +817,16 @@ export const ficheSectionsReperageEspace: Fiche = {
                   variant: "yellow",
                   lines: ["pied = centre de base", "h = √(arête² − d²)"],
                 },
-                {
-                  title: "Sphère (M2)",
-                  variant: "purple",
-                  dashed: true,
-                  lines: ["latitude et longitude", "équateur = grand cercle"],
-                },
+                ...(l3
+                  ? []
+                  : [
+                      {
+                        title: "Sphère (M2)",
+                        variant: "purple" as const,
+                        dashed: true,
+                        lines: ["latitude et longitude", "équateur = grand cercle"],
+                      },
+                    ]),
               ],
             },
           ],
@@ -807,11 +838,15 @@ export const ficheSectionsReperageEspace: Fiche = {
           blocks: [
             {
               type: "autoEvalChecklist",
-              items: OBJECTIFS,
+              items: objectifs,
             },
           ],
         },
       ],
     },
   ],
-};
+  };
+}
+
+export const ficheSectionsReperageEspaceM2 = ficheSectionsReperageEspace("m2");
+export const ficheSectionsReperageEspaceL3 = ficheSectionsReperageEspace("l3");
