@@ -52,16 +52,16 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | 19 | Triangles, quadrilatères, polygones (fusion N23 + N25) | ✅ | ✅ (fusion faite : triangles N25 + parallélogrammes N23 ; méthode vectorielle écartée (hors M2) au profit des milieux ; renvoi N°18 pour constructions ; calculs vérifiés) |
 | 20 | Cercle (N24) | ✅ | ✅ (MEF + charte en une passe ; renvois N°18 (constructions) et N°21 (Pythagore) ; annales adoucies ; calculs vérifiés) |
 | 21 | Théorème de Pythagore (N26) | ✅ | ✅ (MEF + charte en une passe ; direct/réciproque/contraposée ; renvoi N°4 racine ; calculs vérifiés) |
-| 22 | Théorème de Thalès et similitude (N27 + homothétie de N20) | ⬜ | ⬜ |
-| 23 | Trigonométrie du triangle rectangle (N28) | ⬜ | ⬜ |
-| 24 | Transformations (N29 + homothétie de N20) | ⬜ | ⬜ |
+| 22 | Théorème de Thalès et similitude (N27 + homothétie de N20) | ✅ | ✅ (MEF + charte en une passe ; configurations triangle/papillon, réciproque, critères AA/CCC/CAC, coefficient k longueurs/aires/volumes, homothétie de N20 intégrée ; lien Thalès↔similitude↔homothétie ; mention d'annales non sourcée retirée ; calculs vérifiés) |
+| 23 | Trigonométrie du triangle rectangle (N28) | ✅ | ✅ (MEF + charte en une passe ; SOH-CAH-TOA, calcul longueur/angle, valeurs remarquables 30/45/60, sin²+cos²=1, tan=sin/cos, pente et hauteur inaccessible ; pièges mode RAD et arcsin≠1/sin ; renvoi N°22 ombre du mât ; mention d'annales non sourcée retirée ; calculs vérifiés) |
+| 24 | Transformations (N29 + homothétie de N20) | ✅ | ✅ (MEF + charte en une passe ; 5 transformations axiale/centrale/translation/rotation/homothétie, tableau des conservations, seule axiale inverse l'orientation, axes/centres des figures, parallélogramme⟺centre, frises/pavages, composition ; homothétie de N20 traitée sous l'angle transformation, renvoi N°22 pour Thalès/similitude ; mention d'annales non sourcée retirée ; calculs vérifiés) |
 
 ## Partie 5 — Géométrie dans l'espace
 
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
-| 25 | Solides, patrons, représentation (N30) | ⬜ | ⬜ |
-| 26 | Sections, repérage dans l'espace et sur la sphère (N31 + bloc repérage sphère, M2 uniquement) | ⬜ | ⬜ |
+| 25 | Solides, patrons, représentation (N30) | ✅ | ✅ (MEF + charte en une passe ; 5 familles, formules S/A/F prismes et pyramides, Euler S+F=A+2 réservé aux polyèdres, perspective cavalière, 3 vues, patrons et validité, aire latérale prisme/cylindre ; renvoi N°15 volumes ; emojis décoratifs des familles retirés ; coquille source corrigée (13,06 m² = 1306 dm², pas 131) ; mention d'annales non sourcée retirée ; calculs vérifiés) |
+| 26 | Sections, repérage dans l'espace et sur la sphère (N31 + bloc repérage sphère, M2 uniquement) | ✅ | ✅ (MEF + charte en une passe ; sections des solides usuels, section pyramide semblable, repère 3D distance/milieu, Pythagore espace 2 étapes, diagonale face a√2 vs cube a√3, hauteur pyramide régulière ; **bloc repérage sphère latitude/longitude AJOUTÉ et marqué M2 uniquement** (à retirer pour L3) ; renvoi N°15 volumes ; coquille source corrigée (demi-diagonale 2√13) ; emojis et annales retirés ; calculs vérifiés) |
 
 ## Partie 6 — Algorithmique et pensée informatique
 
