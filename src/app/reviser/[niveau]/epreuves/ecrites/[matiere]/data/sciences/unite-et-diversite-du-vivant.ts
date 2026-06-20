@@ -83,6 +83,13 @@ const coursBlocks: Block[] = [
         text: "La cellule est l'unité structurale et fonctionnelle de tout être vivant : c'est le plus petit niveau d'organisation qui présente les propriétés du vivant (se nourrir, se reproduire, réagir à son milieu). C'est la théorie cellulaire, formulée par Schleiden et Schwann en 1838-1839.",
       },
       {
+        type: "schema",
+        src: "/fiches/sciences/cellule-procaryote-eucaryote.svg",
+        alt: "À gauche, une cellule procaryote (bactérie) : une membrane plasmique, du cytoplasme, des ribosomes, et un ADN circulaire libre (nucléoïde), sans noyau. À droite, une cellule eucaryote animale, plus grande : une membrane, un noyau délimité contenant l'ADN, et des organites dont une mitochondrie.",
+        caption: "La cellule procaryote n'a pas de noyau (ADN libre), l'eucaryote a un noyau délimité et des organites. Toutes deux partagent membrane, ADN et ribosomes : c'est l'unité du vivant.",
+        maxWidth: 620,
+      },
+      {
         type: "table",
         headers: ["Notion", "Définition et repères"],
         rows: [
@@ -256,6 +263,13 @@ const coursBlocks: Block[] = [
     faux: "« Les ailes de l'oiseau et de la chauve-souris se ressemblent, donc ces animaux sont proches. »",
     vrai: "Ce sont des organes analogues : même fonction (voler), mais structures et origines différentes. Deux organes homologues (même os, comme le bras humain et la nageoire du dauphin) révèlent au contraire une parenté.",
     methode: "Analogie = même fonction, origines différentes. Homologie = même origine, ancêtre commun. C'est l'homologie qui sert à classer.",
+  },
+  {
+    type: "schema",
+    src: "/fiches/sciences/organes-homologues.svg",
+    alt: "Le membre antérieur de l'Homme (main), de la chauve-souris (aile) et de la baleine (nageoire) : tous ont les mêmes quatre groupes d'os (humérus, avant-bras, poignet, doigts), représentés par les mêmes couleurs, mais avec des proportions différentes selon la fonction.",
+    caption: "Organes homologues : mêmes os hérités d'un ancêtre commun, formes différentes selon l'usage. C'est l'homologie (et non la ressemblance de fonction) qui révèle la parenté.",
+    maxWidth: 620,
   },
   {
     type: "piegeCard",
