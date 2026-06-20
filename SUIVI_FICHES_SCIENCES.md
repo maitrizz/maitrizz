@@ -59,9 +59,15 @@ Deux étapes par fiche : **MEF** (mise en forme → format du site) et **Audit**
 - **Mapping des 4 rubriques source** → onglets du site : Cours → Cours ; En pratique → En classe ; Préparer l'épreuve → Préparer l'épreuve (différencié L3/M2) ; Je m'évalue → S'entraîner (exercices guidés + simulation) + Quiz éclair + Auto-évaluation.
 - **Format d'épreuve non chiffré** dans les fiches publiées tant que la source officielle n'est pas vérifiée (cf. `CHARTE_SCIENCES.md` §0). À trancher avant d'ajouter durée/barème.
 
+## Visuels (schémas)
+
+- **Bloc `schema` ajouté au moteur** (`types.ts` + `RenderBlock.tsx`) : image SVG/PNG servie depuis `/public/fiches/<matiere>/`, avec `alt` obligatoire et `caption`. Réutilisable par toutes les matières. Schémas dessinés à la main en SVG (sobres, palette teal, sans emoji), validés visuellement via `qlmanage` avant insertion.
+- **Fiche 01 : 3 schémas** (validés par l'utilisatrice) : groupes emboîtés (classification), cellule procaryote vs eucaryote, organes homologues (membre antérieur Homme/chauve-souris/baleine).
+- **À faire** : illustrer les fiches au fil de l'eau (viser 2-4 schémas par fiche sciences ; idem pour enrichir les maths : Thalès, solides, optique, circuits…).
+
 ## Reste-à-faire
 
-1. **Validation du pilote** (fiche 01) par l'utilisatrice : rendu des trois onglets, différenciation L3 vs M2 visible sur « Préparer l'épreuve » et la simulation.
+1. **Validation du pilote** (fiche 01) par l'utilisatrice : rendu des trois onglets, différenciation L3 vs M2 visible sur « Préparer l'épreuve » et la simulation. Visuels validés.
 2. Vérifier la source officielle du **format d'épreuve sciences** (durée, barème, place des questions disciplinaires/didactiques) pour L3 et M2.
 3. Dérouler les modules restants partie par partie sur le même patron (fabrique L3/M2), en cochant MEF/Audit ici.
 4. Audit mécanique global (charte §8) sur l'ensemble des fiches à la fin du chantier.
