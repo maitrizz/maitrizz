@@ -2,7 +2,7 @@ import type { Fiche } from "./types";
 
 export function FicheHeader({ fiche }: { fiche: Fiche }) {
   return (
-    <div className="bg-gradient-to-br from-primary to-neutral text-primary-content rounded-2xl p-6 sm:p-8 grid-paper-light">
+    <div className="bg-primary text-primary-content rounded-2xl p-6 sm:p-8 grid-paper-light">
       <p className="text-xs uppercase tracking-widest opacity-65 mb-2">
         Maitrizz · CRPE · {fiche.partie}
       </p>

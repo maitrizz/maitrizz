@@ -6,7 +6,7 @@ import type { RichText as RichTextValue } from "./types";
 import { useFicheRoute } from "./FicheRouteContext";
 
 const INLINE_REGEX =
-  /(\[[^\]]+\]\((?:https?:\/\/|fiche:)[^)\s]+\)|\*\*.+?\*\*|~~.+?~~|\*.+?\*)/g;
+  /(\[[^\]]+\]\((?:https?:\/\/|fiche:)[^)\s]+\)|<u>.+?<\/u>|\*\*.+?\*\*|~~.+?~~|\*.+?\*)/g;
 
 function parseInline(
   line: string,
@@ -20,6 +20,9 @@ function parseInline(
       const key = `${keyPrefix}-${i}`;
       if (part.startsWith("**") && part.endsWith("**")) {
         return <strong key={key}>{part.slice(2, -2)}</strong>;
+      }
+      if (part.startsWith("<u>") && part.endsWith("</u>")) {
+        return <u key={key}>{part.slice(3, -4)}</u>;
       }
       // Lien interne vers une autre fiche : [texte](fiche:slug)
       const ficheMatch = part.match(/^\[([^\]]+)\]\(fiche:([^)\s]+)\)$/);
@@ -62,7 +65,7 @@ function parseInline(
 }
 
 /**
- * Affiche un texte avec mise en forme légère : **gras**, *italique*, ~~barré~~,
+ * Affiche un texte avec mise en forme légère : **gras**, *italique*, ~~barré~~, <u>souligné</u>,
  * et "\n" rendu comme retour à la ligne.
  */
 export function RichText({ text }: { text: RichTextValue }) {

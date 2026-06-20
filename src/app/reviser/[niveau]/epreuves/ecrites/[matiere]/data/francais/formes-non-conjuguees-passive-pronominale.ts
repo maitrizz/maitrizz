@@ -2,13 +2,11 @@ import type { Fiche } from "@/components/fiche/types";
 
 // Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
 const OBJECTIFS = [
-  { id: "fv1", label: "Je reconnais les 4 formes non conjuguées (infinitif, participe présent, gérondif, participe passé) et leur fonction ; je sais qu'elles ne créent pas de proposition à elles seules (voir notion 5)" },
-  { id: "fv2", label: "Je distingue le participe présent (sans « en », épithète) du gérondif (« en » + -ant, CC) et de l'adjectif verbal (accordé)" },
-  { id: "fv3", label: "Je connais la construction de la voix passive (être + participe passé accordé avec le sujet) et le complément d'agent (par / de)" },
-  { id: "fv4", label: "Je sais quand le passif est impossible : verbe intransitif, verbe attributif, « avoir » de possession" },
-  { id: "fv5", label: "Je connais la valeur stylistique de la voix passive : mise en relief du patient, effacement de l'agent" },
-  { id: "fv6", label: "Je connais les 4 emplois du verbe pronominal : réfléchi, réciproque, passif pronominal, essentiellement pronominal" },
-  { id: "fv7", label: "Je distingue la forme passive (être + participe passé) de la forme pronominale à sens passif (se + verbe) ; l'accord du participe passé est détaillé en notion 11" },
+  { id: "fv1", label: "J'identifie précisément une forme verbale non conjuguée" },
+  { id: "fv2", label: "J'analyse sa construction : avec « en », avec un auxiliaire ou avec un sujet propre" },
+  { id: "fv3", label: "Je détermine sa fonction dans la phrase" },
+  { id: "fv4", label: "Je distingue une forme isolée du noyau d'une subordonnée infinitive ou participiale" },
+  { id: "fv5", label: "Je rédige une réponse complète en donnant la nature, la construction et la fonction" },
 ];
 
 export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
@@ -16,16 +14,16 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
   matiere: "francais",
   numero: 9,
   partie: "Partie 1 : Le verbe",
-  title: "Formes non conjuguées, voix passive et forme pronominale",
+  title: "Infinitif, participes et gérondif",
   subtitle:
-    "Reconnaître et analyser l'infinitif, les participes, le gérondif, la voix passive et les verbes pronominaux",
+    "Analyser une forme verbale non conjuguée dans une phrase",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
   ],
-  metaTitle: "Formes non conjuguées, voix passive, forme pronominale (CRPE) · Fiche | Maitrizz",
+  metaTitle: "Infinitif, participes et gérondif (CRPE) · Fiche | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les formes du verbe : les 4 formes non conjuguées (infinitif, participe présent, gérondif, participe passé), le participe présent vs gérondif vs adjectif verbal, la voix passive (construction, complément d'agent, valeur), et les 4 emplois du verbe pronominal. Réponses jury, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE sur l'analyse des formes non conjuguées du verbe : infinitif, participe présent, gérondif et participe passé, avec la distinction de l'adjectif verbal.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -39,27 +37,27 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
           blocks: [
             {
               type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
+              title: "L'analyse attendue au concours",
               items: [
                 {
                   number: "①",
-                  title: "Les 4 formes non conjuguées",
-                  text: "Infinitif, participe présent, gérondif, participe passé : leur nature et leur fonction.",
+                  title: "Identifier la forme",
+                  text: "Infinitif, participe présent, gérondif ou participe passé.",
                 },
                 {
                   number: "②",
-                  title: "Participe présent, gérondif, adjectif verbal",
-                  text: "Trois formes proches en -ant ou -é qu'il faut savoir distinguer.",
+                  title: "Observer sa construction",
+                  text: "Avec « en », avec un auxiliaire ou avec un sujet propre.",
                 },
                 {
                   number: "③",
-                  title: "La voix passive",
-                  text: "Être + participe passé accordé, complément d'agent, cas d'impossibilité et valeur stylistique.",
+                  title: "Déterminer sa fonction",
+                  text: "Sujet, complément, épithète ou complément circonstanciel.",
                 },
                 {
                   number: "④",
-                  title: "La forme pronominale",
-                  text: "Réfléchi, réciproque, passif pronominal, essentiellement pronominal.",
+                  title: "Rédiger la réponse",
+                  text: "Relier la nature, la construction et la fonction dans une réponse justifiée.",
                 },
               ],
             },
@@ -74,65 +72,26 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de commencer",
-              text: "Cette fiche réunit trois manières de se présenter du verbe : les formes non conjuguées, la voix passive et la forme pronominale. On apprend à reconnaître chaque forme et à l'analyser. Le rôle de ces formes au niveau de la proposition (subordonnée infinitive ou participiale) relève de la notion 5 ; la transitivité, de la notion 4 ; l'accord du participe passé, de la notion 11.",
+              title: "L'objectif de la fiche",
+              text: "Un même verbe peut être conjugué (« il écoute ») ou prendre une forme non conjuguée (« écouter », « écoutant », « en écoutant », « écouté »). Cette fiche porte sur ces formes non conjuguées. Au concours, il faut les identifier et déterminer leur fonction dans la phrase.",
             },
             {
               type: "subsection",
               number: "①",
-              title: "Les 4 formes non conjuguées",
+              title: "Les quatre formes à reconnaître",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Les formes **non conjuguées** ne portent ni personne ni temps personnel. Seules, elles **ne créent pas de proposition** (voir notion 5). Elles occupent une fonction dans la phrase, comme un mot ou un groupe.",
+                  text: "Une forme non conjuguée ne varie pas selon la personne. Voici les quatre réponses possibles lorsque le jury demande sa nature.",
                 },
                 {
-                  type: "notionCardGrid",
-                  columns: 2,
-                  cards: [
-                    {
-                      title: "Infinitif",
-                      definition: "Forme nominale du verbe, invariable, sans sujet exprimé.",
-                      sousClasses: "**Reconnaissance :** -er, -ir, -re, -oir",
-                      exemples: [
-                        "« **Vivre**, sans l'écriture, me va mal » : infinitif, sujet de « va »",
-                        "« pour **regarder** les nuages » : infinitif, groupe infinitif prépositionnel CC de but",
-                      ],
-                      piege: "Avec un sujet propre distinct, après un verbe de perception, l'infinitif forme une subordonnée infinitive (notion 5).",
-                      test: "Fonctions possibles : sujet, COD, complément du nom, CC de but (pour + infinitif).",
-                    },
-                    {
-                      title: "Participe présent",
-                      definition: "Forme en -ant, invariable, sans « en ». Se rapporte à un nom dont il partage le sujet.",
-                      sousClasses: "**Reconnaissance :** radical + -ant, sans « en »",
-                      exemples: [
-                        "« Une femme passa, **tenant** par la main un petit garçon » : épithète détachée du nom « femme »",
-                      ],
-                      piege: "Sujet distinct du sujet principal → subordonnée participiale (notion 5). Avec « en » → gérondif.",
-                      test: "Invariable, sans « en », fonction d'épithète détachée.",
-                    },
-                    {
-                      title: "Gérondif",
-                      definition: "« en » + participe présent, invariable, toujours au même sujet que le verbe principal.",
-                      sousClasses: "**Reconnaissance :** « en » + -ant",
-                      exemples: [
-                        "« Il rentra **en chantant** » : CC de manière",
-                        "« C'est **en forgeant** qu'on devient forgeron » : CC de moyen",
-                      ],
-                      piege: "« en » + -ant = gérondif (CC) ; sans « en » = participe présent (épithète).",
-                      test: "Fonctions : CC de manière, temps, cause, moyen, condition.",
-                    },
-                    {
-                      title: "Participe passé",
-                      definition: "Forme en -é, -i, -u… qui s'accorde avec le nom qualifié, et entre dans les temps composés avec un auxiliaire.",
-                      sousClasses: "**Reconnaissance :** -é, -i, -u, -is, -it (accordé)",
-                      exemples: [
-                        "« les yeux **baissés** » : épithète liée du nom « yeux » (accord masculin pluriel)",
-                        "« **Pressée** d'atteindre sa maison » : épithète détachée du sujet (accord féminin singulier)",
-                      ],
-                      piege: "Employé avec un auxiliaire, il forme un temps composé (notion 6) ; l'accord est détaillé en notion 11.",
-                      test: "S'accorde avec le nom : épithète liée ou détachée.",
-                    },
+                  type: "table",
+                  headers: ["Nature", "Forme du verbe « écouter »", "Indice"],
+                  rows: [
+                    ["Infinitif", "**écouter**", "Forme du dictionnaire, souvent en -er, -ir, -re ou -oir"],
+                    ["Participe présent", "**écoutant**", "Forme en -ant, invariable"],
+                    ["Gérondif", "**en écoutant**", "« en » + participe présent"],
+                    ["Participe passé", "**écouté**", "Forme souvent en -é, -i, -u, -is ou -it"],
                   ],
                 },
               ],
@@ -140,162 +99,125 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
             {
               type: "subsection",
               number: "②",
-              title: "Participe présent, gérondif, adjectif verbal",
+              title: "À quoi servent-elles dans la phrase ?",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Trois formes proches se distinguent par un test simple : la présence de « en » et la possibilité d'accord.",
-                },
-                {
-                  type: "table",
-                  headers: ["Forme", "Reconnaissance", "Variable ?", "Exemple"],
-                  rows: [
-                    ["Participe présent", "-ant, sans « en »", "Invariable", "« une femme **tenant** son enfant » : épithète détachée"],
-                    ["Gérondif", "« en » + -ant", "Invariable", "« **en souriant** » : CC de manière"],
-                    ["Adjectif verbal", "-ant (ou -ent), employé comme adjectif", "S'accorde", "« une femme **charmante** », « une histoire **émouvante** »"],
-                  ],
-                },
-                {
-                  type: "callout",
-                  variant: "warning",
-                  text: "⚠️ Test : « en » devant la forme → gérondif (CC). Accord avec le nom → adjectif verbal. Ni l'un ni l'autre, forme en -ant invariable rapportée à un nom → participe présent.",
-                },
-              ],
-            },
-            {
-              type: "subsection",
-              number: "③",
-              title: "La voix passive",
-              blocks: [
-                {
-                  type: "paragraph",
-                  text: "À la voix passive, le **sujet subit** l'action. Construction : **être (conjugué) + participe passé accordé avec le sujet**. C'est le temps de « être » qui donne le temps du verbe passif. Seuls les verbes transitifs directs peuvent se mettre au passif (voir notion 4).",
-                },
-                {
-                  type: "table",
-                  title: "Actif et passif (le temps est porté par « être »)",
-                  headers: ["Actif", "Passif", "Temps de « être »"],
-                  rows: [
-                    ["Le chat mange la souris.", "La souris est mangée par le chat.", "Présent"],
-                    ["Le chat mangeait la souris.", "La souris était mangée par le chat.", "Imparfait"],
-                    ["Le chat a mangé la souris.", "La souris a été mangée par le chat.", "Passé composé"],
-                  ],
-                },
-                {
-                  type: "callout",
-                  variant: "info",
-                  title: "Le complément d'agent",
-                  text: "Le **complément d'agent** désigne celui qui effectue l'action. Il est introduit par **par** (« mangée **par** le chat ») ou par **de** (« aimée **de** tous », pour un état ou un sentiment). Il peut être absent : « La porte a été fermée » (agent inconnu ou volontairement tu).",
-                },
-                {
-                  type: "callout",
-                  variant: "warning",
-                  title: "⚠️ Quand le passif est impossible",
-                  text: "Le passif exige un COD à promouvoir en sujet. Il est donc **impossible** avec : un verbe **intransitif** (« Il dort »), un verbe **attributif** (« Elle semble fatiguée »), le verbe **avoir** au sens de possession (« Il a une voiture »).",
-                },
-                {
-                  type: "callout",
-                  variant: "info",
-                  title: "Valeur stylistique",
-                  text: "La voix passive met en relief le **patient** (ce qui subit l'action) et permet d'**effacer l'agent** : « Les portes furent ouvertes » insiste sur l'événement, pas sur celui qui agit (effet de mystère ou de généralité).",
-                },
-              ],
-            },
-            {
-              type: "subsection",
-              number: "④",
-              title: "La forme pronominale : 4 emplois",
-              blocks: [
-                {
-                  type: "paragraph",
-                  text: "Un verbe **pronominal** est conjugué avec un pronom réfléchi de même personne que le sujet (me, te, se, nous, vous, se). Il faut distinguer la **forme** (pronominale) des **emplois**, qui déterminent l'accord du participe passé (détaillé en notion 11).",
+                  text: "Après avoir nommé la forme, observez son rôle. Chaque forme exerce certaines fonctions de manière fréquente.",
                 },
                 {
                   type: "notionCardGrid",
                   columns: 2,
                   cards: [
                     {
-                      title: "Réfléchi",
-                      definition: "Le sujet fait l'action sur lui-même ; le pronom est COD ou COI.",
+                      title: "L'infinitif",
+                      definition: "Le groupe infinitif peut occuper les mêmes fonctions qu'un groupe nominal ou qu'un groupe prépositionnel.",
+                      sousClasses: "**Fonctions possibles :** sujet ; attribut du sujet ; apposition ; COD ; COI ; complément du nom ; complément de l'adjectif ; complément circonstanciel de temps, de cause, de but, de manière, de condition ou d'opposition.",
                       exemples: [
-                        "« Elle **se lave** » : elle se lave elle-même (« se » = COD)",
-                        "« Elle **se lave** les mains » : (« se » = COI, « les mains » = COD)",
+                        "« **Lire** développe l'imagination. » : sujet de « développe »",
+                        "« Elle aime **lire**. » : COD de « aime »",
+                        "« Il vient **pour apprendre**. » : complément circonstanciel de but",
                       ],
-                      test: "Le sujet et l'objet de l'action sont la même personne.",
+                      test: "Chercher le verbe ou le mot dont dépend le groupe infinitif.",
                     },
                     {
-                      title: "Réciproque",
-                      definition: "Au pluriel : les sujets font l'action l'un sur l'autre.",
-                      exemples: ["« Ils **se regardent** » : l'un regarde l'autre"],
-                      test: "Sujet pluriel, action mutuelle (« l'un l'autre »).",
+                      title: "Le participe présent",
+                      definition: "Il se rapporte généralement à un nom et conserve un fonctionnement verbal.",
+                      sousClasses: "**Fonctions possibles :** épithète liée ; épithète détachée ; attribut du COD. Une épithète détachée peut aussi exprimer une valeur circonstancielle de temps, de cause, de condition ou d'opposition.",
+                      exemples: [
+                        "« Les candidats **résidant à Paris** recevront une convocation. » : épithète liée du nom « candidats »",
+                        "« Une élève, **préparant son exposé**, prend des notes. » : épithète détachée du nom « élève »",
+                        "« Je les ai vus **traversant la rue**. » : attribut du COD « les »",
+                      ],
+                      test: "Repérer le nom auquel il se rapporte.",
                     },
                     {
-                      title: "Passif pronominal",
-                      definition: "Valeur passive : le sujet est le patient, l'agent est absent.",
+                      title: "Le gérondif",
+                      definition: "Le groupe gérondif complète le verbe et exprime une circonstance.",
+                      sousClasses: "**Fonction :** complément circonstanciel. **Valeurs possibles :** temps, manière, moyen, cause, condition, opposition ou concession.",
                       exemples: [
-                        "« Ce livre **se lit** facilement » : on lit ce livre (sens passif)",
-                        "« Le français **se parle** dans de nombreux pays »",
+                        "« Il apprend **en répétant**. » : complément circonstanciel de manière",
+                        "« **En sortant**, elle le salua. » : complément circonstanciel de temps",
                       ],
-                      test: "On pourrait dire « est lu / est parlé » : sens passif sans auxiliaire « être ».",
+                      test: "Demander quelle circonstance il exprime : temps, manière, cause ou condition.",
                     },
                     {
-                      title: "Essentiellement pronominal",
-                      definition: "Le verbe n'existe qu'à la forme pronominale ; le pronom n'est pas analysable.",
+                      title: "Le participe passé employé seul",
+                      definition: "Il se rapporte généralement à un nom et peut exercer une fonction adjectivale.",
+                      sousClasses: "**Fonctions possibles :** épithète liée ; épithète détachée ; attribut du sujet ; attribut du COD.",
                       exemples: [
-                        "s'enfuir, se souvenir, s'abstenir, s'évanouir, se repentir, s'emparer",
-                        "« Elle **s'est souvenue** de lui »",
+                        "« une porte **fermée** » : épithète liée du nom « porte »",
+                        "« **Étonnée**, elle se tut. » : épithète détachée du pronom « elle »",
+                        "« La porte reste **fermée**. » : attribut du sujet « porte »",
+                        "« Je trouve cette décision **injustifiée**. » : attribut du COD « décision »",
                       ],
-                      test: "Le verbe sans « se » n'existe pas (« souvenir » seul est impossible).",
+                      test: "Repérer le nom ou le pronom auquel il se rapporte.",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "subsection",
+              number: "③",
+              title: "Trois vérifications avant de répondre",
+              blocks: [
+                {
+                  type: "notionCardGrid",
+                  columns: 2,
+                  cards: [
+                    {
+                      title: "1. Y a-t-il « en » ?",
+                      definition: "Devant une forme en -ant, « en » signale le gérondif.",
+                      exemples: ["« **en chantant** » : gérondif"],
+                    },
+                    {
+                      title: "2. Y a-t-il un auxiliaire ?",
+                      definition: "Avec « avoir » ou « être », le participe passé entre dans une forme verbale composée.",
+                      exemples: ["« Elle **a fermé** la porte. » : passé composé de « fermer »"],
+                    },
+                    {
+                      title: "3. Y a-t-il un sujet propre ?",
+                      definition: "Un infinitif ou un participe ayant son propre sujet peut être le noyau d'une proposition subordonnée.",
+                      exemples: [
+                        "« J'entends **les enfants chanter**. » : subordonnée infinitive",
+                        "« **Le rideau levé**, le spectacle commence. » : subordonnée participiale",
+                      ],
                     },
                   ],
                 },
                 {
                   type: "callout",
-                  variant: "info",
-                  text: "💡 L'accord du participe passé varie selon l'emploi (réfléchi, réciproque, passif, essentiellement pronominal). Cette règle, centrale, est traitée en détail dans la notion 11.",
+                  variant: "warning",
+                  title: "Le sujet propre est le critère décisif",
+                  text: "Dans « Une femme passe, tenant un livre », « tenant » est un participe présent qui se rapporte à « une femme », sujet de « passe ». Comme il n'a pas de sujet propre, « tenant un livre » n'est pas une proposition subordonnée participiale. Le groupe est épithète détachée du nom « femme ».",
                 },
               ],
             },
             {
-              type: "piegeCard",
-              variant: "rouge",
-              title: "Piège n°1 · Confondre participe présent et gérondif",
-              badge: "Formes proches",
-              faux: "« en chantant » analysé comme un participe présent.",
-              vrai: "« en » + -ant = **gérondif** (complément circonstanciel). Sans « en » = participe présent (épithète).",
-              methode: "Chercher « en » devant la forme : présent → gérondif ; absent → participe présent.",
-            },
-            {
-              type: "piegeCard",
-              variant: "rouge",
-              title: "Piège n°2 · Confondre forme passive et forme pronominale à sens passif",
-              badge: "Deux constructions",
-              faux: "« Ce livre se lit facilement » analysé comme une forme passive.",
-              vrai: "C'est une **forme pronominale à sens passif** : il n'y a pas d'auxiliaire « être » + participe passé. La forme passive serait « est lu ».",
-              methode: "Passive = « être + participe passé ». Pronominale à sens passif = « se + verbe », sans auxiliaire « être ».",
-            },
-            {
-              type: "piegeCard",
-              variant: "orange",
-              title: "Piège n°3 · Oublier l'accord du participe passé au passif",
-              badge: "Orthographe",
-              faux: "« La porte a été fermé. »",
-              vrai: "Au passif, le participe passé s'accorde toujours avec le **sujet** : « La porte a été **fermée** ».",
-              methode: "Repérer le sujet et accorder le participe passé en genre et en nombre.",
-            },
-            {
-              type: "piegeCard",
-              variant: "bleu",
-              title: "Piège n°4 · Prendre un essentiellement pronominal pour un réfléchi",
-              badge: "Emploi non analysable",
-              faux: "« s'enfuir » analysé comme un réfléchi (« il fuit lui-même »).",
-              vrai: "« s'enfuir » n'existe pas sans « se » : c'est un **essentiellement pronominal**. Le pronom n'est pas analysable comme COD ou COI.",
-              methode: "Tester l'existence du verbe sans « se » : impossible → essentiellement pronominal.",
+              type: "subsection",
+              number: "④",
+              title: "À ne pas confondre : participe présent et adjectif verbal",
+              blocks: [
+                {
+                  type: "paragraph",
+                  text: "L'adjectif verbal n'est pas une forme verbale non conjuguée : c'est un adjectif issu d'un verbe. Il s'accorde avec le nom, contrairement au participe présent.",
+                },
+                {
+                  type: "table",
+                  headers: ["", "Participe présent", "Adjectif verbal"],
+                  rows: [
+                    ["Exemple", "« une candidate **convainquant** le jury »", "« une réponse **convaincante** »"],
+                    ["Accord", "Invariable", "Variable"],
+                    ["Fonctionnement", "Conserve des compléments verbaux : « le jury » est COD", "Qualifie le nom comme un adjectif"],
+                  ],
+                },
+              ],
             },
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** premiers participes passés dans les temps composés (« j'ai mangé ») ; la voix passive et les verbes pronominaux ne sont pas étudiés comme tels.\n\n**Cycle 3 :** on observe la transformation active/passive et l'accord du participe passé avec « être », souvent par manipulation. Le gérondif (« en + -ant ») apparaît comme une façon de dire « comment ».\n\n**Ce que vous devez savoir dire :** « On fait d'abord manipuler les transformations (actif/passif) et observer les accords, avant de nommer les formes. La distinction participe présent / gérondif se construit par l'usage. »",
+              text: "**Cycle 2 (CP-CE2) :** les élèves rencontrent l'infinitif et le participe passé dans les temps composés.\n\n**Cycle 3 :** ils consolident la distinction entre verbe conjugué, infinitif et participe passé. Le gérondif peut être observé comme une manière d'exprimer simultanéité ou manière, sans étude systématique.\n\n**Ce que vous devez savoir dire :** « On part des formes rencontrées dans les phrases, puis on compare leur construction et leur rôle avant de les nommer. »",
             },
             {
               type: "ctaBox",
@@ -311,86 +233,77 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              title: "Deux démarches",
-              text: "Analyser une forme non conjuguée ; reconnaître une voix passive ou une forme pronominale. Chacune se termine par un checkpoint.",
-            },
-            {
               type: "rappelExpress",
-              title: "Rappel express : les réflexes",
+              title: "La réponse attendue",
               blocks: [
                 {
                   type: "formulaBlock",
                   lines: [
-                    "Forme en -ant : « en » → gérondif (CC) · accordé → adjectif verbal · sinon → participe présent (épithète)",
-                    "« être » + participe passé → voix passive (participe passé accordé avec le sujet)",
-                    "« se » + verbe → forme pronominale (identifier l'emploi : réfléchi, réciproque, passif, essentiellement pronominal)",
+                    "1. Délimiter la forme ou le groupe à analyser",
+                    "2. Donner sa nature et la justifier par un indice",
+                    "3. Déterminer sa fonction dans la phrase",
                   ],
                 },
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Une forme non conjuguée n'a pas de mode ni de temps personnel : on donne sa nature et sa fonction. Le niveau proposition (subordonnée infinitive ou participiale) relève de la notion 5.",
+                  text: "La nature et la fonction répondent à deux questions différentes. Dans « Lire instruit », « lire » est un infinitif par nature et sujet de « instruit » par fonction.",
                 },
               ],
             },
             {
               type: "methodeGroup",
               number: "①",
-              title: "Analyser une forme non conjuguée",
+              title: "Le cas le plus fréquent : nature et fonction",
               intro:
-                "**Question typique :** « Précisez la nature et la fonction de la forme soulignée. »\nOn identifie la forme, puis sa fonction dans la phrase.",
+                "**Question typique :** Donnez la nature et la fonction du groupe souligné dans la phrase « Elle répondit <u>en souriant</u>. »",
               steps: [
                 {
                   number: "1",
-                  text: "**Identifier la forme :** infinitif (-er, -ir, -re), participe présent (-ant sans « en »), gérondif (« en » + -ant), participe passé (-é, -i, -u accordé).",
-                  example: { lines: ["« tenant » → -ant sans « en » → participe présent"] },
+                  text: "**Délimiter le groupe.**",
+                  example: { lines: ["Le groupe souligné est « en souriant »."] },
                 },
                 {
                   number: "2",
-                  text: "**Donner la fonction :** infinitif sujet/COD/CC de but ; participe présent épithète détachée ; gérondif CC ; participe passé épithète.",
-                  example: { lines: ["« tenant » → épithète détachée du nom « femme »"] },
+                  text: "**Donner sa nature et la justifier.**",
+                  example: { lines: ["« en » + participe présent signale un gérondif."] },
+                },
+                {
+                  number: "3",
+                  text: "**Déterminer sa fonction.**",
+                  example: { lines: ["Il précise la manière de répondre : CC de manière de « répondit »."] },
                 },
                 {
                   number: "💡",
-                  text: "**Vérifier le sujet :** si l'infinitif ou le participe a un sujet propre distinct, c'est une subordonnée (infinitive ou participiale, notion 5).",
-                  example: { lines: ["« tenant » : sujet = la femme (même que la principale) → épithète détachée, pas de subordonnée"] },
+                  text: "**Réponse attendue :** « en souriant » est un gérondif, formé de la préposition « en » et du participe présent « souriant ». Il est complément circonstanciel de manière du verbe « répondit ».",
                 },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              title: "Checkpoint : à vous de jouer",
-              badge: "30 secondes",
-              question: "Nature et fonction de « en chantant » dans « Il rentra en chantant » ?",
-              correction: [
-                { type: "line", text: "« en chantant » est un gérondif (« en » + -ant) : CC de manière du verbe « rentra »." },
-                { type: "note", text: "Trouvé du premier coup ? Vous tenez la méthode. Sinon, cherchez le « en » qui signale le gérondif." },
               ],
             },
             {
               type: "methodeGroup",
               number: "②",
-              title: "Reconnaître une voix passive ou une forme pronominale",
+              title: "Le cas particulier : une forme avec son propre sujet",
               intro:
-                "**Question typique :** « Identifiez la voix / l'emploi du verbe souligné. »\nDeux constructions à ne pas confondre.",
+                "**Question typique :** Dans « J'entends <u>les enfants chanter</u> », délimitez les propositions et donnez leur nature.",
               steps: [
                 {
                   number: "1",
-                  text: "**Voix passive :** repérer « être + participe passé », le sujet qui subit, l'agent introduit par « par » ou « de ». Vérifier l'accord du participe passé avec le sujet.",
-                  example: { lines: ["« La porte a été fermée par le gardien » → passive, agent « par le gardien »"] },
+                  text: "**Repérer la forme non conjuguée.**",
+                  example: { lines: ["« chanter » est un infinitif."] },
                 },
                 {
                   number: "2",
-                  text: "**Forme pronominale :** repérer « se + verbe » (sans auxiliaire « être »), puis identifier l'emploi : réfléchi, réciproque, passif pronominal, essentiellement pronominal.",
-                  example: { lines: ["« Ce livre se lit » → forme pronominale à sens passif (et non voix passive)"] },
+                  text: "**Vérifier si elle possède un sujet propre.**",
+                  example: { lines: ["« les enfants » accomplissent l'action de chanter et sont distincts du sujet « je »."] },
+                },
+                {
+                  number: "3",
+                  text: "**Délimiter et analyser la proposition.**",
+                  example: { lines: ["« les enfants chanter » forme une subordonnée infinitive, COD de « entends »."] },
                 },
                 {
                   number: "💡",
-                  text: "**Pour l'emploi pronominal :** tester l'existence du verbe sans « se » (impossible → essentiellement pronominal), le pluriel mutuel (réciproque), le sens passif (passif pronominal), sinon réfléchi.",
+                  text: "**Réponse attendue :** « les enfants chanter » est une proposition subordonnée infinitive. Son noyau verbal est l'infinitif « chanter » et son sujet propre est « les enfants ». Elle est COD du verbe « entends ».",
                 },
               ],
             },
@@ -399,10 +312,9 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "« Ils se sont battus. » Forme passive ou pronominale ? Quel emploi ?",
+              question: "Dans « Le professeur entra, <u>portant une pile de cahiers</u> », analysez le groupe souligné.",
               correction: [
-                { type: "line", text: "Forme pronominale (« se » + verbe, pas d'auxiliaire « être » passif) : emploi réciproque (l'un a battu l'autre)." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "line", text: "**Réponse attendue :** « portant » est un participe présent, invariable. Il n'a pas de sujet propre : il se rapporte au nom « professeur », également sujet du verbe « entra ». Le groupe « portant une pile de cahiers » ne forme donc pas une subordonnée participiale ; il est épithète détachée du nom « professeur »." },
               ],
             },
             {
@@ -437,11 +349,11 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               questions: [
                 {
                   objectifId: "fv2",
-                  question: "Dans « Il rentra en chantant », « en chantant » est :",
+                  question: "Dans « Il traversa la cour en courant », « en courant » est :",
                   options: ["Un participe présent", "Un gérondif", "Un adjectif verbal", "Un infinitif"],
                   correctIndex: 1,
                   explanation:
-                    "« en » + -ant = gérondif : c'est un complément circonstanciel (ici de manière). Sans « en », ce serait un participe présent.",
+                    "« en » + participe présent forme un gérondif : « en courant » est ici complément circonstanciel de manière.",
                 },
                 {
                   objectifId: "fv1",
@@ -449,75 +361,75 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
                   options: ["Un nom", "Un infinitif, sujet de « va »", "Un participe", "Un gérondif"],
                   correctIndex: 1,
                   explanation:
-                    "« Vivre » est un infinitif employé comme sujet du verbe « va ». La nature reste verbale (jamais « nom verbal »).",
+                    "« Vivre » est un infinitif employé comme sujet du verbe « va ». Dans cette phrase, sa nature reste verbale.",
                 },
                 {
                   objectifId: "fv3",
-                  question: "Comment se construit la voix passive ?",
+                  question: "Dans « La porte fermée reste silencieuse », « fermée » est :",
                   options: [
-                    "Avec un pronom réfléchi",
-                    "Avec « être » conjugué + participe passé accordé avec le sujet",
-                    "Avec « avoir » + participe passé",
-                    "Avec « en » + participe présent",
+                    "Un verbe conjugué",
+                    "Un participe passé employé comme épithète",
+                    "Un gérondif",
+                    "Un infinitif",
                   ],
                   correctIndex: 1,
                   explanation:
-                    "La voix passive se construit avec « être » au temps voulu + participe passé accordé avec le sujet. Le temps est porté par « être ».",
+                    "« fermée » est un participe passé employé sans auxiliaire. Il s'accorde avec « porte » et exerce la fonction d'épithète.",
+                },
+                {
+                  objectifId: "fv2",
+                  question: "Dans « une remarque convaincante », « convaincante » est :",
+                  options: [
+                    "Un participe présent invariable",
+                    "Un adjectif verbal accordé",
+                    "Un gérondif",
+                    "Un infinitif",
+                  ],
+                  correctIndex: 1,
+                  explanation:
+                    "« convaincante » varie en genre et en nombre avec le nom « remarque » : c'est un adjectif verbal.",
+                },
+                {
+                  objectifId: "fv3",
+                  question: "Dans « Lire enrichit le vocabulaire », quelle est la fonction de « Lire » ?",
+                  options: [
+                    "Sujet de « enrichit »",
+                    "COD de « enrichit »",
+                    "Complément circonstanciel",
+                    "Épithète",
+                  ],
+                  correctIndex: 0,
+                  explanation:
+                    "Le groupe infinitif « Lire » commande l'accord du verbe « enrichit » : il est sujet.",
+                },
+                {
+                  objectifId: "fv3",
+                  question: "Dans « En sortant de la classe, il salua ses amis », le gérondif exprime :",
+                  options: ["Le temps", "Le lieu", "Le but", "L'opposition"],
+                  correctIndex: 0,
+                  explanation:
+                    "« En sortant de la classe » situe le salut au moment de la sortie : c'est un complément circonstanciel de temps.",
                 },
                 {
                   objectifId: "fv4",
-                  question: "Dans laquelle de ces phrases le passif est-il impossible ?",
-                  options: [
-                    "« Le jury corrige les copies. »",
-                    "« Elle semble fatiguée. »",
-                    "« La tempête a déraciné l'arbre. »",
-                    "« Marie écrit une lettre. »",
-                  ],
+                  question: "Dans « J'entends les enfants chanter », « les enfants chanter » est :",
+                  options: ["Un simple infinitif sans sujet", "Une subordonnée infinitive", "Un gérondif", "Une proposition relative"],
                   correctIndex: 1,
                   explanation:
-                    "« sembler » est un verbe attributif, sans COD : le passif est impossible. Les trois autres ont un COD promouvable en sujet.",
+                    "L'infinitif « chanter » possède un sujet propre, « les enfants », distinct du sujet de « entends » : l'ensemble forme une subordonnée infinitive.",
                 },
                 {
                   objectifId: "fv5",
-                  question: "Quelle est la valeur stylistique de « Les portes furent ouvertes » (sans agent) ?",
+                  question: "Quelle réponse analyse complètement « éclairant le passage » dans « Le guide avançait, éclairant le passage » ?",
                   options: [
-                    "Mettre en avant l'agent",
-                    "Mettre en relief le patient et effacer l'agent",
-                    "Exprimer une habitude",
-                    "Exprimer une hypothèse",
+                    "« éclairant » est un participe présent invariable ; il se rapporte au nom « guide », également sujet de « avançait » ; le groupe est épithète détachée de « guide ».",
+                    "« éclairant le passage » est une subordonnée participiale.",
+                    "« éclairant » est un gérondif complément circonstanciel.",
+                    "« éclairant » est un adjectif verbal accordé avec « guide ».",
                   ],
-                  correctIndex: 1,
+                  correctIndex: 0,
                   explanation:
-                    "L'agent est effacé : on met en avant ce qui subit l'action (les portes), avec un effet de mystère ou de généralité.",
-                },
-                {
-                  objectifId: "fv6",
-                  question: "Dans « Ce livre se lit facilement », l'emploi du verbe pronominal est :",
-                  options: ["Réfléchi", "Réciproque", "Passif pronominal", "Essentiellement pronominal"],
-                  correctIndex: 2,
-                  explanation:
-                    "« se lit » a un sens passif (on lit ce livre) sans auxiliaire « être » : c'est un passif pronominal.",
-                },
-                {
-                  objectifId: "fv6",
-                  question: "« s'enfuir » est un verbe pronominal de type :",
-                  options: ["Réfléchi", "Réciproque", "Passif pronominal", "Essentiellement pronominal"],
-                  correctIndex: 3,
-                  explanation:
-                    "« enfuir » n'existe pas sans « se » : c'est un essentiellement pronominal, le pronom n'est pas analysable.",
-                },
-                {
-                  objectifId: "fv7",
-                  question: "« Ce livre se lit » et « Ce livre est lu » : quelle différence ?",
-                  options: [
-                    "Aucune, ce sont deux voix passives",
-                    "« se lit » = forme pronominale à sens passif ; « est lu » = voix passive (être + participe passé)",
-                    "« se lit » = voix active ; « est lu » = forme pronominale",
-                    "Les deux sont des formes pronominales",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "« se lit » est une forme pronominale à sens passif (se + verbe) ; « est lu » est une voix passive (être + participe passé).",
+                    "La réponse donne la nature, justifie l'absence de proposition par le sujet commun et précise la fonction du groupe.",
                 },
               ],
             },
@@ -553,59 +465,44 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               title: "Exercice 1 : Nature des formes non conjuguées",
               objectifTag: "Formes non conjuguées",
               question:
-                "Identifiez la nature :\na) « <u>tenant</u> par la main un petit garçon »   b) « les yeux <u>baissés</u> »   c) « <u>pressée</u> d'atteindre sa maison »   d) « <u>Vivre</u>, sans l'écriture, me va mal »   e) « pour <u>regarder</u> les nuages »   f) « Il rentra <u>en chantant</u> »",
+                "Identifiez la nature de la forme soulignée :\na) « Le candidat, <u>relisant</u> sa copie, hésita. »   b) « des lettres soigneusement <u>rédigées</u> »   c) « <u>Pressée</u> d'arriver, elle accéléra. »   d) « <u>Comprendre</u> demande du temps. »   e) « Il monta sur la terrasse pour <u>regarder</u> les nuages. »   f) « Il progressa <u>en travaillant</u>. »",
               correction: [
-                { type: "line", label: "a)", text: "Participe présent (-ant, sans « en », invariable)" },
-                { type: "line", label: "b)", text: "Participe passé (accord masculin pluriel avec « yeux »)" },
-                { type: "line", label: "c)", text: "Participe passé (accord féminin singulier avec le sujet)" },
-                { type: "line", label: "d)", text: "Infinitif (-re, sujet de « va »)" },
-                { type: "line", label: "e)", text: "Infinitif (-er, CC de but)" },
-                { type: "line", label: "f)", text: "Gérondif (« en » + -ant, CC de manière)" },
+                { type: "line", label: "a)", text: "Participe présent, reconnaissable à sa terminaison en -ant et invariable." },
+                { type: "line", label: "b)", text: "Participe passé, accordé au féminin pluriel avec « lettres »." },
+                { type: "line", label: "c)", text: "Participe passé, accordé au féminin singulier avec le pronom « elle » auquel il se rapporte." },
+                { type: "line", label: "d)", text: "Infinitif en -re, sujet du verbe « demande »." },
+                { type: "line", label: "e)", text: "Infinitif en -er ; le groupe « pour regarder les nuages » est complément circonstanciel de but de « monta »." },
+                { type: "line", label: "f)", text: "Gérondif, formé de « en » et du participe présent « travaillant »." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "echauffement",
-              title: "Exercice 2 : Transformer à la voix passive",
-              objectifTag: "Voix passive",
+              title: "Exercice 2 : Fonctions de l'infinitif",
+              objectifTag: "Infinitif",
               question:
-                "Mettez à la voix passive et identifiez le complément d'agent :\na) « Le jury corrige les copies. »   b) « Tous les élèves aimaient ce professeur. »   c) « La tempête a déraciné l'arbre. »",
+                "Donnez la fonction du groupe infinitif souligné :\na) « <u>Lire chaque jour</u> enrichit le vocabulaire. »   b) « Elle aime <u>lire des romans</u>. »   c) « Il s'entraîne <u>pour réussir</u>. »   d) « Elle est heureuse <u>de partir</u>. »",
               correction: [
-                { type: "line", label: "a)", text: "« Les copies sont corrigées par le jury » (être au présent + participe passé ; agent : par le jury)" },
-                { type: "line", label: "b)", text: "« Ce professeur était aimé de tous les élèves » (être à l'imparfait ; agent : de tous les élèves)" },
-                { type: "line", label: "c)", text: "« L'arbre a été déraciné par la tempête » (être au passé composé ; agent : par la tempête)" },
+                { type: "line", label: "a)", text: "Sujet du verbe « enrichit »." },
+                { type: "line", label: "b)", text: "COD du verbe « aime »." },
+                { type: "line", label: "c)", text: "Complément circonstanciel de but du verbe « s'entraîne »." },
+                { type: "line", label: "d)", text: "Complément de l'adjectif « heureuse »." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "echauffement",
-              title: "Exercice 3 : Emploi du verbe pronominal",
-              objectifTag: "Verbes pronominaux",
+              title: "Exercice 3 : Le participe passé",
+              objectifTag: "Participe passé",
               question:
-                "Identifiez l'emploi : réfléchi · réciproque · passif pronominal · essentiellement pronominal.\na) « Elle se lave les mains. »   b) « Ils se regardent. »   c) « Ce livre se lit facilement. »   d) « Il s'est évanoui. »   e) « Elle se hâtait. »",
+                "Dites si le participe passé est employé seul ou avec un auxiliaire, puis précisez sa fonction lorsqu'il est employé seul :\na) « une porte <u>fermée</u> »   b) « Elle a <u>fermé</u> la porte. »   c) « <u>Pressée</u> de partir, elle salua ses amis. »   d) « Les voyageurs sont <u>arrivés</u>. »",
               correction: [
-                { type: "line", label: "a)", text: "Réfléchi (elle lave ses propres mains ; « se » = COI)" },
-                { type: "line", label: "b)", text: "Réciproque (l'un regarde l'autre, pluriel)" },
-                { type: "line", label: "c)", text: "Passif pronominal (on lit ce livre ; sens passif, agent absent)" },
-                { type: "line", label: "d)", text: "Essentiellement pronominal (« s'évanouir » n'existe pas sans « se »)" },
-                { type: "line", label: "e)", text: "Essentiellement pronominal (« se hâter » n'existe pas sans « se »)" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 4 : Le passif est-il possible ?",
-              objectifTag: "Passif impossible",
-              question:
-                "Ces phrases peuvent-elles être mises au passif ? Justifiez.\na) « Il dort. »   b) « Elle mange une pomme. »   c) « Il a une voiture. » (possession)   d) « Elle semble fatiguée. »",
-              correction: [
-                { type: "line", label: "a)", text: "Non : verbe intransitif (pas de COD)." },
-                { type: "line", label: "b)", text: "Oui : « Une pomme est mangée par elle » (verbe transitif direct)." },
-                { type: "line", label: "c)", text: "Non : « avoir » au sens de possession." },
-                { type: "line", label: "d)", text: "Non : verbe attributif (pas de COD)." },
+                { type: "line", label: "a)", text: "Employé seul, épithète liée du nom « porte »." },
+                { type: "line", label: "b)", text: "Employé avec l'auxiliaire « avoir » pour former le passé composé de « fermer »." },
+                { type: "line", label: "c)", text: "Employé seul, épithète détachée du pronom « elle »." },
+                { type: "line", label: "d)", text: "Employé avec l'auxiliaire « être » pour former le passé composé de « arriver »." },
               ],
             },
             {
@@ -613,25 +510,25 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               level: "n2",
               stars: "★★☆",
               label: "Niveau 2 : Analyser",
-              sub: "Distinctions fines, réponse jury, valeur stylistique",
+              sub: "Nature, construction et fonction",
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 5 : Participe présent, gérondif ou adjectif verbal ?",
+              title: "Exercice 4 : Participe présent, gérondif ou adjectif verbal ?",
               question:
-                "Identifiez la nature :\na) « une femme charmante »   b) « en souriant »   c) « tenant son enfant »   d) « une histoire émouvante »   e) « en chantant »",
+                "Identifiez la nature de la forme soulignée :\na) « une réponse <u>convaincante</u> »   b) « Elle quitta la salle <u>en souriant</u>. »   c) « Les élèves <u>attendant leur tour</u> restent calmes. »   d) « des résultats <u>encourageants</u> »   e) « Il apprend <u>en observant</u>. »",
               correction: [
                 {
                   type: "table",
                   headers: ["Forme", "Nature", "Indice"],
                   rows: [
-                    ["charmante", "Adjectif verbal", "S'accorde (féminin), qualifie « femme »"],
+                    ["convaincante", "Adjectif verbal", "S'accorde au féminin singulier avec « réponse »"],
                     ["en souriant", "Gérondif", "« en » + -ant, complément circonstanciel"],
-                    ["tenant", "Participe présent", "-ant sans « en », invariable, épithète"],
-                    ["émouvante", "Adjectif verbal", "S'accorde (féminin), qualifie « histoire »"],
-                    ["en chantant", "Gérondif", "« en » + -ant, complément circonstanciel"],
+                    ["attendant", "Participe présent", "Invariable et suivi du COD « leur tour »"],
+                    ["encourageants", "Adjectif verbal", "S'accorde au masculin pluriel avec « résultats »"],
+                    ["en observant", "Gérondif", "« en » + -ant, complément circonstanciel"],
                   ],
                 },
               ],
@@ -640,47 +537,42 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 6 : Voix passive et valeur stylistique",
-              enonce: "« Les portes furent ouvertes, et la lumière entra. »",
-              question: "Analysez « furent ouvertes » et commentez la valeur stylistique de l'agent absent.",
+              title: "Exercice 5 : La fonction du gérondif",
+              question:
+                "Précisez la fonction et la valeur du groupe gérondif :\na) « En glissant sur le sol mouillé, il s'est fracturé le poignet. »   b) « Elle a ouvert la boîte en utilisant une clé. »   c) « En suivant ces consignes, vous éviterez plusieurs erreurs. »",
               correction: [
-                { type: "line", text: "« furent ouvertes » : voix passive, « être » au passé simple + participe passé accordé (féminin pluriel), complément d'agent absent." },
-                { type: "note", text: "L'agent effacé met en avant l'événement lui-même (l'ouverture des portes) plutôt que celui qui agit : effet de mystère ou d'universalité." },
+                { type: "line", label: "a)", text: "Complément circonstanciel de cause : la glissade explique la fracture." },
+                { type: "line", label: "b)", text: "Complément circonstanciel de moyen : la clé permet d'ouvrir la boîte." },
+                { type: "line", label: "c)", text: "Complément circonstanciel de condition : si vous suivez ces consignes." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 7 : Corriger l'analyse",
+              title: "Exercice 6 : Corriger l'analyse",
               question:
-                "Ces analyses sont-elles correctes ? Corrigez :\na) « en chantant » → participe présent, épithète détachée\nb) « Ce livre se lit facilement » → voix passive avec auxiliaire « être »\nc) « Elle se hâtait » → verbe pronominal réfléchi\nd) « baissés » → participe présent invariable",
+                "Ces analyses sont-elles correctes ? Corrigez :\na) « en réfléchissant » : participe présent, épithète détachée\nb) « une histoire émouvante » : participe présent invariable\nc) « elle a fermé la porte » : « fermé » est une épithète\nd) « les portes refermées, le silence revint » : « refermées » est une simple épithète détachée",
               correction: [
                 { type: "line", label: "a)", text: "Faux : « en » + -ant = gérondif (CC), pas participe présent." },
-                { type: "line", label: "b)", text: "Faux : forme pronominale à sens passif (pas d'auxiliaire « être » + participe passé)." },
-                { type: "line", label: "c)", text: "Faux : « se hâter » est essentiellement pronominal (n'existe pas sans « se »)." },
-                { type: "line", label: "d)", text: "Faux : « baissés » est un participe passé accordé (masculin pluriel), pas un participe présent." },
+                { type: "line", label: "b)", text: "Faux : « émouvante » est un adjectif verbal accordé avec « histoire »." },
+                { type: "line", label: "c)", text: "Faux : « fermé » est employé avec l'auxiliaire « avoir » pour former le passé composé." },
+                { type: "line", label: "d)", text: "Faux : « refermées » possède un sujet propre, « les portes ». L'ensemble forme une subordonnée participiale, complément circonstanciel de temps." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 8 : Emploi pronominal et accord",
-              objectifTag: "Verbes pronominaux",
+              title: "Exercice 7 : Infinitif et fonction",
+              objectifTag: "Analyse complète",
               question:
-                "Identifiez l'emploi et justifiez l'accord du participe passé :\na) « Elle s'est lavée. »   b) « Elles se sont téléphoné. »   c) « Elle s'est souvenue de lui. »",
+                "Analysez les groupes infinitifs :\na) « Partir maintenant serait imprudent. »   b) « Elle renonce à partir. »   c) « Il ouvre la fenêtre pour aérer la pièce. »   d) « J'observe les oiseaux construire leur nid. »",
               correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Emploi", "Accord du participe passé"],
-                  rows: [
-                    ["s'est lavée", "Réfléchi (« se » = COD antéposé)", "Accordé féminin singulier avec le sujet"],
-                    ["se sont téléphoné", "Réciproque (« se » = COI : téléphoner à)", "Invariable (COD absent)"],
-                    ["s'est souvenue", "Essentiellement pronominal", "Accordé féminin singulier avec le sujet"],
-                  ],
-                },
-                { type: "note", text: "💡 La règle complète de l'accord du participe passé des verbes pronominaux est traitée dans la notion 11." },
+                { type: "line", label: "a)", text: "« Partir maintenant » est un groupe infinitif, sujet de « serait »." },
+                { type: "line", label: "b)", text: "« à partir » est un groupe infinitif prépositionnel, COI de « renonce »." },
+                { type: "line", label: "c)", text: "« pour aérer la pièce » est un groupe infinitif prépositionnel, complément circonstanciel de but de « ouvre »." },
+                { type: "line", label: "d)", text: "« les oiseaux construire leur nid » est une subordonnée infinitive, COD de « observe » : l'infinitif possède son propre sujet, « les oiseaux »." },
               ],
             },
             {
@@ -694,20 +586,18 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 9 · Extrait littéraire : Émile Zola",
+              title: "Exercice 8 · Analyse d'une phrase",
               enonce:
-                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. »\n*(Émile Zola, Germinal, 1885)*",
-              question: "Analysez chaque forme non conjuguée et le verbe pronominal.",
+                "« Portant une lourde valise, la voyageuse avançait lentement, décidée à rejoindre la gare avant la nuit. »",
+              question: "Analysez la nature et la fonction de chaque forme non conjuguée.",
               correction: [
                 {
                   type: "table",
                   headers: ["Forme", "Nature", "Analyse"],
                   rows: [
-                    ["tenant", "Participe présent", "Épithète détachée du nom « femme » (même sujet)"],
-                    ["se hâtait", "Verbe pronominal (essentiellement pronominal)", "Conjugué à l'imparfait"],
-                    ["baissés", "Participe passé", "Épithète liée du nom « yeux » (accord masculin pluriel)"],
-                    ["pressée", "Participe passé", "Épithète détachée du sujet (accord féminin singulier)"],
-                    ["atteindre", "Infinitif", "Groupe infinitif prépositionnel, complément de l'adjectif « pressée »"],
+                    ["portant", "Participe présent", "Épithète détachée du nom « voyageuse » (même sujet)"],
+                    ["décidée", "Participe passé", "Épithète détachée du nom « voyageuse » (accord féminin singulier)"],
+                    ["rejoindre", "Infinitif", "Groupe infinitif prépositionnel, complément de l'adjectif « décidée »"],
                   ],
                 },
               ],
@@ -716,9 +606,9 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 10 · Extrait littéraire : Marguerite Yourcenar",
+              title: "Exercice 9 · Extrait littéraire : Marguerite Yourcenar",
               enonce:
-                "« J'ai vu se rouvrir les portes qui me séparaient du monde, je suis monté sur la terrasse du palais pour regarder les nuages. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
+                "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
               question: "Rédigez la réponse jury pour « se rouvrir » et « regarder ».",
               correction: [
                 { type: "line", text: "« se rouvrir » est un infinitif : tête d'une subordonnée infinitive COD de « ai vu » (verbe de perception). Son sujet propre « les portes » est distinct du sujet principal « je »." },
@@ -729,38 +619,29 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 11 · Voix active et voix passive",
-              enonce: "a) « Le gardien a fermé la porte. »   b) « La porte a été fermée. » (agent absent)",
-              question: "Identifiez la voix de chaque phrase et commentez l'effet produit.",
+              title: "Exercice 10 · Une forme en -ant ambiguë",
+              enonce: "a) « Les enfants, fatiguant leurs parents, refusaient de dormir. »   b) « Ces journées étaient fatigantes. »",
+              question: "Analysez « fatiguant » et « fatigantes » en justifiant leur nature.",
               correction: [
-                {
-                  type: "table",
-                  headers: ["Phrase", "Voix", "Effet"],
-                  rows: [
-                    ["a) a fermé", "Active (passé composé)", "Le gardien est au premier plan, l'agent est mis en valeur"],
-                    ["b) a été fermée", "Passive (passé composé, participe passé accordé)", "La porte est au premier plan, l'agent est effacé : mystère ou généralité"],
-                  ],
-                },
-                { type: "note", text: "La voix passive met en avant le patient de l'action et permet d'effacer l'agent." },
+                { type: "line", label: "a)", text: "« fatiguant » est un participe présent, invariable. Il conserve un complément d'objet direct, « leurs parents », et est épithète détachée du nom « enfants »." },
+                { type: "line", label: "b)", text: "« fatigantes » est un adjectif verbal, attribut du sujet « journées ». Il s'accorde au féminin pluriel." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 12 · Extrait construit sur le modèle des annales",
+              title: "Exercice 11 · Extrait construit sur le modèle des annales",
               enonce:
                 "« Elle entendit la pluie tomber sur les toits. Debout devant la fenêtre, les bras croisés, elle regardait le jardin en silence. »",
-              question: "Analysez toutes les formes verbales, conjuguées et non conjuguées.",
+              question: "Analysez les formes verbales non conjuguées et les groupes auxquels elles appartiennent.",
               correction: [
                 {
                   type: "table",
                   headers: ["Forme", "Nature", "Analyse"],
                   rows: [
-                    ["entendit", "Verbe conjugué (passé simple)", "Action délimitée, + subordonnée infinitive COD"],
                     ["tomber", "Infinitif", "Subordonnée infinitive COD de « entendit » (sujet propre « la pluie »)"],
-                    ["croisés", "Participe passé", "Épithète liée du nom « bras » (accord masculin pluriel)"],
-                    ["regardait", "Verbe conjugué (imparfait)", "Description, état en cours"],
+                    ["croisés", "Participe passé", "Noyau de la subordonnée participiale « les bras croisés », complément circonstanciel de manière ou d'accompagnement"],
                   ],
                 },
                 { type: "note", text: "💡 « en silence » n'est pas un gérondif (« en » + nom, pas « en » + -ant) : c'est un GN prépositionnel, CC de manière." },
@@ -777,29 +658,28 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format de la question sur le verbe de la Partie 1 : extrait littéraire, nature et fonction de la forme, voix verbale, réponse jury. Les exercices calqués sur des sujets récents portent le badge ✦.",
+              text: "Ces exercices entraînent à rédiger une réponse complète : identification de la forme non conjuguée, justification, fonction et délimitation éventuelle d'une proposition.",
             },
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 1 : Émile Zola, Germinal",
+              title: "Exercice 1 : participe présent ou subordonnée participiale ?",
               enonce:
-                "« Une femme passa, <u>tenant</u> par la main un petit garçon. Elle se hâtait, les yeux <u>baissés</u>, <u>pressée</u> d'atteindre sa maison. »\n*(Émile Zola, Germinal, 1885)*",
-              question: "Rédigez la réponse jury pour « tenant », « baissés » et « pressée ».",
+                "« Le chien courait, <u>tirant sur sa laisse</u>. <u>La nuit venue</u>, les voyageurs s'arrêtèrent. »",
+              question: "Analysez les deux groupes soulignés et rédigez la réponse attendue.",
               correction: [
-                { type: "line", text: "« tenant » est un participe présent : épithète détachée du sujet « femme » ; même sujet que le verbe principal, ce qui exclut une subordonnée participiale." },
-                { type: "line", text: "« baissés » est un participe passé (accord masculin pluriel avec « yeux ») : épithète liée du nom « yeux »." },
-                { type: "line", text: "« pressée » est un participe passé (accord féminin singulier avec le sujet) : épithète détachée du sujet." },
+                { type: "line", text: "Dans « tirant sur sa laisse », « tirant » est un participe présent, épithète détachée du nom « chien ». Il se rapporte au sujet de « courait » : le groupe ne forme pas une proposition subordonnée participiale." },
+                { type: "line", text: "« La nuit venue » est une proposition subordonnée participiale : « venue » possède un sujet propre, « la nuit », distinct du sujet de « s'arrêtèrent ». Elle est complément circonstanciel de temps de la proposition principale." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "annale",
-              badge: "✦ Format concours récent",
+              badge: "Entraînement adapté d'un sujet récent",
               title: "Exercice 2 : Marguerite Yourcenar, Comment Wang-Fô fut sauvé",
               enonce:
-                "« J'ai vu <u>se rouvrir</u> les portes qui me séparaient du monde, je suis monté sur la terrasse pour <u>regarder</u> les nuages. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
-              question: "Format identique au concours · Rédigez la réponse jury pour « se rouvrir » et « regarder ».",
+                "« À seize ans, j'ai vu <u>se rouvrir</u> les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour <u>regarder</u> les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
+              question: "Rédigez la réponse attendue pour « se rouvrir » et « regarder ».",
               correction: [
                 { type: "line", text: "« se rouvrir » est un infinitif : tête d'une subordonnée infinitive COD de « ai vu » (verbe de perception), sujet propre « les portes » distinct de « je »." },
                 { type: "line", text: "« regarder » est un infinitif : groupe infinitif prépositionnel (pour + infinitif) CC de but de « suis monté », même sujet (pas de subordonnée infinitive)." },
@@ -808,36 +688,35 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
             {
               type: "exerciceCard",
               variant: "annale",
-              badge: "✦ Format concours récent",
+              badge: "Entraînement adapté d'un sujet récent",
               title: "Exercice 3 : Lola Lafon, Quand tu écouteras cette chanson",
               enonce:
-                "« <u>Vivre</u>, sans l'écriture, me va mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Format identique au concours · Rédigez la réponse jury pour « Vivre ».",
+                "« <u>Vivre</u>, sans l'écriture, me va mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2022)*",
+              question: "Rédigez la réponse attendue pour « Vivre ».",
               correction: [
-                { type: "line", text: "« Vivre » est un infinitif présent : il est sujet du verbe « va », assumant une fonction nominale. Sa nature reste verbale (jamais « nom verbal »)." },
+                { type: "line", text: "« Vivre » est un infinitif présent, sujet du verbe « va ». Dans cette phrase, il conserve sa nature verbale tout en exerçant une fonction généralement occupée par un groupe nominal." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 4 : la voix passive",
-              enonce: "« La porte a été <u>fermée</u> par le gardien. »",
-              question: "Identifiez la voix verbale ; précisez la nature et la fonction de « par le gardien ».",
+              title: "Exercice 4 : fonctions de l'infinitif",
+              enonce: "« <u>Transmettre</u> des savoirs exige de la rigueur ; le professeur prépare sa séance pour <u>aider</u> les élèves à comprendre. »",
+              question: "Donnez la nature et la fonction des deux formes soulignées.",
               correction: [
-                { type: "line", text: "Voix passive : « a été fermée » = « être » au passé composé + participe passé accordé (féminin singulier) avec le sujet « la porte »." },
-                { type: "line", text: "« par le gardien » : GN prépositionnel, complément d'agent (il désigne celui qui effectue l'action)." },
+                { type: "line", text: "« Transmettre » est un infinitif présent. Le groupe infinitif « Transmettre des savoirs » est sujet du verbe « exige »." },
+                { type: "line", text: "« aider » est un infinitif présent. Le groupe infinitif prépositionnel « pour aider les élèves à comprendre » est complément circonstanciel de but du verbe « prépare »." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 5 : la forme pronominale",
-              enonce: "« Ce vin <u>se boit</u> frais ; les bouteilles <u>se sont vendues</u> en une heure. »",
-              question: "Identifiez l'emploi de chaque verbe pronominal.",
+              title: "Exercice 5 : valeurs du gérondif",
+              enonce: "« <u>En sortant de la salle</u>, la candidate croisa une amie. <u>En vérifiant chaque accord</u>, elle éviterait plusieurs fautes. »",
+              question: "Analysez la nature, la fonction et la valeur des deux groupes soulignés.",
               correction: [
-                { type: "line", text: "« se boit » : passif pronominal (on boit ce vin ; sens passif, agent absent)." },
-                { type: "line", text: "« se sont vendues » : passif pronominal (les bouteilles ont été vendues) ; le participe passé s'accorde avec le sujet (féminin pluriel)." },
-                { type: "note", text: "💡 L'accord du participe passé des verbes pronominaux est détaillé en notion 11." },
+                { type: "line", text: "« En sortant de la salle » est un groupe gérondif, complément circonstanciel de temps : la rencontre se produit au moment de la sortie." },
+                { type: "line", text: "« En vérifiant chaque accord » est un groupe gérondif, complément circonstanciel de condition : si elle vérifiait chaque accord." },
               ],
             },
           ],
@@ -856,16 +735,16 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : « tenant son enfant »",
-              enonce: "Réponse d'un candidat : « **tenant son enfant** : proposition subordonnée participiale », pour *« Une femme passa, tenant son enfant. »*",
+              title: "Exercice 1 · Réponse à corriger : « marchant rapidement »",
+              enonce: "Réponse d'un candidat : « **marchant rapidement** : proposition subordonnée participiale », pour *« Le facteur, marchant rapidement, acheva sa tournée. »*",
               question: "Identifiez l'erreur et rédigez la réponse attendue.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "Le sujet de « tenant » est le même que le sujet principal (la femme)", bad: true },
+                    { text: "Le sujet de « marchant » est le même que celui du verbe principal : « le facteur »", bad: true },
                     { text: "Une subordonnée participiale exige un sujet propre distinct (voir notion 5)" },
-                    { text: "Réponse attendue : « tenant » = participe présent, épithète détachée du sujet « femme »" },
+                    { text: "Réponse attendue : « marchant » est un participe présent ; « marchant rapidement » est épithète détachée du nom « facteur »" },
                   ],
                 },
               ],
@@ -873,16 +752,16 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 2 · Réponse à corriger : « en chantant »",
-              enonce: "Réponse d'un candidat : « **en chantant** : participe présent, épithète », pour *« Il rentra en chantant. »*",
+              title: "Exercice 2 · Réponse à corriger : « en persévérant »",
+              enonce: "Réponse d'un candidat : « **en persévérant** : participe présent, épithète », pour *« Elle réussit en persévérant. »*",
               question: "Identifiez l'erreur et rédigez la réponse attendue.",
               correction: [
                 {
                   type: "checklist",
                   items: [
                     { text: "« en » + -ant = gérondif, pas participe présent", bad: true },
-                    { text: "Le participe présent s'emploie sans « en »" },
-                    { text: "Réponse attendue : « en chantant » = gérondif, CC de manière" },
+                    { text: "Le gérondif se construit avec « en » suivi du participe présent" },
+                    { text: "Réponse attendue : « en persévérant » est un gérondif, complément circonstanciel de moyen" },
                   ],
                 },
               ],
@@ -890,16 +769,16 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « Ce livre se lit »",
-              enonce: "Réponse d'un candidat : « **se lit** : forme passive (être + participe passé) », pour *« Ce livre se lit facilement. »*",
+              title: "Exercice 3 · Réponse à corriger : « une histoire émouvante »",
+              enonce: "Réponse d'un candidat : « **émouvante** : participe présent », pour *« Cette histoire est émouvante. »*",
               question: "Identifiez l'erreur et rédigez la réponse attendue.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "Il n'y a pas d'auxiliaire « être » + participe passé : ce n'est pas une voix passive", bad: true },
-                    { text: "C'est une forme pronominale à sens passif (« se » + verbe)" },
-                    { text: "Réponse attendue : « se lit » = verbe pronominal à sens passif (l'action est subie par le sujet, agent absent)" },
+                    { text: "« émouvante » s'accorde au féminin singulier avec « histoire » : ce n'est pas un participe présent, qui serait invariable", bad: true },
+                    { text: "La forme exprime ici une propriété du nom et occupe une fonction adjectivale" },
+                    { text: "Réponse attendue : « émouvante » est un adjectif verbal, attribut du sujet « histoire »" },
                   ],
                 },
               ],
@@ -930,40 +809,39 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
                 {
                   question: "Comment reconnaître les 4 formes non conjuguées ?",
                   answer:
-                    "**Infinitif** : -er/-ir/-re/-oir, invariable.\n**Participe présent** : -ant sans « en », invariable.\n**Gérondif** : « en » + -ant, invariable.\n**Participe passé** : -é/-i/-u, s'accorde.",
+                    "**Infinitif** : -er/-ir/-re/-oir, invariable.\n**Participe présent** : forme en -ant, invariable.\n**Gérondif** : « en » + participe présent, invariable.\n**Participe passé** : souvent en -é/-i/-u ; son accord dépend de son emploi.",
                   astuce: "💡 Seules, ces formes ne créent pas de proposition (voir notion 5).",
                 },
                 {
                   question: "Participe présent, gérondif ou adjectif verbal ?",
                   answer:
-                    "**Gérondif** : « en » + -ant (CC).\n**Adjectif verbal** : forme en -ant qui s'accorde (« une femme charmante »).\n**Participe présent** : -ant invariable, sans « en », épithète.",
+                    "**Gérondif** : « en » + participe présent, avec une fonction circonstancielle.\n**Adjectif verbal** : forme variable employée comme un adjectif (« une remarque convaincante »).\n**Participe présent** : forme verbale en -ant, invariable, qui peut conserver des compléments verbaux.",
                 },
                 {
-                  question: "Comment se construit la voix passive ?",
+                  question: "Quelles fonctions l'infinitif peut-il exercer ?",
                   answer:
-                    "« être » (conjugué au temps voulu) + participe passé accordé avec le sujet. Le temps est porté par « être ».\n« La souris est mangée par le chat. »",
-                  astuce: "⚠️ Le participe passé s'accorde toujours avec le sujet au passif.",
+                    "Comme un nom, un groupe infinitif peut être **sujet**, **COD** ou **COI**. Il peut aussi compléter un adjectif ou être complément circonstanciel, notamment de but.",
+                  astuce: "Exemples : « Lire instruit » ; « elle aime lire » ; « il vient pour apprendre ».",
                 },
                 {
-                  question: "Qu'est-ce que le complément d'agent ?",
+                  question: "Participe passé seul ou forme verbale composée ?",
                   answer:
-                    "Il désigne celui qui effectue l'action à la voix passive. Introduit par **par** (« par le chat ») ou **de** (« aimée de tous »). Il peut être absent.",
+                    "Employé **seul**, le participe passé peut exercer une fonction adjectivale : « une porte fermée ». Avec un **auxiliaire**, il entre dans une forme verbale composée : « elle a fermé la porte ».",
                 },
                 {
-                  question: "Quand le passif est-il impossible ?",
+                  question: "Quand un infinitif forme-t-il une subordonnée infinitive ?",
                   answer:
-                    "Sans COD à promouvoir en sujet : verbe **intransitif** (« il dort »), verbe **attributif** (« elle semble fatiguée »), **avoir** de possession (« il a une voiture »).",
+                    "Lorsqu'il possède un **sujet propre**, distinct de celui du verbe principal : « J'entends les enfants jouer. » La subordonnée infinitive « les enfants jouer » est COD de « entends ».",
                 },
                 {
-                  question: "Quels sont les 4 emplois du verbe pronominal ?",
+                  question: "Quand un participe forme-t-il une subordonnée participiale ?",
                   answer:
-                    "**Réfléchi** (le sujet agit sur lui-même) ; **réciproque** (pluriel, l'un l'autre) ; **passif pronominal** (sens passif, « ce livre se lit ») ; **essentiellement pronominal** (n'existe qu'avec « se », « s'enfuir »).",
+                    "Lorsqu'il possède un **sujet propre**, distinct de celui du verbe principal : « Le rideau levé, le spectacle commença. » La subordonnée participiale est ici complément circonstanciel de temps.",
                 },
                 {
-                  question: "Forme passive ou forme pronominale à sens passif ?",
+                  question: "Quelles fonctions le gérondif peut-il exercer ?",
                   answer:
-                    "**Passive** : « être » + participe passé (« est lu »).\n**Pronominale à sens passif** : « se » + verbe, sans auxiliaire « être » (« se lit »).",
-                  astuce: "⚠️ « Ce livre se lit » n'est pas une voix passive.",
+                    "Le groupe gérondif est complément circonstanciel. Selon le contexte, il peut exprimer le **temps**, la **manière**, la **cause**, la **condition** ou l'opposition.",
                 },
                 {
                   question: "Formule jury pour un participe présent épithète ?",
@@ -982,7 +860,7 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
           blocks: [
             {
               type: "mindmapLite",
-              center: { title: "Formes du verbe", subtitle: "Non conjuguées, passive, pronominale" },
+              center: { title: "Formes non conjuguées", subtitle: "Infinitif, participes et gérondif" },
               branches: [
                 {
                   title: "Formes non conjuguées",
@@ -995,23 +873,23 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
                   variant: "blue",
                 },
                 {
-                  title: "Voix passive",
-                  lines: ["être + participe passé accordé", "Complément d'agent (par / de)", "Met en relief le patient"],
+                  title: "Fonctions",
+                  lines: ["Infinitif : sujet, complément", "Participe : fonction adjectivale", "Gérondif : complément circonstanciel"],
                   variant: "green",
                 },
                 {
-                  title: "Forme pronominale",
-                  lines: ["Réfléchi · réciproque", "Passif pronominal", "Essentiellement pronominal"],
+                  title: "Proposition ou groupe ?",
+                  lines: ["Sujet propre obligatoire", "Infinitive : les enfants jouer", "Participiale : le rideau levé"],
                   variant: "green",
                 },
                 {
                   title: "Pièges classiques",
-                  lines: ["en + -ant = gérondif", "se lit ≠ voix passive", "accord du PP au passif"],
+                  lines: ["en + -ant = gérondif", "Forme en -ant accordée = adjectif", "Auxiliaire + PP = forme composée"],
                   variant: "yellow",
                 },
                 {
                   title: "Renvois",
-                  lines: ["Subordonnées infinitive / participiale → notion 5", "Accord du participe passé → notion 11"],
+                  lines: ["Subordonnées infinitive / participiale → notion 5", "Temps composés → notion 6", "Accord du participe passé → notion 11"],
                   variant: "purple",
                   dashed: true,
                 },
