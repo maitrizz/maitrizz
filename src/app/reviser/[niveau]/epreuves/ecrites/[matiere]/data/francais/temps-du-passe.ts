@@ -2,12 +2,12 @@ import type { Fiche } from "@/components/fiche/types";
 
 // Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
 const OBJECTIFS = [
-  { id: "tp1", label: "Je sais que la difficulté n'est pas d'identifier le temps (notion 6) mais de nommer sa valeur avec précision : je n'écris jamais « valeur : passé »" },
-  { id: "tp2", label: "Je connais les 5 valeurs de l'imparfait : description, habitude, action en cours interrompue, politesse, condition" },
+  { id: "tp1", label: "Je sais expliquer la valeur d'un temps à partir de son contexte" },
+  { id: "tp2", label: "Je connais les principaux emplois de l'imparfait : description, habitude, action en cours, politesse et hypothèse" },
   { id: "tp3", label: "Je connais les 3 valeurs du passé simple : action délimitée, succession d'événements, rupture" },
   { id: "tp4", label: "Je connais les 3 valeurs du passé composé : lien avec le présent, accompli, substitut du passé simple (récit à la 1re personne)" },
   { id: "tp5", label: "Je connais les 2 valeurs du plus-que-parfait : antériorité dans le passé, irréel du passé (si + plus-que-parfait)" },
-  { id: "tp6", label: "Je distingue la description de l'habitude à l'imparfait grâce au test « chaque jour »" },
+  { id: "tp6", label: "Je distingue la description de l'habitude grâce au contexte et aux marqueurs de répétition" },
   { id: "tp7", label: "Je sais commenter le système du récit (imparfait = arrière-plan, passé simple = premier plan) et rédiger une réponse jury complète" },
 ];
 
@@ -25,7 +25,7 @@ export const ficheTempsDuPasse: Fiche = {
   ],
   metaTitle: "Les temps du passé (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les valeurs des temps du passé : les 5 valeurs de l'imparfait, les 3 valeurs du passé simple, les 3 valeurs du passé composé, les 2 valeurs du plus-que-parfait, le système du récit (imparfait et passé simple). Méthode de réponse jury, test « chaque jour », exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE complète sur les principaux emplois de l'imparfait, du passé simple, du passé composé et du plus-que-parfait, ainsi que sur le système du récit. Méthode d'analyse en contexte, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -39,27 +39,27 @@ export const ficheTempsDuPasse: Fiche = {
           blocks: [
             {
               type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
+              title: "Ce que vous allez apprendre",
               items: [
                 {
                   number: "①",
-                  title: "Nommer la valeur, pas seulement le temps",
-                  text: "Identifier le temps relève de la notion 6. Ici, on nomme sa valeur précise : « valeur : passé » ne dit rien.",
+                  title: "Expliquer l'emploi d'un temps",
+                  text: "Après avoir identifié le temps, on montre ce qu'il exprime dans la phrase : un cadre, une habitude, un événement ou une action antérieure.",
                 },
                 {
                   number: "②",
-                  title: "Les 5 valeurs de l'imparfait",
-                  text: "Description, habitude, action en cours interrompue, politesse, condition.",
+                  title: "Comprendre les emplois de l'imparfait",
+                  text: "L'imparfait peut installer un décor, exprimer une habitude ou présenter une action en cours. Il s'emploie aussi pour atténuer une demande ou formuler une hypothèse.",
                 },
                 {
                   number: "③",
-                  title: "Passé simple et passé composé",
-                  text: "3 valeurs chacun : action délimitée, succession, rupture ; lien avec le présent, accompli, substitut du passé simple.",
+                  title: "Distinguer passé simple et passé composé",
+                  text: "Le passé simple fait avancer le récit littéraire. Le passé composé présente une action achevée et reste le temps habituel du récit oral ou lié au présent.",
                 },
                 {
                   number: "④",
-                  title: "Plus-que-parfait et système du récit",
-                  text: "Antériorité, irréel du passé ; et l'opposition imparfait (décor) / passé simple (événement).",
+                  title: "Organiser les actions dans le passé",
+                  text: "Le plus-que-parfait marque ce qui s'est produit avant un autre fait passé. Dans un récit, les temps permettent aussi de distinguer l'arrière-plan des événements principaux.",
                 },
               ],
             },
@@ -75,12 +75,12 @@ export const ficheTempsDuPasse: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Reconnaître qu'un verbe est à l'imparfait, c'est la notion 6. La vraie difficulté, à ce stade, est de **nommer sa valeur** dans le contexte. Le jury perd patience devant « valeur : passé » ou « action passée » : ces formulations ne disent rien. Cette fiche apprend à nommer la valeur avec précision et à rédiger la réponse attendue.",
+              text: "Dans la notion 6, vous avez appris à identifier le mode et le temps d'un verbe. Ici, vous allez déterminer la **valeur des temps du passé dans leur contexte** : description, habitude, événement ou antériorité.",
             },
             {
               type: "subsection",
               number: "①",
-              title: "Nommer la valeur, pas seulement le temps",
+              title: "Expliquer l'emploi d'un temps",
               blocks: [
                 {
                   type: "paragraph",
@@ -106,18 +106,18 @@ export const ficheTempsDuPasse: Fiche = {
                   variant: "warning",
                   icon: "⚠️",
                   title: "Le réflexe à avoir",
-                  text: "Ne jamais s'arrêter à « valeur : passé ». Demandez-vous : ce temps **décrit-il, raconte-t-il, situe-t-il avant un autre passé ?** C'est cette précision qui rapporte les points.",
+                  text: "Appuyez toujours votre analyse sur un indice du contexte : cadre temporel, marqueur de répétition, succession d'événements ou relation d'antériorité.",
                 },
               ],
             },
             {
               type: "subsection",
               number: "②",
-              title: "Les 5 valeurs de l'imparfait",
+              title: "Comprendre les emplois de l'imparfait",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "L'imparfait exprime toujours une **durée, un état ou une répétition** dans le passé : jamais un événement ponctuel. Selon le contexte, il prend cinq valeurs.",
+                  text: "L'imparfait présente généralement un procès passé **sans en montrer les limites**. Il sert notamment à décrire, à exprimer une habitude ou à montrer une action en cours. Sa valeur dépend toujours du contexte.",
                 },
                 {
                   type: "notionCardGrid",
@@ -130,7 +130,7 @@ export const ficheTempsDuPasse: Fiche = {
                         "« Elle **se hâtait**, les yeux baissés » : décor de la scène",
                         "« Ma mère **regardait** les enfants jouer » : action en cours, cadre affectif",
                       ],
-                      test: "Ajouter « chaque jour » est impossible ici : c'est une description, pas une habitude.",
+                      test: "Chercher un cadre précis et l'absence de marqueur de répétition.",
                     },
                     {
                       title: "Habitude dans le passé",
@@ -138,7 +138,7 @@ export const ficheTempsDuPasse: Fiche = {
                       exemples: [
                         "« Il **aimait** les soirs d'automne, quand il **rentrait** seul » : goût et action récurrents",
                       ],
-                      test: "Ajouter « chaque jour / toujours » est naturel : c'est une habitude.",
+                      test: "Repérer un marqueur de répétition : chaque jour, souvent, toujours, tous les soirs.",
                     },
                     {
                       title: "Action en cours interrompue",
@@ -157,21 +157,27 @@ export const ficheTempsDuPasse: Fiche = {
                       test: "La phrase pourrait se dire au présent (« je veux ») : l'imparfait est ici un simple adoucissement.",
                     },
                     {
-                      title: "Condition (si + imparfait)",
-                      definition: "Hypothèse irréelle du présent, dans une proposition en « si ». La principale est au conditionnel présent.",
+                      title: "Hypothèse (si + imparfait)",
+                      definition: "Hypothèse envisagée comme possible, peu probable ou contraire à la réalité selon le contexte. La principale est généralement au conditionnel présent.",
                       exemples: [
-                        "« **Si** elle **venait**, je serais heureux » : elle ne vient pas (hypothèse irréelle)",
+                        "« **Si** elle **venait** demain, je serais heureux » : venue envisagée comme une hypothèse",
                       ],
-                      test: "« si » + imparfait, avec une principale au conditionnel présent (« je serais »), temps de l'indicatif.",
+                      test: "« si » + imparfait, avec une principale généralement au conditionnel présent (« je serais »). Le contexte précise le degré de probabilité.",
                     },
                   ],
+                },
+                {
+                  type: "callout",
+                  variant: "warning",
+                  title: "Un emploi à connaître : l'imparfait narratif",
+                  text: "L'imparfait peut exceptionnellement présenter un événement ponctuel dans un récit, souvent avec un repère précis comme « soudain » ou « le lendemain ». Cet imparfait narratif produit un effet de mise en relief ou de ralentissement.",
                 },
               ],
             },
             {
               type: "subsection",
               number: "③",
-              title: "Les valeurs du passé simple et du passé composé",
+              title: "Distinguer passé simple et passé composé",
               blocks: [
                 {
                   type: "paragraph",
@@ -224,7 +230,7 @@ export const ficheTempsDuPasse: Fiche = {
             {
               type: "subsection",
               number: "④",
-              title: "Le plus-que-parfait et le système du récit",
+              title: "Organiser les actions dans le passé",
               blocks: [
                 {
                   type: "paragraph",
@@ -271,18 +277,18 @@ export const ficheTempsDuPasse: Fiche = {
               variant: "rouge",
               title: "Piège n°1 · Valeur trop vague",
               badge: "Très fréquent",
-              faux: "« regardait → imparfait, valeur : passé ».",
-              vrai: "« Passé » est la valeur commune à tous les temps du passé : elle ne dit rien. Préciser : **valeur descriptive** (action en cours dans le passé qui forme le décor).",
-              methode: "Toujours nommer ce que le temps fait : décrire, raconter un événement, marquer une antériorité, exprimer une habitude…",
+              faux: "Attribuer une valeur à « regardait » sans lire le reste de la phrase.",
+              vrai: "Dans « Ce soir-là, elle regardait les enfants », le repère temporel inscrit l'action dans une scène unique : la valeur est **descriptive**.",
+              methode: "Justifier la valeur par un indice précis du contexte.",
             },
             {
               type: "piegeCard",
               variant: "orange",
               title: "Piège n°2 · Confondre description et habitude",
               badge: "Nuance subtile",
-              faux: "« se hâtait » analysé comme un imparfait d'habitude.",
-              vrai: "Test « chaque jour » : « elle se hâtait chaque jour » n'est pas naturel dans ce contexte : c'est une **description**, pas une habitude.",
-              methode: "Ajouter « chaque jour / toujours » : naturel → habitude ; impossible → description.",
+              faux: "Analyser « se hâtait » sans contexte comme un imparfait d'habitude.",
+              vrai: "« Ce soir-là, elle se hâtait » décrit une scène unique ; « Chaque soir, elle se hâtait » exprime une habitude.",
+              methode: "Chercher un cadre précis ou un marqueur de répétition.",
             },
             {
               type: "piegeCard",
@@ -321,13 +327,6 @@ export const ficheTempsDuPasse: Fiche = {
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              title: "Une démarche, une formule",
-              text: "Nommer une valeur, c'est appliquer une démarche simple et la couler dans la formule jury. Une seconde méthode apprend à commenter le système du récit.",
-            },
-            {
               type: "rappelExpress",
               title: "Rappel express : la formule jury",
               blocks: [
@@ -335,7 +334,7 @@ export const ficheTempsDuPasse: Fiche = {
                   type: "formulaBlock",
                   lines: [
                     "[verbe] est à [temps] de l'indicatif, valeur [nom précis] : il exprime [son rôle dans le texte].",
-                    "Imparfait : descriptive · d'habitude · d'action en cours · de politesse · conditionnelle",
+                    "Imparfait : description · habitude · action en cours · politesse · hypothèse",
                     "Passé simple : action délimitée · succession · rupture",
                     "Passé composé : lien avec le présent · accompli · substitut du passé simple",
                     "Plus-que-parfait : antériorité · irréel du passé",
@@ -344,7 +343,7 @@ export const ficheTempsDuPasse: Fiche = {
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Jamais « valeur : passé ». Toujours une valeur précise + ce que le temps fait dans le texte.",
+                  text: "⚠️ Une valeur se détermine à partir du contexte. Une forme isolée ne suffit pas toujours.",
                 },
               ],
             },
@@ -353,7 +352,7 @@ export const ficheTempsDuPasse: Fiche = {
               number: "①",
               title: "Nommer la valeur d'un temps du passé",
               intro:
-                "**Question typique :** « Donnez la valeur du verbe souligné. »\nLe temps est déjà identifié (notion 6) ; on s'occupe ici de la valeur.",
+                "**Exemple :** « Ce soir-là, ma mère <u>regardait</u> les enfants jouer dans le jardin. »\n**Question typique :** Donnez la valeur du verbe souligné.",
               steps: [
                 {
                   number: "1",
@@ -363,12 +362,12 @@ export const ficheTempsDuPasse: Fiche = {
                 {
                   number: "2",
                   text: "**Lire le contexte** : décor ou événement ? répétition ou scène unique ? lien avec le présent ? antériorité ?",
-                  example: { lines: ["« regardait les enfants jouer » → action en cours qui plante le décor"] },
+                  example: { lines: ["« Ce soir-là » situe une scène unique ; « regardait » présente une action en cours qui forme le cadre de la scène."] },
                 },
                 {
                   number: "3",
-                  text: "**Choisir la valeur précise** et appliquer le test utile (« chaque jour » pour départager description et habitude).",
-                  example: { lines: ["« regardait chaque jour » → forcé ici → description, pas habitude"] },
+                  text: "**Choisir la valeur précise** et la justifier par un indice du contexte.",
+                  example: { lines: ["Le repère « ce soir-là » exclut ici l'habitude : la valeur est descriptive."] },
                 },
                 {
                   number: "💡",
@@ -393,7 +392,7 @@ export const ficheTempsDuPasse: Fiche = {
               number: "②",
               title: "Commenter le système du récit",
               intro:
-                "**Question typique :** « Analysez l'emploi des temps dans cet extrait. »\nQuand imparfait et passé simple coexistent, on commente leur opposition.",
+                "**Exemple :** « Une femme <u>passa</u>. Elle <u>se hâtait</u>, les yeux baissés. »\n**Question typique :** Analysez l'emploi des temps dans cet extrait.",
               steps: [
                 {
                   number: "1",
@@ -407,7 +406,7 @@ export const ficheTempsDuPasse: Fiche = {
                 {
                   number: "💡",
                   text: "**Formuler l'opposition :** « l'imparfait forme le décor en opposition au passé simple qui marque l'événement ». Quand un temps est employé seul (imparfait exclusif), commenter aussi cet effet.",
-                  example: { lines: ["Imparfait exclusif chez Colette ou Maupassant : un souvenir figé, sans événement"] },
+                  example: { lines: ["Dans une scène composée uniquement d'imparfaits, les actions et les états sont présentés sans limites nettes."] },
                 },
               ],
             },
@@ -454,16 +453,16 @@ export const ficheTempsDuPasse: Fiche = {
               questions: [
                 {
                   objectifId: "tp1",
-                  question: "Pourquoi « valeur : passé » est-elle une réponse insuffisante ?",
+                  question: "Que signifie donner la valeur d'un temps ?",
                   options: [
-                    "Parce qu'elle est trop longue",
-                    "Parce que c'est la valeur commune à tous les temps du passé : elle ne dit rien de précis",
-                    "Parce que le passé n'a pas de valeur",
-                    "Parce qu'il faut donner le groupe du verbe",
+                    "Réciter sa terminaison",
+                    "Expliquer son rôle dans le contexte",
+                    "Donner seulement sa date",
+                    "Indiquer le groupe du verbe",
                   ],
                   correctIndex: 1,
                   explanation:
-                    "Tous les temps du passé expriment « le passé ». Le jury attend la valeur précise (description, habitude, antériorité…) et son rôle dans le texte.",
+                    "La valeur indique ce que le temps exprime dans la phrase : description, habitude, événement, antériorité ou hypothèse, par exemple.",
                 },
                 {
                   objectifId: "tp2",
@@ -475,16 +474,16 @@ export const ficheTempsDuPasse: Fiche = {
                 },
                 {
                   objectifId: "tp6",
-                  question: "Quel test distingue la description de l'habitude à l'imparfait ?",
+                  question: "Quel indice permet d'identifier un imparfait d'habitude ?",
                   options: [
                     "Le test « nous »",
-                    "Ajouter « chaque jour / toujours » : naturel → habitude, impossible → description",
+                    "Un marqueur de répétition comme « chaque soir » ou « souvent »",
                     "Le test du passif",
                     "Le test de l'auxiliaire",
                   ],
                   correctIndex: 1,
                   explanation:
-                    "« il rentrait chaque soir » est naturel (habitude) ; « elle se hâtait chaque jour » est forcé ici (description).",
+                    "L'habitude est signalée par le contexte et par des marqueurs de répétition comme « chaque soir », « souvent » ou « toujours ».",
                 },
                 {
                   objectifId: "tp3",
@@ -496,11 +495,11 @@ export const ficheTempsDuPasse: Fiche = {
                 },
                 {
                   objectifId: "tp4",
-                  question: "Dans « J'ai vu se rouvrir les portes » (récit à la 1re personne), le passé composé a une valeur de :",
-                  options: ["Antériorité", "Lien avec le présent", "Condition", "Description"],
+                  question: "Dans un récit à la première personne, le passé composé peut servir à :",
+                  options: ["Décrire un décor", "Raconter les événements de premier plan", "Exprimer une hypothèse", "Marquer une habitude"],
                   correctIndex: 1,
                   explanation:
-                    "Le passé composé relie le souvenir au présent du narrateur : l'action passée reste vivante dans sa mémoire.",
+                    "Dans un récit au passé, le passé composé peut porter les événements principaux, comme le passé simple dans un récit littéraire classique.",
                 },
                 {
                   objectifId: "tp5",
@@ -525,11 +524,11 @@ export const ficheTempsDuPasse: Fiche = {
                 },
                 {
                   objectifId: "tp2",
-                  question: "Dans « Si elle venait, je serais heureux », quelle est la valeur de l'imparfait « venait » ?",
-                  options: ["Habitude", "Condition (hypothèse irréelle du présent)", "Politesse", "Description"],
+                  question: "Dans « Si elle venait demain, je serais heureux », quelle est la valeur de l'imparfait « venait » ?",
+                  options: ["Habitude", "Hypothèse", "Politesse", "Description"],
                   correctIndex: 1,
                   explanation:
-                    "« si » + imparfait exprime une hypothèse irréelle du présent ; la principale « je serais » est au conditionnel présent (temps de l'indicatif).",
+                    "« si » + imparfait présente ici la venue comme une hypothèse. Le contexte seul permettrait de préciser si elle est possible, peu probable ou irréelle.",
                 },
               ],
             },
@@ -565,13 +564,13 @@ export const ficheTempsDuPasse: Fiche = {
               title: "Exercice 1 : Valeurs de l'imparfait",
               objectifTag: "Imparfait",
               question:
-                "Donnez la valeur de l'imparfait :\na) « Ma mère regardait les enfants jouer. »   b) « Il aimait les soirs d'automne, quand il rentrait seul. »   c) « Elle lisait quand il arriva. »   d) « Je voulais vous demander un service. »   e) « Si elle venait, je serais heureux. »",
+                "Donnez la valeur de l'imparfait :\na) « Ce soir-là, ma mère regardait les enfants jouer. »   b) « Chaque soir, il rentrait seul. »   c) « Elle lisait quand il arriva. »   d) « Je voulais vous demander un service. »   e) « Si elle venait demain, je serais heureux. »",
               correction: [
                 { type: "line", label: "a)", text: "Description (action en cours, décor affectif)" },
-                { type: "line", label: "b)", text: "Habitude (goût et action récurrents)" },
+                { type: "line", label: "b)", text: "Habitude (action répétée, signalée par « chaque soir »)" },
                 { type: "line", label: "c)", text: "Action en cours interrompue (par « arriva », passé simple)" },
                 { type: "line", label: "d)", text: "Politesse (atténuation de la demande)" },
-                { type: "line", label: "e)", text: "Condition (hypothèse irréelle du présent ; principale « je serais » au conditionnel présent)" },
+                { type: "line", label: "e)", text: "Hypothèse (la venue est envisagée ; le contexte ne permet pas de la déclarer irréelle)" },
               ],
             },
             {
@@ -595,11 +594,11 @@ export const ficheTempsDuPasse: Fiche = {
               title: "Exercice 3 : Valeurs du passé composé",
               objectifTag: "Passé composé",
               question:
-                "Donnez la valeur du passé composé :\na) « J'ai vu se rouvrir les portes. »   b) « Je suis monté sur la terrasse. » (récit à la 1re personne)   c) « Il a fini son travail. »",
+                "Donnez la valeur du passé composé :\na) « Depuis ce jour, je n'ai jamais oublié cette scène. »   b) « Je suis entré, j'ai posé mon sac et je me suis assis. »   c) « Il a fini son travail : il peut partir. »",
               correction: [
-                { type: "line", label: "a)", text: "Lien avec le présent (souvenir vivant, 1re personne)" },
-                { type: "line", label: "b)", text: "Substitut du passé simple (récit intime à la 1re personne)" },
-                { type: "line", label: "c)", text: "Accompli (résultat acquis au moment où l'on parle)" },
+                { type: "line", label: "a)", text: "Lien avec le présent : le souvenir se prolonge jusqu'au moment de l'énonciation." },
+                { type: "line", label: "b)", text: "Temps du récit : les passés composés enchaînent les événements de premier plan." },
+                { type: "line", label: "c)", text: "Accompli avec résultat présent : le travail terminé permet de partir maintenant." },
               ],
             },
             {
@@ -607,14 +606,14 @@ export const ficheTempsDuPasse: Fiche = {
               variant: "standard",
               level: "echauffement",
               title: "Exercice 4 : Description ou habitude ?",
-              objectifTag: "Test « chaque jour »",
+              objectifTag: "Indices du contexte",
               question:
-                "Appliquez le test « chaque jour » :\na) « elle se hâtait »   b) « il aimait les soirs d'automne »   c) « elle ne disait rien »   d) « les portes me séparaient du monde »",
+                "Appuyez-vous sur les marqueurs du contexte :\na) « Ce soir-là, elle se hâtait. »   b) « Chaque soir, elle se hâtait. »   c) « Pendant le repas, elle ne disait rien. »   d) « À cette époque, elle ne disait jamais rien. »",
               correction: [
-                { type: "line", label: "a)", text: "« elle se hâtait chaque jour » → forcé ici → description" },
-                { type: "line", label: "b)", text: "« il aimait les soirs d'automne chaque automne » → naturel → habitude" },
-                { type: "line", label: "c)", text: "« elle ne disait jamais rien » → naturel → habitude" },
-                { type: "line", label: "d)", text: "« les portes me séparaient chaque jour » → forcé → description (état permanent)" },
+                { type: "line", label: "a)", text: "Description d'une action en cours dans une scène unique, signalée par « ce soir-là »." },
+                { type: "line", label: "b)", text: "Habitude, signalée par « chaque soir »." },
+                { type: "line", label: "c)", text: "Description d'un comportement pendant une scène précise, délimitée par « pendant le repas »." },
+                { type: "line", label: "d)", text: "Habitude, signalée par « à cette époque » et « jamais »." },
               ],
             },
             {
@@ -630,11 +629,11 @@ export const ficheTempsDuPasse: Fiche = {
               level: "n2",
               title: "Exercice 5 : Réponse jury complète",
               question:
-                "Rédigez la réponse jury complète :\na) « Ma mère regardait les enfants jouer. »   b) « Une femme passa. »   c) « J'ai vu se rouvrir les portes. »   d) « Elle avait relu sa lettre. »",
+                "Rédigez la réponse jury complète :\na) « Ce soir-là, ma mère regardait les enfants jouer. »   b) « Une femme passa. »   c) « Depuis ce jour, je n'ai jamais oublié cette scène. »   d) « Elle avait relu sa lettre avant de la poster. »",
               correction: [
                 { type: "line", label: "a)", text: "« regardait » est à l'imparfait de l'indicatif, valeur descriptive : il exprime une action en cours dans le passé qui forme le décor affectif de la scène." },
                 { type: "line", label: "b)", text: "« passa » est au passé simple de l'indicatif, valeur d'action délimitée : il exprime un événement ponctuel qui ouvre le récit." },
-                { type: "line", label: "c)", text: "« ai vu » est au passé composé de l'indicatif, valeur de lien avec le présent : il exprime un souvenir qui reste vivant dans la mémoire du narrateur." },
+                { type: "line", label: "c)", text: "« n'ai jamais oublié » est au passé composé de l'indicatif, valeur de lien avec le présent : l'oubli nié se prolonge jusqu'au moment de l'énonciation." },
                 { type: "line", label: "d)", text: "« avait relu » est au plus-que-parfait de l'indicatif, valeur d'antériorité : il exprime une action accomplie avant un autre moment du passé." },
               ],
             },
@@ -649,7 +648,7 @@ export const ficheTempsDuPasse: Fiche = {
                 { type: "line", text: "① avait relu (plus-que-parfait) : antérieur aux deux actions suivantes." },
                 { type: "line", text: "② posta (passé simple) : premier événement." },
                 { type: "line", text: "③ sortit (passé simple) : second événement." },
-                { type: "note", text: "Le plus-que-parfait place « relire » avant les deux passés simples. Sans lui, l'ordre chronologique serait ambigu." },
+                { type: "note", text: "Le plus-que-parfait place « relire » avant le moment de référence du récit. Le connecteur « puis » ordonne ensuite les deux actions au passé simple." },
               ],
             },
             {
@@ -658,12 +657,12 @@ export const ficheTempsDuPasse: Fiche = {
               level: "n2",
               title: "Exercice 7 : Corriger l'analyse",
               question:
-                "Ces analyses sont-elles correctes ? Corrigez :\na) « regardait → imparfait, valeur : passé »   b) « se hâtait → imparfait d'habitude »   c) « avait relu → passé composé, valeur : accompli »   d) « souriait » et « disait » → même valeur",
+                "Ces analyses sont-elles correctes ? Corrigez si nécessaire :\na) Dans « Ce soir-là, elle regardait les enfants », « regardait » a une valeur d'habitude.   b) Dans « Chaque soir, elle se hâtait », « se hâtait » a une valeur descriptive.   c) « avait relu » est un passé composé à valeur d'accompli.   d) Dans « Pendant le repas, elle souriait et ne disait rien », les deux imparfaits ont la même valeur.",
               correction: [
-                { type: "line", label: "a)", text: "Valeur trop vague : « valeur descriptive » (action en cours dans le passé)." },
-                { type: "line", label: "b)", text: "Faux : test « chaque jour » forcé ici → description, pas habitude." },
+                { type: "line", label: "a)", text: "Faux : « ce soir-là » situe une scène unique ; « regardait » décrit une action en cours." },
+                { type: "line", label: "b)", text: "Faux : « chaque soir » marque la répétition ; « se hâtait » exprime une habitude." },
                 { type: "line", label: "c)", text: "Double erreur : c'est un plus-que-parfait (auxiliaire « avait »), valeur d'antériorité." },
-                { type: "line", label: "d)", text: "Faux : « souriait » = description, « disait » = habitude (« elle ne disait jamais rien »)." },
+                { type: "line", label: "d)", text: "Correct : dans cette scène précise, « souriait » et « ne disait rien » décrivent deux états ou comportements en cours." },
               ],
             },
             {
@@ -672,10 +671,10 @@ export const ficheTempsDuPasse: Fiche = {
               level: "n2",
               title: "Exercice 8 : Réécriture et effet",
               question:
-                "Réécrivez en remplaçant les passés simples par des imparfaits, puis commentez l'effet :\n« Soudain, la porte s'ouvrit. Elle posa son livre, regarda autour d'elle, se leva. »",
+                "Réécrivez en remplaçant les passés simples par des imparfaits, puis proposez deux effets de lecture possibles :\n« Soudain, la porte s'ouvrit. Elle posa son livre, regarda autour d'elle, se leva. »",
               correction: [
                 { type: "line", text: "« Soudain, la porte s'ouvrait. Elle posait son livre, regardait autour d'elle, se levait. »" },
-                { type: "note", text: "À l'imparfait, les actions perdent leur caractère ponctuel : elles semblent s'étirer ou se répéter. « Soudain » devient contradictoire avec la durée de l'imparfait ; le récit perd sa dynamique et son effet de surprise." },
+                { type: "note", text: "Deux lectures sont possibles. Les imparfaits peuvent donner une impression de répétition ou de déroulement ralenti. Avec « soudain », « s'ouvrait » peut aussi être un imparfait narratif : l'événement ponctuel est mis en relief comme s'il se déroulait sous les yeux du lecteur." },
               ],
             },
             {
@@ -689,23 +688,23 @@ export const ficheTempsDuPasse: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 9 · Extrait littéraire : Émile Zola",
+              title: "Exercice 9 · Premier plan et arrière-plan",
               enonce:
-                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. »\n*(Émile Zola, Germinal, 1885)*",
+                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. »",
               question: "Rédigez la réponse jury pour « passa » et « se hâtait », et commentez leur opposition.",
               correction: [
                 { type: "line", text: "« passa » est au passé simple de l'indicatif, valeur d'action délimitée : il fait surgir la femme dans le récit (premier plan)." },
-                { type: "line", text: "« se hâtait » est à l'imparfait de l'indicatif, valeur descriptive : il décrit l'état de la femme et forme le décor (arrière-plan)." },
-                { type: "note", text: "Opposition : le passé simple ouvre la scène et fait avancer le récit, l'imparfait la décrit. Système classique du récit réaliste de Zola." },
+                { type: "line", text: "« se hâtait » est à l'imparfait de l'indicatif, valeur descriptive : il présente une action en cours à l'arrière-plan." },
+                { type: "note", text: "Opposition : le passé simple ouvre la scène et fait avancer le récit ; l'imparfait décrit l'action en cours à l'arrière-plan." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 10 · Extrait littéraire : Colette",
+              title: "Exercice 10 · Plusieurs imparfaits dans une même scène",
               enonce:
-                "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »\n*(Colette, La Maison de Claudine, 1922)*",
+                "« Ce soir-là, ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »",
               question: "Rédigez la réponse jury pour « vieillissait », « regardait », « souriait », « disait », et commentez l'emploi exclusif de l'imparfait.",
               correction: [
                 {
@@ -715,31 +714,31 @@ export const ficheTempsDuPasse: Fiche = {
                     ["vieillissait", "Imparfait, valeur descriptive (propriété permanente dans le passé)"],
                     ["regardait", "Imparfait, valeur descriptive (action en cours, décor affectif)"],
                     ["souriait", "Imparfait, valeur descriptive (état en cours, portrait)"],
-                    ["disait", "Imparfait, valeur d'habitude (elle ne disait jamais rien)"],
+                    ["disait", "Imparfait, valeur descriptive (comportement pendant cette scène)"],
                   ],
                 },
-                { type: "note", text: "Imparfait exclusif, aucun passé simple : Colette suspend le temps dans un souvenir figé. Le choix de l'imparfait traduit la contemplation nostalgique." },
+                { type: "note", text: "Les imparfaits présentent les propriétés, actions et comportements sans en montrer les limites. Le repère « ce soir-là » inscrit l'ensemble dans une scène précise." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 11 · Extrait littéraire : Guy de Maupassant",
+              title: "Exercice 11 · État et habitude",
               enonce:
-                "« Il aimait les promenades solitaires dans les bois, et les soirs d'automne, quand il rentrait seul, il sentait le vide de sa vie s'étendre autour de lui. »\n*(Guy de Maupassant, Bel-Ami, 1885)*",
+                "« Il aimait les promenades solitaires dans les bois et, chaque soir d'automne, quand il rentrait seul, il sentait le vide de sa vie s'étendre autour de lui. »",
               question: "Rédigez la réponse jury pour « aimait », « rentrait », « sentait », et commentez l'effet de l'imparfait exclusif.",
               correction: [
                 {
                   type: "table",
                   headers: ["Verbe", "Temps · valeur"],
                   rows: [
-                    ["aimait", "Imparfait, valeur d'habitude (goût régulier)"],
+                    ["aimait", "Imparfait, valeur descriptive (goût ou état durable)"],
                     ["rentrait", "Imparfait, valeur d'habitude (action répétée)"],
-                    ["sentait", "Imparfait, valeur descriptive (perception intérieure continue)"],
+                    ["sentait", "Imparfait, valeur d'habitude (perception répétée à chaque retour)"],
                   ],
                 },
-                { type: "note", text: "Imparfait exclusif : Maupassant traduit le vide intérieur de Bel-Ami. Rien ne se passe, tout se répète : l'absence d'événement (donc de passé simple) est elle-même signifiante." },
+                { type: "note", text: "Le contexte distingue les valeurs : « aimait » décrit un état durable ; « chaque soir » donne à « rentrait » et « sentait » une valeur d'habitude. L'emploi exclusif de l'imparfait présente ici un état et des faits répétés, sans événement ponctuel de premier plan." },
               ],
             },
             {
@@ -748,20 +747,20 @@ export const ficheTempsDuPasse: Fiche = {
               level: "n3",
               title: "Exercice 12 · Extrait littéraire : Marguerite Yourcenar",
               enonce:
-                "« J'ai vu se rouvrir les portes qui me séparaient du monde, je suis monté sur la terrasse, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
+                "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
               question: "Rédigez la réponse jury pour « ai vu », « séparaient », « suis monté », « étaient », et commentez le système des temps.",
               correction: [
                 {
                   type: "table",
                   headers: ["Verbe", "Temps · valeur"],
                   rows: [
-                    ["ai vu", "Passé composé, valeur de lien avec le présent (souvenir vivant)"],
+                    ["ai vu", "Passé composé, temps du récit (événement de premier plan)"],
                     ["séparaient", "Imparfait, valeur descriptive (état passé durable)"],
-                    ["suis monté", "Passé composé, valeur de substitut du passé simple (récit à la 1re personne)"],
+                    ["suis monté", "Passé composé, temps du récit (événement de premier plan)"],
                     ["étaient", "Imparfait, valeur descriptive (constat, nuance de déception)"],
                   ],
                 },
-                { type: "note", text: "Les passés composés portent les actions mémorables, les imparfaits les états. Le passé composé ancre le souvenir dans le présent du narrateur : récit intime, pas narration distancée." },
+                { type: "note", text: "Les passés composés portent les événements successifs du récit ; les imparfaits décrivent des états ou propriétés à l'arrière-plan." },
               ],
             },
           ],
@@ -775,31 +774,31 @@ export const ficheTempsDuPasse: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format de la question sur le verbe de la Partie 1 : extrait littéraire, valeur du temps, réponse jury rédigée. Les exercices calqués sur des sujets récents portent le badge ✦.",
+              text: "Ces exercices reprennent les formulations du concours pour analyser l'emploi des temps. Lorsqu'un extrait vient d'un sujet récent mais que la question a été adaptée à cette notion, le badge le précise.",
             },
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 1 : Émile Zola, Germinal",
+              title: "Exercice 1 : Premier plan et arrière-plan",
               enonce:
-                "« Une femme <u>passa</u>, tenant par la main un petit garçon. Elle <u>se hâtait</u>, les yeux baissés. »\n*(Émile Zola, Germinal, 1885)*",
+                "« Une femme <u>passa</u>, tenant par la main un petit garçon. Elle <u>se hâtait</u>, les yeux baissés. »",
               question: "Rédigez la réponse jury pour « passa » et « se hâtait ».",
               correction: [
                 { type: "line", text: "« passa » est au passé simple de l'indicatif, valeur d'action délimitée : il exprime un événement ponctuel qui ouvre la scène." },
-                { type: "line", text: "« se hâtait » est à l'imparfait de l'indicatif, valeur descriptive : il exprime l'état en cours de la femme, formant le décor en opposition au passé simple." },
+                { type: "line", text: "« se hâtait » est à l'imparfait de l'indicatif, valeur descriptive : il présente une action en cours à l'arrière-plan, en opposition au passé simple." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "crpe",
-              title: "Exercice 2 : Colette, La Maison de Claudine",
+              title: "Exercice 2 : Deux imparfaits dans une même scène",
               enonce:
-                "« Elle <u>souriait</u>, muette, heureuse, et ne <u>disait</u> rien. »\n*(Colette, La Maison de Claudine, 1922)*",
+                "« Pendant le repas, elle <u>souriait</u>, muette, heureuse, et ne <u>disait</u> rien. »",
               question: "Rédigez la réponse jury pour « souriait » et « disait ». Ont-ils la même valeur ?",
               correction: [
                 { type: "line", text: "« souriait » est à l'imparfait de l'indicatif, valeur descriptive : il exprime l'état en cours de la mère, formant son portrait." },
-                { type: "line", text: "« disait » est à l'imparfait de l'indicatif, valeur d'habitude : il exprime un comportement récurrent (elle ne disait jamais rien)." },
-                { type: "note", text: "Même temps, valeurs différentes : c'est le contexte, pas le temps, qui tranche." },
+                { type: "line", text: "« disait » est à l'imparfait de l'indicatif, valeur descriptive : il exprime son comportement pendant le repas." },
+                { type: "note", text: "Les deux imparfaits ont ici la même valeur descriptive, déterminée par le cadre temporel « pendant le repas »." },
               ],
             },
             {
@@ -816,30 +815,16 @@ export const ficheTempsDuPasse: Fiche = {
             {
               type: "exerciceCard",
               variant: "annale",
-              badge: "✦ Format concours récent",
+              badge: "Entraînement adapté d'un sujet récent",
               title: "Exercice 4 : Marguerite Yourcenar, Comment Wang-Fô fut sauvé",
               enonce:
-                "« J'<u>ai vu</u> se rouvrir les portes qui me <u>séparaient</u> du monde ; je <u>suis monté</u> sur la terrasse. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
-              question: "Format identique au concours · Rédigez la réponse jury pour « ai vu », « séparaient » et « suis monté », et commentez le système des temps.",
+                "« À seize ans, j'<u>ai vu</u> se rouvrir les portes qui me <u>séparaient</u> du monde : je <u>suis monté</u> sur la terrasse du palais pour regarder les nuages. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
+              question: "Rédigez la réponse attendue pour « ai vu », « séparaient » et « suis monté », puis commentez le système des temps.",
               correction: [
-                { type: "line", text: "« ai vu » est au passé composé de l'indicatif, valeur de lien avec le présent : le souvenir reste vivant dans la mémoire du narrateur." },
+                { type: "line", text: "« ai vu » est au passé composé de l'indicatif ; il porte un événement de premier plan dans ce récit à la première personne." },
                 { type: "line", text: "« séparaient » est à l'imparfait de l'indicatif, valeur descriptive : il exprime un état passé durable." },
-                { type: "line", text: "« suis monté » est au passé composé de l'indicatif, valeur de substitut du passé simple : récit intime à la 1re personne." },
-                { type: "note", text: "Le passé composé ancre le souvenir dans le présent du narrateur ; l'imparfait porte les états. Récit intime, pas narration distancée." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format concours récent",
-              title: "Exercice 5 : Lola Lafon, Quand tu écouteras cette chanson",
-              enonce:
-                "« On <u>écrit</u> parce qu'on ne sait par quel autre biais attraper le réel. Vivre, sans l'écriture, me <u>va</u> mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Format identique au concours · Rédigez la réponse jury pour « écrit » et « va ».",
-              correction: [
-                { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : il exprime une affirmation universelle sur la condition de l'écrivain." },
-                { type: "line", text: "« va » est au présent de l'indicatif, valeur d'état actuel : il exprime le ressenti de l'auteure au moment où elle écrit." },
-                { type: "note", text: "💡 Les valeurs du présent sont approfondies dans la notion 8." },
+                { type: "line", text: "« suis monté » est au passé composé de l'indicatif ; il porte le second événement de premier plan." },
+                { type: "note", text: "Les passés composés font progresser le récit ; l'imparfait décrit un état durable à l'arrière-plan." },
               ],
             },
           ],
@@ -859,13 +844,13 @@ export const ficheTempsDuPasse: Fiche = {
               type: "exerciceCard",
               variant: "err-type",
               title: "Exercice 1 · Réponse à corriger : « regardait »",
-              enonce: "Réponse d'un candidat : « **regardait** : imparfait de l'indicatif, valeur : passé », pour *« Ma mère regardait les enfants jouer. »*",
-              question: "Pourquoi cette réponse est-elle insuffisante ? Rédigez la réponse attendue.",
+              enonce: "Réponse d'un candidat : « **regardait** : imparfait de l'indicatif, valeur d'habitude », pour *« Ce soir-là, ma mère regardait les enfants jouer. »*",
+              question: "Pourquoi cette réponse est-elle incorrecte ? Rédigez la réponse attendue.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "« passé » est la valeur commune à tous les temps du passé : elle ne dit rien", bad: true },
+                    { text: "« ce soir-là » situe une scène unique : la valeur d'habitude n'est pas justifiée", bad: true },
                     { text: "Réponse attendue : valeur descriptive, action en cours dans le passé qui forme le décor affectif de la scène" },
                   ],
                 },
@@ -875,13 +860,13 @@ export const ficheTempsDuPasse: Fiche = {
               type: "exerciceCard",
               variant: "err-type",
               title: "Exercice 2 · Réponse à corriger : « se hâtait »",
-              enonce: "Réponse d'un candidat : « **se hâtait** : imparfait d'habitude », pour *« Elle se hâtait, les yeux baissés. »*",
+              enonce: "Réponse d'un candidat : « **se hâtait** : imparfait d'habitude », pour *« Ce soir-là, elle se hâtait, les yeux baissés. »*",
               question: "Identifiez l'erreur et rédigez la réponse attendue.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "Test « chaque jour » : « elle se hâtait chaque jour » est forcé dans ce contexte → pas une habitude", bad: true },
+                    { text: "Le repère « ce soir-là » inscrit l'action dans une scène unique : ce n'est pas une habitude", bad: true },
                     { text: "Réponse attendue : imparfait, valeur descriptive (état en cours dans la scène décrite)" },
                   ],
                 },
@@ -928,9 +913,9 @@ export const ficheTempsDuPasse: Fiche = {
               type: "flashcardDeck",
               cards: [
                 {
-                  question: "Quelles sont les 5 valeurs de l'imparfait ?",
+                  question: "Quels sont les principaux emplois de l'imparfait ?",
                   answer:
-                    "1. **Description** (état, action en cours, décor).\n2. **Habitude** (action répétée).\n3. **Action en cours interrompue** (+ passé simple).\n4. **Politesse** (atténuation d'une demande).\n5. **Condition** (si + imparfait, principale au conditionnel présent).",
+                    "1. **Description** (état, action en cours, décor).\n2. **Habitude** (action répétée).\n3. **Action en cours interrompue** (+ passé simple).\n4. **Politesse** (atténuation d'une demande).\n5. **Hypothèse** (si + imparfait, principale généralement au conditionnel présent).",
                 },
                 {
                   question: "Quelles sont les 3 valeurs du passé simple ?",
@@ -951,7 +936,7 @@ export const ficheTempsDuPasse: Fiche = {
                 {
                   question: "Comment distinguer description et habitude à l'imparfait ?",
                   answer:
-                    "Test « chaque jour / toujours ».\nNaturel → habitude (« il rentrait seul chaque soir »).\nForcé → description (« elle se hâtait » dans une scène unique).",
+                    "On lit le contexte. Un cadre précis (« ce soir-là », « pendant le repas ») oriente vers la description ; un marqueur de répétition (« chaque soir », « souvent ») indique l'habitude.",
                   astuce: "⚠️ Même temps, valeurs différentes : le contexte seul décide.",
                 },
                 {
@@ -963,13 +948,13 @@ export const ficheTempsDuPasse: Fiche = {
                   question: "Formule jury pour un imparfait de description ?",
                   answer:
                     "« [verbe] est à l'imparfait de l'indicatif, valeur descriptive : il exprime [état / action en cours] dans le passé qui [rôle : décor, portrait, cadre…]. »",
-                  astuce: "💡 Jamais « valeur : passé ».",
+                  astuce: "💡 Citez toujours l'indice du contexte qui justifie la valeur.",
                 },
                 {
-                  question: "Pourquoi un récit à la 1re personne emploie-t-il souvent le passé composé ?",
+                  question: "Quel rôle le passé composé peut-il jouer dans un récit ?",
                   answer:
-                    "Le passé composé crée un lien entre le souvenir et le présent du narrateur : les événements restent vivants dans sa mémoire. Le passé simple donnerait une narration plus froide et distancée.",
-                  astuce: "💡 Exemple : « j'ai vu… je suis monté… » (récit intime).",
+                    "Il peut porter les événements de premier plan et les enchaîner, notamment dans un récit oral ou à la première personne.",
+                  astuce: "💡 Exemple : « Je suis entré, j'ai posé mon sac et je me suis assis. »",
                 },
               ],
             },
@@ -985,8 +970,8 @@ export const ficheTempsDuPasse: Fiche = {
               center: { title: "Les temps du passé", subtitle: "Nommer la valeur" },
               branches: [
                 {
-                  title: "Imparfait (5 valeurs)",
-                  lines: ["Description · habitude", "Action en cours interrompue", "Politesse · condition"],
+                  title: "Emplois de l'imparfait",
+                  lines: ["Description · habitude", "Action en cours interrompue", "Politesse · hypothèse"],
                   variant: "blue",
                 },
                 {
@@ -1003,11 +988,6 @@ export const ficheTempsDuPasse: Fiche = {
                   title: "Système du récit",
                   lines: ["Imparfait = arrière-plan (décor)", "Passé simple = premier plan (événement)"],
                   variant: "green",
-                },
-                {
-                  title: "Réflexes",
-                  lines: ["Jamais « valeur : passé »", "Test « chaque jour »", "Commenter l'opposition des temps"],
-                  variant: "yellow",
                 },
                 {
                   title: "Renvoi",
