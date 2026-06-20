@@ -6,7 +6,7 @@ const OBJECTIFS = [
   { id: "ac2", label: "Je distingue l'adjectif épithète (accord avec le nom) de l'adjectif attribut du sujet (accord avec le groupe sujet via un verbe d'état)" },
   { id: "ac3", label: "Je connais l'accord avec plusieurs noms coordonnés : le masculin l'emporte, le féminin pluriel si tous les noms sont féminins" },
   { id: "ac4", label: "Je connais les cas difficiles du GN : adjectifs de couleur (simple, composée, nom employé comme couleur) et mi-, demi-, nu-, grand-" },
-  { id: "ac5", label: "Je sais identifier le groupe sujet par le test « c'est… qui » et accorder le verbe en personne et en nombre, même avec un sujet inversé ou éloigné" },
+  { id: "ac5", label: "Je sais identifier le groupe sujet par le test « c'est / ce sont… qui » et accorder le verbe en personne et en nombre, même avec un sujet inversé ou éloigné" },
   { id: "ac6", label: "Je connais les accords des sujets collectifs (la plupart, beaucoup de, un grand nombre de…) et coordonnés (et, ou, ni)" },
   { id: "ac7", label: "Je sais déjouer l'attraction (le verbe accordé avec le nom le plus proche au lieu du vrai sujet)" },
 ];
@@ -25,7 +25,7 @@ export const ficheAccordsGnGv: Fiche = {
   ],
   metaTitle: "Les accords dans le GN et le GV (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les accords : le nom noyau donneur d'accord, l'adjectif épithète et attribut, l'accord avec plusieurs noms, les adjectifs de couleur, l'accord sujet-verbe (test « c'est… qui »), les sujets collectifs et coordonnés, l'attraction. Chaîne d'accord, méthode de relecture, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE complète sur les accords : le nom noyau donneur d'accord, l'adjectif épithète et attribut, l'accord avec plusieurs noms, les adjectifs de couleur, l'accord sujet-verbe (test « c'est / ce sont… qui »), les sujets collectifs et coordonnés, l'attraction. Chaîne d'accord, méthode de relecture, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -54,7 +54,7 @@ export const ficheAccordsGnGv: Fiche = {
                 {
                   number: "③",
                   title: "L'accord sujet-verbe",
-                  text: "Identifier le groupe sujet par le test « c'est… qui », même inversé ou éloigné ; sujets collectifs et coordonnés.",
+                  text: "Identifier le groupe sujet par le test « c'est / ce sont… qui », même inversé ou éloigné ; sujets collectifs et coordonnés.",
                 },
                 {
                   number: "④",
@@ -75,7 +75,7 @@ export const ficheAccordsGnGv: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "L'accord est un mécanisme par lequel un mot (le **receveur**) reçoit le genre et le nombre d'un autre (le **donneur**). Dans le GN, le donneur est le nom noyau ; dans le GV, c'est le groupe sujet. Ces accords sont une source d'erreurs très fréquente dans les copies, y compris à la Partie 3. L'accord du participe passé (avec être, avec avoir, pronominaux) fait l'objet d'une notion à part : la notion 11.",
+              text: "L'accord est un mécanisme par lequel un mot (le **receveur**) reçoit le genre et le nombre d'un autre (le **donneur**). Dans le GN, le donneur est le nom noyau ; dans le GV, c'est le groupe sujet. Ces accords sont une source d'erreurs très fréquente dans les copies, y compris dans la Partie 3. L'accord du participe passé (avec être, avec avoir, pronominaux) fait l'objet d'une notion à part : la notion 11.",
             },
             {
               type: "subsection",
@@ -113,8 +113,8 @@ export const ficheAccordsGnGv: Fiche = {
                   type: "callout",
                   variant: "warning",
                   icon: "⚠️",
-                  title: "« avoir l'air »",
-                  text: "« Elle a l'air **heureuse** » : « avoir l'air » fonctionne comme « sembler » (attribut, accord avec le sujet). « Elle a l'air **fâché** » est aussi possible si l'on accorde avec « air » (épithète de « air », masculin singulier). Les deux analyses circulent ; l'accord avec le sujet est le plus courant.",
+                  title: "Comment accorder après « avoir l'air » ?",
+                  text: "Tout dépend du sens. Si « avoir l'air » signifie **sembler**, l'adjectif est attribut du sujet et s'accorde avec lui : « Elle a l'air **heureuse** » signifie « Elle semble heureuse ». Si « air » signifie **mine, allure**, l'adjectif qualifie le nom masculin « air » et s'accorde avec lui : « Elle a l'air **sérieux** » signifie « Elle a un air sérieux ». Dans la plupart des emplois, « avoir l'air » signifie « sembler » : on accorde alors avec le sujet.",
                 },
               ],
             },
@@ -134,7 +134,7 @@ export const ficheAccordsGnGv: Fiche = {
                   rows: [
                     ["Noms masculin + féminin", "Masculin pluriel (le masculin l'emporte)", "« un livre et une revue illustrés »"],
                     ["Noms tous masculins", "Masculin pluriel", "« un stylo et un crayon noirs »"],
-                    ["Noms tous féminins", "Féminin pluriel", "« une robe et une veste rouges »"],
+                    ["Noms tous féminins", "Féminin pluriel", "« une robe et une veste neuves »"],
                     ["Dernier nom seul qualifié", "Accord avec le dernier nom", "« avec soin et minutie particulière »"],
                   ],
                 },
@@ -145,7 +145,7 @@ export const ficheAccordsGnGv: Fiche = {
                   rows: [
                     ["Couleur simple", "S'accorde", "« des robes rouges », « des yeux bleus »"],
                     ["Couleur composée", "Invariable", "« des yeux bleu-vert », « des robes bleu marine »"],
-                    ["Nom employé comme couleur", "Invariable", "« des pulls marron », « des chaussures crème », « des vestes kaki »"],
+                    ["Nom employé comme couleur", "Certains noms servent aussi à désigner une couleur : un marron → marron ; une orange → orange ; la crème → crème. Lorsqu'ils indiquent une couleur, ils ne s'accordent pas.", "« des pulls marron », « des chaussures crème », « des robes orange »"],
                     ["mi-, demi-, semi- (devant le nom)", "Invariables", "« une demi-heure », « à mi-chemin »"],
                     ["nu-, grand- (avant le nom)", "Invariables", "« nu-pieds », « grand-mère » (mais « les grands-parents »)"],
                   ],
@@ -165,7 +165,7 @@ export const ficheAccordsGnGv: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Le verbe conjugué reçoit la **personne** et le **nombre** du **groupe sujet**. L'outil de vérification est le test d'encadrement **« c'est… qui »** : le groupe encadré est le sujet.\n\n« Les enfants jouent » → « C'est les enfants qui jouent » → groupe sujet « les enfants » (3e personne du pluriel) → « jouent ».",
+                  text: "Le verbe conjugué reçoit la **personne** et le **nombre** du **groupe sujet**. L'outil de vérification est le test d'encadrement **« c'est / ce sont… qui »** : le groupe encadré est le sujet.\n\n« Les enfants jouent » → « Ce sont les enfants qui jouent » → groupe sujet « les enfants » (3e personne du pluriel) → « jouent ».",
                 },
                 {
                   type: "table",
@@ -176,9 +176,9 @@ export const ficheAccordsGnGv: Fiche = {
                     ["Noms unis par « ou » / « ni »", "Pluriel le plus souvent (singulier si exclusion totale)", "« Ni lui ni elle ne sont venus. »"],
                     ["La plupart (de + nom pluriel)", "Toujours pluriel", "« La plupart des élèves ont réussi. »"],
                     ["Beaucoup de, peu de, trop de + nom", "Accord avec le nom complément", "« Beaucoup d'enfants jouent. »"],
-                    ["Un grand nombre de", "Pluriel (idée de pluralité)", "« Un grand nombre de candidats ont échoué. »"],
-                    ["Le nombre de", "Singulier (une quantité)", "« Le nombre de candidats a augmenté. »"],
-                    ["Un des… qui", "Pluriel (le relatif reprend le pluriel)", "« C'est un des livres qui m'ont marqué. »"],
+                    ["Un grand nombre de", "Généralement pluriel : l'expression signifie « beaucoup de » et met l'accent sur les éléments comptés", "« Un grand nombre de candidats ont échoué. »"],
+                    ["Le nombre de", "Singulier : on parle du nombre, c'est-à-dire du chiffre ou de la quantité considérée comme un tout", "« Le nombre de candidats a augmenté. »"],
+                    ["Un des… qui", "Généralement pluriel si l'on désigne un élément parmi plusieurs qui accomplissent l'action ; singulier si la relative distingue un élément unique", "« C'est un des livres qui m'ont marqué. » ; « C'est le seul des livres qui m'a marqué. »"],
                   ],
                 },
                 {
@@ -186,7 +186,7 @@ export const ficheAccordsGnGv: Fiche = {
                   title: "Sujets particuliers",
                   headers: ["Sujet", "Accord", "Exemple"],
                   rows: [
-                    ["On", "3e personne du singulier", "« On travaille. » (l'attribut peut se mettre au pluriel : « On est fatigués. »)"],
+                    ["On", "Le verbe est toujours à la 3e personne du singulier. L'adjectif ou le participe reste au masculin singulier si « on » désigne une personne indéterminée ; il peut s'accorder en genre et en nombre si « on » remplace « nous ».", "« On travaille. » ; règle générale : « On est prudent. » ; plusieurs femmes parlant d'elles-mêmes : « On est prêtes. »"],
                     ["Qui (pronom relatif)", "Avec l'antécédent", "« C'est moi qui suis venu. » ; « C'est toi qui es venu. »"],
                     ["Ce qui / Tout ce qui", "3e personne du singulier", "« Tout ce qui brille n'est pas or. »"],
                     ["Titre d'œuvre", "Singulier (l'œuvre)", "« Les Misérables est un roman de Victor Hugo. »"],
@@ -196,7 +196,7 @@ export const ficheAccordsGnGv: Fiche = {
                   type: "callout",
                   variant: "warning",
                   title: "⚠️ Le sujet éloigné ou intercalé",
-                  text: "Quand un complément s'intercale entre le sujet et le verbe, l'accord se fait avec le **vrai sujet**, pas avec le nom le plus proche : « La liste des candidats **est** longue » (sujet « liste », singulier, pas « candidats »). C'est l'erreur d'**attraction** : voir le piège n°1.",
+                  text: "Quand un complément s'intercale dans le groupe sujet, l'accord se fait avec le **nom noyau**, pas avec le nom le plus proche : dans « La liste des candidats **est** longue », le groupe sujet est « La liste des candidats » et son noyau « liste » est singulier. Accorder avec « candidats » serait une erreur d'**attraction**.",
                 },
               ],
             },
@@ -214,7 +214,7 @@ export const ficheAccordsGnGv: Fiche = {
                   title: "Relecture en 3 étapes",
                   lines: [
                     "① Repérer chaque GN → trouver le nom noyau → vérifier genre et nombre de chaque déterminant et adjectif.",
-                    "② Repérer chaque GV → isoler le groupe sujet (test « c'est… qui ») → vérifier personne et nombre du verbe.",
+                    "② Repérer chaque GV → isoler le groupe sujet (test « c'est / ce sont… qui ») → vérifier personne et nombre du verbe.",
                     "③ Traiter les cas particuliers : sujets collectifs, coordonnés, inversés ; adjectifs de couleur.",
                   ],
                   note: "Compter 3 à 5 minutes de relecture ciblée sur les accords en fin d'épreuve.",
@@ -226,9 +226,9 @@ export const ficheAccordsGnGv: Fiche = {
               variant: "rouge",
               title: "Piège n°1 · L'attraction (accord par proximité)",
               badge: "Très fréquent",
-              faux: "« La liste des candidats montrent sa rigueur. »",
-              vrai: "Le verbe est accordé avec le nom le plus proche (« candidats ») au lieu du vrai sujet (« liste », singulier) : « La liste des candidats **montre** ».",
-              methode: "Toujours isoler le groupe sujet par le test « c'est… qui » avant d'accorder le verbe : « C'est la liste qui montre ».",
+              faux: "« La liste des candidats **contiennent** plusieurs erreurs. » Le verbe a été accordé avec le nom pluriel le plus proche, « candidats ».",
+              vrai: "Le groupe sujet est « la liste des candidats ». Son nom noyau est « liste », au singulier : le verbe doit donc être au singulier. On écrit : « La liste des candidats **contient** plusieurs erreurs. »",
+              methode: "Repérer le groupe sujet, puis retirer mentalement son complément : « La liste contient plusieurs erreurs. » L'accord devient évident.",
             },
             {
               type: "piegeCard",
@@ -251,11 +251,11 @@ export const ficheAccordsGnGv: Fiche = {
             {
               type: "piegeCard",
               variant: "bleu",
-              title: "Piège n°4 · « la plupart » et « on »",
+              title: "Piège n°4 · L'accord avec « la plupart »",
               badge: "À mémoriser",
-              faux: "« La plupart des élèves a réussi. » ; « On sont fatigués. »",
-              vrai: "« La plupart » + nom pluriel → **pluriel** (« ont réussi »). « On » commande toujours un verbe à la **3e personne du singulier** (« On travaille »).",
-              methode: "« la plupart des + pluriel » → verbe pluriel. « On » → verbe singulier (mais l'attribut peut se mettre au pluriel : « on est fatigués »).",
+              faux: "« La plupart des élèves **a réussi**. » Le verbe a été mis au singulier à cause du nom « plupart ».",
+              vrai: "Avec « la plupart de » suivi d'un nom pluriel, le verbe se met au **pluriel** : « La plupart des élèves **ont réussi**. »",
+              methode: "Repérer le nom placé après « la plupart de » : s'il est au pluriel, le verbe est au pluriel.",
             },
             {
               type: "primaireBox",
@@ -276,28 +276,15 @@ export const ficheAccordsGnGv: Fiche = {
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              title: "Deux démarches",
-              text: "Vérifier l'accord dans le GN, puis l'accord sujet-verbe. Chacune s'appuie sur le repérage du donneur d'accord et se termine par un checkpoint.",
-            },
-            {
               type: "rappelExpress",
-              title: "Rappel express : donneur et receveur",
+              title: "Deux réflexes",
               blocks: [
                 {
                   type: "formulaBlock",
                   lines: [
-                    "GN : donneur = nom noyau · receveurs = déterminant, adjectifs (épithète, attribut)",
-                    "GV : donneur = groupe sujet · receveur = verbe conjugué",
-                    "Test du groupe sujet : « c'est… qui » (le groupe encadré est le sujet)",
+                    "Pour accorder un adjectif : chercher le nom qu'il qualifie.",
+                    "Pour accorder un verbe : chercher son groupe sujet.",
                   ],
-                },
-                {
-                  type: "callout",
-                  variant: "warning",
-                  text: "⚠️ Toujours identifier le vrai donneur avant d'accorder : un complément intercalé n'est jamais le sujet (attraction).",
                 },
               ],
             },
@@ -306,22 +293,21 @@ export const ficheAccordsGnGv: Fiche = {
               number: "①",
               title: "Vérifier l'accord dans le GN",
               intro:
-                "**Question typique :** « Justifiez l'accord de l'adjectif souligné. »\nOn part du nom noyau.",
+                "**Question typique :** Dans le GN « de <u>longues</u> heures <u>silencieuses</u> », justifiez l'accord des adjectifs soulignés.",
               steps: [
                 {
                   number: "1",
-                  text: "**Repérer le nom noyau** du GN et relever son genre et son nombre.",
-                  example: { lines: ["« de longues heures silencieuses » → noyau « heures » (féminin pluriel)"] },
+                  text: "**À quel nom les adjectifs se rapportent-ils ?**",
+                  example: { lines: ["« longues » et « silencieuses » qualifient le nom « heures »."] },
                 },
                 {
                   number: "2",
-                  text: "**Vérifier chaque receveur** (déterminant, adjectifs) : porte-t-il les mêmes marques que le noyau ?",
-                  example: { lines: ["« longues » et « silencieuses » : féminin pluriel, accord correct"] },
+                  text: "**Quel est le genre et le nombre de ce nom ?** Reporter ces marques sur les adjectifs.",
+                  example: { lines: ["« heures » est féminin pluriel → « longues », « silencieuses »."] },
                 },
                 {
                   number: "💡",
-                  text: "**Traiter les cas particuliers** : couleur (nom employé comme couleur = invariable), plusieurs noms coordonnés (masculin l'emporte), attribut (accord avec le sujet via un verbe d'état).",
-                  warn: "⚠️ Un adjectif placé après un complément du nom s'accorde avec le noyau, pas avec le complément.",
+                  text: "**Réponse attendue :** Les adjectifs « longues » et « silencieuses » se rapportent au nom « heures », féminin pluriel. Ils s'accordent donc avec ce nom au féminin pluriel.",
                 },
               ],
             },
@@ -330,10 +316,9 @@ export const ficheAccordsGnGv: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "Justifiez l'accord (ou non) dans « des pulls marron ».",
+              question: "Justifiez l'accord de l'adjectif dans « un manteau et une veste <u>neufs</u> ».",
               correction: [
-                { type: "line", text: "« marron » est un nom employé comme adjectif de couleur : il est invariable. On n'écrit pas « marrons », malgré le nom noyau « pulls » au pluriel." },
-                { type: "note", text: "Trouvé du premier coup ? Vous tenez la règle. Sinon, revoyez les cas difficiles du GN." },
+                { type: "line", text: "**Réponse attendue :** L'adjectif qualificatif « neufs » se rapporte aux deux noms coordonnés « manteau », masculin singulier, et « veste », féminin singulier. Comme il qualifie plusieurs éléments, il se met au pluriel. Les noms étant de genres différents, l'accord se fait au masculin pluriel : « neufs »." },
               ],
             },
             {
@@ -341,22 +326,21 @@ export const ficheAccordsGnGv: Fiche = {
               number: "②",
               title: "Vérifier l'accord sujet-verbe",
               intro:
-                "**Question typique :** « Justifiez l'accord du verbe souligné. »\nOn isole le groupe sujet avant tout.",
+                "**Question typique :** Dans « <u>Arrivent</u> alors les rescapés », justifiez l'accord du verbe souligné.",
               steps: [
                 {
                   number: "1",
-                  text: "**Isoler le groupe sujet** par le test « c'est… qui », même si le sujet est inversé ou éloigné.",
-                  example: { lines: ["« Arrivent alors les rescapés » → « C'est les rescapés qui arrivent » → sujet « les rescapés »"] },
+                  text: "**Quel groupe commande le verbe ?** Poser la question « qui est-ce qui ? » ou utiliser « c'est / ce sont… qui ».",
+                  example: { lines: ["Qui est-ce qui arrive ? → « les rescapés »."] },
                 },
                 {
                   number: "2",
-                  text: "**Donner la personne et le nombre du sujet**, puis vérifier la terminaison du verbe.",
-                  example: { lines: ["« les rescapés » → 3e personne du pluriel → « arrivent »"] },
+                  text: "**Par quel pronom peut-on remplacer ce groupe sujet ?** Conjuguer le verbe avec ce pronom.",
+                  example: { lines: ["« les rescapés » → « ils » → « ils arrivent »."] },
                 },
                 {
                   number: "💡",
-                  text: "**Traiter les sujets particuliers** : collectifs (la plupart → pluriel), coordonnés (et → pluriel), « on » (3e singulier), « qui » (accord avec l'antécédent).",
-                  warn: "⚠️ Ne jamais accorder avec un complément intercalé (« la liste des candidats est… »).",
+                  text: "**Réponse attendue :** Le groupe sujet de « arrivent » est « les rescapés », placé après le verbe. Il peut être remplacé par « ils », pronom de la troisième personne du pluriel. Le verbe « arriver » est donc conjugué au présent de l'indicatif à la troisième personne du pluriel : « arrivent ».",
                 },
               ],
             },
@@ -365,10 +349,9 @@ export const ficheAccordsGnGv: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "« La liste des candidats admis (être) longue. » Quelle forme du verbe ?",
+              question: "Conjuguez le verbe et justifiez son accord : « Au fond du jardin (pousser) de grands arbres. »",
               correction: [
-                { type: "line", text: "Sujet = « la liste » (singulier) ; « des candidats admis » est un complément intercalé. Verbe : « est ». Test : « C'est la liste qui est longue »." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "line", text: "**Réponse attendue :** On écrit « Au fond du jardin **poussent** de grands arbres ». Le groupe sujet « de grands arbres » est placé après le verbe et correspond à la troisième personne du pluriel. « Au fond du jardin » est un complément circonstanciel de lieu : le nom singulier « jardin » ne commande pas l'accord du verbe." },
               ],
             },
             {
@@ -428,10 +411,10 @@ export const ficheAccordsGnGv: Fiche = {
                 {
                   objectifId: "ac5",
                   question: "Quel test permet d'identifier le groupe sujet ?",
-                  options: ["Le test « nous »", "Le test d'encadrement « c'est… qui »", "Le test du passif", "Le test « d'habitude »"],
+                  options: ["Le test « nous »", "Le test d'encadrement « c'est / ce sont… qui »", "Le test du passif", "Le test « d'habitude »"],
                   correctIndex: 1,
                   explanation:
-                    "« C'est [groupe] qui [verbe] » isole le groupe sujet, même quand il est inversé ou éloigné.",
+                    "L'encadrement par « c'est / ce sont… qui » isole le groupe sujet, même quand il est inversé ou éloigné.",
                 },
                 {
                   objectifId: "ac6",
@@ -447,7 +430,7 @@ export const ficheAccordsGnGv: Fiche = {
                   options: ["candidats (pluriel)", "liste (singulier)", "le mot le plus proche", "des (pluriel)"],
                   correctIndex: 1,
                   explanation:
-                    "Le sujet est « la liste » (singulier) ; « des candidats » est un complément intercalé. Accorder avec « candidats » serait une erreur d'attraction.",
+                    "Le groupe sujet est « La liste des candidats ». Son nom noyau « liste » est au singulier : le verbe reste au singulier. Accorder avec « candidats » serait une erreur d'attraction.",
                 },
                 {
                   objectifId: "ac2",
@@ -518,10 +501,10 @@ export const ficheAccordsGnGv: Fiche = {
                 "Identifiez le groupe sujet et justifiez l'accord du verbe :\na) « Les enfants de la classe <u>jouent</u> dans la cour. »   b) « La liste des candidats admis <u>est</u> longue. »   c) « C'est moi qui <u>suis</u> arrivé le premier. »   d) « On <u>travaille</u> toute la journée. »   e) « Arrivent alors les trois voyageurs. »",
               correction: [
                 { type: "line", label: "a)", text: "Sujet « les enfants de la classe » (noyau « enfants », 3e pluriel) → « jouent »." },
-                { type: "line", label: "b)", text: "Sujet « la liste » (singulier) ; « des candidats admis » est intercalé → « est » (pas d'attraction)." },
+                { type: "line", label: "b)", text: "Groupe sujet « La liste des candidats admis », dont le nom noyau « liste » est singulier → « est » (pas d'attraction)." },
                 { type: "line", label: "c)", text: "« qui » a pour antécédent « moi » (1re singulier) → « suis »." },
                 { type: "line", label: "d)", text: "« On » → 3e personne du singulier → « travaille »." },
-                { type: "line", label: "e)", text: "Sujet inversé : « C'est les trois voyageurs qui arrivent » → 3e pluriel → « arrivent »." },
+                { type: "line", label: "e)", text: "Sujet inversé : « Ce sont les trois voyageurs qui arrivent » → 3e personne du pluriel → « arrivent »." },
               ],
             },
             {
@@ -534,7 +517,7 @@ export const ficheAccordsGnGv: Fiche = {
               correction: [
                 { type: "line", label: "a)", text: "**Faux** : « la plupart » + nom pluriel appelle toujours le pluriel (« ont réussi »)." },
                 { type: "line", label: "b)", text: "**Vrai** : noms de genres différents coordonnés par « et » → masculin pluriel." },
-                { type: "line", label: "c)", text: "**Faux** : « On » commande la 3e personne du singulier ; seul l'attribut peut se mettre au pluriel (« on est fatigués »)." },
+                { type: "line", label: "c)", text: "**Faux** : « on » commande toujours un verbe à la 3e personne du singulier. En revanche, un adjectif ou un participe peut s'accorder en genre et en nombre avec les personnes que « on » représente." },
                 { type: "line", label: "d)", text: "**Vrai** : « bleu marine » est une couleur composée, invariable." },
               ],
             },
@@ -551,11 +534,11 @@ export const ficheAccordsGnGv: Fiche = {
               level: "n2",
               title: "Exercice 4 : Choisir et justifier",
               question:
-                "Choisissez la forme correcte et justifiez :\na) « Beaucoup d'enfants (joue / jouent) dans la cour. »   b) « Ni le directeur ni les enseignants ne (sont / est) disponibles. »   c) « C'est un des romans qui (m'a / m'ont) le plus marqué. »   d) « Zoé a l'air (heureuse / heureux). » (elle est heureuse)",
+                "Choisissez la forme correcte et justifiez :\na) « Beaucoup d'enfants (joue / jouent) dans la cour. »   b) « Ni le directeur ni les enseignants ne (sont / est) disponibles. »   c) « Parmi les romans qui (m'a / m'ont) marqué, celui-ci est mon préféré. »   d) « Zoé a l'air (heureuse / heureux). » (elle est heureuse)",
               correction: [
                 { type: "line", label: "a)", text: "**jouent** : « beaucoup de » + nom pluriel → accord avec le nom (pluriel)." },
-                { type: "line", label: "b)", text: "**sont** : « ni… ni… » avec deux sujets concernés → pluriel (et le sujet le plus proche est pluriel)." },
-                { type: "line", label: "c)", text: "**m'ont** : « qui » a pour antécédent « des romans » (pluriel) → pluriel." },
+                { type: "line", label: "b)", text: "**sont** : « ni… ni… » coordonne deux sujets tous deux concernés ; le verbe se met au pluriel." },
+                { type: "line", label: "c)", text: "**m'ont** : « qui » a pour antécédent « les romans », au pluriel." },
                 { type: "line", label: "d)", text: "**heureuse** : « avoir l'air » = « sembler » → attribut accordé avec le sujet « Zoé »." },
               ],
             },
@@ -563,9 +546,9 @@ export const ficheAccordsGnGv: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 5 · Extrait littéraire : Émile Zola",
+              title: "Exercice 5 : Analyse d'une phrase",
               enonce:
-                "« La lumière blanche et crue du plein été, coulant à flots par les larges fenêtres, éclatait en taches lumineuses sur les cases. »\n*(Émile Zola, Au Bonheur des Dames, 1883)*",
+                "« La lumière blanche et crue du plein été, coulant à flots par les larges fenêtres, éclatait en taches lumineuses sur les cases. »",
               question: "Identifiez le groupe sujet du verbe « éclatait » et justifiez l'accord des adjectifs « blanche », « larges » et « lumineuses ».",
               correction: [
                 { type: "line", text: "Groupe sujet : « La lumière blanche et crue du plein été » (noyau « lumière », féminin singulier) → « éclatait » à la 3e personne du singulier." },
@@ -580,11 +563,11 @@ export const ficheAccordsGnGv: Fiche = {
               level: "n2",
               title: "Exercice 6 : Sujets collectifs et coordonnés",
               question:
-                "Choisissez et justifiez :\na) « La plupart des spectateurs (a / ont) applaudi. »   b) « Le nombre de candidats (a / ont) augmenté. »   c) « Un grand nombre de visiteurs (est / sont) venus. »   d) « Lui ou elle (viendra / viendront) demain. » (un seul des deux)",
+                "Choisissez et justifiez. Pour c), indiquez les deux accords possibles :\na) « La plupart des spectateurs (a / ont) applaudi. »   b) « Le nombre de candidats (a / ont) augmenté. »   c) « Un grand nombre de visiteurs (est venu / sont venus). »   d) « Lui ou elle (viendra / viendront) demain. » (un seul des deux)",
               correction: [
                 { type: "line", label: "a)", text: "**ont** : « la plupart des » + pluriel → pluriel." },
                 { type: "line", label: "b)", text: "**a** : « le nombre de » désigne une quantité → singulier." },
-                { type: "line", label: "c)", text: "**sont** : « un grand nombre de » exprime une pluralité → pluriel (le singulier reste défendable)." },
+                { type: "line", label: "c)", text: "**sont venus** met l'accent sur les visiteurs et leur pluralité ; **est venu** reste possible si l'on considère « un grand nombre » comme un ensemble singulier. Le participe passé doit suivre l'accord choisi." },
                 { type: "line", label: "d)", text: "**viendra** : « ou » au sens exclusif (un seul des deux) → singulier." },
               ],
             },
@@ -601,7 +584,7 @@ export const ficheAccordsGnGv: Fiche = {
               level: "n3",
               title: "Exercice 7 : Analyse complète",
               enonce: "« Les premières neiges de l'hiver avaient recouvert la plaine silencieuse. »",
-              question: "Identifiez les donneurs et les receveurs d'accord, et rédigez une justification pour chaque accord.",
+              question: "Identifiez le groupe sujet, puis justifiez l'accord du verbe et des adjectifs « premières » et « silencieuse ».",
               correction: [
                 { type: "line", text: "Groupe sujet « Les premières neiges de l'hiver » (noyau « neiges », féminin pluriel) → « avaient recouvert » à la 3e personne du pluriel." },
                 { type: "line", text: "« premières » : épithète liée de « neiges » (féminin pluriel)." },
@@ -618,7 +601,7 @@ export const ficheAccordsGnGv: Fiche = {
                 "« Soudain, de grandes masses nuageuses et sombres avaient envahi le ciel, chassant les dernières lueurs dorées du couchant. »",
               question: "a) Identifiez le groupe sujet de « avaient envahi » et justifiez l'accord. b) Justifiez l'accord de « dorées ».",
               correction: [
-                { type: "line", label: "a)", text: "Groupe sujet « de grandes masses nuageuses et sombres » (noyau « masses », féminin pluriel) → « avaient envahi » à la 3e personne du pluriel (test : « C'est les masses qui avaient envahi »)." },
+                { type: "line", label: "a)", text: "Groupe sujet « de grandes masses nuageuses et sombres » (noyau « masses », féminin pluriel) → « avaient envahi » à la 3e personne du pluriel (test : « Ce sont les masses qui avaient envahi »)." },
                 { type: "line", label: "b)", text: "« dorées » : épithète liée de « lueurs » (féminin pluriel)." },
                 { type: "note", text: "💡 « chassant » est un participe présent invariable (épithète détachée). « grandes », « nuageuses », « sombres » s'accordent toutes avec « masses »." },
               ],
@@ -634,7 +617,7 @@ export const ficheAccordsGnGv: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format de la question sur les accords de la Partie 1 : extrait, identification des donneurs et receveurs, justification jury. Les exercices calqués sur des sujets récents portent le badge ✦.",
+              text: "Ces exercices entraînent à répondre à une question d'accord : identifier le donneur, repérer le mot qui reçoit l'accord et rédiger une justification précise.",
             },
             {
               type: "exerciceCard",
@@ -664,11 +647,10 @@ export const ficheAccordsGnGv: Fiche = {
             },
             {
               type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format concours récent",
+              variant: "crpe",
               title: "Exercice 3 : justifier un accord d'attribut",
               enonce: "« Les enfants <u>semblaient</u> <u>fatigués</u> après cette longue journée. »",
-              question: "Format identique au concours · Justifiez l'accord de « semblaient » et de « fatigués ».",
+              question: "Justifiez l'accord de « semblaient » et de « fatigués ».",
               correction: [
                 { type: "line", text: "« semblaient » s'accorde avec le groupe sujet « les enfants » (3e personne du pluriel)." },
                 { type: "line", text: "« fatigués » est un adjectif attribut du sujet « enfants » (verbe d'état « semblaient ») : il s'accorde au masculin pluriel avec le groupe sujet." },
@@ -678,11 +660,11 @@ export const ficheAccordsGnGv: Fiche = {
               type: "exerciceCard",
               variant: "crpe",
               title: "Exercice 4 : un grand nombre de",
-              enonce: "« Un grand nombre de visiteurs <u>étaient venus</u> admirer les nouvelles œuvres exposées. »",
-              question: "Justifiez l'accord de « étaient venus », puis ceux de « nouvelles » et « exposées ».",
+              enonce: "« Un grand nombre de visiteurs <u>admirent</u> les œuvres <u>nouvelles</u> et <u>remarquables</u>. »",
+              question: "Justifiez l'accord de « admirent », puis ceux de « nouvelles » et « remarquables ».",
               correction: [
-                { type: "line", text: "« Un grand nombre de visiteurs » exprime une pluralité : l'accord au pluriel (« étaient venus ») s'aligne sur le complément « visiteurs ». L'accord au singulier (avec le noyau collectif « nombre ») reste défendable : il faut justifier son choix." },
-                { type: "line", text: "« nouvelles » : épithète liée de « œuvres » (féminin pluriel) ; « exposées » : participe passé épithète de « œuvres » (féminin pluriel)." },
+                { type: "line", text: "« Un grand nombre de visiteurs » met ici l'accent sur la pluralité des visiteurs : le verbe « admirent » est à la troisième personne du pluriel. L'accord au singulier, « admire », resterait possible si l'on considérait le groupe comme un ensemble unique." },
+                { type: "line", text: "« nouvelles » et « remarquables » sont des adjectifs qualificatifs, épithètes liées du nom « œuvres », féminin pluriel : ils s'accordent au féminin pluriel." },
               ],
             },
           ],
@@ -696,7 +678,7 @@ export const ficheAccordsGnGv: Fiche = {
               type: "callout",
               variant: "warning",
               icon: "",
-              text: "Ces exercices reproduisent des erreurs d'accord fréquentes dans les copies, y compris à la Partie 3. Repérer ce qui cloche dans une copie, c'est aussi ce que vous ferez plus tard avec vos élèves.",
+              text: "Ces exercices reproduisent des erreurs d'accord fréquentes dans les copies, y compris dans la Partie 3. Repérer ce qui cloche dans une copie, c'est aussi ce que vous ferez plus tard avec vos élèves.",
             },
             {
               type: "exerciceCard",
@@ -736,16 +718,16 @@ export const ficheAccordsGnGv: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « La liste des arguments montrent »",
-              enonce: "Copie d'un candidat : « *La liste des arguments présentés par l'auteur montrent sa rigueur* ».",
+              title: "Exercice 3 · Réponse à corriger : « La série d'exemples comportent »",
+              enonce: "Copie d'un candidat : « *La série d'exemples proposés comportent plusieurs incohérences* ».",
               question: "Nommez le phénomène et corrigez.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "Attraction : le verbe est accordé avec le nom le plus proche (« arguments ») au lieu du vrai sujet", bad: true },
-                    { text: "Groupe sujet = « La liste » (féminin singulier) ; le reste est un complément intercalé" },
-                    { text: "Réponse attendue : « La liste des arguments présentés par l'auteur montre sa rigueur » (test : « C'est la liste qui montre »)" },
+                    { text: "Attraction : le verbe est accordé avec le nom pluriel le plus proche, « exemples », au lieu du nom noyau du groupe sujet", bad: true },
+                    { text: "Groupe sujet : « La série d'exemples proposés » ; nom noyau : « série », féminin singulier" },
+                    { text: "Réponse attendue : « La série d'exemples proposés comporte plusieurs incohérences »" },
                   ],
                 },
               ],
@@ -800,7 +782,7 @@ export const ficheAccordsGnGv: Fiche = {
                 {
                   question: "Donneur et receveur d'accord dans le GV ?",
                   answer:
-                    "**Donneur** : le groupe sujet (donne personne et nombre).\n**Receveur** : le verbe conjugué.\nTest d'identification du sujet : « c'est… qui ».",
+                    "**Donneur** : le groupe sujet (donne personne et nombre).\n**Receveur** : le verbe conjugué.\nTest d'identification du sujet : « c'est / ce sont… qui ».",
                   astuce: "💡 Sujet inversé : réinverser mentalement avant d'accorder.",
                 },
                 {
@@ -822,18 +804,13 @@ export const ficheAccordsGnGv: Fiche = {
                 {
                   question: "Accord avec « qui » pronom relatif ?",
                   answer:
-                    "Le verbe de la relative s'accorde avec l'**antécédent** de « qui ».\n« C'est moi qui suis venu » (antécédent « moi », 1re singulier) ; « C'est un des livres qui m'ont marqué » (antécédent « des livres », pluriel).",
+                    "Le verbe de la relative s'accorde avec l'**antécédent** de « qui ».\n« C'est moi qui suis venu » : antécédent « moi », 1re personne du singulier.\nAprès « un des… qui », l'accord dépend du sens : généralement pluriel si plusieurs éléments accomplissent l'action ; singulier si la relative distingue un élément unique.",
                 },
                 {
                   question: "Qu'est-ce que l'attraction (accord par proximité) ?",
                   answer:
-                    "Le verbe est accordé, à tort, avec le nom le plus proche au lieu du vrai sujet.\nErreur : « La liste des candidats montrent ». Correct : « La liste des candidats montre ».",
-                  astuce: "⚠️ Parade : toujours appliquer le test « c'est… qui » avant d'accorder.",
-                },
-                {
-                  question: "Le schéma de relecture des accords en 3 gestes ?",
-                  answer:
-                    "① Souligner chaque nom noyau, vérifier ses adjectifs et son déterminant.\n② Encadrer chaque groupe sujet (« c'est… qui »), vérifier le verbe.\n③ Traiter les cas particuliers (collectifs, coordonnés, inversés, couleurs).",
+                    "Le verbe est accordé, à tort, avec le nom le plus proche au lieu du nom noyau du groupe sujet.\nDans « La liste des candidats montre », le groupe sujet complet est « La liste des candidats » et son noyau est « liste ».",
+                  astuce: "⚠️ Parade : toujours appliquer le test « c'est / ce sont… qui » avant d'accorder.",
                 },
               ],
             },
@@ -860,7 +837,7 @@ export const ficheAccordsGnGv: Fiche = {
                 },
                 {
                   title: "Accord sujet-verbe",
-                  lines: ["Donneur : le groupe sujet", "Test « c'est… qui »", "Sujet inversé ou éloigné"],
+                  lines: ["Donneur : le groupe sujet", "Test « c'est / ce sont… qui »", "Sujet inversé ou éloigné"],
                   variant: "green",
                 },
                 {
