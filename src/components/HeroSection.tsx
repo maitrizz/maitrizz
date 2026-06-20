@@ -82,7 +82,7 @@ function FichePreview() {
 export default function HeroSection() {
   return (
     <section className="bg-seyes overflow-hidden px-5 py-20 md:px-16 lg:py-28">
-      <div className="mx-auto grid max-w-[1280px] items-center gap-16 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-16 lg:grid-cols-2">
         {/* Colonne texte */}
         <div className="text-center lg:text-left">
           <div className="mb-8 inline-flex max-w-full items-center gap-3 whitespace-nowrap rounded-full border border-secondary/20 bg-white/80 px-5 py-2 shadow-sm">

@@ -11,7 +11,7 @@ const perks = [
 export default function PricingSection() {
   return (
     <section className="px-5 py-32 md:px-16">
-      <div className="mx-auto max-w-[1280px] text-center">
+      <div className="mx-auto max-w-[1440px] text-center">
         <h2 className="mb-6 text-balance text-4xl font-bold text-primary">
           Un accès simple et honnête
         </h2>

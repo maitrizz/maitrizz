@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
-      <nav className="flex items-center justify-between h-20 max-w-[1280px] mx-auto px-5 md:px-16">
+      <nav className="flex items-center justify-between h-20 max-w-[1440px] mx-auto px-5 md:px-16">
         <Link href="/" aria-label="Accueil Maitrizz">
           <Logo />
         </Link>

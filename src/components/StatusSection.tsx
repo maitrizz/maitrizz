@@ -22,7 +22,7 @@ const team = [
 export default function StatusSection() {
   return (
     <section className="bg-surface-container/40 px-5 py-32 md:px-16">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1440px]">
         <div className="mb-16 text-center">
           <span className="mb-6 inline-block rounded-full bg-secondary/10 px-4 py-1.5 font-ui text-xs font-bold uppercase tracking-[0.2em] text-secondary">
             Plateforme en construction

@@ -7,7 +7,7 @@ export default function NewsletterSection() {
 
   return (
     <section id="newsletter" className="px-5 py-16 md:px-16">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1440px]">
         <div className="bg-seyes-dark relative overflow-hidden rounded-3xl bg-primary px-8 py-20 text-center text-on-primary shadow-2xl md:px-24">
           <div className="relative z-10 mx-auto max-w-3xl space-y-8">
             <h2 className="text-balance text-4xl font-black leading-tight">

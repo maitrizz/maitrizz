@@ -39,7 +39,7 @@ const pillars = [
 
 export default function FeaturesSection() {
   return (
-    <section id="piliers" className="mx-auto max-w-[1280px] px-5 py-32 md:px-16">
+    <section id="piliers" className="mx-auto max-w-[1440px] px-5 py-32 md:px-16">
       <div className="mb-20 text-center">
         <h2 className="mb-6 text-balance text-4xl font-bold leading-tight text-primary">
           L&apos;essentiel pour réussir, enfin structuré
