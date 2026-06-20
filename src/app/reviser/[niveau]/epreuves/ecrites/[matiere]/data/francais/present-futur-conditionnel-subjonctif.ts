@@ -2,13 +2,13 @@ import type { Fiche } from "@/components/fiche/types";
 
 // Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
 const OBJECTIFS = [
-  { id: "vc1", label: "Je connais les 5 valeurs du présent de l'indicatif : action en cours, habitude, vérité générale, présent de narration, futur proche" },
-  { id: "vc2", label: "Je distingue l'habitude de la vérité générale au présent grâce au test « d'habitude »" },
-  { id: "vc3", label: "Je connais les 3 valeurs du futur simple : action à venir, ordre atténué, vérité générale future" },
+  { id: "vc1", label: "Je connais les 5 valeurs du présent de l'indicatif : action en cours, habitude, vérité générale, présent de narration, valeur de futur" },
+  { id: "vc2", label: "Je distingue l'habitude de la vérité générale grâce au contexte et au test « d'habitude »" },
+  { id: "vc3", label: "Je connais les 3 valeurs du futur simple : action à venir, injonction, vérité générale future" },
   { id: "vc4", label: "Je connais les 4 valeurs du conditionnel présent (hypothèse, politesse, fait non confirmé, futur dans le passé), et je sais que le conditionnel est un temps de l'indicatif" },
   { id: "vc5", label: "Je distingue le conditionnel présent de l'imparfait grâce au test « nous » (présence du « r »)" },
-  { id: "vc6", label: "Je sais que le subjonctif n'a pas de valeur propre à nommer : il est imposé par un déclencheur (verbe de volonté, de sentiment, de doute, conjonction, nécessité)" },
-  { id: "vc7", label: "Je connais les déclencheurs du subjonctif et je sais que la certitude appelle l'indicatif (je sais que, je crois que…)" },
+  { id: "vc6", label: "Je sais justifier un subjonctif en nommant son déclencheur et la nuance exprimée" },
+  { id: "vc7", label: "Je connais les déclencheurs du subjonctif et je sais qu'une certitude affirmée appelle généralement l'indicatif" },
 ];
 
 export const fichePresentFuturConditionnelSubjonctif: Fiche = {
@@ -25,7 +25,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
   ],
   metaTitle: "Présent, futur, conditionnel, subjonctif (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les valeurs du présent (5 valeurs), du futur simple (3 valeurs) et du conditionnel présent (4 valeurs, temps de l'indicatif), et sur les emplois du subjonctif (déclencheurs). Test conditionnel/imparfait, test habitude/vérité générale, réponses jury, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE complète sur les valeurs du présent, du futur simple et du conditionnel, ainsi que sur les emplois du subjonctif. Analyse du contexte, test conditionnel/imparfait, réponses attendues, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -44,12 +44,12 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 {
                   number: "①",
                   title: "Le présent : 5 valeurs",
-                  text: "Action en cours, habitude, vérité générale, présent de narration, futur proche.",
+                  text: "Action en cours, habitude, vérité générale, présent de narration, valeur de futur.",
                 },
                 {
                   number: "②",
                   title: "Le futur simple : 3 valeurs",
-                  text: "Action à venir, ordre atténué, vérité générale future.",
+                  text: "Action à venir, injonction, vérité générale future.",
                 },
                 {
                   number: "③",
@@ -93,20 +93,20 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                     {
                       title: "Action en cours",
                       definition: "L'action se déroule au moment où l'on parle ou écrit.",
-                      exemples: ["« Vivre, sans l'écriture, me **va** mal » : ressenti au moment de l'écriture"],
+                      exemples: ["« En ce moment, je **lis** le journal » : l'action se déroule au moment où je parle"],
                       test: "L'action a lieu maintenant, au moment de l'énonciation.",
                     },
                     {
                       title: "Habitude",
                       definition: "Action répétée ou régulière.",
-                      exemples: ["« Il **se lève** à six heures » : tous les jours"],
+                      exemples: ["« Chaque matin, il **se lève** à six heures » : l'action se répète régulièrement"],
                       test: "Ajouter « d'habitude » est naturel.",
                     },
                     {
                       title: "Vérité générale",
                       definition: "Fait valable en tout temps et pour tous : loi, proverbe, maxime.",
                       exemples: [
-                        "« On **écrit** parce qu'on ne sait pas » : affirmation universelle",
+                        "« Un triangle **possède** trois côtés » : propriété toujours valable",
                         "« La Terre **tourne** autour du Soleil »",
                       ],
                       test: "Ajouter « d'habitude » est impossible : c'est valable universellement.",
@@ -118,9 +118,9 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                       test: "Indicateur temporel passé (date, « alors »…) + verbe au présent.",
                     },
                     {
-                      title: "Futur proche",
-                      definition: "Action future très proche ou présentée comme certaine.",
-                      exemples: ["« Il **arrive** demain » : futur certain"],
+                      title: "Présent à valeur de futur",
+                      definition: "Action située après le moment où l'on parle, exprimée au présent.",
+                      exemples: ["« Le train **part** demain à huit heures » : action future programmée"],
                       test: "Indicateur temporel futur (demain, bientôt…) + verbe au présent.",
                     },
                   ],
@@ -130,7 +130,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                   variant: "warning",
                   icon: "⚠️",
                   title: "Habitude ou vérité générale ?",
-                  text: "Test « d'habitude » : « d'habitude, il se lève à six heures » est naturel (**habitude**) ; « d'habitude, on écrit » ne l'est pas (**vérité générale**, valable pour tous).",
+                  text: "Le contexte reste décisif, mais le test « d'habitude » peut aider. Si l'ajout est naturel, comme dans « D'habitude, il se lève à six heures », le présent exprime une **habitude**. Si l'ajout rend la phrase incohérente, comme dans « D'habitude, un triangle possède trois côtés », le présent exprime une **vérité générale**.",
                 },
               ],
             },
@@ -150,10 +150,10 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                       test: "Action située dans l'avenir par rapport au moment où l'on parle.",
                     },
                     {
-                      title: "Ordre atténué",
-                      definition: "Consigne formulée au futur, plus douce que l'impératif.",
+                      title: "Futur injonctif",
+                      definition: "Ordre, consigne ou prescription formulés au futur.",
                       exemples: ["« Tu **feras** tes devoirs avant de sortir »"],
-                      test: "Le futur remplace un impératif (« fais tes devoirs ») en l'adoucissant.",
+                      test: "La phrase pourrait être reformulée à l'impératif : « Fais tes devoirs avant de sortir. »",
                     },
                     {
                       title: "Vérité générale future",
@@ -195,8 +195,8 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                   cards: [
                     {
                       title: "Hypothèse",
-                      definition: "Conséquence d'une condition irréelle du présent : « si » + imparfait dans la subordonnée.",
-                      exemples: ["« Si elle venait, je **serais** heureux » : elle ne vient pas (irréel du présent)"],
+                      definition: "Conséquence d'une hypothèse introduite par « si » + imparfait. Le contexte indique si cette hypothèse est possible, peu probable ou irréelle.",
+                      exemples: ["« Si elle venait demain, je **serais** heureux » : conséquence d'une hypothèse"],
                       test: "Présence d'une subordonnée en « si » + imparfait.",
                     },
                     {
@@ -208,7 +208,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                     {
                       title: "Fait non confirmé",
                       definition: "Information rapportée non vérifiée : prudence énonciative, usage journalistique.",
-                      exemples: ["« Le président **serait** en déplacement » : information non vérifiée"],
+                      exemples: ["« Selon plusieurs sources, le président **serait** en déplacement » : information non vérifiée"],
                       test: "L'énonciateur présente l'information sans la garantir.",
                     },
                     {
@@ -228,7 +228,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Le subjonctif **n'a pas de valeur propre** à nommer : il est imposé par un élément qui le précède. La réponse jury indique toujours **quel déclencheur** l'impose et ce qu'il exprime.",
+                  text: "Le subjonctif apparaît notamment après un verbe ou une conjonction qui présente le fait comme voulu, redouté, incertain ou nécessaire. Dans la réponse, nommez cet élément et son sens. Exemple : dans « Il faut que tu viennes », « viennes » est au subjonctif présent ; il est introduit par « il faut que », qui exprime la nécessité.",
                 },
                 {
                   type: "table",
@@ -264,7 +264,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               title: "Piège n°2 · Classer le conditionnel comme un mode autonome",
               badge: "Terminologie retenue",
               faux: "« serait » → « mode conditionnel ».",
-              vrai: "Dans la terminologie retenue (Éduscol récent), le conditionnel est un **temps de l'indicatif**. Réponse : « conditionnel présent (temps de l'indicatif) ».",
+              vrai: "Dans la [Terminologie grammaticale publiée par Éduscol en 2020](https://eduscol.education.gouv.fr/media/67998/download?attachment=), le conditionnel est un **temps de l'indicatif**. Réponse : « conditionnel présent (temps de l'indicatif) ».",
               methode: "Donner le temps (conditionnel présent ou passé) et le rattacher à l'indicatif. L'appellation traditionnelle « mode conditionnel » existe encore, mais ce n'est pas la formulation retenue.",
             },
             {
@@ -281,9 +281,9 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               variant: "bleu",
               title: "Piège n°4 · Confondre vérité générale et habitude au présent",
               badge: "Test décisif",
-              faux: "« On écrit » analysé comme un présent d'habitude.",
-              vrai: "Test « d'habitude » : « d'habitude, on écrit » n'est pas naturel : c'est une **vérité générale** (valable universellement), pas une habitude personnelle.",
-              methode: "Ajouter « d'habitude » : naturel → habitude ; impossible → vérité générale.",
+              faux: "« Depuis toujours, on écrit pour transmettre des histoires et conserver la mémoire du passé » analysé comme un présent d'habitude.",
+              vrai: "Le sujet générique « on » et le repère « depuis toujours » donnent à l'énoncé une portée générale : le présent exprime ici une **vérité générale**, et non le comportement répété d'une personne précise.",
+              methode: "Observer la portée de l'énoncé. Sujet précis + marqueur de répétition : habitude. Sujet générique + affirmation valable au-delà d'une situation particulière : vérité générale. Le test « d'habitude » peut confirmer l'analyse.",
             },
             {
               type: "primaireBox",
@@ -304,23 +304,16 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              title: "Deux démarches",
-              text: "Nommer la valeur d'un présent, d'un futur ou d'un conditionnel ; reconnaître et justifier un subjonctif. Chacune se termine par un checkpoint.",
-            },
-            {
               type: "rappelExpress",
               title: "Rappel express : les formules jury",
               blocks: [
                 {
                   type: "formulaBlock",
                   lines: [
-                    "Présent : action en cours · habitude · vérité générale · présent de narration · futur proche",
-                    "Futur : action à venir · ordre atténué · vérité générale future",
+                    "Présent : action en cours · habitude · vérité générale · présent de narration · valeur de futur",
+                    "Futur : action à venir · injonction · vérité générale future",
                     "Conditionnel présent (temps de l'indicatif) : hypothèse · politesse · fait non confirmé · futur dans le passé",
-                    "Subjonctif : pas de valeur propre, nommer le déclencheur (volonté, sentiment, doute, nécessité, concession, but…)",
+                    "Subjonctif : nommer le déclencheur et la nuance exprimée (volonté, sentiment, doute, nécessité, concession, but…)",
                   ],
                 },
                 {
@@ -335,7 +328,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               number: "①",
               title: "Nommer la valeur d'un présent, d'un futur ou d'un conditionnel",
               intro:
-                "**Question typique :** « Donnez la valeur du verbe souligné. »\nOn identifie la forme (notion 6), puis on lit le contexte.",
+                "**Question typique :** Donnez la valeur du verbe souligné.\n**Exemple :** « Selon plusieurs sources, le président <u>serait</u> en déplacement. »",
               steps: [
                 {
                   number: "1",
@@ -345,12 +338,11 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 {
                   number: "2",
                   text: "**Lire le contexte** : y a-t-il un « si » + imparfait (hypothèse) ? une demande (politesse) ? une information rapportée (fait non confirmé) ? un verbe au passé (futur dans le passé) ?",
-                  example: { lines: ["« Le président serait en déplacement » → information rapportée → fait non confirmé"] },
+                  example: { lines: ["« Selon plusieurs sources, le président serait en déplacement » → information rapportée → fait non confirmé"] },
                 },
                 {
                   number: "💡",
-                  text: "**Rédiger la formule jury :** temps + valeur + ce que le temps exprime.",
-                  example: { lines: ["« serait » est au conditionnel présent (temps de l'indicatif), valeur de fait non confirmé : il présente l'information avec prudence."] },
+                  text: "**Réponse attendue :** « serait » est au conditionnel présent, temps de l'indicatif. Il présente comme non confirmée l'information rapportée par plusieurs sources.",
                 },
               ],
             },
@@ -359,10 +351,10 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "Donnez la valeur de « écrit » dans « On écrit parce qu'on ne sait pas ».",
+              question: "Donnez la valeur de « écrit » dans « Depuis toujours, on écrit pour transmettre des histoires et conserver la mémoire du passé ».",
               correction: [
-                { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : il exprime une affirmation universelle sur la condition de l'écrivain (« d'habitude, on écrit » n'est pas naturel)." },
-                { type: "note", text: "Réponse complète du premier coup ? Vous tenez la formule. Sinon, reprenez le test « d'habitude »." },
+                { type: "line", text: "**Réponse attendue :** « écrit » est au présent de l'indicatif, valeur de vérité générale. Le sujet générique « on » et le repère « depuis toujours » présentent l'affirmation comme valable au-delà d'une situation particulière." },
+                { type: "note", text: "Réponse complète du premier coup ? Vous tenez la formule." },
               ],
             },
             {
@@ -370,7 +362,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               number: "②",
               title: "Reconnaître et justifier un subjonctif",
               intro:
-                "**Question typique :** « Justifiez l'emploi du subjonctif. »\nLe subjonctif n'a pas de valeur propre : on nomme son déclencheur.",
+                "**Question typique :** Justifiez l'emploi du subjonctif.\n**Exemple :** « Il faut qu'elle <u>parte</u> avant midi. »",
               steps: [
                 {
                   number: "1",
@@ -379,13 +371,12 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 },
                 {
                   number: "2",
-                  text: "**Vérifier que ce n'est pas une certitude** : « je sais que », « je crois que », « je suis certain que » appellent l'indicatif, pas le subjonctif.",
+                  text: "**Vérifier que ce n'est pas une certitude affirmée** : « je sais que », « je crois que », « je suis certain que » appellent généralement l'indicatif à la forme affirmative.",
                   example: { lines: ["« Je sais qu'il vient » → certitude → indicatif"] },
                 },
                 {
                   number: "💡",
-                  text: "**Rédiger la formule jury :** subjonctif présent, imposé par [déclencheur], qui exprime [nécessité, concession, but…].",
-                  example: { lines: ["« parte » est au présent du subjonctif, imposé par « il faut que » : il exprime la nécessité que l'action ait lieu."] },
+                  text: "**Réponse attendue :** « parte » est au présent du subjonctif. Son emploi est déclenché par la tournure impersonnelle « il faut que », qui exprime ici la nécessité d'un départ avant midi.",
                 },
               ],
             },
@@ -396,7 +387,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               badge: "30 secondes",
               question: "Justifiez le mode dans « bien qu'il soit fatigué ».",
               correction: [
-                { type: "line", text: "« soit » est au présent du subjonctif, imposé par la conjonction de concession « bien que » : il exprime un état réel qui n'empêche pas l'action principale." },
+                { type: "line", text: "**Réponse attendue :** « soit » est au présent du subjonctif. Son emploi est déclenché par la conjonction « bien que », qui exprime la concession." },
                 { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
               ],
             },
@@ -433,27 +424,27 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 {
                   objectifId: "vc1",
                   question: "Dans « En 1789, la Révolution éclate », quelle est la valeur du présent ?",
-                  options: ["Action en cours", "Habitude", "Présent de narration", "Futur proche"],
+                  options: ["Action en cours", "Habitude", "Présent de narration", "Valeur de futur"],
                   correctIndex: 2,
                   explanation:
                     "Un événement passé (1789) est raconté au présent pour le dynamiser : c'est un présent de narration.",
                 },
                 {
                   objectifId: "vc2",
-                  question: "Quel test distingue l'habitude de la vérité générale au présent ?",
+                  question: "Comment distinguer l'habitude de la vérité générale au présent ?",
                   options: [
                     "Le test « nous »",
-                    "Ajouter « d'habitude » : naturel → habitude, impossible → vérité générale",
+                    "Lire le contexte, puis utiliser au besoin le test « d'habitude »",
                     "Le test de l'auxiliaire",
                     "Le test du passif",
                   ],
                   correctIndex: 1,
                   explanation:
-                    "« d'habitude, il se lève à six heures » est naturel (habitude) ; « d'habitude, on écrit » ne l'est pas (vérité générale).",
+                    "Le contexte est décisif. Le test « d'habitude » peut confirmer l'analyse : naturel pour une habitude, incohérent avec une propriété toujours valable.",
                 },
                 {
                   objectifId: "vc4",
-                  question: "Dans « Le président serait en déplacement », quelle est la valeur du conditionnel ?",
+                  question: "Dans « Selon plusieurs sources, le président serait en déplacement », quelle est la valeur du conditionnel ?",
                   options: ["Hypothèse", "Politesse", "Fait non confirmé", "Futur dans le passé"],
                   correctIndex: 2,
                   explanation:
@@ -487,32 +478,32 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 },
                 {
                   objectifId: "vc7",
-                  question: "Après « Je crois que », quel mode emploie-t-on ?",
+                  question: "À la forme affirmative, après « Je crois que », quel mode emploie-t-on généralement ?",
                   options: ["Le subjonctif", "L'indicatif", "Le conditionnel", "L'impératif"],
                   correctIndex: 1,
                   explanation:
-                    "« Je crois que » exprime une opinion présentée comme réelle : on emploie l'indicatif. Le subjonctif s'emploie après le doute, la volonté, le sentiment.",
+                    "À la forme affirmative, « Je crois que » présente généralement l'opinion comme vraie et appelle l'indicatif. La négation ou l'interrogation peuvent favoriser le subjonctif.",
                 },
                 {
                   objectifId: "vc6",
-                  question: "Que peut-on dire de la valeur du subjonctif ?",
+                  question: "Comment justifier l'emploi du subjonctif ?",
                   options: [
-                    "Il a une valeur d'antériorité",
-                    "Il n'a pas de valeur propre : il est imposé par un déclencheur",
-                    "Il exprime toujours le futur",
-                    "Il a la même valeur que le conditionnel",
+                    "En donnant seulement sa terminaison",
+                    "En nommant son déclencheur et la nuance exprimée",
+                    "En affirmant qu'il exprime toujours le futur",
+                    "En le remplaçant systématiquement par le conditionnel",
                   ],
                   correctIndex: 1,
                   explanation:
-                    "Le subjonctif est imposé par un élément qui le précède (verbe de volonté, conjonction, nécessité…). La réponse jury nomme ce déclencheur.",
+                    "La réponse identifie l'élément qui déclenche le subjonctif et précise la nuance exprimée : nécessité, volonté, doute, concession ou but, par exemple.",
                 },
                 {
                   objectifId: "vc3",
                   question: "Dans « Tu feras tes devoirs avant de sortir », quelle est la valeur du futur ?",
-                  options: ["Action à venir neutre", "Ordre atténué", "Vérité générale future", "Futur proche"],
+                  options: ["Action à venir neutre", "Injonction", "Vérité générale future", "Présent à valeur de futur"],
                   correctIndex: 1,
                   explanation:
-                    "Le futur formule ici une consigne, plus douce qu'un impératif : valeur d'ordre atténué.",
+                    "Le futur formule ici une consigne : c'est un futur injonctif.",
                 },
               ],
             },
@@ -548,13 +539,13 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               title: "Exercice 1 : Valeurs du présent",
               objectifTag: "Présent",
               question:
-                "Donnez la valeur du présent :\na) « On écrit parce qu'on ne sait pas. »   b) « Vivre, sans l'écriture, me va mal. »   c) « En 1789, la Révolution éclate. »   d) « Il arrive demain. »   e) « Il se lève à six heures chaque matin. »",
+                "Donnez la valeur du présent :\na) « Un triangle possède trois côtés. »   b) « En ce moment, je lis le journal. »   c) « En 1789, la Révolution éclate. »   d) « Le train part demain à huit heures. »   e) « Chaque matin, il se lève à six heures. »",
               correction: [
-                { type: "line", label: "a)", text: "Vérité générale (affirmation universelle ; « d'habitude on écrit » non naturel)" },
-                { type: "line", label: "b)", text: "Action en cours (état actuel au moment d'écrire)" },
+                { type: "line", label: "a)", text: "Vérité générale : propriété toujours valable." },
+                { type: "line", label: "b)", text: "Action en cours, signalée par « en ce moment »." },
                 { type: "line", label: "c)", text: "Présent de narration (événement passé mis au présent ; indicateur « 1789 »)" },
-                { type: "line", label: "d)", text: "Futur proche (action future certaine ; indicateur « demain »)" },
-                { type: "line", label: "e)", text: "Habitude (action répétée ; « chaque matin »)" },
+                { type: "line", label: "d)", text: "Présent à valeur de futur : l'action est programmée pour le lendemain." },
+                { type: "line", label: "e)", text: "Habitude, signalée par « chaque matin »." },
               ],
             },
             {
@@ -581,11 +572,11 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               title: "Exercice 3 : Valeurs du conditionnel présent",
               objectifTag: "Conditionnel",
               question:
-                "Donnez la valeur du conditionnel :\na) « Si elle venait, je serais heureux. »   b) « Je voudrais vous demander un conseil. »   c) « Le suspect aurait fui à l'étranger. »   d) « Elle savait qu'il viendrait le lendemain. »",
+                "Donnez la valeur du conditionnel :\na) « Si elle venait demain, je serais heureux. »   b) « Je voudrais vous demander un conseil. »   c) « Selon plusieurs sources, le suspect serait à l'étranger. »   d) « Elle savait qu'il viendrait le lendemain. »",
               correction: [
-                { type: "line", label: "a)", text: "Hypothèse (irréel du présent ; si + imparfait)" },
+                { type: "line", label: "a)", text: "Hypothèse : « serais » exprime la conséquence de la venue envisagée." },
                 { type: "line", label: "b)", text: "Politesse (atténuation d'une demande)" },
-                { type: "line", label: "c)", text: "Fait non confirmé (information non vérifiée)" },
+                { type: "line", label: "c)", text: "Fait non confirmé, signalé par « selon plusieurs sources »." },
                 { type: "line", label: "d)", text: "Futur dans le passé (action future vue depuis « savait »)" },
               ],
             },
@@ -622,8 +613,8 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 "a) Le conditionnel est un temps de l'indicatif.\nb) Après « je crois que », on emploie le subjonctif.\nc) Le futur simple peut exprimer un ordre.\nd) « bien que » impose toujours le subjonctif.",
               correction: [
                 { type: "line", label: "a)", text: "**Vrai** (terminologie retenue) : le conditionnel est un temps de l'indicatif. L'appellation « mode conditionnel » subsiste dans certains usages mais n'est pas retenue." },
-                { type: "line", label: "b)", text: "**Faux** : « je crois que » exprime une opinion → indicatif. Le subjonctif suit le doute, pas l'opinion affirmée." },
-                { type: "line", label: "c)", text: "**Vrai** : « Tu feras tes devoirs » est un ordre atténué au futur." },
+                { type: "line", label: "b)", text: "**Faux** à la forme affirmative : « je crois que » appelle généralement l'indicatif. La négation ou l'interrogation peuvent favoriser le subjonctif." },
+                { type: "line", label: "c)", text: "**Vrai** : « Tu feras tes devoirs » contient un futur injonctif qui formule une consigne." },
                 { type: "line", label: "d)", text: "**Vrai** : « bien que » impose toujours le subjonctif, sans exception." },
               ],
             },
@@ -652,12 +643,12 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               level: "n2",
               title: "Exercice 7 : Corriger l'analyse",
               question:
-                "Ces analyses sont-elles correctes ? Corrigez :\na) « serait » → indicatif imparfait, valeur : état dans le passé\nb) « vienne » (après « bien que ») → indicatif présent\nc) « viendrait » → conditionnel présent, valeur : conditionnel\nd) « partira » → futur simple de l'indicatif, valeur : action à venir",
+                "Ces analyses sont-elles correctes ? Corrigez :\na) « serait » → indicatif imparfait, valeur : état dans le passé\nb) « vienne » (après « bien que ») → indicatif présent\nc) Dans « Selon plusieurs sources, il viendrait demain », « viendrait » → conditionnel présent, valeur : conditionnel\nd) Dans « Le train partira demain à huit heures », « partira » → futur simple de l'indicatif, valeur : action à venir",
               correction: [
                 { type: "line", label: "a)", text: "Erreur de temps : le mode indicatif est correct, mais « nous serions » (-rions) → conditionnel présent, pas imparfait. La valeur dépend du contexte." },
                 { type: "line", label: "b)", text: "Faux : « bien que » impose le subjonctif → subjonctif présent." },
-                { type: "line", label: "c)", text: "Valeur tautologique : préciser (hypothèse, politesse, fait non confirmé, futur dans le passé)." },
-                { type: "line", label: "d)", text: "Correct." },
+                { type: "line", label: "c)", text: "Temps correct, valeur trop vague : le repère « selon plusieurs sources » indique un fait non confirmé." },
+                { type: "line", label: "d)", text: "Correct : « demain à huit heures » situe l'action dans l'avenir." },
               ],
             },
             {
@@ -689,22 +680,22 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 "« On écrit parce qu'on ne sait par quel autre biais attraper le réel. Vivre, sans l'écriture, me va mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
               question: "Rédigez la réponse jury pour « écrit », « sait » et « va ».",
               correction: [
-                { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : il exprime une affirmation universelle sur la condition de l'écrivain." },
-                { type: "line", text: "« sait » est au présent de l'indicatif, valeur de vérité générale : il exprime une méconnaissance permanente et universelle." },
-                { type: "line", text: "« va » est au présent de l'indicatif, valeur d'action en cours : il exprime l'état actuel de l'auteure au moment d'écrire." },
+                { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : le sujet générique « on » inscrit l'affirmation dans une réflexion générale sur l'écriture." },
+                { type: "line", text: "« sait » est au présent de l'indicatif et appartient à la même affirmation générale. Il présente l'impossibilité évoquée comme caractéristique de cette situation." },
+                { type: "line", text: "« va » est au présent de l'indicatif, valeur d'énonciation : associé au pronom « me », il exprime le ressenti de l'auteure au moment où elle écrit." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 10 · Extrait littéraire : Victor Hugo",
+              title: "Exercice 10 · Deux valeurs du présent",
               enonce:
-                "« Insensées choses qui nous font rêver ! Monte en moi une humble flamme. »\n*(Victor Hugo)*",
-              question: "Rédigez la réponse jury pour « font » et « Monte ».",
+                "« Depuis toujours, certaines histoires nous font rêver. En ce moment, une vive émotion monte en moi. »",
+              question: "Rédigez la réponse attendue pour « font » et « monte ».",
               correction: [
-                { type: "line", text: "« font » est au présent de l'indicatif, valeur de vérité générale : il exprime l'effet universel et permanent des choses sur le poète." },
-                { type: "line", text: "« Monte » est au présent de l'indicatif, valeur d'action en cours : il exprime le surgissement immédiat de la flamme au moment du poème." },
+                { type: "line", text: "« font » est au présent de l'indicatif, valeur de vérité générale : le repère « depuis toujours » donne à l'affirmation une portée générale." },
+                { type: "line", text: "« monte » est au présent de l'indicatif, valeur d'action en cours : le repère « en ce moment » situe l'émotion au moment de l'énonciation." },
               ],
             },
             {
@@ -712,10 +703,10 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               variant: "standard",
               level: "n3",
               title: "Exercice 11 · Hypothèse et politesse",
-              enonce: "a) « Si elle venait, je serais heureux. »   b) « Pourriez-vous m'aider ? »   c) « Si elle était venue, j'aurais été heureux. »",
+              enonce: "a) « Si elle venait demain, je serais heureux. »   b) « Pourriez-vous m'aider ? »   c) « Si elle était venue, j'aurais été heureux. »",
               question: "Rédigez la réponse jury pour « serais », « Pourriez » et « aurais été ».",
               correction: [
-                { type: "line", label: "a)", text: "« serais » est au conditionnel présent (temps de l'indicatif), valeur d'hypothèse : conséquence d'une condition irréelle du présent (si + imparfait)." },
+                { type: "line", label: "a)", text: "« serais » est au conditionnel présent, temps de l'indicatif. Il exprime la conséquence de l'hypothèse « si elle venait demain », sans permettre à lui seul de la déclarer irréelle." },
                 { type: "line", label: "b)", text: "« Pourriez » est au conditionnel présent (temps de l'indicatif), valeur de politesse : il atténue la demande." },
                 { type: "line", label: "c)", text: "« aurais été » est au conditionnel passé (temps de l'indicatif), valeur d'irréel du passé : conséquence d'une condition non réalisée dans le passé (si + plus-que-parfait)." },
               ],
@@ -744,49 +735,49 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format de la question sur le verbe de la Partie 1 : extrait littéraire, valeur du temps, réponse jury rédigée. Les exercices calqués sur des sujets récents portent le badge ✦.",
+              text: "Ces exercices reprennent les formulations du concours pour analyser les modes, les temps et leurs emplois. Lorsqu'un extrait vient d'un sujet récent mais que la question a été adaptée à cette notion, le badge le précise.",
             },
             {
               type: "exerciceCard",
               variant: "annale",
-              badge: "✦ Format concours récent",
+              badge: "Entraînement adapté d'un sujet récent",
               title: "Exercice 1 : Lola Lafon, Quand tu écouteras cette chanson",
               enonce:
                 "« On <u>écrit</u> parce qu'on ne <u>sait</u> par quel autre biais attraper le réel. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Format identique au concours · Rédigez la réponse jury pour « écrit » et « sait ».",
+              question: "Rédigez la réponse attendue pour « écrit » et « sait ».",
               correction: [
-                { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : il exprime une affirmation universelle sur la condition de l'écrivain, valable en tout temps." },
-                { type: "line", text: "« sait » est au présent de l'indicatif, valeur de vérité générale : il exprime une méconnaissance permanente et universelle." },
+                { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : le sujet générique « on » inscrit l'énoncé dans une réflexion générale sur l'écriture." },
+                { type: "line", text: "« sait » est au présent de l'indicatif et appartient à la même affirmation générale." },
               ],
             },
             {
               type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format concours récent",
-              title: "Exercice 2 : Victor Hugo (poème)",
+              variant: "crpe",
+              title: "Exercice 2 : deux valeurs du présent",
               enonce:
-                "« Insensées choses qui nous <u>font</u> rêver ! »\n*(Victor Hugo)*",
-              question: "Format identique au concours · Rédigez la réponse jury pour « font ».",
+                "« Depuis toujours, certaines histoires nous <u>font</u> rêver. En ce moment, une vive émotion <u>monte</u> en moi. »",
+              question: "Rédigez la réponse attendue pour « font » et « monte ».",
               correction: [
-                { type: "line", text: "« font » est au présent de l'indicatif, valeur de vérité générale : il exprime l'effet universel et permanent que les choses exercent sur le poète." },
+                { type: "line", text: "« font » est au présent de l'indicatif, valeur de vérité générale, justifiée par « depuis toujours »." },
+                { type: "line", text: "« monte » est au présent de l'indicatif, valeur d'action en cours, justifiée par « en ce moment »." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "crpe",
               title: "Exercice 3 : conditionnel d'hypothèse",
-              enonce: "« Si elle <u>venait</u>, je <u>serais</u> heureux. »",
+              enonce: "« Si elle <u>venait</u> demain, je <u>serais</u> heureux. »",
               question: "Rédigez la réponse jury pour « venait » et « serais ».",
               correction: [
-                { type: "line", text: "« venait » est à l'imparfait de l'indicatif, valeur conditionnelle : il exprime une hypothèse irréelle du présent dans la subordonnée en « si »." },
-                { type: "line", text: "« serais » est au conditionnel présent (temps de l'indicatif), valeur d'hypothèse : il exprime la conséquence de cette condition irréelle." },
+                { type: "line", text: "« venait » est à l'imparfait de l'indicatif ; dans la subordonnée introduite par « si », il présente la venue comme une hypothèse." },
+                { type: "line", text: "« serais » est au conditionnel présent, temps de l'indicatif ; il exprime la conséquence de cette hypothèse." },
               ],
             },
             {
               type: "exerciceCard",
               variant: "crpe",
               title: "Exercice 4 : fait non confirmé",
-              enonce: "« Le président <u>serait</u> en déplacement à l'étranger. »",
+              enonce: "« Selon plusieurs sources, le président <u>serait</u> en déplacement à l'étranger. »",
               question: "Rédigez la réponse jury pour « serait ».",
               correction: [
                 { type: "line", text: "« serait » est au conditionnel présent (temps de l'indicatif), valeur de fait non confirmé : il présente l'information avec prudence énonciative, comme non vérifiée par l'énonciateur." },
@@ -821,7 +812,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               type: "exerciceCard",
               variant: "err-type",
               title: "Exercice 1 · Réponse à corriger : « serait »",
-              enonce: "Réponse d'un candidat : « **serait** : indicatif imparfait, valeur : état dans le passé », pour *« Le président serait en déplacement. »*",
+              enonce: "Réponse d'un candidat : « **serait** : indicatif imparfait, valeur : état dans le passé », pour *« Selon plusieurs sources, le président serait en déplacement. »*",
               question: "Identifiez l'erreur et rédigez la réponse correcte.",
               correction: [
                 {
@@ -854,15 +845,15 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « On écrit »",
-              enonce: "Réponse d'un candidat : « **On écrit** : présent d'habitude », pour *« On écrit parce qu'on ne sait pas. »*",
+              title: "Exercice 3 · Réponse à corriger : vérité générale",
+              enonce: "Réponse d'un candidat : « **possède** : présent d'habitude », pour *« Un triangle possède trois côtés. »*",
               question: "Identifiez l'erreur et rédigez la réponse correcte.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "Test « d'habitude » : « d'habitude, on écrit » n'est pas naturel → ce n'est pas une habitude personnelle", bad: true },
-                    { text: "Réponse attendue : présent de l'indicatif, valeur de vérité générale (affirmation universelle sur la condition de l'écrivain)" },
+                    { text: "La phrase énonce une propriété toujours valable, et non une action répétée", bad: true },
+                    { text: "Réponse attendue : « possède » est au présent de l'indicatif, valeur de vérité générale" },
                   ],
                 },
               ],
@@ -893,17 +884,17 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 {
                   question: "Quelles sont les 5 valeurs du présent de l'indicatif ?",
                   answer:
-                    "**Action en cours** (maintenant) ; **habitude** (« d'habitude » naturel) ; **vérité générale** (« d'habitude » impossible) ; **présent de narration** (passé raconté au présent) ; **futur proche** (indicateur futur).",
+                    "**Action en cours** ; **habitude** ; **vérité générale** ; **présent de narration** ; **présent à valeur de futur**.",
                 },
                 {
                   question: "Comment distinguer habitude et vérité générale au présent ?",
                   answer:
-                    "Test « d'habitude ».\nNaturel → habitude (« d'habitude, il se lève à 6h »).\nImpossible → vérité générale (« d'habitude, on écrit » : non naturel, valable universellement).",
+                    "Le contexte reste décisif. Un marqueur de répétition signale l'habitude ; une propriété toujours valable relève de la vérité générale. Le test « d'habitude » peut confirmer l'analyse.",
                 },
                 {
                   question: "Quelles sont les 3 valeurs du futur simple ?",
                   answer:
-                    "**Action à venir** (certitude) ; **ordre atténué** (« Tu feras tes devoirs ») ; **vérité générale future** (« Qui vivra verra »).",
+                    "**Action à venir** ; **futur injonctif** (« Tu feras tes devoirs ») ; **vérité générale future** (« Qui vivra verra »).",
                 },
                 {
                   question: "Quelles sont les 4 valeurs du conditionnel présent ?",
@@ -914,19 +905,19 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 {
                   question: "Le conditionnel est-il un mode ?",
                   answer:
-                    "Non : dans la terminologie retenue (Éduscol récent), c'est un **temps de l'indicatif**. On répond « conditionnel présent / passé (temps de l'indicatif) ».",
+                    "Non : dans la [Terminologie grammaticale publiée par Éduscol en 2020](https://eduscol.education.gouv.fr/media/67998/download?attachment=), c'est un **temps de l'indicatif**. On répond « conditionnel présent / passé (temps de l'indicatif) ».",
                   astuce: "⚠️ L'appellation traditionnelle « mode conditionnel » subsiste dans certains usages scolaires, mais ce n'est pas la formulation retenue.",
                 },
                 {
                   question: "Quand emploie-t-on le subjonctif ?",
                   answer:
                     "Après les verbes de **volonté, sentiment, doute** ; après les conjonctions **bien que, pour que, avant que, à moins que, pourvu que** ; après la **nécessité** (il faut que).",
-                  astuce: "⚠️ La certitude appelle l'indicatif : « je sais que », « je crois que », « je suis certain que ».",
+                  astuce: "⚠️ À la forme affirmative, une certitude appelle généralement l'indicatif : « je sais que », « je crois que », « je suis certain que ».",
                 },
                 {
-                  question: "Le subjonctif a-t-il une valeur propre à nommer ?",
+                  question: "Comment justifier un subjonctif ?",
                   answer:
-                    "Non : il est imposé par un déclencheur qui le précède. La réponse jury nomme ce déclencheur : « subjonctif présent, imposé par [verbe ou conjonction], qui exprime [nécessité, concession, but…] ».",
+                    "On nomme son déclencheur et la nuance exprimée : « subjonctif présent, déclenché par [verbe ou conjonction], qui exprime [nécessité, concession, but…] ».",
                 },
                 {
                   question: "Formule jury pour un présent de vérité générale ?",
@@ -949,12 +940,12 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               branches: [
                 {
                   title: "Présent (5 valeurs)",
-                  lines: ["Action en cours · habitude", "Vérité générale", "Narration · futur proche"],
+                  lines: ["Action en cours · habitude", "Vérité générale", "Narration · valeur de futur"],
                   variant: "blue",
                 },
                 {
                   title: "Futur (3 valeurs)",
-                  lines: ["Action à venir", "Ordre atténué", "Vérité générale future"],
+                  lines: ["Action à venir", "Injonction", "Vérité générale future"],
                   variant: "blue",
                 },
                 {
@@ -964,13 +955,8 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 },
                 {
                   title: "Subjonctif",
-                  lines: ["Pas de valeur propre", "Imposé par un déclencheur", "Certitude → indicatif"],
+                  lines: ["Nommer le déclencheur", "Préciser la nuance exprimée", "Certitude affirmée → indicatif"],
                   variant: "green",
-                },
-                {
-                  title: "Tests décisifs",
-                  lines: ["Conditionnel / imparfait : « nous » (r)", "Habitude / vérité générale : « d'habitude »"],
-                  variant: "yellow",
                 },
                 {
                   title: "Renvoi",
