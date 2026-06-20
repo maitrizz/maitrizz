@@ -1,38 +1,59 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral text-neutral-content">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <p
-              className="font-black text-xl tracking-tight mb-1"
-              style={{ fontFamily: "var(--font-fraunces, Georgia, serif)" }}
-            >
-              MAITRIZZ
-            </p>
-            <p className="text-neutral-content/40 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
-              Réussis ton CRPE.
-            </p>
-          </div>
-
-          <nav className="flex gap-8">
-            <Link href="/" className="text-sm font-medium text-neutral-content/50 hover:text-neutral-content transition-colors" style={{ fontFamily: "var(--font-inter)" }}>
-              Accueil
-            </Link>
-            <Link href="/reviser" className="text-sm font-medium text-neutral-content/50 hover:text-neutral-content transition-colors" style={{ fontFamily: "var(--font-inter)" }}>
-              Réviser
-            </Link>
-            <Link href="/blog" className="text-sm font-medium text-neutral-content/50 hover:text-neutral-content transition-colors" style={{ fontFamily: "var(--font-inter)" }}>
-              Blog
-            </Link>
-          </nav>
-
-          <p className="text-neutral-content/30 text-sm" style={{ fontFamily: "var(--font-inter)" }}>
-            &copy; {new Date().getFullYear()} Maitrizz
+    <footer className="border-t border-outline-variant/30 bg-white/50 px-5 py-20 md:px-16">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 md:grid-cols-4">
+        <div className="space-y-6 md:col-span-2">
+          <Logo />
+          <p className="max-w-sm font-ui text-base leading-relaxed text-on-surface-variant">
+            La préparation au CRPE repensée : clarté, structure et exigence
+            pour tous les futurs professeurs des écoles.
           </p>
         </div>
+
+        <div>
+          <h4 className="mb-6 font-ui text-xs font-bold uppercase tracking-widest text-primary">
+            Explorer
+          </h4>
+          <ul className="space-y-4 font-ui text-sm text-on-surface-variant">
+            <li>
+              <Link href="/reviser" className="transition-colors hover:text-secondary">
+                Réviser
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="transition-colors hover:text-secondary">
+                Blog
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mb-6 font-ui text-xs font-bold uppercase tracking-widest text-primary">
+            Légal
+          </h4>
+          <ul className="space-y-4 font-ui text-sm text-on-surface-variant">
+            <li>
+              <Link href="#" className="transition-colors hover:text-secondary">
+                Mentions légales
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="transition-colors hover:text-secondary">
+                Confidentialité
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-20 max-w-[1280px] border-t border-outline-variant/20 pt-8 text-center">
+        <p className="font-ui text-xs font-medium uppercase tracking-widest text-on-surface-variant/60">
+          © {new Date().getFullYear()} Maitrizz. Conçu pour l&apos;école de demain.
+        </p>
       </div>
     </footer>
   );

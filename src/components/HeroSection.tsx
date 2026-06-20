@@ -1,123 +1,140 @@
 import Link from "next/link";
 
+/* Aperçu produit : une vraie fiche en couleur */
+function FichePreview() {
+  return (
+    <div className="relative">
+      {/* Feuille derrière : effet pile de fiches */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -rotate-[4deg] rounded-2xl border border-outline-variant/40 bg-surface-container/70 shadow-lg"
+      />
+      {/* Carte principale, légèrement inclinée comme posée sur un bureau */}
+      <div className="relative rotate-[1.5deg] rounded-2xl border border-outline-variant/40 bg-white p-6 shadow-2xl transition-transform duration-500 hover:rotate-0 md:p-8">
+        {/* En-tête de la fiche */}
+        <div className="mb-5 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="rounded-md bg-secondary/10 px-2.5 py-1 font-ui text-[11px] font-bold uppercase tracking-wider text-secondary">
+              Français
+            </span>
+            <span className="font-ui text-xs font-semibold text-on-surface-variant">
+              Grammaire
+            </span>
+          </div>
+          <svg className="h-5 w-5 text-primary/40" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17 3H7a2 2 0 00-2 2v16l7-3 7 3V5a2 2 0 00-2-2z" />
+          </svg>
+        </div>
+
+        {/* Titre de la fiche */}
+        <h3 className="mb-3 text-xl font-bold leading-snug text-primary">
+          Les accords dans le groupe nominal
+        </h3>
+        <p className="mb-5 text-sm leading-relaxed text-on-surface-variant">
+          Le déterminant et l&apos;adjectif épithète s&apos;accordent en genre et
+          en nombre avec le nom noyau du groupe nominal.
+        </p>
+
+        {/* Encadré exemple */}
+        <div className="mb-6 rounded-xl border-l-2 border-secondary bg-surface px-4 py-3">
+          <p className="mb-1 font-ui text-[11px] font-bold uppercase tracking-wider text-secondary">
+            Exemple
+          </p>
+          <p className="text-sm text-on-surface">
+            les <span className="font-semibold text-primary">grandes</span> écoles
+            maternelles
+          </p>
+        </div>
+
+        {/* Pied : progression */}
+        <div className="flex items-center justify-between border-t border-outline-variant/40 pt-4">
+          <span className="font-ui text-xs text-on-surface-variant">Notion 3 / 8</span>
+          <div className="flex items-center gap-2">
+            <div className="h-1.5 w-24 overflow-hidden rounded-full bg-surface-container">
+              <div className="h-full w-[78%] rounded-full bg-primary" />
+            </div>
+            <span className="font-ui text-xs font-bold text-primary">78%</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Étiquettes flottantes */}
+      <div className="absolute -right-4 -top-5 rotate-3 rounded-xl border border-outline-variant/30 bg-white p-3 shadow-xl">
+        <div className="flex items-center gap-2.5">
+          <svg className="h-5 w-5 text-secondary" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.4l-4-4L8.2 11l2.6 2.6 5-5 1.4 1.4-6.4 6.4z" />
+          </svg>
+          <span className="font-ui text-xs font-bold text-primary">QCM réussi : 18/20</span>
+        </div>
+      </div>
+      <div className="absolute -bottom-5 -left-4 -rotate-3 rounded-xl border border-outline-variant/30 bg-white p-3 shadow-xl">
+        <div className="flex items-center gap-2.5">
+          <svg className="h-5 w-5 text-secondary" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 16H5V8h14v11z" />
+          </svg>
+          <span className="font-ui text-xs font-bold text-primary">Révisions du jour</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HeroSection() {
   return (
-    <section className="bg-base-100 grid-paper min-h-[88vh] flex items-center relative overflow-hidden">
-
-
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-24 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* Colonne gauche — texte */}
-          <div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-base-content leading-[1.05] mb-6">
-              Réussis ton
-              <br />
-              <span style={{ color: "#1e3a6e" }}>CRPE</span>
-            </h1>
-
-            <p className="text-xl font-semibold text-base-content/90 max-w-md mb-3 leading-snug">
-              Prépare chaque épreuve du concours avec exigence et méthode.
-            </p>
-            <p className="text-base text-base-content/55 max-w-md mb-10 leading-relaxed">
-              Des cours structurés, des QCM ciblés, des entraînements
-              à l&apos;oral et un suivi précis de tes progrès : un environnement
-              d&apos;apprentissage pensé pour couvrir tous les attendus et
-              t&apos;accompagner jusqu&apos;à l&apos;admission.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/reviser"
-                className="btn btn-primary btn-lg shadow-sm font-bold"
-              >
-                Commencer à réviser →
-              </Link>
-              <Link
-                href="/blog"
-                className="btn btn-lg font-medium"
-                style={{
-                  backgroundColor: "transparent",
-                  color: "#1c1814",
-                  borderColor: "rgba(28,24,20,0.2)",
-                }}
-              >
-                Lire le blog
-              </Link>
-            </div>
+    <section className="bg-seyes overflow-hidden px-5 py-20 md:px-16 lg:py-28">
+      <div className="mx-auto grid max-w-[1280px] items-center gap-16 lg:grid-cols-2">
+        {/* Colonne texte */}
+        <div className="text-center lg:text-left">
+          <div className="mb-8 inline-flex max-w-full items-center gap-3 whitespace-nowrap rounded-full border border-secondary/20 bg-white/80 px-5 py-2 shadow-sm">
+            <svg className="h-4 w-4 text-secondary" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1l3 2.5 3.9-.3.8 3.8 3 2.5-1.7 3.5 1.7 3.5-3 2.5-.8 3.8-3.9-.3L12 23l-3-2.5-3.9.3-.8-3.8-3-2.5L3 11 1.3 7.5l3-2.5.8-3.8 3.9.3L12 1zm-1.2 13.4l5-5-1.4-1.4-3.6 3.6-1.8-1.8L7.6 11l3.2 3.4z" />
+            </svg>
+            <span className="font-ui text-[10px] font-bold uppercase tracking-[0.2em] text-primary lg:text-xs">
+              Une préparation claire, complète et structurée
+            </span>
           </div>
 
-          {/* Colonne droite — card flottante */}
-          <div className="hidden lg:flex justify-center">
-            <div
-              className="bg-white rounded-lg shadow-md p-8 w-[320px] rotate-1 hover:rotate-0 transition-transform duration-500"
-              style={{ border: "1px solid #e8e2d9" }}
+          <h1 className="text-balance -translate-y-[11px] text-3xl font-black leading-8 tracking-tight text-primary lg:-translate-y-1 lg:text-6xl lg:leading-[4rem]">
+            Préparez le CRPE <br className="hidden lg:block" />
+            <span
+              className="italic text-secondary"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 C 70 2 130 10 180 6 S 260 4 298 7' fill='none' stroke='%23c36648' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E\")",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "left bottom",
+                backgroundSize: "100% 0.32em",
+                paddingBottom: "0.12em",
+              }}
             >
-              <p
-                className="text-xs font-bold uppercase tracking-widest mb-5"
-                style={{ color: "rgba(28,24,20,0.4)", fontFamily: "var(--font-inter)" }}
-              >
-                Ton espace de révision
-              </p>
+              sans vous perdre.
+            </span>
+          </h1>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-md flex items-center justify-center shrink-0" style={{ backgroundColor: "rgba(30,58,110,0.08)" }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" style={{ color: "#1e3a6e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm" style={{ color: "#1c1814" }}>Fiches de cours</p>
-                    <p className="text-xs" style={{ color: "rgba(28,24,20,0.4)" }}>Structurées module par module</p>
-                  </div>
-                </div>
+          <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-on-surface-variant lg:mx-0 lg:text-xl">
+            Des fiches fiables, des quiz, des cas pratiques et un parcours clair
+            pour progresser jour après jour avec sérénité.
+          </p>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-md flex items-center justify-center shrink-0" style={{ backgroundColor: "rgba(58,107,80,0.08)" }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" style={{ color: "#3a6b50" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm" style={{ color: "#1c1814" }}>QCM ciblés ou aléatoire</p>
-                    <p className="text-xs" style={{ color: "rgba(28,24,20,0.4)" }}>Notion par notion ou en mode aléatoire</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-md flex items-center justify-center shrink-0" style={{ backgroundColor: "rgba(184,154,47,0.10)" }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" style={{ color: "#b89a2f" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm" style={{ color: "#1c1814" }}>Mises en situation</p>
-                    <p className="text-xs" style={{ color: "rgba(28,24,20,0.4)" }}>Entraînement à l&apos;entretien oral</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-5 mt-5" style={{ borderTop: "1px solid #e8e2d9" }}>
-                <p
-                  className="text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ color: "rgba(28,24,20,0.4)", fontFamily: "var(--font-inter)" }}
-                >
-                  Ta progression
-                </p>
-                <div>
-                  <div className="flex justify-between text-xs mb-1.5">
-                    <span style={{ color: "rgba(28,24,20,0.6)" }}>Connaissance du système éducatif</span>
-                    <span className="font-bold" style={{ color: "#1e3a6e" }}>1 / 8</span>
-                  </div>
-                  <div className="w-full rounded-sm h-1.5" style={{ backgroundColor: "#e8e2d9" }}>
-                    <div className="h-1.5 rounded-sm w-[12%]" style={{ backgroundColor: "#1e3a6e" }} />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+            <Link
+              href="/reviser"
+              className="rounded-xl bg-secondary px-8 py-3.5 font-ui text-base font-bold text-white shadow-md shadow-secondary/20 transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
+            >
+              Commencer à réviser
+            </Link>
+            <Link
+              href="#piliers"
+              className="rounded-xl border border-primary/20 bg-white/60 px-8 py-3.5 font-ui text-base font-bold text-primary transition-all hover:bg-white active:scale-95"
+            >
+              Voir le programme
+            </Link>
           </div>
+        </div>
 
+        {/* Colonne aperçu */}
+        <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+          <FichePreview />
         </div>
       </div>
     </section>
