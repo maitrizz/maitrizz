@@ -21,7 +21,7 @@ export const ficheFormationDesMots: Fiche = {
     "Mots simples et construits, dérivation, composition, familles de mots, préfixes, suffixes et radicaux",
   badges: [
     { label: "★★★ Tombe à chaque session", variant: "hot" },
-    { label: "Cycle 2-3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
+    { label: "Cycle 2-3-4 · Étude de la langue", variant: "info" },
   ],
   metaTitle: "La formation des mots (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
@@ -77,7 +77,25 @@ export const ficheFormationDesMots: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Le français forme ses mots par deux procédés : la **dérivation** (on ajoute des affixes à un radical) et la **composition** (on assemble deux bases autonomes). Connaître la valeur des préfixes, suffixes et radicaux permet d'**inférer le sens d'un mot inconnu** en le décomposant : c'est une compétence directement attendue au concours.",
+              text: "Le français forme ses mots par deux procédés : la **dérivation** (on ajoute des affixes à un radical) et la **composition** (on assemble deux bases autonomes). Connaître la valeur des préfixes, suffixes et radicaux permet d'**inférer le sens d'un mot inconnu** en le décomposant : c'est une compétence attendue au concours et un levier d'apprentissage du lexique à l'école (voir les [ressources Lexique et culture d'Éduscol](https://eduscol.education.fr/255/lexique-et-culture)). Avant la typologie, posons le **vocabulaire de base** : morphème, radical, base, affixe.",
+            },
+            {
+              type: "callout",
+              variant: "success",
+              icon: "🔍",
+              title: "Partons d'un exemple : « inclassable »",
+              text: "Prenez un mot que vous n'auriez jamais appris par cœur : « **inclassable** ». On le découpe en trois morceaux : **in-** + **class-** + **-able**. Chacun porte un sens : **in-** dit « ne pas », **class-** renvoie au verbe « classer », **-able** dit « que l'on peut ». Bout à bout : « que l'on ne peut pas classer ». Vous venez d'analyser la formation d'un mot sans le connaître. Chacun de ces morceaux de sens s'appelle un **morphème** ; reste à poser les bons noms dessus.",
+            },
+            {
+              type: "table",
+              title: "Les briques d'un mot",
+              headers: ["Terme", "Définition", "Exemple"],
+              rows: [
+                ["Morphème", "La plus petite unité de **sens** d'un mot : on ne peut pas la couper davantage sans perdre du sens.", "« in- », « class- », « -able » dans inclassable"],
+                ["Radical", "Le morphème qui porte le **sens de base** ; il reste reconnaissable dans toute la famille du mot.", "**class-** (classer, classement, classeur, classification)"],
+                ["Base", "L'élément sur lequel on construit, qu'il soit **simple ou déjà construit** : la base est donc parfois plus large que le radical.", "« class**able** » est la base de « **in**classable »"],
+                ["Affixe", "Un morphème **non autonome** ajouté à la base : **préfixe** avant, **suffixe** après.", "**in-** (préfixe), **-able** (suffixe)"],
+              ],
             },
             {
               type: "subsection",
@@ -113,7 +131,7 @@ export const ficheFormationDesMots: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Le **radical** porte le sens de base (il peut avoir plusieurs formes, ou allomorphes : « écri- / écriv- / écrit- »). Un **affixe** est un morphème non autonome ajouté au radical : **préfixe** (avant) ou **suffixe** (après).",
+                  text: "Le **radical** porte le sens de base et reste reconnaissable dans toute la famille du mot. Il prend parfois plusieurs formes : ce sont ses **allomorphes**. Un **allomorphe** est l'une des variantes d'un même morphème selon son entourage : le radical de « écrire » apparaît sous les formes « écri- » (écrire), « écriv- » (écrivain), « écrit- » (écriture), et c'est toujours le même morphème. Un **affixe**, lui, est un morphème non autonome ajouté à la base : **préfixe** (avant le radical) ou **suffixe** (après le radical).",
                 },
                 {
                   type: "comparisonGrid",
@@ -124,15 +142,20 @@ export const ficheFormationDesMots: Fiche = {
                 },
                 {
                   type: "table",
-                  title: "Principaux préfixes",
+                  title: "Préfixes à connaître (un sens par ligne)",
                   headers: ["Préfixe", "Sens", "Exemples"],
                   rows: [
-                    ["dé-, dés-", "privation, action inverse", "déraison, désordre, dégoûter"],
-                    ["re-, ré-", "répétition, retour", "relire, réécrire, rouvrir"],
-                    ["in-, im-, ir-, il-", "négation", "indécis, impossible, irréel, illégal"],
-                    ["pré-", "antériorité", "prévoir, prénatal"],
+                    ["dé-, dés-", "privation, action inverse", "défaire, désordre, déraison"],
+                    ["re-, ré-, r-", "répétition, retour", "relire, réécrire, rouvrir"],
+                    ["in-, im-, il-, ir-", "négation", "inactif, impossible, illisible, irréel"],
+                    ["mé-, més-", "négation, sens péjoratif", "méconnaître, mésentente"],
+                    ["pré-", "antériorité (avant)", "prévoir, préhistoire, prénatal"],
+                    ["anti-", "opposition (contre)", "antivol, antibrouillard"],
                     ["sur-, super-", "au-dessus, excès", "surnaturel, supermarché"],
-                    ["trans-", "à travers, au-delà", "transporter, transformer"],
+                    ["sous-, sub-", "en dessous, infériorité", "sous-sol, submerger"],
+                    ["trans-", "à travers, au-delà", "transporter, transatlantique"],
+                    ["inter-", "entre", "interligne, international"],
+                    ["co-, com-, con-", "avec, association", "coéquipier, compatriote"],
                   ],
                 },
                 {
@@ -140,27 +163,56 @@ export const ficheFormationDesMots: Fiche = {
                   variant: "warning",
                   icon: "⚠️",
                   title: "Les allomorphes de in-",
-                  text: "Le préfixe négatif **in-** s'adapte à la consonne initiale du radical : **im-** devant b, m, p (impossible) ; **ir-** devant r (irremplaçable) ; **il-** devant l (illégal) ; **in-** ailleurs (indécis). Préciser le bon allomorphe est valorisé : on écrit « **ir**remplaçable », pas « in-remplaçable ».",
+                  text: "Le préfixe négatif **in-** change de forme selon la consonne qui suit, mais il reste le même morphème (ce sont ses **allomorphes**) : **im-** devant b, m, p (impossible) ; **ir-** devant r (irréel) ; **il-** devant l (illégal) ; **in-** partout ailleurs (indécis). Cette adaptation au son qui suit est une **assimilation** (voir la [phonologie](fiche:phonologie)). Préciser le bon allomorphe est valorisé : on écrit « **ir**réel », pas « in-réel ».",
                 },
                 {
                   type: "table",
-                  title: "Principaux suffixes",
-                  headers: ["Suffixe", "Classe produite", "Exemples"],
+                  title: "Suffixes à connaître (classés par ce qu'ils produisent)",
+                  headers: ["Suffixe", "Classe produite", "Valeur et exemples"],
                   rows: [
-                    ["-tion, -ation", "nom (action, résultat)", "formation, expression"],
-                    ["-eur, -euse", "nom (agent, outil)", "lecteur, perceuse"],
-                    ["-able, -ible", "adjectif (possibilité)", "remplaçable, lisible"],
-                    ["-té, -ité", "nom (qualité abstraite)", "liberté, égalité"],
-                    ["-iser, -ifier", "verbe (rendre, faire)", "moderniser, clarifier"],
-                    ["-ment", "adverbe OU nom (voir piège)", "lentement / raisonnement"],
+                    ["-tion, -sion, -ation", "nom", "action ou résultat : formation, décision"],
+                    ["-ment", "nom", "résultat d'une action, sur un verbe : raisonnement, classement"],
+                    ["-age", "nom", "action ou résultat : lavage, démarrage"],
+                    ["-eur/-euse, -ateur/-atrice", "nom", "agent, métier ou outil : lecteur, perceuse, ordinateur"],
+                    ["-té, -ité, -esse", "nom", "qualité abstraite : bonté, liberté, richesse"],
+                    ["-et/-ette, -on", "nom", "diminutif, plus petit : maisonnette, ourson"],
+                    ["-able, -ible", "adjectif", "possibilité : remplaçable, lisible"],
+                    ["-eux/-euse", "adjectif", "qui a la qualité de : courageux, peureux"],
+                    ["-al/-el, -ique", "adjectif", "relation, appartenance : national, culturel, poétique"],
+                    ["-iser, -ifier", "verbe", "rendre, transformer : moderniser, clarifier"],
+                    ["-ment", "adverbe", "manière, sur un adjectif féminin : lentement, doucement"],
                   ],
                 },
                 {
                   type: "callout",
                   variant: "info",
                   icon: "💡",
-                  title: "Le morphogramme grammatical",
-                  text: "À distinguer du suffixe lexical : un **morphogramme grammatical** marque une information grammaticale sans créer de mot nouveau (-er marque l'infinitif, -s le pluriel, -e le féminin). Dans « dégoûter », le -er est un morphogramme, pas un suffixe créateur.",
+                  title: "Suffixe lexical ou morphogramme ?",
+                  text: "Un **morphogramme** est une lettre (souvent muette) qui marque une information grammaticale ou orthographique **sans créer de mot nouveau** : le **-s** du pluriel, le **-e** du féminin, le **-er** de l'infinitif, le **-d** muet de « grand » (qui se justifie par « grande », « grandeur »). Un **suffixe lexical**, à l'opposé, **crée un mot nouveau**, souvent d'une autre classe (« classer » → « classeur »). Dans « dégoûter », le **-er** est donc un morphogramme (marque de l'infinitif), pas un suffixe.",
+                },
+                {
+                  type: "highlightBox",
+                  variant: "marine",
+                  icon: "🌳",
+                  title: "À ne pas confondre : famille de mots et champ lexical",
+                  blocks: [
+                    {
+                      type: "paragraph",
+                      text: "C'est la distinction la plus piégeuse de la notion, et elle revient souvent. Une **famille de mots** se définit par la **forme** (un radical commun) ; un **champ lexical** par le **sens** (un thème commun). Le critère de tri n'est pas le même.",
+                    },
+                    {
+                      type: "comparisonGrid",
+                      rows: [
+                        { label: "Famille de mots → critère : le radical", good: "Même radical, on les reconnaît à l'œil : **terre, terrain, terrestre, atterrir, souterrain**." },
+                        { label: "Champ lexical → critère : le thème", good: "Formes différentes réunies par le sens : **terre, champ, labour, paysan, récolte**." },
+                      ],
+                    },
+                    {
+                      type: "callout",
+                      variant: "warning",
+                      text: "⚠️ « Donnez des mots de la même **famille** » attend le **radical** (morphologie) ; « relevez le **champ lexical** » attend le **thème** (sens), travaillé dans la notion [relations sémantiques](fiche:relations-semantiques). Un même mot peut relever des deux : « terre » est dans sa famille et dans le champ lexical de la campagne.",
+                    },
+                  ],
                 },
               ],
             },
@@ -189,17 +241,41 @@ export const ficheFormationDesMots: Fiche = {
                 },
                 {
                   type: "table",
-                  title: "Quelques racines utiles pour inférer un sens",
-                  headers: ["Racine", "Origine et sens", "Exemples"],
+                  title: "Racines latines fréquentes",
+                  headers: ["Racine", "Sens", "Exemples"],
                   rows: [
-                    ["aqua-", "latin, eau", "aquatique, aqueduc"],
-                    ["man(u)-", "latin, main", "manuel, manuscrit"],
-                    ["scrib-, script-", "latin, écrire", "écriture, manuscrit, inscription"],
-                    ["vid-, vis-", "latin, voir", "visible, vision, téléviseur"],
-                    ["anthropo-", "grec, homme", "anthropologie, philanthrope"],
-                    ["chrono-", "grec, temps", "chronologie, anachronisme"],
-                    ["phil(o)-", "grec, aimer", "philosophie, bibliophile"],
-                    ["-phage", "grec, manger", "anthropophage, chronophage"],
+                    ["aqua-", "eau", "aquatique, aquarium, aqueduc"],
+                    ["terr-", "terre", "terrestre, territoire, atterrir"],
+                    ["man(u)-", "main", "manuel, manuscrit, manipuler"],
+                    ["scrib-, script-", "écrire", "manuscrit, inscription, scribe"],
+                    ["vid-, vis-", "voir", "visible, vision, téléviseur"],
+                    ["aud(i)-", "entendre", "audition, auditeur, audible"],
+                    ["voc-, voca-", "voix, appeler", "vocal, convoquer, vocabulaire"],
+                    ["port-", "porter", "porter, transporter, exporter"],
+                    ["multi-", "nombreux", "multiple, multicolore"],
+                    ["omni-", "tout", "omnivore, omniprésent"],
+                    ["-vore", "qui mange", "carnivore, herbivore"],
+                  ],
+                },
+                {
+                  type: "table",
+                  title: "Racines grecques fréquentes",
+                  headers: ["Racine", "Sens", "Exemples"],
+                  rows: [
+                    ["bio-", "vie", "biologie, biographie"],
+                    ["géo-", "terre", "géographie, géologie"],
+                    ["chrono-", "temps", "chronologie, chronomètre"],
+                    ["anthropo-", "homme, être humain", "anthropologie, philanthrope"],
+                    ["phil(o)-", "aimer", "philosophie, bibliophile"],
+                    ["poly-", "plusieurs", "polyglotte, polygone"],
+                    ["micro-", "petit", "microbe, microscope"],
+                    ["télé-", "loin", "téléphone, télévision"],
+                    ["hydro-", "eau", "hydratation, hydravion"],
+                    ["-logie", "science, étude", "biologie, géologie"],
+                    ["-graphie", "écriture, tracé", "géographie, orthographe"],
+                    ["-phone", "voix, son", "téléphone, francophone"],
+                    ["-phage", "qui mange", "anthropophage, chronophage"],
+                    ["-scope", "observer", "microscope, télescope"],
                   ],
                 },
               ],
@@ -207,7 +283,7 @@ export const ficheFormationDesMots: Fiche = {
             {
               type: "subsection",
               number: "④",
-              title: "Étymons, doublets, familles de mots",
+              title: "Étymons, doublets et faux amis",
               blocks: [
                 {
                   type: "paragraph",
@@ -231,13 +307,6 @@ export const ficheFormationDesMots: Fiche = {
                   title: "Faux amis morphologiques",
                   text: "Deux mots peuvent se ressembler sans partager le même étymon. « belladone » ressemble à bell- (guerre) mais vient de l'italien « bella donna » ; « acquérir » ressemble à aqua- (eau) mais vient de « acquirere » (obtenir). Toujours vérifier l'étymon avant de ranger un mot dans une famille (piège de l'exercice « intrus »).",
                 },
-                {
-                  type: "comparisonGrid",
-                  rows: [
-                    { label: "Famille de mots (morphologie)", good: "Même **radical** : lire, lecteur, lecture, relire, lisible" },
-                    { label: "Champ lexical (sémantique)", good: "Même **thème** : lire, page, roman, auteur, bibliothèque (voir la notion 13)" },
-                  ],
-                },
               ],
             },
             {
@@ -245,9 +314,9 @@ export const ficheFormationDesMots: Fiche = {
               variant: "rouge",
               title: "Piège n°1 · confondre dérivation et composition",
               badge: "Erreur très fréquente",
-              faux: "« déraison » est formé par composition, de « dé » et « raison ».",
-              vrai: "« dé- » n'est pas un mot autonome : c'est un préfixe. « déraison » est formé par **dérivation préfixale**. La composition assemble deux mots qui existent seuls (porte + feuille).",
-              methode: "Se demander si chaque élément peut fonctionner seul : si non (dé-, -able), c'est de la dérivation.",
+              faux: "« déraison » est un mot composé, formé de « dé » et de « raison ».",
+              vrai: "Le test est simple : **chaque morceau peut-il s'employer seul comme mot ?** « raison » oui, mais « **dé-** » non : c'est un préfixe, jamais un mot autonome. Dès qu'un morceau ne tient pas seul (dé-, in-, -able, -tion…), on est dans la **dérivation**, pas la composition. « déraison » = préfixe dé- + radical raison → **dérivation préfixale**. La composition, elle, n'assemble que des mots qui existent seuls : porte + feuille → portefeuille.",
+              methode: "Passez les morceaux un par un : « ce morceau existe-t-il seul comme mot ? ». Un seul « non » suffit à écarter la composition.",
             },
             {
               type: "piegeCard",
@@ -279,7 +348,7 @@ export const ficheFormationDesMots: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2-3 :** les familles de mots servent à orthographier (le « d » muet de « grand » se justifie par « grandeur »).\n\n**Cycle 3-4 :** la dérivation enrichit le vocabulaire (former des mots à partir d'un radical, repérer préfixes et suffixes).\n\n**Ce que vous devez savoir dire :** « Comprendre la morphologie d'un mot aide à l'écrire (familles de mots) et à en deviner le sens (préfixes, suffixes, radicaux). C'est un levier pour le vocabulaire et l'orthographe. »",
+              text: "**Cycle 1 (maternelle) :** pas encore d'analyse morphologique, mais un travail oral du vocabulaire et des jeux sur les mots d'une même famille (jardin, jardinier, jardiner).\n\n**Cycle 2 :** les familles de mots aident à orthographier (le « d » muet de « grand » se justifie par « grande », « grandeur »).\n\n**Cycle 3 :** la dérivation devient un outil pour comprendre et enrichir le vocabulaire (former des mots à partir d'un radical, repérer préfixes et suffixes, deviner le sens d'un mot construit).\n\n**Ce que vous devez savoir dire :** « Comprendre la morphologie d'un mot aide à l'écrire (familles de mots) et à en deviner le sens (préfixes, suffixes, radicaux). C'est un levier pour le vocabulaire et l'orthographe, amorcé à l'oral dès la maternelle puis analysé aux cycles 2 et 3. » (voir [Éduscol, étude de la langue cycles 2 et 3](https://eduscol.education.fr/248/francais-cycles-2-et-3-etude-de-la-langue))",
             },
             {
               type: "ctaBox",
@@ -325,7 +394,7 @@ export const ficheFormationDesMots: Fiche = {
               number: "①",
               title: "Analyser la formation d'un mot",
               intro:
-                "**Question typique :** « Analysez la formation de ce mot pour en expliquer le sens. »\nQuatre étapes obligatoires.",
+                "**Question de concours :** « *Ce savoir-faire est irremplaçable.* Analysez la formation du mot « irremplaçable » et expliquez son sens. »\nQuatre étapes, déroulées ci-dessous sur ce mot.",
               steps: [
                 {
                   number: "1",
@@ -341,6 +410,10 @@ export const ficheFormationDesMots: Fiche = {
                   number: "💡",
                   text: "**Déduire le sens global et le contextualiser** dans le texte.",
                   warn: "⚠️ Omettre l'explication du sens ou le contexte fait perdre des points.",
+                },
+                {
+                  number: "📌",
+                  text: "**Réponse attendue (formulation modèle) :** « *Irremplaçable* est formé par **dérivation** : préfixe **ir-** (allomorphe de in-, négation) + radical **remplac-** (verbe remplacer) + suffixe **-able** (possibilité). La classe est conservée (adjectif). Le mot signifie *qu'on ne peut pas remplacer*, ce que le contexte confirme. »",
                 },
               ],
             },
@@ -360,22 +433,26 @@ export const ficheFormationDesMots: Fiche = {
               number: "②",
               title: "Distinguer dérivation et composition",
               intro:
-                "**Question typique :** « Ce mot est-il formé par dérivation ou composition ? »",
+                "**Question de concours :** « Le mot « portefeuille » est-il formé par dérivation ou par composition ? Justifiez votre réponse. »\nDéroulons la démarche sur ce mot.",
               steps: [
                 {
                   number: "1",
-                  text: "**Tester l'autonomie des éléments** : chaque partie existe-t-elle seule ?",
-                  example: { lines: ["porte + feuille → deux mots → composition ; dé- + raison → dé- non autonome → dérivation"] },
+                  text: "**Tester l'autonomie des éléments** : chaque partie peut-elle s'employer seule comme mot ? Dans « portefeuille », *porte* et *feuille* existent seuls : ce sont deux mots assemblés, donc une **composition**.",
+                  example: { lines: ["porte + feuille → deux mots autonomes → composition"] },
                 },
                 {
                   number: "2",
-                  text: "**Si composition, préciser populaire ou savante** (mots français ou éléments grecs/latins).",
-                  example: { lines: ["« biographie » → éléments savants → composition savante"] },
+                  text: "**Préciser populaire ou savante** : deux mots français → composition populaire ; deux éléments grecs ou latins → composition savante.",
+                  example: { lines: ["porte et feuille sont français → composition populaire"] },
                 },
                 {
                   number: "💡",
-                  text: "**Vérifier l'inséparabilité** des mots composés.",
-                  warn: "⚠️ Un préfixe (sur-, dé-, in-) n'est jamais un mot composé.",
+                  text: "**Vérifier l'inséparabilité** et donner le sens global.",
+                  warn: "⚠️ Si un élément n'existe pas seul (dé-, in-, -able), ce n'est pas une composition mais une dérivation : « déraison » = dé- (non autonome) + raison.",
+                },
+                {
+                  number: "📌",
+                  text: "**Réponse attendue (formulation modèle) :** « *Portefeuille* est formé par **composition populaire** : il assemble deux mots français autonomes, *porte* (du verbe porter) et *feuille*. Les deux existent seuls et sont inséparables dans le mot composé, qui désigne l'étui où l'on range billets et papiers. »",
                 },
               ],
             },
@@ -395,7 +472,7 @@ export const ficheFormationDesMots: Fiche = {
               number: "③",
               title: "Inférer le sens d'un mot inconnu",
               intro:
-                "**Question typique :** « Ce mot n'est pas courant : expliquez comment en deviner le sens. »",
+                "**Question de concours :** « *Camille travaille le bois avec une dégauchisseuse.* Ce mot n'est pas courant : montrez comment l'analyse morphologique et le contexte permettent d'en deviner le sens. »\nDéroulons la démarche sur « dégauchisseuse ».",
               steps: [
                 {
                   number: "1",
@@ -411,6 +488,10 @@ export const ficheFormationDesMots: Fiche = {
                   number: "💡",
                   text: "**Confirmer par le contexte** du texte.",
                   warn: "⚠️ Le contexte tranche : « dégauchisseuse » dans une liste d'outils de menuiserie confirme l'hypothèse.",
+                },
+                {
+                  number: "📌",
+                  text: "**Réponse attendue (formulation modèle) :** « En décomposant **dé-** (action corrective) + **gauch-** (gauchir, être tordu) + **-euse** (nom d'outil), j'infère que la *dégauchisseuse* est un outil qui redresse le bois tordu ; le contexte, où le bois est *sinueux*, le confirme. »",
                 },
               ],
             },
@@ -554,7 +635,8 @@ export const ficheFormationDesMots: Fiche = {
               objectifTag: "Procédé",
               question: "Mot simple ou construit ? Si construit, nommez le procédé :\nrelire · sol · portefeuille · impossible · arc-en-ciel · surnaturel",
               correction: [
-                { type: "line", text: "relire : construit, dérivation (re- + lire) · sol : simple · portefeuille : construit, composition populaire · impossible : construit, dérivation (im- + possible) · arc-en-ciel : construit, composition populaire · surnaturel : construit, dérivation (sur- + naturel)." },
+                { type: "line", text: "**Méthode :** on teste l'autonomie de chaque élément. Tous les éléments existent seuls → composition ; un élément non autonome (préfixe, suffixe) → dérivation." },
+                { type: "line", text: "**Réponse attendue :** *sol* est un mot simple. *relire* (re- + lire), *impossible* (im- + possible) et *surnaturel* (sur- + naturel) sont construits par **dérivation préfixale** ; *portefeuille* et *arc-en-ciel* par **composition populaire**." },
               ],
             },
             {
@@ -566,7 +648,8 @@ export const ficheFormationDesMots: Fiche = {
               question:
                 "a) Identifiez le préfixe et son sens : décomposer · surnaturel · prénatal · transporter.\nb) Identifiez le suffixe et la classe produite : formation · lentement · portable · liberté.",
               correction: [
-                { type: "line", label: "a)", text: "dé- (action inverse) · sur- (au-delà) · pré- (antériorité) · trans- (à travers)." },
+                { type: "line", text: "**Méthode :** le préfixe se place avant le radical et conserve la classe ; le suffixe se place après et peut la changer." },
+                { type: "line", label: "a)", text: "**Réponse attendue —** dé- (action inverse) · sur- (au-delà) · pré- (antériorité) · trans- (à travers)." },
                 { type: "line", label: "b)", text: "-tion → nom · -ment → adverbe · -able → adjectif · -té → nom." },
               ],
             },
@@ -577,8 +660,8 @@ export const ficheFormationDesMots: Fiche = {
               title: "Exercice 3 : Les allomorphes de in-",
               question: "Donnez l'allomorphe et la règle :\nindécis · impossible · illégal · irrégulier",
               correction: [
-                { type: "line", text: "in- (indécis : consonne ordinaire) · im- (impossible : devant p) · il- (illégal : devant l) · ir- (irrégulier : devant r)." },
-                { type: "line", text: "**Règle :** le préfixe s'assimile à la consonne initiale du radical (b/m/p → im-, l → il-, r → ir-)." },
+                { type: "line", text: "**Règle :** le préfixe négatif s'assimile à la consonne initiale du radical : b/m/p → im-, l → il-, r → ir-, sinon in-." },
+                { type: "line", text: "**Réponse attendue :** in- (indécis : consonne ordinaire) · im- (impossible : devant p) · il- (illégal : devant l) · ir- (irrégulier : devant r)." },
               ],
             },
             {
@@ -596,6 +679,7 @@ export const ficheFormationDesMots: Fiche = {
               question: "Analysez la formation et indiquez si la classe change :\nraisonnement · lentement · liberté · lecteur · portable",
               correction: [
                 { type: "line", text: "raisonnement : raisonner + -ment → nom (verbe → nom) · lentement : lente + -ment → adverbe (adjectif → adverbe) · liberté : libre + -té → nom (adjectif → nom) · lecteur : lire + -eur → nom (verbe → nom) · portable : porter + -able → adjectif (verbe → adjectif)." },
+                { type: "line", text: "**Réponse attendue :** dans les cinq cas le suffixe change la classe — *raisonnement* → nom, *lentement* → adverbe, *liberté* → nom, *lecteur* → nom, *portable* → adjectif." },
                 { type: "note", text: "💡 Le suffixe change ici toujours la classe ; le préfixe, lui, la conserve." },
               ],
             },
@@ -607,8 +691,9 @@ export const ficheFormationDesMots: Fiche = {
               enonce: "« Vivre, sans l'écriture, me va mal. » (Lola Lafon, Quand tu écouteras cette chanson)",
               question: "Analysez la formation de « écriture » et expliquez son sens. Donnez trois mots de la même famille.",
               correction: [
-                { type: "line", text: "**Suffixation** : radical **écrit-** (verbe écrire) + suffixe **-ure** (résultat, procédé). Classe : verbe → nom. « Écriture » désigne l'acte d'écrire et son résultat ; le contexte en fait un mode d'être indispensable." },
+                { type: "line", text: "**Analyse :** suffixation — radical **écrit-** (verbe écrire) + suffixe **-ure** (résultat, procédé). Classe : verbe → nom. « Écriture » désigne l'acte d'écrire et son résultat ; le contexte en fait un mode d'être indispensable." },
                 { type: "line", text: "Famille : écrire, écrivain, écrit, réécriture." },
+                { type: "line", text: "**Réponse attendue :** « *Écriture* est formé par **suffixation** : le radical *écrit-* (du verbe écrire) reçoit le suffixe *-ure*, qui marque le résultat et transforme le verbe en nom. Le mot désigne l'acte d'écrire et son résultat ; dans la phrase, il devient une condition vitale de l'existence. Mots de la même famille : *écrire*, *écrivain*, *réécriture*. »" },
               ],
             },
             {
@@ -620,7 +705,8 @@ export const ficheFormationDesMots: Fiche = {
               correction: [
                 { type: "line", text: "**Famille** (même radical) : écrire, écriture, écrivain, réécriture." },
                 { type: "line", text: "**Champ lexical** (même thème) : plume, encre, page, roman." },
-                { type: "line", text: "La famille repose sur la morphologie (radical commun), le champ lexical sur le sens (thème). « écriture » appartient aux deux ; « plume » au champ lexical seulement." },
+                { type: "line", text: "**Explication :** la famille repose sur la morphologie (un radical commun), le champ lexical sur le sens (un thème commun). « écriture » appartient aux deux ; « plume » au champ lexical seulement." },
+                { type: "line", text: "**Réponse attendue :** « Quatre mots de la même **famille** que *écriture* (radical *écri-*) : *écrire*, *écrivain*, *réécriture*, *écriteau*. Quatre mots du **champ lexical** de l'écriture (même thème) : *plume*, *encre*, *page*, *roman*. La famille se définit par la forme, le champ lexical par le sens. »" },
               ],
             },
             {
@@ -638,8 +724,9 @@ export const ficheFormationDesMots: Fiche = {
               enonce: "« Il avait grandi dans la déraison des enfances paysannes. » (d'après Jean-Paul Sartre, Les Mots)",
               question: "Analysez la formation de « déraison » pour en expliquer le sens, et donnez quatre mots de la même famille.",
               correction: [
-                { type: "line", text: "**Dérivation préfixale** à partir du nom « raison ». Le préfixe **dé-** a une valeur privative (absence, opposé). Classe conservée : nom → nom. « Déraison » = absence de raison, manque de discernement. Dans le texte, le terme désigne l'état de ceux privés d'accès à la culture lettrée." },
+                { type: "line", text: "**Analyse :** dérivation préfixale à partir du nom « raison ». Le préfixe **dé-** a une valeur privative (absence, opposé). Classe conservée : nom → nom. « Déraison » = absence de raison, manque de discernement ; dans le texte, le terme désigne l'état de ceux privés d'accès à la culture lettrée." },
                 { type: "line", text: "Famille : raison, raisonnement, raisonnable, déraisonnable." },
+                { type: "line", text: "**Réponse attendue :** « *Déraison* est formé par **dérivation préfixale** : le préfixe privatif *dé-* s'ajoute au nom *raison*, sans changer la classe (nom → nom). Le mot signifie *l'absence de raison, le manque de discernement* ; dans le texte, il qualifie ceux qui sont privés d'accès à la culture lettrée. Mots de la même famille : *raison*, *raisonnement*, *raisonnable*, *déraisonnable*. »" },
               ],
             },
             {
@@ -650,8 +737,9 @@ export const ficheFormationDesMots: Fiche = {
               enonce: "« Camille travaille le bois brut, trop sinueux, avec une dégauchisseuse. »",
               question: "« dégauchisseuse » n'est pas courant. Montrez comment l'analyse morphologique et le contexte permettent d'en inférer le sens.",
               correction: [
-                { type: "line", text: "**Dérivation** : préfixe **dé-** (action corrective) + radical **gauch-** (gauchir : être tordu, sinueux) + suffixe **-euse** (nom d'outil, comme perceuse). L'analyse suggère un outil qui « dégauchit », qui redresse ce qui est tordu." },
-                { type: "line", text: "Le contexte confirme : le bois est « sinueux » et l'outil sert à le travailler. La dégauchisseuse redresse le bois irrégulier." },
+                { type: "line", text: "**Analyse :** dérivation — préfixe **dé-** (action corrective) + radical **gauch-** (gauchir : être tordu, sinueux) + suffixe **-euse** (nom d'outil, comme perceuse). L'analyse suggère un outil qui « dégauchit », qui redresse ce qui est tordu." },
+                { type: "line", text: "Le contexte confirme : le bois est « sinueux » et l'outil sert à le travailler." },
+                { type: "line", text: "**Réponse attendue :** « En décomposant *dé-* (action corrective) + *gauch-* (gauchir, être tordu) + *-euse* (nom d'outil), j'infère qu'une *dégauchisseuse* est un outil qui redresse le bois tordu. Le contexte le confirme : le bois est *sinueux* et l'outil sert à le travailler. »" },
               ],
             },
           ],
@@ -675,7 +763,8 @@ export const ficheFormationDesMots: Fiche = {
               enonce: "« Ce savoir-faire est irremplaçable dans le monde artisanal. »",
               question: "Analysez la formation de l'adjectif « irremplaçable » : procédé, segmentation, sens de chaque morphème, sens global.",
               correction: [
-                { type: "line", text: "**Dérivation affixale.** Étape 1 : radical **remplac-** (verbe remplacer) + suffixe **-able** (possibilité) → remplaçable. Étape 2 : préfixe **ir-** (allomorphe de in- devant r, négation) → irremplaçable. Classe conservée : adjectif → adjectif. Sens : qu'on ne peut pas remplacer. Le doublement du r vient de l'assimilation du préfixe." },
+                { type: "line", text: "**Analyse :** dérivation affixale. Étape 1 — radical **remplac-** (verbe remplacer) + suffixe **-able** (possibilité) → remplaçable. Étape 2 — préfixe **ir-** (allomorphe de in- devant r, négation) → irremplaçable. Classe conservée : adjectif → adjectif. Le doublement du r vient de l'assimilation du préfixe." },
+                { type: "line", text: "**Réponse attendue :** « *Irremplaçable* est un adjectif formé par **dérivation** : sur le verbe *remplacer*, le suffixe *-able* (possibilité) donne *remplaçable*, puis le préfixe négatif *ir-* (allomorphe de *in-* devant r) donne *irremplaçable*. La classe reste l'adjectif. Le mot signifie *qu'on ne peut pas remplacer*. »" },
               ],
             },
             {
@@ -686,8 +775,9 @@ export const ficheFormationDesMots: Fiche = {
               enonce: "« Charles Baudelaire est tout aussi dégoûté du réel que l'Empereur de Yourcenar. »",
               question: "Analysez la formation du verbe « dégoûter ». Distinguez le morphogramme grammatical du suffixe lexical. Donnez trois mots de la même famille.",
               correction: [
-                { type: "line", text: "**Dérivation verbale.** Le nom « goût » donne le verbe « goûter » par ajout de **-er**, qui est un **morphogramme grammatical** (marque de l'infinitif du 1er groupe), non un suffixe lexical. Puis le préfixe privatif **dé-** forme « dégoûter » (inspirer de la répulsion)." },
+                { type: "line", text: "**Analyse :** dérivation verbale. Le nom « goût » donne le verbe « goûter » par ajout de **-er**, qui est un **morphogramme** (marque de l'infinitif du 1er groupe), non un suffixe lexical. Puis le préfixe privatif **dé-** forme « dégoûter » (inspirer de la répulsion)." },
                 { type: "line", text: "Famille : goût, dégoût, dégoûtant." },
+                { type: "line", text: "**Réponse attendue :** « *Dégoûter* est formé par **dérivation** sur le nom *goût* : le *-er* est un morphogramme (marque de l'infinitif) qui donne le verbe *goûter*, puis le préfixe privatif *dé-* donne *dégoûter*, « inspirer de la répulsion ». Le *-er* n'est pas un suffixe lexical, car il ne crée pas un mot d'une autre classe. Mots de la même famille : *goût*, *dégoût*, *dégoûtant*. »" },
               ],
             },
             {
@@ -699,6 +789,7 @@ export const ficheFormationDesMots: Fiche = {
               correction: [
                 { type: "line", text: "**vraisemblablement** : vrai (adjectif) + sembler (verbe) → vraisemblable (adjectif) → vraisemblablement (adverbe, + -ment). Dérivation en chaîne, classe finale : adverbe." },
                 { type: "line", text: "**insupportable** : préfixe **in-** (devant s : pas d'assimilation) + radical support- (verbe supporter) + suffixe -able (possibilité) → ce qu'on ne peut supporter." },
+                { type: "line", text: "**Réponse attendue :** « *Vraisemblablement* résulte d'une **dérivation en chaîne** : *vrai* + *sembler* → *vraisemblable* (adjectif), puis suffixe *-ment* → *vraisemblablement* (adverbe). *Insupportable* : préfixe *in-* (sans assimilation devant s) + radical *support-* (supporter) + suffixe *-able* → *ce qu'on ne peut pas supporter*. »" },
               ],
             },
           ],
@@ -892,7 +983,7 @@ export const ficheFormationDesMots: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Phonologie → notion 15", "Champ lexical → notion 13", "Relations sémantiques → notion 17"],
+                  lines: ["Phonologie → notion 15", "Champ lexical → notion 17", "Relations sémantiques → notion 17"],
                   variant: "purple",
                   dashed: true,
                 },
