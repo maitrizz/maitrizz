@@ -90,8 +90,8 @@ export const ficheAccordParticipePasse: Fiche = {
               lines: [
                 "① Le PP est-il employé seul (sans auxiliaire) ? → OUI : accord avec le nom noyau ou le sujet (règle A).",
                 "② Sinon, l'auxiliaire est-il ÊTRE ? → OUI : accord avec le groupe sujet (règle B).",
-                "③ Sinon (auxiliaire AVOIR), y a-t-il un COD ? → NON : invariable (règle C).",
-                "④ Le COD est-il placé AVANT le verbe ? → NON : invariable (règle C). OUI : accord avec le COD antéposé (règle D).",
+                "③ Sinon (auxiliaire AVOIR), le COD est-il absent ou placé APRÈS le verbe ? → OUI : invariable (règle C).",
+                "④ Sinon, le COD est placé AVANT le verbe (COD antéposé) → accord avec lui (règle D).",
               ],
               note: "Toujours identifier l'auxiliaire en premier, puis chercher le COD et sa position.",
             },
@@ -164,7 +164,7 @@ export const ficheAccordParticipePasse: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Avec l'auxiliaire **avoir**, le participe passé est **invariable par défaut**. Il ne s'accorde que dans un seul cas : quand le **COD est placé avant le verbe** (COD antéposé). C'est alors avec ce COD antéposé qu'il s'accorde.",
+                  text: "Avec l'auxiliaire **avoir**, le participe passé est **invariable par défaut** (règle C). Il ne s'accorde que dans un seul cas : quand le **COD est placé avant le verbe** (COD antéposé, règle D). C'est alors avec ce COD antéposé qu'il s'accorde.",
                 },
                 {
                   type: "table",
@@ -329,6 +329,7 @@ export const ficheAccordParticipePasse: Fiche = {
                     "COD antéposé = COD placé AVANT le verbe (pronom le/la/les, relatif que, interrogatif).",
                     "Auxiliaire = être ou avoir ; à identifier en premier.",
                   ],
+                  note: "Les lettres A à F (règle A, règle B…) sont des repères internes à cette fiche, pas une terminologie officielle à employer telle quelle en copie.",
                 },
                 {
                   type: "callout",
@@ -875,10 +876,10 @@ export const ficheAccordParticipePasse: Fiche = {
               type: "flashcardDeck",
               cards: [
                 {
-                  question: "L'arbre de décision en 4 questions ?",
+                  question: "Accorder un participe passé : quel est le bon réflexe, dans l'ordre ?",
                   answer:
-                    "① PP seul ? → accord avec le nom noyau (épithète) ou le sujet (attribut).\n② Auxiliaire être ? → accord avec le groupe sujet.\n③ Avoir, pas de COD (ou COD après) ? → invariable.\n④ Avoir + COD antéposé ? → accord avec le COD antéposé.",
-                  astuce: "💡 Identifier l'auxiliaire en premier, puis chercher le COD et sa position.",
+                    "1. PP seul → comme un adjectif.\n2. Auxiliaire être → accord avec le sujet.\n3. Auxiliaire avoir → identifier le COD et sa position : avant le verbe = accord, sinon (absent ou après) = invariable.",
+                  astuce: "💡 Toujours commencer par l'auxiliaire, jamais par le COD.",
                 },
                 {
                   question: "COD antéposé : les 3 mécanismes ?",
@@ -909,9 +910,10 @@ export const ficheAccordParticipePasse: Fiche = {
                     "Monter, descendre, sortir, passer, rentrer, retourner :\n« Elle est **montée**. » (intransitif, être, accord avec le sujet).\n« Elle a **monté** les valises. » (transitif, avoir, COD après → invariable).\n« les valises qu'elle a **montées** » (COD antéposé → accord).",
                 },
                 {
-                  question: "Pronominaux dont « se » est toujours COI ?",
+                  question: "Justifiez l'invariabilité de « souri » dans « Ils se sont souri. »",
                   answer:
-                    "PP toujours invariable : se parler, s'écrire, se sourire, se plaire, se nuire, se mentir, se ressembler, se succéder, se téléphoner, se suffire.\n« Ils se sont **souri**. » ; « Les rois qui se sont **succédé**. »",
+                    "« sourire à quelqu'un » : « se » est COI (pas COD). Pas de COD antéposé → le participe passé reste invariable : « souri ».",
+                  astuce: "💡 Réflexe : si le verbe se construit avec « à » (parler à, sourire à, téléphoner à…), « se » est COI.",
                 },
                 {
                   question: "Formule de justification rédigée (avoir, COD antéposé) ?",
