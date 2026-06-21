@@ -221,7 +221,7 @@ function ficheRedigerDeveloppement(niveau: Niveau): Fiche {
                     variant: "info",
                     icon: "💡",
                     title: "Garder du temps pour relire",
-                    text: "La langue est évaluée. On relit pour corriger l'orthographe et la syntaxe (accords, notions 10-11 ; ponctuation, notion 12) et pour vérifier qu'on a bien répondu à la consigne. On rédige au **présent de l'analyse** (« le narrateur montre », pas « le narrateur montra »).",
+                    text: "La langue est évaluée. On relit pour corriger l'orthographe et la syntaxe (ponctuation, notion 5 ; accords, notions 10-11 ; homophones, notion 12) et pour vérifier qu'on a bien répondu à la consigne. On rédige au **présent de l'analyse** (« le narrateur montre », pas « le narrateur montra »).",
                   },
                 ],
               },

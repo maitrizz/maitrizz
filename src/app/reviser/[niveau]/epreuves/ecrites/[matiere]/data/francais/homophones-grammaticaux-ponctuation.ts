@@ -7,26 +7,25 @@ const OBJECTIFS = [
   { id: "h3", label: "Je distingue le déterminant possessif (ses) du déterminant démonstratif (ces)" },
   { id: "h4", label: "Je sais que le pronom personnel COI « leur » est invariable (test : lui), alors que le déterminant possessif « leur(s) » s'accorde" },
   { id: "h5", label: "Je distingue mais/mes et davantage/d'avantage(s)" },
-  { id: "p1", label: "Je sais nommer les emplois de la virgule (détachement, juxtaposition, énumération, ellipse, coordination implicite, subordonnée antéposée)" },
-  { id: "p2", label: "Je distingue le point-virgule (relation logique implicite) des deux-points (annonce explicite)" },
-  { id: "p3", label: "Je rédige une justification syntaxique précise, au-delà de « la virgule marque une pause »" },
+  { id: "h6", label: "Je distingue c'est/s'est/sais/sait, sa/ça et la/là/l'a/l'as par la nature grammaticale et les tests adaptés" },
+  { id: "h7", label: "Je tranche quel(s)/quelle(s)/qu'elle(s) et tout/tous/toute(s) en observant le groupe nominal ou le remplacement" },
 ];
 
 export const ficheHomophonesPonctuation: Fiche = {
-  slug: "homophones-grammaticaux-ponctuation",
+  slug: "homophones-grammaticaux",
   matiere: "francais",
   numero: 12,
   partie: "Partie 1 : Orthographe grammaticale",
-  title: "Les homophones grammaticaux et la ponctuation",
+  title: "Les homophones grammaticaux",
   subtitle:
-    "a/à, est/et, son/sont, ses/ces, leur/leurs, ou/où, ce/se… et les emplois de la virgule, du point-virgule et des deux-points",
+    "a/à, est/et, son/sont, on/ont, ou/où, ce/se, ses/ces, leur/leurs, mais/mes, davantage/d'avantage(s), c'est/s'est, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous",
   badges: [
     { label: "★★★ Très fréquent", variant: "hot" },
     { label: "Cycle 3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
   ],
-  metaTitle: "Les homophones grammaticaux et la ponctuation (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Les homophones grammaticaux (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les homophones grammaticaux (a/à, est/et, son/sont, on/ont, ou/où, ses/ces, ce/se, leur/leurs, mais/mes, davantage/d'avantage) avec leurs tests de remplacement, et sur la ponctuation (emplois de la virgule, point-virgule, deux-points) avec la justification syntaxique attendue au concours. Méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE complète sur les homophones grammaticaux (a/à, est/et, son/sont, on/ont, ou/où, ses/ces, ce/se, leur/leurs, mais/mes, davantage/d'avantage, c'est/s'est/sais/sait, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous) avec leurs tests de remplacement, une méthode pas-à-pas, des exercices corrigés, des flashcards et une auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -42,7 +41,7 @@ export const ficheHomophonesPonctuation: Fiche = {
               type: "sommaireApercu",
               title: "Le programme en 4 étapes",
               intro:
-                "Deux savoir-faire complémentaires : trancher un homophone grâce au bon test, et nommer précisément un emploi de ponctuation.",
+                "Les homophones grammaticaux se tranchent par le raisonnement : on identifie la nature du mot, puis on applique le bon test de remplacement.",
               items: [
                 {
                   number: "①",
@@ -51,18 +50,18 @@ export const ficheHomophonesPonctuation: Fiche = {
                 },
                 {
                   number: "②",
-                  title: "Les autres homophones",
+                  title: "Les autres paires à test",
                   text: "ou/où, ce/se, ses/ces, leur/leurs, mais/mes, davantage : chaque paire a son test de remplacement.",
                 },
                 {
                   number: "③",
-                  title: "La virgule",
-                  text: "Détachement, juxtaposition, énumération, ellipse, coordination implicite, subordonnée antéposée : nommer l'emploi.",
+                  title: "Les cas très fréquents en rédaction",
+                  text: "c'est/s'est/sais/sait, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous : ils se corrigent en identifiant le groupe ou le verbe caché.",
                 },
                 {
                   number: "④",
-                  title: "Point-virgule et deux-points",
-                  text: "Relation logique implicite (point-virgule) ou annonce explicite (deux-points), à justifier en formule précise.",
+                  title: "Justifier comme au concours",
+                  text: "On ne répond pas seulement par la forme correcte : on nomme la nature du mot et on donne le test qui valide le choix.",
                 },
               ],
             },
@@ -78,7 +77,7 @@ export const ficheHomophonesPonctuation: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Les **homophones grammaticaux** sont des mots qui se prononcent de la même façon mais s'écrivent différemment selon leur **nature** : « a » (verbe) ou « à » (préposition). On les tranche en identifiant cette nature, le plus souvent par un **test de remplacement**. La **ponctuation**, elle, fait l'objet d'une question dédiée en Partie 1 (analyse de deux emplois de la virgule) : le jury attend une analyse syntaxique précise, pas « la virgule marque une pause ». Ces deux points sont parmi les erreurs les plus fréquentes au concours, à chaque session.",
+              text: "Les **homophones grammaticaux** sont des mots qui se prononcent de la même façon mais s'écrivent différemment selon leur **nature** : « a » est un verbe, « à » est une préposition. Le bon réflexe n'est donc pas de mémoriser une liste au hasard, mais d'appliquer un **test de remplacement** et de nommer la nature obtenue.",
             },
             {
               type: "subsection",
@@ -155,10 +154,10 @@ export const ficheHomophonesPonctuation: Fiche = {
                       title: "ce / se",
                       definition: "**ce** = déterminant ou pronom démonstratif · **se** = pronom personnel réfléchi.",
                       exemples: [
-                        "« Il **se** lave. » → « Il **me** lave » (1re personne) ✓ → pronom réfléchi",
+                        "« Il **se** lave. » → « Je **me** lave » ✓ → pronom réfléchi",
                         "« **Ce** livre est beau. » → devant un nom → déterminant démonstratif",
                       ],
-                      test: "« se » se remplace par « me » ou « te » ; « ce » non.",
+                      test: "Changer de personne : « il se lave » devient « je me lave » ou « tu te laves » ; « ce » ne varie pas ainsi.",
                     },
                     {
                       title: "ses / ces",
@@ -193,9 +192,57 @@ export const ficheHomophonesPonctuation: Fiche = {
                       definition: "**davantage** (un mot) = adverbe de quantité · **d'avantage(s)** = préposition « de » + nom « avantage(s) ».",
                       exemples: [
                         "« Il travaille **davantage**. » → « Il travaille **plus** » ✓ → adverbe",
-                        "« Il tire **d'avantages** de cette situation. » → « des avantages » ✓ → nom",
+                        "« Il ne voit pas **d'avantage** à changer. » → « aucun avantage » ✓ → nom",
                       ],
                       test: "Remplacer par « plus » (adverbe) ou par « un avantage / des avantages » (nom).",
+                    },
+                    {
+                      title: "c'est / s'est / sais / sait",
+                      definition: "**c'est** = pronom démonstratif + verbe être · **s'est** = pronom réfléchi + être · **sais/sait** = verbe savoir.",
+                      exemples: [
+                        "« **C'est** important. » → « cela est important » ✓",
+                        "« Il **s'est** trompé. » → verbe pronominal « se tromper » au passé composé",
+                        "« Je **sais** / il **sait** la réponse. » → verbe savoir",
+                      ],
+                      test: "Remplacer « c' » par « cela » ; repérer un verbe pronominal pour « s'est » ; changer de personne pour « sais/sait ».",
+                    },
+                    {
+                      title: "sa / ça",
+                      definition: "**sa** = déterminant possessif féminin singulier · **ça** = pronom démonstratif familier (= cela).",
+                      exemples: [
+                        "« **Sa** copie est lisible. » → « son cahier » ✓ → possessif",
+                        "« **Ça** me surprend. » → « cela me surprend » ✓ → pronom",
+                      ],
+                      test: "Remplacer par « cela » : si ça marche, on écrit « ça » ; devant un nom féminin possédé, on écrit « sa ».",
+                    },
+                    {
+                      title: "la / là / l'a / l'as",
+                      definition: "**la** = déterminant ou pronom · **là** = adverbe de lieu · **l'a / l'as** = pronom « l' » + verbe avoir.",
+                      exemples: [
+                        "« **La** porte est ouverte. » → déterminant devant un nom",
+                        "« Il est **là**. » → « ici » ✓ → adverbe de lieu",
+                        "« Il **l'a** vue. » → « il l'avait vue » ✓ → avoir",
+                      ],
+                      test: "Remplacer par « ici » pour « là » ; par « l'avait » pour « l'a/l'as » ; devant un nom ou COD féminin, « la ».",
+                    },
+                    {
+                      title: "quel(s) / quelle(s) / qu'elle(s)",
+                      definition: "**quel(s)/quelle(s)** = déterminant ou adjectif interrogatif/exclamatif · **qu'elle(s)** = « que » + pronom personnel.",
+                      exemples: [
+                        "« **Quelle** surprise ! » → accompagne un nom féminin",
+                        "« Je pense **qu'elle** viendra. » → « qu'il viendra » ✓",
+                      ],
+                      test: "Remplacer « elle(s) » par « il(s) » : si ça marche, écrire « qu'elle(s) ». Sinon accorder « quel » avec le nom.",
+                    },
+                    {
+                      title: "tout / tous / toute(s)",
+                      definition: "**tout** peut être déterminant, pronom ou adverbe ; sa forme dépend du mot qu'il accompagne ou remplace.",
+                      exemples: [
+                        "« **Tous** les élèves travaillent. » → déterminant masculin pluriel",
+                        "« Elles sont **toutes** prêtes. » → pronom/adverbe selon l'analyse, accord audible",
+                        "« Elle est **tout** émue. » → adverbe devant adjectif féminin commençant par voyelle",
+                      ],
+                      test: "Identifier le mot concerné : devant un nom, accorder comme déterminant ; seul, pronom ; devant un adjectif, souvent adverbe.",
                     },
                   ],
                 },
@@ -204,60 +251,23 @@ export const ficheHomophonesPonctuation: Fiche = {
             {
               type: "subsection",
               number: "③",
-              title: "La virgule : nommer l'emploi",
+              title: "Justifier une graphie : nature + test",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Le jury n'attend pas « la virgule marque une pause », mais le **nom de l'emploi** et sa **justification syntaxique**. Voici les emplois à savoir reconnaître.",
-                },
-                {
-                  type: "table",
-                  title: "Les emplois de la virgule",
-                  headers: ["Emploi", "Rôle", "Exemple"],
-                  rows: [
-                    ["Détachement", "Isole un constituant déplacé ou mis en relief (CC, épithète détachée, apposition)", "« Épuisée, elle s'endormit. »"],
-                    ["Juxtaposition", "Relie deux propositions sans conjonction", "« Il entre, il s'assoit. »"],
-                    ["Énumération", "Sépare les éléments d'une liste (sauf avant « et » final)", "« rouge, bleu, vert et jaune »"],
-                    ["Ellipse du verbe", "Marque l'absence d'un verbe répété", "« Paul mange une pomme, Marie une poire. »"],
-                    ["Coordination implicite", "Remplace une conjonction effacée (et, mais, or…)", "« Il est courageux, tenace. »"],
-                    ["Subordonnée antéposée", "Sépare une subordonnée placée avant la principale", "« Quand il pleut, je reste chez moi. »"],
-                  ],
+                  text: "Au concours, il faut éviter les réponses réduites à « on écrit comme ça parce que ça sonne juste ». Une bonne justification suit toujours le même schéma : **forme choisie + nature grammaticale + test de remplacement**.",
                 },
                 {
                   type: "callout",
                   variant: "info",
-                  icon: "💡",
-                  title: "La formule de justification attendue",
-                  text: "« La virgule marque ici un [détachement / une juxtaposition / une ellipse…] : elle [isole l'épithète détachée du sujet / relie deux propositions sans conjonction / efface le verbe répété…], ce qui [produit tel effet]. »",
-                },
-              ],
-            },
-            {
-              type: "subsection",
-              number: "④",
-              title: "Point-virgule, deux-points, tiret et parenthèses",
-              blocks: [
-                {
-                  type: "paragraph",
-                  text: "Le **point-virgule** sépare deux **propositions indépendantes** dont le sens est lié par une relation logique **implicite** (cause, opposition, conséquence). Il est plus fort que la virgule, plus faible que le point.\n\n« Il travaillait sans relâche ; ses efforts finirent par payer. » : conséquence implicite.",
-                },
-                {
-                  type: "table",
-                  title: "Les emplois des deux-points",
-                  headers: ["Emploi", "Exemple"],
-                  rows: [
-                    ["Annonce d'une énumération", "« Il acheta : du pain, du beurre et du lait. »"],
-                    ["Annonce d'une explication ou d'une cause", "« Il est absent : il est malade. »"],
-                    ["Annonce d'une conséquence", "« Elle s'entraîna des mois : elle gagna le concours. »"],
-                    ["Annonce d'une citation ou du discours direct", "« Il dit : “Je reviendrai.” »"],
-                  ],
+                  title: "Exemple de réponse attendue",
+                  text: "« Il **a** terminé » : on écrit **a** car il s'agit du verbe avoir à la 3e personne du singulier. Le remplacement par l'imparfait fonctionne : « Il **avait** terminé ». Dans « Il pense **à** son avenir », le remplacement par « avait » est impossible : **à** est une préposition.",
                 },
                 {
                   type: "callout",
-                  variant: "info",
-                  icon: "💡",
-                  title: "Tiret et parenthèses",
-                  text: "Les **parenthèses** encadrent un élément accessoire que l'on peut supprimer sans changer le sens : « La grammaire de référence (publiée en 2020) sert d'appui. » Le **tiret double** joue un rôle proche, avec une mise en relief plus marquée que la virgule ou les parenthèses.",
+                  variant: "warning",
+                  title: "Renvoi",
+                  text: "La ponctuation syntaxique (virgule, point-virgule, deux-points) est désormais traitée dans la **notion 5 : La phrase complexe et sa ponctuation**.",
                 },
               ],
             },
@@ -289,18 +299,9 @@ export const ficheHomophonesPonctuation: Fiche = {
               methode: "Se demander s'il y a un possesseur (ses, son/sa) ou si l'on désigne des éléments déjà connus (ces, ce/cette).",
             },
             {
-              type: "piegeCard",
-              variant: "bleu",
-              title: "Piège n°4 · « la virgule marque une pause »",
-              badge: "Réponse refusée",
-              faux: "« La virgule marque une pause dans la lecture. »",
-              vrai: "Le jury attend le nom de l'emploi et sa justification : « La virgule marque un **détachement** : elle isole l'épithète détachée du sujet. »",
-              methode: "Toujours nommer l'emploi syntaxique (détachement, juxtaposition, ellipse…) puis le justifier par la structure de la phrase.",
-            },
-            {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 :** premières confusions travaillées (a/à, est/et, son/sont, on/ont) par le raisonnement grammatical, en repérant la nature du mot.\n\n**Cycle 3-4 :** consolidation (ses/ces, leur/leurs) et premiers emplois de la ponctuation. Les élèves apprennent à justifier, pas seulement à choisir.\n\n**Ce que vous devez savoir dire :** « On n'enseigne pas un homophone par cœur, mais par un raisonnement : quelle est la nature du mot ? Le test de remplacement (avait, mon, lui…) rend ce raisonnement automatique. »",
+              text: "**Cycle 2 :** premières confusions travaillées (a/à, est/et, son/sont, on/ont) par le raisonnement grammatical, en repérant la nature du mot.\n\n**Cycle 3-4 :** consolidation (ses/ces, leur/leurs, ce/se, ou/où) avec des tests de remplacement explicites. Les élèves apprennent à justifier, pas seulement à choisir.\n\n**Ce que vous devez savoir dire :** « On n'enseigne pas un homophone par cœur, mais par un raisonnement : quelle est la nature du mot ? Le test de remplacement (avait, mon, lui…) rend ce raisonnement automatique. »",
             },
             {
               type: "ctaBox",
@@ -316,13 +317,6 @@ export const ficheHomophonesPonctuation: Fiche = {
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              title: "Deux démarches",
-              text: "Trancher un homophone par un test de remplacement, et analyser un signe de ponctuation en formule précise. Chacune se termine par un checkpoint.",
-            },
-            {
               type: "rappelExpress",
               title: "Rappel express : nature et fonction",
               blocks: [
@@ -331,13 +325,13 @@ export const ficheHomophonesPonctuation: Fiche = {
                   lines: [
                     "Un homophone se tranche par sa nature : verbe, déterminant, pronom, conjonction, préposition (voir la notion 1).",
                     "Un verbe peut se mettre à l'imparfait ; un mot invariable, non.",
-                    "Un signe de ponctuation s'analyse par son emploi syntaxique, pas par « la pause ».",
+                    "Une justification complète donne la forme choisie, la nature grammaticale et le test utilisé.",
                   ],
                 },
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Le pronom COI « leur » est invariable (test : lui) ; seul le déterminant possessif « leur(s) » s'accorde.",
+                  text: "⚠️ Le pronom COI « leur » est invariable (test : lui) ; seul le déterminant possessif « leur(s) » s'accorde avec le nom qui suit.",
                 },
               ],
             },
@@ -346,57 +340,26 @@ export const ficheHomophonesPonctuation: Fiche = {
               number: "①",
               title: "Trancher un homophone grammatical",
               intro:
-                "**Question typique :** « Justifiez l'orthographe du mot souligné. »\nOn identifie la nature par un test.",
+                "**Question typique :** « Justifiez l'orthographe du mot souligné. »\nExemple d'appui : « Je ___ ai rendu ___ livres. » On identifie la nature de chaque occurrence par un test.",
               steps: [
                 {
                   number: "1",
                   text: "**Repérer la paire** concernée (a/à, est/et, ses/ces, leur/leurs…).",
-                  example: { lines: ["« Il range ___ affaires. » → paire ses/ces"] },
+                  example: { lines: ["« Je ___ ai rendu ___ livres. » → paire leur/leurs, deux occurrences à analyser séparément"] },
                 },
                 {
                   number: "2",
                   text: "**Appliquer le test de remplacement** propre à la paire (avait, était, mon, lui, ou bien, ce/cette…).",
-                  example: { lines: ["« son affaire » au singulier ✓ → possessif « ses »"] },
+                  example: { lines: ["« Je lui ai rendu » ✓ → pronom COI « leur » ; « lui livres » impossible → déterminant possessif « leurs » devant un nom pluriel"] },
                 },
                 {
                   number: "💡",
                   text: "**Nommer la nature** dans la justification : déterminant possessif, pronom COI, conjonction de coordination…",
                   warn: "⚠️ « leur » pronom est invariable ; ne jamais lui ajouter de -s.",
                 },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              title: "Checkpoint : à vous de jouer",
-              badge: "30 secondes",
-              question: "Justifiez l'orthographe : « Je ___ ai rendu ___ livres. » (leur/leurs, deux fois)",
-              correction: [
-                { type: "line", text: "« Je **leur** ai rendu » : test « lui » ✓ → pronom personnel COI, invariable. « ___ livres » : « lui » impossible → déterminant possessif, accord avec « livres » (pluriel) → « **leurs** livres »." },
-                { type: "note", text: "Trouvé du premier coup ? Le test « lui » est la clé. Sinon, revoyez la paire leur/leurs." },
-              ],
-            },
-            {
-              type: "methodeGroup",
-              number: "②",
-              title: "Analyser un signe de ponctuation",
-              intro:
-                "**Question typique :** « Analysez deux emplois de la virgule dans ce passage. »\nOn nomme, puis on justifie.",
-              steps: [
                 {
-                  number: "1",
-                  text: "**Nommer l'emploi** : détachement, juxtaposition, énumération, ellipse, coordination implicite, subordonnée antéposée (virgule) ; relation implicite (point-virgule) ; annonce (deux-points).",
-                  example: { lines: ["« Épuisée, elle s'endormit. » → détachement"] },
-                },
-                {
-                  number: "2",
-                  text: "**Justifier par la structure** : quel constituant est isolé, relié, annoncé ? Avec quel effet ?",
-                  example: { lines: ["La virgule isole l'épithète détachée « Épuisée » du sujet « elle », avec un effet d'emphase."] },
-                },
-                {
-                  number: "💡",
-                  text: "**Rédiger en formule** : « [signe] marque ici [emploi] : il/elle [action syntaxique], ce qui [effet]. »",
-                  warn: "⚠️ « marque une pause » est refusé : il faut nommer l'emploi syntaxique.",
+                  number: "✓",
+                  text: "**Formuler la réponse attendue** : « Je **leur** ai rendu » : pronom personnel COI, remplaçable par « lui », donc invariable. « **Leurs** livres » : déterminant possessif, accordé avec le nom pluriel « livres ».",
                 },
               ],
             },
@@ -405,10 +368,12 @@ export const ficheHomophonesPonctuation: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "Analysez le point-virgule : « Les uns criaient ; les autres se taisaient. »",
+              question: "Justifiez l'orthographe : « ___ résultats montrent qu'il faut travailler ___. » (Ces/Ses puis davantage/d'avantage)",
               correction: [
-                { type: "line", text: "Le point-virgule sépare deux propositions indépendantes liées par une relation d'**opposition** implicite. Plus fort que la virgule, il maintient les deux propositions dans le même mouvement descriptif." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "line", text: "**Réponse attendue :** « **Ces** résultats montrent qu'il faut travailler **davantage**. »" },
+                { type: "line", text: "On écrit **Ces** avec un c car il s'agit d'un déterminant démonstratif : il désigne des résultats déjà évoqués. Le test au singulier donne « **ce** résultat »." },
+                { type: "line", text: "On écrit **davantage** en un seul mot car il s'agit d'un adverbe de quantité, remplaçable par « plus » : « il faut travailler plus »." },
+                { type: "note", text: "Trouvé du premier coup ? Vous savez passer d'une paire à l'autre en gardant le même raisonnement : nature + test." },
               ],
             },
             {
@@ -436,7 +401,7 @@ export const ficheHomophonesPonctuation: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de passer aux exercices",
-              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "11 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
             },
             {
               type: "quizBlock",
@@ -490,33 +455,44 @@ export const ficheHomophonesPonctuation: Fiche = {
                     "Test : « Je lui ai parlé » ✓ → pronom personnel COI « leur », toujours invariable.",
                 },
                 {
-                  objectifId: "p1",
-                  question: "Dans « Quand il pleut, je reste chez moi », la virgule marque :",
-                  options: ["une énumération", "une subordonnée antéposée", "une ellipse du verbe", "une simple pause"],
+                  objectifId: "h2",
+                  question: "« Il ___ prépare à partir. » Quelle forme ?",
+                  options: ["ce", "se", "ces", "ses"],
                   correctIndex: 1,
                   explanation:
-                    "La virgule sépare la subordonnée circonstancielle de temps, placée avant la principale.",
+                    "« se » est le pronom réfléchi du verbe pronominal « se préparer » ; on peut comparer avec « je me prépare ».",
                 },
                 {
-                  objectifId: "p2",
-                  question: "« Il est absent : il est malade. » Les deux-points marquent :",
-                  options: ["une énumération", "une citation", "une explication / cause", "une opposition"],
-                  correctIndex: 2,
+                  objectifId: "h5",
+                  question: "« Ce choix offre ___ de garanties. » Quelle forme ?",
+                  options: ["davantage", "d'avantage", "d'avantages", "d'avantagez"],
+                  correctIndex: 0,
                   explanation:
-                    "Les deux-points annoncent une explication : le second segment donne la cause de l'absence.",
+                    "On peut remplacer par « plus » : il s'agit de l'adverbe « davantage ».",
                 },
                 {
-                  objectifId: "p3",
-                  question: "Quelle justification le jury accepte pour la virgule de « Épuisée, elle s'endormit » ?",
-                  options: [
-                    "« Elle marque une pause dans la lecture. »",
-                    "« Elle sépare deux mots. »",
-                    "« Elle marque un détachement : elle isole l'épithète détachée du sujet. »",
-                    "« Elle est obligatoire ici. »",
-                  ],
+                  objectifId: "h6",
+                  question: "« Il ___ blessé en tombant. » Quelle forme ?",
+                  options: ["c'est", "s'est", "sait", "sais"],
+                  correctIndex: 1,
+                  explanation:
+                    "Il s'agit du verbe pronominal « se blesser » au passé composé : « il s'est blessé ».",
+                },
+                {
+                  objectifId: "h7",
+                  question: "« Je crois ___ viendra demain. » Quelle forme ?",
+                  options: ["quelle", "quel", "qu'elle", "qu'elles"],
                   correctIndex: 2,
                   explanation:
-                    "Il faut nommer l'emploi (détachement) et le justifier par la structure (épithète détachée isolée du sujet).",
+                    "On peut remplacer par « qu'il viendra demain » : « qu'elle » = que + pronom personnel.",
+                },
+                {
+                  objectifId: "h7",
+                  question: "« ___ les élèves ont rendu leur copie. » Quelle forme ?",
+                  options: ["Tout", "Tous", "Toute", "Toutes"],
+                  correctIndex: 1,
+                  explanation:
+                    "Devant un nom masculin pluriel (« les élèves »), le déterminant s'accorde : « tous les élèves ».",
                 },
               ],
             },
@@ -543,7 +519,7 @@ export const ficheHomophonesPonctuation: Fiche = {
               level: "echauffement",
               stars: "★☆☆",
               label: "Niveau 1 : Identifier",
-              sub: "Choisir la bonne forme, nommer l'emploi",
+              sub: "Choisir la bonne forme et justifier par le test",
             },
             {
               type: "exerciceCard",
@@ -573,22 +549,8 @@ export const ficheHomophonesPonctuation: Fiche = {
                 { type: "line", label: "a)", text: "**ses** : « son affaire » au singulier ✓ → déterminant possessif." },
                 { type: "line", label: "b)", text: "**leur** : « Je lui ai parlé » ✓ → pronom personnel COI, invariable." },
                 { type: "line", label: "c)", text: "**Leur** : « lui » impossible → déterminant possessif ; un seul nom → singulier." },
-                { type: "line", label: "d)", text: "**se** : « Il me lève » → pronom réfléchi (se lever)." },
+                { type: "line", label: "d)", text: "**se** : pronom réfléchi du verbe pronominal « se lever » ; à la 1re personne, on dirait « je me lève »." },
                 { type: "line", label: "e)", text: "**mais** : « cependant » ✓ → conjonction de coordination (opposition)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 3 : Nommer l'emploi de la virgule",
-              question:
-                "Identifiez et nommez l'emploi de la virgule :\na) « Épuisée, elle s'endormit. »   b) « Il prit son manteau, son chapeau et son sac. »   c) « Il entra, regarda autour de lui, puis s'assit. »   d) « Quand le soleil se lève, les oiseaux chantent. »",
-              correction: [
-                { type: "line", label: "a)", text: "**Détachement** : la virgule isole l'épithète détachée « Épuisée » du sujet « elle »." },
-                { type: "line", label: "b)", text: "**Énumération** : elle sépare les éléments d'une liste (pas de virgule avant le « et » final)." },
-                { type: "line", label: "c)", text: "**Juxtaposition** : elle relie des propositions sans conjonction explicite." },
-                { type: "line", label: "d)", text: "**Subordonnée antéposée** : elle sépare la circonstancielle de temps placée avant la principale." },
               ],
             },
             {
@@ -596,30 +558,18 @@ export const ficheHomophonesPonctuation: Fiche = {
               level: "n2",
               stars: "★★☆",
               label: "Niveau 2 : Analyser",
-              sub: "Justification syntaxique, texte à compléter, transformation",
+              sub: "Texte à compléter, justification rédigée, cas proches",
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 4 : Virgule et point-virgule dans un extrait",
-              enonce: "« Ses mains tremblaient ; ses yeux, rouges et gonflés, cherchaient un regard ami. »",
-              question: "a) Justifiez l'emploi du point-virgule. b) Nommez l'emploi des deux virgules.",
-              correction: [
-                { type: "line", label: "a)", text: "Le point-virgule sépare deux propositions indépendantes liées par un **parallélisme descriptif** : elles dépeignent le même personnage au même instant, sans rupture aussi forte qu'un point." },
-                { type: "line", label: "b)", text: "Les deux virgules encadrent l'**épithète détachée** « rouges et gonflés » du nom « yeux » (double virgule de détachement)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 5 : Texte à compléter",
+              title: "Exercice 3 : Texte à compléter",
               question:
                 "Complétez et justifiez chaque choix :\n« ___ (Ce/Se) matin-là, il ___ (se/ce) leva plus tôt que d'habitude. ___ (Son/Sont) frère ___ (est/et) sa sœur dormaient encore. Il prit ___ (ses/ces) affaires en silence : ___ (ou/où) irait-il ? »",
               correction: [
                 { type: "line", text: "**Ce** matin-là : déterminant démonstratif (devant un nom)." },
-                { type: "line", text: "il **se** leva : pronom réfléchi (« il me leva » → se lever)." },
+                { type: "line", text: "il **se** leva : pronom réfléchi du verbe pronominal « se lever » ; à la 1re personne, on dirait « je me lève »." },
                 { type: "line", text: "**Son** frère : déterminant possessif (« mon frère » ✓)." },
                 { type: "line", text: "**et** sa sœur : conjonction de coordination (« était sa sœur » impossible)." },
                 { type: "line", text: "**ses** affaires : déterminant possessif (« son affaire » au singulier ✓)." },
@@ -630,12 +580,28 @@ export const ficheHomophonesPonctuation: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 6 : Transformer pour analyser",
-              enonce: "« Mes romans me baladent et ils me mènent en bateau. »",
-              question: "a) Remplacez « et » par une virgule seule : quel effet syntaxique ? b) Remplacez « et » par « car » : quel changement de sens ?",
+              title: "Exercice 4 : davantage ou d'avantage(s) ?",
+              question:
+                "Choisissez et justifiez :\na) « Il faut travailler ___ pour progresser. »   b) « Cette solution présente beaucoup ___. »   c) « Il ne voit pas ___ à changer de méthode. »",
               correction: [
-                { type: "line", label: "a)", text: "« Mes romans me baladent, ils me mènent en bateau. » : la virgule crée une **juxtaposition** (coordination implicite). L'effet est une succession plus rapide, une addition neutre." },
-                { type: "line", label: "b)", text: "« Mes romans me baladent car ils me mènent en bateau. » : « car » introduit une **cause explicite** ; le second segment justifie le premier. La causalité remplace la simple addition." },
+                { type: "line", label: "a)", text: "**davantage** : adverbe, remplaçable par « plus »." },
+                { type: "line", label: "b)", text: "**d'avantages** : nom pluriel, remplaçable par « beaucoup d'avantages » / « beaucoup de bénéfices »." },
+                { type: "line", label: "c)", text: "**d'avantage** : préposition « de » + nom singulier « avantage » ; on peut reformuler par « aucun avantage à changer de méthode »." },
+              ],
+            },
+            {
+              type: "exerciceCard",
+              variant: "standard",
+              level: "n2",
+              title: "Exercice 5 : c'est/s'est, sa/ça, la/là/l'a",
+              question:
+                "Choisissez et justifiez :\na) « ___ une erreur fréquente. » (C'est/S'est)   b) « Il ___ aperçu de son oubli. » (c'est/s'est)   c) « ___ réponse est claire. » (Sa/Ça)   d) « ___ me paraît juste. » (Sa/Ça)   e) « Elle ___ compris trop tard. » (la/l'a/là)",
+              correction: [
+                { type: "line", label: "a)", text: "**C'est** : « cela est une erreur fréquente » ✓." },
+                { type: "line", label: "b)", text: "**s'est** : verbe pronominal « s'apercevoir » au passé composé." },
+                { type: "line", label: "c)", text: "**Sa** : déterminant possessif devant le nom féminin « réponse »." },
+                { type: "line", label: "d)", text: "**Ça** : pronom démonstratif, remplaçable par « cela »." },
+                { type: "line", label: "e)", text: "**l'a** : pronom « l' » + verbe avoir ; test « elle l'avait compris »." },
               ],
             },
             {
@@ -643,19 +609,28 @@ export const ficheHomophonesPonctuation: Fiche = {
               level: "n3",
               stars: "★★★",
               label: "Niveau 3 : Maîtriser",
-              sub: "Analyse complète, formule jury rédigée",
+              sub: "Justification complète, formule jury rédigée",
             },
             {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 7 : Analyse complète",
-              enonce: "« Écrire est un engagement à ferrailler. On s'engage dans l'écriture comme dans une armée imaginaire, où l'on serait à la fois général et aspirant soldat. »",
-              question: "a) Justifiez la virgule après « imaginaire ». b) Analysez la nature et la fonction de « où ». c) Que marque « et » dans « général et aspirant soldat » ?",
+              title: "Exercice 6 : Justification complète",
+              enonce: "« Tous ces élèves se demandent où sont leurs cahiers ; on leur a pourtant dit de ranger davantage leurs affaires, mais ils ne savent pas quelle méthode appliquer. »",
+              question: "Justifiez les formes « Tous », « ces », « se », « où », « sont », « leurs », « on », « leur », « davantage », le second « leurs », « mais » et « quelle ».",
               correction: [
-                { type: "line", label: "a)", text: "La virgule marque un **détachement** : elle isole la subordonnée relative explicative « où l'on serait… », qui apporte une précision non indispensable sur « armée imaginaire ». Effet : un ralentissement du rythme." },
-                { type: "line", label: "b)", text: "« où » est un **pronom relatif** de lieu (antécédent « armée imaginaire ») ; il introduit la subordonnée relative et y occupe la fonction de **complément circonstanciel de lieu**." },
-                { type: "line", label: "c)", text: "« et » est une **conjonction de coordination** qui unit les deux attributs « général » et « aspirant soldat » par une relation d'**addition** : le sujet occuperait les deux rôles à la fois." },
+                { type: "line", text: "**Tous** : déterminant indéfini masculin pluriel, accordé avec « élèves »." },
+                { type: "line", text: "**Ces** : déterminant démonstratif, test « cet élève » au singulier." },
+                { type: "line", text: "**se** : pronom réfléchi du verbe pronominal « se demander » ; à la 1re personne, « je me demande »." },
+                { type: "line", text: "**où** : adverbe interrogatif de lieu ; « ou bien » est impossible." },
+                { type: "line", text: "**sont** : verbe être, test « étaient »." },
+                { type: "line", text: "**leurs cahiers** : déterminant possessif accordé avec le nom pluriel « cahiers »." },
+                { type: "line", text: "**on** : pronom personnel indéfini, test « il »." },
+                { type: "line", text: "**leur** : pronom personnel COI, test « lui » ; il est donc invariable." },
+                { type: "line", text: "**davantage** : adverbe, remplaçable par « plus »." },
+                { type: "line", text: "**leurs affaires** : déterminant possessif accordé avec le nom pluriel « affaires »." },
+                { type: "line", text: "**mais** : conjonction de coordination exprimant une opposition, remplaçable par « cependant »." },
+                { type: "line", text: "**quelle méthode** : déterminant interrogatif féminin singulier, accordé avec le nom « méthode »." },
               ],
             },
           ],
@@ -669,21 +644,28 @@ export const ficheHomophonesPonctuation: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format de la Partie 1 : justification d'homophones et analyse de la ponctuation en formule rédigée. Les exercices calqués sur des sujets récents portent le badge ✦.",
+              text: "Ces exercices reproduisent le format de la Partie 1 : choisir une graphie, puis la justifier par la nature grammaticale et un test de remplacement.",
             },
             {
               type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format identique au concours",
-              title: "Exercice 1 : homophones et analyse de la ponctuation",
+              variant: "crpe",
+              title: "Exercice 1 : justifier des homophones dans un extrait",
               enonce:
-                "« Ce soir-là, ses doigts, gourds et maladroits, cherchaient en vain les touches du piano. Elle avait beau se dire que tout irait mieux demain ; son cœur, lui, n'y croyait plus. On l'entendait soupirer : la musique lui manquait. »",
-              question: "1) Justifiez « ses » (l. 1) et « se » (l. 2). 2) Analysez deux emplois différents de la virgule. 3) Justifiez le point-virgule après « demain ». 4) Analysez les deux-points après « soupirer ».",
+                "« Ce matin-là, ses élèves se taisaient : on leur avait demandé davantage d'attention, mais ces consignes semblaient déjà oubliées. C'est pourtant là qu'elle l'a répété. »",
+              question: "Justifiez les formes « Ce », « ses », « se », « on », « leur », « davantage », « mais », « ces », « C'est », « là », « qu'elle » et « l'a ».",
               correction: [
-                { type: "line", text: "**1) ses** : déterminant possessif (« son doigt » au singulier ✓). **se** : pronom réfléchi de « se dire » (« elle me dit » ✓)." },
-                { type: "line", text: "**2)** « ses doigts, gourds et maladroits, » : double virgule de **détachement** encadrant l'épithète détachée « gourds et maladroits » du nom « doigts ». « son cœur, lui, » : double virgule encadrant le **pronom de reprise** « lui », mis en relief (apposition emphatique au sujet « son cœur »)." },
-                { type: "line", text: "**3)** Le point-virgule sépare deux propositions indépendantes liées par une relation d'**opposition** implicite (elle se rassure / son cœur résiste)." },
-                { type: "line", text: "**4)** Les deux-points annoncent une **explication** : le segment qui suit explicite ce que révèle le soupir." },
+                { type: "line", text: "**Ce matin-là** : déterminant démonstratif devant un nom ; au pluriel, on aurait « ces matins-là »." },
+                { type: "line", text: "**ses élèves** : déterminant possessif ; test au singulier « son élève »." },
+                { type: "line", text: "**se taisaient** : pronom réfléchi du verbe pronominal « se taire » ; à la 1re personne, « je me tais »." },
+                { type: "line", text: "**on** : pronom personnel indéfini ; test « il avait demandé »." },
+                { type: "line", text: "**leur** : pronom personnel COI, remplaçable par « lui » ; il est invariable." },
+                { type: "line", text: "**davantage** : adverbe, remplaçable par « plus »." },
+                { type: "line", text: "**mais** : conjonction de coordination exprimant l'opposition, remplaçable par « cependant »." },
+                { type: "line", text: "**ces consignes** : déterminant démonstratif ; test au singulier « cette consigne »." },
+                { type: "line", text: "**C'est** : « cela est » ; pronom démonstratif + verbe être." },
+                { type: "line", text: "**là** : adverbe de lieu, remplaçable par « ici »." },
+                { type: "line", text: "**qu'elle** : « que » + pronom personnel ; test « qu'il l'a répété »." },
+                { type: "line", text: "**l'a** : pronom « l' » + verbe avoir ; test « l'avait répété »." },
               ],
             },
             {
@@ -694,11 +676,11 @@ export const ficheHomophonesPonctuation: Fiche = {
                 "« ___ (Ses/Ces) enfants jouent dans la cour : ___ (leur/leurs) rires sont contagieux. ___ (On/Ont) voit qu'ils ___ (a/ont) besoin de ___ (ses/ces) moments de liberté. »",
               question: "Choisissez la forme correcte et justifiez chaque choix en une phrase.",
               correction: [
-                { type: "line", text: "**Ces** enfants : démonstratif (« ce enfant » au singulier, enfants désignés)." },
+                { type: "line", text: "**Ces** enfants : déterminant démonstratif (« cet enfant » au singulier), car les enfants sont désignés dans la situation." },
                 { type: "line", text: "**leurs** rires : déterminant possessif, accord avec « rires » (« lui » impossible)." },
                 { type: "line", text: "**On** voit : pronom personnel indéfini (« il voit » ✓)." },
                 { type: "line", text: "ils **ont** besoin : verbe avoir 3e pluriel (« ils avaient besoin » ✓ ; « a » serait incompatible avec « ils »)." },
-                { type: "line", text: "**ces** moments : déterminant démonstratif (« ce moment » au singulier ; « se » impossible devant un nom)." },
+                { type: "line", text: "**ces** moments : déterminant démonstratif (« ce moment » au singulier), qui renvoie aux moments de liberté dont on vient de parler." },
               ],
             },
           ],
@@ -765,23 +747,6 @@ export const ficheHomophonesPonctuation: Fiche = {
                 },
               ],
             },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 4 · Réponse à corriger : « marque une pause »",
-              enonce: "Réponse d'un candidat (analyse de la virgule) : « La virgule dans “Épuisée, elle s'endormit” marque une *pause dans la lecture. »",
-              question: "Reformulez en réponse syntaxique précise (cette formulation est refusée par le jury).",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Réponse trop générale, refusée : elle ne nomme aucun emploi syntaxique", bad: true },
-                    { text: "Il faut nommer l'emploi (détachement) et le justifier" },
-                    { text: "Réponse attendue : « La virgule marque un **détachement** : elle isole l'épithète détachée “Épuisée” du sujet “elle”, avec un effet d'emphase sur l'état du personnage. »" },
-                  ],
-                },
-              ],
-            },
           ],
         },
       ],
@@ -806,10 +771,10 @@ export const ficheHomophonesPonctuation: Fiche = {
               type: "flashcardDeck",
               cards: [
                 {
-                  question: "Les 5 tests de remplacement essentiels ?",
+                  question: "Comment reconnaître les homophones verbaux ?",
                   answer:
-                    "**a / à** : « avait » → a (verbe).\n**est / et** : « était » → est (verbe).\n**son / sont** : « mon » → son (déterminant).\n**ou / où** : « ou bien » → ou (conjonction).\n**leur / leurs** : « lui » → leur (pronom COI, invariable).",
-                  astuce: "💡 Si le mot peut passer à l'imparfait, c'est un verbe.",
+                    "Quand l'une des deux formes est un verbe, on teste l'**imparfait**.\n**a** → « avait » : « Il a compris » → « Il avait compris ».\n**est** → « était » : « Elle est prête » → « Elle était prête ».\n**sont** → « étaient » : « Ils sont venus » → « Ils étaient venus ».\n**ont** → « avaient » : « Ils ont fini » → « Ils avaient fini ».",
+                  astuce: "Si l'imparfait fonctionne, on écrit la forme verbale ; sinon, on cherche l'autre nature.",
                 },
                 {
                   question: "ses / ces : comment trancher ?",
@@ -818,21 +783,10 @@ export const ficheHomophonesPonctuation: Fiche = {
                   astuce: "« ses » implique un possesseur ; « ces » désigne des éléments déjà connus.",
                 },
                 {
-                  question: "leur pronom COI ou leurs déterminant ?",
+                  question: "leur ou leurs : comment décider ?",
                   answer:
-                    "**leur** pronom COI : invariable, remplaçable par « lui ». « Je leur parle » = « Je lui parle » ✓ → jamais de -s.\n**leur(s)** déterminant : s'accorde avec le nom. « leurs livres » (pluriel), « leur livre » (singulier).",
-                  astuce: "⚠️ Erreur fréquente : « leurs » avec -s sur le pronom.",
-                },
-                {
-                  question: "La virgule : 4 emplois clés à nommer ?",
-                  answer:
-                    "**Détachement** : isole un constituant déplacé. « Épuisée, elle s'endormit. »\n**Juxtaposition** : relie sans conjonction. « Il entre, il s'assoit. »\n**Énumération** : sépare une liste. « rouge, bleu et vert ».\n**Subordonnée antéposée** : « Quand il pleut, je reste. »",
-                  astuce: "💡 « La virgule marque une pause » est refusé : nommer l'emploi syntaxique.",
-                },
-                {
-                  question: "Point-virgule ou deux-points ?",
-                  answer:
-                    "**Point-virgule ( ; )** : entre deux propositions indépendantes liées par une relation logique **implicite** (cause, opposition, conséquence). « Il travaille ; ses efforts paient. »\n**Deux-points ( : )** : annoncent ce qui suit, relation **explicite** : explication, conséquence, énumération, citation. « Il est absent : il est malade. »",
+                    "**leur** est invariable quand c'est un **pronom personnel COI** : il se remplace par « lui ». « Je leur parle » → « Je lui parle ».\n**leur(s)** varie quand c'est un **déterminant possessif** placé devant un nom : « leur livre » / « leurs livres ».",
+                  astuce: "Question réflexe : puis-je remplacer par « lui » ? Si oui, pas de -s.",
                 },
                 {
                   question: "on / ont et est / et : la confusion de verbes ?",
@@ -843,12 +797,23 @@ export const ficheHomophonesPonctuation: Fiche = {
                 {
                   question: "ce / se : démonstratif ou réfléchi ?",
                   answer:
-                    "**se** = pronom personnel réfléchi → remplaçable par « me / te ». « Il se lave » → « Il me lave » ✓.\n**ce** = déterminant démonstratif (devant un nom) ou pronom démonstratif (neutre, devant un verbe ou « que »). « Ce livre. » · « Ce que je veux. »",
+                    "**se** = pronom personnel réfléchi dans un verbe pronominal ; à la 1re personne, il devient « me ». « Il se lave » → « Je me lave ».\n**ce** = déterminant démonstratif (devant un nom) ou pronom démonstratif (neutre, devant un verbe ou « que »). « Ce livre. » · « Ce que je veux. »",
                 },
                 {
-                  question: "La formule de justification de la ponctuation ?",
+                  question: "c'est / s'est / sais / sait : quel test ?",
                   answer:
-                    "« [Signe] marque ici [emploi : détachement / juxtaposition / annonce…] : il/elle [action syntaxique : isole / relie / annonce…] [l'élément], ce qui [effet]. »\nExemple : « La virgule marque un détachement : elle isole l'épithète détachée “épuisée” du sujet “elle”. »",
+                    "**c'est** = cela est : « C'est vrai » → « Cela est vrai ».\n**s'est** = verbe pronominal au passé composé : « Il s'est trompé ».\n**sais/sait** = verbe savoir : « je sais », « il sait ».",
+                  astuce: "Changer de personne aide : « je sais », « tu sais », « il sait ».",
+                },
+                {
+                  question: "sa/ça, la/là/l'a/l'as, quel/qu'elle : les tests rapides ?",
+                  answer:
+                    "**ça** → « cela » ; **sa** → déterminant possessif devant un nom.\n**là** → « ici » ; **l'a/l'as** → « l'avait » ; **la** → déterminant ou pronom féminin.\n**qu'elle(s)** → « qu'il(s) » ; **quel(s)/quelle(s)** s'accorde avec un nom.",
+                },
+                {
+                  question: "tout / tous / toute(s) : comment raisonner ?",
+                  answer:
+                    "Devant un nom, **tout** est déterminant et s'accorde : tout le groupe, tous les élèves, toutes les copies.\nSeul, il peut être pronom : « Tous ont réussi ».\nDevant un adjectif, il est souvent adverbe : « tout étonnée », avec des cas d'accord devant consonne ou h aspiré.",
                 },
               ],
             },
@@ -861,7 +826,7 @@ export const ficheHomophonesPonctuation: Fiche = {
           blocks: [
             {
               type: "mindmapLite",
-              center: { title: "Homophones", subtitle: "et ponctuation" },
+              center: { title: "Homophones", subtitle: "tests de remplacement" },
               branches: [
                 {
                   title: "Test de l'imparfait",
@@ -879,18 +844,23 @@ export const ficheHomophonesPonctuation: Fiche = {
                   variant: "green",
                 },
                 {
-                  title: "La virgule",
-                  lines: ["Détachement, juxtaposition", "Énumération, ellipse", "Subordonnée antéposée"],
+                  title: "Cas de rédaction",
+                  lines: ["c'est/s'est : cela est ou verbe pronominal", "sa/ça : possessif ou cela", "la/là/l'a : nom, lieu ou avoir"],
                   variant: "green",
                 },
                 {
+                  title: "Accords à surveiller",
+                  lines: ["quel/qu'elle : qu'il ?", "tout/tous/toute(s)", "Accorder avec le nom si déterminant"],
+                  variant: "blue",
+                },
+                {
                   title: "Pièges classiques",
-                  lines: ["a/à dans la rédaction", "leur invariable (jamais -s)", "« marque une pause » refusé"],
+                  lines: ["a/à dans la rédaction", "leur invariable (jamais -s)", "ses ≠ ces sans possesseur"],
                   variant: "yellow",
                 },
                 {
                   title: "Renvois",
-                  lines: ["Classes de mots → notion 1", "Fonctions (COI) → notion 2", "Cohérence textuelle → notion 13"],
+                  lines: ["Classes de mots → notion 1", "Fonctions (COI) → notion 2", "Ponctuation → notion 5"],
                   variant: "purple",
                   dashed: true,
                 },
