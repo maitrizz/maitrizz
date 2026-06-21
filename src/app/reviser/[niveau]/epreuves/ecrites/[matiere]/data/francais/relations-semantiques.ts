@@ -77,7 +77,7 @@ export const ficheRelationsSemantiques: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Les mots ne vivent pas isolément : ils entrent en relation de sens. Au concours, les questions portent presque toujours sur le **sens en contexte** : proposer un synonyme adapté, expliquer un emploi figuré, dégager un champ lexical. Un synonyme qui trahit le contexte ou une définition hors-sol ne rapporte aucun point.",
+              text: "Les mots ne vivent pas isolément : ils entrent en relation de sens. Au concours, les questions portent presque toujours sur le **sens en contexte** : proposer un synonyme adapté, expliquer un emploi figuré, dégager un champ lexical. Un synonyme qui trahit le contexte ou une définition hors-sol ne rapporte aucun point. Sur l'enseignement du lexique, voir les [ressources Lexique et culture d'Éduscol](https://eduscol.education.fr/255/lexique-et-culture).",
             },
             {
               type: "subsection",
@@ -86,7 +86,11 @@ export const ficheRelationsSemantiques: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Deux mots sont **synonymes** quand leurs sens sont très proches et qu'ils peuvent se substituer dans certains contextes, jamais dans tous. La synonymie parfaite n'existe pas : chaque synonyme apporte une nuance de sens, de registre ou de connotation. « observer » (attention active), « contempler » (durée, émotion) et « regarder » diffèrent.",
+                  text: "**La synonymie.** Deux mots sont **synonymes** quand ils partagent le même sens de base et peuvent se substituer dans certains contextes, jamais dans tous. La synonymie parfaite n'existe pas : chaque synonyme ajoute une nuance de sens, de registre ou de connotation. Ainsi « regarder », « observer » et « contempler » sont bien synonymes, car tous les trois veulent dire « porter le regard sur quelque chose » : c'est ce socle commun qui les rend interchangeables dans certaines phrases. Mais chacun colore l'action autrement : « regarder » est neutre, « observer » insiste sur l'attention active, « contempler » ajoute la durée et l'émotion devant ce qu'on voit. Le sens partagé en fait des synonymes ; ces nuances interdisent de les employer indifféremment.",
+                },
+                {
+                  type: "paragraph",
+                  text: "**L'antonymie.** Deux mots sont **antonymes** quand leurs sens s'opposent. Mais toutes les oppositions ne fonctionnent pas de la même manière : le concours attend que vous distinguiez **trois types d'antonymie**, présentés ci-dessous.",
                 },
                 {
                   type: "table",
@@ -166,11 +170,13 @@ export const ficheRelationsSemantiques: Fiche = {
                     },
                     {
                       title: "Dénotation et connotation",
-                      definition: "La dénotation est le sens objectif (du dictionnaire) ; la connotation, les valeurs affectives ou culturelles que le mot évoque.",
+                      definition: "La **dénotation** est le sens objectif et neutre, commun à tous les locuteurs : c'est la définition du dictionnaire. La **connotation** rassemble les associations subjectives, affectives ou culturelles qui se greffent sur ce sens. Un même mot dénote la même chose pour tout le monde, mais ne connote pas la même chose selon la culture, l'époque ou le contexte.",
                       exemples: [
-                        "« serpent » : dénotation = reptile ; connotation = trahison, ruse, danger",
+                        "« serpent » : dénotation = reptile sans pattes ; connotation = traîtrise, ruse, danger (héritage culturel et religieux).",
+                        "« maison » et « masure » dénotent la même réalité (une habitation), mais « masure » connote la pauvreté et le délabrement.",
+                        "« blanc » dénote une couleur ; il connote la pureté en Occident, mais le deuil dans d'autres cultures.",
                       ],
-                      test: "Une connotation peut être ambivalente : positive et négative à la fois.",
+                      test: "Une connotation peut être ambivalente (positive et négative à la fois) et dépend du contexte : la repérer montre une lecture fine.",
                     },
                   ],
                 },
@@ -242,7 +248,7 @@ export const ficheRelationsSemantiques: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 3-4 :** les élèves construisent des réseaux de mots (synonymes, antonymes, familles), travaillent le sens propre et figuré, et apprennent à choisir le mot juste.\n\n**Ce que vous devez savoir dire :** « On enrichit le vocabulaire en organisant les mots par relations de sens : synonymes pour nuancer, antonymes pour contraster, hyperonymes pour catégoriser. Comprendre le sens en contexte est l'objectif central. »",
+              text: "**Cycle 1 (maternelle) :** on construit le vocabulaire à l'oral et on amorce les relations de sens par le jeu (trouver le contraire de « grand », des mots qui veulent dire à peu près la même chose), sans terminologie.\n\n**Cycle 2 :** les élèves catégorisent les mots (termes génériques et particuliers : « fruit » englobe « pomme, poire ») et rencontrent synonymes et contraires pour préciser leur expression.\n\n**Cycle 3 :** on structure les réseaux de mots (synonymes, antonymes, familles, termes génériques et spécifiques), on travaille le sens propre et le sens figuré, et on apprend à choisir le mot juste selon le contexte.\n\n**Ce que vous devez savoir dire :** « On enrichit le vocabulaire en organisant les mots par relations de sens : synonymes pour nuancer, antonymes pour contraster, mots génériques pour catégoriser. Amorcé à l'oral dès la maternelle, ce travail se structure aux cycles 2 et 3, où comprendre le sens en contexte devient l'objectif central. » (voir [Éduscol, Lexique et culture](https://eduscol.education.fr/255/lexique-et-culture) et l'[étude de la langue cycles 2 et 3](https://eduscol.education.fr/248/francais-cycles-2-et-3-etude-de-la-langue))",
             },
             {
               type: "ctaBox",
@@ -257,13 +263,6 @@ export const ficheRelationsSemantiques: Fiche = {
           label: "Méthode",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              title: "Trois démarches",
-              text: "Proposer un synonyme en contexte, expliquer le sens d'un mot, et dégager un champ lexical en l'analysant. Chacune se termine par un checkpoint.",
-            },
             {
               type: "rappelExpress",
               title: "Rappel express : les relations de sens",
@@ -288,22 +287,26 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "①",
               title: "Proposer un synonyme en contexte",
               intro:
-                "**Question typique :** « Proposez un synonyme du mot souligné en contexte. »",
+                "**Question typique :** « Dans la phrase “Elle se hâtait, les yeux baissés, *pressée* d'atteindre sa maison avant la nuit”, proposez un synonyme en contexte de l'adjectif souligné *pressée* et justifiez votre choix. »",
               steps: [
                 {
                   number: "1",
                   text: "**Identifier le sens précis** du mot dans la phrase (pas son sens générique).",
-                  example: { lines: ["« pressée » (yeux baissés, hâte) = sous pression, pas enthousiaste"] },
+                  example: { lines: ["« pressée » (elle marche vite, yeux baissés) = poussée par l'urgence, sous pression, pas enthousiaste"] },
                 },
                 {
                   number: "2",
-                  text: "**Trouver un synonyme substituable** dans cette phrase, de même classe grammaticale.",
-                  example: { lines: ["« pressée » → « hâtive » / « poussée par l'urgence »"] },
+                  text: "**Trouver un synonyme substituable** dans cette phrase, de même classe grammaticale (ici un adjectif).",
+                  example: { lines: ["« pressée » → « hâtive » ou la périphrase « poussée par l'urgence »"] },
                 },
                 {
                   number: "💡",
-                  text: "**Justifier la nuance** si elle est significative.",
-                  warn: "⚠️ Vérifier la cohérence avec le reste de la phrase avant de valider.",
+                  text: "**Justifier la nuance** et vérifier la substitution dans la phrase entière.",
+                  warn: "⚠️ Écarter « empressée » (zèle, amabilité) : la nuance ne convient pas au contexte d'urgence.",
+                },
+                {
+                  number: "📌",
+                  text: "**Réponse attendue (formulation modèle) :** « En contexte, l'adjectif *pressée* signifie “poussée par l'urgence, sous pression”. Un synonyme adapté est **hâtive**, ou la périphrase **poussée par l'urgence** : tous deux conservent l'idée de hâte contrainte. On écarte *empressée*, qui connote le zèle aimable, étranger à la scène. »",
                 },
               ],
             },
@@ -323,7 +326,7 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "②",
               title: "Expliquer le sens d'un mot en contexte",
               intro:
-                "**Question typique :** « Expliquez le sens de ce mot dans le texte. »",
+                "**Question typique :** « Dans la phrase “L'écrivain cherche à *attraper le réel* avec des mots”, expliquez le sens de l'expression soulignée *attraper le réel*. »",
               steps: [
                 {
                   number: "1",
@@ -333,12 +336,16 @@ export const ficheRelationsSemantiques: Fiche = {
                 {
                   number: "2",
                   text: "**Donner le sens propre puis le sens figuré ou contextuel**, en s'appuyant sur le texte.",
-                  example: { lines: ["sens propre = saisir physiquement ; sens figuré = parvenir à comprendre, représenter le réel"] },
+                  example: { lines: ["sens propre = saisir physiquement ; sens figuré = parvenir à comprendre et représenter le réel"] },
                 },
                 {
                   number: "💡",
                   text: "**Préciser les connotations** si elles enrichissent la réponse (positive, négative, ambivalente).",
                   warn: "⚠️ Ne pas se contenter du sens propre quand le mot est employé au figuré.",
+                },
+                {
+                  number: "📌",
+                  text: "**Réponse attendue (formulation modèle) :** « Le verbe *attraper* est ici employé au sens figuré. Au sens propre, il signifie “saisir physiquement, avec les mains”. Or on ne saisit pas le réel matériellement : l'expression signifie “parvenir à comprendre et à représenter le réel par l'écriture”. La métaphore de la capture suggère l'effort et la difficulté de cette saisie. »",
                 },
               ],
             },
@@ -358,22 +365,26 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "③",
               title: "Dégager et analyser un champ lexical",
               intro:
-                "**Question typique :** « Dégagez le champ lexical de [thème] et analysez son effet. »",
+                "**Question typique :** « Dans le passage “La *nuit* tombait, *obscure* ; l'*ombre* envahissait la pièce que la *lune* éclairait *faiblement*”, relevez le champ lexical de la nuit et analysez l'effet produit. »",
               steps: [
                 {
                   number: "1",
                   text: "**Relever** tous les mots du texte liés au thème (noms, verbes, adjectifs, adverbes).",
-                  example: { lines: ["thème de la nuit : nuit, obscur, ombre, lune, faiblement"] },
+                  example: { lines: ["thème de la nuit : nuit, obscure, ombre, lune, faiblement"] },
                 },
                 {
                   number: "2",
                   text: "**Nommer le thème** et **analyser l'effet** produit (atmosphère, intention).",
-                  example: { lines: ["ce champ crée une atmosphère mystérieuse et inquiétante"] },
+                  example: { lines: ["ce champ crée une atmosphère sombre et inquiétante"] },
                 },
                 {
                   number: "💡",
                   text: "**Conclure sur la fonction** dans le texte : décrire ne suffit pas.",
                   warn: "⚠️ Un relevé sans analyse de l'effet est insuffisant.",
+                },
+                {
+                  number: "📌",
+                  text: "**Réponse attendue (formulation modèle) :** « Le champ lexical de la nuit est constitué par *nuit*, *obscure*, *ombre*, *lune* et l'adverbe *faiblement*. Ces mots de natures variées (noms, adjectif, adverbe) tissent une atmosphère sombre et inquiétante : l'obscurité qui gagne et la lumière défaillante installent une tension, comme si un danger se préparait. Le champ lexical ne décrit pas seulement le décor, il porte une intention dramatique. »",
                 },
               ],
             },
