@@ -21,7 +21,7 @@ export const fichePhonologie: Fiche = {
     "Phonème, graphème, lettre, transcription API, correspondances grapho-phonémiques et valeurs d'une lettre",
   badges: [
     { label: "★★☆ Fréquent", variant: "hot" },
-    { label: "Cycle 2-3 · BOEN n°1 du 22 janvier 2019", variant: "info" },
+    { label: "Cycle 1 à 3 · BOEN n°1 du 22 janvier 2019", variant: "info" },
   ],
   metaTitle: "La phonologie (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
@@ -85,36 +85,65 @@ export const fichePhonologie: Fiche = {
               title: "Phonème, graphème, lettre",
               blocks: [
                 {
+                  type: "paragraph",
+                  text: "Tout part d'une idée simple : **on ne parle pas comme on écrit**. À l'oral, un mot est une suite de **sons** ; à l'écrit, une suite de **lettres**. Et les deux ne se correspondent presque jamais un pour un : « eau » s'écrit avec 3 lettres mais ne s'entend qu'avec un seul son /o/. La phonologie distingue donc trois niveaux qu'il ne faut jamais confondre au concours.",
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  icon: "🎯",
+                  title: "L'idée à retenir en une phrase",
+                  text: "Le **phonème**, c'est ce qu'on **entend** ; le **graphème**, c'est ce qu'on **écrit** pour le transcrire ; la **lettre**, c'est un signe de l'**alphabet**. Deux mondes (l'oral et l'écrit) reliés par les graphèmes.",
+                },
+                {
                   type: "notionCardGrid",
                   columns: 1,
                   cards: [
                     {
-                      title: "Le phonème (unité de l'oral)",
-                      definition: "La plus petite unité sonore capable de distinguer deux mots. On le note entre barres obliques /…/.",
+                      title: "Le phonème → l'ORAL (ce qu'on entend)",
+                      definition: "La plus petite **brique de son** qui, à elle seule, peut changer le sens d'un mot. C'est de l'oral : on l'**entend**, on ne le voit pas. On le note entre barres obliques /…/.",
                       exemples: [
-                        "« pain » /pɛ̃/ ≠ « bain » /bɛ̃/ : /p/ et /b/ sont deux phonèmes (paire minimale)",
+                        "« pain » /pɛ̃/ ≠ « bain » /bɛ̃/ : changer /p/ en /b/ change le mot, ce sont donc deux phonèmes (on appelle ce couple une paire minimale)",
                         "« sol » /sɔl/ ≠ « vol » /vɔl/ : /s/ et /v/ sont deux phonèmes",
                       ],
-                      test: "Le phonème est abstrait (fonctionnel) ; le son est sa réalisation concrète. On dénombre généralement 36 phonèmes en français.",
+                      astuce: "🔑 Le phonème est abstrait (une fonction : distinguer les mots) ; le son est sa réalisation concrète quand on le prononce.",
+                      test: "On dénombre généralement 36 phonèmes en français.",
                     },
                     {
-                      title: "Le graphème (unité de l'écrit)",
-                      definition: "Une lettre ou un groupe de lettres qui transcrit un phonème (terminologie 2020).",
+                      title: "Le graphème → l'ÉCRIT (ce qui transcrit le son)",
+                      definition: "La **brique d'écriture** qui transcrit un phonème : une lettre seule **ou** un groupe de lettres soudées. C'est de l'écrit : on le **voit** (terminologie 2020).",
                       exemples: [
-                        "Monogramme : o (/o/ dans « mot »)",
-                        "Digramme : ou, ch, an, eu ; trigramme : eau, ain, ein",
+                        "1 lettre (monogramme) : <o> transcrit /o/ dans « mot »",
+                        "2 lettres (digramme) : <ou>, <ch>, <an>, <eu> ; 3 lettres (trigramme) : <eau>, <ain>, <ein>",
                       ],
-                      test: "Dans « eau », il y a 3 lettres mais 1 seul graphème, qui transcrit le phonème /o/.",
+                      test: "Dans « eau », il y a 3 lettres mais 1 seul graphème <eau>, qui transcrit le phonème /o/.",
                     },
                     {
-                      title: "La lettre (unité de l'alphabet)",
-                      definition: "L'une des 26 lettres. Elle peut former un graphème, être muette, ou faire partie d'un graphème complexe.",
+                      title: "La lettre → l'ALPHABET (le signe de base)",
+                      definition: "L'un des 26 signes de l'alphabet. Une lettre peut former un graphème à elle seule, s'associer à d'autres pour en former un, ou ne rien transcrire du tout (lettre **muette**).",
                       exemples: [
-                        "Dans « chant » : <ch> = /ʃ/, <an> = /ɑ̃/, <t> muet (aucun phonème)",
+                        "Dans « chant » : <ch> = /ʃ/ (2 lettres, 1 son), <an> = /ɑ̃/ (2 lettres, 1 son), <t> muet (1 lettre, aucun son)",
                       ],
-                      test: "Phonème = oral ; graphème = écrit (transcription du phonème) ; lettre = alphabet.",
+                      test: "Une lettre n'est donc pas toujours un son : 5 lettres dans « chant », mais seulement 2 sons.",
                     },
                   ],
+                },
+                {
+                  type: "table",
+                  title: "Le même mot, lu aux trois niveaux",
+                  headers: ["Mot", "Lettres (écrit)", "Graphèmes (écrit)", "Phonèmes (oral)"],
+                  rows: [
+                    ["**eau**", "3 : e · a · u", "1 : <eau>", "1 : /o/"],
+                    ["**beau**", "4 : b · e · a · u", "2 : <b> · <eau>", "2 : /b/ /o/ → /bo/"],
+                    ["**chat**", "4 : c · h · a · t", "3 : <ch> · <a> · <t muet>", "2 : /ʃ/ /a/ → /ʃa/"],
+                  ],
+                },
+                {
+                  type: "callout",
+                  variant: "success",
+                  icon: "💡",
+                  title: "Une règle qui ne trompe pas",
+                  text: "On a toujours **autant ou plus de lettres que de graphèmes**, et **autant ou plus de graphèmes que de phonèmes** (lettres ≥ graphèmes ≥ phonèmes). Passer de l'écrit à l'oral ne fait jamais apparaître un son en trop : les lettres muettes, elles, disparaissent.",
                 },
               ],
             },
@@ -128,21 +157,73 @@ export const fichePhonologie: Fiche = {
                   text: "On dénombre généralement **36 phonèmes** : 16 voyelles (11 orales, 4 nasales et le « e » caduc), 17 consonnes et 3 semi-consonnes. La transcription phonologique se note entre **barres obliques /…/** (les crochets […] sont réservés à la phonétique fine, hors concours).",
                 },
                 {
+                  type: "callout",
+                  variant: "info",
+                  icon: "🗂️",
+                  title: "Comment lire ces tableaux",
+                  text: "Chaque ligne associe un **symbole API** au **son qu'il note**, repéré en gras dans un mot-exemple. Ces symboles sont à connaître : il faut savoir **reconnaître chacun à la lecture** et le **réécrire de mémoire**. Appuyez-vous sur le mot-exemple pour retrouver le son, c'est l'outil de base de la question de phonologie au concours.",
+                },
+                {
                   type: "table",
-                  title: "Les voyelles",
-                  headers: ["Type", "Phonèmes (exemples)"],
+                  title: "Les voyelles orales (11)",
+                  headers: ["Symbole API", "Exemple entendu"],
                   rows: [
-                    ["Orales", "/i/ vie · /e/ été · /ɛ/ fête · /a/ chat · /ɔ/ or · /o/ mot · /u/ fou · /y/ lune · /ø/ feu · /œ/ peur · /ə/ le"],
-                    ["Nasales", "/ɑ̃/ an · /ɔ̃/ on · /ɛ̃/ in · /œ̃/ un"],
+                    ["/i/", "v**i**e, m**i**di"],
+                    ["/e/", "ét**é**, parl**er** (é fermé)"],
+                    ["/ɛ/", "f**ê**te, m**ai**s (è ouvert)"],
+                    ["/a/", "ch**a**t, **a**mi"],
+                    ["/ɔ/", "**o**r, s**o**tte (o ouvert)"],
+                    ["/o/", "m**o**t, b**eau** (o fermé)"],
+                    ["/u/", "f**ou**, r**ou**te"],
+                    ["/y/", "l**u**ne, t**u**"],
+                    ["/ø/", "f**eu**, p**eu** (eu fermé)"],
+                    ["/œ/", "p**eu**r, s**œu**r (eu ouvert)"],
+                    ["/ə/", "l**e**, p**e**tit (« e » caduc)"],
                   ],
                 },
                 {
                   type: "table",
-                  title: "Consonnes et semi-consonnes",
-                  headers: ["Type", "Phonèmes (exemples)"],
+                  title: "Les voyelles nasales (4)",
+                  headers: ["Symbole API", "Exemple entendu"],
                   rows: [
-                    ["Consonnes", "/p/ /b/ /t/ /d/ /k/ /g/ /f/ /v/ /s/ /z/ /ʃ/ chat /ʒ/ jeu /l/ /ʁ/ rue /m/ /n/ /ɲ/ agneau"],
-                    ["Semi-consonnes", "/j/ yeux · /w/ oui · /ɥ/ nuit"],
+                    ["/ɑ̃/", "**an**, v**en**t, ch**am**bre"],
+                    ["/ɔ̃/", "**on**, p**on**t"],
+                    ["/ɛ̃/", "f**in**, p**ain**, br**un** (selon les régions)"],
+                    ["/œ̃/", "**un**, parf**um**"],
+                  ],
+                },
+                {
+                  type: "table",
+                  title: "Les consonnes (17)",
+                  headers: ["Symbole API", "Exemple entendu"],
+                  rows: [
+                    ["/p/", "**p**ain"],
+                    ["/b/", "**b**ain"],
+                    ["/t/", "**t**able"],
+                    ["/d/", "**d**ent"],
+                    ["/k/", "**c**ar, **qu**i"],
+                    ["/g/", "**g**are"],
+                    ["/f/", "**f**eu, **ph**oto"],
+                    ["/v/", "**v**ol"],
+                    ["/s/", "**s**ol, **ç**a"],
+                    ["/z/", "**z**éro, mai**s**on"],
+                    ["/ʃ/", "**ch**at"],
+                    ["/ʒ/", "**j**eu, **g**irafe"],
+                    ["/l/", "**l**it"],
+                    ["/ʁ/", "**r**ue"],
+                    ["/m/", "**m**ain"],
+                    ["/n/", "**n**id"],
+                    ["/ɲ/", "a**gn**eau"],
+                  ],
+                },
+                {
+                  type: "table",
+                  title: "Les semi-consonnes (3)",
+                  headers: ["Symbole API", "Exemple entendu"],
+                  rows: [
+                    ["/j/", "**y**eux, pai**ll**e"],
+                    ["/w/", "**ou**i, j**ou**er"],
+                    ["/ɥ/", "n**u**it, l**u**i"],
                   ],
                 },
                 {
@@ -161,7 +242,21 @@ export const fichePhonologie: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Certains phonèmes s'écrivent de plusieurs façons (**polygraphie phonique**, difficulté à l'écriture) ; certains graphèmes ont plusieurs valeurs (**polyphonie graphique**, difficulté à la lecture). C'est ce que le jury appelle la **valeur** d'une lettre.",
+                  text: "On appelle **valeur d'une lettre** le **phonème qu'elle transcrit dans un mot précis**. Le point clé : une même lettre **n'a pas toujours la même valeur**. Tout dépend de son entourage (les lettres voisines, sa place dans le mot). La lettre <s>, par exemple, change de valeur d'un mot à l'autre :",
+                },
+                {
+                  type: "table",
+                  title: "Une seule lettre, trois valeurs : l'exemple de <s>",
+                  headers: ["Mot", "Valeur de <s>", "Pourquoi"],
+                  rows: [
+                    ["**sol**", "/s/", "en début de mot"],
+                    ["mai**s**on", "/z/", "entre deux voyelles, le <s> se sonorise"],
+                    ["bra**s**", "muet", "consonne finale non prononcée"],
+                  ],
+                },
+                {
+                  type: "paragraph",
+                  text: "De ce décalage entre l'oral et l'écrit naissent deux difficultés symétriques. Quand on **écrit**, un même son peut se noter de plusieurs façons (faut-il écrire o, au ou eau ?) : c'est la **polygraphie phonique**. Quand on **lit**, une même graphie peut se prononcer de plusieurs façons (le <c> de « car » et de « ceci ») : c'est la **polyphonie graphique**. Les deux tableaux ci-dessous les présentent face à face.",
                 },
                 {
                   type: "table",
@@ -187,10 +282,59 @@ export const fichePhonologie: Fiche = {
                 },
                 {
                   type: "callout",
+                  variant: "warning",
+                  icon: "🎯",
+                  title: "Le cœur de la question au concours : nommer la valeur",
+                  text: "« Donnez la valeur de la lettre soulignée » est une question récurrente du CRPE. Donner le son ne suffit pas : le jury attend que vous **nommiez le type de valeur**. En voici les quatre, à connaître et à savoir reconnaître.",
+                },
+                {
+                  type: "notionCardGrid",
+                  columns: 1,
+                  cards: [
+                    {
+                      title: "① Valeur de base (ou principale)",
+                      definition: "La valeur **par défaut** de la lettre, celle qu'elle prend quand rien dans son entourage ne la modifie.",
+                      exemples: [
+                        "<b> → /b/ (bain), <a> → /a/ (ami), <v> → /v/ (vol)",
+                      ],
+                      astuce: "🔑 C'est la valeur « normale », hors contexte particulier.",
+                    },
+                    {
+                      title: "② Valeur de position",
+                      definition: "La valeur **change selon la lettre qui suit**. Même lettre, son différent selon son voisin de droite.",
+                      exemples: [
+                        "<c> → /k/ devant a/o/u/consonne (car), /s/ devant e/i/y (ceci)",
+                        "<g> → /g/ devant a/o/u (gare), /ʒ/ devant e/i/y (girafe)",
+                        "<s> → /z/ entre deux voyelles (maison), /s/ ailleurs (sol)",
+                      ],
+                      astuce: "🔑 Position : je regarde la lettre juste après.",
+                    },
+                    {
+                      title: "③ Valeur de combinaison",
+                      definition: "Plusieurs lettres se **combinent** pour produire une valeur qu'aucune n'a isolément.",
+                      exemples: [
+                        "<t> → /s/ dans -tion précédé d'une voyelle (nation /nasjɔ̃/)",
+                        "<gu> → /g/ devant e/i (guerre, guitare) : le <u> ne se prononce pas mais maintient le son dur",
+                      ],
+                      piege: "« question » garde /t/ (/kɛstjɔ̃/) : le <t> suit une consonne, donc pas de combinaison en /s/.",
+                    },
+                    {
+                      title: "④ Valeur zéro (lettre muette)",
+                      definition: "La lettre ne note **aucun son**, mais elle est rarement inutile : elle porte souvent une information.",
+                      exemples: [
+                        "Purement muette (raison historique) : le <h> de « homme », le <p> de « sept »",
+                        "Marque grammaticale (morphogramme) : le -s de « chats » (pluriel), le -e de « amie » (féminin)",
+                        "Marque de famille (morphogramme lexical) : le -d muet de « grand » rappelle « grande », « grandir »",
+                      ],
+                      test: "Une lettre muette peut même distinguer des homophones à l'écrit : « ver / vers / vert / verre ».",
+                    },
+                  ],
+                },
+                {
+                  type: "callout",
                   variant: "info",
-                  icon: "💡",
-                  title: "Valeur de position et valeur de combinaison",
-                  text: "**Valeur de position** : la valeur dépend des lettres voisines (« c » = /k/ devant a/o/u, /s/ devant e/i/y). **Valeur de combinaison** : « t » prend la valeur /s/ devant « i » + voyelle dans « nation » /nasjɔ̃/, mais garde /t/ après consonne dans « question » /kɛstjɔ̃/.",
+                  icon: "🔗",
+                  text: "Les valeurs grammaticales et distinctives des lettres muettes (marques de pluriel et de féminin, homophones) sont approfondies dans la fiche [Homophones grammaticaux et ponctuation](fiche:homophones-grammaticaux-ponctuation).",
                 },
               ],
             },
@@ -261,7 +405,7 @@ export const fichePhonologie: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 :** la phonologie est au cœur de l'apprentissage de la lecture. Les élèves développent la **conscience phonologique** (segmenter en syllabes puis en phonèmes) et apprennent les **correspondances grapho-phonémiques** pour décoder.\n\n**Ce que vous devez savoir dire :** « Distinguer phonème, graphème et lettre n'est pas qu'une question d'examen : c'est le socle de l'enseignement de la lecture. Un élève apprend à associer un graphème à un phonème (décoder) et inversement (encoder). »",
+              text: "**Cycle 1 (maternelle) :** tout commence ici, à l'oral et **sans aucune lettre**. Les élèves développent la **conscience phonologique** par le jeu : scander les syllabes, repérer les rimes, isoler un son dans un mot, jouer avec les sonorités (comptines, virelangues). On travaille uniquement le **phonème**, jamais encore son écriture.\n\n**Cycle 2 :** la phonologie devient le cœur de l'**apprentissage de la lecture**. Les élèves relient désormais les sons aux lettres en apprenant les **correspondances grapho-phonémiques** : associer un graphème à un phonème pour **décoder** (lire), et inversement pour **encoder** (écrire).\n\n**Cycle 3 :** les acquis se consolident sur des mots plus longs et les graphies rares ou irrégulières.\n\n**Ce que vous devez savoir dire :** « Distinguer phonème, graphème et lettre n'est pas qu'une question d'examen : c'est le socle de l'apprentissage de la lecture, préparé dès la maternelle à l'oral (conscience phonologique), puis construit au CP avec le code (correspondances grapho-phonémiques). »",
             },
             {
               type: "ctaBox",
@@ -281,7 +425,7 @@ export const fichePhonologie: Fiche = {
               variant: "success",
               icon: "",
               title: "Trois démarches",
-              text: "Transcrire un mot en API, compter lettres / graphèmes / phonèmes, et analyser la valeur d'une lettre. Chacune se termine par un checkpoint.",
+              text: "Transcrire un mot en API, compter lettres / graphèmes / phonèmes, et analyser la valeur d'une lettre. Chaque démarche est **déroulée sur un exemple précis**, se conclut par une **réponse rédigée type** (la formulation à reproduire le jour J), puis par un checkpoint pour vous entraîner sur un mot nouveau.",
             },
             {
               type: "rappelExpress",
@@ -307,22 +451,32 @@ export const fichePhonologie: Fiche = {
               number: "①",
               title: "Transcrire un mot en API",
               intro:
-                "**Question typique :** « Transcrivez ce mot en API. »\nQuatre étapes.",
+                "**Question type :** « Transcrivez le mot *beaucoup* en alphabet phonétique international. »\nOn la déroule étape par étape, jusqu'à la réponse rédigée.",
               steps: [
                 {
                   number: "1",
-                  text: "**Prononcer le mot à voix haute** (c'est l'oral qu'on transcrit).",
-                  example: { lines: ["« bateau » se dit /bato/, pas « b-a-t-e-a-u »"] },
+                  text: "**Prononcer le mot à voix haute.** C'est l'oral qu'on transcrit, jamais la suite des lettres.",
+                  example: { lines: ["« beaucoup » se dit /boku/, pas « b-e-a-u-c-o-u-p »."] },
                 },
                 {
                   number: "2",
-                  text: "**Identifier chaque phonème** dans l'ordre, puis **noter le symbole API** entre barres obliques.",
-                  example: { lines: ["« regardait » → /ʁəgaʁdɛ/ (le <e> caduc et le <t> sont muets)"] },
+                  text: "**Découper la chaîne parlée en sons**, dans l'ordre où on les entend.",
+                  example: { lines: ["J'entends quatre sons successifs : /b/ … /o/ … /k/ … /u/."] },
                 },
                 {
-                  number: "💡",
-                  text: "**Vérifier les graphèmes complexes et les lettres muettes** : un digramme (<ou>, <ch>) = 1 phonème.",
-                  warn: "⚠️ « eau » = 1 phonème /o/, pas trois.",
+                  number: "3",
+                  text: "**Traquer les graphèmes complexes et les lettres muettes** : c'est là que se gagnent ou se perdent les points. Un digramme ou un trigramme ne vaut qu'un seul son ; une lettre muette ne vaut aucun son.",
+                  example: { lines: ["<eau> = /o/ (3 lettres, 1 son), <ou> = /u/ (2 lettres, 1 son), le <p> final est muet."] },
+                  warn: "⚠️ La clé : ne jamais transcrire une lettre qu'on ne prononce pas, et ne jamais éclater un digramme en plusieurs sons.",
+                },
+                {
+                  number: "4",
+                  text: "**Écrire la transcription entre barres obliques** /…/ (les crochets […] sont réservés à la phonétique fine).",
+                  example: { lines: ["/boku/"] },
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « Le mot *beaucoup* se transcrit **/boku/**. Le trigramme <eau> note le phonème /o/, le digramme <ou> note /u/, et le <p> final est muet : le mot compte **4 phonèmes** pour 8 lettres. »",
                 },
               ],
             },
@@ -342,22 +496,32 @@ export const fichePhonologie: Fiche = {
               number: "②",
               title: "Compter lettres, graphèmes et phonèmes",
               intro:
-                "**Question typique :** « Combien de lettres, de graphèmes et de phonèmes dans ce mot ? »",
+                "**Question type :** « Indiquez le nombre de lettres, de graphèmes et de phonèmes du mot *chant*. »\nLes trois nombres sont presque toujours différents : c'est tout l'enjeu.",
               steps: [
                 {
                   number: "1",
-                  text: "**Compter les lettres** (les caractères écrits).",
-                  example: { lines: ["« chant » → 5 lettres"] },
+                  text: "**Compter les lettres** : les caractères écrits, un par un.",
+                  example: { lines: ["« chant » → c · h · a · n · t = 5 lettres."] },
                 },
                 {
                   number: "2",
-                  text: "**Découper en graphèmes** puis **en phonèmes** (les lettres muettes ne donnent pas de phonème).",
-                  example: { lines: ["« chant » → graphèmes <ch>, <an>, <t muet> ; phonèmes /ʃ/, /ɑ̃/ → /ʃɑ̃/ (2 phonèmes prononcés)"] },
+                  text: "**Regrouper en graphèmes** : on soude les lettres qui forment une seule unité (digrammes, trigrammes). Attention, une lettre muette reste un graphème.",
+                  example: { lines: ["<ch> · <an> · <t> = 3 graphèmes (le <t> muet compte comme graphème)."] },
+                },
+                {
+                  number: "3",
+                  text: "**Passer aux phonèmes** : chaque graphème *prononcé* donne un phonème ; les graphèmes muets n'en donnent aucun.",
+                  example: { lines: ["<ch> → /ʃ/, <an> → /ɑ̃/, <t> → aucun son. Soit 2 phonèmes : /ʃɑ̃/."] },
+                  warn: "⚠️ La clé : lettres ≥ graphèmes ≥ phonèmes. Si vous trouvez plus de phonèmes que de graphèmes, c'est forcément une erreur.",
                 },
                 {
                   number: "💡",
-                  text: "**Signaler le « e » caduc** : il compte comme phonème s'il est prononcé, pas s'il est effacé.",
-                  warn: "⚠️ « monde » : /mɔ̃d/ (3) ou /mɔ̃də/ (4) selon la prononciation ; les deux sont recevables si justifiées.",
+                  text: "**Gérer le « e » caduc** : il compte comme phonème s'il est prononcé, pas s'il est effacé. Signalez les deux comptes possibles.",
+                  warn: "⚠️ « monde » → /mɔ̃d/ (3 phonèmes) ou /mɔ̃də/ (4) : les deux sont recevables si vous le justifiez.",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « Le mot *chant* compte **5 lettres** (c, h, a, n, t), **3 graphèmes** (<ch>, <an>, <t> muet) et **2 phonèmes** (/ʃ/ et /ɑ̃/), soit /ʃɑ̃/. L'écart vient des deux digrammes (2 lettres pour 1 graphème) et du <t> muet (1 graphème pour 0 phonème). »",
                 },
               ],
             },
@@ -368,8 +532,8 @@ export const fichePhonologie: Fiche = {
               badge: "30 secondes",
               question: "Combien de phonèmes dans « nuit » ? Transcrivez.",
               correction: [
-                { type: "line", text: "« nuit » → **/nɥi/** : 3 phonèmes (/n/, /ɥ/ semi-consonne, /i/). Le <t> final est muet ; <ui> transcrit /ɥi/." },
-                { type: "note", text: "La semi-consonne /ɥ/ repérée ? Direction le dernier checkpoint." },
+                { type: "line", text: "**Réponse attendue :** « nuit » → **/nɥi/**, soit 3 phonèmes (/n/, /ɥ/ semi-consonne, /i/). Le <u> transcrit /ɥ/, le <i> transcrit /i/, et le <t> final est muet." },
+                { type: "note", text: "💡 Explication : /ɥ/ et /i/ sont deux sons distincts, donc deux graphèmes (<u> et <i>), pas un digramme. La semi-consonne /ɥ/ repérée ? Direction le dernier checkpoint." },
               ],
             },
             {
@@ -377,22 +541,27 @@ export const fichePhonologie: Fiche = {
               number: "③",
               title: "Analyser la valeur d'une lettre",
               intro:
-                "**Question typique :** « Quelle est la valeur de la lettre soulignée ? »",
+                "**Question type :** « Quelle est la valeur de la lettre <t> dans le mot *patience* ? »\nLe jury attend un son ET le nom du type de valeur.",
               steps: [
                 {
                   number: "1",
-                  text: "**Donner le phonème** correspondant (ou dire qu'elle est muette).",
-                  example: { lines: ["Dans « garçon », <ç> correspond au phonème /s/"] },
+                  text: "**Donner le phonème** que la lettre transcrit ici (ou dire qu'elle est muette).",
+                  example: { lines: ["Dans « patience », le <t> se prononce /s/, et non /t/."] },
                 },
                 {
                   number: "2",
-                  text: "**Nommer le type de valeur** : valeur de position (lettres voisines) ou de combinaison.",
-                  example: { lines: ["Dans « nation », <t> a la valeur /s/ par combinaison avec <i> + voyelle"] },
+                  text: "**Nommer le type de valeur** parmi les quatre (base, position, combinaison ou zéro). C'est le point qui rapporte : ne vous arrêtez jamais au seul son.",
+                  example: { lines: ["Le <t> prend /s/ parce qu'il est suivi de <i> + voyelle → c'est une valeur de combinaison."] },
                 },
                 {
-                  number: "💡",
-                  text: "**Justifier par la règle** : « <c> = /s/ devant e, i, y ».",
-                  warn: "⚠️ Distinguer valeur de position (c, g, s) et valeur de combinaison (t dans -tion).",
+                  number: "3",
+                  text: "**Justifier par la règle** et, si possible, l'opposer à un contre-exemple : c'est ce qui prouve que vous maîtrisez la règle.",
+                  example: { lines: ["Règle : <t> devant <i> + voyelle = /s/ (« patience »), mais il garde /t/ après une consonne (« question » → /kɛstjɔ̃/)."] },
+                  warn: "⚠️ La clé : « valeur » = son + type. Donner seulement /s/ sans nommer la valeur de combinaison, c'est une réponse incomplète.",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « Dans *patience*, le <t> a la valeur **/s/**. Il s'agit d'une **valeur de combinaison** : placé devant <i> suivi d'une voyelle, le <t> se prononce /s/ (« patience » → /pasjɑ̃s/). Hors de ce contexte, il garderait sa valeur de base /t/. »",
                 },
               ],
             },
@@ -486,7 +655,7 @@ export const fichePhonologie: Fiche = {
                     "h aspiré : pas d'élision ni de liaison. On dit « la honte », jamais « l'honte ».",
                 },
                 {
-                  objectifId: "ph6",
+                  objectifId: "ph5",
                   question: "Dans « maison », la lettre <s> se prononce :",
                   options: ["/s/", "/z/", "muette", "/ʃ/"],
                   correctIndex: 1,
@@ -541,8 +710,8 @@ export const fichePhonologie: Fiche = {
               objectifTag: "Phonèmes",
               question: "Combien de phonèmes dans chaque mot ?\npeur · chat · beau · main · yeux",
               correction: [
-                { type: "line", text: "peur → 3 (/pœʁ/) · chat → 2 (/ʃa/, t muet) · beau → 2 (/bo/) · main → 2 (/mɛ̃/) · yeux → 2 (/jø/)." },
-                { type: "note", text: "💡 Les digrammes (ch, eau, ai+n nasalisé) ne comptent que pour un phonème." },
+                { type: "line", text: "**Réponse attendue :** peur → 3 (/pœʁ/) · chat → 2 (/ʃa/) · beau → 2 (/bo/) · main → 2 (/mɛ̃/) · yeux → 2 (/jø/)." },
+                { type: "note", text: "💡 Explication : on compte les sons, jamais les lettres. Les graphèmes complexes ne valent qu'un seul phonème (<ch> → /ʃ/, <eau> → /o/, <ain> → /ɛ̃/, <eu> → /ø/) et les lettres finales muettes (le <t> de « chat ») ne comptent pas." },
               ],
             },
             {
@@ -557,12 +726,13 @@ export const fichePhonologie: Fiche = {
                   type: "table",
                   headers: ["Mot", "Lettres", "Graphèmes", "Phonèmes", "Transcription"],
                   rows: [
-                    ["nuit", "4", "3 (n · ui · t muet)", "3", "/nɥi/"],
+                    ["nuit", "4", "4 (n · u · i · t muet)", "3", "/nɥi/"],
                     ["monde", "5", "4 (m · on · d · e)", "3 ou 4", "/mɔ̃d/ ou /mɔ̃də/"],
                     ["eau", "3", "1 (eau)", "1", "/o/"],
                     ["chant", "5", "3 (ch · an · t muet)", "2", "/ʃɑ̃/"],
                   ],
                 },
+                { type: "note", text: "💡 Explication : lettres ≥ graphèmes ≥ phonèmes. Un digramme (<on>, <ch>) fait baisser le nombre de graphèmes ; une lettre muette (<t>, <e> final) fait baisser le nombre de phonèmes. Dans « nuit », <u> et <i> notent deux sons (/ɥ/ et /i/) : ce sont deux graphèmes, pas un digramme." },
               ],
             },
             {
@@ -572,8 +742,8 @@ export const fichePhonologie: Fiche = {
               title: "Exercice 3 : Valeur de la lettre <c>",
               question: "Donnez la valeur de <c> et la règle de position :\ncar · ciel · reçu · école · cygne",
               correction: [
-                { type: "line", text: "car : /k/ (devant a) · ciel : /s/ (devant i) · reçu : /s/ (cédille devant u) · école : /k/ (devant o) · cygne : /s/ (devant y)." },
-                { type: "line", text: "**Règle :** <c> = /k/ devant a, o, u et les consonnes ; /s/ devant e, i, y. La cédille <ç> impose /s/ devant a, o, u." },
+                { type: "line", text: "**Règle (explication) :** <c> = /k/ devant a, o, u et les consonnes ; /s/ devant e, i, y. La cédille <ç> impose /s/ devant a, o, u." },
+                { type: "line", text: "**Réponse attendue :** car → /k/ (devant a) · ciel → /s/ (devant i) · reçu → /s/ (cédille, devant u) · école → /k/ (devant o) · cygne → /s/ (devant y)." },
               ],
             },
             {
@@ -590,8 +760,8 @@ export const fichePhonologie: Fiche = {
               title: "Exercice 4 : Valeur de <s>",
               question: "Donnez la valeur de <s> et justifiez par la position :\nsol · raison · sport · insensé · tasse",
               correction: [
-                { type: "line", text: "sol : /s/ (initiale) · raison : /z/ (intervocalique) · sport : /s/ (devant consonne) · insensé : /s/ (après la consonne n) · tasse : /s/ (<ss> toujours /s/)." },
-                { type: "line", text: "**Règle :** <s> = /z/ uniquement entre deux voyelles ; <ss> reste toujours /s/." },
+                { type: "line", text: "**Règle (explication) :** <s> = /z/ uniquement entre deux voyelles ; partout ailleurs (initiale, contre une consonne, doublé en <ss>) il vaut /s/." },
+                { type: "line", text: "**Réponse attendue :** sol → /s/ (initiale) · raison → /z/ (intervocalique) · sport → /s/ (devant consonne) · insensé → /s/ (après la consonne <n>) · tasse → /s/ (<ss> toujours /s/)." },
               ],
             },
             {
@@ -602,8 +772,9 @@ export const fichePhonologie: Fiche = {
               enonce: "« Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. » (Zola)",
               question: "Relevez un exemple de polygraphie phonique et un de polyphonie graphique.",
               correction: [
-                { type: "line", text: "**Polygraphie phonique :** le phonème /e/ s'écrit <é> dans « pressée » et <ai> dans l'imparfait « hâtait » : un phonème, plusieurs graphèmes." },
-                { type: "line", text: "**Polyphonie graphique :** le graphème <s> vaut /s/ dans « sa » (initiale) et /z/ dans « maison » (intervocalique) : un graphème, plusieurs valeurs." },
+                { type: "line", text: "**Polygraphie phonique** (un phonème, plusieurs graphèmes) : le phonème /ɛ/ s'écrit <e> dans « elle » et <ai> dans l'imparfait « hâtait » : un même son noté de deux façons." },
+                { type: "line", text: "**Polyphonie graphique** (un graphème, plusieurs valeurs) : le graphème <s> vaut /s/ dans « sa » (initiale) et /z/ dans « maison » (intervocalique) : une même lettre, deux sons." },
+                { type: "note", text: "💡 Réponse attendue : un exemple précis de chaque phénomène, en nommant le phonème (ou le graphème) concerné et en justifiant par la position dans le mot." },
               ],
             },
             {
@@ -613,7 +784,8 @@ export const fichePhonologie: Fiche = {
               title: "Exercice 6 : Valeur de <x>",
               question: "Identifiez la valeur de <x> :\ntaxi · examen · dix · luxe · sixième",
               correction: [
-                { type: "line", text: "taxi : /ks/ · examen : /gz/ (ex- + voyelle) · dix : /s/ (finale isolée) · luxe : /ks/ · sixième : /z/ (liaison dans le groupe numéral)." },
+                { type: "line", text: "**Réponse attendue :** taxi → /ks/ · examen → /gz/ (<ex> + voyelle) · dix → /s/ (en finale, mot isolé) · luxe → /ks/ · sixième → /z/." },
+                { type: "note", text: "💡 Explication : dans « sixième » (comme « dixième »), <x> prend la valeur /z/ devant le suffixe -ième. Ce n'est pas une liaison : la liaison ne joue qu'entre deux mots (« six enfants » → /sizɑ̃fɑ̃/)." },
               ],
             },
             {
@@ -631,8 +803,8 @@ export const fichePhonologie: Fiche = {
               enonce: "« j'ai vu se rouvrir les portes qui me séparaient du monde. » (Marguerite Yourcenar, Comment Wang-Fô fut sauvé)",
               question: "Transcrivez « rouvrir » en API. Comptez phonèmes, graphèmes et lettres.",
               correction: [
-                { type: "line", text: "« rouvrir » → **/ʁuvʁiʁ/** : 6 phonèmes, 7 lettres. Décomposition : <r> /ʁ/, <ou> /u/ (digramme), <v> /v/, <r> /ʁ/, <i> /i/, <r> /ʁ/." },
-                { type: "note", text: "💡 7 lettres pour 6 phonèmes : le digramme <ou> compte 2 lettres pour 1 phonème." },
+                { type: "line", text: "**Réponse attendue :** « rouvrir » → **/ʁuvʁiʁ/** : 7 lettres, 6 graphèmes, 6 phonèmes. Décomposition : <r> /ʁ/, <ou> /u/ (digramme), <v> /v/, <r> /ʁ/, <i> /i/, <r> /ʁ/." },
+                { type: "note", text: "💡 Explication : 7 lettres pour 6 graphèmes car le digramme <ou> compte 2 lettres pour 1 unité ; 6 graphèmes pour 6 phonèmes car tous sont prononcés (aucune lettre muette ici)." },
               ],
             },
             {
@@ -642,8 +814,8 @@ export const fichePhonologie: Fiche = {
               title: "Exercice 8 : Phonétique ou phonologie ?",
               question: "Définissez phonétique et phonologie. Pourquoi le /ʁ/ roulé et le /ʁ/ grasseyé sont-ils phonétiquement distincts mais phonologiquement identiques ?",
               correction: [
-                { type: "line", text: "**Phonétique :** description physique des sons (articulation, acoustique). **Phonologie :** étude des sons comme unités fonctionnelles (les phonèmes)." },
-                { type: "line", text: "Le /ʁ/ roulé et le /ʁ/ grasseyé sont deux sons différents, mais aucune paire minimale ne les oppose en français : changer l'un en l'autre ne change jamais le sens. Ce sont des **variantes (allophones)** du même phonème /ʁ/." },
+                { type: "line", text: "**Explication :** la **phonétique** décrit physiquement les sons (articulation, acoustique) ; la **phonologie** étudie les sons comme unités fonctionnelles distinctives, les phonèmes." },
+                { type: "line", text: "**Réponse attendue :** le /ʁ/ roulé et le /ʁ/ grasseyé sont deux sons différents (plan phonétique), mais aucune paire minimale ne les oppose en français : les substituer ne change jamais le sens d'un mot. Ce sont donc des **variantes (allophones)** d'un seul et même phonème /ʁ/ (plan phonologique)." },
               ],
             },
           ],
@@ -667,9 +839,10 @@ export const fichePhonologie: Fiche = {
               enonce: "« j'ai vu se rouvrir les portes qui me séparaient du monde, je suis monté sur la terrasse du palais pour regarder les nuages. » (Marguerite Yourcenar, Comment Wang-Fô fut sauvé)",
               question: "Transcrivez « portes », « palais » et « nuages » et indiquez le nombre de phonèmes. Pour « portes », précisez la valeur de chaque graphème.",
               correction: [
-                { type: "line", text: "**portes** → /pɔʁt/ : 4 phonèmes. <p> /p/, <o> /ɔ/, <r> /ʁ/, <t> /t/, <e> muet, <s> muet." },
+                { type: "line", text: "**Réponse attendue — portes** → /pɔʁt/ : 4 phonèmes. Valeur de chaque graphème : <p> /p/, <o> /ɔ/, <r> /ʁ/, <t> /t/, <e> muet, <s> muet." },
                 { type: "line", text: "**palais** → /palɛ/ : 4 phonèmes (<ai> = /ɛ/, <s> muet)." },
-                { type: "line", text: "**nuages** → /nyaʒ/ : 4 phonèmes (<ge> = /ʒ/, <s> muet)." },
+                { type: "line", text: "**nuages** → /nɥaʒ/ : 4 phonèmes (<u> = /ɥ/, <ge> = /ʒ/, <s> muet)." },
+                { type: "note", text: "💡 Explication : on transcrit l'oral, donc le <e> et le <s> finaux (muets) ne sont jamais notés. Chaque graphème prononcé reçoit la valeur du phonème qu'il transcrit." },
               ],
             },
             {
@@ -691,7 +864,8 @@ export const fichePhonologie: Fiche = {
               enonce: "semblant · chambre · cependant · vantard",
               question: "Transcrivez chaque mot, comptez les phonèmes et indiquez le graphème du phonème /ɑ̃/.",
               correction: [
-                { type: "line", text: "semblant → /sɑ̃blɑ̃/ (6 ; <em> = /ɑ̃/, <an> = /ɑ̃/) · chambre → /ʃɑ̃bʁ/ (5 ; <am> = /ɑ̃/) · cependant → /səpɑ̃dɑ̃/ (7 ; <en> = /ɑ̃/, <an> = /ɑ̃/) · vantard → /vɑ̃taʁ/ (5 ; <an> = /ɑ̃/, <d> muet)." },
+                { type: "line", text: "**Réponse attendue :** semblant → /sɑ̃blɑ̃/ (5 phonèmes ; <em> = /ɑ̃/, <an> = /ɑ̃/) · chambre → /ʃɑ̃bʁ/ (4 ; <am> = /ɑ̃/, <e> final muet) · cependant → /səpɑ̃dɑ̃/ (6 ; <en> = /ɑ̃/, <an> = /ɑ̃/) · vantard → /vɑ̃taʁ/ (5 ; <an> = /ɑ̃/, <d> muet)." },
+                { type: "note", text: "💡 Explication : le phonème /ɑ̃/ se cache sous plusieurs graphèmes (an, am, en, em), chacun valant un seul son. Comptez bien : un digramme nasal = un phonème, et les lettres finales muettes (<t>, <d>, <e>) ne comptent pas." },
               ],
             },
           ],
