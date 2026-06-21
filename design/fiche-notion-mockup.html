@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maquette · Fiche Notion 01 · Numération et systèmes de bases</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          surface: "#fbf9f4",
+          "surface-container": "#f0eee9",
+          "on-surface": "#1b1c19",
+          "on-surface-variant": "#40484a",
+          "outline-variant": "#dbc1b9",
+          primary: "#0c434e",
+          "primary-container": "#2a5b66",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#a1d1de",
+          secondary: "#c36648",
+          "on-secondary": "#ffffff",
+          success: "#3a6b50",
+          error: "#c0392b",
+        },
+        fontFamily: {
+          serif: ["\"Source Serif 4\"", "Georgia", "serif"],
+          ui: ["\"Work Sans\"", "system-ui", "sans-serif"],
+        },
+        borderRadius: { DEFAULT: "0.5rem" },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: "Source Serif 4", Georgia, serif; background-color: #fbf9f4; color: #1b1c19; }
+  .font-ui { font-family: "Work Sans", system-ui, sans-serif; }
+
+  .bg-seyes {
+    background-color: #fbf9f4;
+    background-image:
+      linear-gradient(to right, rgba(12,67,78,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(12,67,78,0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(12,67,78,0.03) 1px, transparent 1px);
+    background-size: 32px 32px, 32px 32px, 32px 8px;
+  }
+  .bg-seyes-dark {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 32px 32px, 32px 32px, 32px 8px;
+  }
+  .glass-card {
+    background: rgba(251,249,244,0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(12,67,78,0.10);
+  }
+  .formula-block {
+    font-family: "Work Sans", monospace;
+    white-space: pre;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  [data-panel] { display: none; }
+  [data-panel].active { display: flex; }
+  [data-group] { display: none; }
+  [data-group].active { display: grid; }
+  .flip-card { perspective: 1200px; }
+  .flip-inner { transition: transform 0.5s; transform-style: preserve-3d; }
+  .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+  .flip-face { backface-visibility: hidden; }
+  .flip-back { transform: rotateY(180deg); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(90deg); }
+</style>
+</head>
+<body class="text-on-surface">
+
+<!-- ============== TOP NAV ============== -->
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+  <div class="max-w-[1280px] mx-auto px-5 md:px-10 h-16 flex items-center justify-between">
+    <span class="relative inline-block">
+      <span class="relative text-xl font-bold tracking-tight text-primary">Maitrizz</span>
+      <svg class="absolute overflow-visible" style="left:-1%;bottom:-0.3em;width:104%;height:0.4em" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M3 8 C 90 5 160 10 297 7" fill="none" stroke="#c36648" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+      </svg>
+    </span>
+    <nav class="hidden md:flex items-center gap-8 font-ui text-xs uppercase tracking-widest text-on-surface-variant">
+      <a href="#" class="hover:text-primary transition-colors">Réviser</a>
+      <a href="#" class="text-primary border-b-2 border-secondary pb-1">Mathématiques</a>
+      <a href="#" class="hover:text-primary transition-colors">Blog</a>
+    </nav>
+    <button class="font-ui text-xs font-bold uppercase tracking-widest bg-primary text-on-primary px-5 py-2.5 rounded-xl hover:bg-primary-container active:scale-95 transition-all">
+      Se connecter
+    </button>
+  </div>
+</header>
+
+<main class="max-w-[1280px] mx-auto px-5 md:px-10 py-10 pb-28">
+
+  <!-- ============== FICHE HEADER ============== -->
+  <section class="bg-primary bg-seyes-dark text-on-primary rounded-2xl p-6 sm:p-10 mb-8 shadow-xl">
+    <p class="font-ui text-xs uppercase tracking-widest opacity-65 mb-3">Maitrizz · CRPE · Partie 1 : Nombres et calcul</p>
+    <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-balance">Notion 1 : Numération <span class="italic text-secondary">·</span> Systèmes de bases</h1>
+    <p class="text-base sm:text-lg opacity-85 leading-relaxed max-w-3xl">
+      Comprendre la numération décimale · Convertir entre bases · Lire et écrire tout entier · Notations scientifiques et préfixes
+    </p>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <span class="font-ui inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-md bg-error/90 text-white uppercase tracking-wider">★★★ Tombe chaque année</span>
+      <span class="font-ui inline-flex items-center text-xs font-bold px-3 py-1.5 rounded-md bg-white/15 uppercase tracking-wider">Cycle 4 · BOEN 2020 · Thème A</span>
+      <span class="font-ui inline-flex items-center text-xs font-bold px-3 py-1.5 rounded-md bg-white/15 uppercase tracking-wider">Programme Seconde</span>
+    </div>
+  </section>
+
+  <!-- ============== TABS ============== -->
+  <div class="flex flex-col gap-3 sticky top-16 z-40 bg-surface/95 backdrop-blur-md py-3 -mx-1 px-1 border-b border-outline-variant/40 mb-8">
+    <div class="grid grid-cols-3 gap-2" id="group-tabs">
+      <button data-group-btn="decouvrir" class="group-btn font-ui text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-3 rounded-xl border-2 transition-all">Découvrir</button>
+      <button data-group-btn="pratiquer" class="group-btn font-ui text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-3 rounded-xl border-2 transition-all">Pratiquer</button>
+      <button data-group-btn="reviser" class="group-btn font-ui text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-3 rounded-xl border-2 transition-all">Réviser</button>
+    </div>
+
+    <div data-subtabs="decouvrir" class="subtabs flex gap-2 flex-wrap">
+      <button data-tab-btn="vue-d-ensemble" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Vue d'ensemble</button>
+      <button data-tab-btn="cours" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Cours</button>
+      <button data-tab-btn="methode" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Méthode</button>
+    </div>
+    <div data-subtabs="pratiquer" class="subtabs flex gap-2 flex-wrap">
+      <button data-tab-btn="appli" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Application</button>
+      <button data-tab-btn="crpe" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Type CRPE</button>
+      <button data-tab-btn="cote-prof" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Côté prof</button>
+    </div>
+    <div data-subtabs="reviser" class="subtabs flex gap-2 flex-wrap">
+      <button data-tab-btn="flash" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Flashcards</button>
+      <button data-tab-btn="memo" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Mémo</button>
+      <button data-tab-btn="autoeval" class="tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all">Auto-évaluation</button>
+    </div>
+  </div>
+
+  <!-- ============== GROUP: DECOUVRIR ============== -->
+  <div data-group="decouvrir" class="grid grid-cols-1 gap-6">
+
+    <!-- TAB: vue-d-ensemble -->
+    <div data-panel="vue-d-ensemble" class="flex flex-col gap-6">
+      <div class="glass-card rounded-2xl p-8 shadow-lg">
+        <h2 class="text-2xl font-bold text-primary mb-2">Le programme en 5 étapes</h2>
+        <p class="font-ui text-xs uppercase tracking-widest text-on-surface-variant mb-6">Vue d'ensemble · sans révéler le contenu</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="flex gap-4 p-4 rounded-xl border border-outline-variant/30 bg-surface">
+            <span class="font-serif text-2xl font-bold text-primary shrink-0">①</span>
+            <div><p class="font-bold text-on-surface mb-1">Le principe positionnel</p><p class="text-sm text-on-surface-variant leading-relaxed">Pourquoi 12 et 21 ne valent pas la même chose : tout est question de position.</p></div>
+          </div>
+          <div class="flex gap-4 p-4 rounded-xl border border-outline-variant/30 bg-surface">
+            <span class="font-serif text-2xl font-bold text-primary shrink-0">②</span>
+            <div><p class="font-bold text-on-surface mb-1">L'indice de base</p><p class="text-sm text-on-surface-variant leading-relaxed">Le réflexe à acquérir avant tout calcul : repérer dans quelle base un nombre est écrit.</p></div>
+          </div>
+          <div class="flex gap-4 p-4 rounded-xl border border-outline-variant/30 bg-surface">
+            <span class="font-serif text-2xl font-bold text-primary shrink-0">③</span>
+            <div><p class="font-bold text-on-surface mb-1">Les autres bases</p><p class="text-sm text-on-surface-variant leading-relaxed">Binaire, octal, hexadécimal : le même principe que la base 10, juste un rythme différent.</p></div>
+          </div>
+          <div class="flex gap-4 p-4 rounded-xl border border-outline-variant/30 bg-surface">
+            <span class="font-serif text-2xl font-bold text-primary shrink-0">④</span>
+            <div><p class="font-bold text-on-surface mb-1">Notation scientifique et préfixes</p><p class="text-sm text-on-surface-variant leading-relaxed">Lire et écrire les très grands et très petits nombres, et les unités du quotidien.</p></div>
+          </div>
+          <div class="flex gap-4 p-4 rounded-xl border border-outline-variant/30 bg-surface sm:col-span-2">
+            <span class="font-serif text-2xl font-bold text-primary shrink-0">⑤</span>
+            <div><p class="font-bold text-on-surface mb-1">Écriture en lettres</p><p class="text-sm text-on-surface-variant leading-relaxed">Les règles d'accord de cent, vingt et mille, sources d'erreurs fréquentes.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: cours -->
+    <div data-panel="cours" class="flex flex-col gap-6">
+
+      <div class="rounded-2xl border-l-4 border-primary bg-primary/5 p-6 flex gap-4">
+        <svg class="w-6 h-6 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5" stroke-linecap="round"/></svg>
+        <div>
+          <p class="font-bold text-primary mb-1">Avant de commencer</p>
+          <p class="text-on-surface-variant leading-relaxed">Vous utilisez les nombres depuis l'enfance. Ce cours va rendre visible ce que vous faites déjà sans y penser, puis étendre ce mécanisme à d'autres bases. <span class="font-bold text-on-surface">Lisez-le en entier avant de passer à la Méthode.</span></p>
+        </div>
+      </div>
+
+      <article class="glass-card rounded-2xl p-8 shadow-lg flex flex-col gap-8">
+
+        <section class="flex flex-col gap-4">
+          <h3 class="text-xl font-bold text-primary flex items-center gap-3"><span class="text-secondary">①</span> Le principe positionnel : la valeur dépend de la position</h3>
+          <p class="leading-relaxed"><span class="font-bold">12</span> et <span class="font-bold">21</span> utilisent les mêmes chiffres mais ne valent pas la même chose. La différence, c'est la <span class="font-bold">position</span>. Dans notre système, chaque rang vaut 10 fois le rang à sa droite, c'est pour ça qu'on appelle ça le système <span class="font-bold">décimal</span>.</p>
+
+          <div class="rounded-xl border border-primary/20 overflow-hidden">
+            <div class="bg-primary text-on-primary font-ui text-xs font-bold uppercase tracking-widest px-5 py-2.5">Le nombre 345 dans ses boîtes</div>
+            <div class="p-5 bg-surface flex flex-col gap-4">
+              <div class="grid grid-cols-3 gap-3">
+                <div class="rounded-lg bg-primary/5 border border-primary/15 p-4 text-center"><p class="text-3xl font-bold text-primary mb-1">3</p><p class="text-xs text-on-surface-variant">position 2<br>(centaines)</p><p class="font-bold text-sm mt-2">3 × 10² = 300</p></div>
+                <div class="rounded-lg bg-primary/5 border border-primary/15 p-4 text-center"><p class="text-3xl font-bold text-primary mb-1">4</p><p class="text-xs text-on-surface-variant">position 1<br>(dizaines)</p><p class="font-bold text-sm mt-2">4 × 10¹ = 40</p></div>
+                <div class="rounded-lg bg-primary/5 border border-primary/15 p-4 text-center"><p class="text-3xl font-bold text-primary mb-1">5</p><p class="text-xs text-on-surface-variant">position 0<br>(unités)</p><p class="font-bold text-sm mt-2">5 × 10⁰ = 5</p></div>
+              </div>
+              <div class="formula-block bg-on-surface/[0.04] rounded-lg p-4 text-on-surface">345 = 3×10² + 4×10¹ + 5×10⁰ = 300 + 40 + 5</div>
+              <p class="text-sm text-on-surface-variant italic">Formule clé : valeur d'un chiffre = chiffre × base^position. Les positions se numérotent de droite à gauche en partant de 0.</p>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-xl border border-secondary/25 bg-secondary/5 p-5">
+              <p class="font-ui text-xs font-bold uppercase tracking-wider text-secondary mb-2 flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 2 18a1.5 1.5 0 0 0 1.3 2.2h17.4A1.5 1.5 0 0 0 22 18L13.7 3.9a1.5 1.5 0 0 0-2.6 0Z" stroke-linejoin="round"/></svg>
+                Le zéro occupant
+              </p>
+              <p class="text-sm leading-relaxed">Dans <span class="font-bold">4 062</span>, le zéro n'est pas « rien », il <em>occupe</em> la position des centaines et décale le 4 à la position des milliers. Sans lui : 462 ≠ 4062. En binaire : 1001₂ ≠ 11₂.</p>
+            </div>
+            <div class="rounded-xl border border-outline-variant/40 bg-surface-container/60 p-5">
+              <p class="font-ui text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-2">Additif vs positionnel</p>
+              <p class="text-sm leading-relaxed">Système <span class="font-bold">romain</span> (additif) : la valeur d'un symbole est fixe, VIII = 5+1+1+1 = 8. Système <span class="font-bold">décimal</span> (positionnel) : même chiffre, valeur différente selon la position.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4">
+          <h3 class="text-xl font-bold text-primary flex items-center gap-3"><span class="text-secondary">②</span> L'indice de base : lire 1101₂ sans se tromper</h3>
+          <p class="leading-relaxed">Le petit chiffre en bas à droite s'appelle l'<span class="font-bold">indice de base</span>. Il indique dans quelle base est écrit le nombre. <span class="font-bold">Sans indice → base 10 par défaut.</span></p>
+
+          <div class="overflow-x-auto rounded-xl border border-outline-variant/30">
+            <table class="w-full text-sm">
+              <thead><tr class="bg-primary/10 font-ui text-xs uppercase tracking-wider text-primary"><th class="text-left px-4 py-3">Écriture</th><th class="text-left px-4 py-3">Signification</th></tr></thead>
+              <tbody class="divide-y divide-outline-variant/20">
+                <tr><td class="px-4 py-3 font-bold">345</td><td class="px-4 py-3">pas d'indice → <span class="font-bold">base 10</span> · trois cent quarante-cinq</td></tr>
+                <tr><td class="px-4 py-3 font-bold">1101₂</td><td class="px-4 py-3">indice 2 → <span class="font-bold">base 2</span> (binaire) · vaut 13 en décimal</td></tr>
+                <tr><td class="px-4 py-3 font-bold">1F₁₆</td><td class="px-4 py-3">indice 16 → <span class="font-bold">base 16</span> (hexadécimal) · vaut 31 en décimal</td></tr>
+                <tr><td class="px-4 py-3 font-bold">17₈</td><td class="px-4 py-3">indice 8 → <span class="font-bold">base 8</span> (octal) · vaut 15 en décimal</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="rounded-xl border-l-4 border-secondary bg-secondary/5 p-5 flex gap-3">
+            <svg class="w-5 h-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 2 18a1.5 1.5 0 0 0 1.3 2.2h17.4A1.5 1.5 0 0 0 22 18L13.7 3.9a1.5 1.5 0 0 0-2.6 0Z" stroke-linejoin="round"/></svg>
+            <p class="text-sm leading-relaxed"><span class="font-bold text-secondary">Piège classique.</span> 1101₂ ≠ 1101. Sans l'indice, on lirait « mille cent un ». Avec l'indice ₂, c'est un binaire qui vaut 13. <span class="font-bold">Repérer l'indice avant tout calcul, c'est le réflexe numéro 1.</span></p>
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-4">
+          <h3 class="text-xl font-bold text-primary flex items-center gap-3"><span class="text-secondary">③</span> Les autres bases : même principe, autre rythme</h3>
+          <p class="leading-relaxed">On a choisi 10 parce qu'on a 10 doigts. Mais le principe positionnel fonctionne avec n'importe quelle base. L'idée clé : <span class="font-bold">dans une base b, on utilise exactement b chiffres (de 0 à b−1), et on passe au rang suivant dès qu'on a compté b fois.</span></p>
+
+          <div class="overflow-x-auto rounded-xl border border-outline-variant/30">
+            <table class="w-full text-sm">
+              <caption class="font-ui text-xs uppercase tracking-wider text-on-surface-variant text-left px-4 py-2 bg-surface-container/60">Comment on compte de 0 à 7 dans chaque base</caption>
+              <thead><tr class="bg-primary/10 font-ui text-xs uppercase tracking-wider text-primary"><th class="text-left px-4 py-2">Valeur réelle</th><th class="px-3 py-2">0</th><th class="px-3 py-2">1</th><th class="px-3 py-2">2</th><th class="px-3 py-2">3</th><th class="px-3 py-2">4</th><th class="px-3 py-2">5</th><th class="px-3 py-2">6</th><th class="px-3 py-2">7</th></tr></thead>
+              <tbody class="divide-y divide-outline-variant/20 text-center">
+                <tr><td class="px-4 py-2 text-left font-bold">Base 10</td><td class="px-3 py-2">0</td><td class="px-3 py-2">1</td><td class="px-3 py-2">2</td><td class="px-3 py-2">3</td><td class="px-3 py-2">4</td><td class="px-3 py-2">5</td><td class="px-3 py-2">6</td><td class="px-3 py-2">7</td></tr>
+                <tr><td class="px-4 py-2 text-left font-bold">Base 2</td><td class="px-3 py-2">0</td><td class="px-3 py-2">1</td><td class="px-3 py-2">10</td><td class="px-3 py-2">11</td><td class="px-3 py-2">100</td><td class="px-3 py-2">101</td><td class="px-3 py-2">110</td><td class="px-3 py-2">111</td></tr>
+                <tr><td class="px-4 py-2 text-left font-bold">Base 16</td><td class="px-3 py-2">0</td><td class="px-3 py-2">1</td><td class="px-3 py-2">2</td><td class="px-3 py-2">3</td><td class="px-3 py-2">4</td><td class="px-3 py-2">5</td><td class="px-3 py-2">6</td><td class="px-3 py-2">7</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="rounded-xl bg-primary/5 border border-primary/15 p-4"><p class="font-bold text-primary mb-2">Base 10 : décimal</p><p class="text-sm text-on-surface-variant">Chiffres : 0 à 9<br>Passage au rang : tous les 10<br>Notation : 345</p></div>
+            <div class="rounded-xl bg-primary/5 border border-primary/15 p-4"><p class="font-bold text-primary mb-2">Base 2 : binaire</p><p class="text-sm text-on-surface-variant">Chiffres : 0 et 1<br>Passage au rang : tous les 2<br>Notation : 1101₂</p></div>
+            <div class="rounded-xl bg-primary/5 border border-primary/15 p-4"><p class="font-bold text-primary mb-2">Base 16 : hexadécimal</p><p class="text-sm text-on-surface-variant">Chiffres : 0 à 9 puis A à F<br>Passage au rang : tous les 16<br>Notation : 1F₁₆</p></div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <!-- TAB: methode -->
+    <div data-panel="methode" class="flex flex-col gap-6">
+
+      <div class="rounded-2xl border-l-4 border-success bg-success/5 p-6 flex gap-4">
+        <svg class="w-6 h-6 text-success shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-on-surface-variant leading-relaxed">Chaque méthode part de ce que vous faites déjà sans y penser avec les nombres décimaux : on le rend visible, puis on l'applique à d'autres bases. <span class="font-bold text-on-surface">Trois types de questions</span> peuvent tomber au concours, on les traite dans l'ordre.</p>
+      </div>
+
+      <div class="rounded-2xl border-2 border-secondary/30 bg-secondary/[0.04] p-7">
+        <p class="font-ui text-xs font-bold uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2 9 9H2l5.5 4.5L5 21l7-5 7 5-2.5-7.5L22 9h-7Z" stroke-linejoin="round"/></svg>
+          Rappel express
+        </p>
+        <div class="flex flex-col gap-4 text-sm">
+          <p><span class="font-bold">Une puissance, c'est quoi ?</span> C'est une multiplication répétée. 2³ signifie simplement « 2 multiplié 3 fois par lui-même ».</p>
+          <div class="formula-block bg-white/70 rounded-lg p-4 border border-secondary/15">2⁰ = 1 · 2¹ = 2 · 2² = 4 · 2³ = 8 · 2⁴ = 16 · 2⁵ = 32 · 2⁶ = 64 · 2⁷ = 128</div>
+          <p><span class="font-bold">La division avec reste, c'est quoi ?</span> Quand on divise 13 par 2, on ne tombe pas juste. On dit : 13 = 2 × 6 + 1. Le 6 c'est le quotient, le 1 c'est le reste.</p>
+          <div class="rounded-lg border-l-4 border-secondary bg-white/70 p-3 text-on-surface-variant">Le reste est toujours strictement inférieur au diviseur. Si vous divisez par 2, le reste ne peut être que 0 ou 1.</div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-8 shadow-lg flex flex-col gap-5">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center shrink-0">①</span>
+          <h3 class="text-xl font-bold text-primary">Lire un nombre en base b : le convertir en décimal</h3>
+        </div>
+        <p class="text-sm leading-relaxed"><span class="font-bold">Question typique :</span> « Convertir 1101₂ en base 10. » <span class="font-bold">Bonne nouvelle :</span> vous savez déjà faire ça en base 10, on va appliquer exactement la même logique à 1101₂.</p>
+
+        <ol class="flex flex-col gap-4">
+          <li class="flex gap-4">
+            <span class="w-7 h-7 rounded-full border-2 border-primary text-primary font-bold text-sm flex items-center justify-center shrink-0 mt-0.5">1</span>
+            <div class="flex-1">
+              <p class="text-sm"><span class="font-bold">Numéroter les positions de droite à gauche en commençant par 0.</span></p>
+              <div class="formula-block bg-on-surface/[0.04] rounded-lg p-3 mt-2 text-xs">  Nombre :    1      1      0      1
+       ↑      ↑      ↑      ↑
+Position : 3      2      1      0    ← toujours 0 à droite</div>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="w-7 h-7 rounded-full border-2 border-primary text-primary font-bold text-sm flex items-center justify-center shrink-0 mt-0.5">2</span>
+            <div class="flex-1">
+              <p class="text-sm"><span class="font-bold">Même calcul qu'avec 345, mais la base est 2 au lieu de 10.</span></p>
+              <div class="formula-block bg-on-surface/[0.04] rounded-lg p-3 mt-2 text-xs">  pos. 3 →  1 × 2³  =  1 × 8   =    8
+  pos. 2 →  1 × 2²  =  1 × 4   =    4
+  pos. 1 →  0 × 2¹  =  0 × 2   =    0
+  pos. 0 →  1 × 2⁰  =  1 × 1   =    1</div>
+              <p class="text-xs text-on-surface-variant italic mt-1">Comme pour 345 : chaque chiffre × base^position. Ici la base est 2, c'est tout ce qui change.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="w-7 h-7 rounded-full border-2 border-primary text-primary font-bold text-sm flex items-center justify-center shrink-0 mt-0.5">3</span>
+            <div class="flex-1">
+              <p class="text-sm"><span class="font-bold">Additionner, comme pour 300+40+5.</span></p>
+              <div class="formula-block bg-on-surface/[0.04] rounded-lg p-3 mt-2 text-xs">  8 + 4 + 0 + 1  =  13
+  ✓  1101₂  =  13  en décimal</div>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="w-7 h-7 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2 9 9H2l5.5 4.5L5 21l7-5 7 5-2.5-7.5L22 9h-7Z" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="flex-1">
+              <p class="text-sm"><span class="font-bold">Mémorisez les puissances de 2 : elles remplacent les « centaines, dizaines, unités » de la base 10.</span></p>
+              <p class="text-xs text-on-surface-variant italic mt-2">En base 10 : unités (10⁰=1), dizaines (10¹=10), centaines (10²=100)… En base 2 : 1, 2, 4, 8, 16, 32… même principe, paliers différents.</p>
+              <div class="rounded-lg border-l-4 border-error bg-error/5 p-3 mt-2 text-xs text-on-surface-variant flex gap-2">
+                <svg class="w-4 h-4 text-error shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 2 18a1.5 1.5 0 0 0 1.3 2.2h17.4A1.5 1.5 0 0 0 22 18L13.7 3.9a1.5 1.5 0 0 0-2.6 0Z" stroke-linejoin="round"/></svg>
+                <span>Un chiffre ne peut jamais être ≥ à la base. En base 2 : seulement 0 et 1. Si vous voyez un « 2 » dans un nombre écrit en base 2, il y a une erreur.</span>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="rounded-xl border border-outline-variant/40 bg-surface p-5">
+          <div class="flex items-center justify-between mb-3">
+            <p class="font-bold text-on-surface">Checkpoint : à vous de jouer</p>
+            <span class="font-ui text-[11px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 rounded-md px-2.5 py-1">30 secondes</span>
+          </div>
+          <p class="text-sm mb-3">Convertir 110₂ en base 10, en détaillant le calcul comme ci-dessus.</p>
+          <details class="group">
+            <summary class="font-ui text-xs font-bold uppercase tracking-wider text-primary inline-flex items-center gap-1.5">
+              <svg class="chev w-3.5 h-3.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Voir la correction
+            </summary>
+            <div class="mt-3 text-sm border-t border-outline-variant/30 pt-3">
+              <p>110₂ = 1×2² + 1×2¹ + 0×2⁰ = 4 + 2 + 0 = <span class="font-bold">6</span></p>
+              <p class="text-xs text-on-surface-variant italic mt-2">Trouvé du premier coup ? Vous maîtrisez cette méthode. Sinon, relisez l'étape 2 avant de continuer.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== GROUP: PRATIQUER ============== -->
+  <div data-group="pratiquer" class="grid grid-cols-1 gap-6">
+
+    <!-- TAB: appli -->
+    <div data-panel="appli" class="flex flex-col gap-5">
+      <div class="rounded-2xl border-l-4 border-success bg-success/5 p-5 text-on-surface-variant text-sm">
+        Progressez niveau par niveau. Chaque niveau ajoute une difficulté. Corrigez avant de passer au suivant.
+      </div>
+
+      <div class="font-ui text-xs font-bold uppercase tracking-widest text-on-surface-variant bg-surface-container rounded-xl px-5 py-3 border border-outline-variant/30">
+        Échauffement : je vérifie que j'ai compris le Cours
+        <span class="block font-normal tracking-normal text-on-surface-variant/80 mt-0.5">Questions directes, une seule chose à la fois</span>
+      </div>
+
+      <div class="rounded-xl border border-outline-variant/40 bg-surface p-5">
+        <p class="font-bold mb-3">Question 1 : L'indice de base</p>
+        <p class="text-sm mb-3">Pour chaque nombre, dire dans quelle base il est écrit et ce que ça signifie :<br>a) 101₂ &nbsp; b) 1F₁₆ &nbsp; c) 347 &nbsp; d) 25₈</p>
+        <details><summary class="font-ui text-xs font-bold uppercase tracking-wider text-primary inline-flex items-center gap-1.5">
+          <svg class="chev w-3.5 h-3.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Voir la correction
+        </summary>
+        <ul class="mt-3 text-sm flex flex-col gap-1.5 border-t border-outline-variant/30 pt-3">
+          <li><span class="font-bold">a)</span> 101₂ → indice 2 → base 2 (binaire). Fait uniquement de 0 et de 1.</li>
+          <li><span class="font-bold">b)</span> 1F₁₆ → indice 16 → base 16 (hexadécimal). F vaut 15.</li>
+          <li><span class="font-bold">c)</span> 347 → pas d'indice → base 10 par défaut.</li>
+          <li><span class="font-bold">d)</span> 25₈ → indice 8 → base 8 (octal). Chiffres de 0 à 7 seulement.</li>
+        </ul></details>
+      </div>
+
+      <div class="font-ui text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-xl px-5 py-3 border border-primary/20 flex items-center gap-2">
+        <span class="text-secondary">★☆☆</span> Niveau 1 : calcul direct
+        <span class="block font-normal tracking-normal text-on-surface-variant/80">— application immédiate du Cours</span>
+      </div>
+
+      <div class="rounded-xl border border-outline-variant/40 bg-surface p-5">
+        <p class="font-bold mb-3">Exercice 1 : Conversion base 2 → décimal</p>
+        <p class="text-sm mb-3">Convertir en base 10, en explicitant les calculs : a) 1010₂ &nbsp; b) 11111₂ &nbsp; c) 100001₂</p>
+        <details><summary class="font-ui text-xs font-bold uppercase tracking-wider text-primary inline-flex items-center gap-1.5">
+          <svg class="chev w-3.5 h-3.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Voir la correction
+        </summary>
+        <ul class="mt-3 text-sm flex flex-col gap-1.5 border-t border-outline-variant/30 pt-3">
+          <li><span class="font-bold">a)</span> 1010₂ = 8+0+2+0 = <span class="font-bold">10</span></li>
+          <li><span class="font-bold">b)</span> 11111₂ = 16+8+4+2+1 = <span class="font-bold">31</span></li>
+          <li><span class="font-bold">c)</span> 100001₂ = 32+1 = <span class="font-bold">33</span></li>
+          <li class="text-xs text-on-surface-variant italic mt-1">Les zéros intermédiaires contribuent 0 à la somme : à noter explicitement pour ne pas les oublier.</li>
+        </ul></details>
+      </div>
+    </div>
+
+    <!-- TAB: crpe -->
+    <div data-panel="crpe" class="flex flex-col gap-5">
+      <div class="rounded-2xl border-l-4 border-success bg-success/5 p-5 text-on-surface-variant text-sm">
+        Ces exercices reproduisent exactement le format des sujets officiels. Les sujets issus d'annales réelles sont identifiés par le badge ANNALE.
+      </div>
+
+      <div class="rounded-xl border border-outline-variant/40 bg-surface overflow-hidden">
+        <div class="bg-primary text-on-primary px-5 py-3 flex items-center justify-between">
+          <p class="font-bold">Type CRPE · Exercice 7</p>
+        </div>
+        <div class="p-5 flex flex-col gap-3 text-sm">
+          <p class="text-on-surface-variant">Dans une classe de CM2, un enseignant travaille sur la numération dans différentes bases. Il propose : « En base 5, on utilise les chiffres 0, 1, 2, 3, 4. Écrire les nombres de 0 à 12 en base 5, puis calculer 23₅ + 14₅. »</p>
+          <p class="font-bold">1. Quels sont les nombres de 0 à 12 écrits en base 5 ? 2. Calculer 23₅ + 14₅ en restant en base 5, puis vérifier en repassant en base 10. 3. Quel est l'intérêt pédagogique pour des élèves de CM2 de travailler dans une autre base ?</p>
+          <details><summary class="font-ui text-xs font-bold uppercase tracking-wider text-primary inline-flex items-center gap-1.5">
+            <svg class="chev w-3.5 h-3.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Voir la correction
+          </summary>
+          <div class="mt-3 border-t border-outline-variant/30 pt-3 flex flex-col gap-3">
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs">
+                <thead><tr class="bg-primary/10 font-ui uppercase tracking-wider text-primary"><th class="px-3 py-2 text-left">Décimal</th><th class="px-3 py-2 text-left">Base 5</th><th class="px-3 py-2 text-left">Décimal</th><th class="px-3 py-2 text-left">Base 5</th></tr></thead>
+                <tbody class="divide-y divide-outline-variant/20">
+                  <tr><td class="px-3 py-1.5">0</td><td class="px-3 py-1.5">0</td><td class="px-3 py-1.5">7</td><td class="px-3 py-1.5">12₅</td></tr>
+                  <tr><td class="px-3 py-1.5">5</td><td class="px-3 py-1.5">10₅</td><td class="px-3 py-1.5">11</td><td class="px-3 py-1.5">21₅</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>23₅ + 14₅ : unités 3+4=7=1×5+2 → écrire 2, retenir 1 ; dizaines 2+1+1=4 → <span class="font-bold">42₅</span>. Vérification : 13+9=22 ; 42₅=22 ✓</p>
+            <p class="text-on-surface-variant">Travailler en base 5 permet aux élèves de décontextualiser la numération décimale : ils comprennent que « 10 » signifie « une unité d'ordre supérieur », quelle que soit la base.</p>
+          </div></details>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: cote-prof -->
+    <div data-panel="cote-prof" class="flex flex-col gap-5">
+      <div class="rounded-2xl border-l-4 border-secondary bg-secondary/5 p-5 text-sm flex gap-3">
+        <svg class="w-5 h-5 text-secondary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 2 18a1.5 1.5 0 0 0 1.3 2.2h17.4A1.5 1.5 0 0 0 22 18L13.7 3.9a1.5 1.5 0 0 0-2.6 0Z" stroke-linejoin="round"/></svg>
+        <p>Ces exercices reproduisent des <span class="font-bold">erreurs réelles de candidats</span>, analysées à partir des rapports de jury. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.</p>
+      </div>
+
+      <div class="rounded-xl border border-error/25 bg-surface overflow-hidden">
+        <div class="bg-error/90 text-white px-5 py-3"><p class="font-bold">Erreur type · Exercice 9</p></div>
+        <div class="p-5 flex flex-col gap-3 text-sm">
+          <p class="text-on-surface-variant"><span class="font-bold">Copie d'un candidat :</span> Convertir 13 en base 2.</p>
+          <div class="formula-block bg-on-surface/[0.04] rounded-lg p-3 text-xs">13 ÷ 2 = 6 reste 1
+6 ÷ 2 = 3 reste 0
+3 ÷ 2 = 1 reste 1
+1 ÷ 2 = 0 reste 1
+Résultat : 1011₂</div>
+          <p>a) Cette réponse est-elle correcte ? b) Identifier précisément l'erreur. c) Quelle vérification permettait de l'éviter ?</p>
+          <details><summary class="font-ui text-xs font-bold uppercase tracking-wider text-primary inline-flex items-center gap-1.5">
+            <svg class="chev w-3.5 h-3.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Voir la correction
+          </summary>
+          <div class="mt-3 border-t border-outline-variant/30 pt-3 flex flex-col gap-2">
+            <p class="font-bold">Erreur : sens de lecture des restes inversé</p>
+            <div class="flex gap-2 items-start">
+              <svg class="w-4 h-4 text-error shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"/></svg>
+              <p>Les calculs sont corrects mais les restes sont lus de haut en bas (1,0,1,1) au lieu de bas en haut (1,1,0,1).</p>
+            </div>
+            <div class="flex gap-2 items-start">
+              <svg class="w-4 h-4 text-success shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p>Réponse correcte : lire les restes de bas en haut → <span class="font-bold">1101₂</span>. Vérification : 8+4+0+1=13 ✓</p>
+            </div>
+            <p class="text-xs text-on-surface-variant italic mt-1">Erreur n°1 sur la méthode des divisions successives. Le mnémo « fusée qui décolle » aide à mémoriser le sens de lecture.</p>
+          </div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== GROUP: REVISER ============== -->
+  <div data-group="reviser" class="grid grid-cols-1 gap-6">
+
+    <!-- TAB: flash -->
+    <div data-panel="flash" class="flex flex-col gap-6">
+      <div class="rounded-2xl border-l-4 border-primary bg-primary/5 p-5 text-on-surface-variant text-sm">
+        Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous : les cartes « à revoir » repasseront en fin de série.
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5" id="flashcard-grid">
+        <div class="flip-card h-56" data-flip>
+          <div class="flip-inner relative w-full h-full">
+            <div class="flip-face absolute inset-0 rounded-2xl border border-outline-variant/40 bg-surface p-6 flex flex-col justify-center items-center text-center cursor-pointer shadow-md">
+              <p class="font-ui text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">Question</p>
+              <p class="font-bold">Quelle est la différence entre un système additif et un système positionnel ?</p>
+              <p class="font-ui text-[10px] uppercase tracking-widest text-secondary mt-4">Cliquer pour révéler</p>
+            </div>
+            <div class="flip-face flip-back absolute inset-0 rounded-2xl border border-primary/30 bg-primary text-on-primary p-6 flex flex-col justify-center cursor-pointer shadow-md overflow-y-auto">
+              <p class="font-ui text-[10px] font-bold uppercase tracking-widest text-secondary-container/90 mb-2">Réponse</p>
+              <p class="text-sm leading-relaxed">Additif : valeur fixe par symbole (romain : VII=7). Positionnel : la valeur dépend de la position (le 3 dans 305 vaut 300, dans 53 vaut 3).</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card h-56" data-flip>
+          <div class="flip-inner relative w-full h-full">
+            <div class="flip-face absolute inset-0 rounded-2xl border border-outline-variant/40 bg-surface p-6 flex flex-col justify-center items-center text-center cursor-pointer shadow-md">
+              <p class="font-ui text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">Question</p>
+              <p class="font-bold">Que représente FF₁₆ en décimal ? Quel lien avec l'informatique ?</p>
+              <p class="font-ui text-[10px] uppercase tracking-widest text-secondary mt-4">Cliquer pour révéler</p>
+            </div>
+            <div class="flip-face flip-back absolute inset-0 rounded-2xl border border-primary/30 bg-primary text-on-primary p-6 flex flex-col justify-center cursor-pointer shadow-md overflow-y-auto">
+              <p class="font-ui text-[10px] font-bold uppercase tracking-widest text-secondary-container/90 mb-2">Réponse</p>
+              <p class="text-sm leading-relaxed">FF₁₆ = 15×16+15 = 255. Valeur maximale d'un octet (8 bits). En informatique, chaque canal RVB est codé sur un octet (0 à 255).</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card h-56" data-flip>
+          <div class="flip-inner relative w-full h-full">
+            <div class="flip-face absolute inset-0 rounded-2xl border border-outline-variant/40 bg-surface p-6 flex flex-col justify-center items-center text-center cursor-pointer shadow-md">
+              <p class="font-ui text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-3">Question</p>
+              <p class="font-bold">Quelles sont les règles d'accord de « cent » et « vingt » ?</p>
+              <p class="font-ui text-[10px] uppercase tracking-widest text-secondary mt-4">Cliquer pour révéler</p>
+            </div>
+            <div class="flip-face flip-back absolute inset-0 rounded-2xl border border-primary/30 bg-primary text-on-primary p-6 flex flex-col justify-center cursor-pointer shadow-md overflow-y-auto">
+              <p class="font-ui text-[10px] font-bold uppercase tracking-widest text-secondary-container/90 mb-2">Réponse</p>
+              <p class="text-sm leading-relaxed">Cent prend un s quand multiplié et non suivi d'un nombre (deux cents / deux cent six). Vingt prend un s seulement dans « quatre-vingts ». Mille est invariable.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border-2 border-dashed border-outline-variant/50 p-6 flex flex-col items-center justify-center text-center gap-3 h-56">
+          <span class="text-3xl font-bold text-primary">7</span>
+          <p class="font-ui text-xs uppercase tracking-widest text-on-surface-variant">cartes au total dans cette fiche</p>
+          <button class="font-ui text-xs font-bold uppercase tracking-widest bg-secondary text-on-secondary px-5 py-3 rounded-xl shadow-md shadow-secondary/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all">Lancer la session complète</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: memo -->
+    <div data-panel="memo" class="flex flex-col gap-6">
+      <div class="rounded-2xl border-l-4 border-primary bg-primary/5 p-5 text-on-surface-variant text-sm">
+        Voici la carte mentale complète de cette fiche, un excellent outil pour réviser rapidement avant le jour J, une fois que vous avez travaillé chaque partie.
+      </div>
+
+      <div class="glass-card rounded-2xl p-8 shadow-lg">
+        <div class="flex flex-col items-center mb-6">
+          <div class="rounded-2xl bg-primary text-on-primary px-8 py-4 text-center shadow-lg">
+            <p class="font-bold text-lg">Numération</p>
+            <p class="text-xs opacity-75 font-ui uppercase tracking-widest">Systèmes de bases</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-xl border-l-4 border-primary bg-primary/5 p-4"><p class="font-bold text-primary text-sm mb-2">Types de systèmes</p><p class="text-xs text-on-surface-variant leading-relaxed">Additif (romain)<br>Positionnel (décimal, binaire…)</p></div>
+          <div class="rounded-xl border-l-4 border-primary bg-primary/5 p-4"><p class="font-bold text-primary text-sm mb-2">4 bases au CRPE</p><p class="text-xs text-on-surface-variant leading-relaxed">Base 10 · Base 2 · Base 8 · Base 16<br>A=10 B=11 C=12 D=13 E=14 F=15</p></div>
+          <div class="rounded-xl border-l-4 border-success bg-success/5 p-4"><p class="font-bold text-success text-sm mb-2">Conversions</p><p class="text-xs text-on-surface-variant leading-relaxed">Base b → décimal : Σ chiffre × bⁿ<br>Décimal → base b : divisions successives<br>Lire les restes de bas en haut</p></div>
+          <div class="rounded-xl border-l-4 border-success bg-success/5 p-4"><p class="font-bold text-success text-sm mb-2">Écriture en lettres</p><p class="text-xs text-on-surface-variant leading-relaxed">Deux cents / deux cent six<br>Quatre-vingts / quatre-vingt-deux<br>Mille (invariable)</p></div>
+          <div class="rounded-xl border-l-4 border-secondary bg-secondary/5 p-4"><p class="font-bold text-secondary text-sm mb-2">Pièges classiques</p><p class="text-xs text-on-surface-variant leading-relaxed">Zéros intercalaires oubliés<br>Restes lus à l'envers<br>Chiffre ≥ base → erreur</p></div>
+          <div class="rounded-xl border-l-4 border-outline-variant bg-surface-container/60 p-4 border-dashed"><p class="font-bold text-on-surface-variant text-sm mb-2">Recul primaire</p><p class="text-xs text-on-surface-variant leading-relaxed">Cycle 1 : cardinal / ordinal<br>Cycle 2 : valeur positionnelle · zéro</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: autoeval -->
+    <div data-panel="autoeval" class="flex flex-col gap-6">
+      <div class="glass-card rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-bold text-primary">Auto-évaluation</h2>
+          <span id="autoeval-pct" class="font-ui text-sm font-bold text-primary">0%</span>
+        </div>
+        <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden mb-7">
+          <div id="autoeval-bar" class="h-full bg-secondary transition-all" style="width:0%"></div>
+        </div>
+        <div class="flex flex-col gap-3" id="autoeval-list">
+          <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container/60 cursor-pointer transition-colors">
+            <input type="checkbox" class="autoeval-cb mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary">
+            <span class="text-sm">Je sais convertir n'importe quel entier d'une base quelconque vers la base 10 (méthode des puissances)</span>
+          </label>
+          <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container/60 cursor-pointer transition-colors">
+            <input type="checkbox" class="autoeval-cb mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary">
+            <span class="text-sm">Je sais convertir de la base 10 vers une base quelconque (divisions successives)</span>
+          </label>
+          <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container/60 cursor-pointer transition-colors">
+            <input type="checkbox" class="autoeval-cb mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary">
+            <span class="text-sm">Je connais et applique les règles des chiffres hexadécimaux A à F</span>
+          </label>
+          <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container/60 cursor-pointer transition-colors">
+            <input type="checkbox" class="autoeval-cb mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary">
+            <span class="text-sm">Je comprends la différence entre système additif et positionnel, avec exemples</span>
+          </label>
+          <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container/60 cursor-pointer transition-colors">
+            <input type="checkbox" class="autoeval-cb mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary">
+            <span class="text-sm">Je maîtrise les règles d'écriture des nombres en lettres (cent, vingt, mille)</span>
+          </label>
+          <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container/60 cursor-pointer transition-colors">
+            <input type="checkbox" class="autoeval-cb mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary">
+            <span class="text-sm">Je peux analyser une erreur d'élève sur la numération et proposer une remédiation</span>
+          </label>
+          <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container/60 cursor-pointer transition-colors">
+            <input type="checkbox" class="autoeval-cb mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary">
+            <span class="text-sm">Je connais le rôle du zéro occupant et le lien avec l'enseignement primaire</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============== FOOTER NAV ============== -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface/95 backdrop-blur-md border-t border-outline-variant/40 z-50">
+  <div class="max-w-[1280px] mx-auto px-5 md:px-10 h-20 flex items-center justify-between">
+    <button class="flex items-center gap-3 font-ui text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors group">
+      <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="hidden sm:inline">Notion 0 : Méthodologie</span>
+    </button>
+    <div class="hidden md:flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-primary"></span>
+      <span class="w-2 h-2 rounded-full bg-outline-variant/50"></span>
+      <span class="w-2 h-2 rounded-full bg-outline-variant/50"></span>
+      <span class="font-ui text-[11px] font-bold text-on-surface-variant uppercase tracking-widest ml-3">Notion 1 / 27</span>
+    </div>
+    <button class="flex items-center gap-3 font-ui text-xs font-bold uppercase tracking-widest bg-primary text-on-primary px-6 py-3 rounded-xl hover:bg-primary-container active:scale-95 transition-all group">
+      <span class="hidden sm:inline">Notion 2 : Nombres relatifs</span>
+      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</footer>
+
+<script>
+  const groupBtns = document.querySelectorAll('.group-btn');
+  const subtabsBlocks = document.querySelectorAll('.subtabs');
+  const groups = document.querySelectorAll('[data-group]');
+  const panels = document.querySelectorAll('[data-panel]');
+  const tabBtns = document.querySelectorAll('.tab-btn');
+
+  function styleGroupBtn(btn, active) {
+    btn.className = 'group-btn font-ui text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-3 rounded-xl border-2 transition-all ' +
+      (active ? 'bg-primary text-on-primary border-primary shadow-md' : 'bg-surface text-on-surface-variant border-outline-variant/40 hover:border-primary/40 hover:text-primary');
+  }
+  function styleTabBtn(btn, active) {
+    btn.className = 'tab-btn font-ui text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-lg border-2 transition-all ' +
+      (active ? 'bg-primary/10 text-primary border-primary' : 'bg-surface text-on-surface-variant/80 border-outline-variant/40 hover:border-primary/40 hover:text-primary');
+  }
+
+  function setGroup(groupId, firstTabId) {
+    groups.forEach(g => g.classList.toggle('active', g.dataset.group === groupId));
+    subtabsBlocks.forEach(s => s.style.display = s.dataset.subtabs === groupId ? 'flex' : 'none');
+    groupBtns.forEach(b => styleGroupBtn(b, b.dataset.groupBtn === groupId));
+    setTab(firstTabId);
+  }
+  function setTab(tabId) {
+    panels.forEach(p => p.classList.toggle('active', p.dataset.panel === tabId));
+    tabBtns.forEach(b => styleTabBtn(b, b.dataset.tabBtn === tabId));
+  }
+
+  groupBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const g = btn.dataset.groupBtn;
+      const firstTab = document.querySelector('[data-subtabs="' + g + '"] .tab-btn').dataset.tabBtn;
+      setGroup(g, firstTab);
+    });
+  });
+  tabBtns.forEach(btn => btn.addEventListener('click', () => setTab(btn.dataset.tabBtn)));
+
+  setGroup('decouvrir', 'vue-d-ensemble');
+
+  document.querySelectorAll('[data-flip]').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  });
+
+  const cbs = document.querySelectorAll('.autoeval-cb');
+  const bar = document.getElementById('autoeval-bar');
+  const pct = document.getElementById('autoeval-pct');
+  function updateAutoeval() {
+    const checked = [...cbs].filter(c => c.checked).length;
+    const p = Math.round((checked / cbs.length) * 100);
+    bar.style.width = p + '%';
+    pct.textContent = p + '%';
+  }
+  cbs.forEach(cb => cb.addEventListener('change', updateAutoeval));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maitrizz · Notion 1 · Numération et systèmes de bases</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#fbf9f4; --paper-2:#f3efe7; --paper-3:#ece7dc;
+    --ink:#1b1c19; --ink-soft:#555b54; --ink-faint:#8a8f88;
+    --teal:#0c434e; --teal-deep:#07303a; --teal-soft:#e6eef0;
+    --terra:#c36648; --terra-deep:#a8512f; --terra-soft:#f6e6dd;
+    --line:#e4ddd0; --success:#3a6b50; --success-soft:#e3ede6; --error:#c0392b; --error-soft:#f7e3e0;
+    --shadow-sm:0 1px 2px rgba(27,28,25,.05),0 1px 1px rgba(27,28,25,.03);
+    --shadow-md:0 2px 4px rgba(27,28,25,.04),0 14px 30px -12px rgba(12,67,78,.16);
+    --shadow-lg:0 4px 8px rgba(27,28,25,.04),0 30px 60px -20px rgba(12,67,78,.24);
+    --r-sm:10px; --r-md:16px; --r-lg:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Source Serif 4",Georgia,serif; color:var(--ink); background-color:var(--paper); line-height:1.5;
+    background-image:
+      linear-gradient(to right,rgba(12,67,78,.035) 1px,transparent 1px),
+      linear-gradient(to bottom,rgba(12,67,78,.045) 1px,transparent 1px),
+      linear-gradient(to bottom,rgba(12,67,78,.018) 1px,transparent 1px);
+    background-size:30px 30px,30px 30px,30px 7.5px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .ui{font-family:"Work Sans",system-ui,sans-serif}
+  .kicker{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+  .micro{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint)}
+
+  #read-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--terra),var(--terra-deep));z-index:100;transition:width .1s linear}
+
+  /* Barre utilitaire */
+  .topbar{position:sticky;top:0;z-index:60;background:rgba(251,249,244,.82);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+  .topbar-inner{max-width:1200px;margin:0 auto;height:60px;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+  .logo{position:relative;font-size:19px;font-weight:700;letter-spacing:-.01em;color:var(--teal)}
+  .logo svg{position:absolute;left:-2%;bottom:-.3em;width:104%;height:.4em;overflow:visible}
+  .topbar-right{display:flex;align-items:center;gap:14px}
+  .crumb{font-family:"Work Sans",sans-serif;font-size:12.5px;color:var(--ink-soft);display:flex;align-items:center;gap:7px;text-decoration:none}
+  .crumb:hover{color:var(--teal)}
+  .pill-cd{display:flex;align-items:center;gap:7px;font-family:"Work Sans",sans-serif;font-size:12px;font-weight:600;color:var(--teal);background:var(--teal-soft);border-radius:999px;padding:6px 13px}
+  .pill-cd b{font-weight:700}
+  .streak{display:flex;align-items:center;gap:6px;font-family:"Work Sans",sans-serif;font-size:12px;font-weight:700;color:var(--terra-deep);background:var(--terra-soft);border-radius:999px;padding:6px 13px}
+
+  .wrap{max-width:1200px;margin:0 auto;padding:34px 28px 80px}
+
+  /* Hero */
+  .hero{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:26px}
+  .hero-title{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:700;line-height:1.08;letter-spacing:-.015em;color:var(--teal);margin-top:8px;text-wrap:balance}
+  .hero-title .dot{color:var(--terra);font-style:italic}
+  .hero-sub{color:var(--ink-soft);font-size:1.05rem;line-height:1.55;max-width:560px;margin-top:12px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{font-family:"Work Sans",sans-serif;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+  .chip-hot{background:var(--terra-soft);color:var(--terra-deep)}
+  .chip-plain{background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line)}
+  .chip svg{width:13px;height:13px}
+
+  /* Layout 2 colonnes */
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:start}
+
+  /* Navigation */
+  .nav{position:sticky;top:60px;z-index:50;padding-top:12px;margin-bottom:20px;background:linear-gradient(to bottom,var(--paper) 72%,rgba(251,249,244,0))}
+  .phases{position:relative;display:inline-flex;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:5px;box-shadow:inset 0 1px 2px rgba(27,28,25,.04)}
+  .phase-thumb{position:absolute;top:5px;bottom:5px;left:5px;width:0;border-radius:999px;background:#fffdf9;box-shadow:var(--shadow-sm);transition:left .34s cubic-bezier(.2,.85,.25,1),width .34s cubic-bezier(.2,.85,.25,1);z-index:0}
+  .phase{position:relative;z-index:1;font-family:"Work Sans",sans-serif;font-size:13px;font-weight:600;color:var(--ink-soft);background:none;border:0;cursor:pointer;padding:9px 18px;border-radius:999px;transition:color .25s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+  .phase:hover{color:var(--teal)}
+  .phase.active{color:var(--teal);font-weight:700}
+  .phase.active svg{color:var(--terra)}
+  .subtabs{position:relative;display:flex;gap:28px;margin-top:18px;border-bottom:1px solid var(--line)}
+  .subtab{position:relative;font-family:"Work Sans",sans-serif;font-size:14px;font-weight:500;color:var(--ink-soft);background:none;border:0;cursor:pointer;padding:2px 1px 13px;transition:color .2s}
+  .subtab:hover{color:var(--teal)}
+  .subtab.active{color:var(--teal);font-weight:700}
+  .sub-ind{position:absolute;bottom:-1px;left:0;width:0;height:2.5px;border-radius:2px;background:var(--terra);transition:left .3s cubic-bezier(.2,.85,.25,1),width .3s cubic-bezier(.2,.85,.25,1)}
+
+  /* Feuille */
+  .sheet{background:#fffdf9;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-md);padding:40px 44px 36px;position:relative;overflow:hidden}
+  .sheet::before{content:'';position:absolute;top:0;bottom:0;left:28px;width:1.5px;background:linear-gradient(to bottom,transparent,rgba(195,102,72,.32) 8%,rgba(195,102,72,.32) 92%,transparent)}
+  .sheet-body{padding-left:22px}
+  .panel{display:none}
+  .panel.active{display:block;animation:in .45s cubic-bezier(.2,.7,.2,1)}
+  @keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .panel h2{font-size:1.55rem;font-weight:700;color:var(--teal);letter-spacing:-.01em;line-height:1.2}
+  .panel h3{font-size:1.2rem;font-weight:700;color:var(--teal)}
+  .lead{font-size:1.12rem;line-height:1.6;color:var(--ink-soft)}
+  .prose p{font-size:1.06rem;line-height:1.78;color:var(--ink)}
+  .prose p+p{margin-top:1em}
+  .prose b{font-weight:700;color:var(--ink)}
+  .prose em{color:var(--terra-deep);font-style:italic}
+  .sec{margin-top:40px}.sec:first-child{margin-top:0}
+  .sec-head{display:flex;align-items:center;gap:13px;margin-bottom:14px}
+  .sec-num{font-family:"Work Sans",sans-serif;font-size:13px;font-weight:700;color:#fff;background:var(--teal);width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm)}
+  .sec-head h3{margin:0}
+
+  .note{border-radius:var(--r-md);padding:16px 20px;display:flex;gap:13px;margin:20px 0;font-size:1rem;line-height:1.6}
+  .note svg{width:20px;height:20px;flex-shrink:0;margin-top:2px}
+  .note-intro{background:var(--teal-soft);color:var(--ink);border:1px solid #d4e2e4}.note-intro svg{color:var(--teal)}
+  .note-piege{background:var(--terra-soft);color:var(--ink)}.note-piege svg{color:var(--terra)}
+  .note-piege .tag{color:var(--terra-deep);font-weight:700}
+
+  .place-value{display:flex;gap:6px;margin:20px 0 10px;max-width:430px}
+  .pv-cell{flex:1;text-align:center;border-radius:var(--r-sm);padding:15px 8px;background:var(--paper);border:1px solid var(--line)}
+  .pv-cell.hl{background:var(--teal);border-color:var(--teal);box-shadow:var(--shadow-sm)}
+  .pv-cell .big{font-size:1.8rem;font-weight:700;color:var(--teal);line-height:1}
+  .pv-cell.hl .big{color:#fff}
+  .pv-cell small{display:block;font-family:"Work Sans",sans-serif;font-size:10.5px;color:var(--ink-faint);margin-top:7px;line-height:1.4}
+  .pv-cell.hl small{color:rgba(255,255,255,.7)}
+  .caption{font-size:.92rem;color:var(--ink-faint);font-style:italic}
+
+  .formula{font-family:"Work Sans",ui-monospace,monospace;white-space:pre;overflow-x:auto;background:var(--teal);color:#eaf3f2;border-radius:var(--r-md);padding:16px 20px;font-size:.88rem;line-height:1.7;box-shadow:var(--shadow-sm);margin:16px 0}
+  .formula .ok{color:#9fd6b4}
+
+  .deflist{margin:20px 0}
+  .deflist .row{display:flex;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .deflist .row:last-child{border-bottom:0}
+  .deflist .term{font-weight:700;font-size:1.04rem;min-width:80px;color:var(--teal)}
+  .deflist .desc{color:var(--ink-soft)}
+
+  table.tbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:.96rem}
+  table.tbl th{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);text-align:center;padding:8px 10px;border-bottom:2px solid var(--line)}
+  table.tbl th:first-child,table.tbl td:first-child{text-align:left}
+  table.tbl td{text-align:center;padding:9px 10px;border-bottom:1px solid var(--line)}
+  table.tbl tr:last-child td{border-bottom:0}
+  table.tbl td:first-child{font-weight:700;color:var(--teal)}
+
+  /* Convertisseur interactif */
+  .lab{border:1.5px solid var(--teal-soft);border-radius:var(--r-md);padding:22px;margin-top:22px;background:linear-gradient(180deg,#fff,var(--paper))}
+  .lab-head{display:flex;align-items:center;gap:9px;margin-bottom:16px}
+  .lab-head .tag{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra-deep);background:var(--terra-soft);padding:4px 10px;border-radius:999px}
+  .lab-head b{font-size:1.05rem;color:var(--teal)}
+  .lab-input{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .lab-input label{font-family:"Work Sans",sans-serif;font-size:12px;font-weight:700;color:var(--ink-soft)}
+  .lab-input input{font-family:"Work Sans",sans-serif;font-size:1.3rem;font-weight:700;color:var(--teal);width:130px;padding:9px 14px;border:1.5px solid var(--line);border-radius:var(--r-sm);background:#fff;text-align:center}
+  .lab-input input:focus{outline:none;border-color:var(--teal)}
+  .lab-range{flex:1}
+  input[type=range]{width:100%;accent-color:var(--terra)}
+  .lab-out{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .lab-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:13px;text-align:center}
+  .lab-card .lbl{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+  .lab-card .val{font-family:"Work Sans",ui-monospace,monospace;font-size:1.25rem;font-weight:700;color:var(--teal);margin-top:5px;word-break:break-all}
+  .lab-card .val sub{color:var(--terra);font-size:.7em}
+  .lab-decomp{margin-top:14px;font-family:"Work Sans",ui-monospace,monospace;font-size:.85rem;color:var(--ink-soft);text-align:center}
+
+  /* Quiz éclair */
+  .quiz{background:#fffdf9;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:8px}
+  .quiz-top{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--teal);color:#fff}
+  .quiz-top .l{display:flex;align-items:center;gap:9px;font-family:"Work Sans",sans-serif;font-weight:700;font-size:13px}
+  .quiz-top .r{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:600;background:rgba(255,255,255,.15);padding:3px 11px;border-radius:999px}
+  .quiz-body{padding:24px 22px}
+  .quiz-q{font-size:1.18rem;font-weight:600;margin-bottom:18px;line-height:1.4}
+  .quiz-opt{display:block;width:100%;text-align:left;font-family:"Source Serif 4",serif;font-size:1.02rem;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:14px 18px;margin-bottom:10px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:12px}
+  .quiz-opt .mk{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:"Work Sans",sans-serif;font-size:12px;font-weight:700;color:var(--ink-faint)}
+  .quiz-opt:hover{border-color:var(--teal);background:var(--teal-soft)}
+  .quiz-opt.correct{border-color:var(--success);background:var(--success-soft)}.quiz-opt.correct .mk{background:var(--success);border-color:var(--success);color:#fff}
+  .quiz-opt.wrong{border-color:var(--error);background:var(--error-soft)}.quiz-opt.wrong .mk{background:var(--error);border-color:var(--error);color:#fff}
+  .quiz-opt[disabled]{cursor:default}
+  .quiz-exp{margin-top:6px;padding:14px 16px;border-radius:var(--r-sm);background:var(--teal-soft);font-size:.96rem;line-height:1.55;color:var(--ink);display:none}
+  .quiz-exp.show{display:block;animation:in .3s ease}
+  .quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+  .quiz-done{text-align:center;padding:30px 20px}
+  .quiz-done .score{font-size:3rem;font-weight:700;color:var(--teal);line-height:1}
+  .quiz-done .score b{color:var(--terra)}
+
+  .steps{display:flex;flex-direction:column;gap:24px}
+  .step{display:flex;gap:18px}
+  .step-num{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:var(--teal);color:#fff;font-weight:700;font-family:"Work Sans",sans-serif;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm)}
+  .step-num.accent{background:var(--terra)}
+  .step-body{flex:1;padding-top:5px}
+  .step-body .t{font-weight:700;font-size:1.04rem;margin-bottom:7px}
+
+  .reveal{border:1px solid var(--line);border-radius:var(--r-md);background:var(--paper);margin-top:8px}
+  .reveal[open]{background:#fffdf9;box-shadow:var(--shadow-sm)}
+  .reveal summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;align-items:center;gap:9px;font-family:"Work Sans",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--teal)}
+  .reveal summary::-webkit-details-marker{display:none}
+  .reveal .chev{width:15px;height:15px;transition:transform .25s}
+  .reveal[open] .chev{transform:rotate(90deg)}
+  .reveal-body{padding:2px 18px 18px;border-top:1px solid var(--line);animation:in .35s ease}
+  .reveal-body ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .reveal-body li,.reveal-body p{font-size:.97rem;line-height:1.6;color:var(--ink)}
+  .reveal-body p{padding-top:13px}
+
+  .checkpoint{border:1.5px dashed var(--line);border-radius:var(--r-md);padding:20px;margin-top:32px;background:var(--paper)}
+  .checkpoint-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+  .badge-time{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--terra-deep);background:var(--terra-soft);padding:4px 10px;border-radius:999px}
+  .stmt{border-left:3px solid var(--line);padding:4px 0 4px 20px;margin:16px 0;font-style:italic;color:var(--ink-soft);font-size:1.04rem;line-height:1.6}
+
+  .exo-bar-wrap{display:flex;align-items:center;gap:13px;margin:24px 0}
+  .exo-track{flex:1;height:6px;background:var(--paper-3);border-radius:999px;overflow:hidden}
+  .exo-fill{height:100%;background:var(--teal);border-radius:999px;transition:width .4s cubic-bezier(.2,.7,.2,1)}
+  .exo-count{font-family:"Work Sans",sans-serif;font-size:12px;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .level-pill{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:999px;display:inline-block}
+  .level-warm{background:var(--teal-soft);color:var(--teal)}
+  .level-n1{background:var(--terra-soft);color:var(--terra-deep)}
+  .exo-q-title{font-size:1.16rem;font-weight:700;color:var(--ink);margin:12px 0 6px}
+  .exo-nav{display:flex;justify-content:space-between;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+
+  /* Flashcards */
+  .flash-wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+  .flip{perspective:1600px;width:100%;max-width:440px;height:280px}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;cursor:pointer}
+  .flip.flipped .flip-inner{transform:rotateY(180deg)}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--r-lg);padding:32px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow-md)}
+  .flip-q{background:#fffdf9;border:1px solid var(--line);text-align:center;align-items:center}
+  .flip-q .qtext{font-size:1.2rem;font-weight:600;color:var(--ink);line-height:1.4}
+  .flip-a{background:var(--teal);color:#f0f6f5;transform:rotateY(180deg)}
+  .flip-a .atext{font-size:1.02rem;line-height:1.6}
+  .flip-hint{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .flip-q .flip-hint{color:var(--terra);margin-top:20px}.flip-a .flip-hint{color:rgba(255,255,255,.55);margin-bottom:10px}
+  .conf{display:flex;gap:10px;width:100%;max-width:440px}
+  .conf button{flex:1;font-family:"Work Sans",sans-serif;font-size:12px;font-weight:700;padding:11px;border-radius:var(--r-sm);border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:all .18s}
+  .conf .hard:hover{border-color:var(--error);color:var(--error);background:var(--error-soft)}
+  .conf .soon:hover{border-color:var(--terra);color:var(--terra-deep);background:var(--terra-soft)}
+  .conf .got:hover{border-color:var(--success);color:var(--success);background:var(--success-soft)}
+
+  .memo-center{background:var(--teal);color:#fff;border-radius:var(--r-md);padding:16px 26px;text-align:center;box-shadow:var(--shadow-md);margin:0 auto 24px;display:inline-block}
+  .memo-center b{font-size:1.15rem}
+  .memo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .memo-card{border-radius:var(--r-md);padding:16px 18px;background:#fffdf9;border:1px solid var(--line);border-left:4px solid var(--teal)}
+  .memo-card.s{border-left-color:var(--success)}.memo-card.t{border-left-color:var(--terra)}
+  .memo-card h5{font-size:.96rem;font-weight:700;color:var(--teal);margin-bottom:7px}
+  .memo-card.s h5{color:var(--success)}.memo-card.t h5{color:var(--terra-deep)}
+  .memo-card p{font-size:.89rem;color:var(--ink-soft);line-height:1.5}
+
+  .check{display:flex;align-items:flex-start;gap:13px;padding:15px 4px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s}
+  .check:hover{background:var(--paper)}.check:last-of-type{border-bottom:0}
+  .check input{appearance:none;width:22px;height:22px;border:2px solid var(--line);border-radius:7px;flex-shrink:0;margin-top:1px;cursor:pointer;transition:all .15s;position:relative}
+  .check input:checked{background:var(--success);border-color:var(--success)}
+  .check input:checked::after{content:'';position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+  .check span{font-size:1rem;line-height:1.5;color:var(--ink)}
+
+  .btn{font-family:"Work Sans",sans-serif;font-weight:700;font-size:13px;letter-spacing:.03em;cursor:pointer;border:0;border-radius:var(--r-sm);display:inline-flex;align-items:center;gap:9px;transition:all .2s cubic-bezier(.2,.7,.2,1)}
+  .btn svg{width:16px;height:16px}
+  .btn-primary{background:var(--teal);color:#fff;padding:12px 20px;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--teal-deep);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+  .btn-primary:active{transform:scale(.97)}
+  .btn-cta{background:var(--terra);color:#fff;padding:14px 28px;text-transform:uppercase;box-shadow:var(--shadow-sm)}
+  .btn-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}.btn-cta:active{transform:scale(.97)}
+  .btn-ghost{background:none;color:var(--ink-soft);padding:12px 6px}
+  .btn-ghost:hover{color:var(--teal)}.btn-ghost:disabled{opacity:.35;cursor:default}
+
+  .sheet-foot{display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:24px;border-top:1px solid var(--line)}
+
+  /* ── RAIL COMPAGNON ── */
+  .rail{position:sticky;top:76px;display:flex;flex-direction:column;gap:16px}
+  .card{background:#fffdf9;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-sm);padding:18px}
+  .card-h{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .card-h svg{width:16px;height:16px;color:var(--terra)}
+  .card-h h4{font-family:"Work Sans",sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* Carte progression */
+  .map-phase{margin-bottom:12px}.map-phase:last-child{margin-bottom:0}
+  .map-phase .ph{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px}
+  .map-item{display:flex;align-items:center;gap:10px;padding:6px 8px;border-radius:8px;cursor:pointer;transition:background .15s;font-family:"Work Sans",sans-serif;font-size:13px;color:var(--ink-soft)}
+  .map-item:hover{background:var(--paper)}
+  .map-item.active{background:var(--teal-soft);color:var(--teal);font-weight:700}
+  .map-dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  .map-item.done .map-dot{background:var(--success);border-color:var(--success)}
+  .map-item.done .map-dot svg{width:10px;height:10px;color:#fff}
+  .map-item.active .map-dot{border-color:var(--teal)}
+
+  /* Objectif du jour */
+  .goal{display:flex;align-items:center;gap:16px}
+  .goal-ring{position:relative;width:64px;height:64px;flex-shrink:0}
+  .goal-ring svg{transform:rotate(-90deg)}
+  .goal-ring .t{stroke:var(--paper-3)}.goal-ring .f{stroke:var(--terra);stroke-linecap:round;transition:stroke-dashoffset .6s cubic-bezier(.2,.7,.2,1)}
+  .goal-ring .c{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"Work Sans",sans-serif;font-size:13px;font-weight:700;color:var(--teal)}
+  .goal-txt b{font-size:.98rem}.goal-txt p{font-size:.84rem;color:var(--ink-soft);margin-top:2px;line-height:1.4}
+
+  /* Révisions programmées */
+  .srs-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .srs-big{font-size:2rem;font-weight:700;color:var(--terra);line-height:1}
+  .srs-big span{font-size:.85rem;color:var(--ink-soft);font-weight:400}
+  .srs-sched{display:flex;gap:6px;margin-bottom:14px}
+  .srs-day{flex:1;text-align:center;padding:7px 0;border-radius:8px;background:var(--paper);border:1px solid var(--line);font-family:"Work Sans",sans-serif;font-size:10px;font-weight:700;color:var(--ink-faint)}
+  .srs-day.due{background:var(--terra-soft);color:var(--terra-deep);border-color:transparent}
+  .btn-block{width:100%;justify-content:center}
+
+  /* Antisèche */
+  .cheat li{list-style:none;display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  .cheat li:last-child{border-bottom:0}
+  .cheat .f{font-family:"Work Sans",ui-monospace,monospace;font-weight:700;color:var(--teal);white-space:nowrap}
+  .cheat .d{color:var(--ink-soft);font-size:.85rem}
+
+  /* Notions liées */
+  .rel a{display:flex;align-items:center;gap:10px;padding:9px 8px;border-radius:8px;text-decoration:none;transition:background .15s}
+  .rel a:hover{background:var(--paper)}
+  .rel .ic{width:26px;height:26px;border-radius:7px;background:var(--paper-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal)}
+  .rel .ic svg{width:14px;height:14px}
+  .rel small{font-family:"Work Sans",sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block}
+  .rel b{font-size:.9rem;color:var(--teal);font-weight:600}
+
+  .notion-foot{display:flex;justify-content:space-between;gap:16px;margin-top:28px}
+  .notion-link{flex:1;max-width:340px;display:flex;align-items:center;gap:14px;padding:16px 20px;background:#fffdf9;border:1px solid var(--line);border-radius:var(--r-md);text-decoration:none;transition:all .2s;box-shadow:var(--shadow-sm)}
+  .notion-link:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+  .notion-link.next{justify-content:flex-end;text-align:right}
+  .notion-link .ic{width:38px;height:38px;border-radius:50%;background:var(--paper-2);display:flex;align-items:center;justify-content:center;color:var(--teal);flex-shrink:0}
+  .notion-link small{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:2px}
+  .notion-link b{font-size:.96rem;color:var(--teal);font-weight:600}
+
+  /* Icônes de phase */
+  .phase svg{width:15px;height:15px}
+  /* Parcours (rail) */
+  .path-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+  .path-head b{font-size:.92rem;color:var(--teal)}
+  .path-head span{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:700;color:var(--ink-faint)}
+  .path-overall{height:5px;background:var(--paper-3);border-radius:999px;overflow:hidden;margin:8px 0 16px}
+  .path-overall i{display:block;height:100%;background:var(--teal);border-radius:999px}
+  .path{position:relative}
+  .path::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .path-item{display:flex;gap:13px;padding:6px 0;position:relative;font-family:"Work Sans",sans-serif;font-size:13px}
+  .pi-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);background:#fffdf9;flex-shrink:0;z-index:1;margin-top:1px;display:flex;align-items:center;justify-content:center}
+  .path-item.done .pi-dot{background:var(--success);border-color:var(--success)}
+  .path-item.done .pi-dot svg{width:9px;height:9px;color:#fff}
+  .path-item.current .pi-dot{border-color:var(--terra);background:var(--terra);box-shadow:0 0 0 4px var(--terra-soft)}
+  .path-item .lbl{color:var(--ink-soft);line-height:1.3}
+  .path-item.current .lbl{color:var(--teal);font-weight:700}
+  .path-item.upcoming .lbl{color:var(--ink-faint)}
+  .cur-block{flex:1}
+  .cur-mastery{display:flex;align-items:center;gap:8px;margin-top:6px}
+  .cur-mastery .bar{flex:1;height:5px;background:var(--paper-3);border-radius:999px;overflow:hidden}
+  .cur-mastery .bar i{display:block;height:100%;background:var(--terra);border-radius:999px;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+  .cur-mastery .pct{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:700;color:var(--terra-deep)}
+  .path-more{display:block;margin-top:10px;padding-left:29px;font-family:"Work Sans",sans-serif;font-size:12px;font-weight:600;color:var(--ink-soft);text-decoration:none}
+  .path-more:hover{color:var(--teal)}
+  .study-time{display:flex;align-items:center;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-family:"Work Sans",sans-serif;font-size:12px;color:var(--ink-soft)}
+  .study-time svg{width:14px;height:14px;color:var(--ink-faint)}
+  .study-time b{color:var(--teal)}
+
+  /* Boutons outils (barre du haut) */
+  .tool-btn{display:inline-flex;align-items:center;gap:6px;font-family:"Work Sans",sans-serif;font-size:12px;font-weight:600;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;transition:all .18s}
+  .tool-btn:hover{color:var(--teal);border-color:var(--teal)}
+  .tool-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .tool-btn svg{width:14px;height:14px}
+  .kbd-pop{position:absolute;right:28px;top:64px;background:#fffdf9;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-lg);padding:16px 18px;z-index:70;width:268px;display:none}
+  .kbd-pop.show{display:block;animation:in .2s ease}
+  .kbd-pop h5{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
+  .kbd-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;font-size:.88rem;color:var(--ink-soft)}
+  kbd{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:700;background:var(--paper-2);border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:2px 7px;color:var(--ink)}
+
+  /* Coach (prochaine action recommandée) */
+  .coach{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,#fff,var(--paper));border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:var(--r-md);padding:13px 18px;margin-bottom:18px;box-shadow:var(--shadow-sm)}
+  .coach .ic{width:34px;height:34px;border-radius:50%;background:var(--terra-soft);color:var(--terra-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .coach .ic svg{width:18px;height:18px}
+  .coach .msg{flex:1;min-width:0}
+  .coach .msg small{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:2px}
+  .coach .msg p{font-size:.96rem;color:var(--ink);line-height:1.4}
+  .coach .btn{flex-shrink:0}
+
+  /* Mon carnet */
+  .carnet textarea{width:100%;min-height:92px;resize:vertical;border:1px solid var(--line);border-radius:var(--r-sm);padding:11px 13px;font-family:"Source Serif 4",serif;font-size:.95rem;color:var(--ink);background:var(--paper);line-height:1.55}
+  .carnet textarea:focus{outline:none;border-color:var(--teal);background:#fff}
+  .carnet .status{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:600;color:var(--ink-faint);margin-top:9px;display:flex;align-items:center;gap:5px}
+  .carnet .status svg{width:12px;height:12px;color:var(--success)}
+
+  /* Mode focus */
+  body.focus .rail{display:none}
+  body.focus .layout{grid-template-columns:minmax(0,1fr)}
+  body.focus .wrap{max-width:860px}
+  body.focus .sheet-body{max-width:700px;margin:0 auto}
+
+  /* Célébration de fin de notion */
+  .celebrate{position:fixed;inset:0;background:rgba(12,67,78,.4);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
+  .celebrate.show{display:flex;animation:in .3s ease}
+  .celebrate-card{background:#fffdf9;border-radius:var(--r-lg);box-shadow:var(--shadow-lg);padding:38px 42px;text-align:center;max-width:380px;animation:pop .45s cubic-bezier(.2,.9,.3,1.2)}
+  @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+  .celebrate .seal{width:72px;height:72px;border-radius:50%;background:var(--success);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:var(--shadow-md)}
+  .celebrate .seal svg{width:38px;height:38px}
+  .celebrate h3{font-size:1.5rem;color:var(--teal);margin-bottom:8px}
+  .celebrate p{color:var(--ink-soft);margin-bottom:24px;line-height:1.5}
+  .celebrate .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .confetti{position:fixed;top:-12px;width:9px;height:9px;border-radius:2px;z-index:201;pointer-events:none;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(106vh) rotate(600deg);opacity:.85}}
+
+  @media (max-width:1000px){.layout{grid-template-columns:1fr}.rail{position:static;flex-direction:column}body.focus .layout{grid-template-columns:1fr}}
+  @media (max-width:700px){
+    .wrap{padding:22px 14px 60px}.sheet{padding:28px 18px}.sheet::before{left:14px}.sheet-body{padding-left:14px}
+    .hero{flex-direction:column;align-items:flex-start}.subtabs{overflow-x:auto}.memo-grid,.lab-out{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div id="read-progress"></div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="logo">Maitrizz<svg viewBox="0 0 300 14" preserveAspectRatio="none"><path d="M3 8 C 90 5 160 10 297 7" fill="none" stroke="#c36648" stroke-width="2" stroke-linecap="round" opacity=".9"/></svg></span>
+    <div class="topbar-right">
+      <span class="pill-cd"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18" stroke-linecap="round"/></svg>CRPE 2027 <b id="countdown">J‑…</b></span>
+      <span class="streak"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 3 4 4 4 8a4 4 0 0 1-8 0c0-1 .5-2 1-2.5C9 9 9 11 10 11c0-2 1-3 2-9z"/></svg>7 jours</span>
+      <button class="tool-btn" id="focus-btn" title="Mode focus (f)"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3" stroke-linecap="round"/></svg>Focus</button>
+      <button class="tool-btn" id="kbd-btn" title="Raccourcis clavier (?)"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+  <div class="kbd-pop" id="kbd-pop">
+    <h5>Raccourcis clavier</h5>
+    <div class="kbd-row"><span>Onglet suivant / précédent</span><span><kbd>←</kbd> <kbd>→</kbd></span></div>
+    <div class="kbd-row"><span>Retourner la flashcard</span><kbd>Espace</kbd></div>
+    <div class="kbd-row"><span>Répondre (quiz, flashcard)</span><span><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></span></div>
+    <div class="kbd-row"><span>Mode focus</span><kbd>F</kbd></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <p class="kicker">Notion 1 · Partie 1</p>
+      <h1 class="hero-title">Numération <span class="dot">·</span> Systèmes de bases</h1>
+      <p class="hero-sub">Comprendre la numération décimale, convertir entre bases, lire et écrire tout entier en confiance.</p>
+      <div class="hero-meta">
+        <span class="chip chip-hot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 9.2 8.6 2 9.3l5.5 4.8L5.8 21 12 17.3 18.2 21l-1.7-6.9L22 9.3l-7.2-.7z"/></svg>Tombe chaque année</span>
+        <span class="chip chip-plain">Cycle 4 · BOEN 2020</span>
+        <span class="chip chip-plain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>≈ 18 min</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- ════ COLONNE PRINCIPALE ════ -->
+    <div>
+      <nav class="nav">
+        <div class="phases" id="phases">
+          <div class="phase-thumb" id="phase-thumb"></div>
+          <button class="phase active" data-phase="decouvrir"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z M20 5.5c0-.8-.7-1.5-1.5-1.5H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z" stroke-linejoin="round"/></svg>Découvrir</button>
+          <button class="phase" data-phase="pratiquer"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14.5 3.5 20.5 9.5 9 21l-6 1 1-6z" stroke-linejoin="round"/></svg>Pratiquer</button>
+          <button class="phase" data-phase="reviser"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 15.5-6.3M21 12a9 9 0 0 1-15.5 6.3M18 3v4h-4M6 21v-4h4" stroke-linecap="round" stroke-linejoin="round"/></svg>Réviser</button>
+        </div>
+        <div class="subtabs" id="subtabs"></div>
+      </nav>
+
+      <div class="coach" id="coach">
+        <span class="ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2 9.2 8.6 2 9.3l5.5 4.8L5.8 21 12 17.3 18.2 21l-1.7-6.9L22 9.3l-7.2-.7z" stroke-linejoin="round"/></svg></span>
+        <div class="msg"><small id="coach-label">Étape conseillée</small><p id="coach-msg"></p></div>
+        <button class="btn btn-primary" id="coach-btn"><span id="coach-btn-lbl"></span><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+
+      <div class="sheet"><div class="sheet-body">
+
+        <!-- VUE D'ENSEMBLE -->
+        <section class="panel" data-tab="vue-d-ensemble">
+          <h2 style="margin-bottom:8px">Le programme, en 5 étapes</h2>
+          <p class="lead" style="margin-bottom:30px">Voici le chemin complet de la notion. Chaque étape s'appuie sur la précédente.</p>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-body"><div class="t">Le principe positionnel</div><p style="color:var(--ink-soft)">Pourquoi 12 et 21 ne valent pas la même chose : tout est question de position.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-body"><div class="t">L'indice de base</div><p style="color:var(--ink-soft)">Le réflexe à acquérir avant tout calcul : repérer dans quelle base un nombre est écrit.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-body"><div class="t">Les autres bases</div><p style="color:var(--ink-soft)">Binaire, octal, hexadécimal : le même principe que la base 10, à un rythme différent.</p></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-body"><div class="t">Notation scientifique et préfixes</div><p style="color:var(--ink-soft)">Lire et écrire les très grands et très petits nombres, et les unités du quotidien.</p></div></div>
+            <div class="step"><div class="step-num accent">5</div><div class="step-body"><div class="t">Écriture en lettres</div><p style="color:var(--ink-soft)">Les règles d'accord de cent, vingt et mille, sources d'erreurs fréquentes.</p></div></div>
+          </div>
+        </section>
+
+        <!-- COURS -->
+        <section class="panel prose" data-tab="cours">
+          <div class="note note-intro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01" stroke-linecap="round"/></svg><div>Ce cours rend visible ce que vous faites déjà sans y penser avec les nombres, puis l'étend à d'autres bases. <b>Lisez-le en entier avant la Méthode.</b></div></div>
+
+          <div class="sec"><div class="sec-head"><span class="sec-num">1</span><h3>Le principe positionnel</h3></div>
+            <p><b>12</b> et <b>21</b> utilisent les mêmes chiffres mais ne valent pas la même chose. La différence, c'est la <b>position</b>. Chaque rang vaut dix fois le rang à sa droite : c'est le système <em>décimal</em>.</p>
+            <div class="place-value"><div class="pv-cell"><div class="big">3</div><small>centaines<br>3×10² = 300</small></div><div class="pv-cell hl"><div class="big">4</div><small>dizaines<br>4×10¹ = 40</small></div><div class="pv-cell"><div class="big">5</div><small>unités<br>5×10⁰ = 5</small></div></div>
+            <p class="caption">345 = 3×10² + 4×10¹ + 5×10⁰ = 300 + 40 + 5.</p>
+            <div class="note note-piege" style="margin-top:22px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9 2 18a1.5 1.5 0 0 0 1.3 2.2h17.4A1.5 1.5 0 0 0 22 18L13.7 3.9a1.5 1.5 0 0 0-2.6 0Z" stroke-linejoin="round"/><path d="M12 9v4m0 4h.01" stroke-linecap="round"/></svg><div>Dans <b>4 062</b>, le zéro n'est pas « rien » : il <em>occupe</em> la position des centaines. Sans lui, 462 ≠ 4062.</div></div>
+          </div>
+
+          <div class="sec"><div class="sec-head"><span class="sec-num">2</span><h3>L'indice de base</h3></div>
+            <p>Le petit chiffre en bas à droite indique dans quelle base est écrit le nombre. <b>Sans indice → base 10 par défaut.</b></p>
+            <div class="deflist"><div class="row"><span class="term">345</span><span class="desc">pas d'indice → base 10 · trois cent quarante-cinq</span></div><div class="row"><span class="term">1101₂</span><span class="desc">indice 2 → base 2 (binaire) · vaut 13 en décimal</span></div><div class="row"><span class="term">1F₁₆</span><span class="desc">indice 16 → base 16 (hexadécimal) · vaut 31</span></div></div>
+            <div class="note note-piege"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9 2 18a1.5 1.5 0 0 0 1.3 2.2h17.4A1.5 1.5 0 0 0 22 18L13.7 3.9a1.5 1.5 0 0 0-2.6 0Z" stroke-linejoin="round"/><path d="M12 9v4m0 4h.01" stroke-linecap="round"/></svg><div><span class="tag">Piège classique.</span> 1101₂ ≠ 1101. Repérer l'indice avant tout calcul, c'est le réflexe n°1.</div></div>
+          </div>
+
+          <div class="sec"><div class="sec-head"><span class="sec-num">3</span><h3>Les autres bases</h3></div>
+            <p>Le principe fonctionne avec n'importe quelle base. <b>Dans une base b, on utilise b chiffres (0 à b−1), et on passe au rang suivant dès qu'on a compté b fois.</b></p>
+            <!-- CONVERTISSEUR INTERACTIF -->
+            <div class="lab">
+              <div class="lab-head"><span class="tag">Interactif</span><b>Essayez le convertisseur</b></div>
+              <div class="lab-input">
+                <label>Nombre décimal</label>
+                <input id="conv-in" type="number" min="0" max="2048" value="42">
+                <input id="conv-range" class="lab-range" type="range" min="0" max="255" value="42">
+              </div>
+              <div class="lab-out">
+                <div class="lab-card"><div class="lbl">Binaire</div><div class="val"><span id="o-bin">101010</span><sub>2</sub></div></div>
+                <div class="lab-card"><div class="lbl">Octal</div><div class="val"><span id="o-oct">52</span><sub>8</sub></div></div>
+                <div class="lab-card"><div class="lbl">Hexadécimal</div><div class="val"><span id="o-hex">2A</span><sub>16</sub></div></div>
+              </div>
+              <div class="lab-decomp" id="o-dec"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MÉTHODE -->
+        <section class="panel" data-tab="methode">
+          <h2 style="margin-bottom:6px">Convertir vers la base 10</h2>
+          <p class="lead" style="margin-bottom:22px">D'une base b quelconque vers le décimal, en trois gestes.</p>
+          <div class="stmt"><b>Question typique :</b> « Convertir 1101₂ en base 10. » Vous savez déjà le faire en base 10 : on applique exactement la même logique.</div>
+          <div class="steps" style="margin-top:26px">
+            <div class="step"><div class="step-num">1</div><div class="step-body"><div class="t">Numéroter les positions de droite à gauche, à partir de 0.</div><div class="formula">  Nombre :    1      1      0      1
+Position :   3      2      1      0    ← toujours 0 à droite</div></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-body"><div class="t">Même calcul qu'avec 345, mais la base est 2.</div><div class="formula">  pos. 3 →  1 × 2³  =  8
+  pos. 2 →  1 × 2²  =  4
+  pos. 1 →  0 × 2¹  =  0
+  pos. 0 →  1 × 2⁰  =  1</div></div></div>
+            <div class="step"><div class="step-num accent">3</div><div class="step-body"><div class="t">Additionner.</div><div class="formula">  8 + 4 + 0 + 1  =  13
+<span class="ok">  ✓  1101₂  =  13  en décimal</span></div></div></div>
+          </div>
+          <div class="checkpoint">
+            <div class="checkpoint-head"><b style="font-size:1.04rem">Checkpoint : à vous de jouer</b><span class="badge-time">30 secondes</span></div>
+            <p style="font-size:1rem;color:var(--ink-soft)">Convertir 110₂ en base 10, en détaillant le calcul.</p>
+            <details class="reveal"><summary><svg class="chev" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Voir la correction</summary><div class="reveal-body"><p>110₂ = 1×2² + 1×2¹ + 0×2⁰ = 4 + 2 + 0 = <b>6</b></p></div></details>
+          </div>
+        </section>
+
+        <!-- APPLICATION -->
+        <section class="panel" data-tab="appli">
+          <!-- QUIZ ÉCLAIR -->
+          <div class="quiz" id="quiz">
+            <div class="quiz-top"><div class="l"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f5c451"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Quiz éclair</div><div class="r" id="quiz-prog">1 / 3</div></div>
+            <div class="quiz-body" id="quiz-body"></div>
+          </div>
+
+          <div class="exo-bar-wrap"><div class="exo-track"><div class="exo-fill" id="exo-fill" style="width:25%"></div></div><span class="exo-count" id="exo-count">Exercice 1 / 4</span></div>
+
+          <div class="exo" data-exo="0"><span class="level-pill level-warm">Échauffement</span><h3 class="exo-q-title">L'indice de base</h3><p style="font-size:1.04rem">Pour chaque nombre, dire dans quelle base il est écrit : a) 101₂  b) 1F₁₆  c) 347  d) 25₈</p><details class="reveal"><summary><svg class="chev" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Voir la correction</summary><div class="reveal-body"><ul><li><b>a)</b> 101₂ → base 2</li><li><b>b)</b> 1F₁₆ → base 16, F = 15</li><li><b>c)</b> 347 → base 10 par défaut</li><li><b>d)</b> 25₈ → base 8</li></ul></div></details></div>
+          <div class="exo" data-exo="1" style="display:none"><span class="level-pill level-warm">Échauffement</span><h3 class="exo-q-title">Valeur positionnelle</h3><p style="font-size:1.04rem">Dans <b>4 253</b>, quelle est la valeur des chiffres 4, 2, 5 et 3 ?</p><details class="reveal"><summary><svg class="chev" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Voir la correction</summary><div class="reveal-body"><ul><li>4 → 4×10³ = <b>4 000</b></li><li>2 → 2×10² = <b>200</b></li><li>5 → 5×10¹ = <b>50</b></li><li>3 → 3×10⁰ = <b>3</b></li></ul></div></details></div>
+          <div class="exo" data-exo="2" style="display:none"><span class="level-pill level-n1">Niveau 1 · ★☆☆</span><h3 class="exo-q-title">Base 2 → décimal</h3><p style="font-size:1.04rem">Convertir en base 10 : a) 1010₂  b) 11111₂  c) 100001₂</p><details class="reveal"><summary><svg class="chev" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Voir la correction</summary><div class="reveal-body"><ul><li>a) 1010₂ = 8+0+2+0 = <b>10</b></li><li>b) 11111₂ = 16+8+4+2+1 = <b>31</b></li><li>c) 100001₂ = 32+1 = <b>33</b></li></ul></div></details></div>
+          <div class="exo" data-exo="3" style="display:none"><span class="level-pill level-n1">Niveau 1 · ★☆☆</span><h3 class="exo-q-title">Décimal → base 2</h3><p style="font-size:1.04rem">Convertir en binaire par divisions successives : a) 19  b) 42</p><details class="reveal"><summary><svg class="chev" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Voir la correction</summary><div class="reveal-body"><ul><li>a) → <b>10011₂</b></li><li>b) → <b>101010₂</b></li></ul></div></details></div>
+          <div class="exo-nav"><button class="btn btn-ghost" id="exo-prev">← Précédent</button><button class="btn btn-ghost" id="exo-next" style="color:var(--teal)">Exercice suivant →</button></div>
+        </section>
+
+        <!-- TYPE CRPE -->
+        <section class="panel" data-tab="crpe">
+          <span class="level-pill level-n1">Type concours · Exercice 7</span>
+          <h2 style="margin:14px 0 6px">Travailler dans une autre base</h2>
+          <div class="stmt">Dans une classe de CM2, un enseignant propose : « En base 5, on utilise les chiffres 0, 1, 2, 3, 4. Écrire les nombres de 0 à 12 en base 5, puis calculer 23₅ + 14₅. »</div>
+          <p style="font-size:1.04rem;font-weight:600;line-height:1.7;margin-top:18px">1. Écrire les nombres de 0 à 12 en base 5.<br>2. Calculer 23₅ + 14₅, puis vérifier en base 10.<br>3. Quel est l'intérêt pédagogique pour des élèves de CM2 ?</p>
+          <details class="reveal" style="margin-top:20px"><summary><svg class="chev" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Voir le corrigé complet</summary><div class="reveal-body"><p>23₅ + 14₅ : unités 3+4 = 7 = 1×5+2 → écrire 2, retenir 1 ; dizaines 2+1+1 = 4 → <b>42₅</b>. Vérification : 13+9 = 22 ; 42₅ = 22 ✓</p><p style="color:var(--ink-soft)">Travailler en base 5 permet aux élèves de décontextualiser la numération décimale : ils comprennent que « 10 » signifie « une unité d'ordre supérieur », quelle que soit la base (Éduscol, guide numération).</p></div></details>
+        </section>
+
+        <!-- CÔTÉ PROF -->
+        <section class="panel" data-tab="cote-prof">
+          <h2 style="margin-bottom:6px">Erreur type</h2>
+          <p class="lead" style="margin-bottom:20px">Erreur réelle de candidat, analysée à partir des rapports de jury.</p>
+          <p style="font-size:1.04rem;color:var(--ink-soft);margin-bottom:12px"><b style="color:var(--ink)">Copie d'un candidat :</b> convertir 13 en base 2.</p>
+          <div class="formula">13 ÷ 2 = 6 reste 1
+6 ÷ 2 = 3 reste 0
+3 ÷ 2 = 1 reste 1
+1 ÷ 2 = 0 reste 1
+Résultat : 1011₂</div>
+          <p style="font-size:1.04rem;font-weight:600;margin:16px 0">a) Cette réponse est-elle correcte ? b) Identifier l'erreur. c) Quelle vérification l'évitait ?</p>
+          <details class="reveal"><summary><svg class="chev" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Voir le corrigé</summary><div class="reveal-body"><p style="font-weight:700">Erreur : sens de lecture des restes inversé.</p><ul style="margin-top:10px"><li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" style="flex-shrink:0;margin-top:2px;color:var(--error)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"/></svg><span>Restes lus de haut en bas (1,0,1,1) au lieu de bas en haut (1,1,0,1).</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" style="flex-shrink:0;margin-top:2px;color:var(--success)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Réponse correcte : <b>1101₂</b>. Vérification : 8+4+0+1 = 13 ✓</span></li></ul></div></details>
+        </section>
+
+        <!-- FLASHCARDS -->
+        <section class="panel" data-tab="flash">
+          <div class="flash-wrap">
+            <span class="exo-count" id="card-count">Carte 1 / 3</span>
+            <div class="flip" id="flip"><div class="flip-inner">
+              <div class="flip-face flip-q"><p class="qtext" id="card-q"></p><span class="flip-hint">Cliquer pour révéler</span></div>
+              <div class="flip-face flip-a"><span class="flip-hint">Réponse</span><p class="atext" id="card-a"></p></div>
+            </div></div>
+            <div class="conf"><button class="hard" data-c="hard">Difficile · revoir demain</button><button class="soon" data-c="soon">À revoir · 3 jours</button><button class="got" data-c="got">Acquis · 7 jours</button></div>
+          </div>
+        </section>
+
+        <!-- MÉMO -->
+        <section class="panel" data-tab="memo">
+          <div style="text-align:center"><div class="memo-center"><b>Numération</b><br><span class="micro" style="opacity:.8;color:#fff">Systèmes de bases</span></div></div>
+          <div class="memo-grid">
+            <div class="memo-card"><h5>Types de systèmes</h5><p>Additif (romain) · Positionnel (décimal, binaire…)</p></div>
+            <div class="memo-card"><h5>4 bases au CRPE</h5><p>Base 10 · 2 · 8 · 16 — A=10 … F=15</p></div>
+            <div class="memo-card s"><h5>Conversions</h5><p>Base b → décimal : Σ chiffre × bⁿ. Décimal → base b : divisions successives.</p></div>
+            <div class="memo-card t"><h5>Pièges classiques</h5><p>Zéros intercalaires oubliés · restes lus à l'envers.</p></div>
+          </div>
+        </section>
+
+        <!-- AUTO-ÉVALUATION -->
+        <section class="panel" data-tab="autoeval">
+          <h2 style="margin-bottom:6px">Où en êtes-vous ?</h2>
+          <p class="lead" style="margin-bottom:22px">Cochez ce que vous maîtrisez. Votre score met à jour l'anneau du rail et votre progression.</p>
+          <label class="check"><input type="checkbox" class="cb"><span>Je sais convertir n'importe quel entier d'une base quelconque vers la base 10.</span></label>
+          <label class="check"><input type="checkbox" class="cb"><span>Je sais convertir de la base 10 vers une base quelconque (divisions successives).</span></label>
+          <label class="check"><input type="checkbox" class="cb"><span>Je connais et applique les règles des chiffres hexadécimaux A à F.</span></label>
+          <label class="check"><input type="checkbox" class="cb"><span>Je maîtrise les règles d'écriture des nombres en lettres (cent, vingt, mille).</span></label>
+          <label class="check"><input type="checkbox" class="cb"><span>Je peux analyser une erreur d'élève et proposer une remédiation.</span></label>
+          <button class="btn btn-cta" id="finish-btn" style="margin-top:26px">Terminer cette notion</button>
+        </section>
+
+        <div class="sheet-foot">
+          <button class="btn btn-ghost" id="page-prev"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="page-prev-lbl"></span></button>
+          <button class="btn btn-primary" id="page-next"><span id="page-next-lbl"></span><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div></div>
+
+      <div class="notion-foot">
+        <a class="notion-link prev" href="#"><span class="ic"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><small>Notion précédente</small><b>0 · Méthodologie</b></div></a>
+        <a class="notion-link next" href="#"><div><small>Notion suivante</small><b>2 · Nombres relatifs</b></div><span class="ic"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+
+    <!-- ════ RAIL COMPAGNON ════ -->
+    <aside class="rail">
+      <!-- Objectif du jour -->
+      <div class="card">
+        <div class="card-h"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/></svg><h4>Objectif du jour</h4></div>
+        <div class="goal">
+          <div class="goal-ring"><svg width="64" height="64" viewBox="0 0 64 64"><circle class="t" cx="32" cy="32" r="27" fill="none" stroke-width="6"/><circle class="f" id="goal-f" cx="32" cy="32" r="27" fill="none" stroke-width="6" stroke-dasharray="169.6" stroke-dashoffset="84.8"/></svg><div class="c" id="goal-c">2/4</div></div>
+          <div class="goal-txt"><b>Belle régularité.</b><p id="goal-txt">Encore 2 sections pour valider votre journée et entretenir votre série.</p></div>
+        </div>
+      </div>
+
+      <!-- Votre parcours (vue d'ensemble du parcours, non redondant avec les onglets) -->
+      <div class="card">
+        <div class="card-h"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8M4 12v7h16" stroke-linecap="round" stroke-linejoin="round"/></svg><h4>Votre parcours</h4></div>
+        <div class="path-head"><b>Partie 1 · Nombres et calcul</b><span>1 / 10</span></div>
+        <div class="path-overall"><i style="width:14%"></i></div>
+        <div class="path">
+          <div class="path-item done"><span class="pi-dot"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">0 · Méthodologie</span></div>
+          <div class="path-item current"><span class="pi-dot"></span><div class="cur-block"><span class="lbl">1 · Numération et bases</span><div class="cur-mastery"><div class="bar"><i id="cur-bar" style="width:0%"></i></div><span class="pct" id="cur-pct">0%</span></div></div></div>
+          <div class="path-item upcoming"><span class="pi-dot"></span><span class="lbl">2 · Nombres relatifs</span></div>
+          <div class="path-item upcoming"><span class="pi-dot"></span><span class="lbl">3 · Fractions et décimaux</span></div>
+        </div>
+        <a class="path-more" href="#">Voir les 10 notions de la partie →</a>
+        <div class="study-time"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>Aujourd'hui : <b>12 min</b> d'étude</div>
+      </div>
+
+      <!-- Révisions programmées -->
+      <div class="card">
+        <div class="card-h"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-7 3.5M3 4v3.5H6.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h4>Révisions programmées</h4></div>
+        <div class="srs-row"><div class="srs-big"><span id="srs-count">3</span> <span>cartes à revoir</span></div></div>
+        <div class="srs-sched"><div class="srs-day due">Auj.</div><div class="srs-day">J+1</div><div class="srs-day">J+3</div><div class="srs-day">J+7</div></div>
+        <button class="btn btn-cta btn-block" style="padding:11px">Réviser maintenant</button>
+      </div>
+
+      <!-- Antisèche -->
+      <div class="card">
+        <div class="card-h"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 4h11l3 3v13H5z" stroke-linejoin="round"/><path d="M9 9h6M9 13h6M9 17h3" stroke-linecap="round"/></svg><h4>Antisèche · formules clés</h4></div>
+        <ul class="cheat">
+          <li><span class="f">b^n</span><span class="d">valeur d'un rang en base b</span></li>
+          <li><span class="f">Σ ch×bⁿ</span><span class="d">base b → décimal</span></li>
+          <li><span class="f">÷ b ↑</span><span class="d">décimal → base b (restes de bas en haut)</span></li>
+          <li><span class="f">FF₁₆</span><span class="d">= 255 = un octet</span></li>
+        </ul>
+      </div>
+
+      <!-- Mon carnet -->
+      <div class="card carnet">
+        <div class="card-h"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" stroke-linecap="round" stroke-linejoin="round"/></svg><h4>Mon carnet</h4></div>
+        <textarea id="carnet" placeholder="Vos notes, moyens mnémotechniques, points à retravailler… Tout est enregistré pour vous."></textarea>
+        <div class="status" id="carnet-status"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Enregistré automatiquement</div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- Célébration de fin de notion -->
+<div class="celebrate" id="celebrate">
+  <div class="celebrate-card">
+    <div class="seal"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h3>Notion maîtrisée</h3>
+    <p>Beau travail. Cette notion est ajoutée à votre cycle de révision espacée. Vous la reverrez au bon moment.</p>
+    <div class="acts">
+      <button class="btn btn-primary" id="celeb-next">Notion suivante</button>
+      <button class="btn btn-ghost" id="celeb-stay">Rester ici</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STRUCT={decouvrir:[["vue-d-ensemble","Vue d'ensemble"],["cours","Cours"],["methode","Méthode"]],pratiquer:[["appli","Application"],["crpe","Type CRPE"],["cote-prof","Côté prof"]],reviser:[["flash","Flashcards"],["memo","Mémo"],["autoeval","Auto-évaluation"]]};
+  const PHASE_LBL={decouvrir:"Découvrir",pratiquer:"Pratiquer",reviser:"Réviser"};
+  const ORDER=[].concat(...Object.values(STRUCT)).map(t=>t[0]);
+  const LABELS=Object.fromEntries([].concat(...Object.values(STRUCT)));
+  const PHASE_OF={};for(const ph in STRUCT)for(const[id]of STRUCT[ph])PHASE_OF[id]=ph;
+  const visited=new Set();
+  let active='vue-d-ensemble';
+  let quizDone=false, celebrated=false, renderedPhase=null;
+  const panels=document.querySelectorAll('.panel'),phaseBtns=document.querySelectorAll('.phase'),subtabsEl=document.getElementById('subtabs');
+
+  function moveThumb(){const b=document.querySelector('.phase.active'),t=document.getElementById('phase-thumb');if(!b)return;t.style.left=b.offsetLeft+'px';t.style.width=b.offsetWidth+'px';}
+  function moveSubInd(){const b=subtabsEl.querySelector('.subtab.active'),ind=document.getElementById('sub-ind');if(!b||!ind)return;ind.style.left=b.offsetLeft+'px';ind.style.width=b.offsetWidth+'px';}
+  function renderSubtabs(phase){
+    subtabsEl.innerHTML='';
+    STRUCT[phase].forEach(([id,label])=>{const b=document.createElement('button');b.className='subtab'+(id===active?' active':'');b.textContent=label;b.onclick=()=>setTab(id);subtabsEl.appendChild(b);});
+    const ind=document.createElement('span');ind.className='sub-ind';ind.id='sub-ind';subtabsEl.appendChild(ind);
+  }
+  function setTab(id){
+    active=id;const phase=PHASE_OF[id];
+    panels.forEach(p=>p.classList.toggle('active',p.dataset.tab===id));
+    phaseBtns.forEach(b=>b.classList.toggle('active',b.dataset.phase===phase));
+    moveThumb();
+    if(renderedPhase!==phase){renderSubtabs(phase);renderedPhase=phase;}
+    else{subtabsEl.querySelectorAll('.subtab').forEach((b,k)=>b.classList.toggle('active',STRUCT[phase][k][0]===id));}
+    moveSubInd();
+    visited.add(id);
+    const i=ORDER.indexOf(id);
+    document.getElementById('page-prev').disabled=i===0;
+    document.getElementById('page-prev-lbl').textContent=i===0?'':LABELS[ORDER[i-1]];
+    document.getElementById('page-next-lbl').textContent=i===ORDER.length-1?'Notion suivante':LABELS[ORDER[i+1]];
+    updateGoal();updateCoach();window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  /* Coach : prochaine action recommandée (ordre pédagogique) */
+  function updateCoach(){
+    const m=[...document.querySelectorAll('.cb')].filter(c=>c.checked).length;
+    let label,msg,target,btn;
+    if(!visited.has('cours')){label='Étape conseillée';msg='Commencez par le cours pour poser des bases solides.';target='cours';btn='Lire le cours';}
+    else if(!visited.has('methode')){label='Étape conseillée';msg='Le cours est lu. Passez à la méthode pas à pas.';target='methode';btn='Voir la méthode';}
+    else if(!quizDone){label='Testez-vous';msg='Vérifiez vos acquis avec le quiz éclair, correction immédiate.';target='appli';btn='Lancer le quiz';}
+    else if(m<5){label='Faites le point';msg='Cochez ce que vous maîtrisez dans l\'auto-évaluation.';target='autoeval';btn="M'auto-évaluer";}
+    else{label='Notion maîtrisée';msg='Ancrez durablement : place à la révision espacée.';target='flash';btn='Réviser';}
+    document.getElementById('coach-label').textContent=label;
+    document.getElementById('coach-msg').textContent=msg;
+    document.getElementById('coach-btn-lbl').textContent=btn;
+    document.getElementById('coach-btn').onclick=()=>setTab(target);
+  }
+  phaseBtns.forEach(b=>b.onclick=()=>setTab(STRUCT[b.dataset.phase][0][0]));
+  document.getElementById('page-prev').onclick=()=>{const i=ORDER.indexOf(active);if(i>0)setTab(ORDER[i-1]);};
+  document.getElementById('page-next').onclick=()=>{const i=ORDER.indexOf(active);if(i<ORDER.length-1)setTab(ORDER[i+1]);};
+  setTab('vue-d-ensemble');
+  window.addEventListener('load',()=>{moveThumb();moveSubInd();});
+  window.addEventListener('resize',()=>{moveThumb();moveSubInd();});
+
+  /* Objectif du jour : basé sur sections vues */
+  function updateGoal(){
+    const target=4,done=Math.min(visited.size,target);
+    document.getElementById('goal-c').textContent=done+'/'+target;
+    document.getElementById('goal-f').style.strokeDashoffset=169.6*(1-done/target);
+    document.getElementById('goal-txt').textContent=done>=target?'Objectif du jour atteint, bravo. Votre série continue.':`Encore ${target-done} section${target-done>1?'s':''} pour valider votre journée.`;
+  }
+
+  /* Convertisseur interactif */
+  const ci=document.getElementById('conv-in'),cr=document.getElementById('conv-range');
+  function conv(n){
+    n=Math.max(0,Math.min(2048,parseInt(n||0,10)));
+    document.getElementById('o-bin').textContent=n.toString(2);
+    document.getElementById('o-oct').textContent=n.toString(8);
+    document.getElementById('o-hex').textContent=n.toString(16).toUpperCase();
+    const bits=n.toString(2);let parts=[];
+    for(let i=0;i<bits.length;i++){if(bits[i]==='1'){parts.push('2'+sup(bits.length-1-i));}}
+    document.getElementById('o-dec').textContent=parts.length?`${n} = ${parts.join(' + ')}`:`${n} = 0`;
+  }
+  function sup(k){return String(k).replace(/[0-9]/g,d=>'⁰¹²³⁴⁵⁶⁷⁸⁹'[d]);}
+  ci.oninput=()=>{cr.value=Math.min(255,ci.value||0);conv(ci.value);};
+  cr.oninput=()=>{ci.value=cr.value;conv(cr.value);};
+  conv(42);
+
+  /* Quiz éclair */
+  const QUIZ=[
+    {q:"Dans quelle base est écrit 1F₁₆, et que vaut F ?",o:["Base 16, F = 15","Base 1, F = 6","Base 10, F = 16"],c:0,e:"L'indice 16 indique l'hexadécimal ; F est le chiffre qui vaut 15."},
+    {q:"Combien vaut 101₂ en base 10 ?",o:["3","5","101"],c:1,e:"101₂ = 1×4 + 0×2 + 1×1 = 5."},
+    {q:"Pour convertir un décimal en base 2 par divisions, on lit les restes…",o:["de haut en bas","de bas en haut","dans n'importe quel ordre"],c:1,e:"On lit les restes de bas en haut : c'est l'erreur n°1 à éviter."},
+  ];
+  let qi=0,qscore=0,qbody=document.getElementById('quiz-body');
+  function renderQuiz(){
+    document.getElementById('quiz-prog').textContent=`${Math.min(qi+1,QUIZ.length)} / ${QUIZ.length}`;
+    if(qi>=QUIZ.length){
+      quizDone=true;updateCoach();
+      qbody.innerHTML=`<div class="quiz-done"><div class="score"><b>${qscore}</b> / ${QUIZ.length}</div><p style="color:var(--ink-soft);margin:12px 0 18px">${qscore===QUIZ.length?'Sans faute, vous maîtrisez les bases.':'Bien joué. Reprenez le cours sur les points manqués.'}</p><button class="btn btn-primary" id="quiz-again">Recommencer</button></div>`;
+      document.getElementById('quiz-again').onclick=()=>{qi=0;qscore=0;renderQuiz();};
+      return;
+    }
+    const it=QUIZ[qi];
+    qbody.innerHTML=`<div class="quiz-q">${it.q}</div><div id="qopts"></div><div class="quiz-exp" id="qexp"></div><div class="quiz-foot"><span class="micro" id="qhint">Choisissez une réponse</span><button class="btn btn-primary" id="qnext" style="display:none">Question suivante →</button></div>`;
+    const opts=document.getElementById('qopts');
+    it.o.forEach((opt,k)=>{
+      const b=document.createElement('button');b.className='quiz-opt';
+      b.innerHTML=`<span class="mk">${String.fromCharCode(65+k)}</span>${opt}`;
+      b.onclick=()=>{
+        if(b.disabled)return;
+        [...opts.children].forEach(c=>c.disabled=true);
+        if(k===it.c){b.classList.add('correct');qscore++;}
+        else{b.classList.add('wrong');opts.children[it.c].classList.add('correct');}
+        const exp=document.getElementById('qexp');exp.textContent=it.e;exp.classList.add('show');
+        document.getElementById('qhint').style.display='none';
+        document.getElementById('qnext').style.display='inline-flex';
+      };
+      opts.appendChild(b);
+    });
+    document.getElementById('qnext').onclick=()=>{qi++;renderQuiz();};
+  }
+  renderQuiz();
+
+  /* Exercices */
+  let exo=0;const exos=document.querySelectorAll('.exo');
+  function renderExo(){exos.forEach(e=>e.style.display=(+e.dataset.exo===exo)?'block':'none');document.getElementById('exo-count').textContent=`Exercice ${exo+1} / ${exos.length}`;document.getElementById('exo-fill').style.width=((exo+1)/exos.length*100)+'%';document.getElementById('exo-prev').disabled=exo===0;}
+  document.getElementById('exo-prev').onclick=()=>{if(exo>0){exo--;renderExo();}};
+  document.getElementById('exo-next').onclick=()=>{if(exo<exos.length-1){exo++;renderExo();}};
+  renderExo();
+
+  /* Flashcards + auto-éval espacée */
+  const CARDS=[
+    {q:"Quelle est la différence entre un système additif et un système positionnel ?",a:"Additif : valeur fixe par symbole (romain : VII = 7). Positionnel : la valeur dépend de la position (le 3 dans 305 vaut 300, dans 53 vaut 3)."},
+    {q:"Que représente FF₁₆ en décimal ? Quel lien avec l'informatique ?",a:"FF₁₆ = 15×16+15 = 255 : la valeur maximale d'un octet (8 bits). Chaque canal RVB est codé sur un octet (0 à 255)."},
+    {q:"Quelles sont les règles d'accord de « cent » et « vingt » ?",a:"Cent prend un s quand multiplié et non suivi d'un nombre (deux cents / deux cent six). Vingt : un s seulement dans « quatre-vingts ». Mille est invariable."},
+  ];
+  let cardi=0;const flip=document.getElementById('flip');
+  const cardStatus=new Array(CARDS.length).fill('due');
+  function renderCard(){flip.classList.remove('flipped');document.getElementById('card-q').textContent=CARDS[cardi].q;document.getElementById('card-a').textContent=CARDS[cardi].a;document.getElementById('card-count').textContent=`Carte ${cardi+1} / ${CARDS.length}`;}
+  function updateSrs(){const due=cardStatus.filter(s=>s!=='got').length;document.getElementById('srs-count').textContent=due;}
+  flip.onclick=()=>flip.classList.toggle('flipped');
+  function rateCard(c){cardStatus[cardi]=c;updateSrs();cardi=(cardi+1)%CARDS.length;renderCard();}
+  document.querySelectorAll('.conf button').forEach(b=>b.onclick=()=>rateCard(b.dataset.c));
+  renderCard();updateSrs();
+
+  /* Auto-évaluation -> maîtrise de la notion (carte « Votre parcours ») */
+  const cbs=document.querySelectorAll('.cb');
+  function updateMastery(){
+    const p=Math.round([...cbs].filter(c=>c.checked).length/cbs.length*100);
+    document.getElementById('cur-bar').style.width=p+'%';
+    document.getElementById('cur-pct').textContent=p+'%';
+    updateCoach();
+    if(p===100&&!celebrated)celebrate();
+  }
+  cbs.forEach(c=>c.onchange=updateMastery);
+  updateMastery();
+
+  /* Célébration de fin de notion */
+  function celebrate(){
+    celebrated=true;
+    document.getElementById('celebrate').classList.add('show');
+    const colors=['#0c434e','#c36648','#3a6b50','#2a5b66'];
+    for(let i=0;i<28;i++){
+      const d=document.createElement('div');d.className='confetti';
+      d.style.left=Math.random()*100+'vw';
+      d.style.background=colors[i%colors.length];
+      d.style.animationDuration=(2+Math.random()*1.5)+'s';
+      d.style.animationDelay=(Math.random()*.4)+'s';
+      d.style.borderRadius=Math.random()>.5?'2px':'50%';
+      document.body.appendChild(d);
+      setTimeout(()=>d.remove(),4200);
+    }
+  }
+  document.getElementById('finish-btn').onclick=celebrate;
+  document.getElementById('celeb-stay').onclick=()=>document.getElementById('celebrate').classList.remove('show');
+  document.getElementById('celeb-next').onclick=()=>document.getElementById('celebrate').classList.remove('show');
+
+  /* Mon carnet (persistance locale) */
+  const carnet=document.getElementById('carnet'),carnetStatus=document.getElementById('carnet-status');
+  const KEY='maitrizz-carnet-notion-1';
+  try{carnet.value=localStorage.getItem(KEY)||'';}catch(e){}
+  let saveTimer;
+  carnet.addEventListener('input',()=>{
+    carnetStatus.style.opacity='.4';carnetStatus.lastChild.textContent='Enregistrement…';
+    clearTimeout(saveTimer);
+    saveTimer=setTimeout(()=>{try{localStorage.setItem(KEY,carnet.value);}catch(e){}carnetStatus.style.opacity='1';carnetStatus.lastChild.textContent='Enregistré automatiquement';},500);
+  });
+
+  /* Mode focus */
+  const focusBtn=document.getElementById('focus-btn');
+  function toggleFocus(){document.body.classList.toggle('focus');focusBtn.classList.toggle('active',document.body.classList.contains('focus'));}
+  focusBtn.onclick=toggleFocus;
+
+  /* Popover raccourcis */
+  const kbdBtn=document.getElementById('kbd-btn'),kbdPop=document.getElementById('kbd-pop');
+  kbdBtn.onclick=e=>{e.stopPropagation();kbdPop.classList.toggle('show');};
+  document.addEventListener('click',e=>{if(!kbdPop.contains(e.target)&&e.target!==kbdBtn)kbdPop.classList.remove('show');});
+
+  /* Raccourcis clavier */
+  document.addEventListener('keydown',e=>{
+    if(e.target.matches('input,textarea'))return;
+    const i=ORDER.indexOf(active);
+    if(e.key==='ArrowRight'&&i<ORDER.length-1){setTab(ORDER[i+1]);}
+    else if(e.key==='ArrowLeft'&&i>0){setTab(ORDER[i-1]);}
+    else if(e.key==='f'||e.key==='F'){toggleFocus();}
+    else if(e.key==='?'){kbdPop.classList.toggle('show');}
+    else if(active==='flash'){
+      if(e.key===' '){e.preventDefault();flip.classList.toggle('flipped');}
+      else if(['1','2','3'].includes(e.key)){rateCard(['hard','soon','got'][+e.key-1]);}
+    }
+    else if(active==='appli'&&['1','2','3'].includes(e.key)){
+      const opts=document.querySelectorAll('#qopts .quiz-opt');
+      if(opts[+e.key-1]&&!opts[+e.key-1].disabled)opts[+e.key-1].click();
+    }
+  });
+
+  /* Countdown CRPE */
+  (function(){const target=new Date('2027-04-13');const now=new Date();const d=Math.max(0,Math.ceil((target-now)/86400000));document.getElementById('countdown').textContent='J‑'+d;})();
+
+  /* Lecture */
+  window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('read-progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';});
+</script>
+</body>
+</html>
