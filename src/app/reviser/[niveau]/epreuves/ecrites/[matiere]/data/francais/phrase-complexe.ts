@@ -9,6 +9,7 @@ const OBJECTIFS = [
   { id: "pc5", label: "Je distingue « que » relatif (antécédent) de « que » conjonction (complétive), et la relative de l'interrogative indirecte" },
   { id: "pc6", label: "Je reconnais une subordonnée infinitive et une subordonnée participiale grâce au critère du sujet propre distinct" },
   { id: "pc7", label: "Je sais analyser une phrase complexe en 4 étapes : compter, délimiter, identifier l'introducteur, nommer nature et fonction" },
+  { id: "pc8", label: "Je sais justifier l'emploi syntaxique de la virgule, du point-virgule et des deux-points dans une phrase complexe" },
 ];
 
 export const fichePhraseComplexe: Fiche = {
@@ -16,16 +17,16 @@ export const fichePhraseComplexe: Fiche = {
   matiere: "francais",
   numero: 5,
   partie: "Partie 1 : Grammaire de la phrase",
-  title: "La phrase complexe",
+  title: "La phrase complexe et sa ponctuation",
   subtitle:
-    "Compter et nommer les propositions : les 6 familles de subordonnées et les formes non conjuguées",
+    "Compter et nommer les propositions, comprendre leurs liens et justifier la ponctuation syntaxique",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 + lycée · BOEN n°1 du 22 janvier 2019", variant: "info" },
   ],
-  metaTitle: "La phrase complexe (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "La phrase complexe et sa ponctuation (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur la phrase complexe : phrase simple ou complexe, juxtaposition, coordination, subordination, les 6 familles de subordonnées (relative, complétive, circonstancielle, interrogative indirecte, infinitive, participiale), les formes non conjuguées. Méthode d'analyse en 4 étapes, pièges fréquents, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE complète sur la phrase complexe et sa ponctuation : phrase simple ou complexe, juxtaposition, coordination, subordination, emplois syntaxiques de la virgule, du point-virgule et des deux-points, les 6 familles de subordonnées, les formes non conjuguées. Méthode d'analyse, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -39,7 +40,7 @@ export const fichePhraseComplexe: Fiche = {
           blocks: [
             {
               type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
+              title: "Le programme en 5 étapes",
               items: [
                 {
                   number: "①",
@@ -53,11 +54,16 @@ export const fichePhraseComplexe: Fiche = {
                 },
                 {
                   number: "③",
+                  title: "Ponctuation et relations syntaxiques",
+                  text: "Virgule, point-virgule et deux-points ne marquent pas seulement une pause : ils signalent un lien entre propositions ou le détachement d'un constituant.",
+                },
+                {
+                  number: "④",
                   title: "Les 6 familles de subordonnées",
                   text: "Relative, complétive, circonstancielle, interrogative indirecte, infinitive, participiale : chacune a son introducteur et sa fonction.",
                 },
                 {
-                  number: "④",
+                  number: "⑤",
                   title: "Les formes non conjuguées",
                   text: "Infinitif, participe, gérondif : elles ne créent pas de proposition, sauf si elles ont un sujet propre distinct.",
                 },
@@ -97,7 +103,7 @@ export const fichePhraseComplexe: Fiche = {
                         "« Elle se hâtait, pressée d'atteindre sa maison. » → 1 verbe conjugué (se hâtait) : phrase simple",
                         "« On écrit parce qu'on cherche à saisir le réel. » → 2 verbes conjugués (écrit, cherche) : phrase complexe",
                       ],
-                      note: "« pressée », « atteindre » et « saisir » sont des formes non conjuguées : elles ne comptent pas ici, car elles n'ont pas de sujet propre distinct (voir l'étape ④).",
+                      note: "« pressée », « atteindre » et « saisir » sont des formes non conjuguées : elles ne comptent pas ici, car elles n'ont pas de sujet propre distinct (voir l'étape ⑤).",
                     },
                   ],
                 },
@@ -106,7 +112,7 @@ export const fichePhraseComplexe: Fiche = {
                   variant: "warning",
                   icon: "⚠️",
                   title: "Le réflexe à avoir",
-                  text: "Avant tout, **soulignez les verbes conjugués** : leur nombre donne le nombre de propositions. Ne comptez ni les infinitifs, ni les participes, ni les gérondifs (sauf exception du sujet propre, étape ④).",
+                  text: "Avant tout, **soulignez les verbes conjugués** : leur nombre donne le nombre de propositions. Ne comptez ni les infinitifs, ni les participes, ni les gérondifs (sauf exception du sujet propre, étape ⑤).",
                 },
               ],
             },
@@ -130,13 +136,44 @@ export const fichePhraseComplexe: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "Juxtaposition et coordination relient des propositions **de même rang** (souvent des indépendantes). La subordination crée une **dépendance** : la subordonnée a une fonction dans la phrase, exactement comme un mot. C'est ce que nomment les 6 familles de l'étape ③.",
+                  text: "Juxtaposition et coordination relient des propositions **de même rang** (souvent des indépendantes). La subordination crée une **dépendance** : la subordonnée a une fonction dans la phrase, exactement comme un mot. C'est ce que nomment les 6 familles de l'étape ④.",
                 },
               ],
             },
             {
               type: "subsection",
               number: "③",
+              title: "Ponctuation syntaxique : virgule, point-virgule, deux-points",
+              blocks: [
+                {
+                  type: "paragraph",
+                  text: "Dans une phrase complexe, la ponctuation sert souvent à rendre visible la relation entre les groupes et les propositions. Au concours, il ne suffit pas d'écrire que « la virgule marque une pause » : il faut **nommer l'emploi** et le justifier par la structure de la phrase. Cette question est tombée à la session 2024, où il fallait justifier l'emploi d'une virgule.",
+                },
+                {
+                  type: "table",
+                  title: "Les emplois syntaxiques à savoir justifier",
+                  headers: ["Signe", "Emploi", "Ce qu'il faut dire"],
+                  rows: [
+                    ["Virgule", "Juxtaposition", "Elle relie deux propositions de même rang sans conjonction : « Il entra, il s'assit. »"],
+                    ["Virgule", "Subordonnée antéposée", "Elle sépare une subordonnée placée avant la principale : « Quand il arriva, elle lisait. »"],
+                    ["Virgule", "Détachement", "Elle isole un constituant mobile ou mis en relief : « Épuisée, elle s'endormit. »"],
+                    ["Virgule", "Énumération", "Elle sépare les éléments d'une série : « Il prit son manteau, son sac et ses clés. »"],
+                    ["Point-virgule", "Relation logique implicite", "Il sépare deux propositions indépendantes fortement liées par le sens : opposition, conséquence, parallèle."],
+                    ["Deux-points", "Annonce explicite", "Ils annoncent une explication, une conséquence, une énumération ou une citation."],
+                  ],
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  icon: "💡",
+                  title: "La réponse attendue",
+                  text: "Formule utile : « Le signe marque ici [emploi] : il/elle [action syntaxique], ce qui [effet ou relation de sens]. » Exemple : « La virgule marque un détachement : elle isole l'épithète détachée “Épuisée” du sujet “elle”, en mettant en relief l'état du personnage. »",
+                },
+              ],
+            },
+            {
+              type: "subsection",
+              number: "④",
               title: "Les 6 familles de propositions subordonnées",
               blocks: [
                 {
@@ -219,7 +256,7 @@ export const fichePhraseComplexe: Fiche = {
             },
             {
               type: "subsection",
-              number: "④",
+              number: "⑤",
               title: "Les formes non conjuguées",
               blocks: [
                 {
@@ -301,8 +338,8 @@ export const fichePhraseComplexe: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              title: "Une démarche en 4 étapes",
-              text: "Face à une phrase, on applique toujours les mêmes étapes : compter, délimiter, identifier l'introducteur, nommer. Une seconde méthode traite le cas particulier des subordonnées sans subordonnant.",
+              title: "Trois démarches à maîtriser",
+              text: "Face à une phrase, on applique toujours les mêmes étapes : compter, délimiter, identifier l'introducteur, nommer. Une seconde méthode traite le cas particulier des subordonnées sans subordonnant, puis une troisième apprend à justifier la ponctuation syntaxique.",
             },
             {
               type: "rappelExpress",
@@ -399,6 +436,39 @@ export const fichePhraseComplexe: Fiche = {
               ],
             },
             {
+              type: "methodeGroup",
+              number: "③",
+              title: "Justifier un signe de ponctuation",
+              intro:
+                "**Question typique :** « Justifiez l'emploi de la virgule dans cette phrase. »\nExemple d'appui : « Quand il arriva, elle lisait un roman. » On nomme l'emploi puis on justifie par la structure.",
+              steps: [
+                {
+                  number: "1",
+                  text: "**Identifier ce que le signe sépare ou isole** : ici, la virgule sépare « Quand il arriva » et « elle lisait un roman ».",
+                },
+                {
+                  number: "2",
+                  text: "**Nommer l'emploi syntaxique** : « Quand il arriva » est une subordonnée circonstancielle de temps placée avant la principale.",
+                },
+                {
+                  number: "💡",
+                  text: "**Réponse attendue :** La virgule marque ici la séparation entre une **subordonnée circonstancielle antéposée** et la proposition principale. Elle isole « Quand il arriva », placée avant « elle lisait un roman ».",
+                  warn: "⚠️ Ne pas répondre seulement : « la virgule marque une pause ». Le jury attend le nom de l'emploi.",
+                },
+              ],
+            },
+            {
+              type: "exerciceCard",
+              variant: "standard",
+              title: "Checkpoint : à vous de jouer",
+              badge: "30 secondes",
+              question: "Justifiez les deux-points : « Il comprit enfin : la porte était restée ouverte. »",
+              correction: [
+                { type: "line", text: "Les deux-points annoncent une **explication** : le second segment explicite ce que le personnage comprend." },
+                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+              ],
+            },
+            {
               type: "ctaBox",
               text: "Méthode bien en tête ? Testez-vous.",
               buttonLabel: "Lancer le Quiz éclair",
@@ -423,7 +493,7 @@ export const fichePhraseComplexe: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de passer aux exercices",
-              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "10 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
             },
             {
               type: "quizBlock",
@@ -514,6 +584,19 @@ export const fichePhraseComplexe: Fiche = {
                   correctIndex: 1,
                   explanation:
                     "La méthode en 4 étapes commence par compter les verbes conjugués, puis délimiter, identifier l'introducteur, et enfin nommer nature et fonction.",
+                },
+                {
+                  objectifId: "pc8",
+                  question: "Quelle justification est correcte pour la virgule de « Quand il arriva, elle lisait » ?",
+                  options: [
+                    "Elle marque une pause dans la lecture",
+                    "Elle sépare une subordonnée circonstancielle antéposée de la principale",
+                    "Elle annonce une explication",
+                    "Elle coordonne deux propositions avec une conjonction",
+                  ],
+                  correctIndex: 1,
+                  explanation:
+                    "La virgule sépare la subordonnée circonstancielle de temps, placée avant la proposition principale. Il faut nommer cet emploi syntaxique.",
                 },
               ],
             },
@@ -774,6 +857,20 @@ export const fichePhraseComplexe: Fiche = {
                 { type: "note", text: "💡 « pour regarder les nuages » est un groupe infinitif (CC de but), pas une subordonnée infinitive : même sujet, pas de verbe de perception." },
               ],
             },
+            {
+              type: "exerciceCard",
+              variant: "standard",
+              level: "n3",
+              title: "Exercice 13 · Justifier la ponctuation syntaxique",
+              enonce:
+                "« Quand la pluie cessa, les enfants sortirent ; la cour, silencieuse jusque-là, se remplit de cris. »",
+              question: "Justifiez la virgule après « cessa », le point-virgule, puis les deux virgules qui encadrent « silencieuse jusque-là ».",
+              correction: [
+                { type: "line", label: "a)", text: "La virgule après « cessa » sépare une **subordonnée circonstancielle de temps antéposée** (« Quand la pluie cessa ») de la proposition principale (« les enfants sortirent »)." },
+                { type: "line", label: "b)", text: "Le point-virgule sépare deux propositions indépendantes liées par une relation logique implicite : la seconde prolonge la première en montrant sa conséquence dans la cour." },
+                { type: "line", label: "c)", text: "Les deux virgules encadrent une **épithète détachée** (« silencieuse jusque-là ») rapportée au nom « cour » ; elles isolent un constituant supprimable et mis en relief." },
+              ],
+            },
           ],
         },
         {
@@ -888,6 +985,19 @@ export const fichePhraseComplexe: Fiche = {
                 { type: "note", text: "⚠️ « comme » devant un GN (« comme un habit ») s'analyse en préposition introduisant une comparaison ; l'analyse en conjonction de subordination avec ellipse du verbe (« comme [le ferait] un habit ») est également admise. Le seul verbe conjugué de la comparaison est « m'empêtre », dans la relative." },
               ],
             },
+            {
+              type: "exerciceCard",
+              variant: "crpe",
+              title: "Exercice 6 : emploi de la virgule",
+              enonce:
+                "« Épuisée par la marche, elle s'assit sur le banc ; autour d'elle, la place se vidait lentement. »",
+              question: "Analysez deux emplois de la virgule et justifiez le point-virgule.",
+              correction: [
+                { type: "line", text: "« Épuisée par la marche, » : la virgule marque un **détachement** ; elle isole le groupe adjectival épithète détachée rapporté au sujet « elle »." },
+                { type: "line", text: "« autour d'elle, » : la virgule marque le **détachement d'un complément circonstanciel de lieu antéposé** à la proposition « la place se vidait lentement »." },
+                { type: "line", text: "Le point-virgule sépare deux propositions indépendantes liées par une relation de simultanéité descriptive : le geste du personnage et l'évolution de la place restent dans la même scène." },
+              ],
+            },
           ],
         },
         {
@@ -993,6 +1103,12 @@ export const fichePhraseComplexe: Fiche = {
                     "**Juxtaposition** (virgule, point-virgule, deux-points), **coordination** (mais, ou, et, donc, or, ni, car), **subordination** (un subordonnant crée une dépendance).",
                 },
                 {
+                  question: "Comment justifier une virgule au CRPE ?",
+                  answer:
+                    "Il faut nommer l'emploi syntaxique, puis dire ce que la virgule isole ou relie.\nExemples : subordonnée antéposée (« Quand il arrive, je pars »), détachement (« Épuisée, elle dort »), juxtaposition (« Il entre, il s'assoit »), énumération.",
+                  astuce: "⚠️ « La virgule marque une pause » est trop vague : le jury attend une justification grammaticale.",
+                },
+                {
                   question: "Critère commun à la subordonnée infinitive et à la participiale ?",
                   answer:
                     "Toutes deux exigent un **sujet propre distinct** du sujet principal.\nInfinitive : + verbe de perception ou factitif (« regardait les enfants jouer »).\nParticipiale : participe à sujet propre (« Le rideau levé, le spectacle commença »).",
@@ -1042,6 +1158,11 @@ export const fichePhraseComplexe: Fiche = {
                   title: "3 modes de liaison",
                   lines: ["Juxtaposition (, ; :)", "Coordination (mais, et, donc…)", "Subordination"],
                   variant: "blue",
+                },
+                {
+                  title: "Ponctuation syntaxique",
+                  lines: ["Virgule : détachement, juxtaposition", "Point-virgule : lien implicite", "Deux-points : annonce explicite"],
+                  variant: "green",
                 },
                 {
                   title: "6 familles de subordonnées",

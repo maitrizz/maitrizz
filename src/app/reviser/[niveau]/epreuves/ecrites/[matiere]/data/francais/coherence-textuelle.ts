@@ -220,17 +220,74 @@ export const ficheCoherenceTextuelle: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "L'ensemble des mots d'un texte qui se rapportent à un même thème forme un **champ lexical** (on parle aussi d'**isotopie** quand ce réseau de sens parcourt tout le texte). L'identifier, c'est comprendre l'atmosphère du texte et l'intention de l'auteur.",
+                  text: "L'ensemble des mots d'un texte qui se rapportent à un même domaine de sens forme un **champ lexical**. Quand ce réseau de sens revient tout au long du texte et l'organise en profondeur, on parle aussi d'**isotopie**. L'identifier ne sert donc pas seulement à « trouver le thème » : cela permet de comprendre l'atmosphère du texte, le point de vue adopté et l'effet produit sur le lecteur.",
+                },
+                {
+                  type: "callout",
+                  variant: "warning",
+                  icon: "⚠️",
+                  title: "Champ lexical ≠ thème du texte",
+                  text: "Le **thème** répond à la question « de quoi parle le texte ? ». Le **champ lexical** répond à la question « quels mots construisent ce thème, et avec quelles nuances ? ». Un texte peut avoir pour thème l'école, mais mobiliser un champ lexical du combat : « lutte », « effort », « obstacle », « victoire ». L'effet n'est pas neutre : l'école est alors présentée comme une épreuve à traverser.",
+                },
+                {
+                  type: "table",
+                  title: "Ce qu'il faut savoir observer",
+                  headers: ["Point d'observation", "Ce que l'on cherche", "Exemple d'analyse"],
+                  rows: [
+                    ["Répétitions lexicales", "Les mots qui reviennent ou appartiennent au même domaine", "« ombre », « nuit », « obscur », « silence » → champ lexical de l'obscurité"],
+                    ["Mots de même famille", "Un même radical peut structurer le passage", "« lire », « lecteur », « lecture », « lisible » → champ lexical de la lecture"],
+                    ["Synonymes et termes associés", "Le champ lexical ne se limite pas aux répétitions exactes", "« marcher », « route », « départ », « horizon » → champ lexical du voyage"],
+                    ["Connotations", "La valeur positive ou négative des mots", "« refuge », « douceur », « lumière » créent une impression rassurante"],
+                    ["Rupture lexicale", "Un mot inattendu qui tranche avec l'ensemble", "Un terme violent dans un texte paisible peut créer un effet de menace ou de surprise"],
+                  ],
+                },
+                {
+                  type: "notionCardGrid",
+                  columns: 1,
+                  cards: [
+                    {
+                      title: "Champ lexical dominant",
+                      definition: "C'est le réseau de mots le plus présent ou le plus structurant dans le passage.",
+                      exemples: [
+                        "« mer », « vague », « écume », « rivage », « marée » : champ lexical de la mer.",
+                      ],
+                      test: "Il donne une unité de sens au texte et oriente l'interprétation.",
+                    },
+                    {
+                      title: "Champ lexical secondaire",
+                      definition: "Un autre réseau de mots peut accompagner le champ dominant et préciser l'effet.",
+                      exemples: [
+                        "Dans un texte sur la mer, « peur », « menace », « naufrage » ajoutent un champ lexical du danger.",
+                      ],
+                      test: "L'intérêt est souvent dans la rencontre de deux champs lexicaux : mer + danger, enfance + nostalgie, ville + oppression.",
+                    },
+                    {
+                      title: "Connotation",
+                      definition: "Un mot ne transmet pas seulement une information : il porte une nuance affective, culturelle ou évaluative.",
+                      exemples: [
+                        "« demeure » est plus noble que « maison » ; « baraque » est plus familier et dévalorisant.",
+                      ],
+                      test: "Au concours, on gagne en précision quand on explique la valeur des mots, pas seulement leur thème commun.",
+                    },
+                  ],
                 },
                 {
                   type: "formulaBlock",
-                  title: "Méthode en 3 étapes",
+                  title: "Méthode en 4 étapes",
                   lines: [
-                    "① Relever les mots qui se répètent ou évoquent le même domaine.",
-                    "② Nommer le champ lexical (la nuit, le combat, le voyage…).",
-                    "③ Interpréter l'effet produit sur le lecteur (atmosphère, registre, intention).",
+                    "① Relever au moins 4 ou 5 mots significatifs, pas seulement deux mots isolés.",
+                    "② Regrouper ces mots par domaine de sens : nature, violence, école, voyage, lumière, enfermement…",
+                    "③ Nommer le champ lexical avec précision : pas seulement « sentiments », mais « peur », « nostalgie », « admiration ».",
+                    "④ Interpréter l'effet produit : atmosphère, regard de l'auteur, valorisation, dévalorisation, tension, rupture.",
                   ],
-                  note: "L'étape ③ est décisive : le jury attend toujours une interprétation, pas une simple liste.",
+                  note: "L'étape ④ est décisive : le jury attend toujours une interprétation, pas une simple liste.",
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  icon: "💡",
+                  title: "Phrase modèle pour le concours",
+                  text: "« Le passage mobilise le champ lexical de [domaine], comme le montrent les termes [mot 1], [mot 2], [mot 3]. Ce réseau lexical crée une atmosphère [effet] et présente [personnage / lieu / idée] comme [interprétation]. »",
                 },
                 {
                   type: "callout",
@@ -243,38 +300,29 @@ export const ficheCoherenceTextuelle: Fiche = {
             {
               type: "piegeCard",
               variant: "rouge",
-              title: "Piège n°1 · « malgré que »",
-              badge: "Erreur très fréquente",
-              faux: "« Malgré qu'il soit fatigué, il continua. »",
-              vrai: "« **Bien qu'**il soit fatigué… » (+ subjonctif) ou « **Malgré** sa fatigue… » (+ groupe nominal).",
-              methode: "Devant « malgré que », reformuler avec « bien que » + subjonctif ou « malgré » + nom.",
-            },
-            {
-              type: "piegeCard",
-              variant: "rouge",
-              title: "Piège n°2 · répétition sans reprise",
-              badge: "Source d'erreurs",
-              faux: "« L'école est importante. L'école forme les citoyens. L'école est un lieu de vie. »",
-              vrai: "Varier les reprises : « L'école est importante. **Elle** forme les citoyens et constitue **un lieu de vie**. »",
-              methode: "Après un nom, le reprendre par un pronom ou une reprise nominale infidèle, pas par le même mot.",
+              title: "Piège n°1 · confondre thème et champ lexical",
+              badge: "Analyse trop vague",
+              faux: "« Le champ lexical est l'école parce que le texte parle de l'école. »",
+              vrai: "« Le texte a pour thème l'école, mais il mobilise le champ lexical de l'effort : “obstacle”, “progresser”, “réussite”, “persévérer”. »",
+              methode: "Distinguer ce dont parle le texte (thème) et les mots qui construisent une atmosphère ou un point de vue (champ lexical).",
             },
             {
               type: "piegeCard",
               variant: "orange",
-              title: "Piège n°3 · lister le champ lexical sans interpréter",
+              title: "Piège n°2 · lister sans interpréter",
               badge: "Réponse incomplète",
               faux: "« Le champ lexical est : nuit, ombre, obscur. »",
               vrai: "Ajouter l'effet : « Ce champ lexical de la nuit crée une atmosphère mystérieuse, légèrement inquiétante. »",
-              methode: "Toujours conclure par ce que le champ lexical produit dans le texte (atmosphère, intention).",
+              methode: "Un relevé ne suffit jamais : il faut nommer le champ lexical, puis expliquer son effet dans le texte.",
             },
             {
               type: "piegeCard",
               variant: "bleu",
-              title: "Piège n°4 · connecteur mal choisi ou répété",
-              badge: "À surveiller",
-              faux: "« La lecture est bénéfique. Par contre, les enfants lisent moins. Par contre, il faut les encourager. »",
-              vrai: "Choisir le connecteur selon la vraie relation : « …**Pourtant**, les enfants lisent moins. **C'est pourquoi** il faut les encourager. »",
-              methode: "Vérifier que le connecteur correspond bien à la relation (opposition, conséquence…) et le varier.",
+              title: "Piège n°3 · mal nommer la progression",
+              badge: "Erreur d'étiquette",
+              faux: "« Le texte suit une progression linéaire parce qu'il parle toujours de la lecture. »",
+              vrai: "S'il parle toujours de la lecture en ajoutant plusieurs informations sur elle, c'est plutôt une **progression à thème constant**.",
+              methode: "Repérer d'abord ce qui reste stable : même thème repris = thème constant ; information nouvelle reprise phrase après phrase = progression linéaire ; thème général décliné en sous-thèmes = thèmes dérivés.",
             },
             {
               type: "primaireBox",
@@ -573,7 +621,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                 { type: "line", text: "**Elle** : reprise pronominale (pronom personnel sujet)." },
                 { type: "line", text: "**La petite** : reprise nominale infidèle (terme affectif / synonyme partiel)." },
                 { type: "line", text: "**lui** : reprise pronominale (pronom personnel COI)." },
-                { type: "note", text: "💡 « Ces fleurs » ne reprend pas « fillette » mais « un étal de fleurs » : autre chaîne référentielle." },
+                { type: "note", text: "💡 « Ces fleurs » ne reprend pas « fillette » : l'expression renvoie aux fleurs de l'étal et appartient donc à une autre chaîne référentielle." },
               ],
             },
             {
@@ -665,10 +713,10 @@ export const ficheCoherenceTextuelle: Fiche = {
               level: "n3",
               title: "Exercice 7 : Analyse littéraire complète",
               enonce: "« Écrire est un engagement à ferrailler. On s'engage dans l'écriture comme dans une armée imaginaire, où l'on serait à la fois général et aspirant soldat. »",
-              question: "a) Nommez le champ lexical dominant et relevez ses termes. b) Relevez deux reprises du référent « écrire / écriture » et précisez leur type. c) Quel effet produit la métaphore filée ?",
+              question: "a) Nommez le champ lexical dominant et relevez ses termes. b) Relevez deux expressions qui relancent l'idée d'écrire et précisez leur rôle dans la cohérence du passage. c) Quel effet produit la métaphore filée ?",
               correction: [
                 { type: "line", label: "a)", text: "Champ lexical du **combat / de la guerre** : « ferrailler, engagement, armée, général, aspirant soldat »." },
-                { type: "line", label: "b)", text: "« un engagement » : reprise nominale infidèle par nominalisation (« Écrire est un engagement »). « l'écriture » : reprise nominale infidèle de « écrire »." },
+                { type: "line", label: "b)", text: "« un engagement » caractérise l'acte d'écrire ; « l'écriture » reprend nominalement le verbe « écrire ». Ces expressions maintiennent le même référent abstrait tout en le développant." },
                 { type: "line", label: "c)", text: "La métaphore filée du combat présente l'écriture comme une lutte intérieure, exigeante : elle traduit l'engagement total de l'écrivain et donne une dimension épique à un acte intime." },
               ],
             },
@@ -704,9 +752,9 @@ export const ficheCoherenceTextuelle: Fiche = {
               title: "Exercice 1 : analyse complète d'un texte",
               enonce:
                 "« Lire, c'est voyager sans bouger. Le lecteur s'embarque pour des contrées inconnues, traverse des paysages imaginaires et revient transformé. Cette odyssée silencieuse forge l'âme. En effet, la littérature offre la rencontre avec des vies qui ne sont pas les nôtres. Par ailleurs, lire développe l'empathie. Bref, le livre est une fenêtre ouverte sur l'humanité. »",
-              question: "1) Nommez trois types de reprises du référent « lire / lecture ». 2) Relevez trois connecteurs et leur relation logique. 3) Identifiez le champ lexical dominant (au moins cinq termes). 4) Comment le texte progresse-t-il ?",
+              question: "1) Relevez trois reprises ou reformulations du référent « lire / lecture ». 2) Relevez trois connecteurs et leur relation logique. 3) Identifiez le champ lexical dominant (au moins cinq termes). 4) Comment le texte progresse-t-il ?",
               correction: [
-                { type: "line", text: "**1)** « Le lecteur » (nominale infidèle par nominalisation) ; « Cette odyssée silencieuse » (nominale infidèle par métaphore) ; « le livre » (nominale infidèle par métonymie : l'objet pour l'activité)." },
+                { type: "line", text: "**1)** « Le lecteur » désigne celui qui lit ; « Cette odyssée silencieuse » reformule l'activité de lire par métaphore ; « le livre » reprend l'activité par métonymie (l'objet pour la pratique)." },
                 { type: "line", text: "**2)** « En effet » (explication / cause) ; « Par ailleurs » (addition) ; « Bref » (conclusion / synthèse)." },
                 { type: "line", text: "**3)** Champ lexical du **voyage** : « voyager, s'embarque, contrées, traverse, paysages, odyssée, fenêtre ouverte »." },
                 { type: "line", text: "**4)** Progression **à thème constant** : « lire / la lecture » reste le sujet, décliné sous plusieurs angles (voyage, transformation, empathie)." },
@@ -740,9 +788,9 @@ export const ficheCoherenceTextuelle: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : « malgré que » et répétitions",
+              title: "Exercice 1 · Réponse à corriger : reprises et concession",
               enonce: "Copie d'un candidat : « L'école est importante. L'école forme les citoyens. L'école est un lieu de vie. Malgré que certains élèves n'aiment pas l'école, l'école reste essentielle. »",
-              question: "Identifiez les deux problèmes de cohérence et corrigez.",
+              question: "Identifiez le problème de reprises et le problème de formulation de la concession, puis corrigez.",
               correction: [
                 {
                   type: "checklist",
@@ -861,11 +909,6 @@ export const ficheCoherenceTextuelle: Fiche = {
                   answer:
                     "« malgré que » + verbe est critiqué et refusé au concours.\nFormes correctes :\n« **Bien que** » / « **Quoique** » + subjonctif : « bien qu'il soit fatigué ».\n« **Malgré** » + groupe nominal : « malgré sa fatigue ».",
                 },
-                {
-                  question: "La double utilité de la cohérence textuelle ?",
-                  answer:
-                    "**Partie 1 (analyse) :** identifier reprises, connecteurs, champ lexical, et nommer leur type / leur effet.\n**Partie 3 (rédaction) :** reprises variées, connecteurs appropriés, progression lisible, plan annoncé et transitions.",
-                },
               ],
             },
           ],
@@ -898,11 +941,6 @@ export const ficheCoherenceTextuelle: Fiche = {
                   title: "Champ lexical",
                   lines: ["Relever les termes", "Nommer le champ", "Interpréter l'effet"],
                   variant: "blue",
-                },
-                {
-                  title: "Pièges classiques",
-                  lines: ["« malgré que » à proscrire", "Répétition sans reprise", "Lister sans interpréter"],
-                  variant: "yellow",
                 },
                 {
                   title: "Renvois",

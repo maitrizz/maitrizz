@@ -2,13 +2,13 @@ import type { Fiche } from "@/components/fiche/types";
 
 // Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
 const OBJECTIFS = [
-  { id: "en1", label: "Je distingue le discours ancré dans l'énonciation du récit coupé de l'énonciation (pronoms, temps, indicateurs)" },
-  { id: "en2", label: "J'identifie les embrayeurs (déictiques) : mots dont le sens dépend de la situation d'énonciation" },
-  { id: "en3", label: "Je reconnais le discours direct (guillemets, verbe introducteur, incise)" },
-  { id: "en4", label: "Je reconnais le discours indirect (subordonnée introduite par que / si / mot interrogatif / de + infinitif)" },
-  { id: "en5", label: "Je reconnais le discours indirect libre (ni guillemets ni verbe introducteur ; test du « pensa-t-il »)" },
+  { id: "en1", label: "Je distingue un énoncé ancré dans la situation d'énonciation d'un récit coupé de cette situation (pronoms, temps, repères)" },
+  { id: "en2", label: "J'identifie les embrayeurs (déictiques) et je précise ce qu'ils désignent dans le contexte" },
+  { id: "en3", label: "Je reconnais le discours direct et je sais commenter sa ponctuation (guillemets, tirets, incise)" },
+  { id: "en4", label: "Je reconnais le discours indirect et la construction utilisée : que, si, mot interrogatif ou de + infinitif" },
+  { id: "en5", label: "Je reconnais le discours indirect libre sans le confondre avec le discours indirect" },
   { id: "en6", label: "Je connais le récit de paroles (la prise de parole est mentionnée sans en reproduire le contenu)" },
-  { id: "en7", label: "J'applique la concordance des temps et la transposition des embrayeurs lors du passage au discours indirect" },
+  { id: "en7", label: "Je transpose au discours indirect en adaptant pronoms, temps, repères de lieu et repères de temps" },
 ];
 
 export const ficheEnonciationDiscoursRapporte: Fiche = {
@@ -41,12 +41,12 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               type: "sommaireApercu",
               title: "Le programme en 4 étapes",
               intro:
-                "Deux questions que le jury pose souvent : qui parle, depuis quelle situation ? et comment les paroles sont-elles rapportées ?",
+                "Deux questions reviennent souvent dans les sujets : qui prend en charge l'énoncé, depuis quelle situation ? et comment les paroles ou les pensées sont-elles rapportées ?",
               items: [
                 {
                   number: "①",
                   title: "L'énonciation",
-                  text: "Discours ancré dans l'énonciation ou récit coupé : on le repère aux pronoms, aux temps et aux indicateurs.",
+                  text: "Énoncé ancré ou récit coupé : on le repère aux personnes, aux temps verbaux et aux repères de lieu ou de temps.",
                 },
                 {
                   number: "②",
@@ -56,12 +56,12 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                 {
                   number: "③",
                   title: "Les formes du discours rapporté",
-                  text: "Discours direct, indirect, indirect libre, récit de paroles : reconnaître la forme et son effet.",
+                  text: "Discours direct, indirect, indirect libre, récit de paroles : reconnaître la forme, justifier par des indices et commenter l'effet.",
                 },
                 {
                   number: "④",
                   title: "La concordance des temps",
-                  text: "Au discours indirect, les temps et les embrayeurs se transforment selon le verbe introducteur.",
+                  text: "Au discours indirect, les temps, les pronoms et les repères se transforment selon le verbe introducteur et la situation.",
                 },
               ],
             },
@@ -77,7 +77,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Cette notion répond à deux questions liées : **qui parle dans ce texte et depuis quelle situation ?** (l'énonciation) et **comment les paroles d'un personnage sont-elles rapportées ?** (le discours rapporté). Identifier la façon dont un texte rapporte des paroles, c'est toujours analyser qui parle, depuis où, et avec quels mots.",
+              text: "Cette notion répond à deux questions liées : **qui prend en charge l'énoncé, et depuis quelle situation ?** (l'énonciation) et **comment les paroles ou les pensées sont-elles rapportées ?** (le discours rapporté). Au concours, il ne suffit pas de nommer une forme : il faut relever des indices précis (personnes, temps, ponctuation, verbe introducteur) et expliquer l'effet produit.",
             },
             {
               type: "subsection",
@@ -86,35 +86,45 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Avant d'analyser un texte, posez quatre questions : **qui parle ? à qui ? quand ? où ?** Selon les réponses, le texte relève de l'un des deux grands systèmes.",
+                  text: "Avant d'analyser un texte, posez quatre questions : **qui parle ? à qui ? quand ? où ?** Selon les réponses, l'énoncé est soit **ancré** dans une situation identifiable, soit **coupé** de cette situation et organisé comme un récit autonome.",
                 },
                 {
                   type: "notionCardGrid",
                   columns: 2,
                   cards: [
                     {
-                      title: "Discours ancré dans l'énonciation",
-                      definition: "Le locuteur parle en son nom, au moment où il écrit. On sent sa présence.",
+                      title: "Énoncé ancré dans la situation d'énonciation",
+                      definition: "L'énoncé dépend d'une situation identifiable : un locuteur s'adresse à un destinataire, dans un lieu et à un moment repérables.",
                       exemples: [
                         "« **Je** crois que lire est l'un des actes les plus libres. » (je, présent d'énonciation)",
                       ],
-                      test: "Indices : je, tu, nous, ici, maintenant, aujourd'hui ; présent, futur, passé composé. Textes : essai, lettre, discours, article.",
+                      test: "Indices fréquents : je, tu, nous, ici, maintenant, aujourd'hui ; présent, futur, passé composé. Textes fréquents : lettre, discours, article, essai, dialogue.",
                     },
                     {
                       title: "Récit coupé de l'énonciation",
-                      definition: "Le narrateur raconte une histoire autonome ; il s'efface. On ne sait pas qui raconte, et cela n'importe pas.",
+                      definition: "Le récit ne dépend pas directement du moment où quelqu'un parle : les repères sont internes à l'histoire racontée.",
                       exemples: [
                         "« Le facteur **distribuait** le courrier. **Il passa** devant la boulangerie. » (il, imparfait, passé simple)",
                       ],
-                      test: "Indices : il, elle, ils, ce jour-là, la veille, alors ; passé simple, imparfait, plus-que-parfait. Textes : roman, conte, fable.",
+                      test: "Indices fréquents : il, elle, ils, ce jour-là, la veille, alors ; passé simple, imparfait, plus-que-parfait. Textes fréquents : roman, conte, fable.",
                     },
+                  ],
+                },
+                {
+                  type: "table",
+                  title: "La phrase attendue au concours",
+                  headers: ["À faire", "Formulation efficace"],
+                  rows: [
+                    ["Identifier", "« Le passage relève majoritairement du récit coupé de l'énonciation. »"],
+                    ["Justifier", "« On le voit aux pronoms de 3e personne, aux temps du récit et aux repères internes comme “la veille”. »"],
+                    ["Nuancer", "« Le dialogue inséré crée toutefois une rupture : les paroles du personnage sont ancrées dans sa propre situation d'énonciation. »"],
                   ],
                 },
                 {
                   type: "callout",
                   variant: "info",
                   icon: "💡",
-                  text: "Un texte mêle souvent les deux : un roman (récit) contient des dialogues (discours ancré). On identifie le système **dominant** et on signale les ruptures.",
+                  text: "Un texte mêle souvent les deux systèmes : un roman relève du récit, mais ses dialogues sont ancrés dans la situation des personnages. On identifie le système **dominant** et on signale les ruptures utiles.",
                 },
               ],
             },
@@ -125,18 +135,25 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "On appelle **embrayeurs** (ou déictiques) les mots dont le sens change selon qui parle, où et quand. « je », « ici », « demain » ne désignent pas la même chose selon le locuteur, contrairement à « la table » ou « Paris », qui sont fixes.",
+                  text: "On appelle **embrayeurs** (ou déictiques) les mots dont le référent dépend de la situation d'énonciation. « je », « ici » ou « demain » ne désignent pas la même personne, le même lieu ou le même jour selon qui parle, où et quand. Au concours, il faut donc les relever et préciser leur référent dans le passage.",
                 },
                 {
                   type: "table",
                   title: "Les catégories d'embrayeurs",
                   headers: ["Catégorie", "Mots", "Ce qu'ils désignent"],
                   rows: [
-                    ["Pronoms de personne", "je, tu, nous, vous", "Le locuteur (je) et son destinataire (tu)"],
+                    ["Personnes", "je, tu, nous, vous, me, te, mon, votre", "Le locuteur, le destinataire ou leur groupe"],
                     ["Indicateurs de temps", "maintenant, aujourd'hui, hier, demain", "Le moment par rapport au moment où l'on parle"],
                     ["Indicateurs de lieu", "ici, là, ce lieu", "L'espace par rapport à la position du locuteur"],
-                    ["Démonstratifs", "ce, ceci, cela", "Ce que le locuteur montre ou désigne"],
+                    ["Démonstratifs", "ce, cette, ceci, cela", "Ce que le locuteur montre ou désigne dans la situation"],
                   ],
+                },
+                {
+                  type: "callout",
+                  variant: "warning",
+                  icon: "⚠️",
+                  title: "Déictique ou anaphorique ?",
+                  text: "Un même mot peut fonctionner différemment selon le contexte. Dans « **Ce** livre que tu tiens », « ce » est déictique : il désigne un objet présent dans la situation. Dans « Un livre était posé sur la table. **Ce** livre était ancien », « ce » est anaphorique : il reprend un élément déjà nommé. Cette distinction évite beaucoup d'analyses trop rapides.",
                 },
                 {
                   type: "callout",
@@ -153,7 +170,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Soit Paul a dit : « Je pars demain. » On peut rapporter ces paroles de quatre façons, et le jury peut demander laquelle est employée et quel effet elle produit.",
+                  text: "Soit Paul a dit : « Je pars demain. » On peut rapporter ces paroles de quatre façons. Une bonne réponse de concours nomme la forme, cite deux indices grammaticaux ou typographiques, puis commente l'effet produit.",
                 },
                 {
                   type: "notionCardGrid",
@@ -164,9 +181,9 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                       definition: "On reproduit les paroles mot pour mot.",
                       exemples: [
                         "Paul dit : « Je pars demain. »",
-                        "Incise : « C'est, **dit-il**, un cadavre. » (verbe introducteur intercalé, sujet inversé, sans majuscule)",
+                        "Incise : « Je pars demain, **dit-il**. » (verbe introducteur intercalé, sujet inversé, sans majuscule)",
                       ],
-                      test: "Guillemets (ou tirets de dialogue), deux-points, verbe introducteur (dire, répondre, s'écrier…), embrayeurs du personnage. Effet : authenticité, vivacité.",
+                      test: "Guillemets ou tirets de dialogue, deux-points possibles, verbe introducteur ou incise, embrayeurs du personnage. Effet : authenticité, vivacité, théâtralisation.",
                     },
                     {
                       title: "Discours indirect (DI)",
@@ -175,20 +192,20 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                         "Paul dit **qu'il partait le lendemain**.",
                         "Déclaration → que ; question totale → si ; question partielle → mot interrogatif ; ordre → de + infinitif.",
                       ],
-                      test: "Verbe introducteur + que / si / mot interrogatif / de + infinitif ; embrayeurs transposés ; concordance des temps. Effet : distance, intégration au récit.",
+                      test: "Verbe introducteur + que / si / mot interrogatif / de + infinitif ; embrayeurs transposés ; concordance des temps si l'introducteur est au passé. Effet : distance, intégration au récit.",
                     },
                     {
                       title: "Discours indirect libre (DIL)",
                       definition: "Les paroles ou pensées sont glissées dans le récit sans guillemets ni verbe introducteur.",
                       exemples: [
                         "« Il était furieux. **Il partirait dès l'aube, il n'en pouvait plus !** »",
-                        "Test : peut-on ajouter « pensa-t-il » sans changer le sens ? Si oui, c'est du DIL.",
+                        "Test utile : peut-on ajouter « pensa-t-il » ou « se disait-il » sans changer le sens ?",
                       ],
-                      test: "Ni guillemets ni verbe introducteur ; conditionnel ou imparfait ; ponctuation expressive ; 3e personne. Effet : intimité, fusion des voix narrateur / personnage.",
+                      test: "Ni guillemets ni verbe introducteur ; phrase autonome ; temps du récit (souvent imparfait ou conditionnel) ; marques expressives ou subjectives. Effet : accès aux pensées, fusion des voix narrateur / personnage.",
                     },
                     {
-                      title: "Récit de paroles",
-                      definition: "La prise de parole est mentionnée, sans en reproduire le contenu (discours narrativisé).",
+                      title: "Récit de paroles (discours narrativisé)",
+                      definition: "La prise de parole est résumée comme un événement du récit, sans reproduire précisément le contenu des mots prononcés.",
                       exemples: [
                         "« Il lui **annonça son départ** pour Paris. » ; « Elle lui **dit au revoir**. »",
                       ],
@@ -207,6 +224,13 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                     ["Récit de paroles", "Non", "Oui (sans contenu)", "Résumé, accélération"],
                   ],
                 },
+                {
+                  type: "callout",
+                  variant: "info",
+                  icon: "💡",
+                  title: "Formule d'analyse",
+                  text: "« Il s'agit de [forme] : on relève [indice 1] et [indice 2]. Ce choix produit un effet de [vivacité / distance / intériorité / accélération], car [explication liée au passage]. »",
+                },
               ],
             },
             {
@@ -216,17 +240,28 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Au discours indirect, il y a deux verbes : le **verbe introducteur** (dit, déclara…) et le verbe des paroles rapportées. La règle ne dépend que du temps du verbe introducteur.",
+                  text: "Au discours indirect, on adapte les paroles à la nouvelle phrase : les pronoms changent selon le locuteur, les repères de temps et de lieu deviennent relatifs au récit, et les temps verbaux suivent le temps du **verbe introducteur** (dit, déclara, avait répondu…).",
                 },
                 {
                   type: "formulaBlock",
                   title: "La règle en deux cas",
                   lines: [
                     "Verbe introducteur au PRÉSENT (il dit que…) : le verbe des paroles ne change pas.",
-                    "Verbe introducteur au PASSÉ (il déclara que…) : présent → imparfait ; futur → conditionnel ; passé composé → plus-que-parfait.",
+                    "Verbe introducteur au PASSÉ (il déclara que…, il a dit que…, il avait répondu que…) : présent → imparfait ; futur → conditionnel ; passé composé → plus-que-parfait.",
                     "Imparfait et conditionnel restent inchangés.",
                   ],
                   note: "Les embrayeurs se transposent aussi : demain → le lendemain, hier → la veille, aujourd'hui → ce jour-là.",
+                },
+                {
+                  type: "table",
+                  title: "Choisir la bonne construction indirecte",
+                  headers: ["Paroles directes", "Construction indirecte", "Exemple"],
+                  rows: [
+                    ["Déclaration", "que + proposition subordonnée", "« Je pars » → il dit **qu'il part**"],
+                    ["Question oui / non", "si + proposition subordonnée", "« Viens-tu ? » → il demande **si elle vient**"],
+                    ["Question avec mot interrogatif", "mot interrogatif conservé", "« Où vas-tu ? » → il demande **où elle va**"],
+                    ["Ordre ou conseil", "de + infinitif", "« Pars ! » → il lui dit **de partir**"],
+                  ],
                 },
                 {
                   type: "table",
@@ -245,11 +280,11 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
             {
               type: "piegeCard",
               variant: "rouge",
-              title: "Piège n°1 · présent d'énonciation ≠ présent de narration",
-              badge: "Confusion fréquente",
-              faux: "Analyser « On écrit parce qu'on ne sait pas » comme un présent de narration.",
-              vrai: "C'est un **présent d'énonciation** (à valeur de vérité générale) : le locuteur réfléchit dans le moment du discours. Le présent de narration anime, lui, un récit au passé (voir la notion 7).",
-              methode: "Se demander : le texte est-il un récit au passé (narration) ou un discours ancré dans le présent du locuteur (énonciation) ?",
+              title: "Piège n°1 · un dialogue ne rend pas tout le texte ancré",
+              badge: "Analyse trop rapide",
+              faux: "Dire qu'un extrait de récit est entièrement ancré dans l'énonciation parce qu'il contient une réplique au discours direct.",
+              vrai: "Un récit peut être **majoritairement coupé de l'énonciation** tout en contenant une rupture locale : le dialogue est ancré dans la situation du personnage, mais le cadre narratif reste au système du récit.",
+              methode: "Distinguer le **système dominant** du passage et les **ruptures locales** : narration, dialogue, pensée rapportée.",
             },
             {
               type: "piegeCard",
@@ -272,11 +307,11 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
             {
               type: "piegeCard",
               variant: "bleu",
-              title: "Piège n°4 · « on » n'est pas un pronom impersonnel",
-              badge: "Terminologie",
-              faux: "Analyser « on » (dans « on écrit… ») comme un pronom impersonnel.",
-              vrai: "« on » est un **pronom personnel indéfini** (3e personne du singulier) à valeur généralisante : il désigne un référent humain générique. Les pronoms impersonnels sont « il » dans « il faut », « il pleut » (sans référent).",
-              methode: "Réserver « impersonnel » à « il » des tournures sans référent ; « on » est toujours personnel indéfini.",
+              title: "Piège n°4 · transposer seulement les temps",
+              badge: "Transposition incomplète",
+              faux: "« Elle déclara : “Je prendrai mon train ici demain.” » → « Elle déclara qu'elle prendrait mon train ici demain. »",
+              vrai: "La concordance des temps ne suffit pas : il faut aussi transposer les **pronoms**, les **déterminants possessifs** et les **repères**. Correction : « Elle déclara **qu'elle prendrait son train là le lendemain**. »",
+              methode: "Faire trois vérifications : personne (je → elle), possession (mon → son), repères (ici → là ; demain → le lendemain).",
             },
             {
               type: "primaireBox",
@@ -305,20 +340,20 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
             },
             {
               type: "rappelExpress",
-              title: "Rappel express : les deux systèmes",
+              title: "Rappel express : ce qu'une réponse doit contenir",
               blocks: [
                 {
                   type: "formulaBlock",
                   lines: [
-                    "Discours ancré : je / tu, présent, ici / maintenant (le locuteur est présent).",
-                    "Récit coupé : il / elle, passé simple / imparfait, ce jour-là / la veille (le narrateur s'efface).",
-                    "Embrayeur = mot dont le sens dépend de la situation d'énonciation (voir aussi la notion 7 pour les valeurs des temps).",
+                    "Pour l'énonciation : nommer le système dominant, citer deux indices, puis signaler une rupture si elle existe.",
+                    "Pour le discours rapporté : nommer la forme, citer deux indices précis, puis commenter l'effet produit.",
+                    "Pour la transposition : vérifier la construction, les pronoms, les déterminants, les repères et les temps.",
                   ],
                 },
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ « est-ce que » disparaît au discours indirect ; le futur y devient conditionnel si le verbe introducteur est au passé.",
+                  text: "⚠️ Réponse trop courte = réponse fragile. « C'est du discours indirect libre » ne suffit pas : il faut prouver par les indices du passage.",
                 },
               ],
             },
@@ -327,22 +362,26 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               number: "①",
               title: "Identifier le système d'énonciation",
               intro:
-                "**Question typique :** « Ce texte est-il ancré dans l'énonciation ou coupé d'elle ? »\nOn relève les indices.",
+                "**Question typique :** « Ce texte est-il ancré dans l'énonciation ou coupé d'elle ? »\n**Exemples supports :** « Je vous écris depuis Rome, où je resterai jusqu'à demain. » / « Le facteur distribuait le courrier. Il passa devant la boulangerie. »\nOn relève les indices.",
               steps: [
                 {
                   number: "1",
-                  text: "**Repérer les pronoms** : je / tu (ancré) ou il / elle (récit).",
-                  example: { lines: ["« Le facteur distribuait… Il passa… » → il → récit"] },
+                  text: "**Repérer les personnes dominantes** : 1re / 2e personne dans un échange ou une prise de parole ; 3e personne dans un récit.",
+                  example: { lines: ["« Je vous écris… » → je / vous → énoncé ancré", "« Le facteur distribuait… Il passa… » → 3e personne + récit"] },
                 },
                 {
                   number: "2",
-                  text: "**Repérer les temps et les indicateurs** : présent + aujourd'hui (ancré) ou passé simple / imparfait + ce jour-là (récit).",
+                  text: "**Repérer les temps et les repères** : présent + aujourd'hui (ancré) ou passé simple / imparfait + ce jour-là (récit coupé).",
                   example: { lines: ["« distribuait, passa, ce jour-là » → système du récit"] },
                 },
                 {
-                  number: "💡",
-                  text: "**Conclure et signaler les ruptures** (un dialogue inséré dans un récit, par exemple).",
+                  number: "3",
+                  text: "**Conclure avec une phrase complète** et signaler les ruptures utiles (un dialogue inséré dans un récit, par exemple).",
                   warn: "⚠️ Identifier le système dominant, pas seulement une phrase isolée.",
+                },
+                {
+                  number: "✓",
+                  text: "**Réponse attendue :** le premier énoncé est ancré dans la situation d'énonciation (je / vous, présent, futur, demain) ; le second relève du récit coupé de l'énonciation (3e personne, imparfait, passé simple).",
                 },
               ],
             },
@@ -351,10 +390,10 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "« Je vous écris depuis Rome, où je resterai jusqu'à demain. » Ancré ou récit ? Un indice.",
+              question: "« Ce matin-là, Louise referma la porte. Elle savait qu'elle ne reviendrait pas avant longtemps. » Ancré ou récit ? Deux indices.",
               correction: [
-                { type: "line", text: "**Discours ancré dans l'énonciation** : pronoms « je / vous », présent et futur, embrayeurs « depuis Rome », « demain » qui dépendent de la situation du locuteur." },
-                { type: "note", text: "Trouvé ? Vous repérez les embrayeurs. Sinon, revoyez le tableau des indices." },
+                { type: "line", text: "**Récit coupé de l'énonciation** : 3e personne (« Louise », « elle »), passé simple (« referma »), imparfait (« savait ») et repère interne au récit (« ce matin-là »)." },
+                { type: "note", text: "Le bon réflexe : ne pas chercher seulement un pronom, mais croiser personnes, temps et repères." },
               ],
             },
             {
@@ -362,22 +401,26 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               number: "②",
               title: "Reconnaître la forme de discours rapporté",
               intro:
-                "**Question typique :** « Quelle est la forme de discours rapporté, et quel effet produit-elle ? »",
+                "**Question typique :** « Quelle est la forme de discours rapporté, et quel effet produit-elle ? »\n**Exemples supports :** « Il dit : “Je pars.” » / « Il dit qu'il partait. » / « Il partirait, c'était sûr ! »",
               steps: [
                 {
                   number: "1",
-                  text: "**Y a-t-il des guillemets et un verbe introducteur ?** Les deux → discours direct.",
+                  text: "**Y a-t-il des guillemets ou des tirets de dialogue ?** S'ils encadrent les paroles mêmes, c'est du discours direct.",
                   example: { lines: ["« Il dit : “Je pars.” » → discours direct"] },
                 },
                 {
                   number: "2",
-                  text: "**Un verbe introducteur + une subordonnée (que / si / de) ?** → discours indirect. **Aucun des deux, phrase autonome ?** → discours indirect libre.",
+                  text: "**Un verbe introducteur + une subordonnée (que / si / mot interrogatif) ou de + infinitif ?** C'est du discours indirect. **Aucun introducteur, phrase autonome, mais point de vue du personnage ?** C'est souvent du discours indirect libre.",
                   example: { lines: ["« Il dit qu'il partait » → DI ; « Il partirait, c'était sûr ! » → DIL"] },
                 },
                 {
-                  number: "💡",
-                  text: "**Nommer l'effet** : authenticité (DD), distance (DI), intimité (DIL), accélération (récit de paroles).",
+                  number: "3",
+                  text: "**Nommer l'effet en lien avec le passage** : authenticité (DD), distance (DI), intériorité (DIL), accélération (récit de paroles).",
                   warn: "⚠️ Pour le DIL, appliquer le test du « pensa-t-il ».",
+                },
+                {
+                  number: "✓",
+                  text: "**Réponse attendue :** le premier exemple est au discours direct (paroles citées entre guillemets) ; le deuxième est au discours indirect (verbe introducteur + que) ; le troisième relève du discours indirect libre (pas de guillemets ni d'introducteur, phrase autonome au conditionnel).",
                 },
               ],
             },
@@ -397,22 +440,26 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               number: "③",
               title: "Transposer du discours direct au discours indirect",
               intro:
-                "**Question typique :** « Transposez ce passage au discours indirect (verbe introducteur au passé). »",
+                "**Question typique :** « Transposez ce passage au discours indirect (verbe introducteur au passé). »\n**Exemples supports :** « Est-ce que tu viens ? » / « Je partirai demain. » / « Taisez-vous ! »",
               steps: [
                 {
                   number: "1",
-                  text: "**Choisir l'introducteur** : que (déclaration), si (question totale), mot interrogatif (question partielle), de + infinitif (ordre).",
+                  text: "**Choisir la construction** : que (déclaration), si (question totale), mot interrogatif (question partielle), de + infinitif (ordre).",
                   example: { lines: ["« Est-ce que tu viens ? » → … demanda s'il venait"] },
                 },
                 {
                   number: "2",
-                  text: "**Transposer les pronoms et les embrayeurs**, puis **appliquer la concordance des temps** (si le verbe introducteur est au passé).",
+                  text: "**Transposer les pronoms et les repères**, puis **appliquer la concordance des temps** si le verbe introducteur est au passé.",
                   example: { lines: ["« Je partirai demain » → qu'il partirait le lendemain"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Vérifier** : « est-ce que » a disparu, le futur est devenu conditionnel, « demain » est devenu « le lendemain ».",
                   warn: "⚠️ Imparfait et conditionnel ne changent pas, même avec un introducteur au passé.",
+                },
+                {
+                  number: "✓",
+                  text: "**Réponse attendue :** il demanda **si elle venait** ; il déclara **qu'il partirait le lendemain** ; il leur ordonna **de se taire**.",
                 },
               ],
             },
@@ -463,11 +510,11 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                   options: ["du discours ancré", "du récit coupé de l'énonciation", "du discours direct", "d'une lettre"],
                   correctIndex: 1,
                   explanation:
-                    "Pronoms de 3e personne (il), imparfait et passé simple : le narrateur s'efface, c'est un récit coupé de l'énonciation.",
+                    "Pronom de 3e personne (« il »), imparfait et passé simple : les repères sont internes au récit, c'est un récit coupé de l'énonciation.",
                 },
                 {
                   objectifId: "en2",
-                  question: "Dans « Je te parle depuis ici, aujourd'hui », combien d'embrayeurs ?",
+                  question: "Dans « Je te parle ici, aujourd'hui », combien d'embrayeurs ?",
                   options: ["Aucun", "Deux", "Quatre", "Un seul"],
                   correctIndex: 2,
                   explanation:
@@ -585,7 +632,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               level: "echauffement",
               title: "Exercice 3 : Repérer les embrayeurs",
               question:
-                "Relevez les embrayeurs et précisez ce qu'ils désignent :\na) « Je vous parle depuis ici, aujourd'hui. »   b) « Nous partirons demain matin. »   c) « Ce livre que tu tiens est le mien. »",
+                "Relevez les embrayeurs et précisez ce qu'ils désignent :\na) « Je vous parle ici, aujourd'hui. »   b) « Nous partirons demain matin. »   c) « Ce livre que tu tiens est le mien. »",
               correction: [
                 { type: "line", label: "a)", text: "« je » = le locuteur ; « vous » = le destinataire ; « ici » = le lieu du locuteur ; « aujourd'hui » = le jour de l'énonciation." },
                 { type: "line", label: "b)", text: "« Nous » = le locuteur et d'autres ; « demain » = le jour suivant le moment d'énonciation." },
@@ -603,12 +650,12 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 4 : Discours ancré ou récit ?",
-              enonce: "« Écrire n'est pas tout à fait un choix : c'est un aveu d'impuissance. On écrit parce qu'on ne sait par quel autre biais attraper le réel. »",
-              question: "a) Ce passage est-il ancré dans l'énonciation ou coupé d'elle ? Deux indices. b) Quel est le statut du pronom « on » ? Peut-on le remplacer par « il » ?",
+              title: "Exercice 4 : Système dominant et rupture",
+              enonce: "« Le soir tombait. Paul referma son cahier. “Je reviendrai demain”, murmura-t-il. Puis il sortit sans se retourner. »",
+              question: "a) Quel est le système d'énonciation dominant ? Donnez deux indices. b) Quelle rupture introduit la réplique entre guillemets ?",
               correction: [
-                { type: "line", label: "a)", text: "**Discours ancré** : présent à valeur de vérité générale (« est, écrit, sait »), absence des temps du récit (ni passé simple ni imparfait de narration). Le locuteur énonce une réflexion dans le présent du discours." },
-                { type: "line", label: "b)", text: "« on » est un **pronom personnel indéfini** à valeur généralisante (tout écrivain, le locuteur inclus). On **ne peut pas** le remplacer par « il » sans perdre la portée universelle." },
+                { type: "line", label: "a)", text: "**Récit coupé de l'énonciation** : 3e personne (« Paul », « il »), imparfait (« tombait ») et passé simple (« referma », « sortit »). Le passage est organisé comme une narration." },
+                { type: "line", label: "b)", text: "La réplique entre guillemets est au **discours direct** : elle crée une rupture locale ancrée dans la situation du personnage, avec « je » et « demain » qui valent pour Paul au moment où il parle." },
               ],
             },
             {
@@ -638,7 +685,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               enonce: "« Court à son compagnon, lui dit que c'est merveille / Qu'il n'ait eu seulement que la peur pour tout mal. » (La Fontaine, L'Ours et les Deux Compagnons)",
               question: "a) Identifiez la forme de discours rapporté (indices grammaticaux). b) Quel effet ce choix produit-il dans une fable ?",
               correction: [
-                { type: "line", label: "a)", text: "**Discours indirect** : verbe introducteur « dit » + subordonnée en « que » (« lui dit que c'est merveille / qu'il n'ait eu… »), pas de guillemets. Le verbe introducteur est au présent : pas de concordance, le présent et le subjonctif sont maintenus." },
+                { type: "line", label: "a)", text: "**Discours indirect** : verbe introducteur « dit » + subordonnée en « que » (« lui dit que c'est merveille / qu'il n'ait eu… »), pas de guillemets. Le verbe introducteur est au présent de narration : les temps des paroles rapportées ne sont pas transposés vers l'imparfait ou le plus-que-parfait." },
                 { type: "line", label: "b)", text: "Le discours indirect intègre les paroles au rythme narratif : il accélère le récit et maintient la voix du narrateur au premier plan, ce qui préserve la distance ironique propre à La Fontaine." },
               ],
             },
@@ -662,11 +709,11 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               title: "Exercice 1 : analyse complète d'un texte",
               enonce:
                 "« Elle posa la lettre sur la table. C'était fini, elle le savait. Jamais elle ne reviendrait dans cette maison.\n\nIl avait dit, la veille, qu'il ne comprenait pas. Comment pouvait-elle partir ainsi ?\n\nElle haussa les épaules. Il ne comprendrait jamais, de toute façon. Autant partir vite, sans se retourner. »",
-              question: "1) Le premier paragraphe est-il ancré ou coupé de l'énonciation (deux indices) ? 2) Forme du discours rapporté au deuxième paragraphe ? 3) Forme au troisième paragraphe (trois indices + effet) ? 4) Expliquez « la veille » (et non « hier »).",
+              question: "1) Le premier paragraphe est-il ancré ou coupé de l'énonciation (deux indices) ? 2) Quelles formes de discours rapporté trouve-t-on au deuxième paragraphe ? 3) Forme au troisième paragraphe (trois indices + effet) ? 4) Expliquez « la veille » (et non « hier »).",
               correction: [
-                { type: "line", text: "**1)** Récit coupé de l'énonciation : pronoms de 3e personne (« elle, ses »), imparfait et conditionnel ancrés dans le système du récit, pas d'embrayeurs déictiques." },
-                { type: "line", text: "**2)** Discours indirect : verbe introducteur « avait dit » + subordonnée en « que », concordance (présent → imparfait « ne comprenait »)." },
-                { type: "line", text: "**3)** Discours indirect libre : ni verbe introducteur ni guillemets ; conditionnel « ne comprendrait » (futur dans le passé) ; phrases courtes et résolues qui rendent la pensée du personnage. Effet : intimité, accès direct aux pensées, fusion des voix." },
+                { type: "line", text: "**1)** Récit coupé de l'énonciation : 3e personne (« elle »), passé simple (« posa »), imparfait (« savait ») et conditionnel à valeur de futur dans le passé (« reviendrait »). La phrase « C'était fini, elle le savait » fait déjà entendre la pensée du personnage sous forme de DIL." },
+                { type: "line", text: "**2)** Deux formes coexistent : « Il avait dit [...] qu'il ne comprenait pas » relève du discours indirect (verbe introducteur + que) ; « Comment pouvait-elle partir ainsi ? » relève du discours indirect libre, car la question exprime la pensée du personnage sans guillemets ni introducteur." },
+                { type: "line", text: "**3)** Discours indirect libre : ni verbe introducteur ni guillemets ; conditionnel « ne comprendrait » ; modalisation (« jamais », « de toute façon », « autant ») qui rend la pensée du personnage. Effet : accès direct à l'intériorité et fusion des voix narrateur / personnage." },
                 { type: "line", text: "**4)** « la veille » est la transposition de « hier » : au discours indirect, les embrayeurs deviennent des indicateurs relatifs au récit (hier → la veille, demain → le lendemain, aujourd'hui → ce jour-là)." },
               ],
             },
@@ -699,16 +746,16 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : présent de narration",
-              enonce: "Réponse d'un candidat : « Le présent dans “On écrit parce qu'on ne sait pas” est un présent de narration. »",
-              question: "Identifiez l'erreur et précisez la valeur exacte du présent.",
+              title: "Exercice 1 · Réponse à corriger : système dominant",
+              enonce: "Passage : « La pluie tombait depuis l'aube. L'enfant ouvrit la fenêtre. “Je n'ai pas peur”, dit-il. Puis il descendit l'escalier. »\nRéponse d'un candidat : « Le passage relève du discours ancré, puisqu'il contient une réplique entre guillemets. »",
+              question: "Identifiez l'erreur et proposez une réponse plus précise.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "Le présent de narration s'emploie dans un récit au passé pour créer de la vivacité ; ce n'est pas le cas ici", bad: true },
-                    { text: "Le texte est ancré dans l'énonciation (réflexion), pas dans un récit" },
-                    { text: "Réponse attendue : c'est un **présent d'énonciation** à valeur de vérité générale (voir la notion 7)" },
+                    { text: "La présence d'une réplique ne suffit pas à qualifier tout le passage", bad: true },
+                    { text: "Il faut distinguer le cadre narratif dominant et la rupture locale créée par le dialogue" },
+                    { text: "Réponse attendue : « Le passage relève majoritairement du récit coupé de l'énonciation ; la réplique au discours direct constitue une rupture ancrée dans la situation du personnage. »" },
                   ],
                 },
               ],
@@ -750,16 +797,16 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 4 · Réponse à corriger : « on » impersonnel",
-              enonce: "Réponse d'un candidat : « Le pronom “on” dans “on écrit” est un pronom impersonnel. »",
-              question: "Identifiez l'erreur et donnez la bonne analyse.",
+              title: "Exercice 4 · Réponse à corriger : transposition incomplète",
+              enonce: "Transposition d'un candidat : « Elle déclara : “Je prendrai mon train ici demain.” » → « Elle déclara qu'elle prendrait mon train ici demain. »",
+              question: "Identifiez les éléments non transposés et corrigez.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "« on » n'est pas impersonnel : les pronoms impersonnels sont « il » de « il faut / il pleut » (sans référent)", bad: true },
-                    { text: "« on » désigne bien un référent humain générique" },
-                    { text: "Réponse attendue : « on » est un **pronom personnel indéfini** (3e personne du singulier) à valeur généralisante" },
+                    { text: "« mon » n'a pas été transposé : il faut « son » si le train est celui du personnage", bad: true },
+                    { text: "« ici » et « demain » sont des embrayeurs : ils doivent devenir « là » et « le lendemain »", bad: true },
+                    { text: "Réponse attendue : « Elle déclara **qu'elle prendrait son train là le lendemain**. »" },
                   ],
                 },
               ],
@@ -768,7 +815,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               type: "exerciceCard",
               variant: "err-type",
               title: "Exercice 5 · Réponse à corriger : DI ou DIL ?",
-              enonce: "Réponse d'un candidat : « “Il partirait dès l'aube !” est du discours indirect car il n'y a pas de guillemets. »",
+              enonce: "Passage : « Il regarda une dernière fois la maison. Il partirait dès l'aube ! »\nRéponse d'un candidat : « “Il partirait dès l'aube !” est du discours indirect car il n'y a pas de guillemets. »",
               question: "Identifiez l'erreur sur la distinction DI / DIL et corrigez.",
               correction: [
                 {
