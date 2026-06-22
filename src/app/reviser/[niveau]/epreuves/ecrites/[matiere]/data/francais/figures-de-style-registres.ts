@@ -77,7 +77,7 @@ export const ficheFiguresRegistres: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Les figures de style exploitent les ressources du langage pour produire un effet. Au concours, on demande systématiquement d'**identifier** la figure, de la **nommer** précisément, et surtout d'**analyser son effet** dans le texte. Les figures sont en général reconnues ; c'est l'analyse de leur effet qui fait souvent défaut. Cette notion prolonge le sens propre / figuré vu à la notion 17.",
+              text: "Les figures de style exploitent les ressources du langage pour produire un **effet**. Au concours, on demande systématiquement d'**identifier** la figure, de la **nommer** précisément, et surtout d'**analyser son effet** dans le texte. La plupart des candidats savent reconnaître et nommer une figure ; c'est l'analyse de l'effet qui fait défaut, et c'est précisément là que se jouent les points. Retenez ce réflexe dès maintenant : une figure repérée n'a de valeur que si vous dites ce qu'elle produit. Cette notion prolonge le sens propre et le sens figuré vus à la fiche [relations sémantiques](fiche:relations-semantiques) ; sur l'enseignement du lexique, voir les [ressources Lexique et culture d'Éduscol](https://eduscol.education.fr/255/lexique-et-culture).",
             },
             {
               type: "subsection",
@@ -94,7 +94,8 @@ export const ficheFiguresRegistres: Fiche = {
                       exemples: [
                         "« Vivre, sans l'écriture, me va mal, **comme** un habit trop lâche. » (comparé : la vie sans écriture ; outil : comme ; comparant : un habit trop lâche)",
                       ],
-                      test: "Effet : fait ressentir une idée abstraite ; la ressemblance est suggérée, non imposée.",
+                      astuce: "Test : un outil visible (comme, tel, semblable à) → comparaison.",
+                      test: "**Effet :** rend sensible une idée abstraite par une image concrète ; la ressemblance est suggérée, non imposée, ce qui laisse au lecteur une marge d'interprétation.",
                     },
                     {
                       title: "Métaphore",
@@ -102,7 +103,8 @@ export const ficheFiguresRegistres: Fiche = {
                       exemples: [
                         "« ma route est une impasse » ; « une humble flamme » (l'inspiration) ; « l'éclaboussure des âmes humaines » (les vices)",
                       ],
-                      test: "On peut souvent y réinsérer « comme » pour la transformer en comparaison.",
+                      astuce: "On peut souvent y réinsérer « comme » pour la transformer en comparaison.",
+                      test: "**Effet :** rapprochement plus dense et plus saisissant que la comparaison ; en fondant les deux termes, la métaphore condense l'image et oblige le lecteur à reconstruire le lien, donc à s'impliquer.",
                     },
                     {
                       title: "Métaphore filée",
@@ -110,15 +112,15 @@ export const ficheFiguresRegistres: Fiche = {
                       exemples: [
                         "Métaphore du voyage désorienté : route, impasse, chemin sans destination, terres inconnues, à tâtons, trébucher",
                       ],
-                      test: "Effet : crée une cohérence d'image sur tout le passage ; son identification révèle une lecture globale (valorisée).",
+                      test: "**Effet :** tisse une cohérence d'image sur tout le passage et installe une vision d'ensemble ; la repérer prouve une lecture globale du texte, ce que le jury valorise.",
                     },
                     {
                       title: "Personnification",
-                      definition: "Attribue des caractéristiques humaines à un inanimé, un animal ou une abstraction.",
+                      definition: "Attribue des caractéristiques humaines (action, sentiment, volonté) à un inanimé, un animal ou une abstraction.",
                       exemples: [
                         "« la langue n'est pas un objet inerte… c'est elle qui nous transforme » : la langue agit comme un sujet",
                       ],
-                      test: "Effet : donne vie et agentivité, peut inverser un rapport de force.",
+                      test: "**Effet :** donne vie, mouvement et volonté à ce qui n'en a pas ; peut inverser un rapport de force, rendre une abstraction menaçante ou attendrissante selon le contexte.",
                     },
                   ],
                 },
@@ -137,15 +139,39 @@ export const ficheFiguresRegistres: Fiche = {
               title: "Figures d'insistance et d'opposition",
               blocks: [
                 {
-                  type: "table",
-                  title: "Les principales figures",
-                  headers: ["Figure", "Principe", "Exemple"],
-                  rows: [
-                    ["Hyperbole", "Exagération volontaire (amplification)", "« des torrents de larmes », « je meurs de faim »"],
-                    ["Litote", "Dire moins pour suggérer davantage", "« Va, je ne te hais point » (= je t'aime)"],
-                    ["Antithèse", "Opposer deux termes contraires dans l'énoncé", "« le regard ne vieillissait pas »"],
-                    ["Oxymore", "Réunir deux termes contradictoires dans le même groupe", "« une obscure clarté », « un silence éloquent »"],
-                    ["Anaphore", "Répéter un mot en début de phrase ou de membre", "« Je suis monté… j'ai vu… je suis descendu… »"],
+                  type: "notionCardGrid",
+                  columns: 1,
+                  cards: [
+                    {
+                      title: "Hyperbole",
+                      definition: "Exagération volontaire, par amplification.",
+                      exemples: ["« des torrents de larmes » ; « je meurs de faim »"],
+                      test: "**Effet :** frappe l'imagination, dramatise ou amuse ; donne du relief à une émotion.",
+                    },
+                    {
+                      title: "Litote",
+                      definition: "Dire moins pour suggérer davantage.",
+                      exemples: ["« Va, je ne te hais point » (= je t'aime)"],
+                      test: "**Effet :** renforce par la retenue ; l'atténuation laisse deviner une intensité plus grande.",
+                    },
+                    {
+                      title: "Antithèse",
+                      definition: "Oppose deux termes contraires placés dans des groupes distincts.",
+                      exemples: ["« Je vis, je meurs. » (Louise Labé)"],
+                      test: "**Effet :** met un contraste en relief, structure une opposition d'idées et dynamise le propos.",
+                    },
+                    {
+                      title: "Oxymore",
+                      definition: "Réunit deux termes contradictoires dans le même groupe de mots.",
+                      exemples: ["« une obscure clarté » ; « un silence éloquent »"],
+                      test: "**Effet :** crée une tension, exprime un paradoxe ou un trouble que les mots seuls ne diraient pas.",
+                    },
+                    {
+                      title: "Anaphore",
+                      definition: "Répète un mot en début de phrase ou de membre de phrase.",
+                      exemples: ["« Je suis monté… j'ai vu… je suis descendu… »"],
+                      test: "**Effet :** martèle, rythme et insiste ; crée un effet d'accumulation et d'amplification.",
+                    },
                   ],
                 },
                 {
@@ -172,22 +198,22 @@ export const ficheFiguresRegistres: Fiche = {
                 {
                   type: "table",
                   title: "Registres de langue (niveaux de langue)",
-                  headers: ["Registre", "Caractéristiques", "Exemple"],
+                  headers: ["Registre", "Caractéristiques", "Exemple", "Ce qu'il révèle"],
                   rows: [
-                    ["Soutenu", "Vocabulaire recherché, syntaxe complexe, tournures littéraires", "« Je ne saurais y consentir. »"],
-                    ["Courant", "Vocabulaire standard, syntaxe correcte sans recherche", "« Je ne peux pas accepter. »"],
-                    ["Familier", "Vocabulaire relâché, syntaxe simplifiée, expressions populaires", "« J'peux pas. »"],
+                    ["Soutenu", "Vocabulaire recherché, syntaxe complexe, tournures littéraires", "« Je ne saurais y consentir. »", "Distance, solennité, maîtrise de la langue ou milieu cultivé"],
+                    ["Courant", "Vocabulaire standard, syntaxe correcte sans recherche", "« Je ne peux pas accepter. »", "Neutralité, communication ordinaire entre locuteurs"],
+                    ["Familier", "Vocabulaire relâché, syntaxe simplifiée, expressions populaires", "« J'peux pas. »", "Proximité, oralité, spontanéité ; sert souvent à camper un personnage"],
                   ],
                 },
                 {
                   type: "table",
                   title: "Registres littéraires (ton et atmosphère)",
-                  headers: ["Registre", "Caractéristiques"],
+                  headers: ["Registre", "Caractéristiques", "Effet recherché sur le lecteur"],
                   rows: [
-                    ["Lyrique", "Expression des émotions intimes, « je », vocabulaire des sentiments"],
-                    ["Épique", "Grandeur, héroïsme, amplification"],
-                    ["Pathétique", "Émotion intense, souffrance, pitié"],
-                    ["Comique / ironique", "Décalage, jeu de langage, dire le contraire de ce qu'on pense"],
+                    ["Lyrique", "Expression des émotions intimes, « je », vocabulaire des sentiments", "Émouvoir, faire partager une émotion personnelle, susciter l'identification"],
+                    ["Épique", "Grandeur, héroïsme, amplification (hyperboles, pluriels)", "Grandir le sujet, susciter l'admiration, donner une dimension collective"],
+                    ["Pathétique", "Émotion intense, souffrance, malheur", "Émouvoir, susciter la pitié et la compassion pour un personnage"],
+                    ["Comique / ironique", "Décalage, jeu de langage, dire le contraire de ce qu'on pense", "Faire rire ou sourire ; l'ironie critique en gardant une distance"],
                   ],
                 },
                 {
@@ -238,7 +264,7 @@ export const ficheFiguresRegistres: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 3-4 :** les élèves découvrent la comparaison et la métaphore simples, jouent avec le langage (sens propre / figuré déjà travaillé), et commencent à percevoir l'effet d'une image.\n\n**Ce que vous devez savoir dire :** « On enseigne d'abord la comparaison (avec “comme”), repère le plus simple, avant la métaphore. L'objectif n'est pas d'étiqueter des figures mais de faire sentir ce qu'une image apporte au texte. »",
+              text: "**Cycle 1 (maternelle) :** on joue avec les sonorités et le langage (comptines, rimes, formulettes), et les enfants rencontrent des expressions imagées sans aucune analyse.\n\n**Cycle 2 :** on distingue le sens propre du sens figuré (« il pleut des cordes »), on explique des expressions imagées du quotidien et on travaille les niveaux de langue à l'oral (adapter sa façon de parler selon la situation).\n\n**Cycle 3 :** les élèves découvrent la comparaison puis la métaphore simples, et commencent à percevoir l'effet d'une image dans un texte lu ; l'écart entre langage courant et langage soutenu se précise.\n\n**Ce que vous devez savoir dire :** « On enseigne d'abord la comparaison (repérable à “comme”) avant la métaphore, car elle est plus explicite. L'objectif n'est pas d'étiqueter des figures, mais de faire sentir ce qu'une image apporte au texte. » (voir [Éduscol, Lexique et culture](https://eduscol.education.fr/255/lexique-et-culture) et l'[étude de la langue cycles 2 et 3](https://eduscol.education.fr/248/francais-cycles-2-et-3-etude-de-la-langue))",
             },
             {
               type: "ctaBox",
@@ -257,8 +283,8 @@ export const ficheFiguresRegistres: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              title: "Trois démarches",
-              text: "Distinguer comparaison et métaphore (et repérer la filée), identifier le registre, et rédiger l'analyse d'une figure. Chacune se termine par un checkpoint.",
+              title: "La méthode d'analyse, pas à pas",
+              text: "Repérer la famille d'une figure et la nommer précisément, identifier le registre, puis rédiger une analyse complète : ces démarches valent pour toutes les figures, pas seulement la comparaison et la métaphore. Chacune se termine par un checkpoint et par la formulation exacte attendue le jour J.",
             },
             {
               type: "rappelExpress",
@@ -282,24 +308,29 @@ export const ficheFiguresRegistres: Fiche = {
             {
               type: "methodeGroup",
               number: "①",
-              title: "Distinguer comparaison et métaphore",
+              title: "Repérer la famille d'une figure et la nommer précisément",
               intro:
-                "**Question typique :** « Identifiez et nommez la figure de style. »",
+                "**Question typique :** « Relevez et nommez précisément la figure de style dans la phrase : “ma route est une impasse”. » La même démarche s'applique à toute figure, quelle que soit sa famille.",
               steps: [
                 {
                   number: "1",
-                  text: "**Chercher un outil de comparaison** (comme, tel, semblable à, ressembler à).",
-                  example: { lines: ["« semblable à la barre d'une danseuse » → outil → comparaison"] },
+                  text: "**Repérer l'écart de langage et le classer dans une famille.** Un rapprochement de sens → analogie (comparaison, métaphore, personnification). Une exagération ou une atténuation → insistance (hyperbole, litote). Des termes contraires → opposition (antithèse, oxymore). Une répétition en tête de membre → anaphore.",
+                  example: { lines: ["« ma route est une impasse » : l'écriture est rapprochée d'un chemin → famille de l'analogie."] },
                 },
                 {
                   number: "2",
-                  text: "**Sans outil, c'est une métaphore.** Vérifier ensuite si elle est filée (plusieurs termes du même domaine).",
-                  example: { lines: ["« route, impasse, chemin sans destination » → métaphore filée du voyage"] },
+                  text: "**Affiner dans la famille.** Pour l'analogie, chercher l'outil de comparaison (comme, tel, semblable à) : présent → comparaison, absent → métaphore. Pour l'opposition, regarder si les contraires sont dans des groupes distincts (antithèse) ou dans le même groupe (oxymore).",
+                  example: { lines: ["Aucun outil, le verbe « est » assimile directement → métaphore (et non comparaison)."] },
+                  warn: "⚠️ Le geste décisif : ne jamais appeler « métaphore » une image construite avec « comme ». C'est l'erreur de nomenclature la plus sanctionnée.",
+                },
+                {
+                  number: "3",
+                  text: "**Vérifier l'extension de l'image** : pour une métaphore, relire le passage pour repérer d'autres termes du même domaine. S'il y en a, elle est filée.",
+                  example: { lines: ["« route, impasse, chemin sans destination, terres inconnues, à tâtons » → métaphore filée du voyage."] },
                 },
                 {
                   number: "💡",
-                  text: "**Nommer précisément** : métaphore simple ou filée, comparaison.",
-                  warn: "⚠️ Ne pas appeler « métaphore » une image avec « comme ».",
+                  text: "**Réponse attendue (formulation modèle) :** « “ma route est une impasse” est une métaphore : l'écriture est assimilée à un chemin sans issue, sans outil de comparaison. Elle s'inscrit dans une métaphore filée du voyage désorienté, développée sur tout le passage (route, impasse, terres inconnues, à tâtons), qui construit l'écriture comme une errance risquée. »",
                 },
               ],
             },
@@ -308,33 +339,34 @@ export const ficheFiguresRegistres: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "« Ses yeux brillaient comme des étoiles. » Comparaison ou métaphore ?",
+              question: "Nommez précisément la figure dans : « Ses yeux brillaient comme des étoiles. »",
               correction: [
-                { type: "line", text: "**Comparaison** : l'outil « comme » rapproche les yeux des étoiles. Pour une métaphore, il faudrait : « Ses yeux, deux étoiles. »" },
-                { type: "note", text: "Trouvé l'outil ? Sinon, revoyez la distinction comparaison / métaphore." },
+                { type: "line", text: "**Explication :** la présence de l'outil « comme » classe l'image dans l'analogie et tranche : c'est une comparaison, pas une métaphore. Pour une métaphore, il faudrait supprimer l'outil (« Ses yeux, deux étoiles »)." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « “comme des étoiles” est une comparaison : les yeux (comparé) sont rapprochés des étoiles (comparant) au moyen de l'outil “comme”. L'image suggère leur éclat et leur vivacité. »" },
+                { type: "note", text: "Outil repéré du premier coup ? Sinon, revoyez la distinction comparaison / métaphore." },
               ],
             },
             {
               type: "methodeGroup",
               number: "②",
-              title: "Identifier le registre",
+              title: "Identifier le registre (de langue puis littéraire)",
               intro:
-                "**Question typique :** « Quel est le registre de ce passage ? »",
+                "**Question typique :** « Caractérisez le registre du passage : “Ô mon fils, mon unique espérance, faut-il que je te survive ?” »",
               steps: [
                 {
                   number: "1",
-                  text: "**Registre de langue** : observer le vocabulaire et la syntaxe (soutenu, courant, familier).",
-                  example: { lines: ["vocabulaire recherché + syntaxe complexe → soutenu"] },
+                  text: "**Identifier le registre de langue** en observant le vocabulaire et la syntaxe : recherché → soutenu, standard → courant, relâché → familier.",
+                  example: { lines: ["« faut-il que je te survive », tournure soignée et lexique choisi → registre de langue soutenu."] },
                 },
                 {
                   number: "2",
-                  text: "**Registre littéraire** : observer le ton et l'effet visé (lyrique, épique, pathétique, comique, ironique).",
-                  example: { lines: ["émotion intime + « je » → lyrique"] },
+                  text: "**Identifier le registre littéraire** en observant le ton, l'émotion et l'effet visé : souffrance et pitié → pathétique, émotion intime et « je » → lyrique, grandeur → épique, décalage et raillerie → comique ou ironique.",
+                  example: { lines: ["l'apostrophe « Ô mon fils » et l'expression de la douleur appellent la pitié → registre pathétique."] },
+                  warn: "⚠️ Le piège à éviter : traiter « soutenu » (registre de langue) et « pathétique » (registre littéraire) comme s'ils étaient de même nature. Ce sont deux niveaux d'analyse, et un texte cumule souvent les deux.",
                 },
                 {
                   number: "💡",
-                  text: "**Préciser les deux si la question le permet** : ce sont des niveaux d'analyse distincts.",
-                  warn: "⚠️ Ne pas mélanger « soutenu » (langue) et « pathétique » (littéraire) comme s'ils étaient de même nature.",
+                  text: "**Réponse attendue (formulation modèle) :** « Ce passage relève d'un registre de langue soutenu (syntaxe soignée, lexique choisi) et d'un registre littéraire pathétique : l'apostrophe et l'expression de la douleur paternelle suscitent la pitié du lecteur. »",
                 },
               ],
             },
@@ -343,33 +375,39 @@ export const ficheFiguresRegistres: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "« Monte en moi une humble flamme. » Quel registre littéraire ?",
+              question: "« Monte en moi une humble flamme. » Quel registre littéraire, et pourquoi ?",
               correction: [
-                { type: "line", text: "**Lyrique** : expression d'une émotion intérieure, présence du « moi » poétique, élévation spirituelle." },
+                { type: "line", text: "**Explication :** l'expression d'une émotion intérieure, la présence du « moi » poétique et l'élan spirituel sont les marques du registre lyrique." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « Ce vers relève du registre lyrique : l'image de la “flamme” qui “monte en moi” traduit une émotion intime et un élan intérieur, soutenus par la présence du “je” poétique. »" },
                 { type: "note", text: "Le registre littéraire repéré ? Direction le dernier checkpoint." },
               ],
             },
             {
               type: "methodeGroup",
               number: "③",
-              title: "Rédiger l'analyse d'une figure",
+              title: "Rédiger l'analyse complète d'une figure (les quatre temps)",
               intro:
-                "**Question typique :** « Relevez et analysez un procédé stylistique. »\nQuatre temps.",
+                "**Question typique :** « Relevez et analysez un procédé stylistique dans : “l'éclaboussure des âmes humaines” (Lola Lafon). » Le jury attend quatre temps enchaînés.",
               steps: [
                 {
                   number: "1",
                   text: "**Nommer** la figure et **citer** le passage exact entre guillemets.",
-                  example: { lines: ["« l'éclaboussure des âmes humaines » est une métaphore"] },
+                  example: { lines: ["« l'éclaboussure des âmes humaines » est une métaphore."] },
                 },
                 {
                   number: "2",
-                  text: "**Expliquer le mécanisme** (comparé, comparant, outil ou absence d'outil).",
-                  example: { lines: ["les vices humains sont assimilés à une projection de boue, sans outil"] },
+                  text: "**Expliquer le mécanisme** : repérer le comparé, le comparant, et la présence ou l'absence d'outil.",
+                  example: { lines: ["la part trouble des humains (comparé) est assimilée à une projection de boue, une éclaboussure (comparant), sans outil de comparaison."] },
+                },
+                {
+                  number: "3",
+                  text: "**Analyser l'effet** dans le texte : ce que l'image suggère, le sens qu'elle apporte au propos.",
+                  example: { lines: ["l'image de la souillure rend tangible la laideur morale et traduit un regard lucide, presque amer, sur l'humanité."] },
+                  warn: "⚠️ Le geste qui rapporte les points : analyser l'effet. Nommer et paraphraser sans l'effet ne vaut presque rien au concours.",
                 },
                 {
                   number: "💡",
-                  text: "**Analyser l'effet** dans le texte : que suggère l'image, quel sens apporte-t-elle ?",
-                  warn: "⚠️ L'analyse de l'effet est indispensable : paraphraser ne suffit pas.",
+                  text: "**Réponse attendue (formulation modèle) :** « “l'éclaboussure des âmes humaines” est une métaphore : la part trouble des hommes est assimilée à une projection de boue, sans outil de comparaison. L'image de la souillure rend concrète et visible la laideur morale, et traduit le regard sans complaisance de l'autrice sur l'humanité. »",
                 },
               ],
             },
@@ -378,9 +416,10 @@ export const ficheFiguresRegistres: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "Analysez « le vide de sa vie s'étendre autour de lui » (nommer + effet).",
+              question: "Analysez la phrase « Il sentait le vide de sa vie s'étendre autour de lui. » : nommez la figure et analysez son effet.",
               correction: [
-                { type: "line", text: "**Métaphore** : le vide (abstrait, intérieur) est spatialisé, il « s'étend » comme un espace physique. **Effet** : la souffrance psychologique devient presque tangible, le lecteur perçoit l'étendue du vide." },
+                { type: "line", text: "**Explication :** un sentiment abstrait, le vide intérieur, reçoit une réalité spatiale (il « s'étend autour de lui »), sans outil de comparaison : c'est une métaphore. L'effet tient à cette spatialisation, qui rend la souffrance presque palpable." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « L'expression “le vide de sa vie s'étendre autour de lui” est une métaphore : le vide intérieur, abstrait, est spatialisé comme un espace physique qui s'étend. L'image rend la souffrance psychologique tangible et en fait percevoir l'ampleur. »" },
                 { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
               ],
             },
@@ -519,7 +558,8 @@ export const ficheFiguresRegistres: Fiche = {
               question:
                 "Nommez la figure :\na) « Il pleut des cordes. » · b) « Ce devoir n'est pas mal. » · c) « La vie est un voyage. » · d) « Je meurs de soif. » · e) « Le temps dévore tout. » · f) « une obscure clarté »",
               correction: [
-                { type: "line", text: "a) métaphore · b) litote (= très bien) · c) métaphore · d) hyperbole · e) personnification · f) oxymore." },
+                { type: "line", text: "**Explication (le réflexe) :** repérer l'écart, puis classer dans une famille. a) image sans outil → métaphore (la pluie est assimilée à des cordes) · b) atténuation qui en dit plus → litote (« pas mal » = très bien) · c) assimilation sans outil → métaphore · d) exagération → hyperbole · e) action humaine prêtée à une abstraction → personnification · f) deux contraires dans le même groupe → oxymore." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « a) métaphore · b) litote · c) métaphore · d) hyperbole · e) personnification · f) oxymore. »" },
               ],
             },
             {
@@ -531,7 +571,8 @@ export const ficheFiguresRegistres: Fiche = {
               question:
                 "Comparaison ou métaphore ? Indiquez l'outil s'il y en a un :\na) « fort comme un bœuf » · b) « c'est un bœuf, cet homme » · c) « ses yeux, deux étoiles » · d) « elle travaille telle une fourmi »",
               correction: [
-                { type: "line", text: "a) comparaison (comme) · b) métaphore (pas d'outil) · c) métaphore (apposition directe) · d) comparaison (telle)." },
+                { type: "line", text: "**Explication (le test) :** chercher un outil de comparaison. S'il y en a un, c'est une comparaison ; sinon, c'est une métaphore. a) outil « comme » · b) aucun outil, le verbe « est » assimile · c) aucun outil, apposition directe · d) outil « telle »." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « a) comparaison (outil “comme”) · b) métaphore (pas d'outil) · c) métaphore (apposition directe) · d) comparaison (outil “telle”). »" },
               ],
             },
             {
@@ -542,9 +583,10 @@ export const ficheFiguresRegistres: Fiche = {
               question:
                 "Indiquez le registre de langue, puis reformulez en registre courant :\na) « Je n'ai pu y consentir. » · b) « J'peux pas. » · c) « C'est nul. »",
               correction: [
-                { type: "line", label: "a)", text: "soutenu → « Je n'ai pas pu accepter. »" },
-                { type: "line", label: "b)", text: "familier → « Je ne peux pas. »" },
-                { type: "line", label: "c)", text: "familier → « Ce n'est pas satisfaisant. »" },
+                { type: "line", text: "**Explication :** on lit le registre de langue dans le vocabulaire et la syntaxe. a) tournure soignée (« je n'ai pu », « consentir ») → soutenu · b) élision relâchée et omission du « ne » → familier · c) terme et construction relâchés → familier." },
+                { type: "line", label: "a)", text: "**Réponse attendue :** soutenu → reformulation courante : « Je n'ai pas pu accepter. »" },
+                { type: "line", label: "b)", text: "**Réponse attendue :** familier → reformulation courante : « Je ne peux pas. »" },
+                { type: "line", label: "c)", text: "**Réponse attendue :** familier → reformulation courante : « Ce n'est pas satisfaisant. »" },
               ],
             },
             {
@@ -562,8 +604,8 @@ export const ficheFiguresRegistres: Fiche = {
               enonce: "« Vivre, sans l'écriture, me va mal, comme un habit trop lâche dans lequel je m'empêtre. » (Lola Lafon)",
               question: "Nommez la figure, expliquez son mécanisme et analysez son effet.",
               correction: [
-                { type: "line", text: "**Comparaison** (outil « comme ») : la vie sans écriture est comparée à un habit trop lâche. Doublée d'une **litote** (« me va mal »)." },
-                { type: "line", text: "**Effet** : l'image du vêtement mal taillé corporalise une sensation abstraite ; « m'empêtre » prolonge l'idée d'entrave physique. Sans écriture, l'autrice ne tient pas dans sa propre vie." },
+                { type: "line", text: "**Explication (mécanisme) :** l'outil « comme » signale une comparaison (la vie sans écriture, comparé ; un habit trop lâche, comparant). Elle se double d'une litote (« me va mal », qui en dit moins que la réalité)." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « “comme un habit trop lâche” est une comparaison : la vie sans écriture est rapprochée d'un vêtement mal taillé au moyen de l'outil “comme”. L'image corporalise une sensation abstraite, et le verbe “m'empêtre” prolonge l'idée d'entrave physique : sans écriture, l'autrice ne tient pas dans sa propre vie. La litote “me va mal” suggère, par retenue, une véritable nécessité vitale. »" },
               ],
             },
             {
@@ -574,8 +616,8 @@ export const ficheFiguresRegistres: Fiche = {
               enonce: "« ma route est une impasse / chemin sans destination / terres inconnues / à tâtons / trébucher » (Lola Lafon)",
               question: "Identifiez et analysez la métaphore filée : domaine comparant, termes, effet global.",
               correction: [
-                { type: "line", text: "**Métaphore filée du voyage désorienté** : l'écriture est assimilée à un périple sans boussole. Termes : route, impasse, chemin sans destination, terres inconnues, à tâtons, trébucher." },
-                { type: "line", text: "**Effet** : la cohérence de l'image construit l'écriture comme une errance volontaire et risquée ; l'accumulation des termes négatifs amplifie la désorientation tout en valorisant le courage de s'y engager." },
+                { type: "line", text: "**Explication (mécanisme) :** plusieurs termes appartiennent au même domaine comparant, le voyage (route, impasse, chemin sans destination, terres inconnues, à tâtons, trébucher) : l'image est développée sur tout le passage, c'est une métaphore filée. Le domaine comparé est l'acte d'écrire." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « Le passage construit une métaphore filée du voyage désorienté : l'écriture est assimilée à un périple sans boussole (route, impasse, terres inconnues, à tâtons). La cohérence de l'image fait de l'écriture une errance volontaire et risquée ; l'accumulation des termes négatifs amplifie la désorientation tout en valorisant le courage de s'y engager. »" },
               ],
             },
             {
@@ -583,11 +625,11 @@ export const ficheFiguresRegistres: Fiche = {
               variant: "standard",
               level: "n2",
               title: "Exercice 6 : Registre et procédés",
-              enonce: "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. » (Zola)",
+              enonce: "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. » (passage de type récit réaliste)",
               question: "Quel registre littéraire domine ? Identifiez deux procédés qui le construisent.",
               correction: [
-                { type: "line", text: "**Registre pathétique** : la scène suscite la pitié pour cette figure féminine vulnérable." },
-                { type: "line", text: "**Procédé 1** : accumulation de détails réalistes (« tenant par la main », « yeux baissés », « pressée ») qui humanisent la femme. **Procédé 2** : « avant la nuit », où la nuit devient une menace symbolique (métonymie de la peur)." },
+                { type: "line", text: "**Explication :** la scène met en avant une figure féminine fragile et pressée ; elle est construite pour susciter la pitié, marque du registre pathétique. Deux procédés y concourent : l'accumulation de détails concrets (« tenant par la main », « yeux baissés », « pressée ») qui rendent la femme vulnérable et proche du lecteur, et la valeur symbolique de « la nuit », menace implicite vers laquelle se précipite la scène." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « Le passage relève du registre pathétique : il suscite la pitié pour une figure féminine vulnérable. Cet effet repose sur l'accumulation de détails réalistes (“tenant par la main”, “yeux baissés”, “pressée”), qui humanisent le personnage, et sur la connotation menaçante de “la nuit”, qui fait peser une inquiétude sur la scène. »" },
               ],
             },
             {
@@ -605,9 +647,8 @@ export const ficheFiguresRegistres: Fiche = {
               enonce: "« la langue n'est pas un objet inerte dont on se saisit et qu'on plie à sa volonté. C'est elle qui nous transforme. » (Lola Lafon)",
               question: "Identifiez la personnification et l'antithèse, et analysez leur effet combiné.",
               correction: [
-                { type: "line", text: "**Personnification** : la langue « nous transforme », elle devient un sujet agissant sur l'humain." },
-                { type: "line", text: "**Antithèse** : « on se saisit / on plie à sa volonté » (domination humaine) s'oppose à « c'est elle qui nous transforme » (domination de la langue)." },
-                { type: "line", text: "**Effet combiné** : le renversement du rapport de force révèle la thèse de l'autrice : écrire, ce n'est pas maîtriser les mots, c'est se laisser transformer par eux." },
+                { type: "line", text: "**Explication (mécanismes) :** la langue « nous transforme » : une abstraction reçoit une action de sujet humain, c'est une personnification. Par ailleurs, « on se saisit / on plie à sa volonté » (domination de l'humain) s'oppose à « c'est elle qui nous transforme » (domination de la langue) : ces deux groupes contraires forment une antithèse." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « La phrase combine une personnification (la langue “nous transforme”, elle devient un sujet agissant) et une antithèse opposant la maîtrise humaine (“on se saisit”, “on plie à sa volonté”) à la puissance de la langue (“c'est elle qui nous transforme”). Le renversement du rapport de force porte la thèse de l'autrice : écrire, ce n'est pas maîtriser les mots, c'est se laisser transformer par eux. »" },
               ],
             },
             {
@@ -615,11 +656,11 @@ export const ficheFiguresRegistres: Fiche = {
               variant: "standard",
               level: "n3",
               title: "Exercice 8 : Métaphore filée maritime",
-              enonce: "« Ces énormes vagues, mousseuses d'une écume verte, semblaient s'avancer vers le hameau. Le grondement d'océan du vent dans les montagnes. La cour : île protégée des tempêtes. » (Clara Dupont-Monod, S'adapter)",
+              enonce: "« Ces énormes vagues, mousseuses d'une écume verte, semblaient s'avancer vers le hameau. Le grondement d'océan du vent dans les montagnes. La cour : île protégée des tempêtes. » (passage de type récit contemporain)",
               question: "Identifiez la métaphore filée et analysez son effet d'ensemble.",
               correction: [
-                { type: "line", text: "**Métaphore filée maritime** : les montagnes sont assimilées à la mer. Termes : vagues, écume verte, voie maritime, grondement d'océan, île, tempêtes." },
-                { type: "line", text: "**Effet** : la maison (la cour = « île ») devient un refuge isolé au milieu de forces hostiles et gigantesques. Les « vagues » qui « s'avancent » donnent à la nature une dimension menaçante, annonçant les bouleversements à venir." },
+                { type: "line", text: "**Explication (mécanisme) :** plusieurs termes relèvent du même domaine comparant, la mer (vagues, écume verte, grondement d'océan, île, tempêtes), alors que le comparé est le paysage de montagne et le hameau. L'image, développée sur tout le passage, est une métaphore filée maritime." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « Le passage construit une métaphore filée maritime : les montagnes et le vent sont assimilés à une mer démontée (vagues, écume verte, grondement d'océan, tempêtes). La cour, désignée comme une “île protégée”, devient un refuge isolé au milieu de forces hostiles et gigantesques ; les “vagues” qui “s'avancent” donnent à la nature une dimension menaçante et annoncent les bouleversements à venir. »" },
               ],
             },
           ],
@@ -633,7 +674,7 @@ export const ficheFiguresRegistres: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              text: "Ces exercices reproduisent le format des questions de style en Partie 2 (relever et analyser des procédés). Les exercices calqués sur des sujets récents portent le badge ✦.",
+              text: "Ces exercices reproduisent le format des questions de style en Partie 2 (relever et analyser des procédés). Les corrections sont rédigées comme au concours : ce sont des **formulations modèles**, directement reproductibles le jour J. Les exercices calqués sur le format du concours portent le badge ✦.",
             },
             {
               type: "exerciceCard",
@@ -643,9 +684,11 @@ export const ficheFiguresRegistres: Fiche = {
               enonce: "« Relire chaque matin est semblable à la barre quotidienne d'une danseuse. » / « Vivre, sans l'écriture, me va mal, comme un habit trop lâche. » / « ma route est une impasse » (Lola Lafon)",
               question: "Relevez trois procédés lexicaux qui caractérisent le travail de l'écrivain, et analysez l'effet de chacun.",
               correction: [
-                { type: "line", text: "**1) Comparaison** : « semblable à la barre d'une danseuse » : la relecture évoque discipline, humilité et confrontation à son reflet. L'écriture est un art de l'entraînement, non de l'inspiration." },
-                { type: "line", text: "**2) Comparaison + litote** : « me va mal, comme un habit trop lâche » : inadéquation entre soi et sa vie ; la litote « me va mal » sous-entend une nécessité vitale." },
-                { type: "line", text: "**3) Métaphore (filée)** : « ma route est une impasse » s'inscrit dans la métaphore filée du voyage désorienté : l'écriture est un périple sans boussole." },
+                { type: "line", text: "**Démarche :** pour chaque citation, nommer le procédé, repérer le comparé et le comparant, puis dire ce que l'image apporte au portrait de l'écrivain. On vise trois procédés nommés et trois effets analysés." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :**" },
+                { type: "line", text: "**1) Comparaison** : « semblable à la barre d'une danseuse » rapproche la relecture d'un exercice quotidien de danseuse. L'image évoque discipline, humilité et confrontation à son reflet : l'écriture est un art de l'entraînement, non de l'inspiration." },
+                { type: "line", text: "**2) Comparaison et litote** : « me va mal, comme un habit trop lâche » dit l'inadéquation entre soi et sa vie ; la litote « me va mal » sous-entend, par retenue, une nécessité vitale." },
+                { type: "line", text: "**3) Métaphore filée** : « ma route est une impasse » s'inscrit dans la métaphore filée du voyage désorienté : l'écriture devient un périple sans boussole, à la fois risqué et nécessaire." },
               ],
             },
             {
@@ -656,8 +699,8 @@ export const ficheFiguresRegistres: Fiche = {
               enonce: "« le monde n'est qu'un amas de taches confuses, jetées sur le vide par un peintre insensé, sans cesse effacées par nos larmes. » (Marguerite Yourcenar)",
               question: "Identifiez au moins deux procédés et analysez leur effet combiné.",
               correction: [
-                { type: "line", text: "**Métaphore (filée) picturale** : le monde est assimilé à une peinture ratée (taches, peintre, effacées) : la réalité est inférieure à l'art." },
-                { type: "line", text: "**Hyperbole** : « peintre insensé » amplifie le désordre du réel. **Effet combiné** : la cohérence de l'image picturale renforce le thème central : l'art transcende le réel, qui déçoit celui qui n'en connaissait que l'art." },
+                { type: "line", text: "**Démarche :** repérer le champ d'images dominant (ici la peinture), nommer les procédés, puis montrer comment ils se renforcent pour servir une même idée." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « Le passage repose sur une métaphore filée picturale : le monde est assimilé à une peinture ratée (taches, peintre, effacées), donc à une réalité inférieure à l'art. L'hyperbole “peintre insensé” amplifie le désordre du réel. La cohérence de l'image picturale et l'exagération convergent : l'art transcende un réel décevant, pour qui n'en connaissait que la beauté. »" },
               ],
             },
             {
@@ -667,8 +710,10 @@ export const ficheFiguresRegistres: Fiche = {
               enonce: "Comparez le registre de Yourcenar (« j'ai vu se rouvrir les portes qui me séparaient du monde ») et de Lafon (« mes romans me mènent en bateau »).",
               question: "Précisez le registre de langue et le registre littéraire de chacun.",
               correction: [
-                { type: "line", text: "**Yourcenar** : registre de langue **soutenu** (vocabulaire précis, syntaxe ample) ; registre littéraire **lyrique** et **épique** (récit d'une révélation, grandeur)." },
-                { type: "line", text: "**Lafon** : registre de langue **courant** voire familier (« mener en bateau ») ; registre littéraire **ironique / comique** (jeu sur la polysémie, autodérision)." },
+                { type: "line", text: "**Démarche :** pour chaque citation, séparer les deux niveaux d'analyse : d'abord le registre de langue (vocabulaire, syntaxe), puis le registre littéraire (ton, effet visé)." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :**" },
+                { type: "line", text: "**Yourcenar** : registre de langue soutenu (vocabulaire précis, syntaxe ample) ; registre littéraire lyrique et épique (le récit d'une révélation, avec une dimension de grandeur)." },
+                { type: "line", text: "**Lafon** : registre de langue courant, voire familier (« mener en bateau ») ; registre littéraire ironique et comique (jeu sur la polysémie, autodérision)." },
               ],
             },
             {
@@ -678,7 +723,9 @@ export const ficheFiguresRegistres: Fiche = {
               enonce: "« Vivre, sans l'écriture, me va mal, comme un habit trop lâche. On écrit parce qu'on ne sait par quel autre biais attraper le réel. » (Lola Lafon)",
               question: "Rédigez une analyse de style identifiant et analysant trois procédés.",
               correction: [
-                { type: "paragraph", text: "**1. Comparaison** : « comme un habit trop lâche » corporalise une inadéquation abstraite (on « s'empêtre » dans une vie qui n'est pas la sienne). **2. Litote** : « me va mal » dit moins que la vérité (l'écriture est vitale), produisant une élégance retenue. **3. Métaphore** : « attraper le réel » présente l'écriture comme l'unique filet capable de capturer une réalité fuyante. Ces procédés convergent vers la même thèse : écrire est une nécessité, la seule façon d'habiter le monde à sa juste mesure." },
+                { type: "line", text: "**Démarche :** annoncer les trois procédés, les analyser un à un (nom, mécanisme, effet), puis fermer sur l'idée d'ensemble qu'ils servent. C'est le format d'une réponse rédigée au concours." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :**" },
+                { type: "paragraph", text: "« La comparaison “comme un habit trop lâche” corporalise une inadéquation abstraite : on s'empêtre dans une vie qui n'est pas la sienne. La litote “me va mal” dit moins que la vérité, puisque l'écriture est vitale, et produit une élégance retenue. Enfin, la métaphore “attraper le réel” présente l'écriture comme l'unique filet capable de saisir une réalité fuyante. Ces trois procédés convergent vers une même thèse : écrire est une nécessité, la seule façon d'habiter le monde à sa juste mesure. »" },
               ],
             },
           ],
@@ -846,32 +893,58 @@ export const ficheFiguresRegistres: Fiche = {
               branches: [
                 {
                   title: "Analogie",
-                  lines: ["Comparaison : avec outil", "Métaphore : sans outil", "Filée : sur le passage", "Personnification"],
+                  lines: [
+                    "Comparaison : avec outil (comme, tel)",
+                    "Métaphore : sans outil, plus forte",
+                    "Filée : image sur tout le passage",
+                    "Personnification : donne vie, agentivité",
+                  ],
                   variant: "blue",
                 },
                 {
                   title: "Insistance / opposition",
-                  lines: ["Hyperbole, litote", "Antithèse, oxymore", "Anaphore"],
+                  lines: [
+                    "Hyperbole : exagère, dramatise",
+                    "Litote : dit moins, suggère plus",
+                    "Antithèse : contraires, groupes distincts",
+                    "Oxymore : contraires, même groupe",
+                    "Anaphore : répète, martèle, rythme",
+                  ],
                   variant: "green",
                 },
                 {
                   title: "Registres de langue",
-                  lines: ["Soutenu", "Courant", "Familier"],
+                  lines: ["Soutenu : recherché, distance", "Courant : standard, neutre", "Familier : relâché, oralité"],
                   variant: "green",
                 },
                 {
                   title: "Registres littéraires",
-                  lines: ["Lyrique, épique", "Pathétique", "Comique, ironique"],
+                  lines: [
+                    "Lyrique : émotion intime",
+                    "Épique : grandeur, héroïsme",
+                    "Pathétique : pitié, souffrance",
+                    "Comique / ironique : décalage, distance",
+                  ],
                   variant: "blue",
                 },
                 {
+                  title: "Analyser une figure (4 temps)",
+                  lines: [
+                    "1. Nommer + citer",
+                    "2. Mécanisme : comparé / comparant",
+                    "3. Effet dans le texte",
+                    "Sans l'effet = pas de points",
+                  ],
+                  variant: "yellow",
+                },
+                {
                   title: "Pièges classiques",
-                  lines: ["Comparaison ≠ métaphore", "Litote ≠ euphémisme", "Nommer sans analyser"],
+                  lines: ["Comparaison ≠ métaphore (« comme »)", "Litote ≠ euphémisme", "Antithèse ≠ oxymore", "Nommer sans analyser l'effet"],
                   variant: "yellow",
                 },
                 {
                   title: "Renvois",
-                  lines: ["Sens propre / figuré → notion 17", "Formation des mots → notion 16", "Vers la Partie 3 (rédaction)"],
+                  lines: ["Sens propre / figuré → relations sémantiques (n°17)", "Formation des mots → n°16", "Vers la Partie 3 (développement rédigé)"],
                   variant: "purple",
                   dashed: true,
                 },
