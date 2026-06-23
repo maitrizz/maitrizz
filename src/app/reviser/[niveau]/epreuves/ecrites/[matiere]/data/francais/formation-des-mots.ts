@@ -764,7 +764,7 @@ export const ficheFormationDesMots: Fiche = {
               question: "Analysez la formation de l'adjectif « irremplaçable » : procédé, segmentation, sens de chaque morphème, sens global.",
               correction: [
                 { type: "line", text: "**Analyse :** dérivation affixale. Étape 1 — radical **remplac-** (verbe remplacer) + suffixe **-able** (possibilité) → remplaçable. Étape 2 — préfixe **ir-** (allomorphe de in- devant r, négation) → irremplaçable. Classe conservée : adjectif → adjectif. Le doublement du r vient de l'assimilation du préfixe." },
-                { type: "line", text: "**Réponse attendue :** « *Irremplaçable* est un adjectif formé par **dérivation** : sur le verbe *remplacer*, le suffixe *-able* (possibilité) donne *remplaçable*, puis le préfixe négatif *ir-* (allomorphe de *in-* devant r) donne *irremplaçable*. La classe reste l'adjectif. Le mot signifie *qu'on ne peut pas remplacer*. »" },
+                { type: "formulationCrpe", text: "« *Irremplaçable* est un adjectif formé par **dérivation** : sur le verbe *remplacer*, le suffixe *-able* (possibilité) donne *remplaçable*, puis le préfixe négatif *ir-* (allomorphe de *in-* devant r) donne *irremplaçable*. La classe reste l'adjectif. Le mot signifie *qu'on ne peut pas remplacer*. »" },
               ],
             },
             {
@@ -777,7 +777,7 @@ export const ficheFormationDesMots: Fiche = {
               correction: [
                 { type: "line", text: "**Analyse :** dérivation verbale. Le nom « goût » donne le verbe « goûter » par ajout de **-er**, qui est un **morphogramme** (marque de l'infinitif du 1er groupe), non un suffixe lexical. Puis le préfixe privatif **dé-** forme « dégoûter » (inspirer de la répulsion)." },
                 { type: "line", text: "Famille : goût, dégoût, dégoûtant." },
-                { type: "line", text: "**Réponse attendue :** « *Dégoûter* est formé par **dérivation** sur le nom *goût* : le *-er* est un morphogramme (marque de l'infinitif) qui donne le verbe *goûter*, puis le préfixe privatif *dé-* donne *dégoûter*, « inspirer de la répulsion ». Le *-er* n'est pas un suffixe lexical, car il ne crée pas un mot d'une autre classe. Mots de la même famille : *goût*, *dégoût*, *dégoûtant*. »" },
+                { type: "formulationCrpe", text: "« *Dégoûter* est formé par **dérivation** sur le nom *goût* : le *-er* est un morphogramme (marque de l'infinitif) qui donne le verbe *goûter*, puis le préfixe privatif *dé-* donne *dégoûter*, « inspirer de la répulsion ». Le *-er* n'est pas un suffixe lexical, car il ne crée pas un mot d'une autre classe. Mots de la même famille : *goût*, *dégoût*, *dégoûtant*. »" },
               ],
             },
             {
@@ -789,7 +789,7 @@ export const ficheFormationDesMots: Fiche = {
               correction: [
                 { type: "line", text: "**vraisemblablement** : vrai (adjectif) + sembler (verbe) → vraisemblable (adjectif) → vraisemblablement (adverbe, + -ment). Dérivation en chaîne, classe finale : adverbe." },
                 { type: "line", text: "**insupportable** : préfixe **in-** (devant s : pas d'assimilation) + radical support- (verbe supporter) + suffixe -able (possibilité) → ce qu'on ne peut supporter." },
-                { type: "line", text: "**Réponse attendue :** « *Vraisemblablement* résulte d'une **dérivation en chaîne** : *vrai* + *sembler* → *vraisemblable* (adjectif), puis suffixe *-ment* → *vraisemblablement* (adverbe). *Insupportable* : préfixe *in-* (sans assimilation devant s) + radical *support-* (supporter) + suffixe *-able* → *ce qu'on ne peut pas supporter*. »" },
+                { type: "formulationCrpe", text: "« *Vraisemblablement* résulte d'une **dérivation en chaîne** : *vrai* + *sembler* → *vraisemblable* (adjectif), puis suffixe *-ment* → *vraisemblablement* (adverbe). *Insupportable* : préfixe *in-* (sans assimilation devant s) + radical *support-* (supporter) + suffixe *-able* → *ce qu'on ne peut pas supporter*. »" },
               ],
             },
           ],

@@ -27,7 +27,12 @@ export type CorrectionItem =
   | { type: "paragraph"; text: RichText }
   | { type: "table"; headers: string[]; rows: RichText[][] }
   | { type: "checklist"; items: { text: RichText; bad?: boolean }[] }
-  | { type: "note"; text: RichText };
+  | { type: "note"; text: RichText }
+  // Encart « Formulation CRPE » : la réponse rédigée telle qu'on l'écrirait le
+  // jour du concours. Réservé aux exercices au format épreuve (variant crpe /
+  // annale). Rendu en encart teal distinct pour être repérable d'une fiche à
+  // l'autre. `text` peut contenir plusieurs lignes (séparées par "\n").
+  | { type: "formulationCrpe"; text: RichText };
 
 /* ────────────────────────────────────────────────────────────
    Blocs de contenu

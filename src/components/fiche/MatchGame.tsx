@@ -168,7 +168,7 @@ export function MatchGame({ block, ficheSlug }: { block: MatchGameData; ficheSlu
   const cellClass = (state: "matched" | "wrong" | "selected" | "idle") =>
     `text-left text-sm rounded-lg border-2 px-3 py-2 leading-snug transition ${
       state === "matched"
-        ? "border-secondary bg-secondary/10 text-secondary/70 cursor-default"
+        ? "border-success bg-success/10 text-success/70 cursor-default"
         : state === "wrong"
         ? "border-error bg-error/10"
         : state === "selected"

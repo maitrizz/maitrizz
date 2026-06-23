@@ -396,7 +396,7 @@ export const fichePhraseComplexe: Fiche = {
               number: "①",
               title: "Analyser une phrase complexe pas à pas",
               intro:
-                "**Question typique :** « Délimitez les propositions de la phrase suivante, précisez leur nature et la manière dont elles sont reliées : *On écrit parce qu'on cherche à saisir le réel.* »\nOn déroule les 4 étapes sur cette phrase, jusqu'à la réponse rédigée.",
+                "*Question typique : « Délimitez les propositions de la phrase suivante, précisez leur nature et la manière dont elles sont reliées : On écrit parce qu'on cherche à saisir le réel. »*",
               steps: [
                 {
                   number: "1",
@@ -438,7 +438,7 @@ export const fichePhraseComplexe: Fiche = {
               number: "②",
               title: "Reconnaître une subordonnée sans subordonnant (infinitive ou participiale)",
               intro:
-                "**Question typique du concours :** Délimitez les propositions qui forment cette phrase complexe et précisez la manière dont elles sont reliées.\n« Ma mère regardait les enfants jouer dans le jardin. »",
+                "*Question typique : Délimitez les propositions qui forment cette phrase complexe et précisez la manière dont elles sont reliées : « Ma mère regardait les enfants jouer dans le jardin. »*",
               steps: [
                 {
                   number: "1",
@@ -471,7 +471,7 @@ export const fichePhraseComplexe: Fiche = {
               number: "③",
               title: "Justifier un signe de ponctuation",
               intro:
-                "**Question typique :** « Justifiez l'emploi de la virgule dans la phrase suivante : *Quand il arriva, elle lisait un roman.* »\nOn nomme l'emploi, puis on le justifie par la structure de la phrase.",
+                "*Question typique : « Justifiez l'emploi de la virgule dans la phrase suivante : Quand il arriva, elle lisait un roman. »*",
               steps: [
                 {
                   number: "1",
@@ -943,7 +943,10 @@ export const fichePhraseComplexe: Fiche = {
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
                 { type: "line", text: "**Explication :** « regardait » et « vieillissait » sont les verbes conjugués. La relative « dont… » est entre virgules (explicative) ; « les enfants jouer » a un sujet propre après un verbe de perception (infinitive)." },
-                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
+                {
+                  type: "formulationCrpe",
+                  text: "« La proposition principale est *Ma mère… regardait* ; *dont le regard ne vieillissait pas* est une subordonnée relative explicative, apposée au GN *Ma mère* (entre virgules) ; *les enfants jouer dans le jardin* est une subordonnée infinitive, COD de *regardait* (verbe de perception, sujet propre *les enfants*). »",
+                },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -964,7 +967,10 @@ export const fichePhraseComplexe: Fiche = {
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
                 { type: "line", text: "**Explication :** « regardait » et « semblait » sont les seuls verbes conjugués. « que » a pour antécédent « attention » → relative ; sans virgule, elle restreint le nom → déterminative." },
-                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
+                {
+                  type: "formulationCrpe",
+                  text: "« La proposition principale est *Elle regardait les eaux du fleuve avec une attention* ; *que rien ne semblait pouvoir distraire* est une subordonnée relative déterminative (antécédent *attention*, sans virgule), épithète de *attention*. »",
+                },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -984,7 +990,10 @@ export const fichePhraseComplexe: Fiche = {
               question: "Délimitez les propositions et donnez leur nature.",
               correction: [
                 { type: "line", text: "**Explication :** « écrit » et « sait » sont les verbes conjugués. « parce que » introduit une cause supprimable et déplaçable. « par quel biais » est un groupe interrogatif dépendant du verbe de savoir « sait » → interrogative indirecte partielle." },
-                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
+                {
+                  type: "formulationCrpe",
+                  text: "« La proposition principale est *On écrit* ; *parce qu'on ne sait…* est une subordonnée conjonctive, CC de cause ; *par quel autre biais attraper le réel* est une subordonnée interrogative indirecte partielle, COD de *sait*. »",
+                },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -1007,7 +1016,10 @@ export const fichePhraseComplexe: Fiche = {
               question: "Délimitez et donnez la nature des différentes propositions.",
               correction: [
                 { type: "line", text: "**Explication :** verbes conjugués : « ai vu », « séparaient », « suis monté », « étaient ». « ai vu » (perception) + sujet propre « les portes » → infinitive ; « qui » a pour antécédent « portes » → relative. Les deux-points puis « mais » articulent deux indépendantes (juxtaposition, puis coordination)." },
-                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
+                {
+                  type: "formulationCrpe",
+                  text: "« *À seize ans, j'ai vu* est la proposition principale ; *se rouvrir les portes…* une subordonnée infinitive, COD de *ai vu* (sujet propre *les portes*) ; *qui me séparaient du monde* une relative déterminative, épithète de *portes* ; *je suis monté… pour regarder les nuages* une indépendante juxtaposée ; *mais ils étaient moins beaux que ceux de tes crépuscules* une indépendante coordonnée par *mais*. »",
+                },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -1032,7 +1044,10 @@ export const fichePhraseComplexe: Fiche = {
               question: "Délimitez et nommez toutes les propositions, puis analysez « comme ».",
               correction: [
                 { type: "line", text: "**Explication :** « va » et « m'empêtre » sont les verbes conjugués (« Vivre » est un infinitif sujet). « comme un habit trop lâche » introduit une comparaison ; « dans lequel » a pour antécédent « habit » → relative déterminative." },
-                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
+                {
+                  type: "formulationCrpe",
+                  text: "« *Vivre… me va mal* est la proposition principale (*Vivre*, infinitif sujet de *va*) ; *comme un habit trop lâche* est une comparaison (préposition *comme* + GN), CC de comparaison ; *dans lequel je m'empêtre* est une relative déterminative, épithète de *habit*. »",
+                },
                 {
                   type: "table",
                   headers: ["Proposition / groupe", "Nature et fonction"],
@@ -1054,7 +1069,7 @@ export const fichePhraseComplexe: Fiche = {
               question: "Analysez deux emplois de la virgule et justifiez le point-virgule.",
               correction: [
                 { type: "line", text: "**Explication :** « Épuisée par la marche » se rapporte au sujet « elle » et reste supprimable → épithète détachée isolée par la virgule. « autour d'elle » est un CC de lieu placé avant son verbe « se vidait » → détachement d'un complément antéposé. Le point-virgule relie deux indépendantes appartenant à la même scène." },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « La première virgule marque le **détachement d'une épithète** (“Épuisée par la marche”) rapportée au sujet “elle” ; la seconde marque le **détachement d'un CC de lieu antéposé** (“autour d'elle”) ; le point-virgule marque une **relation logique implicite** (simultanéité descriptive) entre deux indépendantes. »" },
+                { type: "formulationCrpe", text: "« La première virgule marque le **détachement d'une épithète** (“Épuisée par la marche”) rapportée au sujet “elle” ; la seconde marque le **détachement d'un CC de lieu antéposé** (“autour d'elle”) ; le point-virgule marque une **relation logique implicite** (simultanéité descriptive) entre deux indépendantes. »" },
               ],
             },
           ],

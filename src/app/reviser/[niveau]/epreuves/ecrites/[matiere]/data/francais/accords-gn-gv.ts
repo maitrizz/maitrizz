@@ -293,7 +293,7 @@ export const ficheAccordsGnGv: Fiche = {
               number: "①",
               title: "Vérifier l'accord dans le GN",
               intro:
-                "**Question typique :** Dans le GN « de <u>longues</u> heures <u>silencieuses</u> », justifiez l'accord des adjectifs soulignés.",
+                "*Question typique : Dans le GN « de <u>longues</u> heures <u>silencieuses</u> », justifiez l'accord des adjectifs soulignés.*",
               steps: [
                 {
                   number: "1",
@@ -326,7 +326,7 @@ export const ficheAccordsGnGv: Fiche = {
               number: "②",
               title: "Vérifier l'accord sujet-verbe",
               intro:
-                "**Question typique :** Dans « <u>Arrivent</u> alors les rescapés », justifiez l'accord du verbe souligné.",
+                "*Question typique : Dans « <u>Arrivent</u> alors les rescapés », justifiez l'accord du verbe souligné.*",
               steps: [
                 {
                   number: "1",
@@ -630,6 +630,10 @@ export const ficheAccordsGnGv: Fiche = {
                 { type: "line", text: "1) Groupe sujet « de grandes masses nuageuses et sombres » (noyau « masses », féminin pluriel) → « avaient envahi », 3e personne du pluriel." },
                 { type: "line", text: "2) « dorées » : épithète liée de « lueurs » (féminin pluriel)." },
                 { type: "line", text: "3) « fatigués » est une épithète liée du nom « voyageurs » (pas de verbe d'état entre les deux ; il fait partie du GN)." },
+                {
+                  type: "formulationCrpe",
+                  text: "« Le groupe sujet de *avaient envahi* est *de grandes masses nuageuses et sombres* (noyau *masses*, féminin pluriel) : le verbe s'accorde à la 3ᵉ personne du pluriel. *dorées* est épithète liée de *lueurs* (féminin pluriel). *fatigués* est épithète liée de *voyageurs* : aucun verbe d'état ne l'en sépare, il appartient au GN. »",
+                },
               ],
             },
             {
@@ -643,6 +647,10 @@ export const ficheAccordsGnGv: Fiche = {
                 { type: "line", label: "a)", text: "« ont rendu » : « la plupart des » + pluriel commande toujours le pluriel." },
                 { type: "line", label: "b)", text: "« seront » : les deux sujets coordonnés par « ni… ni… » sont tous deux concernés → pluriel." },
                 { type: "line", label: "c)", text: "« fais » : « qui » a pour antécédent « toi » (2e personne du singulier)." },
+                {
+                  type: "formulationCrpe",
+                  text: "« a) *ont rendu* : *la plupart des élèves* commande le pluriel. b) *seront* : les sujets coordonnés par *ni… ni…* sont tous deux concernés, d'où le pluriel. c) *fais* : le relatif *qui* a pour antécédent *toi*, 2ᵉ personne du singulier. »",
+                },
               ],
             },
             {
@@ -654,6 +662,10 @@ export const ficheAccordsGnGv: Fiche = {
               correction: [
                 { type: "line", text: "« semblaient » s'accorde avec le groupe sujet « les enfants » (3e personne du pluriel)." },
                 { type: "line", text: "« fatigués » est un adjectif attribut du sujet « enfants » (verbe d'état « semblaient ») : il s'accorde au masculin pluriel avec le groupe sujet." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *semblaient* s'accorde avec le groupe sujet *les enfants*, 3ᵉ personne du pluriel. *fatigués* est attribut du sujet *enfants*, introduit par le verbe d'état *sembler* : il s'accorde au masculin pluriel avec ce sujet. »",
+                },
               ],
             },
             {
@@ -665,6 +677,10 @@ export const ficheAccordsGnGv: Fiche = {
               correction: [
                 { type: "line", text: "« Un grand nombre de visiteurs » met ici l'accent sur la pluralité des visiteurs : le verbe « admirent » est à la troisième personne du pluriel. L'accord au singulier, « admire », resterait possible si l'on considérait le groupe comme un ensemble unique." },
                 { type: "line", text: "« nouvelles » et « remarquables » sont des adjectifs qualificatifs, épithètes liées du nom « œuvres », féminin pluriel : ils s'accordent au féminin pluriel." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *admirent* est à la 3ᵉ personne du pluriel : *un grand nombre de visiteurs* met l'accent sur la pluralité des visiteurs (le singulier *admire* resterait admis si l'on envisageait l'ensemble comme un tout). *nouvelles* et *remarquables* sont épithètes liées de *œuvres*, féminin pluriel. »",
+                },
               ],
             },
           ],

@@ -256,7 +256,7 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               number: "①",
               title: "Le cas le plus fréquent : nature et fonction",
               intro:
-                "**Question typique :** Donnez la nature et la fonction du groupe souligné dans la phrase « Elle répondit <u>en souriant</u>. »",
+                "*Question typique : Donnez la nature et la fonction du groupe souligné dans la phrase « Elle répondit <u>en souriant</u>. »*",
               steps: [
                 {
                   number: "1",
@@ -284,7 +284,7 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               number: "②",
               title: "Le cas particulier : une forme avec son propre sujet",
               intro:
-                "**Question typique :** Dans « J'entends <u>les enfants chanter</u> », délimitez les propositions et donnez leur nature.",
+                "*Question typique : Dans « J'entends <u>les enfants chanter</u> », délimitez les propositions et donnez leur nature.*",
               steps: [
                 {
                   number: "1",
@@ -670,6 +670,10 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               correction: [
                 { type: "line", text: "Dans « tirant sur sa laisse », « tirant » est un participe présent, épithète détachée du nom « chien ». Il se rapporte au sujet de « courait » : le groupe ne forme pas une proposition subordonnée participiale." },
                 { type: "line", text: "« La nuit venue » est une proposition subordonnée participiale : « venue » possède un sujet propre, « la nuit », distinct du sujet de « s'arrêtèrent ». Elle est complément circonstanciel de temps de la proposition principale." },
+                {
+                  type: "formulationCrpe",
+                  text: "« Dans *tirant sur sa laisse*, *tirant* est un participe présent, épithète détachée se rapportant au sujet de *courait* (le chien) : ce n'est pas une subordonnée participiale. *La nuit venue* est une subordonnée participiale : *venue* a son sujet propre, *la nuit*, distinct du sujet de *s'arrêtèrent* ; elle est CC de temps de la principale. »",
+                },
               ],
             },
             {
@@ -683,6 +687,10 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               correction: [
                 { type: "line", text: "« se rouvrir » est un infinitif : tête d'une subordonnée infinitive COD de « ai vu » (verbe de perception), sujet propre « les portes » distinct de « je »." },
                 { type: "line", text: "« regarder » est un infinitif : groupe infinitif prépositionnel (pour + infinitif) CC de but de « suis monté », même sujet (pas de subordonnée infinitive)." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *se rouvrir* est un infinitif, tête d'une subordonnée infinitive COD de *ai vu* (verbe de perception), avec un sujet propre, *les portes*, distinct de *je*. *regarder* est un infinitif dans le groupe prépositionnel *pour regarder les nuages*, CC de but de *suis monté*, sans sujet propre : il n'y a pas de subordonnée infinitive. »",
+                },
               ],
             },
             {
@@ -695,6 +703,10 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               question: "Rédigez la réponse attendue pour « Vivre ».",
               correction: [
                 { type: "line", text: "« Vivre » est un infinitif présent, sujet du verbe « va ». Dans cette phrase, il conserve sa nature verbale tout en exerçant une fonction généralement occupée par un groupe nominal." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *Vivre* est un infinitif présent, sujet du verbe *va* : il garde sa nature verbale tout en occupant une fonction d'ordinaire dévolue au groupe nominal. »",
+                },
               ],
             },
             {
@@ -706,6 +718,10 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               correction: [
                 { type: "line", text: "« Transmettre » est un infinitif présent. Le groupe infinitif « Transmettre des savoirs » est sujet du verbe « exige »." },
                 { type: "line", text: "« aider » est un infinitif présent. Le groupe infinitif prépositionnel « pour aider les élèves à comprendre » est complément circonstanciel de but du verbe « prépare »." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *Transmettre* est un infinitif présent : le groupe *Transmettre des savoirs* est sujet de *exige*. *aider* est un infinitif présent : le groupe prépositionnel *pour aider les élèves à comprendre* est CC de but de *prépare*. »",
+                },
               ],
             },
             {
@@ -717,6 +733,10 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
               correction: [
                 { type: "line", text: "« En sortant de la salle » est un groupe gérondif, complément circonstanciel de temps : la rencontre se produit au moment de la sortie." },
                 { type: "line", text: "« En vérifiant chaque accord » est un groupe gérondif, complément circonstanciel de condition : si elle vérifiait chaque accord." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *En sortant de la salle* est un gérondif, CC de temps : la rencontre se produit au moment de la sortie. *En vérifiant chaque accord* est un gérondif, CC de condition : « si elle vérifiait chaque accord ». »",
+                },
               ],
             },
           ],

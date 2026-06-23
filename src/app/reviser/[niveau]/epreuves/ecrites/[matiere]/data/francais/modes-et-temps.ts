@@ -355,7 +355,7 @@ export const ficheModesEtTemps: Fiche = {
               number: "②",
               title: "Trancher une forme ambiguë",
               intro:
-                "**Question typique :** Donnez le mode et le temps des formes soulignées dans « Ce traitement <u>réduirait</u> les risques », « Elle <u>avait relu</u> le dossier » et « Il <u>vint</u> aussitôt ».\nChaque exemple correspond à une difficulté différente.",
+                "*Question typique : Donnez le mode et le temps des formes soulignées dans « Ce traitement <u>réduirait</u> les risques », « Elle <u>avait relu</u> le dossier » et « Il <u>vint</u> aussitôt ».*",
               steps: [
                 {
                   number: "1",
@@ -794,7 +794,7 @@ export const ficheModesEtTemps: Fiche = {
                     ["se hâtait", "Indicatif", "Imparfait"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue :** « passa » est conjugué à l'indicatif, au passé simple ; « se hâtait » est conjugué à l'indicatif, à l'imparfait." },
+                { type: "formulationCrpe", text: "« *passa* est conjugué à l'indicatif, au passé simple ; *se hâtait* est conjugué à l'indicatif, à l'imparfait. »" },
                 { type: "note", text: "💡 La valeur (action ponctuelle pour le passé simple, arrière-plan descriptif pour l'imparfait) s'analyse aux notions 7 et 8." },
               ],
             },
@@ -814,7 +814,7 @@ export const ficheModesEtTemps: Fiche = {
                     ["regardait", "Indicatif", "Imparfait"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue :** « vieillissait » et « regardait » sont tous deux conjugués à l'indicatif, à l'imparfait." },
+                { type: "formulationCrpe", text: "« *vieillissait* et *regardait* sont tous deux conjugués à l'indicatif, à l'imparfait. »" },
               ],
             },
             {
@@ -825,7 +825,7 @@ export const ficheModesEtTemps: Fiche = {
               question: "Donnez le mode et le temps de « serait », et justifiez par un test.",
               correction: [
                 { type: "line", text: "« serait » contient un « r » avant la terminaison. Test « nous » : « nous serions » (-rions) → **conditionnel présent**." },
-                { type: "line", text: "**Réponse attendue :** « serait » est conjugué à l'indicatif, au conditionnel présent." },
+                { type: "formulationCrpe", text: "« *serait* est conjugué à l'indicatif, au conditionnel présent. »" },
                 { type: "note", text: "⚠️ « -ait » fait penser à l'imparfait, mais le « r » signale le conditionnel. La valeur (information non confirmée) relève des notions 7 et 8." },
               ],
             },
@@ -847,7 +847,7 @@ export const ficheModesEtTemps: Fiche = {
                     ["suis monté", "Indicatif", "Passé composé"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue :** « ai vu » et « suis monté » sont conjugués à l'indicatif, au passé composé ; « séparaient » est conjugué à l'indicatif, à l'imparfait." },
+                { type: "formulationCrpe", text: "« *ai vu* et *suis monté* sont conjugués à l'indicatif, au passé composé ; *séparaient* est conjugué à l'indicatif, à l'imparfait. »" },
                 { type: "note", text: "💡 « se rouvrir » et « regarder » sont des infinitifs : ils ne font pas partie des formes soulignées à analyser." },
               ],
             },
@@ -868,7 +868,7 @@ export const ficheModesEtTemps: Fiche = {
                     ["sait", "Indicatif", "Présent"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue :** « écrit » et « sait » sont conjugués à l'indicatif, au présent." },
+                { type: "formulationCrpe", text: "« *écrit* et *sait* sont conjugués à l'indicatif, au présent. »" },
                 { type: "note", text: "💡 « attraper » est un infinitif (forme non conjuguée). La valeur de vérité générale de ces présents est traitée aux notions 7 et 8." },
               ],
             },

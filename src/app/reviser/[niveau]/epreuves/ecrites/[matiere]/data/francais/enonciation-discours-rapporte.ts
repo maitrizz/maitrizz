@@ -412,7 +412,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               number: "①",
               title: "Identifier le système d'énonciation",
               intro:
-                "**Question typique :** « Ce texte est-il ancré dans l'énonciation ou coupé d'elle ? »\n**Exemples supports :** « Je vous écris depuis Rome, où je resterai jusqu'à demain. » / « Le facteur distribuait le courrier. Il passa devant la boulangerie. »\nOn relève les indices.",
+                "*Question typique : « Ce texte est-il ancré dans l'énonciation ou coupé d'elle ? » Exemples supports : « Je vous écris depuis Rome, où je resterai jusqu'à demain. » / « Le facteur distribuait le courrier. Il passa devant la boulangerie. »*",
               steps: [
                 {
                   number: "1",
@@ -451,7 +451,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               number: "②",
               title: "Reconnaître la forme de discours rapporté",
               intro:
-                "**Question typique :** « Quelle est la forme de discours rapporté, et quel effet produit-elle ? »\n**Exemples supports :** « Il dit : “Je pars.” » / « Il dit qu'il partait. » / « Il partirait, c'était sûr ! »",
+                "*Question typique : « Quelle est la forme de discours rapporté, et quel effet produit-elle ? » Exemples supports : « Il dit : “Je pars.” » / « Il dit qu'il partait. » / « Il partirait, c'était sûr ! »*",
               steps: [
                 {
                   number: "1",
@@ -490,7 +490,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               number: "③",
               title: "Transposer du discours direct au discours indirect",
               intro:
-                "**Question typique :** « Transposez ce passage au discours indirect (verbe introducteur au passé). »\n**Exemples supports :** « Est-ce que tu viens ? » / « Je partirai demain. » / « Taisez-vous ! »",
+                "*Question typique : « Transposez ce passage au discours indirect (verbe introducteur au passé). » Exemples supports : « Est-ce que tu viens ? » / « Je partirai demain. » / « Taisez-vous ! »*",
               steps: [
                 {
                   number: "1",
@@ -793,6 +793,10 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                 { type: "line", text: "**2)** Deux formes coexistent : « Il avait dit [...] qu'il ne comprenait pas » relève du discours indirect (verbe introducteur + que) ; « Comment pouvait-elle partir ainsi ? » relève du discours indirect libre, car la question exprime la pensée du personnage sans guillemets ni introducteur." },
                 { type: "line", text: "**3)** Discours indirect libre : ni verbe introducteur ni guillemets ; conditionnel « ne comprendrait » ; modalisation (« jamais », « de toute façon », « autant ») qui rend la pensée du personnage. Effet : accès direct à l'intériorité et fusion des voix narrateur / personnage." },
                 { type: "line", text: "**4)** « la veille » est la transposition de « hier » : au discours indirect, les embrayeurs deviennent des indicateurs relatifs au récit (hier → la veille, demain → le lendemain, aujourd'hui → ce jour-là)." },
+                {
+                  type: "formulationCrpe",
+                  text: "« Le premier paragraphe est coupé de l'énonciation : 3ᵉ personne (*elle*), passé simple (*posa*), imparfait (*savait*) et conditionnel à valeur de futur dans le passé (*reviendrait*) ; *C'était fini, elle le savait* fait déjà entendre la pensée du personnage en discours indirect libre. Le deuxième paragraphe combine discours indirect (*il avait dit qu'il ne comprenait pas*) et discours indirect libre (*Comment pouvait-elle partir ainsi ?*). Le troisième relève du discours indirect libre (ni introducteur ni guillemets, conditionnel *ne comprendrait*, modalisateurs *jamais*, *de toute façon*, *autant*) : il donne un accès direct à l'intériorité et fond les voix du narrateur et du personnage. Enfin, *la veille* transpose *hier*, l'embrayeur devenant un repère relatif au récit. »",
+                },
               ],
             },
             {
@@ -803,9 +807,11 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                 "Transposez au discours indirect (verbe introducteur au passé composé) :\n« Nous partirons demain matin, dit-il. Est-ce que tu as préparé tes bagages ? »\n« Non, répondit-elle. Fais-le sans moi ! »",
               question: "Appliquez toutes les transformations (pronoms, embrayeurs, concordance, introducteurs).",
               correction: [
-                { type: "line", text: "Il a dit **qu'ils partiraient le lendemain matin** et a demandé **si elle avait préparé ses bagages**." },
-                { type: "line", text: "Elle a répondu **que non** et lui a dit **de le faire sans elle**." },
                 { type: "line", text: "Transformations : nous → ils, tu → elle, je → elle, moi → elle ; demain → le lendemain ; futur → conditionnel ; passé composé → plus-que-parfait ; est-ce que → si ; impératif → de + infinitif." },
+                {
+                  type: "formulationCrpe",
+                  text: "« Il a dit qu'ils partiraient le lendemain matin et a demandé si elle avait préparé ses bagages. Elle a répondu que non et lui a dit de le faire sans elle. »",
+                },
               ],
             },
             {

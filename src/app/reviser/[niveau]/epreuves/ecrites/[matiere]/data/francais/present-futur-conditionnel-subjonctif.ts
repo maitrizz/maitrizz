@@ -328,7 +328,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               number: "①",
               title: "Nommer la valeur d'un présent, d'un futur ou d'un conditionnel",
               intro:
-                "**Question typique :** Donnez la valeur du verbe souligné.\n**Exemple :** « Selon plusieurs sources, le président <u>serait</u> en déplacement. »",
+                "*Question typique : Donnez la valeur du verbe souligné. Exemple : « Selon plusieurs sources, le président <u>serait</u> en déplacement. »*",
               steps: [
                 {
                   number: "1",
@@ -362,7 +362,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               number: "②",
               title: "Reconnaître et justifier un subjonctif",
               intro:
-                "**Question typique :** Justifiez l'emploi du subjonctif.\n**Exemple :** « Il faut qu'elle <u>parte</u> avant midi. »",
+                "*Question typique : Justifiez l'emploi du subjonctif. Exemple : « Il faut qu'elle <u>parte</u> avant midi. »*",
               steps: [
                 {
                   number: "1",
@@ -748,6 +748,10 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               correction: [
                 { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : le sujet générique « on » inscrit l'énoncé dans une réflexion générale sur l'écriture." },
                 { type: "line", text: "« sait » est au présent de l'indicatif et appartient à la même affirmation générale." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *écrit* est au présent de l'indicatif, à valeur de vérité générale : le sujet générique *on* inscrit l'énoncé dans une réflexion d'ensemble sur l'écriture. *sait* est lui aussi au présent de l'indicatif et relève de la même affirmation générale. »",
+                },
               ],
             },
             {
@@ -760,6 +764,10 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               correction: [
                 { type: "line", text: "« font » est au présent de l'indicatif, valeur de vérité générale, justifiée par « depuis toujours »." },
                 { type: "line", text: "« monte » est au présent de l'indicatif, valeur d'action en cours, justifiée par « en ce moment »." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *font* est au présent de l'indicatif, à valeur de vérité générale (justifiée par *depuis toujours*) ; *monte* est au présent de l'indicatif, à valeur d'action en cours (justifiée par *en ce moment*). »",
+                },
               ],
             },
             {
@@ -771,6 +779,10 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               correction: [
                 { type: "line", text: "« venait » est à l'imparfait de l'indicatif ; dans la subordonnée introduite par « si », il présente la venue comme une hypothèse." },
                 { type: "line", text: "« serais » est au conditionnel présent, temps de l'indicatif ; il exprime la conséquence de cette hypothèse." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *venait* est à l'imparfait de l'indicatif : dans la subordonnée introduite par *si*, il présente la venue comme une hypothèse. *serais* est au conditionnel présent (temps de l'indicatif) : il exprime la conséquence de cette hypothèse. »",
+                },
               ],
             },
             {
@@ -781,6 +793,10 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               question: "Rédigez la réponse jury pour « serait ».",
               correction: [
                 { type: "line", text: "« serait » est au conditionnel présent (temps de l'indicatif), valeur de fait non confirmé : il présente l'information avec prudence énonciative, comme non vérifiée par l'énonciateur." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *serait* est au conditionnel présent (temps de l'indicatif), à valeur de fait non confirmé : il présente l'information avec prudence, comme non vérifiée par l'énonciateur. »",
+                },
                 { type: "note", text: "💡 Test de la forme (« nous serions » → -rions) : voir notion 6." },
               ],
             },
@@ -793,6 +809,10 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               correction: [
                 { type: "line", text: "« vienne » est au présent du subjonctif, imposé par « il faut que » : il exprime la nécessité que l'action ait lieu." },
                 { type: "line", text: "« soit » est au présent du subjonctif, imposé par la conjonction de concession « bien que » : il exprime un état réel qui n'empêche pas l'action principale." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *vienne* est au présent du subjonctif, imposé par *il faut que* : il exprime la nécessité que l'action ait lieu. *soit* est au présent du subjonctif, imposé par la conjonction de concession *bien que* : il exprime un état réel qui n'empêche pas l'action principale. »",
+                },
               ],
             },
           ],

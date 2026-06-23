@@ -573,7 +573,7 @@ export const ficheClassesGrammaticales: Fiche = {
               number: "①",
               title: "Identifier la nature d'un mot isolé",
               intro:
-                "**Question typique :** « Donnez la classe grammaticale du mot souligné : *Le vieux chien dormait <u>paisiblement</u> près du feu.* »\nOn avance par éliminations successives : variable ou invariable ? puis, à l'intérieur de cette famille, quel rôle joue le mot ? On déroule tout sur ce seul mot, **paisiblement**, jusqu'à la réponse rédigée.",
+                "*Question typique : « Donnez la classe grammaticale du mot souligné : Le vieux chien dormait <u>paisiblement</u> près du feu. »*",
               steps: [
                 {
                   number: "1",
@@ -631,7 +631,7 @@ export const ficheClassesGrammaticales: Fiche = {
               number: "②",
               title: "Traiter un mot-caméléon (tout, comme, que, si)",
               intro:
-                "**Question typique :** « Quelle est la nature du mot souligné : *<u>Tout</u> le monde regardait la scène.* »\nMême démarche pour les 4 mots-caméléons : on ne part jamais du mot seul. On observe sa construction, puis on suit l'algorithme express vu dans le Cours. On déroule tout sur ce seul mot, **Tout**.",
+                "*Question typique : « Quelle est la nature du mot souligné : <u>Tout</u> le monde regardait la scène. »*",
               steps: [
                 {
                   number: "1",
@@ -1089,7 +1089,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["toujours", "Adverbe (de temps)"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *lointaines* → adjectif qualificatif ; *de marbre* → groupe nominal prépositionnel (préposition *de*) ; *où* → pronom relatif ; *toujours* → adverbe (de temps). »" },
+                { type: "formulationCrpe", text: "« *lointaines* → adjectif qualificatif ; *de marbre* → groupe nominal prépositionnel (préposition *de*) ; *où* → pronom relatif ; *toujours* → adverbe (de temps). »" },
                 {
                   type: "note",
                   text: "⚠️ Piège : « toujours » est ici un adverbe ; un adverbe peut modifier un verbe, un adjectif (ici « bleus ») ou un autre adverbe.",
@@ -1114,7 +1114,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["rien", "Pronom indéfini"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif ; *muette* → adjectif qualificatif ; *heureuse* → adjectif qualificatif ; *rien* → pronom indéfini. »" },
+                { type: "formulationCrpe", text: "« *dont* → pronom relatif ; *muette* → adjectif qualificatif ; *heureuse* → adjectif qualificatif ; *rien* → pronom indéfini. »" },
                 {
                   type: "note",
                   text: "⚠️ « dont » est toujours un pronom relatif, quelle que soit la phrase : sa nature ne change pas.",
@@ -1140,7 +1140,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["vieil imposteur", "Groupe nominal"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif ; *de l'Empire* → groupe nominal prépositionnel (préposition *de*) ; *m'* → pronom personnel (forme élidée de *me*) ; *vieil imposteur* → groupe nominal. »" },
+                { type: "formulationCrpe", text: "« *dont* → pronom relatif ; *de l'Empire* → groupe nominal prépositionnel (préposition *de*) ; *m'* → pronom personnel (forme élidée de *me*) ; *vieil imposteur* → groupe nominal. »" },
                 {
                   type: "note",
                   text: "⚠️ « m' » est un pronom personnel : c'est la forme élidée de « me » devant voyelle.",
@@ -1167,7 +1167,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["Vivre", "Verbe à l'infinitif (3e groupe)"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Écrire* → verbe à l'infinitif (1er groupe), même employé comme sujet ; *c'* → pronom démonstratif élidé (forme de *ce*) ; *On* → pronom personnel indéfini ; *Vivre* → verbe à l'infinitif (3e groupe). »" },
+                { type: "formulationCrpe", text: "« *Écrire* → verbe à l'infinitif (1er groupe), même employé comme sujet ; *c'* → pronom démonstratif élidé (forme de *ce*) ; *On* → pronom personnel indéfini ; *Vivre* → verbe à l'infinitif (3e groupe). »" },
                 {
                   type: "note",
                   text: "⚠️ Piège : un infinitif reste un verbe, même employé comme sujet (« Écrire est… »). « c' » est un pronom démonstratif élidé, à ne pas confondre avec le déterminant « ce ».",
@@ -1193,7 +1193,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["Je", "Pronom personnel, 1re pers. sing."],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Jugez* → verbe (impératif présent, 2e pers. pluriel) ; *Insensées* → adjectif qualificatif (féminin pluriel) ; *rêver* → verbe à l'infinitif ; *Monte* → verbe (présent de l'indicatif, 3e pers. sing.) ; *Je* → pronom personnel. »" },
+                { type: "formulationCrpe", text: "« *Jugez* → verbe (impératif présent, 2e pers. pluriel) ; *Insensées* → adjectif qualificatif (féminin pluriel) ; *rêver* → verbe à l'infinitif ; *Monte* → verbe (présent de l'indicatif, 3e pers. sing.) ; *Je* → pronom personnel. »" },
                 {
                   type: "note",
                   text: "⚠️ Piège : « Insensées » n'est PAS un participe passé (il n'existe pas de verbe « insenser ») : c'est un adjectif qualificatif comme un autre, qui s'accorde simplement avec le nom « choses » (fém. pluriel).",

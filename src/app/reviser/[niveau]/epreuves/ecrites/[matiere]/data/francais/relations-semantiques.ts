@@ -287,7 +287,7 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "①",
               title: "Proposer un synonyme en contexte",
               intro:
-                "**Question typique :** « Dans la phrase “Elle se hâtait, les yeux baissés, *pressée* d'atteindre sa maison avant la nuit”, proposez un synonyme en contexte de l'adjectif souligné *pressée* et justifiez votre choix. »",
+                "*Question typique : « Dans la phrase “Elle se hâtait, les yeux baissés, <u>pressée</u> d'atteindre sa maison avant la nuit”, proposez un synonyme en contexte de l'adjectif souligné <u>pressée</u> et justifiez votre choix. »*",
               steps: [
                 {
                   number: "1",
@@ -326,7 +326,7 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "②",
               title: "Expliquer le sens d'un mot en contexte",
               intro:
-                "**Question typique :** « Dans la phrase “L'écrivain cherche à *attraper le réel* avec des mots”, expliquez le sens de l'expression soulignée *attraper le réel*. »",
+                "*Question typique : « Dans la phrase “L'écrivain cherche à <u>attraper le réel</u> avec des mots”, expliquez le sens de l'expression soulignée <u>attraper le réel</u>. »*",
               steps: [
                 {
                   number: "1",
@@ -365,7 +365,7 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "③",
               title: "Dégager et analyser un champ lexical",
               intro:
-                "**Question typique :** « Dans le passage “La *nuit* tombait, *obscure* ; l'*ombre* envahissait la pièce que la *lune* éclairait *faiblement*”, relevez le champ lexical de la nuit et analysez l'effet produit. »",
+                "*Question typique : « Dans le passage “La <u>nuit</u> tombait, <u>obscure</u> ; l'<u>ombre</u> envahissait la pièce que la <u>lune</u> éclairait <u>faiblement</u>”, relevez le champ lexical de la nuit et analysez l'effet produit. »*",
               steps: [
                 {
                   number: "1",
@@ -664,6 +664,10 @@ export const ficheRelationsSemantiques: Fiche = {
                 { type: "line", text: "**Sens propre** : personne sans nationalité reconnue (juridique)." },
                 { type: "line", text: "**Sens figuré** : l'écriture arrache l'autrice à son univers familier, à ses repères identitaires, comme un changement de pays." },
                 { type: "line", text: "**Connotations** : négative (déracinement, angoisse) et positive (liberté, ouverture créatrice). Reconnaître cette ambivalence est valorisé." },
+                {
+                  type: "formulationCrpe",
+                  text: "« Au sens propre, *apatride* désigne une personne sans nationalité reconnue. Au sens figuré, il signifie que l'écriture arrache l'autrice à son univers familier et à ses repères identitaires, comme un changement de pays. Le mot porte une connotation ambivalente, négative (déracinement, angoisse) et positive (liberté, ouverture créatrice) : reconnaître cette ambivalence est attendu. »",
+                },
               ],
             },
             {
@@ -676,6 +680,10 @@ export const ficheRelationsSemantiques: Fiche = {
               correction: [
                 { type: "line", text: "**railleries** (moqueries dérisoires) et **moqueries** (plus neutre). « sarcasmes » = railleries acérées, avec intention de blesser." },
                 { type: "line", text: "À éviter : « critiques » (trop général, sans l'ironie blessante) et « insultes » (trop fort : un sarcasme n'est pas une insulte directe)." },
+                {
+                  type: "formulationCrpe",
+                  text: "« Deux synonymes en contexte conviennent : *railleries* (moqueries dérisoires) et *moqueries* (plus neutre), car *sarcasmes* désigne ici des railleries acérées, à intention blessante. On écarte *critiques* (trop général) et *insultes* (trop fort). »",
+                },
               ],
             },
             {
@@ -687,6 +695,10 @@ export const ficheRelationsSemantiques: Fiche = {
               correction: [
                 { type: "line", label: "a)", text: "L'antonyme est **« sagesse »** : déraison = absence de raison ; sagesse = plénitude du discernement." },
                 { type: "line", label: "b)", text: "« déraison » (ignorance, absence de culture) s'oppose à « sagesse humaine » (savoir acquis par les livres). L'opposition porte la thèse : l'accès aux livres conditionne l'accès à la raison." },
+                {
+                  type: "formulationCrpe",
+                  text: "« a) L'antonyme de *déraison* est *sagesse* (*sagesse humaine*). b) *déraison* (ignorance, absence de culture) s'oppose à *sagesse* (savoir acquis par les livres) : l'opposition porte la thèse selon laquelle l'accès aux livres conditionne l'accès à la raison. »",
+                },
               ],
             },
             {
@@ -698,6 +710,10 @@ export const ficheRelationsSemantiques: Fiche = {
               correction: [
                 { type: "line", text: "**« vol » : polysémie** : un seul mot, des sens liés par une histoire commune (les sens dérivent l'un de l'autre)." },
                 { type: "line", text: "**« louer » : homonymie** : deux mots distincts d'origines latines différentes (locare / laudare), sans lien sémantique." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *vol* relève de la polysémie : un seul mot dont les sens, liés par une histoire commune, dérivent l'un de l'autre. *louer* relève de l'homonymie : deux mots d'origines latines distinctes (*locare* / *laudare*), sans lien sémantique. »",
+                },
                 { type: "note", text: "💡 La polysémie est bien plus fréquente dans les questions de lexique du concours." },
               ],
             },

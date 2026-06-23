@@ -332,7 +332,7 @@ export const ficheAccordParticipePasse: Fiche = {
               number: "①",
               title: "Accorder un participe passé avec « avoir »",
               intro:
-                "**Question typique :** Dans « les lettres qu'il a <u>envoyées</u> », justifiez l'accord du participe passé souligné.",
+                "*Question typique : Dans « les lettres qu'il a <u>envoyées</u> », justifiez l'accord du participe passé souligné.*",
               steps: [
                 {
                   number: "1",
@@ -371,7 +371,7 @@ export const ficheAccordParticipePasse: Fiche = {
               number: "②",
               title: "Accorder le PP d'un verbe pronominal",
               intro:
-                "**Question typique :** Dans « Elle s'est <u>lavé</u> les mains », justifiez l'invariabilité du participe passé souligné.",
+                "*Question typique : Dans « Elle s'est <u>lavé</u> les mains », justifiez l'invariabilité du participe passé souligné.*",
               steps: [
                 {
                   number: "1",
@@ -405,7 +405,7 @@ export const ficheAccordParticipePasse: Fiche = {
               number: "③",
               title: "Trancher entre infinitif (-er) et participe passé (-é)",
               intro:
-                "**Question typique :** Dans « Il a décidé d'<u>aller</u> voir ses parents », justifiez la terminaison de la forme soulignée.",
+                "*Question typique : Dans « Il a décidé d'<u>aller</u> voir ses parents », justifiez la terminaison de la forme soulignée.*",
               steps: [
                 {
                   number: "1",
@@ -709,6 +709,10 @@ export const ficheAccordParticipePasse: Fiche = {
                 { type: "line", text: "**soutenues** : verbe pronominal réciproque (soutenir quelqu'un), « se » = COD → accord avec le sujet « elles » (féminin pluriel)." },
                 { type: "line", text: "**obtenus** : participe passé employé seul, épithète de « résultats » (masculin pluriel) → accord." },
                 { type: "line", text: "**félicitées** : auxiliaire avoir, « les » = COD antéposé, mis pour « les candidates » (féminin pluriel) → accord." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *retenues* et *félicitées*, employés avec l'auxiliaire *avoir*, s'accordent avec leur COD antéposé (le relatif *que* et le pronom *les*, mis pour *les candidates*), féminin pluriel. *soutenues* est le participe d'un pronominal réciproque dont *se* est COD : il s'accorde avec le sujet *elles*. *obtenus*, employé seul, est épithète de *résultats* (masculin pluriel). *écrit* reste invariable : dans *s'écrire des lettres*, *se* est COI et le COD *lettres* suit le verbe. »",
+                },
               ],
             },
             {
@@ -723,6 +727,10 @@ export const ficheAccordParticipePasse: Fiche = {
                 { type: "line", label: "b)", text: "« Les erreurs **commises** » : « les erreurs choisies » ✓ → participe passé, accordé avec « erreurs » (féminin pluriel)." },
                 { type: "line", label: "c)", text: "« laissé » est correct : depuis les rectifications de 1990, le participe passé « laissé » suivi d'un infinitif est recommandé invariable." },
                 { type: "line", label: "d)", text: "« J'ai entendu **chanter** » : « j'ai entendu choisir » ✓ → infinitif. Aucun sujet propre de l'infinitif n'est exprimé : il ne s'agit pas d'une subordonnée infinitive." },
+                {
+                  type: "formulationCrpe",
+                  text: "« a) *partir chercher* : le remplacement par *choisir* (*partir choisir*) donne un infinitif. b) *les erreurs commises* : *les erreurs choisies* fonctionne → participe passé, accordé avec *erreurs*, féminin pluriel. c) *elle a laissé entrer* : depuis les rectifications de 1990, *laissé* suivi d'un infinitif reste invariable. d) *j'ai entendu chanter* : *entendu choisir* donne un infinitif, sans sujet propre exprimé. »",
+                },
               ],
             },
             {
@@ -736,6 +744,10 @@ export const ficheAccordParticipePasse: Fiche = {
                 { type: "line", text: "**reçues** : auxiliaire avoir, « que » = COD antéposé, antécédent « lettres » (féminin pluriel) → accord." },
                 { type: "line", text: "**rangées** : auxiliaire avoir, « les » = COD antéposé, mis pour « les lettres » (féminin pluriel) → accord." },
                 { type: "line", text: "**assise** : verbe pronominal réfléchi (s'asseoir), « se » = COD (elle a assis elle-même) → accord avec le sujet « elle » (féminin singulier)." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *reçues* et *rangées*, employés avec l'auxiliaire *avoir*, s'accordent avec leur COD antéposé (le relatif *que* et le pronom *les*, mis pour *les lettres*), féminin pluriel. *assise* est le participe d'un pronominal réfléchi dont *se* est COD : il s'accorde avec le sujet *elle*, féminin singulier. »",
+                },
                 { type: "note", text: "💡 « Bouleversée » est un participe passé employé seul, épithète détachée du sujet « elle » (féminin singulier)." },
               ],
             },

@@ -352,7 +352,7 @@ export const ficheTempsDuPasse: Fiche = {
               number: "①",
               title: "Nommer la valeur d'un temps du passé",
               intro:
-                "**Exemple :** « Ce soir-là, ma mère <u>regardait</u> les enfants jouer dans le jardin. »\n**Question typique :** Donnez la valeur du verbe souligné.",
+                "*Question typique : Donnez la valeur du verbe souligné. Exemple : « Ce soir-là, ma mère <u>regardait</u> les enfants jouer dans le jardin. »*",
               steps: [
                 {
                   number: "1",
@@ -392,7 +392,7 @@ export const ficheTempsDuPasse: Fiche = {
               number: "②",
               title: "Commenter le système du récit",
               intro:
-                "**Exemple :** « Une femme <u>passa</u>. Elle <u>se hâtait</u>, les yeux baissés. »\n**Question typique :** Analysez l'emploi des temps dans cet extrait.",
+                "*Question typique : Analysez l'emploi des temps dans cet extrait : « Une femme <u>passa</u>. Elle <u>se hâtait</u>, les yeux baissés. »*",
               steps: [
                 {
                   number: "1",
@@ -786,6 +786,10 @@ export const ficheTempsDuPasse: Fiche = {
               correction: [
                 { type: "line", text: "« passa » est au passé simple de l'indicatif, valeur d'action délimitée : il exprime un événement ponctuel qui ouvre la scène." },
                 { type: "line", text: "« se hâtait » est à l'imparfait de l'indicatif, valeur descriptive : il présente une action en cours à l'arrière-plan, en opposition au passé simple." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *passa* est au passé simple de l'indicatif, à valeur d'action délimitée : il exprime un événement ponctuel qui ouvre la scène. *se hâtait* est à l'imparfait de l'indicatif, à valeur descriptive : il présente une action en cours à l'arrière-plan, par contraste avec le passé simple. »",
+                },
               ],
             },
             {
@@ -798,6 +802,10 @@ export const ficheTempsDuPasse: Fiche = {
               correction: [
                 { type: "line", text: "« souriait » est à l'imparfait de l'indicatif, valeur descriptive : il exprime l'état en cours de la mère, formant son portrait." },
                 { type: "line", text: "« disait » est à l'imparfait de l'indicatif, valeur descriptive : il exprime son comportement pendant le repas." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *souriait* et *disait* sont tous deux à l'imparfait de l'indicatif, à valeur descriptive : ils peignent l'état et le comportement de la mère pendant le repas. Ils ont ici la même valeur, déterminée par le cadre temporel *pendant le repas*. »",
+                },
                 { type: "note", text: "Les deux imparfaits ont ici la même valeur descriptive, déterminée par le cadre temporel « pendant le repas »." },
               ],
             },
@@ -809,6 +817,10 @@ export const ficheTempsDuPasse: Fiche = {
               question: "Rédigez la réponse jury pour « avait relu ».",
               correction: [
                 { type: "line", text: "« avait relu » est au plus-que-parfait de l'indicatif, valeur d'antériorité : il exprime une action accomplie avant un autre moment du passé, ici avant de poster la lettre." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *avait relu* est au plus-que-parfait de l'indicatif, à valeur d'antériorité : il exprime une action accomplie avant un autre moment du passé, ici avant de poster la lettre. »",
+                },
                 { type: "note", text: "💡 Identification de l'auxiliaire (« avait » = imparfait → plus-que-parfait) : voir notion 6." },
               ],
             },
@@ -824,6 +836,10 @@ export const ficheTempsDuPasse: Fiche = {
                 { type: "line", text: "« ai vu » est au passé composé de l'indicatif ; il porte un événement de premier plan dans ce récit à la première personne." },
                 { type: "line", text: "« séparaient » est à l'imparfait de l'indicatif, valeur descriptive : il exprime un état passé durable." },
                 { type: "line", text: "« suis monté » est au passé composé de l'indicatif ; il porte le second événement de premier plan." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *ai vu* et *suis monté* sont au passé composé de l'indicatif : ils portent les événements de premier plan d'un récit à la première personne. *séparaient* est à l'imparfait de l'indicatif, à valeur descriptive : il exprime un état passé durable. Les passés composés font progresser le récit, l'imparfait décrit l'arrière-plan. »",
+                },
                 { type: "note", text: "Les passés composés font progresser le récit ; l'imparfait décrit un état durable à l'arrière-plan." },
               ],
             },

@@ -451,7 +451,7 @@ export const fichePhonologie: Fiche = {
               number: "①",
               title: "Transcrire un mot en API",
               intro:
-                "**Question type :** « Transcrivez le mot *beaucoup* en alphabet phonétique international. »\nOn la déroule étape par étape, jusqu'à la réponse rédigée.",
+                "*Question typique : « Transcrivez le mot <u>beaucoup</u> en alphabet phonétique international. »*",
               steps: [
                 {
                   number: "1",
@@ -496,7 +496,7 @@ export const fichePhonologie: Fiche = {
               number: "②",
               title: "Compter lettres, graphèmes et phonèmes",
               intro:
-                "**Question type :** « Indiquez le nombre de lettres, de graphèmes et de phonèmes du mot *chant*. »\nLes trois nombres sont presque toujours différents : c'est tout l'enjeu.",
+                "*Question typique : « Indiquez le nombre de lettres, de graphèmes et de phonèmes du mot <u>chant</u>. »*",
               steps: [
                 {
                   number: "1",
@@ -541,7 +541,7 @@ export const fichePhonologie: Fiche = {
               number: "③",
               title: "Analyser la valeur d'une lettre",
               intro:
-                "**Question type :** « Quelle est la valeur de la lettre <t> dans le mot *patience* ? »\nLe jury attend un son ET le nom du type de valeur.",
+                "*Question typique : « Quelle est la valeur de la lettre <t> dans le mot <u>patience</u> ? »*",
               steps: [
                 {
                   number: "1",
@@ -839,9 +839,10 @@ export const fichePhonologie: Fiche = {
               enonce: "« j'ai vu se rouvrir les portes qui me séparaient du monde, je suis monté sur la terrasse du palais pour regarder les nuages. » (Marguerite Yourcenar, Comment Wang-Fô fut sauvé)",
               question: "Transcrivez « portes », « palais » et « nuages » et indiquez le nombre de phonèmes. Pour « portes », précisez la valeur de chaque graphème.",
               correction: [
-                { type: "line", text: "**Réponse attendue — portes** → /pɔʁt/ : 4 phonèmes. Valeur de chaque graphème : <p> /p/, <o> /ɔ/, <r> /ʁ/, <t> /t/, <e> muet, <s> muet." },
-                { type: "line", text: "**palais** → /palɛ/ : 4 phonèmes (<ai> = /ɛ/, <s> muet)." },
-                { type: "line", text: "**nuages** → /nɥaʒ/ : 4 phonèmes (<u> = /ɥ/, <ge> = /ʒ/, <s> muet)." },
+                {
+                  type: "formulationCrpe",
+                  text: "**portes** → /pɔʁt/ : 4 phonèmes ; valeur de chaque graphème : <p> /p/, <o> /ɔ/, <r> /ʁ/, <t> /t/, <e> muet, <s> muet.\n**palais** → /palɛ/ : 4 phonèmes (<ai> = /ɛ/, <s> muet).\n**nuages** → /nɥaʒ/ : 4 phonèmes (<u> = /ɥ/, <ge> = /ʒ/, <s> muet).",
+                },
                 { type: "note", text: "💡 Explication : on transcrit l'oral, donc le <e> et le <s> finaux (muets) ne sont jamais notés. Chaque graphème prononcé reçoit la valeur du phonème qu'il transcrit." },
               ],
             },
@@ -855,6 +856,10 @@ export const fichePhonologie: Fiche = {
               correction: [
                 { type: "line", label: "a)", text: "**h muet** : l'élision est possible (« l'habit ») et la liaison aussi (« un bel habit » /œ̃bɛlabi/)." },
                 { type: "line", label: "b)", text: "« habit » → /abi/ : 3 phonèmes. Lettres muettes : <h> (aucun phonème) et <t> final." },
+                {
+                  type: "formulationCrpe",
+                  text: "a) Le <h> de *habit* est muet : l'élision (*l'habit*) et la liaison (*un bel habit* /œ̃bɛlabi/) sont possibles. b) *habit* → /abi/ : 3 phonèmes ; les lettres muettes sont <h> et <t> final.",
+                },
               ],
             },
             {
@@ -864,7 +869,7 @@ export const fichePhonologie: Fiche = {
               enonce: "semblant · chambre · cependant · vantard",
               question: "Transcrivez chaque mot, comptez les phonèmes et indiquez le graphème du phonème /ɑ̃/.",
               correction: [
-                { type: "line", text: "**Réponse attendue :** semblant → /sɑ̃blɑ̃/ (5 phonèmes ; <em> = /ɑ̃/, <an> = /ɑ̃/) · chambre → /ʃɑ̃bʁ/ (4 ; <am> = /ɑ̃/, <e> final muet) · cependant → /səpɑ̃dɑ̃/ (6 ; <en> = /ɑ̃/, <an> = /ɑ̃/) · vantard → /vɑ̃taʁ/ (5 ; <an> = /ɑ̃/, <d> muet)." },
+                { type: "formulationCrpe", text: "semblant → /sɑ̃blɑ̃/ (5 phonèmes ; <em> = /ɑ̃/, <an> = /ɑ̃/) · chambre → /ʃɑ̃bʁ/ (4 ; <am> = /ɑ̃/, <e> final muet) · cependant → /səpɑ̃dɑ̃/ (6 ; <en> = /ɑ̃/, <an> = /ɑ̃/) · vantard → /vɑ̃taʁ/ (5 ; <an> = /ɑ̃/, <d> muet)." },
                 { type: "note", text: "💡 Explication : le phonème /ɑ̃/ se cache sous plusieurs graphèmes (an, am, en, em), chacun valant un seul son. Comptez bien : un digramme nasal = un phonème, et les lettres finales muettes (<t>, <d>, <e>) ne comptent pas." },
               ],
             },

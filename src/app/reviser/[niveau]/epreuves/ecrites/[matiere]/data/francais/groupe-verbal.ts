@@ -390,7 +390,7 @@ export const ficheGroupeVerbal: Fiche = {
               number: "①",
               title: "Identifier la construction d'un verbe pas à pas",
               intro:
-                "**Question typique :** « Dans la phrase “Le candidat <u>répond</u> à la question.”, le verbe souligné est-il employé dans une construction intransitive, transitive ou attributive ? Justifiez votre réponse. »\nOn déroule toute la démarche sur ce seul verbe, **répond**, jusqu'à la phrase à recopier le jour J.",
+                "*Question typique : « Dans la phrase “Le candidat <u>répond</u> à la question.”, le verbe souligné est-il employé dans une construction intransitive, transitive ou attributive ? Justifiez votre réponse. »*",
               steps: [
                 {
                   number: "1",
@@ -439,7 +439,7 @@ export const ficheGroupeVerbal: Fiche = {
               number: "②",
               title: "Distinguer la voix active et la voix passive",
               intro:
-                "**Question typique :** « Dans la phrase “Les copies <u>ont été corrigées</u> par le jury.”, le verbe souligné est-il à la voix active ou à la voix passive ? Justifiez votre réponse. »\nOn déroule la démarche sur la forme verbale **ont été corrigées**.",
+                "*Question typique : « Dans la phrase “Les copies <u>ont été corrigées</u> par le jury.”, le verbe souligné est-il à la voix active ou à la voix passive ? Justifiez votre réponse. »*",
               steps: [
                 {
                   number: "1",
@@ -483,7 +483,7 @@ export const ficheGroupeVerbal: Fiche = {
               number: "③",
               title: "Analyser un verbe à la voix pronominale",
               intro:
-                "**Question typique :** « Dans la phrase “Les deux sœurs <u>se sont écrit</u> tout l'été.”, identifiez l'emploi du verbe pronominal souligné et la fonction du pronom “se”. »\nOn déroule la démarche sur **se sont écrit**.",
+                "*Question typique : « Dans la phrase “Les deux sœurs <u>se sont écrit</u> tout l'été.”, identifiez l'emploi du verbe pronominal souligné et la fonction du pronom “se”. »*",
               steps: [
                 {
                   number: "1",
@@ -899,7 +899,7 @@ export const ficheGroupeVerbal: Fiche = {
                     ["jaillissaient", "Intransitif", "Aucun complément d'objet (« sous des ciels toujours bleus » = CC de lieu)"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *rêvait* est employé dans une construction **transitive indirecte** : *rêver de* appelle un COI (*Elle en rêvait*) ; *jaillissaient* est **intransitif** (aucun complément d'objet). »" },
+                { type: "formulationCrpe", text: "« *rêvait* est employé dans une construction **transitive indirecte** : *rêver de* appelle un COI (*Elle en rêvait*) ; *jaillissaient* est **intransitif** (aucun complément d'objet). »" },
                 { type: "note", text: "⚠️ « rêver de » est transitif indirect : ses compléments sont des COI, malgré l'absence apparente de préposition devant chaque GN coordonné (la préposition « de » est dans « des »)." },
               ],
             },
@@ -920,7 +920,7 @@ export const ficheGroupeVerbal: Fiche = {
                     ["sont las", "Attributif", "Attribut du sujet : « las de ne plus croire » (« de ne plus croire » complète l'adjectif « las »)"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *ne manquent pas* est **intransitif** (aucun complément d'objet, *sur la terre* étant un CC de lieu) ; *sont grandes* et *sont las* sont **attributifs** : *être* est un verbe d'état qui relie le sujet à son attribut (*grandes*, *las*), accordé avec lui. »" },
+                { type: "formulationCrpe", text: "« *ne manquent pas* est **intransitif** (aucun complément d'objet, *sur la terre* étant un CC de lieu) ; *sont grandes* et *sont las* sont **attributifs** : *être* est un verbe d'état qui relie le sujet à son attribut (*grandes*, *las*), accordé avec lui. »" },
               ],
             },
             {
@@ -940,7 +940,7 @@ export const ficheGroupeVerbal: Fiche = {
                     ["écrit", "Transitif direct en emploi absolu", "Aucun COD exprimé · « parce qu'on ne sait… » = CC de cause"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *est* est **attributif** : *un choix* est attribut du sujet *Écrire* (infinitif employé comme sujet) ; *écrit* est un transitif direct en **emploi absolu** (aucun COD exprimé, *parce qu'on ne sait…* est un CC de cause). »" },
+                { type: "formulationCrpe", text: "« *est* est **attributif** : *un choix* est attribut du sujet *Écrire* (infinitif employé comme sujet) ; *écrit* est un transitif direct en **emploi absolu** (aucun COD exprimé, *parce qu'on ne sait…* est un CC de cause). »" },
                 { type: "note", text: "⚠️ « Écrire » reste un verbe à l'infinitif, même employé comme sujet de « est ». On n'écrit jamais « nom verbal » : cette catégorie n'existe pas (voir la [notion 1 sur les classes grammaticales](fiche:classes-grammaticales))." },
               ],
             },
@@ -963,7 +963,7 @@ export const ficheGroupeVerbal: Fiche = {
                     ["étaient moins beaux", "Attributif", "Attribut du sujet « ils » : « moins beaux » (adjectif au comparatif d'infériorité)"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *ai vu* est transitif direct, son COD étant la proposition infinitive *se rouvrir les portes* ; *suis monté* est **intransitif** (passé composé avec *être*, et non passif) ; *étaient* est **attributif**, *moins beaux* étant attribut du sujet *ils*. »" },
+                { type: "formulationCrpe", text: "« *ai vu* est transitif direct, son COD étant la proposition infinitive *se rouvrir les portes* ; *suis monté* est **intransitif** (passé composé avec *être*, et non passif) ; *étaient* est **attributif**, *moins beaux* étant attribut du sujet *ils*. »" },
                 { type: "note", text: "💡 « suis monté » est un passé composé avec l'auxiliaire « être » (verbe de mouvement), à ne pas confondre avec une voix passive." },
               ],
             },
@@ -984,7 +984,7 @@ export const ficheGroupeVerbal: Fiche = {
                     ["monte", "Intransitif", "Aucun complément d'objet · sujet : « une joie nouvelle » · « en nous » = CC de lieu au sens figuré"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *font rêver* est un noyau verbal à la **voix factitive** (*faire* + infinitif) : le sujet *ces récits* fait accomplir l'action, *nous* est COD ; *monte* est **intransitif** (sujet *une joie nouvelle*, *en nous* étant un CC de lieu au sens figuré). »" },
+                { type: "formulationCrpe", text: "« *font rêver* est un noyau verbal à la **voix factitive** (*faire* + infinitif) : le sujet *ces récits* fait accomplir l'action, *nous* est COD ; *monte* est **intransitif** (sujet *une joie nouvelle*, *en nous* étant un CC de lieu au sens figuré). »" },
                 { type: "note", text: "⚠️ « faire » est ici un semi-auxiliaire factitif : on analyse ensemble « font rêver » comme noyau verbal." },
               ],
             },

@@ -413,7 +413,7 @@ export const ficheCoherenceTextuelle: Fiche = {
               number: "①",
               title: "Reconstituer une chaîne référentielle",
               intro:
-                "**Question typique :** « Relevez les reprises du référent X et précisez leur type. »\nOn part de la première mention.",
+                "*Question typique : « Relevez les reprises du référent et précisez leur type, dans : “Une fillette traversait le marché. Elle s'arrêta net : la petite avait repéré un étal de fruits.” »*",
               steps: [
                 {
                   number: "1",
@@ -448,7 +448,7 @@ export const ficheCoherenceTextuelle: Fiche = {
               number: "②",
               title: "Analyser un connecteur et la progression",
               intro:
-                "**Question typique :** « Quelle relation logique exprime ce connecteur ? Comment le texte progresse-t-il ? »",
+                "*Question typique : « Quelle relation logique exprime le connecteur souligné, et comment le texte progresse-t-il ? : “Il s'était entraîné des mois ; <u>par conséquent</u>, il remporta la médaille.” »*",
               steps: [
                 {
                   number: "1",
@@ -483,7 +483,7 @@ export const ficheCoherenceTextuelle: Fiche = {
               number: "③",
               title: "Identifier et interpréter un champ lexical",
               intro:
-                "**Question typique :** « Identifiez le champ lexical dominant et son effet. »\nRelever, nommer, interpréter.",
+                "*Question typique : « Identifiez le champ lexical dominant et son effet, dans : “nuit, obscur, ombre, lune, silence”. »*",
               steps: [
                 {
                   number: "1",
@@ -798,6 +798,10 @@ export const ficheCoherenceTextuelle: Fiche = {
                 { type: "line", text: "**2)** « En effet » (explication / cause) ; « Par ailleurs » (addition) ; « Bref » (conclusion / synthèse)." },
                 { type: "line", text: "**3)** Champ lexical du **voyage** : « voyager, s'embarque, contrées, traverse, paysages, odyssée, fenêtre ouverte »." },
                 { type: "line", text: "**4)** Progression **à thème constant** : « lire / la lecture » reste le sujet, décliné sous plusieurs angles (voyage, transformation, empathie)." },
+                {
+                  type: "formulationCrpe",
+                  text: "« Le référent *lire / lecture* est repris par *le lecteur* (celui qui lit), *cette odyssée silencieuse* (reformulation métaphorique) et *le livre* (métonymie de l'objet pour la pratique). Les connecteurs *en effet* (cause), *par ailleurs* (addition) et *bref* (conclusion) balisent le raisonnement. Le champ lexical dominant est celui du voyage (*voyager, s'embarque, contrées, traverse, paysages, odyssée, fenêtre ouverte*). Le texte progresse à thème constant : la lecture, posée d'emblée, est déclinée sous plusieurs angles (voyage, transformation, empathie). »",
+                },
               ],
             },
             {
@@ -809,7 +813,10 @@ export const ficheCoherenceTextuelle: Fiche = {
               question: "Identifiez les défauts de cohérence, puis proposez une version améliorée.",
               correction: [
                 { type: "line", text: "**Défauts :** répétition de « la lecture » sans reprise ; absence de connecteurs (juxtaposition) ; « malgré que » + indicatif (incorrect) ; pas de progression hiérarchisée." },
-                { type: "paragraph", text: "**Version améliorée :** « La lecture occupe une place centrale dans le développement de l'enfant : elle enrichit son vocabulaire et ouvre des horizons nouveaux. **Pourtant**, cette pratique recule aujourd'hui, concurrencée par les écrans. **C'est pourquoi** il est essentiel de l'encourager dès le plus jeune âge. »" },
+                {
+                  type: "formulationCrpe",
+                  text: "« La lecture occupe une place centrale dans le développement de l'enfant : elle enrichit son vocabulaire et ouvre des horizons nouveaux. *Pourtant*, cette pratique recule aujourd'hui, concurrencée par les écrans. *C'est pourquoi* il est essentiel de l'encourager dès le plus jeune âge. »",
+                },
               ],
             },
           ],

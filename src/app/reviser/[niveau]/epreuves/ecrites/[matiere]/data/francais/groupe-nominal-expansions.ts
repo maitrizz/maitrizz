@@ -351,7 +351,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
               number: "①",
               title: "Analyser la structure d'un GN pas à pas",
               intro:
-                "**Question typique :** « Délimitez le groupe nominal, donnez son nom noyau et analysez ses expansions : *<u>Le vieux chat roux de ma voisine</u> dormait sur le canapé.* »\nIci, on ne part pas d'un groupe isolé dont il faut trouver la fonction dans la phrase : on part d'un **GN entier** et on observe son organisation interne. On déroule toute la démarche sur ce seul GN, jusqu'à la réponse rédigée.",
+                "*Question typique : « Délimitez le groupe nominal, donnez son nom noyau et analysez ses expansions : <u>Le vieux chat roux de ma voisine</u> dormait sur le canapé. »*",
               steps: [
                 {
                   number: "1",
@@ -403,7 +403,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
               number: "②",
               title: "Déterminer le type d'une relative (déterminative ou explicative)",
               intro:
-                "**Question typique :** « La proposition subordonnée relative soulignée est-elle déterminative ou explicative ? Justifiez : *Les élèves <u>qui travaillent</u> réussissent.* »\nLa ponctuation oriente, le test de suppression tranche. On déroule sur la relative *qui travaillent*.",
+                "*Question typique : « La proposition subordonnée relative soulignée est-elle déterminative ou explicative ? Justifiez : Les élèves <u>qui travaillent</u> réussissent. »*",
               steps: [
                 {
                   number: "1",
@@ -802,7 +802,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["pressée d'atteindre sa maison", "Adjectif + groupe infinitif prépositionnel", "Épithète détachée du sujet « elle »"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *tenant* → participe présent, épithète détachée du nom *femme* (équivaut à *qui tenait*) ; *d'une dizaine d'années* → GN prépositionnel, complément du nom *garçon* ; *baissés* → participe passé employé comme adjectif, épithète du nom *yeux* ; *pressée d'atteindre sa maison* → groupe adjectival, épithète détachée du sujet *elle*. »" },
+                { type: "formulationCrpe", text: "« *tenant* → participe présent, épithète détachée du nom *femme* (équivaut à *qui tenait*) ; *d'une dizaine d'années* → GN prépositionnel, complément du nom *garçon* ; *baissés* → participe passé employé comme adjectif, épithète du nom *yeux* ; *pressée d'atteindre sa maison* → groupe adjectival, épithète détachée du sujet *elle*. »" },
                 { type: "note", text: "⚠️ « tenant » n'est pas une proposition participiale : celle-ci suppose un sujet propre, distinct de celui de la principale. Ici, « tenant » partage le sujet « femme » : c'est donc un participe présent en épithète détachée. À distinguer aussi du gérondif (« en tenant ») et de l'adjectif verbal accordé." },
               ],
             },
@@ -825,7 +825,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["bleus", "Adjectif qualificatif", "Épithète du nom « ciels »"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *lointaines* → adjectif qualificatif, épithète du nom *contrées* ; *lumineux* → adjectif qualificatif, épithète du nom *rivages* ; *de marbre* → GN prépositionnel, complément du nom *palais* ; *où* → pronom relatif, qui introduit la relative, expansion du nom *palais* ; *bleus* → adjectif qualificatif, épithète du nom *ciels*. »" },
+                { type: "formulationCrpe", text: "« *lointaines* → adjectif qualificatif, épithète du nom *contrées* ; *lumineux* → adjectif qualificatif, épithète du nom *rivages* ; *de marbre* → GN prépositionnel, complément du nom *palais* ; *où* → pronom relatif, qui introduit la relative, expansion du nom *palais* ; *bleus* → adjectif qualificatif, épithète du nom *ciels*. »" },
                 { type: "note", text: "💡 La fonction de « où » dans la relative (CC de lieu) relève de l'analyse des fonctions : voir la [notion 2](fiche:fonctions-syntaxiques)." },
               ],
             },
@@ -847,7 +847,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["de sa vie", "GN prépositionnel", "Complément du nom « vide »"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *solitaires* → adjectif qualificatif, épithète du nom *promenades* ; *silencieuses* → adjectif qualificatif, épithète du nom *chevauchées* ; *d'automne* → GN prépositionnel, complément du nom *soirs* ; *de sa vie* → GN prépositionnel, complément du nom *vide*. »" },
+                { type: "formulationCrpe", text: "« *solitaires* → adjectif qualificatif, épithète du nom *promenades* ; *silencieuses* → adjectif qualificatif, épithète du nom *chevauchées* ; *d'automne* → GN prépositionnel, complément du nom *soirs* ; *de sa vie* → GN prépositionnel, complément du nom *vide*. »" },
               ],
             },
             {
@@ -868,7 +868,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["les provinces de l'Empire", "provinces", "« de l'Empire » → complément du nom « provinces » (GN prépositionnel)"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *un tapis dont elles savaient par cœur le dessin* a pour noyau *tapis*, enrichi par la proposition subordonnée relative *dont elles savaient par cœur le dessin* ; *les provinces de l'Empire* a pour noyau *provinces*, avec le complément du nom *de l'Empire* (GN prépositionnel). »" },
+                { type: "formulationCrpe", text: "« *un tapis dont elles savaient par cœur le dessin* a pour noyau *tapis*, enrichi par la proposition subordonnée relative *dont elles savaient par cœur le dessin* ; *les provinces de l'Empire* a pour noyau *provinces*, avec le complément du nom *de l'Empire* (GN prépositionnel). »" },
                 { type: "note", text: "⚠️ Le pronom relatif « dont » a pour antécédent « tapis ». Sa fonction se trouve par dépronominalisation : « elles savaient par cœur le dessin **de ce tapis** », donc « dont » = complément du nom « dessin » (et non COI du verbe « savoir », qui est transitif direct). Cette analyse de fonction relève de la [notion 2](fiche:fonctions-syntaxiques)." },
               ],
             },
@@ -890,7 +890,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["le réel", "réel", "Adjectif substantivé employé comme nom (le déterminant « le » confirme l'emploi nominal) : GN minimal, sans expansion"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *un aveu d'impuissance* a pour noyau *aveu*, avec le complément du nom *d'impuissance* (GN prépositionnel) ; *quel autre biais* a pour noyau *biais*, introduit par le déterminant interrogatif *quel* et enrichi par l'épithète liée *autre* ; *le réel* est un adjectif substantivé employé comme nom, GN minimal sans expansion. »" },
+                { type: "formulationCrpe", text: "« *un aveu d'impuissance* a pour noyau *aveu*, avec le complément du nom *d'impuissance* (GN prépositionnel) ; *quel autre biais* a pour noyau *biais*, introduit par le déterminant interrogatif *quel* et enrichi par l'épithète liée *autre* ; *le réel* est un adjectif substantivé employé comme nom, GN minimal sans expansion. »" },
               ],
             },
             {
@@ -911,7 +911,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["ces palmes qui font l'ombre à mon âme", "palmes", "« qui font l'ombre à mon âme » → proposition subordonnée relative déterminative"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Insensées choses qui nous font rêver* a pour noyau *choses* : *Insensées* est une épithète liée (adjectif, féminin pluriel) et *qui nous font rêver* une proposition subordonnée relative déterminative ; *une humble flamme* a pour noyau *flamme*, avec l'épithète liée *humble* ; *ces palmes qui font l'ombre à mon âme* a pour noyau *palmes*, enrichi par la relative déterminative *qui font l'ombre à mon âme*. »" },
+                { type: "formulationCrpe", text: "« *Insensées choses qui nous font rêver* a pour noyau *choses* : *Insensées* est une épithète liée (adjectif, féminin pluriel) et *qui nous font rêver* une proposition subordonnée relative déterminative ; *une humble flamme* a pour noyau *flamme*, avec l'épithète liée *humble* ; *ces palmes qui font l'ombre à mon âme* a pour noyau *palmes*, enrichi par la relative déterminative *qui font l'ombre à mon âme*. »" },
                 { type: "note", text: "⚠️ « Insensées » n'est pas un participe passé (il n'existe pas de verbe « insenser ») : c'est un adjectif qualificatif qui s'accorde avec « choses » (féminin pluriel)." },
               ],
             },

@@ -371,7 +371,7 @@ export const ficheHomophonesGrammaticaux: Fiche = {
               number: "①",
               title: "Trancher un homophone grammatical",
               intro:
-                "**Question typique :** « Justifiez l'orthographe du mot souligné. »\nExemple d'appui : « Je ___ ai rendu ___ livres. » On identifie la nature de chaque occurrence par un test.",
+                "*Question typique : « Justifiez l'orthographe du mot souligné. » Exemple d'appui : « Je ___ ai rendu ___ livres. »*",
               steps: [
                 {
                   number: "1",
@@ -721,6 +721,10 @@ export const ficheHomophonesGrammaticaux: Fiche = {
                 { type: "line", text: "**là** : adverbe de lieu, remplaçable par « ici »." },
                 { type: "line", text: "**qu'elle** : « que » + pronom personnel ; test « qu'il l'a répété »." },
                 { type: "line", text: "**l'a** : pronom « l' » + verbe avoir ; test « l'avait répété »." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *Ce* (matin-là) et *ces* (consignes) sont des déterminants démonstratifs ; *ses* (élèves) un déterminant possessif (*son élève*) ; *se* (taisaient) le pronom réfléchi de *se taire* ; *on* un pronom personnel indéfini (*il avait demandé*) ; *leur* un pronom personnel COI invariable (*lui*) ; *davantage* un adverbe (*plus*) ; *mais* une conjonction de coordination d'opposition (*cependant*) ; *C'est* équivaut à *cela est* (pronom démonstratif + verbe *être*) ; *là* un adverbe de lieu ; *qu'elle* = *que* + pronom personnel (*qu'il*) ; *l'a* = pronom *l'* + verbe *avoir* (*l'avait répété*). »",
+                },
               ],
             },
             {
@@ -736,6 +740,10 @@ export const ficheHomophonesGrammaticaux: Fiche = {
                 { type: "line", text: "**On** voit : pronom personnel indéfini (« il voit » ✓)." },
                 { type: "line", text: "ils **ont** besoin : verbe avoir 3e pluriel (« ils avaient besoin » ✓ ; « a » serait incompatible avec « ils »)." },
                 { type: "line", text: "**ces** moments : déterminant démonstratif (« ce moment » au singulier), qui renvoie aux moments de liberté dont on vient de parler." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *Ces* enfants : déterminant démonstratif (*cet enfant* au singulier). *leurs* rires : déterminant possessif, accordé avec *rires*. *On* voit : pronom personnel indéfini (*il voit*). Ils *ont* besoin : verbe *avoir*, 3ᵉ personne du pluriel (*ils avaient*). *ces* moments : déterminant démonstratif (*ce moment*). »",
+                },
               ],
             },
           ],

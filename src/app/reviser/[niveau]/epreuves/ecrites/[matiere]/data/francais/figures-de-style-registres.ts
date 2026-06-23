@@ -310,7 +310,7 @@ export const ficheFiguresRegistres: Fiche = {
               number: "①",
               title: "Repérer la famille d'une figure et la nommer précisément",
               intro:
-                "**Question typique :** « Relevez et nommez précisément la figure de style dans la phrase : “ma route est une impasse”. » La même démarche s'applique à toute figure, quelle que soit sa famille.",
+                "*Question typique : « Relevez et nommez précisément la figure de style dans la phrase : “ma route est une impasse”. »*",
               steps: [
                 {
                   number: "1",
@@ -351,7 +351,7 @@ export const ficheFiguresRegistres: Fiche = {
               number: "②",
               title: "Identifier le registre (de langue puis littéraire)",
               intro:
-                "**Question typique :** « Caractérisez le registre du passage : “Ô mon fils, mon unique espérance, faut-il que je te survive ?” »",
+                "*Question typique : « Caractérisez le registre du passage : “Ô mon fils, mon unique espérance, faut-il que je te survive ?” »*",
               steps: [
                 {
                   number: "1",
@@ -387,7 +387,7 @@ export const ficheFiguresRegistres: Fiche = {
               number: "③",
               title: "Rédiger l'analyse complète d'une figure (les quatre temps)",
               intro:
-                "**Question typique :** « Relevez et analysez un procédé stylistique dans : “l'éclaboussure des âmes humaines” (Lola Lafon). » Le jury attend quatre temps enchaînés.",
+                "*Question typique : « Relevez et analysez un procédé stylistique dans : “l'éclaboussure des âmes humaines” (Lola Lafon). »*",
               steps: [
                 {
                   number: "1",
@@ -685,10 +685,10 @@ export const ficheFiguresRegistres: Fiche = {
               question: "Relevez trois procédés lexicaux qui caractérisent le travail de l'écrivain, et analysez l'effet de chacun.",
               correction: [
                 { type: "line", text: "**Démarche :** pour chaque citation, nommer le procédé, repérer le comparé et le comparant, puis dire ce que l'image apporte au portrait de l'écrivain. On vise trois procédés nommés et trois effets analysés." },
-                { type: "line", text: "**Réponse attendue (formulation modèle) :**" },
-                { type: "line", text: "**1) Comparaison** : « semblable à la barre d'une danseuse » rapproche la relecture d'un exercice quotidien de danseuse. L'image évoque discipline, humilité et confrontation à son reflet : l'écriture est un art de l'entraînement, non de l'inspiration." },
-                { type: "line", text: "**2) Comparaison et litote** : « me va mal, comme un habit trop lâche » dit l'inadéquation entre soi et sa vie ; la litote « me va mal » sous-entend, par retenue, une nécessité vitale." },
-                { type: "line", text: "**3) Métaphore filée** : « ma route est une impasse » s'inscrit dans la métaphore filée du voyage désorienté : l'écriture devient un périple sans boussole, à la fois risqué et nécessaire." },
+                {
+                  type: "formulationCrpe",
+                  text: "**1) Comparaison** : « semblable à la barre d'une danseuse » rapproche la relecture d'un exercice quotidien de danseuse. L'image évoque discipline, humilité et confrontation à son reflet : l'écriture est un art de l'entraînement, non de l'inspiration.\n**2) Comparaison et litote** : « me va mal, comme un habit trop lâche » dit l'inadéquation entre soi et sa vie ; la litote « me va mal » sous-entend, par retenue, une nécessité vitale.\n**3) Métaphore filée** : « ma route est une impasse » s'inscrit dans la métaphore filée du voyage désorienté : l'écriture devient un périple sans boussole, à la fois risqué et nécessaire.",
+                },
               ],
             },
             {
@@ -700,7 +700,10 @@ export const ficheFiguresRegistres: Fiche = {
               question: "Identifiez au moins deux procédés et analysez leur effet combiné.",
               correction: [
                 { type: "line", text: "**Démarche :** repérer le champ d'images dominant (ici la peinture), nommer les procédés, puis montrer comment ils se renforcent pour servir une même idée." },
-                { type: "line", text: "**Réponse attendue (formulation modèle) :** « Le passage repose sur une métaphore filée picturale : le monde est assimilé à une peinture ratée (taches, peintre, effacées), donc à une réalité inférieure à l'art. L'hyperbole “peintre insensé” amplifie le désordre du réel. La cohérence de l'image picturale et l'exagération convergent : l'art transcende un réel décevant, pour qui n'en connaissait que la beauté. »" },
+                {
+                  type: "formulationCrpe",
+                  text: "« Le passage repose sur une métaphore filée picturale : le monde est assimilé à une peinture ratée (taches, peintre, effacées), donc à une réalité inférieure à l'art. L'hyperbole “peintre insensé” amplifie le désordre du réel. La cohérence de l'image picturale et l'exagération convergent : l'art transcende un réel décevant, pour qui n'en connaissait que la beauté. »",
+                },
               ],
             },
             {
@@ -711,9 +714,10 @@ export const ficheFiguresRegistres: Fiche = {
               question: "Précisez le registre de langue et le registre littéraire de chacun.",
               correction: [
                 { type: "line", text: "**Démarche :** pour chaque citation, séparer les deux niveaux d'analyse : d'abord le registre de langue (vocabulaire, syntaxe), puis le registre littéraire (ton, effet visé)." },
-                { type: "line", text: "**Réponse attendue (formulation modèle) :**" },
-                { type: "line", text: "**Yourcenar** : registre de langue soutenu (vocabulaire précis, syntaxe ample) ; registre littéraire lyrique et épique (le récit d'une révélation, avec une dimension de grandeur)." },
-                { type: "line", text: "**Lafon** : registre de langue courant, voire familier (« mener en bateau ») ; registre littéraire ironique et comique (jeu sur la polysémie, autodérision)." },
+                {
+                  type: "formulationCrpe",
+                  text: "**Yourcenar** : registre de langue soutenu (vocabulaire précis, syntaxe ample) ; registre littéraire lyrique et épique (le récit d'une révélation, avec une dimension de grandeur).\n**Lafon** : registre de langue courant, voire familier (« mener en bateau ») ; registre littéraire ironique et comique (jeu sur la polysémie, autodérision).",
+                },
               ],
             },
             {
@@ -724,8 +728,10 @@ export const ficheFiguresRegistres: Fiche = {
               question: "Rédigez une analyse de style identifiant et analysant trois procédés.",
               correction: [
                 { type: "line", text: "**Démarche :** annoncer les trois procédés, les analyser un à un (nom, mécanisme, effet), puis fermer sur l'idée d'ensemble qu'ils servent. C'est le format d'une réponse rédigée au concours." },
-                { type: "line", text: "**Réponse attendue (formulation modèle) :**" },
-                { type: "paragraph", text: "« La comparaison “comme un habit trop lâche” corporalise une inadéquation abstraite : on s'empêtre dans une vie qui n'est pas la sienne. La litote “me va mal” dit moins que la vérité, puisque l'écriture est vitale, et produit une élégance retenue. Enfin, la métaphore “attraper le réel” présente l'écriture comme l'unique filet capable de saisir une réalité fuyante. Ces trois procédés convergent vers une même thèse : écrire est une nécessité, la seule façon d'habiter le monde à sa juste mesure. »" },
+                {
+                  type: "formulationCrpe",
+                  text: "« La comparaison “comme un habit trop lâche” corporalise une inadéquation abstraite : on s'empêtre dans une vie qui n'est pas la sienne. La litote “me va mal” dit moins que la vérité, puisque l'écriture est vitale, et produit une élégance retenue. Enfin, la métaphore “attraper le réel” présente l'écriture comme l'unique filet capable de saisir une réalité fuyante. Ces trois procédés convergent vers une même thèse : écrire est une nécessité, la seule façon d'habiter le monde à sa juste mesure. »",
+                },
               ],
             },
           ],

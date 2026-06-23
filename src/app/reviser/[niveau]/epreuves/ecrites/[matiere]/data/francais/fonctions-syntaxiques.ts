@@ -429,7 +429,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               number: "①",
               title: "La démarche complète : situer, tester, rédiger",
               intro:
-                "**Question typique :** « Donnez la fonction du groupe souligné : *Le soir, les enfants regardent <u>un film</u>.* »\nOn déroule tout sur ce seul groupe, **un film**, jusqu'à la réponse rédigée.",
+                "*Question typique : « Donnez la fonction du groupe souligné : Le soir, les enfants regardent <u>un film</u>. »*",
               steps: [
                 {
                   number: "1",
@@ -467,7 +467,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               number: "②",
               title: "Trancher entre COD, COI et complément essentiel",
               intro:
-                "**Question typique :** « Donnez la fonction du groupe souligné : *Il téléphone <u>à sa mère</u> tous les dimanches.* »\nLa préposition *à* peut cacher plusieurs fonctions : on déroule les tests sur **à sa mère**.",
+                "*Question typique : « Donnez la fonction du groupe souligné : Il téléphone <u>à sa mère</u> tous les dimanches. »*",
               steps: [
                 {
                   number: "1",
@@ -505,7 +505,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               number: "③",
               title: "Trancher entre attribut du sujet et épithète détachée",
               intro:
-                "**Question typique :** « Donnez la fonction du mot souligné : *<u>Heureuse</u>, elle entra dans la pièce.* »\nL'adjectif *Heureuse* qualifie bien le sujet : reste à savoir s'il est attribut ou épithète détachée. On déroule sur **Heureuse**.",
+                "*Question typique : « Donnez la fonction du mot souligné : <u>Heureuse</u>, elle entra dans la pièce. »*",
               steps: [
                 {
                   number: "1",
@@ -533,7 +533,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               number: "④",
               title: "Trouver la fonction d'un pronom relatif (qui, que, dont, où)",
               intro:
-                "**Question typique :** « Donnez la nature et la fonction du mot souligné : *La maison <u>dont</u> il rêvait était à vendre.* »\nUn pronom relatif demande deux réponses : sa **nature** (pronom relatif) et sa **fonction**, qui se trouve dans la subordonnée. On déroule sur **dont**.",
+                "*Question typique : « Donnez la nature et la fonction du mot souligné : La maison <u>dont</u> il rêvait était à vendre. »*",
               steps: [
                 {
                   number: "1",
@@ -1188,7 +1188,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["avant", "Préposition", "Introduit le GN « la nuit », CC de temps"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Une femme* → GN, sujet de *passa* ; *tenant* → participe présent, épithète détachée (apposée) du sujet *femme* (équivaut à « qui tenait ») ; *d'une dizaine d'années* → GN prépositionnel, CDN du nom *garçon* ; *baissés* → participe passé employé comme adjectif, épithète détachée du nom *yeux* ; *avant* → préposition, qui introduit le GN *la nuit* (CC de temps). »" },
+                { type: "formulationCrpe", text: "« *Une femme* → GN, sujet de *passa* ; *tenant* → participe présent, épithète détachée (apposée) du sujet *femme* (équivaut à « qui tenait ») ; *d'une dizaine d'années* → GN prépositionnel, CDN du nom *garçon* ; *baissés* → participe passé employé comme adjectif, épithète détachée du nom *yeux* ; *avant* → préposition, qui introduit le GN *la nuit* (CC de temps). »" },
                 { type: "note", text: "⚠️ « tenant » = participe présent, à distinguer du gérondif (« en tenant ») et de l'adjectif verbal (« une eau courante », qui s'accorde). Ce n'est pas une proposition participiale : celle-ci suppose un sujet propre, distinct de celui de la principale." },
               ],
             },
@@ -1210,7 +1210,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["le vide de sa vie", "Groupe nominal", "COD du verbe « sentait »"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *solitaires* → adjectif qualificatif, épithète liée du nom *promenades* ; *quand* → conjonction de subordination, qui introduit la subordonnée circonstancielle de temps ; *seul* → adjectif qualificatif, épithète détachée du sujet *il* ; *le vide de sa vie* → GN, COD de *sentait*. »" },
+                { type: "formulationCrpe", text: "« *solitaires* → adjectif qualificatif, épithète liée du nom *promenades* ; *quand* → conjonction de subordination, qui introduit la subordonnée circonstancielle de temps ; *seul* → adjectif qualificatif, épithète détachée du sujet *il* ; *le vide de sa vie* → GN, COD de *sentait*. »" },
               ],
             },
             {
@@ -1231,7 +1231,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["rien", "Pronom indéfini", "COD du verbe « disait »"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif, CDN du nom *regard* (le regard *de ma mère*) ; *muette* → adjectif qualificatif, épithète détachée du sujet *elle* ; *heureuse* → adjectif qualificatif, épithète détachée du sujet *elle* ; *rien* → pronom indéfini, COD de *disait*. »" },
+                { type: "formulationCrpe", text: "« *dont* → pronom relatif, CDN du nom *regard* (le regard *de ma mère*) ; *muette* → adjectif qualificatif, épithète détachée du sujet *elle* ; *heureuse* → adjectif qualificatif, épithète détachée du sujet *elle* ; *rien* → pronom indéfini, COD de *disait*. »" },
                 { type: "note", text: "⚠️ La fonction de « dont » se trouve au cas par cas par dépronominalisation : ici CDN, ailleurs COI. On ne généralise jamais." },
               ],
             },
@@ -1253,7 +1253,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["toujours", "Adverbe de temps", "Modifie l'adjectif « bleus »"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *lointaines* → adjectif qualificatif, épithète liée du nom *contrées* ; *de marbre* → GN prépositionnel, CDN du nom *palais* ; *où* → pronom relatif, CC de lieu de *jaillissaient* (dans les palais) ; *toujours* → adverbe de temps, qui modifie l'adjectif *bleus*. »" },
+                { type: "formulationCrpe", text: "« *lointaines* → adjectif qualificatif, épithète liée du nom *contrées* ; *de marbre* → GN prépositionnel, CDN du nom *palais* ; *où* → pronom relatif, CC de lieu de *jaillissaient* (dans les palais) ; *toujours* → adverbe de temps, qui modifie l'adjectif *bleus*. »" },
               ],
             },
             {
@@ -1275,7 +1275,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["vieil imposteur", "Groupe nominal", "Apostrophe (interpelle l'interlocuteur, aucun lien syntaxique)"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif, CDN du nom *dessin* (le dessin *de ce tapis*) ; *de l'Empire* → GN prépositionnel, CDN du nom *provinces* ; *m'* → pronom personnel, COI de *mentir* (mentir à quelqu'un) ; *vieil imposteur* → GN, apostrophe (aucune fonction syntaxique). »" },
+                { type: "formulationCrpe", text: "« *dont* → pronom relatif, CDN du nom *dessin* (le dessin *de ce tapis*) ; *de l'Empire* → GN prépositionnel, CDN du nom *provinces* ; *m'* → pronom personnel, COI de *mentir* (mentir à quelqu'un) ; *vieil imposteur* → GN, apostrophe (aucune fonction syntaxique). »" },
                 { type: "note", text: "⚠️ Piège classique : « m' » = COI (mentir À quelqu'un, jamais COD). Et « vieil imposteur » = apostrophe, pas apposition ni COD." },
               ],
             },
@@ -1299,7 +1299,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["va", "Vivre", "Verbe à l'infinitif", "Sujet du verbe « va »"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *est* (1re occ.) a pour sujet *Écrire* (verbe à l'infinitif) ; *est* (2e occ.) a pour sujet *c'* (pronom démonstratif élidé) ; *écrit* a pour sujet *On* (pronom personnel indéfini) ; *va* a pour sujet *Vivre* (verbe à l'infinitif). »" },
+                { type: "formulationCrpe", text: "« *est* (1re occ.) a pour sujet *Écrire* (verbe à l'infinitif) ; *est* (2e occ.) a pour sujet *c'* (pronom démonstratif élidé) ; *écrit* a pour sujet *On* (pronom personnel indéfini) ; *va* a pour sujet *Vivre* (verbe à l'infinitif). »" },
                 { type: "note", text: "⚠️ Un infinitif peut être sujet. « c' » est un pronom démonstratif élidé, à ne pas confondre avec le déterminant « ce »." },
               ],
             },
@@ -1321,7 +1321,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["Je", "Pronom personnel, 1re pers. sing.", "Sujet du verbe « sais »"],
                   ],
                 },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Jugez* → verbe à l'impératif présent (2e pers. pluriel), verbe de la principale (pas de sujet exprimé) ; *Insensées* → adjectif qualificatif, épithète liée du nom *choses* ; *rêver* → verbe à l'infinitif, COD de *font* (faire + infinitif) ; *Je* → pronom personnel, sujet de *sais*. »" },
+                { type: "formulationCrpe", text: "« *Jugez* → verbe à l'impératif présent (2e pers. pluriel), verbe de la principale (pas de sujet exprimé) ; *Insensées* → adjectif qualificatif, épithète liée du nom *choses* ; *rêver* → verbe à l'infinitif, COD de *font* (faire + infinitif) ; *Je* → pronom personnel, sujet de *sais*. »" },
                 { type: "note", text: "⚠️ « Insensées » n'est pas un participe passé (il n'existe pas de verbe « insenser ») : c'est un adjectif qualificatif qui s'accorde avec « choses »." },
               ],
             },
