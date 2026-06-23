@@ -4,6 +4,7 @@ import type { Fiche } from "@/components/fiche/types";
 const OBJECTIFS = [
   { id: "en1", label: "Je distingue un énoncé ancré dans la situation d'énonciation d'un récit coupé de cette situation (pronoms, temps, repères)" },
   { id: "en2", label: "J'identifie les embrayeurs (déictiques) et je précise ce qu'ils désignent dans le contexte" },
+  { id: "en8", label: "Je repère les marques de subjectivité (modalisation) par lesquelles le locuteur s'implique dans son énoncé" },
   { id: "en3", label: "Je reconnais le discours direct et je sais commenter sa ponctuation (guillemets, tirets, incise)" },
   { id: "en4", label: "Je reconnais le discours indirect et la construction utilisée : que, si, mot interrogatif ou de + infinitif" },
   { id: "en5", label: "Je reconnais le discours indirect libre sans le confondre avec le discours indirect" },
@@ -39,7 +40,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
           blocks: [
             {
               type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
+              title: "Le programme en 5 étapes",
               intro:
                 "Deux questions reviennent souvent dans les sujets : qui prend en charge l'énoncé, depuis quelle situation ? et comment les paroles ou les pensées sont-elles rapportées ?",
               items: [
@@ -55,11 +56,16 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                 },
                 {
                   number: "③",
+                  title: "Les marques de subjectivité",
+                  text: "La modalisation : comment le locuteur laisse paraître son jugement (lexique évaluatif, modalisateurs, conditionnel).",
+                },
+                {
+                  number: "④",
                   title: "Les formes du discours rapporté",
                   text: "Discours direct, indirect, indirect libre, récit de paroles : reconnaître la forme, justifier par des indices et commenter l'effet.",
                 },
                 {
-                  number: "④",
+                  number: "⑤",
                   title: "La concordance des temps",
                   text: "Au discours indirect, les temps, les pronoms et les repères se transforment selon le verbe introducteur et la situation.",
                 },
@@ -166,6 +172,41 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
             {
               type: "subsection",
               number: "③",
+              title: "Les marques de subjectivité (la modalisation)",
+              blocks: [
+                {
+                  type: "paragraph",
+                  text: "Quand un énoncé est ancré dans la situation d'énonciation (lettre, essai, discours, article), le locuteur ne se contente pas d'informer : il **laisse paraître son point de vue**. Repérer ces traces, c'est analyser la **modalisation**. La question revient souvent sur les textes argumentatifs : « Relevez les marques de subjectivité » ou « Comment l'auteur s'implique-t-il dans son propos ? ».",
+                },
+                {
+                  type: "table",
+                  title: "Les quatre grandes marques de subjectivité",
+                  headers: ["Marque", "Exemples", "Ce qu'elle révèle"],
+                  rows: [
+                    ["Lexique évaluatif (mélioratif ou péjoratif)", "« un chef-d'œuvre », « ce torchon », « hélas »", "Un jugement de valeur, positif ou négatif"],
+                    ["Modalisateurs (adverbes et locutions)", "peut-être, sans doute, certes, heureusement, à mon avis", "Le degré de certitude ou l'appréciation du locuteur"],
+                    ["Verbes et tournures de modalité", "devoir, pouvoir, il faut, je crois que, il semble que", "L'obligation, la possibilité, le doute"],
+                    ["Temps, modes et ponctuation", "conditionnel d'information non confirmée (« le bilan serait lourd »), exclamation, question rhétorique", "La prudence, l'émotion, l'implication"],
+                  ],
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  icon: "💡",
+                  title: "Le pronom « on » : un cas d'énonciation",
+                  text: "« on » est un pronom personnel indéfini, mais c'est surtout un **outil d'effacement énonciatif** : il peut masquer le locuteur derrière une vérité générale (« on sait que… »), l'inclure familièrement à la place de « nous » (« on part demain »), ou viser un destinataire (« alors, on ne dit plus bonjour ? »). Préciser sa valeur dans le contexte est souvent attendu.",
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  icon: "💡",
+                  text: "Le repérage des temps verbaux est utile ici aussi : un conditionnel peut marquer l'atténuation ou l'information non vérifiée plutôt qu'une condition (voir [le conditionnel et ses valeurs](fiche:present-futur-conditionnel-subjonctif)).",
+                },
+              ],
+            },
+            {
+              type: "subsection",
+              number: "④",
               title: "Les formes du discours rapporté",
               blocks: [
                 {
@@ -187,12 +228,12 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                     },
                     {
                       title: "Discours indirect (DI)",
-                      definition: "On reformule les paroles dans une subordonnée, sans guillemets.",
+                      definition: "On reformule les paroles dans une proposition subordonnée, sans guillemets. Au concours, on la nomme : **subordonnée complétive, COD du verbe introducteur** (« qu'il partait ») ou **subordonnée interrogative indirecte, COD** (« s'il venait », « ce qu'il faisait »).",
                       exemples: [
-                        "Paul dit **qu'il partait le lendemain**.",
+                        "Paul dit **qu'il partait le lendemain**. (« qu'il partait… » = complétive, COD de « dit »)",
                         "Déclaration → que ; question totale → si ; question partielle → mot interrogatif ; ordre → de + infinitif.",
                       ],
-                      test: "Verbe introducteur + que / si / mot interrogatif / de + infinitif ; embrayeurs transposés ; concordance des temps si l'introducteur est au passé. Effet : distance, intégration au récit.",
+                      test: "Verbe introducteur + que / si / mot interrogatif / de + infinitif ; embrayeurs transposés ; concordance des temps si l'introducteur est au passé. Effet : distance, intégration au récit. Renvoi : voir [la phrase complexe](fiche:phrase-complexe).",
                     },
                     {
                       title: "Discours indirect libre (DIL)",
@@ -235,12 +276,19 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
             },
             {
               type: "subsection",
-              number: "④",
+              number: "⑤",
               title: "La concordance des temps",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Au discours indirect, on adapte les paroles à la nouvelle phrase : les pronoms changent selon le locuteur, les repères de temps et de lieu deviennent relatifs au récit, et les temps verbaux suivent le temps du **verbe introducteur** (dit, déclara, avait répondu…).",
+                  text: "Au discours indirect, on adapte les paroles à la nouvelle phrase : les pronoms changent selon le locuteur, les repères de temps et de lieu deviennent relatifs au récit, et les temps verbaux suivent le temps du **verbe introducteur** (dit, déclara, avait répondu…). Sur les valeurs et l'emploi des temps, voir [les temps du passé](fiche:temps-du-passe).",
+                },
+                {
+                  type: "schema",
+                  src: "/fiches/francais/discours-indirect-transformations.svg",
+                  alt: "Passage de « Je partirai demain », déclara-t-il à Il déclara qu'il partirait le lendemain. Trois transformations s'appliquent en même temps : les pronoms (je devient il), les temps verbaux (futur partirai devient conditionnel partirait, le verbe introducteur étant au passé) et les repères (demain devient le lendemain, repère relatif au récit et non à l'énonciation).",
+                  caption: "Trois transformations en même temps, pas seulement la concordance des temps : on vérifie systématiquement les pronoms, les temps et les repères.",
+                  maxWidth: 600,
                 },
                 {
                   type: "formulaBlock",
@@ -260,6 +308,8 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                     ["Déclaration", "que + proposition subordonnée", "« Je pars » → il dit **qu'il part**"],
                     ["Question oui / non", "si + proposition subordonnée", "« Viens-tu ? » → il demande **si elle vient**"],
                     ["Question avec mot interrogatif", "mot interrogatif conservé", "« Où vas-tu ? » → il demande **où elle va**"],
+                    ["Question en « qu'est-ce que »", "ce que", "« Qu'est-ce que tu fais ? » → il demande **ce qu'elle fait**"],
+                    ["Question en « qu'est-ce qui »", "ce qui", "« Qu'est-ce qui se passe ? » → il demande **ce qui se passe**"],
                     ["Ordre ou conseil", "de + infinitif", "« Pars ! » → il lui dit **de partir**"],
                   ],
                 },
@@ -292,8 +342,8 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               title: "Piège n°2 · « est-ce que » au discours indirect",
               badge: "Erreur très fréquente",
               faux: "« Il demanda est-ce qu'elle viendrait. »",
-              vrai: "« est-ce que » appartient à l'interrogation directe : il disparaît toujours au discours indirect, remplacé par **si** (question totale) : « Il demanda **si** elle viendrait. »",
-              methode: "Pour une question oui/non rapportée, employer « si » ; pour une question partielle, le mot interrogatif (où, quand, pourquoi…).",
+              vrai: "« est-ce que » appartient à l'interrogation directe : il disparaît toujours au discours indirect, remplacé par **si** (question totale) : « Il demanda **si** elle viendrait. » De même, « qu'est-ce que » devient **ce que** et « qu'est-ce qui » devient **ce qui** : « Il demanda **ce qu'**elle voulait », « Il demanda **ce qui** la retenait ».",
+              methode: "Pour une question oui/non rapportée, employer « si » ; pour une question partielle, le mot interrogatif (où, quand, pourquoi…) ; pour « qu'est-ce que / qu'est-ce qui », « ce que / ce qui ».",
             },
             {
               type: "piegeCard",
@@ -499,7 +549,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
             },
             {
               type: "quizBlock",
@@ -519,6 +569,14 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                   correctIndex: 2,
                   explanation:
                     "« je », « te », « ici », « aujourd'hui » sont quatre embrayeurs : leur sens dépend de la situation d'énonciation.",
+                },
+                {
+                  objectifId: "en8",
+                  question: "Dans « Ce roman serait, paraît-il, un chef-d'œuvre. », qu'est-ce qui NE marque PAS la subjectivité du locuteur ?",
+                  options: ["« serait » (conditionnel d'information non confirmée)", "« paraît-il »", "« chef-d'œuvre »", "« Ce roman » (groupe nominal)"],
+                  correctIndex: 3,
+                  explanation:
+                    "« serait », « paraît-il » et « chef-d'œuvre » sont des marques de modalisation (doute, information non vérifiée, jugement mélioratif). « Ce roman » désigne simplement l'objet, sans évaluation.",
                 },
                 {
                   objectifId: "en3",
@@ -640,6 +698,20 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               ],
             },
             {
+              type: "exerciceCard",
+              variant: "standard",
+              level: "echauffement",
+              title: "Exercice 4 : Repérer les marques de subjectivité",
+              objectifTag: "Modalisation",
+              question:
+                "Relevez les marques de subjectivité et dites ce qu'elles révèlent :\na) « Ce projet est, hélas, une véritable catastrophe. »   b) « Le coupable serait, paraît-il, déjà en fuite. »   c) « Vous devriez vraiment relire cet admirable roman. »",
+              correction: [
+                { type: "line", label: "a)", text: "« hélas » (modalisateur, regret) et « véritable catastrophe » (lexique péjoratif) : le locuteur porte un jugement négatif tranché." },
+                { type: "line", label: "b)", text: "« serait » (conditionnel d'information non confirmée) et « paraît-il » (modalisateur de doute) : le locuteur prend ses distances avec une information qu'il ne garantit pas." },
+                { type: "line", label: "c)", text: "« devriez » (verbe de modalité, conseil), « vraiment » (insistance) et « admirable » (lexique mélioratif) : le locuteur conseille et valorise l'œuvre." },
+              ],
+            },
+            {
               type: "niveauBanner",
               level: "n2",
               stars: "★★☆",
@@ -650,7 +722,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 4 : Système dominant et rupture",
+              title: "Exercice 5 : Système dominant et rupture",
               enonce: "« Le soir tombait. Paul referma son cahier. “Je reviendrai demain”, murmura-t-il. Puis il sortit sans se retourner. »",
               question: "a) Quel est le système d'énonciation dominant ? Donnez deux indices. b) Quelle rupture introduit la réplique entre guillemets ?",
               correction: [
@@ -662,7 +734,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 5 : Le discours indirect libre",
+              title: "Exercice 6 : Le discours indirect libre",
               enonce: "« Elle regarda la lettre une dernière fois. Vraiment, il était impossible de rester. Elle partirait dès l'aube, sans prévenir personne. Qu'ils se débrouillent ! »",
               question: "a) Identifiez la forme de discours rapporté (trois indices). b) Réécrivez les deux dernières phrases en discours indirect (introducteur : « elle pensa »).",
               correction: [
@@ -681,13 +753,19 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n3",
-              title: "Exercice 6 : Analyse d'un vers de La Fontaine",
+              title: "Exercice 7 : Analyse d'un vers de La Fontaine",
               enonce: "« Court à son compagnon, lui dit que c'est merveille / Qu'il n'ait eu seulement que la peur pour tout mal. » (La Fontaine, L'Ours et les Deux Compagnons)",
               question: "a) Identifiez la forme de discours rapporté (indices grammaticaux). b) Quel effet ce choix produit-il dans une fable ?",
               correction: [
-                { type: "line", label: "a)", text: "**Discours indirect** : verbe introducteur « dit » + subordonnée en « que » (« lui dit que c'est merveille / qu'il n'ait eu… »), pas de guillemets. Le verbe introducteur est au présent de narration : les temps des paroles rapportées ne sont pas transposés vers l'imparfait ou le plus-que-parfait." },
+                { type: "line", label: "a)", text: "**Discours indirect** : verbe introducteur « dit » + subordonnée en « que » (« lui dit que c'est merveille / qu'il n'ait eu… »), pas de guillemets. Cette subordonnée est une **complétive, COD de « dit »**. Le verbe introducteur est au présent de narration : les temps des paroles rapportées ne sont pas transposés vers l'imparfait ou le plus-que-parfait." },
                 { type: "line", label: "b)", text: "Le discours indirect intègre les paroles au rythme narratif : il accélère le récit et maintient la voix du narrateur au premier plan, ce qui préserve la distance ironique propre à La Fontaine." },
               ],
+            },
+            {
+              type: "ctaBox",
+              text: "À l'aise sur les exercices ? Passez au format du concours.",
+              buttonLabel: "Voir les exercices Type CRPE",
+              targetTab: "crpe",
             },
           ],
         },
@@ -729,6 +807,12 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                 { type: "line", text: "Elle a répondu **que non** et lui a dit **de le faire sans elle**." },
                 { type: "line", text: "Transformations : nous → ils, tu → elle, je → elle, moi → elle ; demain → le lendemain ; futur → conditionnel ; passé composé → plus-que-parfait ; est-ce que → si ; impératif → de + infinitif." },
               ],
+            },
+            {
+              type: "ctaBox",
+              text: "Prêt à corriger comme un futur enseignant ?",
+              buttonLabel: "Voir les erreurs à corriger (Côté prof)",
+              targetTab: "cote-prof",
             },
           ],
         },
@@ -828,6 +912,12 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                 },
               ],
             },
+            {
+              type: "ctaBox",
+              text: "Tout vu ? Consolidez avec les outils de révision.",
+              buttonLabel: "Réviser (flashcards, mémo, auto-évaluation)",
+              targetTab: "flash",
+            },
           ],
         },
       ],
@@ -890,6 +980,12 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                   answer:
                     "Un mot dont le sens dépend de la situation d'énonciation : je, tu, ici, maintenant, demain, ce…\nContrairement à « la table » ou « Paris », qui désignent toujours la même chose.",
                 },
+                {
+                  question: "Les marques de subjectivité (modalisation) ?",
+                  answer:
+                    "**Lexique évaluatif** : mélioratif ou péjoratif (chef-d'œuvre, torchon).\n**Modalisateurs** : peut-être, sans doute, hélas, à mon avis.\n**Verbes de modalité** : devoir, pouvoir, il faut, je crois que.\n**Temps et ponctuation** : conditionnel d'atténuation, exclamation, question rhétorique.",
+                  astuce: "💡 Question fréquente sur les textes argumentatifs (lettre, essai, discours).",
+                },
               ],
             },
           ],
@@ -906,6 +1002,11 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                 {
                   title: "Énonciation",
                   lines: ["Discours ancré : je, présent, ici", "Récit coupé : il, passé simple", "Embrayeurs (déictiques)"],
+                  variant: "blue",
+                },
+                {
+                  title: "Modalisation",
+                  lines: ["Lexique évaluatif (méli/péjo)", "Modalisateurs : peut-être, sans doute", "Verbes : devoir, pouvoir, il faut", "Conditionnel d'atténuation"],
                   variant: "blue",
                 },
                 {
