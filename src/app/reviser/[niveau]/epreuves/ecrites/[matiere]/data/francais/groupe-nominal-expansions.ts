@@ -111,7 +111,13 @@ export const ficheGroupeNominalExpansions: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Une **expansion** est un mot, un groupe ou une proposition qui enrichit un nom noyau. Le plus souvent, elle se trouve dans le GN ; parfois, comme l'épithète détachée, elle est séparée par une virgule tout en se rapportant au nom ou au pronom.",
+                  text: "Une **expansion** est un mot, un groupe ou une proposition qui enrichit un nom noyau. Le plus souvent, elle se trouve dans le GN ; parfois, comme l'épithète détachée, elle est séparée par une virgule tout en se rapportant au nom ou au pronom. La [terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download) en retient quatre.",
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  title: "Expansion (ici) ou fonction (notion 2) ?",
+                  text: "Dans cette fiche, on regarde ces groupes comme des **expansions** qui construisent le GN autour de son noyau. Leur **fonction grammaticale** précise (épithète, complément du nom, apposition…) et la fonction du pronom relatif s'analysent dans la [notion 2 · Les fonctions syntaxiques](fiche:fonctions-syntaxiques). Ce sont deux regards complémentaires sur les mêmes mots.",
                 },
                 {
                   type: "notionCardGrid",
@@ -128,6 +134,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                         "« les yeux **baissés** » : participe passé employé comme adjectif, épithète liée du nom « yeux »",
                         "« une eau **courante** » : participe présent employé comme adjectif verbal, épithète liée du nom « eau »",
                       ],
+                      piege: "La place de l'adjectif peut changer le sens : « un **grand** homme » (remarquable) ne dit pas la même chose que « un homme **grand** » (de grande taille). La fonction, elle, reste épithète liée dans les deux cas.",
                       test: "Déplaçable autour du nom, mais jamais hors du GN ; s'accorde en genre et en nombre avec le nom.",
                     },
                     {
@@ -176,6 +183,48 @@ export const ficheGroupeNominalExpansions: Fiche = {
                       test: "Repérer le pronom relatif, l'antécédent (le nom complété) et le verbe conjugué de la relative.",
                     },
                   ],
+                },
+                {
+                  type: "table",
+                  title: "Tableau de synthèse : les 4 expansions en un coup d'œil",
+                  headers: ["Expansion", "Nature grammaticale", "Place et ponctuation", "Test décisif", "Exemple"],
+                  rows: [
+                    [
+                      "Épithète liée",
+                      "Adjectif (ou participe employé comme adjectif)",
+                      "Accolée au nom, avant ou après, sans virgule",
+                      "S'accorde avec le nom ; déplaçable autour de lui, jamais hors du GN",
+                      "un **beau** jardin",
+                    ],
+                    [
+                      "Épithète détachée",
+                      "Adjectif ou groupe adjectival",
+                      "Séparée par une virgule, mobile dans la phrase",
+                      "Supprimable et déplaçable, sans verbe d'état",
+                      "**Épuisée**, elle s'endormit",
+                    ],
+                    [
+                      "Complément du nom",
+                      "GN ou groupe infinitif prépositionnel",
+                      "Dans le GN, après le nom, non mobile",
+                      "Introduit par une préposition ; impossible à déplacer hors du GN",
+                      "la maison **de Pierre**",
+                    ],
+                    [
+                      "Proposition subordonnée relative",
+                      "Proposition (contient un verbe conjugué)",
+                      "Après le nom antécédent",
+                      "Introduite par un pronom relatif (qui, que, dont, où, lequel…)",
+                      "le livre **que je lis**",
+                    ],
+                  ],
+                },
+                {
+                  type: "callout",
+                  variant: "warning",
+                  icon: "⚠️",
+                  title: "À distinguer aussi : l'apposition",
+                  text: "Un **nom ou GN détaché** qui désigne autrement le noyau (« Paris, **capitale de la France**, attire les touristes ») est une **apposition**, pas une épithète : l'apposition est **nominale**, l'épithète détachée est **adjectivale**. Sa fonction se travaille dans la [notion 2 · Les fonctions syntaxiques](fiche:fonctions-syntaxiques).",
                 },
                 {
                   type: "callout",
@@ -253,7 +302,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** les élèves repèrent le nom et son déterminant, puis enrichissent peu à peu le groupe nominal (ajouter un adjectif pour préciser : « un chat » → « un gros chat noir »).\n\n**Cycle 3 :** le groupe nominal devient un objet d'étude à part entière. On identifie le nom noyau, on ajoute ou on supprime des expansions (adjectif, complément du nom), on manipule des relatives simples.\n\n**Ce que vous devez savoir dire :** « Le groupe nominal se construit autour d'un nom noyau. On apprend d'abord à le repérer, puis à l'enrichir et à l'alléger par manipulation, avant de nommer les expansions. C'est une compétence d'expansion et de réduction de phrase, travaillée dès le cycle 2. »",
+              text: "**Cycle 1 (maternelle) :** aucune terminologie, mais on enrichit déjà l'oral. L'enfant passe de « le chien » à « le gros chien noir » : c'est le tout premier geste d'expansion du nom, par imitation et reformulation.\n\n**Cycle 2 (CP-CE2) :** les élèves repèrent le nom et son déterminant, puis enrichissent peu à peu le groupe nominal (ajouter un adjectif pour préciser : « un chat » → « un gros chat noir »). On commence à manipuler : ajouter, retirer, remplacer un mot du GN.\n\n**Cycle 3 (CM1-6e) :** le groupe nominal devient un objet d'étude à part entière. On identifie le nom noyau, on ajoute ou on supprime des expansions (adjectif, complément du nom), on manipule des relatives simples. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « Le groupe nominal se construit autour d'un nom noyau. On apprend d'abord à le repérer, puis à l'enrichir et à l'alléger par manipulation, avant de nommer les expansions. C'est une compétence d'expansion et de réduction de phrase, travaillée dès la maternelle et nommée à partir du cycle 3. »",
             },
             {
               type: "ctaBox",
@@ -302,7 +351,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
               number: "①",
               title: "Analyser la structure d'un GN pas à pas",
               intro:
-                "**Question typique :** « Délimitez le GN, donnez son noyau et analysez ses expansions. »\nIci, on ne part pas d'un groupe isolé dont il faut trouver la fonction dans la phrase : on part d'un **GN entier** et on observe son organisation interne.",
+                "**Question typique :** « Délimitez le groupe nominal, donnez son nom noyau et analysez ses expansions : *<u>Le vieux chat roux de ma voisine</u> dormait sur le canapé.* »\nIci, on ne part pas d'un groupe isolé dont il faut trouver la fonction dans la phrase : on part d'un **GN entier** et on observe son organisation interne. On déroule toute la démarche sur ce seul GN, jusqu'à la réponse rédigée.",
               steps: [
                 {
                   number: "1",
@@ -326,8 +375,12 @@ export const ficheGroupeNominalExpansions: Fiche = {
                 },
                 {
                   number: "💡",
-                  text: "**Lever les deux confusions classiques :** pour une épithète détachée, vérifier l'absence de verbe d'état (sinon c'est un attribut, notion 2). Pour un groupe prépositionnel, tester la mobilité (complément du nom dans le GN, ou complément circonstanciel mobile).",
+                  text: "**Lever les deux confusions classiques :** pour une épithète détachée, vérifier l'absence de verbe d'état (sinon c'est un attribut, [notion 2](fiche:fonctions-syntaxiques)). Pour un groupe prépositionnel, tester la mobilité (complément du nom dans le GN, ou complément circonstanciel mobile).",
                   warn: "⚠️ Une analyse se justifie toujours par un test (mobilité, suppression, accord), jamais « au feeling ».",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « Le groupe nominal est *Le vieux chat roux de ma voisine* ; son **nom noyau** est *chat*, introduit par le déterminant *le*. Il est enrichi par trois expansions : *vieux* et *roux*, **adjectifs qualificatifs, épithètes liées** du nom *chat* ; *de ma voisine*, **complément du nom** (groupe nominal prépositionnel, non mobile hors du GN). »",
                 },
               ],
             },
@@ -350,7 +403,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
               number: "②",
               title: "Déterminer le type d'une relative (déterminative ou explicative)",
               intro:
-                "**Question typique :** « La relative soulignée est-elle déterminative ou explicative ? »\nLa ponctuation oriente, le test de suppression tranche.",
+                "**Question typique :** « La proposition subordonnée relative soulignée est-elle déterminative ou explicative ? Justifiez : *Les élèves <u>qui travaillent</u> réussissent.* »\nLa ponctuation oriente, le test de suppression tranche. On déroule sur la relative *qui travaillent*.",
               steps: [
                 {
                   number: "1",
@@ -368,6 +421,10 @@ export const ficheGroupeNominalExpansions: Fiche = {
                   example: {
                     lines: ["« Les élèves réussissent » : le sens change (tous ? certains ?) → relative déterminative"],
                   },
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « La relative *qui travaillent* n'est pas encadrée par des virgules, et sa suppression change le sens (*Les élèves réussissent* ne désigne plus le même ensemble) : c'est une **proposition subordonnée relative déterminative**, qui restreint l'ensemble des élèves à ceux qui travaillent. »",
                 },
               ],
             },
@@ -668,7 +725,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["des ciels toujours bleus", "ciels", "« bleus » → épithète liée · « toujours » → adverbe qui modifie l'épithète « bleus », à l'intérieur de l'expansion"],
                   ],
                 },
-                { type: "note", text: "💡 « où » est un pronom relatif. Sa fonction dans la relative (CC de lieu) s'analyse par dépronominalisation : voir la notion 2 (fonctions)." },
+                { type: "note", text: "💡 « où » est un pronom relatif. Sa fonction dans la relative (CC de lieu) s'analyse par dépronominalisation : voir la [notion 2 (fonctions)](fiche:fonctions-syntaxiques)." },
               ],
             },
             {
@@ -710,7 +767,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["la terrasse du palais", "terrasse", "« du palais » → complément du nom (GN prépositionnel, identifie quelle terrasse)"],
                   ],
                 },
-                { type: "note", text: "💡 « qui » est un pronom relatif ; sa fonction dans la relative (sujet de « séparaient ») s'analyse dans la notion 2." },
+                { type: "note", text: "💡 « qui » est un pronom relatif ; sa fonction dans la relative (sujet de « séparaient ») s'analyse dans la [notion 2](fiche:fonctions-syntaxiques)." },
               ],
             },
           ],
@@ -745,6 +802,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["pressée d'atteindre sa maison", "Adjectif + groupe infinitif prépositionnel", "Épithète détachée du sujet « elle »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *tenant* → participe présent, épithète détachée du nom *femme* (équivaut à *qui tenait*) ; *d'une dizaine d'années* → GN prépositionnel, complément du nom *garçon* ; *baissés* → participe passé employé comme adjectif, épithète du nom *yeux* ; *pressée d'atteindre sa maison* → groupe adjectival, épithète détachée du sujet *elle*. »" },
                 { type: "note", text: "⚠️ « tenant » n'est pas une proposition participiale : celle-ci suppose un sujet propre, distinct de celui de la principale. Ici, « tenant » partage le sujet « femme » : c'est donc un participe présent en épithète détachée. À distinguer aussi du gérondif (« en tenant ») et de l'adjectif verbal accordé." },
               ],
             },
@@ -767,7 +825,8 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["bleus", "Adjectif qualificatif", "Épithète du nom « ciels »"],
                   ],
                 },
-                { type: "note", text: "💡 La fonction de « où » dans la relative (CC de lieu) relève de l'analyse des fonctions : voir la notion 2." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *lointaines* → adjectif qualificatif, épithète du nom *contrées* ; *lumineux* → adjectif qualificatif, épithète du nom *rivages* ; *de marbre* → GN prépositionnel, complément du nom *palais* ; *où* → pronom relatif, qui introduit la relative, expansion du nom *palais* ; *bleus* → adjectif qualificatif, épithète du nom *ciels*. »" },
+                { type: "note", text: "💡 La fonction de « où » dans la relative (CC de lieu) relève de l'analyse des fonctions : voir la [notion 2](fiche:fonctions-syntaxiques)." },
               ],
             },
             {
@@ -788,6 +847,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["de sa vie", "GN prépositionnel", "Complément du nom « vide »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *solitaires* → adjectif qualificatif, épithète du nom *promenades* ; *silencieuses* → adjectif qualificatif, épithète du nom *chevauchées* ; *d'automne* → GN prépositionnel, complément du nom *soirs* ; *de sa vie* → GN prépositionnel, complément du nom *vide*. »" },
               ],
             },
             {
@@ -808,7 +868,8 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["les provinces de l'Empire", "provinces", "« de l'Empire » → complément du nom « provinces » (GN prépositionnel)"],
                   ],
                 },
-                { type: "note", text: "⚠️ Le pronom relatif « dont » a pour antécédent « tapis ». Sa fonction se trouve par dépronominalisation : « elles savaient par cœur le dessin **de ce tapis** », donc « dont » = complément du nom « dessin » (et non COI du verbe « savoir », qui est transitif direct). Cette analyse de fonction relève de la notion 2." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *un tapis dont elles savaient par cœur le dessin* a pour noyau *tapis*, enrichi par la proposition subordonnée relative *dont elles savaient par cœur le dessin* ; *les provinces de l'Empire* a pour noyau *provinces*, avec le complément du nom *de l'Empire* (GN prépositionnel). »" },
+                { type: "note", text: "⚠️ Le pronom relatif « dont » a pour antécédent « tapis ». Sa fonction se trouve par dépronominalisation : « elles savaient par cœur le dessin **de ce tapis** », donc « dont » = complément du nom « dessin » (et non COI du verbe « savoir », qui est transitif direct). Cette analyse de fonction relève de la [notion 2](fiche:fonctions-syntaxiques)." },
               ],
             },
             {
@@ -829,6 +890,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["le réel", "réel", "Adjectif substantivé employé comme nom (le déterminant « le » confirme l'emploi nominal) : GN minimal, sans expansion"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *un aveu d'impuissance* a pour noyau *aveu*, avec le complément du nom *d'impuissance* (GN prépositionnel) ; *quel autre biais* a pour noyau *biais*, introduit par le déterminant interrogatif *quel* et enrichi par l'épithète liée *autre* ; *le réel* est un adjectif substantivé employé comme nom, GN minimal sans expansion. »" },
               ],
             },
             {
@@ -849,6 +911,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
                     ["ces palmes qui font l'ombre à mon âme", "palmes", "« qui font l'ombre à mon âme » → proposition subordonnée relative déterminative"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Insensées choses qui nous font rêver* a pour noyau *choses* : *Insensées* est une épithète liée (adjectif, féminin pluriel) et *qui nous font rêver* une proposition subordonnée relative déterminative ; *une humble flamme* a pour noyau *flamme*, avec l'épithète liée *humble* ; *ces palmes qui font l'ombre à mon âme* a pour noyau *palmes*, enrichi par la relative déterminative *qui font l'ombre à mon âme*. »" },
                 { type: "note", text: "⚠️ « Insensées » n'est pas un participe passé (il n'existe pas de verbe « insenser ») : c'est un adjectif qualificatif qui s'accorde avec « choses » (féminin pluriel)." },
               ],
             },
@@ -938,7 +1001,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
               type: "callout",
               variant: "info",
               icon: "",
-              text: "Cliquez sur chaque carte pour révéler la réponse. Questions formulées comme le jury.",
+              text: "Cliquez sur chaque carte pour révéler la réponse. Questions formulées comme le jury. En bas de l'onglet, un jeu d'appariement vous entraîne à reconnaître chaque expansion.",
             },
             {
               type: "flashcardDeck",
@@ -976,6 +1039,25 @@ export const ficheGroupeNominalExpansions: Fiche = {
                   answer:
                     "**Déterminative** : pas de virgule, restreint le sens du nom, non supprimable sans changer le sens (« Les élèves qui travaillent réussissent »).\n**Explicative** : entre virgules, ajoute une information, supprimable (« Les élèves, qui travaillent, réussissent »).",
                 },
+              ],
+            },
+            {
+              type: "matchGame",
+              instructions: "Reliez chaque expansion soulignée à la catégorie qui lui correspond. La même catégorie peut prendre plusieurs formes : c'est l'occasion de les reconnaître toutes.",
+              leftLabel: "Expansion en contexte",
+              rightLabel: "Catégorie",
+              roundSize: 6,
+              objectifId: "g3",
+              pairs: [
+                { left: "un **beau** jardin", right: "Épithète liée : adjectif accolé au nom, sans virgule" },
+                { left: "les yeux **baissés**", right: "Épithète liée : participe passé employé comme adjectif" },
+                { left: "**Épuisée**, elle s'endormit", right: "Épithète détachée : adjectif isolé par une virgule, mobile" },
+                { left: "la maison **de Pierre**", right: "Complément du nom : GN prépositionnel, dans le GN, non mobile" },
+                { left: "l'envie **de partir**", right: "Complément du nom : groupe infinitif prépositionnel" },
+                { left: "le livre **que je lis**", right: "Proposition relative : introduite par un pronom relatif" },
+                { left: "Les élèves **qui travaillent** réussissent", right: "Relative déterminative : sans virgule, restreint le sens" },
+                { left: "Mon frère, **qui habite à Lyon**, arrive", right: "Relative explicative : entre virgules, ajoute une information" },
+                { left: "Paris, **capitale de la France**, …", right: "Apposition : nom ou GN détaché (à distinguer de l'épithète)" },
               ],
             },
           ],
