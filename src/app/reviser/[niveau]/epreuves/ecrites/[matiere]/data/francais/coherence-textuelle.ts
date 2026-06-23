@@ -5,9 +5,9 @@ const OBJECTIFS = [
   { id: "c1", label: "Je reconnais une reprise pronominale (un pronom qui reprend un antécédent déjà introduit)" },
   { id: "c2", label: "Je distingue la reprise nominale fidèle (même nom, déterminant différent) de la reprise nominale infidèle (synonyme, hyperonyme, périphrase…)" },
   { id: "c3", label: "Je sais reconstituer une chaîne référentielle (l'ensemble des reprises d'un même référent)" },
-  { id: "c4", label: "Je nomme la progression d'un texte : progression linéaire, à thème constant ou à thèmes dérivés" },
+  { id: "c4", label: "Je distingue le thème (information déjà connue) du rhème (information nouvelle), et je nomme la progression d'un texte : linéaire, à thème constant ou à thèmes dérivés" },
   { id: "c5", label: "J'identifie la relation logique exprimée par un connecteur (addition, opposition, cause, conséquence, illustration, reformulation…)" },
-  { id: "c6", label: "Je sais que « malgré que » est à proscrire : j'emploie « bien que / quoique » + subjonctif ou « malgré » + groupe nominal" },
+  { id: "c6", label: "Je sais que « malgré que » est à éviter à l'écrit : j'emploie « bien que / quoique » + subjonctif ou « malgré » + groupe nominal" },
   { id: "c7", label: "J'identifie un champ lexical dominant et j'interprète l'effet qu'il produit (sans me contenter de lister les mots)" },
 ];
 
@@ -77,7 +77,14 @@ export const ficheCoherenceTextuelle: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "La **cohérence textuelle** désigne l'ensemble des mécanismes qui font qu'un texte est intelligible et unifié. Elle repose sur quatre piliers : la **continuité référentielle** (on parle des mêmes entités), la **progression** (chaque phrase apporte du nouveau), la **cohérence logique** (les relations entre propositions sont explicites) et l'**unité du champ lexical**. C'est une notion utile dans les trois parties de l'épreuve : pour **analyser** un texte (Partie 1), pour **expliquer le lexique** (Partie 2) et pour **rédiger** (Partie 3).",
+              text: "La **cohérence textuelle** désigne l'ensemble des mécanismes qui font qu'un texte est intelligible et unifié. Elle repose sur quatre piliers : la **continuité référentielle** (on parle des mêmes entités), la **progression** (chaque phrase apporte du nouveau), la **cohérence logique** (les relations entre propositions sont explicites) et l'**unité du champ lexical**. C'est une notion utile dans les trois parties de l'épreuve : pour **analyser** un texte (Partie 1), pour **expliquer le lexique** (Partie 2) et pour [**rédiger**](fiche:produire-le-developpement) (Partie 3).",
+            },
+            {
+              type: "callout",
+              variant: "info",
+              icon: "🧩",
+              title: "Cohésion et cohérence : deux mots à ne pas confondre",
+              text: "La **cohésion** réunit les marques visibles à la surface du texte : reprises, connecteurs, temps verbaux. La **cohérence** est plus large : c'est l'impression d'unité et de logique d'ensemble, qui suppose aussi que le texte ne se **contredise pas** et reste pertinent. Un texte peut être cohésif (bien outillé) tout en étant incohérent (s'il se contredit). Au concours, on attend les deux : des outils corrects **et** un propos qui se tient.",
             },
             {
               type: "subsection",
@@ -86,7 +93,7 @@ export const ficheCoherenceTextuelle: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Une **anaphore** est un terme qui reprend un élément déjà introduit dans le texte (l'**antécédent**). L'ensemble des reprises d'un même référent forme une **chaîne référentielle**. C'est elle qui assure la continuité du texte, sans répétition maladroite.",
+                  text: "Une **anaphore** est un terme qui reprend un élément déjà introduit dans le texte (l'**antécédent**). Plus rarement, la reprise précède son référent : on parle alors de **cataphore** (« **Il** était une fois **un roi**… » : « il » annonce « un roi »). L'ensemble des expressions qui désignent un même référent forme une **chaîne référentielle**. C'est elle qui assure la continuité du texte, sans répétition maladroite.",
                 },
                 {
                   type: "notionCardGrid",
@@ -111,7 +118,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                     },
                     {
                       title: "Reprise nominale infidèle",
-                      definition: "Le référent est repris par un autre mot (synonyme, hyperonyme, périphrase…). Voir la notion 17 pour les relations sémantiques.",
+                      definition: "Le référent est repris par un autre mot (synonyme, hyperonyme, périphrase…). Voir les [relations sémantiques](fiche:relations-semantiques) (notion 17).",
                       exemples: [
                         "« un chien… **l'animal**… » (hyperonyme) ; « Victor Hugo… **le poète du peuple**… » (périphrase)",
                       ],
@@ -137,6 +144,13 @@ export const ficheCoherenceTextuelle: Fiche = {
                   title: "La formule d'analyse",
                   text: "« [terme] est une reprise [pronominale / nominale fidèle / nominale infidèle] de [antécédent] : elle assure la continuité référentielle, tout en [variant le registre / ajoutant une valeur évaluative]. »",
                 },
+                {
+                  type: "schema",
+                  src: "/fiches/francais/chaine-referentielle.svg",
+                  alt: "Une chaîne référentielle au fil du texte. L'antécédent « Un vieux professeur » est introduit en premier, puis repris deux fois : par « L'homme » (reprise nominale infidèle, hyperonyme), puis par le pronom « Il » (reprise pronominale). Toutes ces expressions désignent le même référent et se relient à lui par des flèches qui remontent vers l'antécédent.",
+                  caption: "Reconstituer une chaîne référentielle, c'est relier chaque reprise à un même antécédent et nommer son type.",
+                  maxWidth: 620,
+                },
               ],
             },
             {
@@ -146,7 +160,24 @@ export const ficheCoherenceTextuelle: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Un texte cohérent **avance** : chaque phrase apporte une information nouvelle. On décrit cette avancée selon trois schémas. Les nommer en concours est un plus ; l'essentiel est de montrer qu'on comprend comment l'auteur organise ses informations.",
+                  text: "Un texte cohérent **avance** : chaque phrase apporte une information nouvelle. Pour le décrire, on observe deux composantes dans chaque phrase. Le **thème** est ce dont on parle, le point de départ déjà connu (souvent en début de phrase). Le **rhème** (ou propos) est ce qu'on en dit, l'information nouvelle. Les trois schémas de progression se définissent par le jeu de ces deux éléments d'une phrase à l'autre.",
+                },
+                {
+                  type: "table",
+                  title: "Les trois progressions, vues par le thème et le rhème",
+                  headers: ["Schéma", "Mécanisme", "Effet dominant"],
+                  rows: [
+                    ["Linéaire (en cascade)", "Le rhème d'une phrase devient le thème de la suivante", "Mouvement, fréquent dans les récits"],
+                    ["À thème constant", "Le même thème est repris, le rhème change à chaque phrase", "Unité, fréquent dans descriptions et portraits"],
+                    ["À thèmes dérivés", "Un thème général (hyperthème) se divise en sous-thèmes", "Analyse, fréquent dans les textes explicatifs"],
+                  ],
+                },
+                {
+                  type: "schema",
+                  src: "/fiches/francais/progression-theme-rheme.svg",
+                  alt: "Les trois schémas de progression décrits avec le thème (T, information connue) et le rhème (R, information nouvelle). Progression linéaire : le rhème d'une phrase devient le thème de la suivante, en escalier (R1 devient T2, R2 devient T3). Progression à thème constant : le même thème T est repris à chaque phrase, avec un rhème différent (R1, R2, R3). Progression à thèmes dérivés : un hyperthème général se divise en plusieurs sous-thèmes, chacun avec son rhème (T1-R1, T2-R2, T3-R3).",
+                  caption: "Les nommer en concours est un plus ; l'essentiel est de montrer qu'on comprend comment l'auteur fait circuler l'information.",
+                  maxWidth: 640,
                 },
                 {
                   type: "notionCardGrid",
@@ -208,8 +239,8 @@ export const ficheCoherenceTextuelle: Fiche = {
                   type: "callout",
                   variant: "warning",
                   icon: "⚠️",
-                  title: "« malgré que » est à proscrire",
-                  text: "La construction « malgré que » + verbe est critiquée et refusée au concours. Employer **« bien que »** ou **« quoique »** + subjonctif, ou **« malgré »** + groupe nominal : « **Bien qu'**il soit fatigué… » ou « **Malgré** sa fatigue… », jamais « malgré qu'il soit fatigué ».",
+                  title: "« malgré que » est à éviter à l'écrit",
+                  text: "La construction « malgré que » + verbe est déconseillée par l'usage soutenu et la norme scolaire : mieux vaut s'en abstenir dans une copie. Employer **« bien que »** ou **« quoique »** + subjonctif, ou **« malgré »** + groupe nominal : « **Bien qu'**il soit fatigué… » ou « **Malgré** sa fatigue… », plutôt que « malgré qu'il soit fatigué ».",
                 },
               ],
             },
@@ -300,7 +331,16 @@ export const ficheCoherenceTextuelle: Fiche = {
             {
               type: "piegeCard",
               variant: "rouge",
-              title: "Piège n°1 · confondre thème et champ lexical",
+              title: "Piège n°1 · une reprise dont l'antécédent est ambigu",
+              badge: "Rupture de continuité",
+              faux: "« Pierre dit à Paul qu'il avait tort. » → on ne sait pas qui a tort : « il » peut renvoyer à Pierre ou à Paul.",
+              vrai: "Reformuler pour lever le doute : « Pierre reconnut que Paul avait tort » ou « Pierre admit qu'il avait lui-même tort ».",
+              methode: "Toute reprise doit renvoyer sans hésitation à un seul antécédent. En analyse comme en rédaction, vérifier qu'un pronom n'a pas deux antécédents possibles.",
+            },
+            {
+              type: "piegeCard",
+              variant: "rouge",
+              title: "Piège n°2 · confondre thème et champ lexical",
               badge: "Analyse trop vague",
               faux: "« Le champ lexical est l'école parce que le texte parle de l'école. »",
               vrai: "« Le texte a pour thème l'école, mais il mobilise le champ lexical de l'effort : “obstacle”, “progresser”, “réussite”, “persévérer”. »",
@@ -309,7 +349,7 @@ export const ficheCoherenceTextuelle: Fiche = {
             {
               type: "piegeCard",
               variant: "orange",
-              title: "Piège n°2 · lister sans interpréter",
+              title: "Piège n°3 · lister sans interpréter",
               badge: "Réponse incomplète",
               faux: "« Le champ lexical est : nuit, ombre, obscur. »",
               vrai: "Ajouter l'effet : « Ce champ lexical de la nuit crée une atmosphère mystérieuse, légèrement inquiétante. »",
@@ -318,7 +358,7 @@ export const ficheCoherenceTextuelle: Fiche = {
             {
               type: "piegeCard",
               variant: "bleu",
-              title: "Piège n°3 · mal nommer la progression",
+              title: "Piège n°4 · mal nommer la progression",
               badge: "Erreur d'étiquette",
               faux: "« Le texte suit une progression linéaire parce qu'il parle toujours de la lecture. »",
               vrai: "S'il parle toujours de la lecture en ajoutant plusieurs informations sur elle, c'est plutôt une **progression à thème constant**.",
@@ -364,7 +404,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Pour les reprises nominales infidèles, penser aux relations sémantiques (synonyme, hyperonyme) : voir la notion 17.",
+                  text: "⚠️ Pour les reprises nominales infidèles, penser aux [relations sémantiques](fiche:relations-semantiques) (synonyme, hyperonyme) : voir la notion 17.",
                 },
               ],
             },
@@ -567,7 +607,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                   ],
                   correctIndex: 1,
                   explanation:
-                    "« malgré que » est à proscrire. On emploie « bien que » + subjonctif (« bien qu'il soit fatigué ») ou « malgré » + groupe nominal.",
+                    "« malgré que » est à éviter à l'écrit. On emploie « bien que » + subjonctif (« bien qu'il soit fatigué ») ou « malgré » + groupe nominal.",
                 },
                 {
                   objectifId: "c7",
@@ -619,7 +659,7 @@ export const ficheCoherenceTextuelle: Fiche = {
               question: "Relevez les reprises du référent « fillette » et précisez le type de chacune.",
               correction: [
                 { type: "line", text: "**Elle** : reprise pronominale (pronom personnel sujet)." },
-                { type: "line", text: "**La petite** : reprise nominale infidèle (terme affectif / synonyme partiel)." },
+                { type: "line", text: "**La petite** : reprise nominale infidèle (« la petite [fille] », dénomination plus spécifique à nuance affective)." },
                 { type: "line", text: "**lui** : reprise pronominale (pronom personnel COI)." },
                 { type: "note", text: "💡 « Ces fleurs » ne reprend pas « fillette » : l'expression renvoie aux fleurs de l'étal et appartient donc à une autre chaîne référentielle." },
               ],
@@ -716,7 +756,7 @@ export const ficheCoherenceTextuelle: Fiche = {
               question: "a) Nommez le champ lexical dominant et relevez ses termes. b) Relevez deux expressions qui relancent l'idée d'écrire et précisez leur rôle dans la cohérence du passage. c) Quel effet produit la métaphore filée ?",
               correction: [
                 { type: "line", label: "a)", text: "Champ lexical du **combat / de la guerre** : « ferrailler, engagement, armée, général, aspirant soldat »." },
-                { type: "line", label: "b)", text: "« un engagement » caractérise l'acte d'écrire ; « l'écriture » reprend nominalement le verbe « écrire ». Ces expressions maintiennent le même référent abstrait tout en le développant." },
+                { type: "line", label: "b)", text: "« l'écriture » reprend nominalement le verbe « écrire » (reprise par nominalisation) ; « une armée imaginaire » relance la même idée par métaphore. Ces reprises maintiennent le même référent abstrait tout en le développant." },
                 { type: "line", label: "c)", text: "La métaphore filée du combat présente l'écriture comme une lutte intérieure, exigeante : elle traduit l'engagement total de l'écrivain et donne une dimension épique à un acte intime." },
               ],
             },
@@ -796,7 +836,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                   type: "checklist",
                   items: [
                     { text: "Répétition de « l'école » cinq fois, sans reprise pronominale ni variation", bad: true },
-                    { text: "« malgré que » + verbe : construction à proscrire", bad: true },
+                    { text: "« malgré que » + verbe : construction à éviter dans une copie", bad: true },
                     { text: "Réponse attendue : « L'école est une institution fondamentale. **Elle** forme les citoyens et constitue un lieu de vie. **Bien que** certains élèves n'y adhèrent pas toujours, **cet espace éducatif** demeure indispensable. »" },
                   ],
                 },
@@ -888,10 +928,16 @@ export const ficheCoherenceTextuelle: Fiche = {
                   astuce: "💡 Les reprises infidèles s'appuient sur les relations sémantiques (notion 17).",
                 },
                 {
+                  question: "Thème et rhème ?",
+                  answer:
+                    "**Thème** : ce dont on parle, l'information déjà connue (souvent en début de phrase).\n**Rhème** (ou propos) : ce qu'on en dit, l'information nouvelle.\nLes trois schémas de progression se décrivent par le jeu de ces deux éléments d'une phrase à l'autre.",
+                  astuce: "💡 Repérer le thème de chaque phrase suffit souvent à nommer la progression.",
+                },
+                {
                   question: "Les 3 schémas de progression ?",
                   answer:
-                    "**Linéaire (en cascade)** : chaque phrase repart d'un élément de la précédente.\n**À thème constant** : toutes les phrases parlent du même sujet.\n**À thèmes dérivés** : un sujet général décliné en sous-sujets.",
-                  astuce: "Nommer le schéma, puis expliquer l'effet (dynamisme, unité, analyse).",
+                    "**Linéaire (en cascade)** : le rhème d'une phrase devient le thème de la suivante.\n**À thème constant** : même thème repris, rhème différent à chaque phrase.\n**À thèmes dérivés** : un hyperthème général décliné en sous-thèmes.",
+                  astuce: "Nommer le schéma, puis expliquer l'effet (mouvement, unité, analyse).",
                 },
                 {
                   question: "Les 8 grandes relations des connecteurs ?",
@@ -907,7 +953,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                 {
                   question: "« malgré que » : pourquoi l'éviter ?",
                   answer:
-                    "« malgré que » + verbe est critiqué et refusé au concours.\nFormes correctes :\n« **Bien que** » / « **Quoique** » + subjonctif : « bien qu'il soit fatigué ».\n« **Malgré** » + groupe nominal : « malgré sa fatigue ».",
+                    "« malgré que » + verbe est déconseillé par l'usage soutenu : à éviter dans une copie.\nFormes correctes :\n« **Bien que** » / « **Quoique** » + subjonctif : « bien qu'il soit fatigué ».\n« **Malgré** » + groupe nominal : « malgré sa fatigue ».",
                 },
               ],
             },

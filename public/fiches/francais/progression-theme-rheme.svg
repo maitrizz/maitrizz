@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770 360" role="img" aria-label="Les trois schémas de progression d'un texte, décrits avec le thème (information déjà connue, noté T) et le rhème (information nouvelle, noté R). Progression linéaire : le rhème d'une phrase devient le thème de la phrase suivante, en escalier. Progression à thème constant : le même thème est repris à chaque phrase, avec un rhème différent. Progression à thèmes dérivés : un hyperthème général se divise en plusieurs sous-thèmes, chacun avec son rhème.">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0f766e"/>
+    </marker>
+  </defs>
+  <style>
+    .h { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 700; letter-spacing: .04em; fill: #0f766e; }
+    .t { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 700; fill: #0f172a; }
+    .leg { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 600; fill: #475569; }
+    .hy { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 700; fill: #0f766e; }
+  </style>
+
+  <!-- ============ Panneau 1 : LINÉAIRE ============ -->
+  <text class="h" x="40" y="40" font-size="13">① LINÉAIRE</text>
+  <!-- Phrase 1 -->
+  <rect x="40" y="62" width="48" height="30" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="64" y="82" text-anchor="middle" font-size="15">T1</text>
+  <rect x="92" y="62" width="48" height="30" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <text class="t" x="116" y="82" text-anchor="middle" font-size="15">R1</text>
+  <!-- Phrase 2 -->
+  <rect x="92" y="124" width="48" height="30" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="116" y="144" text-anchor="middle" font-size="15">T2</text>
+  <rect x="144" y="124" width="48" height="30" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <text class="t" x="168" y="144" text-anchor="middle" font-size="15">R2</text>
+  <!-- Phrase 3 -->
+  <rect x="144" y="186" width="48" height="30" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="168" y="206" text-anchor="middle" font-size="15">T3</text>
+  <rect x="196" y="186" width="48" height="30" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <text class="t" x="220" y="206" text-anchor="middle" font-size="15">R3</text>
+  <!-- flèches R devient T -->
+  <line x1="116" y1="92" x2="116" y2="124" stroke="#0f766e" stroke-width="2.2" marker-end="url(#ar)"/>
+  <line x1="168" y1="154" x2="168" y2="186" stroke="#0f766e" stroke-width="2.2" marker-end="url(#ar)"/>
+
+  <!-- ============ Panneau 2 : THÈME CONSTANT ============ -->
+  <text class="h" x="300" y="40" font-size="13">② THÈME CONSTANT</text>
+  <line x1="296" y1="62" x2="296" y2="216" stroke="#0d9488" stroke-width="2.2"/>
+  <rect x="300" y="62" width="48" height="30" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="324" y="82" text-anchor="middle" font-size="15">T</text>
+  <rect x="360" y="62" width="48" height="30" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <text class="t" x="384" y="82" text-anchor="middle" font-size="15">R1</text>
+  <rect x="300" y="124" width="48" height="30" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="324" y="144" text-anchor="middle" font-size="15">T</text>
+  <rect x="360" y="124" width="48" height="30" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <text class="t" x="384" y="144" text-anchor="middle" font-size="15">R2</text>
+  <rect x="300" y="186" width="48" height="30" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="324" y="206" text-anchor="middle" font-size="15">T</text>
+  <rect x="360" y="186" width="48" height="30" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <text class="t" x="384" y="206" text-anchor="middle" font-size="15">R3</text>
+
+  <!-- ============ Panneau 3 : THÈMES DÉRIVÉS ============ -->
+  <text class="h" x="470" y="40" font-size="13">③ THÈMES DÉRIVÉS</text>
+  <rect x="556" y="62" width="104" height="30" rx="8" fill="#ecfeff" stroke="#14b8a6" stroke-width="2"/>
+  <text class="hy" x="608" y="82" text-anchor="middle" font-size="14">Hyperthème</text>
+  <line x1="608" y1="92" x2="502" y2="146" stroke="#0f766e" stroke-width="2.2" marker-end="url(#ar)"/>
+  <line x1="608" y1="92" x2="608" y2="146" stroke="#0f766e" stroke-width="2.2" marker-end="url(#ar)"/>
+  <line x1="608" y1="92" x2="714" y2="146" stroke="#0f766e" stroke-width="2.2" marker-end="url(#ar)"/>
+  <rect x="468" y="148" width="68" height="32" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="502" y="169" text-anchor="middle" font-size="14">T1 · R1</text>
+  <rect x="574" y="148" width="68" height="32" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="608" y="169" text-anchor="middle" font-size="14">T2 · R2</text>
+  <rect x="680" y="148" width="68" height="32" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="t" x="714" y="169" text-anchor="middle" font-size="14">T3 · R3</text>
+
+  <!-- ============ Légende ============ -->
+  <rect x="190" y="296" width="22" height="18" rx="5" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text class="leg" x="220" y="310" font-size="13">T = thème (information déjà connue)</text>
+  <rect x="478" y="296" width="22" height="18" rx="5" fill="#f0fdfa" stroke="#5eead4" stroke-width="2"/>
+  <text class="leg" x="508" y="310" font-size="13">R = rhème (information nouvelle)</text>
+</svg>
