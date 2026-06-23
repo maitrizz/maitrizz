@@ -5,7 +5,7 @@ const OBJECTIFS = [
   { id: "e1", label: "Je comprends que la nature d'un mot est stable : elle ne change pas selon la phrase (à la différence de la fonction, traitée à part)" },
   { id: "e2", label: "Je connais les 9 classes grammaticales de référence et le repère mnémotechnique des 10 entrées avec l'onomatopée" },
   { id: "e3", label: "Je distingue un adverbe d'un adjectif grâce au test de variabilité (accord au féminin pluriel)" },
-  { id: "e4", label: "Je sais analyser les mots-caméléons (tout, comme, que, si) selon leur contexte d'emploi" },
+  { id: "e4", label: "Je sais analyser les mots-caméléons (tout, comme, que, si, leur, même) selon leur contexte d'emploi" },
   { id: "e5", label: "J'utilise la terminologie grammaticale de référence : déterminant (et non « adjectif possessif / démonstratif / indéfini »)" },
   { id: "e6", label: "Je sais qu'un infinitif reste un verbe, même quand il est employé comme un nom (par exemple comme sujet)" },
   { id: "e7", label: "Je sais identifier et corriger une erreur de nature dans une copie de candidat" },
@@ -75,7 +75,7 @@ export const ficheClassesGrammaticales: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Verbe, adjectif, nom... vous connaissez déjà les mots. Ce qui fait gagner des points au concours, c'est la précision : nommer la bonne classe grammaticale, employer la [terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download), puis justifier avec un vrai indice de la phrase. Une réponse courte peut être excellente si elle est exacte et prouvée.",
+              text: "Verbe, adjectif, nom... vous connaissez déjà les mots. Ce qui fait gagner des points au concours, c'est la précision : nommer la bonne classe grammaticale, puis justifier avec un vrai indice de la phrase. Une réponse courte peut être excellente si elle est exacte et prouvée.",
             },
             {
               type: "subsection",
@@ -84,21 +84,16 @@ export const ficheClassesGrammaticales: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "La **classe grammaticale** (ou nature) d'un mot, c'est **ce qu'il est**, quel que soit le **contexte** : « chanter » est toujours un verbe, « beau » est toujours un adjectif. C'est une information **stable**, qu'on retrouve dans le dictionnaire.\n\n⚠️ À ne pas confondre avec la **fonction**, qui désigne le **rôle du mot ou du groupe dans la phrase** : sujet, COD, complément circonstanciel, attribut… Par exemple, « le chat » reste un groupe nominal par nature, mais il peut être sujet dans « Le chat dort » ou COD dans « Je regarde le chat ». **Cette fiche porte uniquement sur la nature.**",
+                  text: "La **classe grammaticale** (ou nature) d'un mot, c'est **ce qu'il est** : « chanter » est toujours un verbe, « beau » est toujours un adjectif. C'est une information **stable**, qu'on retrouve dans le dictionnaire. Seule une poignée de formes très courantes (*tout*, *comme*, *que*, *si*…) y figurent sous **plusieurs classes** : ce ne sont pas des mots qui « changent » de nature, mais des formes identiques recouvrant plusieurs mots, et c'est le contexte qui dit lequel est employé (voir l'étape ④).\n\n⚠️ À ne pas confondre avec la **fonction**, qui désigne le **rôle du mot ou du groupe dans la phrase** : sujet, COD, complément circonstanciel, attribut… Par exemple, « le chat » reste un groupe nominal par nature, mais il peut être sujet dans « Le chat dort » ou COD dans « Je regarde le chat ». La fonction, elle, change avec la phrase : c'est l'objet de la fiche [Fonctions syntaxiques](fiche:fonctions-syntaxiques). **Cette fiche porte uniquement sur la nature.**",
                 },
                 {
-                  type: "highlightBox",
-                  variant: "marine",
-                  title: "« beau » : une nature stable, quel que soit l'emploi",
-                  blocks: [
-                    {
-                      type: "formulaBlock",
-                      lines: [
-                        "Le **beau** chien dort. → « beau » = adjectif qualificatif",
-                        "Ce chien est **beau**. → « beau » = adjectif qualificatif (la même nature !)",
-                      ],
-                      note: "Le mot change de place et d'emploi, mais sa **nature ne change pas**. C'est elle qu'on identifie ici.",
-                    },
+                  type: "table",
+                  title: "Une seule nature, plusieurs fonctions possibles",
+                  headers: ["Phrase", "Nature de « le chat »", "Fonction dans la phrase"],
+                  rows: [
+                    ["« **Le chat** dort. »", "Groupe nominal (stable)", "Sujet"],
+                    ["« Je regarde **le chat**. »", "Groupe nominal (stable)", "COD"],
+                    ["« Je pense **au chat**. »", "Groupe nominal (stable)", "COI"],
                   ],
                 },
                 {
@@ -288,7 +283,7 @@ export const ficheClassesGrammaticales: Fiche = {
                         "**Contact :** « **Allô** ! qui est à l'appareil ? »",
                       ],
                       piege:
-                        "« **Debout** ! » (interjection, ordre isolé) est différent de « il est resté **debout** » (adverbe de position).",
+                        "« **Debout** ! » (interjection, ordre isolé) est différent de « il est resté **debout** », un **adverbe** (de position).",
                       test:
                         "Le mot est-il isolé par une exclamation ou une virgule, sans lien syntaxique avec le reste de la phrase ? Si oui : interjection.",
                     },
@@ -301,6 +296,22 @@ export const ficheClassesGrammaticales: Fiche = {
                     },
                   ],
                 },
+                {
+                  type: "table",
+                  title: "Les 9 classes en un coup d'œil (à mémoriser)",
+                  headers: ["Classe", "Var. ?", "Comment la reconnaître", "Exemple"],
+                  rows: [
+                    ["**Nom**", "Variable", "Désigne un être, une chose, une idée ; précédé d'un déterminant", "le **chien** dort"],
+                    ["**Déterminant**", "Variable", "Précède et introduit le nom", "**le** chien dort"],
+                    ["**Adjectif**", "Variable", "Qualifie le nom et s'accorde avec lui", "un **gros** chien"],
+                    ["**Pronom**", "Variable", "Remplace un nom ou un groupe nominal", "**il** dort"],
+                    ["**Verbe**", "Variable", "Exprime une action ou un état ; se conjugue", "le chien **dort**"],
+                    ["**Adverbe**", "Invariable", "Modifie un verbe, un adjectif, un adverbe ou la phrase", "il dort **paisiblement**"],
+                    ["**Préposition**", "Invariable", "Introduit un GN ou un infinitif (jamais seule)", "il joue **avec** le chien"],
+                    ["**Conjonction**", "Invariable", "Relie deux éléments ou introduit une subordonnée", "il dort **et** ronfle"],
+                    ["**Interjection**", "Invariable", "Réaction spontanée, isolée par la ponctuation (l'onomatopée s'y rattache)", "**Oh** ! le chien !"],
+                  ],
+                },
               ],
             },
             {
@@ -310,7 +321,7 @@ export const ficheClassesGrammaticales: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Certains mots très fréquents changent de classe grammaticale selon leur emploi. La méthode est toujours la même : **regarder ce qui précède et ce qui suit le mot** avant de conclure.",
+                  text: "Quelques formes très fréquentes recouvrent **plusieurs natures possibles** : le dictionnaire les range sous plusieurs classes. Le mot ne « change » pas de nature tout seul — c'est **l'emploi dans la phrase** qui révèle laquelle de ces natures est réalisée. La méthode est toujours la même : **regarder ce qui précède et ce qui suit le mot** avant de conclure.",
                 },
                 {
                   type: "highlightBox",
@@ -368,8 +379,44 @@ export const ficheClassesGrammaticales: Fiche = {
                           title: "si",
                           lines: [
                             "Introduit une condition → **conjonction de subordination** (Si tu viens…)",
-                            "Modifie un adjectif → **adverbe d'intensité** (si beau)",
-                            "Répond à une négation → **adverbe d'affirmation** (Mais si !)",
+                            "Modifie un adjectif → **adverbe** (d'intensité) (si beau)",
+                            "Répond à une négation → **adverbe** (d'affirmation) (Mais si !)",
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  type: "highlightBox",
+                  variant: "marine",
+                  title: "3 autres formes, plusieurs natures possibles : leur, même, des",
+                  blocks: [
+                    {
+                      type: "cardGrid",
+                      columns: 2,
+                      variant: "info",
+                      cards: [
+                        {
+                          title: "leur",
+                          lines: [
+                            "Devant un nom → **déterminant possessif** (leurs livres)",
+                            "Devant un verbe → **pronom personnel** (je leur parle)",
+                          ],
+                        },
+                        {
+                          title: "même",
+                          lines: [
+                            "À côté d'un nom → **adjectif** (le même jour)",
+                            "À côté d'un verbe ou d'un mot → **adverbe** (même les enfants riaient)",
+                            "Après un déterminant, remplace un nom → **pronom** (j'ai choisi le même)",
+                          ],
+                        },
+                        {
+                          title: "des",
+                          lines: [
+                            "Devant un nom → **article indéfini** (des histoires)",
+                            "Mis pour « de les » → **forme contractée** (la fin des vacances)",
                           ],
                         },
                       ],
@@ -411,7 +458,7 @@ export const ficheClassesGrammaticales: Fiche = {
                           title: "En exclamation",
                           lines: [
                             "« **Que** c'est beau ! »",
-                            "→ **adverbe exclamatif**",
+                            "→ **adverbe** (exclamatif)",
                             "Il marque l'intensité.",
                           ],
                         },
@@ -466,9 +513,18 @@ export const ficheClassesGrammaticales: Fiche = {
               methode: "Test : ce mot peut-il se retrouver seul en fin de phrase ? Si oui → adverbe. S'il lui faut obligatoirement un groupe après lui → préposition. S'applique à « avant », « après », « contre », « dessous », « dessus »…",
             },
             {
+              type: "piegeCard",
+              variant: "rouge",
+              title: "Piège n°5 · « leur » : déterminant ou pronom ?",
+              badge: "Très fréquent",
+              faux: "« Je **leur** ai rendu **leur** copie. » → deux fois la même nature",
+              vrai: "« leur » devant un verbe (« je **leur** parle ») = pronom personnel, invariable. « leur(s) » devant un nom (« **leurs** copies ») = déterminant possessif, qui s'accorde en nombre.",
+              methode: "Test décisif : essayez d'ajouter un -s. « leurs copies » fonctionne (déterminant) ; « je leurs parle » est impossible (pronom, jamais de -s).",
+            },
+            {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** les élèves découvrent progressivement le **nom**, le **verbe**, l'**adjectif** et le **déterminant**, souvent via des activités de tri (« la chasse aux verbes », « je classe les mots »).\n\n**Cycle 3 :** introduction du **pronom**, de l'**adverbe**, puis des autres classes invariables. Le tableau de classement des natures de mots devient un outil régulier de la leçon de grammaire.\n\n**Ce que vous devez savoir dire :** « La classe grammaticale est une notion qu'on construit progressivement, classe par classe, du CP au cycle 3, en partant de manipulations concrètes (tri, classement) avant la terminologie. Le repère qui structure tout l'enseignement : la nature d'un mot est stable, on la construit classe par classe. »",
+              text: "**Cycle 1 (maternelle) :** aucune terminologie grammaticale encore. Les élèves manipulent la langue à l'oral, enrichissent leur vocabulaire et perçoivent peu à peu que les mots servent à **nommer** (un objet, une personne) ou à dire **ce qu'on fait** (une action). C'est le terreau implicite sur lequel le classement des mots s'appuiera ensuite.\n\n**Cycle 2 (CP-CE2) :** les élèves découvrent progressivement le **nom**, le **verbe**, l'**adjectif** et le **déterminant**, souvent via des activités de tri (« la chasse aux verbes », « je classe les mots »).\n\n**Cycle 3 (CM1-6e) :** introduction du **pronom**, de l'**adverbe**, puis des autres classes invariables. Le tableau de classement des natures de mots devient un outil régulier de la leçon de grammaire. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « La classe grammaticale est une notion qu'on construit progressivement : implicitement en maternelle (nommer / agir), puis classe par classe du CP au cycle 3, en partant de manipulations concrètes (tri, classement) avant la terminologie. Le repère qui structure tout l'enseignement : la nature d'un mot est stable. »",
             },
             {
               type: "ctaBox",
@@ -508,7 +564,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Le réflexe clé : tester d'abord la variabilité. Variable → nom, déterminant, adjectif, pronom ou verbe. Invariable → adverbe, préposition, conjonction ou interjection. Pour mémoriser, on peut ajouter l'onomatopée dans la famille des invariables, mais elle se traite comme un cas de l'interjection.",
+                  text: "⚠️ Le réflexe clé : tester d'abord la variabilité. Variable → nom, déterminant, adjectif, pronom ou verbe. Invariable → adverbe, préposition, conjonction ou interjection.",
                 },
               ],
             },
@@ -517,30 +573,41 @@ export const ficheClassesGrammaticales: Fiche = {
               number: "①",
               title: "Identifier la nature d'un mot isolé",
               intro:
-                "**Question typique :** « Donnez la classe grammaticale du mot souligné. »\nOn avance par éliminations successives : variable ou invariable ? puis, à l'intérieur de cette famille, quel rôle joue le mot ?",
+                "**Question typique :** « Donnez la classe grammaticale du mot souligné : *Le vieux chien dormait <u>paisiblement</u> près du feu.* »\nOn avance par éliminations successives : variable ou invariable ? puis, à l'intérieur de cette famille, quel rôle joue le mot ? On déroule tout sur ce seul mot, **paisiblement**, jusqu'à la réponse rédigée.",
               steps: [
                 {
                   number: "1",
-                  text: "**Le mot est-il variable ?** Tenter l'accord (féminin, pluriel).",
+                  text: "**Le mot est-il variable ?** Tenter l'accord au féminin et au pluriel.",
                   example: {
                     lines: [
-                      "« doucement » → doucement/doucement/doucement → aucun accord → invariable",
-                      "« grand » → grand/grande/grands/grandes → accord possible → variable",
+                      "*paisiblement* → paisiblement / paisiblement / paisiblement → aucun accord possible → **invariable**.",
+                      "On cherchera donc parmi les 4 classes invariables : adverbe, préposition, conjonction, interjection.",
                     ],
                   },
                 },
                 {
                   number: "2",
-                  text: "**Si variable :** précède-t-il directement un nom (→ déterminant) ? le remplace-t-il (→ pronom) ? désigne-t-il une personne/chose/idée (→ nom) ? exprime-t-il une action/état (→ verbe) ? qualifie-t-il un nom en s'accordant avec lui (→ adjectif) ?",
+                  text: "**Si le mot avait été variable :** précède-t-il directement un nom (→ déterminant) ? le remplace-t-il (→ pronom) ? désigne-t-il une personne, une chose ou une idée (→ nom) ? exprime-t-il une action ou un état (→ verbe) ? qualifie-t-il un nom en s'accordant avec lui (→ adjectif) ? Ici, ce n'est pas la piste à suivre : *paisiblement* est invariable.",
                 },
                 {
                   number: "3",
-                  text: "**Si invariable :** introduit-il un GN ou un infinitif (→ préposition) ? relie-t-il deux éléments ou introduit-il une subordonnée (→ conjonction) ? modifie-t-il un autre mot ou la phrase (→ adverbe) ? est-il isolé par la ponctuation, sans lien syntaxique (→ interjection) ?",
+                  text: "**Notre mot étant invariable :** introduit-il un GN ou un infinitif (→ préposition) ? relie-t-il deux éléments ou introduit-il une subordonnée (→ conjonction) ? est-il isolé par la ponctuation, sans lien syntaxique (→ interjection) ? ou modifie-t-il un autre mot (→ adverbe) ?",
+                  example: {
+                    lines: [
+                      "*paisiblement* n'introduit aucun groupe, ne relie rien, n'est pas isolé par une virgule.",
+                      "Il **modifie le verbe** *dormait* (il dit comment le chien dormait) → **adverbe**.",
+                    ],
+                  },
+                  warn: "⚠️ Le geste décisif : repérer le mot sur lequel porte *paisiblement*. Un adverbe se rattache toujours à un autre mot, ici le verbe.",
                 },
                 {
                   number: "💡",
-                  text: "**Vérifier avec le test rapide de la classe envisagée** (carte 💡 Test du Cours) avant de valider votre réponse.",
-                  warn: "⚠️ Une nature se justifie par un test précis : variabilité, remplacement, suppression…",
+                  text: "**Vérifier avec le test rapide de la classe envisagée :** un adverbe est invariable et se supprime sans rendre la phrase incorrecte (*Le vieux chien dormait près du feu.* reste correct). Les deux indices concordent : c'est bien un adverbe.",
+                  warn: "⚠️ Une nature se justifie toujours par un test précis : variabilité, remplacement, suppression.",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « *paisiblement* est un **adverbe** (de manière) : il est invariable (l'accord est impossible) et il modifie le verbe *dormait*, en précisant la manière dont se déroule l'action. »",
                 },
               ],
             },
@@ -551,7 +618,8 @@ export const ficheClassesGrammaticales: Fiche = {
               badge: "30 secondes",
               question: "Donnez la nature du mot souligné : « Elle parle <u>doucement</u>. »",
               correction: [
-                { type: "line", text: "« doucement » → invariable (aucun accord possible) → **adverbe de manière**, modifie le verbe « parle »." },
+                { type: "line", text: "**Explication :** « doucement » est invariable (aucun accord possible) et modifie le verbe « parle » : il en précise la manière." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *doucement* est un **adverbe** (de manière) : invariable, il modifie le verbe *parle*. »" },
                 {
                   type: "note",
                   text: "Trouvé du premier coup ? Vous maîtrisez cette méthode, passez à la suite. Sinon, relisez l'étape 1 ci-dessus avant de continuer.",
@@ -563,25 +631,30 @@ export const ficheClassesGrammaticales: Fiche = {
               number: "②",
               title: "Traiter un mot-caméléon (tout, comme, que, si)",
               intro:
-                "**Question typique :** « Quelle est la nature de « tout » dans : Tout le monde regardait ? »\nMême démarche pour les 4 mots-caméléons : on ne part jamais du mot seul. On observe sa construction, puis on suit l'algorithme express vu dans le Cours.",
+                "**Question typique :** « Quelle est la nature du mot souligné : *<u>Tout</u> le monde regardait la scène.* »\nMême démarche pour les 4 mots-caméléons : on ne part jamais du mot seul. On observe sa construction, puis on suit l'algorithme express vu dans le Cours. On déroule tout sur ce seul mot, **Tout**.",
               steps: [
                 {
                   number: "1",
                   text: "**Repérer le mot-caméléon et regarder ce qui le suit immédiatement.**",
                   example: {
-                    lines: ["« Tout le monde regardait » → « Tout » est suivi du nom « le monde »"],
+                    lines: ["« *Tout* le monde regardait » → *Tout* est suivi du nom *le monde*."],
                   },
                 },
                 {
                   number: "2",
                   text: "**Choisir la bonne piste :** le mot introduit-il un nom ou un groupe nominal ? une proposition avec verbe conjugué ? remplace-t-il un nom ? modifie-t-il un adjectif, un verbe ou la phrase ?",
                   example: {
-                    lines: ["« Tout » + « le monde » (nom) → **déterminant indéfini**"],
+                    lines: ["*Tout* est directement suivi du nom *le monde* → il **introduit le nom** → **déterminant indéfini**."],
                   },
+                  warn: "⚠️ Le piège à éviter : confondre ce *Tout* déterminant avec le *Tout* pronom de « *Tout* est perdu » (là, *Tout* ne précède aucun nom, il en remplace un).",
                 },
                 {
                   number: "💡",
-                  text: "**Vérifier avec le test de variabilité si besoin** : « tout » déterminant ou pronom est variable (tout/toute/tous/toutes) ; « tout » adverbe est invariable (sauf devant adjectif féminin commençant par une consonne : toute petite).",
+                  text: "**Vérifier avec le test de variabilité si besoin :** « tout » déterminant ou pronom est variable (tout / toute / tous / toutes) ; « tout » adverbe est invariable (sauf devant un adjectif féminin commençant par une consonne : *toute petite*).",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « Dans cette phrase, *Tout* est un **déterminant indéfini** : il introduit directement le nom *monde* et s'accorde avec lui (*tout* le monde / *toutes* les classes). »",
                 },
               ],
             },
@@ -592,7 +665,8 @@ export const ficheClassesGrammaticales: Fiche = {
               badge: "30 secondes",
               question: "Quelle est la nature de « Comme » dans : « Comme c'est beau ! » ?",
               correction: [
-                { type: "line", text: "« Comme » est en tête de phrase exclamative et n'introduit pas de GN ni de subordonnée → **adverbe exclamatif d'intensité**." },
+                { type: "line", text: "**Explication :** « Comme » est en tête de phrase exclamative ; il n'introduit ni GN ni subordonnée, il marque l'intensité." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « Ici, *Comme* est un **adverbe** (exclamatif d'intensité) : placé en tête de l'exclamation, il porte sur tout l'énoncé. »" },
                 { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
               ],
             },
@@ -621,7 +695,7 @@ export const ficheClassesGrammaticales: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de passer aux exercices",
-              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Chaque réponse alimente votre suivi de maîtrise : retrouvez le détail objectif par objectif dans l'onglet **Auto-évaluation**, avec la date de votre prochaine révision.",
+              text: "10 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Chaque réponse alimente votre suivi de maîtrise : retrouvez le détail objectif par objectif dans l'onglet **Auto-évaluation**, avec la date de votre prochaine révision.",
             },
             {
               type: "quizBlock",
@@ -645,7 +719,7 @@ export const ficheClassesGrammaticales: Fiche = {
                   ],
                   correctIndex: 1,
                   explanation:
-                    "« rapidement » ne s'accorde jamais (rapidement/rapidements est impossible) → c'est un adverbe de manière, qui modifie un verbe.",
+                    "« rapidement » ne s'accorde jamais (rapidement/rapidements est impossible) → c'est un adverbe (de manière), qui modifie un verbe.",
                 },
                 {
                   objectifId: "e1",
@@ -657,7 +731,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   objectifId: "e4",
                   question: "Dans « Tout est perdu. », quelle est la nature de « Tout » ?",
-                  options: ["Déterminant indéfini", "Pronom indéfini", "Adverbe d'intensité", "Nom commun"],
+                  options: ["Déterminant indéfini", "Pronom indéfini", "Adverbe (d'intensité)", "Nom commun"],
                   correctIndex: 1,
                   explanation: "« Tout » remplace un nom et est sujet du verbe « est » → pronom indéfini.",
                 },
@@ -666,7 +740,7 @@ export const ficheClassesGrammaticales: Fiche = {
                   question: "Dans « Comme c'est étrange ! », quelle est la nature de « Comme » ?",
                   options: ["Préposition", "Conjonction de subordination", "Adverbe exclamatif d'intensité", "Pronom interrogatif"],
                   correctIndex: 2,
-                  explanation: "« Comme » est en tête de phrase exclamative, sans GN ni subordonnée derrière → adverbe exclamatif d'intensité.",
+                  explanation: "« Comme » est en tête de phrase exclamative, sans GN ni subordonnée derrière → adverbe (exclamatif d'intensité).",
                 },
                 {
                   objectifId: "e6",
@@ -700,6 +774,14 @@ export const ficheClassesGrammaticales: Fiche = {
                   correctIndex: 1,
                   explanation:
                     "L'adjectif verbal s'accorde (souriante). Le participe présent reste invariable (souriant à son fils).",
+                },
+                {
+                  objectifId: "e4",
+                  question: "Dans « Je leur ai prêté mes notes. », quelle est la nature de « leur » ?",
+                  options: ["Déterminant possessif", "Pronom personnel", "Pronom possessif", "Adverbe"],
+                  correctIndex: 1,
+                  explanation:
+                    "« leur » est placé devant le verbe « ai prêté », il signifie « à eux » et reste invariable (jamais de -s) → pronom personnel. Devant un nom, « leurs notes » serait au contraire un déterminant possessif.",
                 },
                 {
                   objectifId: "e7",
@@ -749,10 +831,11 @@ export const ficheClassesGrammaticales: Fiche = {
               question:
                 "Donnez la classe grammaticale des mots soulignés :\na) « Il courait <u>vite</u>. »   b) « <u>Chaque</u> élève a rendu sa copie. »   c) « Elle est partie <u>sans</u> lui. »   d) « <u>Hélas</u>, il était trop tard. »",
               correction: [
-                { type: "line", label: "a)", text: "**vite** → adverbe de manière (invariable, modifie le verbe « courait »)" },
+                { type: "line", label: "a)", text: "**vite** → adverbe (de manière), invariable, modifie le verbe « courait »" },
                 { type: "line", label: "b)", text: "**Chaque** → déterminant indéfini (introduit le nom « élève », toujours singulier)" },
                 { type: "line", label: "c)", text: "**sans** → préposition (introduit le groupe nominal « lui »)" },
                 { type: "line", label: "d)", text: "**Hélas** → interjection (exprime la déploration, isolée par la virgule)" },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *vite* → adverbe (de manière) ; *Chaque* → déterminant indéfini ; *sans* → préposition ; *Hélas* → interjection. »" },
               ],
             },
             {
@@ -765,12 +848,13 @@ export const ficheClassesGrammaticales: Fiche = {
               correction: [
                 { type: "line", text: "**pourtant** → adverbe (opposition/concession)" },
                 { type: "line", text: "**murmurer** → verbe (infinitif)" },
-                { type: "line", text: "**soudain** → adverbe de temps (ou adjectif qualificatif si épithète : « un bruit soudain »)" },
+                { type: "line", text: "**soudain** → adverbe (de temps), ou adjectif qualificatif si épithète : « un bruit soudain »" },
                 { type: "line", text: "**envers** → préposition" },
                 { type: "line", text: "**celle** → pronom démonstratif" },
                 { type: "line", text: "**bonjour** → interjection" },
                 { type: "line", text: "**laquelle** → pronom relatif (ou interrogatif selon contexte)" },
                 { type: "line", text: "**immense** → adjectif qualificatif" },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *pourtant* → adverbe ; *murmurer* → verbe (infinitif) ; *soudain* → adverbe (de temps) ; *envers* → préposition ; *celle* → pronom démonstratif ; *bonjour* → interjection ; *laquelle* → pronom relatif ou interrogatif selon le contexte ; *immense* → adjectif qualificatif. »" },
               ],
             },
             {
@@ -795,6 +879,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 { type: "line", label: "d)", text: "**du** → article partitif" },
                 { type: "line", label: "e)", text: "**la** → article défini" },
                 { type: "line", label: "f)", text: "**deux** → déterminant numéral cardinal" },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *ses* → déterminant possessif ; *quelques* → déterminant indéfini ; *quel* → déterminant exclamatif ; *du* → article partitif ; *la* → article défini ; *deux* → déterminant numéral cardinal. »" },
                 {
                   type: "note",
                   text: "⚠️ Piège : « du » peut être **article partitif** quand il introduit une quantité non comptable (« du pain », « du courage »). Il peut aussi être la contraction de **de + le** dans un groupe introduit par « de » (« le chien du voisin » = le chien **de le** voisin, complément du nom). Il faut donc regarder le groupe dans lequel il apparaît.",
@@ -818,6 +903,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 { type: "line", text: "**te** → pronom personnel (2e personne du singulier)" },
                 { type: "line", text: "**chacun** → pronom indéfini" },
                 { type: "line", text: "**qui** → pronom relatif (ou interrogatif selon contexte)" },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *on* → pronom personnel indéfini ; *le leur* → pronom possessif ; *rien* → pronom indéfini ; *auquel* → pronom relatif ; *ceux* → pronom démonstratif ; *te* → pronom personnel ; *chacun* → pronom indéfini ; *qui* → pronom relatif ou interrogatif selon le contexte. »" },
               ],
             },
             {
@@ -830,10 +916,11 @@ export const ficheClassesGrammaticales: Fiche = {
                 "Identifiez la classe grammaticale des mots soulignés :\na) « <u>Cela</u> m'étonne. »   b) « Il part <u>demain</u>. »   c) « <u>Ni</u> l'un <u>ni</u> l'autre ne répondit. »   d) « Elle achète <u>du</u> café. »   e) « <u>Lequel</u> préfères-tu ? »",
               correction: [
                 { type: "line", label: "a)", text: "**Cela** → pronom démonstratif" },
-                { type: "line", label: "b)", text: "**demain** → adverbe de temps" },
+                { type: "line", label: "b)", text: "**demain** → adverbe (de temps)" },
                 { type: "line", label: "c)", text: "**Ni…ni** → conjonctions de coordination" },
                 { type: "line", label: "d)", text: "**du** → article partitif" },
                 { type: "line", label: "e)", text: "**Lequel** → pronom interrogatif" },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Cela* → pronom démonstratif ; *demain* → adverbe (de temps) ; *Ni… ni* → conjonctions de coordination ; *du* → article partitif ; *Lequel* → pronom interrogatif. »" },
               ],
             },
             {
@@ -854,14 +941,15 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   type: "line",
                   label: "a)",
-                  text: "« parle **fort** » → adverbe de manière (invariable, modifie le verbe) / « homme **fort** » → adjectif qualificatif (variable, épithète du nom)",
+                  text: "« parle **fort** » → adverbe (de manière), invariable, modifie le verbe / « homme **fort** » → adjectif qualificatif (variable, épithète du nom)",
                 },
                 { type: "line", label: "b)", text: "Les deux : **sans** → préposition dans les deux cas (introduit un GN ou un infinitif)" },
                 {
                   type: "line",
                   label: "c)",
-                  text: "« **Debout** ! » → interjection (exprime un ordre, isolée) / « resté **debout** » → adverbe de position (invariable)",
+                  text: "« **Debout** ! » → interjection (exprime un ordre, isolée) / « resté **debout** » → adverbe (de position), invariable",
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) *fort* est adverbe (de manière) dans *parle fort* (invariable), adjectif qualificatif dans *homme fort* (il s'accorde) ; b) *sans* est préposition dans les deux phrases ; c) *Debout* est interjection dans *Debout !* (ordre isolé), adverbe (de position) dans *resté debout*. »" },
                 { type: "note", text: "⚠️ Méthode : identifier ce que le mot modifie ou introduit avant de conclure sur sa nature." },
               ],
             },
@@ -877,7 +965,8 @@ export const ficheClassesGrammaticales: Fiche = {
                 { type: "line", label: "a)", text: "**comme** → préposition de comparaison (introduit le GN « sa mère »)" },
                 { type: "line", label: "b)", text: "**Comme** → conjonction de subordination de cause" },
                 { type: "line", label: "c)", text: "**comme** → préposition de comparaison (introduit le GN « un dieu », même règle qu'en a)" },
-                { type: "line", label: "d)", text: "**Comme** → adverbe exclamatif d'intensité" },
+                { type: "line", label: "d)", text: "**Comme** → adverbe (exclamatif d'intensité)" },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *comme* introduit le GN *sa mère* sans verbe → préposition de comparaison (a) ; il introduit la subordonnée *il était fatigué* → conjonction de subordination de cause (b) ; il introduit le GN *un dieu* → préposition de comparaison, comme en a (c) ; placé en tête d'exclamation, il marque l'intensité → adverbe, sens exclamatif (d). »" },
                 { type: "note", text: "⚠️ Piège : « comme » + GN seul (sans verbe) → préposition, même en comparaison (a et c). « comme » + sujet/verbe → conjonction de subordination (b). En tête de phrase exclamative → adverbe (d).\n\nÀ noter : en comparaison, l'analyse de « comme » + GN en **conjonction de subordination** (avec ellipse du verbe : « comme sa mère [chante] ») est aussi acceptée. Les deux réponses sont valables." },
               ],
             },
@@ -889,10 +978,11 @@ export const ficheClassesGrammaticales: Fiche = {
               question:
                 "Expliquez pourquoi la nature indiquée entre parenthèses est fausse. Donnez la nature correcte :\na) « Il travaille <u>beaucoup</u>. » → (adjectif ?)   b) « <u>Ce</u> que tu dis m'intéresse. » → (déterminant ?)   c) « Elle est partie <u>avant</u> moi. » → (adverbe ?)   d) « Il a couru <u>vite</u>. » → (adjectif ?)",
               correction: [
-                { type: "line", label: "a)", text: "**beaucoup** ≠ adjectif car invariable → **adverbe d'intensité**." },
+                { type: "line", label: "a)", text: "**beaucoup** ≠ adjectif car invariable → **adverbe** (d'intensité)." },
                 { type: "line", label: "b)", text: "**Ce** ≠ déterminant car il ne précède pas directement un nom → **pronom démonstratif neutre** (il remplace un élément au lieu d'introduire un nom)." },
                 { type: "line", label: "c)", text: "**avant** ≠ adverbe car suivi du pronom « moi » (GN) → **préposition**." },
-                { type: "line", label: "d)", text: "**vite** ≠ adjectif car invariable → **adverbe de manière**." },
+                { type: "line", label: "d)", text: "**vite** ≠ adjectif car invariable → **adverbe** (de manière)." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *beaucoup* → adverbe (d'intensité), invariable ; *Ce* → pronom démonstratif neutre (il ne précède aucun nom) ; *avant* → préposition (suivie du pronom *moi*) ; *vite* → adverbe (de manière), invariable. »" },
                 { type: "note", text: "⚠️ Méthode : un adjectif est toujours variable. Si le mot ne s'accorde pas, ce n'est pas un adjectif." },
               ],
             },
@@ -907,8 +997,9 @@ export const ficheClassesGrammaticales: Fiche = {
               correction: [
                 { type: "line", label: "a)", text: "**que** → conjonction de subordination (elle introduit une complétive après « Je sais »)" },
                 { type: "line", label: "b)", text: "**que** → pronom relatif (il reprend « l'homme » et introduit la relative « que j'ai vu »)" },
-                { type: "line", label: "c)", text: "**Que** → adverbe exclamatif d'intensité" },
+                { type: "line", label: "c)", text: "**Que** → adverbe (exclamatif d'intensité)" },
                 { type: "line", label: "d)", text: "**que** → conjonction de subordination de comparaison" },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *que* introduit une complétive après *Je sais* → conjonction de subordination (a) ; il reprend *l'homme* et introduit la relative → pronom relatif (b) ; placé en tête d'exclamation, il marque l'intensité → adverbe, sens exclamatif (c) ; il introduit le second terme de la comparaison → conjonction de subordination (d). »" },
               ],
             },
             {
@@ -939,6 +1030,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["avant", "Préposition"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Une femme* → groupe nominal ; *tenant* → participe présent (forme verbale, invariable) ; *d'une dizaine d'années* → groupe nominal prépositionnel introduit par *de* ; *baissés* → participe passé employé comme adjectif ; *avant* → préposition. »" },
                 { type: "note", text: "⚠️ Piège : « tenant » est un **participe présent** : il garde la forme en -ant et ne s'accorde pas. Le **gérondif** se reconnaît à « en » + participe présent (« en tenant »). L'**adjectif verbal**, lui, fonctionne comme un adjectif et s'accorde avec le nom (« une eau courante », « des élèves souriantes »)." },
               ],
             },
@@ -957,12 +1049,13 @@ export const ficheClassesGrammaticales: Fiche = {
                   headers: ["Mot / groupe", "Nature"],
                   rows: [
                     ["sur la terre", "Groupe nominal prépositionnel : GN introduit par la préposition « sur »"],
-                    ["Partout", "Adverbe de lieu"],
+                    ["Partout", "Adverbe (de lieu)"],
                     ["hélas", "Interjection"],
                     ["grandes", "Adjectif qualificatif"],
                     ["las", "Adjectif qualificatif"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *sur la terre* → groupe nominal prépositionnel (préposition *sur*) ; *Partout* → adverbe (de lieu) ; *hélas* → interjection ; *grandes* → adjectif qualificatif ; *las* → adjectif qualificatif. »" },
               ],
             },
           ],
@@ -993,9 +1086,10 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["lointaines", "Adjectif qualificatif"],
                     ["de marbre", "GN prépositionnel, introduit par « de »"],
                     ["où", "Pronom relatif"],
-                    ["toujours", "Adverbe de temps"],
+                    ["toujours", "Adverbe (de temps)"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *lointaines* → adjectif qualificatif ; *de marbre* → groupe nominal prépositionnel (préposition *de*) ; *où* → pronom relatif ; *toujours* → adverbe (de temps). »" },
                 {
                   type: "note",
                   text: "⚠️ Piège : « toujours » est ici un adverbe ; un adverbe peut modifier un verbe, un adjectif (ici « bleus ») ou un autre adverbe.",
@@ -1020,6 +1114,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["rien", "Pronom indéfini"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif ; *muette* → adjectif qualificatif ; *heureuse* → adjectif qualificatif ; *rien* → pronom indéfini. »" },
                 {
                   type: "note",
                   text: "⚠️ « dont » est toujours un pronom relatif, quelle que soit la phrase : sa nature ne change pas.",
@@ -1045,6 +1140,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["vieil imposteur", "Groupe nominal"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif ; *de l'Empire* → groupe nominal prépositionnel (préposition *de*) ; *m'* → pronom personnel (forme élidée de *me*) ; *vieil imposteur* → groupe nominal. »" },
                 {
                   type: "note",
                   text: "⚠️ « m' » est un pronom personnel : c'est la forme élidée de « me » devant voyelle.",
@@ -1071,6 +1167,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["Vivre", "Verbe à l'infinitif (3e groupe)"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Écrire* → verbe à l'infinitif (1er groupe), même employé comme sujet ; *c'* → pronom démonstratif élidé (forme de *ce*) ; *On* → pronom personnel indéfini ; *Vivre* → verbe à l'infinitif (3e groupe). »" },
                 {
                   type: "note",
                   text: "⚠️ Piège : un infinitif reste un verbe, même employé comme sujet (« Écrire est… »). « c' » est un pronom démonstratif élidé, à ne pas confondre avec le déterminant « ce ».",
@@ -1096,6 +1193,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     ["Je", "Pronom personnel, 1re pers. sing."],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Jugez* → verbe (impératif présent, 2e pers. pluriel) ; *Insensées* → adjectif qualificatif (féminin pluriel) ; *rêver* → verbe à l'infinitif ; *Monte* → verbe (présent de l'indicatif, 3e pers. sing.) ; *Je* → pronom personnel. »" },
                 {
                   type: "note",
                   text: "⚠️ Piège : « Insensées » n'est PAS un participe passé (il n'existe pas de verbe « insenser ») : c'est un adjectif qualificatif comme un autre, qui s'accorde simplement avec le nom « choses » (fém. pluriel).",
@@ -1128,9 +1226,9 @@ export const ficheClassesGrammaticales: Fiche = {
                   items: [
                     { text: "Erreur 1 : nature fausse, « rapidement » est en réalité un adverbe (invariable, modifie le verbe « courait »)", bad: true },
                     { text: "Erreur 2 : l'analyse morphologique (« formé sur le radical… ») est hors sujet pour la Partie 1", bad: true },
-                    { text: "Réponse attendue : « rapidement » → adverbe de manière" },
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *rapidement* est un **adverbe** (de manière) : il est invariable et modifie le verbe *courait*. Son origine (formé sur l'adjectif *rapide*) ne change pas sa nature et n'a pas à figurer dans la réponse. »" },
               ],
             },
             {
@@ -1147,6 +1245,7 @@ export const ficheClassesGrammaticales: Fiche = {
                     { text: "[Terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download) : DÉTERMINANT INDÉFINI" },
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *chaque* est un **déterminant indéfini** : il introduit le nom *matin* sans le qualifier. L'appellation *adjectif indéfini* relève de l'ancienne terminologie et n'est plus admise. »" },
                 { type: "note", text: "Règle : tout ce qui introduit un nom est un déterminant, quelle que soit sa sous-classe." },
               ],
             },
@@ -1161,10 +1260,10 @@ export const ficheClassesGrammaticales: Fiche = {
                   type: "checklist",
                   items: [
                     { text: "« Écrire » n'est pas un nom commun : sa nature est fausse", bad: true },
-                    { text: "Réponse attendue : « Écrire » → verbe à l'infinitif (1er groupe)" },
                     { text: "Un infinitif reste un VERBE même employé comme sujet ou comme complément" },
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Écrire* est un **verbe à l'infinitif** (1er groupe). Même employé comme sujet de *est difficile*, il garde sa nature verbale : on ne parle jamais de *nom verbal*. »" },
                 {
                   type: "note",
                   text: "⚠️ Très fréquent : l'infinitif employé comme sujet est un grand classique de l'épreuve.",
@@ -1229,6 +1328,12 @@ export const ficheClassesGrammaticales: Fiche = {
                   answer:
                     "**Pronom personnel indéfini**, 3e pers. sing. : le verbe se met au singulier. Quand « on » = « nous », l'accord se fait souvent au pluriel (« on est partis »).",
                 },
+                {
+                  question: "« leur » : déterminant ou pronom ? Comment trancher ?",
+                  answer:
+                    "Devant un **nom**, il s'accorde en nombre → **déterminant possessif** (« **leurs** livres »).\nDevant un **verbe**, il est invariable et signifie « à eux » → **pronom personnel** (« je **leur** parle »).",
+                  astuce: "Test : peut-on ajouter un -s ? « leurs livres » oui (déterminant) ; « je leurs parle » non (pronom).",
+                },
               ],
             },
           ],
@@ -1259,12 +1364,12 @@ export const ficheClassesGrammaticales: Fiche = {
                 },
                 {
                   title: "Mots-caméléons",
-                  lines: ["tout · comme · que · si", "→ regarder le contexte", "(ce qui suit, ce qui est modifié)"],
+                  lines: ["tout · comme · que · si", "leur · même · des", "→ regarder le contexte", "(ce qui suit, ce qui est modifié)"],
                   variant: "green",
                 },
                 {
                   title: "Pièges classiques",
-                  lines: ["Adverbe ≠ adjectif (variabilité)", "Infinitif reste un verbe", "Déterminant ≠ adjectif", "« dont » = toujours pronom relatif"],
+                  lines: ["Adverbe ≠ adjectif (variabilité)", "Infinitif reste un verbe", "Déterminant ≠ adjectif", "« leur » + verbe = pronom", "« dont » = toujours pronom relatif"],
                   variant: "yellow",
                 },
                 {
