@@ -184,7 +184,6 @@ function ficheReferentielCulturel(): Fiche {
                   {
                     type: "referenceGrid",
                     columns: 2,
-                    pictogram: "plume",
                     cards: [
                       {
                         title: "Les Essais · Montaigne · 1580",

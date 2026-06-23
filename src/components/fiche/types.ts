@@ -91,10 +91,9 @@ export type Block =
   | {
       type: "referenceGrid";
       columns: 1 | 2;
-      // Pictogramme thématique sobre (SVG inline, dessiné main) servant d'ancre
-      // visuelle pour le thème. Optionnel : clé d'icône (ex: "plume").
-      pictogram?: string;
       cards: {
+        // « Œuvre · Auteur · date » : scindé à l'affichage pour mettre l'œuvre
+        // en avant et reléguer auteur/date sur une ligne secondaire.
         title: string;
         genre?: string; // type/genre de l'œuvre (essai, roman dystopique, fable...) — badge
         enBref: RichText; // résumé concret de l'œuvre (de quoi ça parle)

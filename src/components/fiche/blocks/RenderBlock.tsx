@@ -7,20 +7,6 @@ import { MindmapLite } from "../MindmapLite";
 import { QuizBlock } from "../QuizBlock";
 import type { Block, Step } from "../types";
 
-// Pictogrammes thématiques sobres (au trait, dessinés main, sans emoji) servant
-// d'ancre visuelle aux thèmes du recueil de références (notion 20). L'icône hérite
-// de la couleur du conteneur via currentColor, pour rester cohérente avec la charte.
-const PICTOGRAMS: Record<string, React.ReactNode> = {
-  // Plume (écriture de soi : journal, mémoires, autobiographie)
-  plume: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden>
-      <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
-      <path d="M16 8 2 22" />
-      <path d="M17.5 15H9" />
-    </svg>
-  ),
-};
-
 type RenderBlockProps = {
   block: Block;
   ficheSlug: string;
@@ -283,18 +269,24 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
 
     case "referenceGrid":
       return (
-        <div className="flex flex-col gap-3">
-          {block.pictogram && PICTOGRAMS[block.pictogram] && (
-            <div className="flex justify-center">
-              <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-secondary/10 text-secondary">
-                {PICTOGRAMS[block.pictogram]}
-              </span>
-            </div>
-          )}
-          <div className={`grid ${NOTIONCARD_COLUMNS[block.columns]} gap-3`}>
-          {block.cards.map((card, i) => (
+        <div className={`grid ${NOTIONCARD_COLUMNS[block.columns]} gap-3`}>
+          {block.cards.map((card, i) => {
+            // Le titre encode « Œuvre · Auteur · date » : on le scinde pour
+            // mettre l'œuvre en avant et reléguer auteur/date sur une ligne
+            // secondaire plus discrète.
+            const [oeuvre, auteur, date] = card.title.split(" · ");
+            return (
             <div key={i} className="self-start rounded-xl border-2 border-base-300 overflow-hidden flex flex-col">
-              <div className="bg-primary text-primary-content px-3.5 py-2 text-sm font-bold">{card.title}</div>
+              <div className="bg-primary text-primary-content px-3.5 py-2.5">
+                <div className="text-sm font-bold leading-snug">{oeuvre}</div>
+                {(auteur || date) && (
+                  <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[11px] font-medium text-primary-content/75">
+                    {auteur && <span>{auteur}</span>}
+                    {auteur && date && <span className="opacity-50">·</span>}
+                    {date && <span>{date}</span>}
+                  </div>
+                )}
+              </div>
               <div className="p-3.5 flex flex-col gap-3">
                 {card.genre && (
                   <span className="self-start rounded-full bg-secondary/10 text-secondary text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5">
@@ -326,8 +318,8 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
                 </div>
               </div>
             </div>
-          ))}
-          </div>
+            );
+          })}
         </div>
       );
 
