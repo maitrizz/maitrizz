@@ -5,6 +5,7 @@ import { FlashcardDeck } from "../FlashcardDeck";
 import { AutoEvalChecklist } from "../AutoEvalChecklist";
 import { MindmapLite } from "../MindmapLite";
 import { QuizBlock } from "../QuizBlock";
+import { MatchGame } from "../MatchGame";
 import type { Block, Step } from "../types";
 
 type RenderBlockProps = {
@@ -536,6 +537,9 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
 
     case "quizBlock":
       return <QuizBlock block={block} ficheSlug={ficheSlug} />;
+
+    case "matchGame":
+      return <MatchGame block={block} ficheSlug={ficheSlug} />;
 
     case "sommaireApercu":
       return (

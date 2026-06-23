@@ -202,6 +202,19 @@ export type Block =
       }[];
     }
 
+  // Jeu d'appariement au clic : relier chaque élément de gauche (ex. une œuvre)
+  // à sa bonne réponse de droite (ex. son idée clé). Joué en manches successives,
+  // avec score. `objectifId` (facultatif) alimente le suivi de maîtrise.
+  | {
+      type: "matchGame";
+      instructions?: RichText;
+      leftLabel?: string;
+      rightLabel?: string;
+      roundSize?: number; // nombre de paires par manche (défaut : 6)
+      objectifId?: string;
+      pairs: { left: RichText; right: RichText }[];
+    }
+
   // Sommaire léger de la fiche (annonce le programme sans révéler le contenu) — "Vue d'ensemble"
   | {
       type: "sommaireApercu";
