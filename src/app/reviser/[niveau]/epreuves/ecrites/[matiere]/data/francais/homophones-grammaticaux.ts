@@ -9,23 +9,24 @@ const OBJECTIFS = [
   { id: "h5", label: "Je distingue mais/mes et davantage/d'avantage(s)" },
   { id: "h6", label: "Je distingue c'est/s'est/sais/sait, sa/ça et la/là/l'a/l'as par la nature grammaticale et les tests adaptés" },
   { id: "h7", label: "Je tranche quel(s)/quelle(s)/qu'elle(s) et tout/tous/toute(s) en observant le groupe nominal ou le remplacement" },
+  { id: "h8", label: "Je distingue peu/peut/peux (test « pouvait »), quand/quant/qu'en et près/prêt(e) par la nature et le test adapté" },
 ];
 
-export const ficheHomophonesPonctuation: Fiche = {
+export const ficheHomophonesGrammaticaux: Fiche = {
   slug: "homophones-grammaticaux",
   matiere: "francais",
   numero: 12,
   partie: "Partie 1 : Orthographe grammaticale",
   title: "Les homophones grammaticaux",
   subtitle:
-    "a/à, est/et, son/sont, on/ont, ou/où, ce/se, ses/ces, leur/leurs, mais/mes, davantage/d'avantage(s), c'est/s'est, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous",
+    "a/à, est/et, son/sont, on/ont, ou/où, ce/se, ses/ces, leur/leurs, mais/mes, davantage/d'avantage(s), c'est/s'est, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous, peu/peut/peux, quand/quant/qu'en, près/prêt",
   badges: [
     { label: "★★★ Très fréquent", variant: "hot" },
     { label: "Cycle 3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
   ],
   metaTitle: "Les homophones grammaticaux (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les homophones grammaticaux (a/à, est/et, son/sont, on/ont, ou/où, ses/ces, ce/se, leur/leurs, mais/mes, davantage/d'avantage, c'est/s'est/sais/sait, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous) avec leurs tests de remplacement, une méthode pas-à-pas, des exercices corrigés, des flashcards et une auto-évaluation.",
+    "Fiche CRPE complète sur les homophones grammaticaux (a/à, est/et, son/sont, on/ont, ou/où, ses/ces, ce/se, leur/leurs, mais/mes, davantage/d'avantage, c'est/s'est/sais/sait, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous, peu/peut/peux, quand/quant/qu'en, près/prêt) avec leurs tests de remplacement, une méthode pas-à-pas, des exercices corrigés, des flashcards et une auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -156,8 +157,10 @@ export const ficheHomophonesPonctuation: Fiche = {
                       exemples: [
                         "« Il **se** lave. » → « Je **me** lave » ✓ → pronom réfléchi",
                         "« **Ce** livre est beau. » → devant un nom → déterminant démonstratif",
+                        "« **Ce** sera utile », « **Ce** que je veux » → devant un verbe ou « que » → pronom démonstratif",
                       ],
-                      test: "Changer de personne : « il se lave » devient « je me lave » ou « tu te laves » ; « ce » ne varie pas ainsi.",
+                      test: "Changer de personne : « il se lave » devient « je me lave » → pronom réfléchi « se ». « ce » ne varie pas ainsi : devant un verbe ou « que », c'est le pronom démonstratif (ce sera, ce que).",
+                      astuce: "Confusion fréquente devant un verbe : « se » accompagne un verbe pronominal (se trouver, se faire) ; « ce » annonce ou reprend (ce sera, ce que je crois).",
                     },
                     {
                       title: "ses / ces",
@@ -238,11 +241,39 @@ export const ficheHomophonesPonctuation: Fiche = {
                       title: "tout / tous / toute(s)",
                       definition: "**tout** peut être déterminant, pronom ou adverbe ; sa forme dépend du mot qu'il accompagne ou remplace.",
                       exemples: [
-                        "« **Tous** les élèves travaillent. » → déterminant masculin pluriel",
-                        "« Elles sont **toutes** prêtes. » → pronom/adverbe selon l'analyse, accord audible",
-                        "« Elle est **tout** émue. » → adverbe devant adjectif féminin commençant par voyelle",
+                        "« **Tous** les élèves travaillent. » → devant un nom → déterminant masculin pluriel",
+                        "« **Tous** ont réussi. » → remplace le nom → pronom",
+                        "« Elle est **tout** émue » mais « Elles sont **toutes** honteuses » → adverbe (= entièrement)",
                       ],
-                      test: "Identifier le mot concerné : devant un nom, accorder comme déterminant ; seul, pronom ; devant un adjectif, souvent adverbe.",
+                      test: "Devant un nom : déterminant, on accorde. Seul : pronom. Devant un adjectif : adverbe invariable, **sauf** devant un adjectif féminin commençant par une consonne ou un h aspiré (« toute honteuse », « toutes contentes »).",
+                    },
+                    {
+                      title: "peu / peut / peux",
+                      definition: "**peu** = adverbe de quantité (invariable) · **peut / peux** = verbe pouvoir au présent.",
+                      exemples: [
+                        "« Il **peut** réussir. » → « Il **pouvait** réussir » ✓ → verbe",
+                        "« Il travaille **peu**. » → « il travaille pouvait » impossible → adverbe",
+                      ],
+                      test: "Remplacer par « pouvait » : si ça marche, c'est le verbe « peut / peux » ; sinon, l'adverbe « peu ».",
+                    },
+                    {
+                      title: "quand / quant / qu'en",
+                      definition: "**quand** = conjonction ou adverbe de temps · **quant (à / au)** = locution (= en ce qui concerne) · **qu'en** = « que » + pronom « en ».",
+                      exemples: [
+                        "« **Quand** il arrive… » → « **lorsqu'**il arrive » ✓ → temps",
+                        "« **Quant à** moi, je refuse. » → « en ce qui concerne moi » ✓ → locution",
+                        "« Je sais ce **qu'en** pense Léa. » → « ce **que** Léa **en** pense » ✓",
+                      ],
+                      test: "« lorsque » → quand ; « en ce qui concerne » → quant (à) ; décomposable en « que… en » → qu'en.",
+                    },
+                    {
+                      title: "près / prêt(e)",
+                      definition: "**près** = adverbe ou préposition de lieu (près de), invariable · **prêt(e)** = adjectif (= préparé), variable.",
+                      exemples: [
+                        "« Elle est **prête** à partir. » → « préparée » ✓ et accord audible → adjectif",
+                        "« Il habite tout **près**. » → invariable, idée de lieu → adverbe",
+                      ],
+                      test: "Remplacer par « préparé(e) » : si ça marche et que le mot s'accorde, c'est l'adjectif « prêt » ; sinon, « près » (lieu, invariable).",
                     },
                   ],
                 },
@@ -265,9 +296,9 @@ export const ficheHomophonesPonctuation: Fiche = {
                 },
                 {
                   type: "callout",
-                  variant: "warning",
+                  variant: "info",
                   title: "Renvoi",
-                  text: "La ponctuation syntaxique (virgule, point-virgule, deux-points) est désormais traitée dans la **notion 5 : La phrase complexe et sa ponctuation**.",
+                  text: "La ponctuation syntaxique (virgule, point-virgule, deux-points) est traitée dans la fiche [La phrase complexe et sa ponctuation](fiche:phrase-complexe).",
                 },
               ],
             },
@@ -323,7 +354,7 @@ export const ficheHomophonesPonctuation: Fiche = {
                 {
                   type: "formulaBlock",
                   lines: [
-                    "Un homophone se tranche par sa nature : verbe, déterminant, pronom, conjonction, préposition (voir la notion 1).",
+                    "Un homophone se tranche par sa nature : verbe, déterminant, pronom, conjonction, préposition (voir [Les classes grammaticales](fiche:classes-grammaticales)).",
                     "Un verbe peut se mettre à l'imparfait ; un mot invariable, non.",
                     "Une justification complète donne la forme choisie, la nature grammaticale et le test utilisé.",
                   ],
@@ -401,7 +432,7 @@ export const ficheHomophonesPonctuation: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de passer aux exercices",
-              text: "11 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "14 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
             },
             {
               type: "quizBlock",
@@ -493,6 +524,30 @@ export const ficheHomophonesPonctuation: Fiche = {
                   correctIndex: 1,
                   explanation:
                     "Devant un nom masculin pluriel (« les élèves »), le déterminant s'accorde : « tous les élèves ».",
+                },
+                {
+                  objectifId: "h6",
+                  question: "« ___ ne me dérange pas du tout. » Quelle forme ?",
+                  options: ["Sa", "Ça", "Çà", "S'a"],
+                  correctIndex: 1,
+                  explanation:
+                    "Test : « cela ne me dérange pas » ✓ → pronom démonstratif « ça ». « sa » serait un déterminant possessif devant un nom féminin.",
+                },
+                {
+                  objectifId: "h8",
+                  question: "« Cette remarque ___ surprendre. » Quelle forme ?",
+                  options: ["peu", "peut", "peux", "peus"],
+                  correctIndex: 1,
+                  explanation:
+                    "Test : « cette remarque pouvait surprendre » ✓ → verbe pouvoir à la 3e personne du singulier : peut.",
+                },
+                {
+                  objectifId: "h8",
+                  question: "« ___ à moi, je préfère attendre. » Quelle forme ?",
+                  options: ["Quand", "Quant", "Qu'en", "Quants"],
+                  correctIndex: 1,
+                  explanation:
+                    "Test : « en ce qui concerne moi » ✓ → locution « quant à ». « quand » marquerait le temps (« lorsque »).",
                 },
               ],
             },
@@ -733,16 +788,34 @@ export const ficheHomophonesPonctuation: Fiche = {
             {
               type: "exerciceCard",
               variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « ses résultats »",
-              enonce: "Copie d'un candidat (Partie 3) : « *Ses résultats montrent que la méthode est efficace. » (le texte parle de résultats déjà évoqués, sans possesseur).",
-              question: "Identifiez l'erreur et distinguez « ses » et « ces ».",
+              title: "Exercice 3 · Réponse à corriger : « peu » et « peut »",
+              enonce: "Copie d'un candidat (Partie 3) : « Ce constat *peu sembler sévère, mais il dit *peut de chose sur l'auteur. »",
+              question: "Identifiez les deux erreurs et corrigez avec le test de l'imparfait.",
               correction: [
                 {
                   type: "checklist",
                   items: [
-                    { text: "« ses » implique un possesseur, absent du contexte", bad: true },
-                    { text: "Le sens est démonstratif : il s'agit des résultats déjà évoqués" },
-                    { text: "Réponse attendue : « **Ces** résultats montrent… » (test : « ce résultat » ✓)" },
+                    { text: "Les deux formes sont inversées : « peu » écrit pour le verbe, « peut » pour l'adverbe", bad: true },
+                    { text: "Test : « ce constat pouvait sembler » ✓ → verbe pouvoir, donc « peut »" },
+                    { text: "Test : « il dit pouvait de chose » impossible → adverbe, donc « peu »" },
+                    { text: "Réponse attendue : « Ce constat **peut** sembler sévère, mais il dit **peu** de chose sur l'auteur. »" },
+                  ],
+                },
+              ],
+            },
+            {
+              type: "exerciceCard",
+              variant: "err-type",
+              title: "Exercice 4 · Réponse à corriger : « ce trouve »",
+              enonce: "Copie d'un candidat : « C'est là que *ce trouve la difficulté. »",
+              question: "Identifiez l'erreur, nommez la nature du mot attendu, et corrigez.",
+              correction: [
+                {
+                  type: "checklist",
+                  items: [
+                    { text: "« ce » écrit à la place du pronom réfléchi du verbe pronominal « se trouver »", bad: true },
+                    { text: "Test : à la 1re personne, on dit « je me trouve » → c'est le pronom réfléchi « se »" },
+                    { text: "Réponse attendue : « C'est là que **se** trouve la difficulté. »" },
                   ],
                 },
               ],
@@ -813,7 +886,13 @@ export const ficheHomophonesPonctuation: Fiche = {
                 {
                   question: "tout / tous / toute(s) : comment raisonner ?",
                   answer:
-                    "Devant un nom, **tout** est déterminant et s'accorde : tout le groupe, tous les élèves, toutes les copies.\nSeul, il peut être pronom : « Tous ont réussi ».\nDevant un adjectif, il est souvent adverbe : « tout étonnée », avec des cas d'accord devant consonne ou h aspiré.",
+                    "Devant un nom, **tout** est déterminant et s'accorde : tout le groupe, tous les élèves, toutes les copies.\nSeul, il peut être pronom : « Tous ont réussi ».\nDevant un adjectif, il est adverbe et invariable (« tout étonnée »), sauf devant un adjectif féminin à initiale consonne ou h aspiré (« toute honteuse », « toutes contentes »).",
+                },
+                {
+                  question: "peu/peut, quand/quant/qu'en, près/prêt : les bons tests ?",
+                  answer:
+                    "**peut / peux** → « pouvait » (verbe pouvoir) ; **peu** → adverbe, invariable.\n**quand** → « lorsque » ; **quant (à)** → « en ce qui concerne » ; **qu'en** → « que… en ».\n**prêt(e)** → « préparé(e) », s'accorde ; **près** → idée de lieu, invariable.",
+                  astuce: "Trois familles, un seul réflexe : on remplace, puis on nomme la nature obtenue.",
                 },
               ],
             },
@@ -852,6 +931,11 @@ export const ficheHomophonesPonctuation: Fiche = {
                   title: "Accords à surveiller",
                   lines: ["quel/qu'elle : qu'il ?", "tout/tous/toute(s)", "Accorder avec le nom si déterminant"],
                   variant: "blue",
+                },
+                {
+                  title: "Autres paires fréquentes",
+                  lines: ["peu/peut : pouvait ?", "quand/quant : lorsque / en ce qui concerne", "près/prêt : préparé(e) ?"],
+                  variant: "green",
                 },
                 {
                   title: "Pièges classiques",

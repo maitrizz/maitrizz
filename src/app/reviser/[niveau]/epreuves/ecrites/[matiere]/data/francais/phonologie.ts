@@ -334,7 +334,7 @@ export const fichePhonologie: Fiche = {
                   type: "callout",
                   variant: "info",
                   icon: "🔗",
-                  text: "Les valeurs grammaticales et distinctives des lettres muettes (marques de pluriel et de féminin, homophones) sont approfondies dans la fiche [Homophones grammaticaux et ponctuation](fiche:homophones-grammaticaux-ponctuation).",
+                  text: "Les valeurs grammaticales et distinctives des lettres muettes (marques de pluriel et de féminin, homophones) sont approfondies dans la fiche [Les homophones grammaticaux](fiche:homophones-grammaticaux).",
                 },
               ],
             },

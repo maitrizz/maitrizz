@@ -25,7 +25,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | 09 | Formes passive et pronominale | ✅ | ✅ |
 | 10 | Accords dans le GN et le GV | ✅ | ✅ |
 | 11 | Accord du participe passé | ✅ | ✅ |
-| 12 | Homophones grammaticaux et ponctuation | ✅ | ✅ |
+| 12 | Les homophones grammaticaux (ponctuation déplacée en notion 5) | ✅ | ✅ |
 | 13 | Cohérence textuelle | ✅ | ✅ |
 | 14 | Énonciation et discours rapporté | ✅ | ✅ |
 | 15 | Phonologie | ✅ | ✅ |

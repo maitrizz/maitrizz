@@ -41,7 +41,7 @@ import { fichePresentFuturConditionnelSubjonctif } from "./francais/present-futu
 import { ficheFormesNonConjugueesPassivePronominale } from "./francais/formes-non-conjuguees-passive-pronominale";
 import { ficheAccordsGnGv } from "./francais/accords-gn-gv";
 import { ficheAccordParticipePasse } from "./francais/accord-participe-passe";
-import { ficheHomophonesPonctuation } from "./francais/homophones-grammaticaux-ponctuation";
+import { ficheHomophonesGrammaticaux } from "./francais/homophones-grammaticaux";
 import { ficheCoherenceTextuelle } from "./francais/coherence-textuelle";
 import { ficheEnonciationDiscoursRapporte } from "./francais/enonciation-discours-rapporte";
 import { fichePhonologie } from "./francais/phonologie";
@@ -115,7 +115,7 @@ const MATHEMATIQUES_L3: Fiche[] = [
 // Français : notions 01-18 communes L3/M2. La divergence commence à la
 // notion 19 (Partie 3) — les fiches propres à chaque niveau sont ajoutées
 // aux listes FRANCAIS_L3 / FRANCAIS_M2 ci-dessous.
-const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjugueesPassivePronominale, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesPonctuation, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres];
+const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjugueesPassivePronominale, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesGrammaticaux, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres];
 
 const FRANCAIS_L3: Fiche[] = [
   ficheMethodologieL3,
