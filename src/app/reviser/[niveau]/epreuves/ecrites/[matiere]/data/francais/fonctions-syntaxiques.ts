@@ -212,7 +212,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Ces fonctions précisent un **nom** à l'intérieur du groupe nominal, ou se rattachent à un nom ou à l'interlocuteur.",
+                  text: "Ces fonctions précisent un **nom** à l'intérieur du groupe nominal, ou se rattachent à un nom ou à l'interlocuteur. Complément du nom, épithète et apposition sont aussi étudiés comme **expansions du nom** dans la [notion 3 sur le groupe nominal](fiche:groupe-nominal-expansions) : ici, c'est leur **fonction** qui nous intéresse.",
                 },
                 {
                   type: "notionCardGrid",
@@ -309,6 +309,52 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               ],
             },
             {
+              type: "highlightBox",
+              variant: "marine",
+              title: "Cas très fréquent au concours : la fonction du pronom relatif",
+              blocks: [
+                {
+                  type: "paragraph",
+                  text: "Le jury demande très souvent la fonction de *qui, que, dont, où*. Sa **nature** est *pronom relatif* ; sa **fonction** se trouve dans la proposition subordonnée relative, jamais dans la principale. La méthode est toujours la même : on **dépronominalise**, c'est-à-dire qu'on remet l'antécédent à la place du pronom dans la subordonnée, puis on lit la fonction du groupe obtenu. La subordonnée relative elle-même est travaillée dans la [notion 5 sur la phrase complexe](fiche:phrase-complexe).",
+                },
+                {
+                  type: "table",
+                  title: "On dépronominalise, puis on lit la fonction",
+                  headers: ["Pronom", "On le remplace par…", "Fonction la plus fréquente", "Exemple dépronominalisé"],
+                  rows: [
+                    ["**qui**", "l'antécédent, devant le verbe", "Sujet du verbe de la relative", "« l'homme **qui** parle » → « l'homme parle » → **sujet**"],
+                    ["**que**", "l'antécédent, après le verbe", "COD du verbe de la relative", "« le livre **que** je lis » → « je lis le livre » → **COD**"],
+                    ["**dont**", "*de* + l'antécédent", "COI, CDN ou complément de l'adjectif (selon le mot complété)", "« la maison **dont** je rêve » → « je rêve **de** la maison » → **COI**"],
+                    ["**où**", "*dans / à* + l'antécédent", "CC de lieu ou de temps", "« la ville **où** je vis » → « je vis **dans** la ville » → **CC de lieu**"],
+                  ],
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  text: "**À ne pas oublier : le complément de l'adjectif.** Quand *de* dépend d'un **adjectif** et non d'un nom, la fonction est *complément de l'adjectif*, pas CDN : « il est fier **de son travail** » → complément de l'adjectif *fier* ; « las **de ne plus croire** » → complément de l'adjectif *las*.",
+                },
+              ],
+            },
+            {
+              type: "table",
+              title: "Les fonctions en un coup d'œil",
+              headers: ["Fonction", "Elle se rattache à…", "Question / test décisif", "Exemple (groupe en gras)"],
+              rows: [
+                ["**Sujet**", "au verbe (qu'il commande)", "Encadrement « c'est… qui »", "« **Le chat** dort »"],
+                ["**COD**", "au verbe, sans préposition", "qui ? quoi ? + pronom *le/la/les*", "« Elle mange **une pomme** »"],
+                ["**COI**", "au verbe, préposition *à / de*", "à/de qui ? quoi ? + pronom *lui/y/en*", "« Il pense **à ses vacances** »"],
+                ["**COS**", "au verbe, 2ᵉ complément", "« à qui ? » en présence d'un COD", "« Il offre des fleurs **à sa mère** »"],
+                ["**Attribut du sujet**", "au sujet, via un verbe d'état", "Remplacer le verbe par « être + … »", "« Il semble **fatigué** »"],
+                ["**Attribut du COD**", "au COD, via trouver/croire/élire…", "« COD + être + … »", "« Je le crois **sincère** »"],
+                ["**Complément d'agent**", "au verbe passif (*par / de*)", "Repasser à la voix active", "« mangée **par le chat** »"],
+                ["**Complément circonstanciel**", "à la phrase (circonstance)", "Mobile **ET** supprimable", "« **Demain**, il part »"],
+                ["**Complément du nom (CDN)**", "à un nom, dans le GN", "Non mobile hors du GN", "« le livre **de Pierre** »"],
+                ["**Épithète**", "à un nom (adjectif)", "Adjectif lié ou détaché, sans verbe d'état", "« une maison **bleue** »"],
+                ["**Apposition**", "à un nom (entre virgules)", "Désigne la même réalité, supprimable", "« Hugo, **grand poète**, … »"],
+                ["**Apostrophe**", "à l'interlocuteur (interpelle)", "Supprimable, hors syntaxe", "« **Mes amis**, écoutez-moi »"],
+              ],
+            },
+            {
               type: "piegeCard",
               variant: "rouge",
               title: "Piège n°1 · Sujet inversé non identifié",
@@ -354,6 +400,11 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               methode: "Supprimer le groupe : « Tu m'as menti » reste complet, donc apostrophe. Toujours signaler qu'elle est hors syntaxe.",
             },
             {
+              type: "primaireBox",
+              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
+              text: "**Cycle 1 (maternelle) :** aucune terminologie syntaxique. Les élèves comprennent à l'oral « qui fait quoi » dans une phrase simple (qui fait l'action, sur quoi elle porte). C'est le socle implicite du futur repérage du sujet et du complément.\n\n**Cycle 2 (CP-CE2) :** on installe le **sujet** et le **verbe** par manipulation (déplacer, remplacer par un pronom, encadrer par « c'est… qui »). Les élèves repèrent « de qui ou de quoi on parle » (le sujet) et « ce qu'on en dit » (le verbe et son groupe).\n\n**Cycle 3 (CM1-6e) :** la phrase s'analyse en **sujet**, **prédicat** (ce qu'on dit du sujet, autour du verbe), puis **complément de phrase** (déplaçable et supprimable, équivalent du CC) et **complément du verbe** (non déplaçable, équivalent du COD/COI). On introduit aussi le **complément du nom** et l'**attribut du sujet**. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « À l'école, on ne parle pas tout de suite de COD ou de COI : on construit d'abord le couple sujet / prédicat au cycle 3, puis on distingue le complément de phrase (déplaçable, supprimable) du complément du verbe (lié au verbe). Le métalangage du concours (COD, COI, CC, attribut) prolonge et précise ces repères construits dès le cycle 2 par la manipulation. »",
+            },
+            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",
@@ -370,93 +421,147 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               type: "callout",
               variant: "success",
               icon: "",
-              title: "Une démarche par hypothèses",
-              text: "Face à un groupe souligné, on commence par le situer : dépend-il du verbe de la phrase ou d'un nom ? Ce premier tri évite de chercher un COD là où il faut reconnaître un complément du nom, ou de prendre une épithète pour un attribut.",
+              title: "Une fonction se trouve par étapes, jamais au feeling",
+              text: "Le jour du concours, la consigne est presque toujours la même : « Donnez la fonction du mot ou du groupe souligné. » On suit alors un chemin unique : d'abord **situer** le groupe (dépend-il du verbe, d'un nom, ou interpelle-t-il quelqu'un ?), puis **tester** par une manipulation (encadrement, question, pronominalisation, déplacement ou suppression), enfin **rédiger** la réponse en donnant toujours la **nature ET la fonction**, justifiées par le test. Chaque démarche ci-dessous est déroulée de bout en bout sur un seul exemple, jusqu'à la phrase à recopier le jour J.",
             },
             {
               type: "methodeGroup",
               number: "①",
-              title: "Faire le premier tri : verbe ou nom ?",
+              title: "La démarche complète : situer, tester, rédiger",
               intro:
-                "**Question typique :** « Donnez la fonction du groupe souligné. »\nAvant de nommer la fonction, on regarde où le groupe se rattache dans la phrase.",
+                "**Question typique :** « Donnez la fonction du groupe souligné : *Le soir, les enfants regardent <u>un film</u>.* »\nOn déroule tout sur ce seul groupe, **un film**, jusqu'à la réponse rédigée.",
               steps: [
                 {
                   number: "1",
-                  text: "**Le groupe dépend-il du verbe ?** Il peut faire l'action, compléter le verbe, recevoir une qualité par le verbe, ou préciser les circonstances de l'action.",
-                  example: { lines: ["« Les enfants regardent <u>un film</u> » → le groupe complète « regardent » → fonction liée au verbe"] },
+                  text: "**Situer le groupe.** Se rattache-t-il au verbe, à un nom, ou interpelle-t-il quelqu'un ? Ici, *un film* complète le verbe *regardent* : on cherche donc une fonction liée au verbe (sujet, COD, COI, attribut, complément d'agent ou CC).",
+                  example: { lines: ["*Le soir* / *les enfants* / *regardent* / *un film* → *un film* dépend du verbe *regardent*."] },
                 },
                 {
                   number: "2",
-                  text: "**Le groupe dépend-il d'un nom ?** Il fait partie d'un groupe nominal, précise un nom ou ajoute une information sur ce nom.",
-                  example: { lines: ["« le livre <u>de Paul</u> » → le groupe complète le nom « livre » → fonction dans le groupe nominal"] },
+                  text: "**Poser la question après le verbe.** Sans préposition → piste COD ; avec *à* ou *de* → piste COI.",
+                  example: { lines: ["« les enfants regardent **quoi** ? » → *un film*, sans préposition → piste COD."] },
                 },
                 {
                   number: "3",
-                  text: "**Le groupe interpelle-t-il quelqu'un ?** Il ne dépend alors ni du verbe ni d'un nom : c'est une apostrophe.",
-                  example: { lines: ["« <u>Mes amis</u>, écoutez-moi » → apostrophe"] },
+                  text: "**Confirmer par un test.** Pour un COD : pronominalisation par *le / la / les*, et passif souvent possible.",
+                  example: {
+                    lines: [
+                      "« Les enfants **le** regardent » → pronominalisation par *le* → COD.",
+                      "« Un film est regardé par les enfants » → passif possible → COD confirmé.",
+                    ],
+                  },
+                  warn: "⚠️ Le geste décisif : c'est la **préposition** (ou son absence) qui sépare le COD du COI, pas le sens du verbe.",
+                },
+                {
+                  number: "💡",
+                  text: "**Écarter les autres pistes.** *un film* n'est pas mobile en tête de phrase comme le serait un CC (*Le soir*, lui, l'est) et ne dépend d'aucun nom : la piste COD est la seule qui résiste aux tests.",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « *un film* est un **groupe nominal**, **COD** du verbe *regardent* : il complète directement le verbe (les enfants regardent quoi ? un film), sans préposition, et se pronominalise par *le* (les enfants *le* regardent). »",
                 },
               ],
             },
             {
               type: "methodeGroup",
               number: "②",
-              title: "Si le groupe dépend du verbe",
+              title: "Trancher entre COD, COI et complément essentiel",
               intro:
-                "On cherche alors parmi les fonctions construites autour du verbe : sujet, COD, COI, attribut, complément d'agent, complément circonstanciel.",
+                "**Question typique :** « Donnez la fonction du groupe souligné : *Il téléphone <u>à sa mère</u> tous les dimanches.* »\nLa préposition *à* peut cacher plusieurs fonctions : on déroule les tests sur **à sa mère**.",
               steps: [
                 {
                   number: "1",
-                  text: "**Si le groupe semble commander le verbe**, tester l'encadrement « c'est… qui ».",
-                  example: { lines: ["« <u>Le soleil</u> se couchait » → « C'est le soleil qui se couchait » → sujet"] },
+                  text: "**Situer le groupe.** *à sa mère* complète le verbe *téléphone* : c'est une fonction liée au verbe. La préposition *à* écarte d'emblée le COD, qui est toujours direct (sans préposition).",
+                  example: { lines: ["« il téléphone **à qui** ? » → *à sa mère* → complément construit avec *à*."] },
                 },
                 {
                   number: "2",
-                  text: "**Si le groupe semble compléter le verbe**, poser la question après le verbe : sans préposition → COD ; avec à / de → COI. Vérifier par la pronominalisation.",
-                  example: { lines: ["« Elle parle <u>à son ami</u> » → « Elle lui parle » → COI"] },
+                  text: "**La préposition est-elle imposée par le verbe ?** Le verbe se construit *téléphoner à quelqu'un* : la préposition appartient à la construction du verbe → piste COI.",
+                  example: { lines: ["*téléphoner* **à** quelqu'un → la préposition fait partie du verbe → piste COI."] },
                 },
                 {
                   number: "3",
-                  text: "**Si le groupe donne une qualité ou une identité par le verbe**, vérifier s'il s'agit d'un attribut : attribut du sujet après un verbe d'état, attribut du COD si la qualité porte sur le COD.",
-                  example: { lines: ["« Il semble <u>fatigué</u> » → attribut du sujet ; « Je trouve ce livre <u>intéressant</u> » → attribut du COD"] },
-                },
-                {
-                  number: "4",
-                  text: "**Si la phrase est au passif**, le groupe introduit par « par » ou « de » peut être complément d'agent : il indique qui accomplit l'action.",
-                  example: { lines: ["« La souris est mangée <u>par le chat</u> » → complément d'agent"] },
-                },
-                {
-                  number: "5",
-                  text: "**Si le groupe indique une circonstance**, tester mobilité + suppression : si les deux marchent → CC ; sinon, complément essentiel.",
-                  example: { lines: ["« <u>Rapidement</u>, il referma la porte » → mobile et supprimable → CC de manière"] },
+                  text: "**Confirmer par la pronominalisation.** Un COI en *à + personne* se remplace par *lui / leur* ; le passif est impossible.",
+                  example: {
+                    lines: [
+                      "« Il **lui** téléphone » → pronominalisation par *lui* → COI confirmé.",
+                      "Passif impossible (*à sa mère est téléphonée* est agrammatical).",
+                    ],
+                  },
+                  warn: "⚠️ Piège à éviter : ne pas confondre avec le **complément essentiel de lieu**. Dans *Il habite à Paris*, *à Paris* n'est ni pronominalisable par *lui*, ni supprimable (*Il habite* est bancal) : c'est un complément essentiel, ni COI, ni CC libre.",
                 },
                 {
                   number: "💡",
-                  text: "**Si aucune manipulation ne convient**, revenir au premier tri : le groupe dépend peut-être d'un nom, ou il s'agit d'une apostrophe.",
-                  warn: "⚠️ Une fonction se justifie toujours par un test, jamais « au feeling ».",
+                  text: "**Écarter le CC.** Un CC de manière comme *à toute vitesse* serait mobile et supprimable. Ici, *à sa mère* répond à *à qui ?* et n'est pas supprimable sans vider le verbe : c'est bien un complément d'objet.",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « *à sa mère* est un **groupe nominal prépositionnel**, **COI** du verbe *téléphoner* : le verbe se construit avec la préposition *à* (téléphoner à quelqu'un) et le groupe se pronominalise par *lui* (il *lui* téléphone). »",
                 },
               ],
             },
             {
               type: "methodeGroup",
               number: "③",
-              title: "Si le groupe dépend d'un nom",
+              title: "Trancher entre attribut du sujet et épithète détachée",
               intro:
-                "On ne cherche plus un complément du verbe : on regarde comment le groupe enrichit le nom. Les fonctions à vérifier sont surtout le complément du nom, l'épithète et l'apposition.",
+                "**Question typique :** « Donnez la fonction du mot souligné : *<u>Heureuse</u>, elle entra dans la pièce.* »\nL'adjectif *Heureuse* qualifie bien le sujet : reste à savoir s'il est attribut ou épithète détachée. On déroule sur **Heureuse**.",
               steps: [
                 {
                   number: "1",
-                  text: "**Le groupe complète le nom avec une préposition ou une relative ?** C'est souvent un complément du nom.",
-                  example: { lines: ["« le livre <u>de Paul</u> » → CDN du nom « livre »"] },
+                  text: "**Chercher un verbe d'état.** L'attribut du sujet relie le sujet à une qualité **par l'intermédiaire d'un verbe d'état** (être, paraître, sembler, devenir, rester, demeurer, avoir l'air, passer pour).",
+                  example: { lines: ["« *Heureuse*, elle entra » → le verbe est *entra* (verbe d'action), pas un verbe d'état."] },
                 },
                 {
                   number: "2",
-                  text: "**L'adjectif est directement lié au nom ?** C'est une épithète liée. S'il est séparé par une virgule, c'est une épithète détachée.",
-                  example: { lines: ["« une <u>belle</u> robe » → épithète liée du nom « robe »", "« <u>Fatigué</u>, l'enfant s'endormit » → épithète détachée du nom « enfant »"] },
+                  text: "**Conclure selon la présence du verbe d'état.** Pas de verbe d'état entre le sujet et l'adjectif → ce n'est pas un attribut, mais une **épithète détachée** (séparée par une virgule, mobile).",
+                  example: { lines: ["« Elle entra dans la pièce, *heureuse* » → l'adjectif reste mobile et isolé par une virgule → épithète détachée."] },
+                  warn: "⚠️ Le geste décisif : chercher le verbe d'état. *Elle semblait heureuse* → attribut du sujet ; *Heureuse, elle entra* → épithète détachée.",
+                },
+                {
+                  number: "💡",
+                  text: "**Préciser à quel mot l'adjectif se rapporte.** L'épithète détachée se rapporte ici au sujet *elle* : on l'indique explicitement dans la réponse.",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « *Heureuse* est un **adjectif qualificatif**, **épithète détachée** se rapportant au sujet *elle* : il n'y a aucun verbe d'état entre le sujet et l'adjectif (le verbe est *entra*), et l'adjectif, isolé par une virgule, reste mobile dans la phrase. »",
+                },
+              ],
+            },
+            {
+              type: "methodeGroup",
+              number: "④",
+              title: "Trouver la fonction d'un pronom relatif (qui, que, dont, où)",
+              intro:
+                "**Question typique :** « Donnez la nature et la fonction du mot souligné : *La maison <u>dont</u> il rêvait était à vendre.* »\nUn pronom relatif demande deux réponses : sa **nature** (pronom relatif) et sa **fonction**, qui se trouve dans la subordonnée. On déroule sur **dont**.",
+              steps: [
+                {
+                  number: "1",
+                  text: "**Donner d'abord la nature.** *dont* est un **pronom relatif** : il introduit la proposition subordonnée relative et reprend un antécédent (ici *la maison*). « Pronom relatif » est la nature, jamais la fonction.",
+                },
+                {
+                  number: "2",
+                  text: "**Dépronominaliser : reconstruire la subordonnée sans le relatif**, en remettant l'antécédent à la place du pronom.",
+                  example: {
+                    lines: [
+                      "*La maison dont il rêvait* → *il rêvait **de** la maison*.",
+                      "Le pronom *dont* équivaut à *de + la maison*.",
+                    ],
+                  },
+                  warn: "⚠️ Le geste décisif : *dont* contient toujours *de*. On retrouve donc la fonction d'un groupe en *de* (COI, complément du nom, complément de l'adjectif…) selon le mot complété.",
                 },
                 {
                   number: "3",
-                  text: "**Le groupe est détaché par des virgules et désigne la même réalité que le nom ?** C'est une apposition.",
-                  example: { lines: ["« Hugo, <u>grand poète romantique</u>, vécut longtemps » → apposition à « Hugo »"] },
+                  text: "**Identifier la fonction du groupe reconstruit.** *rêver de quelque chose* : le groupe *de la maison* est COI du verbe *rêvait*. *dont* a donc cette fonction.",
+                  example: { lines: ["*il rêvait **de la maison*** → COI du verbe *rêvait* → *dont* = COI."] },
+                },
+                {
+                  number: "💡",
+                  text: "**Mémoriser les cas fréquents :** *qui* est le plus souvent sujet (l'homme **qui** parle → l'homme parle), *que* le plus souvent COD (le livre **que** je lis → je lis le livre), *où* est CC de lieu ou de temps (la ville **où** je vis → je vis dans la ville). On vérifie toujours par la dépronominalisation : *dont* et *qui* changent de fonction selon la phrase.",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « *dont* est un **pronom relatif** (il reprend l'antécédent *la maison* et introduit la relative) ; sa fonction est **COI** du verbe *rêvait* : en dépronominalisant, on obtient *il rêvait **de** la maison*, et *rêver de* se construit avec un COI. »",
                 },
               ],
             },
@@ -467,8 +572,9 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               badge: "30 secondes",
               question: "Donnez la fonction du groupe souligné : « Elle parle <u>à son ami</u>. »",
               correction: [
-                { type: "line", text: "« à son ami » → **COI** du verbe « parle » (test : « à qui ? » ; pronominalisation : « Elle lui parle »)." },
-                { type: "note", text: "Trouvé du premier coup ? Direction le Quiz éclair. Sinon, relisez l'étape 2." },
+                { type: "line", text: "**Explication :** *à son ami* complète le verbe *parle*, qui se construit avec la préposition *à* (parler à quelqu'un). La pronominalisation par *lui* (« Elle **lui** parle ») confirme le COI ; le passif est impossible." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *à son ami* est un **groupe nominal prépositionnel**, **COI** du verbe *parler* : préposition *à* imposée par le verbe, pronominalisation par *lui* (elle *lui* parle). »" },
+                { type: "note", text: "Trouvé du premier coup ? Direction le Quiz éclair. Sinon, relisez l'étape ②." },
               ],
             },
             {
@@ -742,6 +848,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                 { type: "line", label: "a)", text: "**son métier** → COD du verbe « aime ». Deux tests le confirment : 1) question après le verbe : « elle aime quoi ? » → « son métier », sans préposition ; 2) pronominalisation : « Elle l'aime ». Le groupe complète directement le verbe." },
                 { type: "line", label: "b)", text: "**à ses parents** → COI du verbe « obéit ». Deux tests le confirment : 1) question après le verbe : « il obéit à qui ? » → « à ses parents » ; 2) pronominalisation : « Il leur obéit ». La préposition « à » est imposée par le verbe « obéir à »." },
                 { type: "line", label: "c)", text: "**Les enfants** → sujet du verbe « jouent ». Test : encadrement par « c'est… qui » → « Ce sont les enfants qui jouent dehors ». Le groupe commande l'accord du verbe à la 3e personne du pluriel." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) *son métier* → COD de *aime* (elle *l'*aime) ; b) *à ses parents* → COI de *obéit* (obéir à ; il *leur* obéit) ; c) *Les enfants* → sujet de *jouent* (ce sont les enfants qui jouent). »" },
               ],
             },
             {
@@ -879,6 +986,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["pressée d'atteindre sa maison", "Adjectif + groupe infinitif prépositionnel", "Épithète détachée du sujet « elle »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Une femme* → GN, sujet de *passa* ; *d'une dizaine d'années* → GN prépositionnel, CDN du nom *garçon* ; *baissés* → participe passé employé comme adjectif, épithète détachée du nom *yeux* ; *avant la nuit* → GN prépositionnel, CC de temps ; *pressée d'atteindre sa maison* → groupe adjectival, épithète détachée du sujet *elle*. »" },
               ],
             },
             {
@@ -902,6 +1010,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["autour de lui", "GN prépositionnel", "CC de lieu du verbe « s'étendre »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *les promenades solitaires* → GN, COD de *aimait* ; *dans les bois* → GN prépositionnel, CDN du nom *promenades* (ou CC de lieu, si on justifie) ; *seul* → adjectif qualificatif, épithète détachée du sujet *il* ; *le vide de sa vie* → GN, COD de *sentait* ; *autour de lui* → GN prépositionnel, CC de lieu de *s'étendre*. »" },
                 { type: "note", text: "⚠️ « dans les bois » peut s'analyser en CDN ou en CC de lieu : les deux sont défendables si on justifie." },
               ],
             },
@@ -926,6 +1035,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["rien", "Pronom indéfini", "COD du verbe « disait »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif, CDN du nom *regard* (le regard *de ma mère*) ; *les enfants jouer* → proposition subordonnée infinitive, COD de *regardait* ; *dans le jardin* → GN prépositionnel, CC de lieu de *jouer* ; *muette* → adjectif qualificatif, épithète détachée du sujet *elle* ; *rien* → pronom indéfini, COD de *disait*. »" },
               ],
             },
             {
@@ -948,6 +1058,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["sous des ciels toujours bleus", "GN prépositionnel", "CC de lieu du verbe « jaillissaient »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *des contrées lointaines* → GN, COI de *rêvait* (rêver de ; elle *en* rêvait) ; *de marbre* → GN prépositionnel, CDN du nom *palais* ; *où* → pronom relatif, CC de lieu de *jaillissaient* (dans les palais) ; *sous des ciels toujours bleus* → GN prépositionnel, CC de lieu de *jaillissaient*. »" },
               ],
             },
             {
@@ -970,6 +1081,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["possible", "Adjectif qualificatif", "Épithète liée du nom « vie »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *les eaux du fleuve* → GN, COD de *regardait* ; *que* → pronom relatif, COD de *distraire* (distraire cette attention) ; *à quelqu'un d'absent* → GN prépositionnel, COI de *pensait* (penser à quelqu'un) ; *possible* → adjectif qualificatif, épithète liée du nom *vie*. »" },
               ],
             },
             {
@@ -993,6 +1105,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["mal", "Adverbe de manière", "CC de manière du verbe « va »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Écrire* → verbe à l'infinitif, sujet de *est* ; *un aveu d'impuissance* → GN, attribut du sujet *c'* (verbe *est*) ; *parce qu'on ne sait…* → proposition subordonnée circonstancielle, CC de cause de *écrit* ; *sans l'écriture* → GN prépositionnel, CC (de condition ou de manière) de *va* ; *mal* → adverbe, CC de manière de *va*. »" },
               ],
             },
             {
@@ -1013,9 +1126,11 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["sur la terre", "GN prépositionnel", "CC de lieu du verbe « manquent »"],
                     ["Partout", "Adverbe de lieu", "CC de lieu du verbe « sont »"],
                     ["grandes", "Adjectif qualificatif", "Attribut du sujet « souffrances »"],
-                    ["de ne plus croire", "Groupe infinitif prépositionnel", "CDN de l'adjectif « las » (las DE)"],
+                    ["de ne plus croire", "Groupe infinitif prépositionnel", "Complément de l'adjectif « las » (las DE)"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Les misérables* → GN, sujet de *manquent* ; *sur la terre* → GN prépositionnel, CC de lieu de *manquent* ; *Partout* → adverbe, CC de lieu de *sont* ; *grandes* → adjectif qualificatif, attribut du sujet *souffrances* (verbe d'état *sont*) ; *de ne plus croire* → groupe infinitif prépositionnel, complément de l'adjectif *las*. »" },
+                { type: "note", text: "💡 *de ne plus croire* complète l'adjectif *las* (las **de** quelque chose) : on dit *complément de l'adjectif*, pas complément du nom, car *las* est un adjectif et non un nom." },
               ],
             },
             {
@@ -1039,6 +1154,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["moins beaux", "Adjectif qualificatif (au comparatif)", "Attribut du sujet « ils »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *À seize ans* → GN prépositionnel, CC de temps de *ai vu* ; *les portes qui me séparaient du monde* → GN (avec relative), sujet de l'infinitif *se rouvrir* (proposition subordonnée infinitive COD de *ai vu*) ; *sur la terrasse* → GN prépositionnel, CC de lieu de *suis monté* ; *pour regarder les nuages* → groupe infinitif prépositionnel, CC de but de *suis monté* ; *moins beaux* → adjectif qualificatif (comparatif), attribut du sujet *ils*. »" },
               ],
             },
           ],
@@ -1072,6 +1188,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["avant", "Préposition", "Introduit le GN « la nuit », CC de temps"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Une femme* → GN, sujet de *passa* ; *tenant* → participe présent, épithète détachée (apposée) du sujet *femme* (équivaut à « qui tenait ») ; *d'une dizaine d'années* → GN prépositionnel, CDN du nom *garçon* ; *baissés* → participe passé employé comme adjectif, épithète détachée du nom *yeux* ; *avant* → préposition, qui introduit le GN *la nuit* (CC de temps). »" },
                 { type: "note", text: "⚠️ « tenant » = participe présent, à distinguer du gérondif (« en tenant ») et de l'adjectif verbal (« une eau courante », qui s'accorde). Ce n'est pas une proposition participiale : celle-ci suppose un sujet propre, distinct de celui de la principale." },
               ],
             },
@@ -1093,6 +1210,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["le vide de sa vie", "Groupe nominal", "COD du verbe « sentait »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *solitaires* → adjectif qualificatif, épithète liée du nom *promenades* ; *quand* → conjonction de subordination, qui introduit la subordonnée circonstancielle de temps ; *seul* → adjectif qualificatif, épithète détachée du sujet *il* ; *le vide de sa vie* → GN, COD de *sentait*. »" },
               ],
             },
             {
@@ -1113,6 +1231,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["rien", "Pronom indéfini", "COD du verbe « disait »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif, CDN du nom *regard* (le regard *de ma mère*) ; *muette* → adjectif qualificatif, épithète détachée du sujet *elle* ; *heureuse* → adjectif qualificatif, épithète détachée du sujet *elle* ; *rien* → pronom indéfini, COD de *disait*. »" },
                 { type: "note", text: "⚠️ La fonction de « dont » se trouve au cas par cas par dépronominalisation : ici CDN, ailleurs COI. On ne généralise jamais." },
               ],
             },
@@ -1134,6 +1253,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["toujours", "Adverbe de temps", "Modifie l'adjectif « bleus »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *lointaines* → adjectif qualificatif, épithète liée du nom *contrées* ; *de marbre* → GN prépositionnel, CDN du nom *palais* ; *où* → pronom relatif, CC de lieu de *jaillissaient* (dans les palais) ; *toujours* → adverbe de temps, qui modifie l'adjectif *bleus*. »" },
               ],
             },
             {
@@ -1155,6 +1275,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["vieil imposteur", "Groupe nominal", "Apostrophe (interpelle l'interlocuteur, aucun lien syntaxique)"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *dont* → pronom relatif, CDN du nom *dessin* (le dessin *de ce tapis*) ; *de l'Empire* → GN prépositionnel, CDN du nom *provinces* ; *m'* → pronom personnel, COI de *mentir* (mentir à quelqu'un) ; *vieil imposteur* → GN, apostrophe (aucune fonction syntaxique). »" },
                 { type: "note", text: "⚠️ Piège classique : « m' » = COI (mentir À quelqu'un, jamais COD). Et « vieil imposteur » = apostrophe, pas apposition ni COD." },
               ],
             },
@@ -1178,6 +1299,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["va", "Vivre", "Verbe à l'infinitif", "Sujet du verbe « va »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *est* (1re occ.) a pour sujet *Écrire* (verbe à l'infinitif) ; *est* (2e occ.) a pour sujet *c'* (pronom démonstratif élidé) ; *écrit* a pour sujet *On* (pronom personnel indéfini) ; *va* a pour sujet *Vivre* (verbe à l'infinitif). »" },
                 { type: "note", text: "⚠️ Un infinitif peut être sujet. « c' » est un pronom démonstratif élidé, à ne pas confondre avec le déterminant « ce »." },
               ],
             },
@@ -1199,6 +1321,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
                     ["Je", "Pronom personnel, 1re pers. sing.", "Sujet du verbe « sais »"],
                   ],
                 },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Jugez* → verbe à l'impératif présent (2e pers. pluriel), verbe de la principale (pas de sujet exprimé) ; *Insensées* → adjectif qualificatif, épithète liée du nom *choses* ; *rêver* → verbe à l'infinitif, COD de *font* (faire + infinitif) ; *Je* → pronom personnel, sujet de *sais*. »" },
                 { type: "note", text: "⚠️ « Insensées » n'est pas un participe passé (il n'existe pas de verbe « insenser ») : c'est un adjectif qualificatif qui s'accorde avec « choses »." },
               ],
             },
