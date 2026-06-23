@@ -85,6 +85,24 @@ export type Block =
       }[];
     }
 
+  // Grille de cartes "référence" (recueil d'œuvres) : libellés explicites
+  // (En bref / À retenir / Phrase type) au lieu d'icônes. Pensée pour un
+  // référentiel consultable et directement exploitable.
+  | {
+      type: "referenceGrid";
+      columns: 1 | 2;
+      // Pictogramme thématique sobre (SVG inline, dessiné main) servant d'ancre
+      // visuelle pour le thème. Optionnel : clé d'icône (ex: "plume").
+      pictogram?: string;
+      cards: {
+        title: string;
+        genre?: string; // type/genre de l'œuvre (essai, roman dystopique, fable...) — badge
+        enBref: RichText; // résumé concret de l'œuvre (de quoi ça parle)
+        commentUtiliser: RichText[]; // liste des usages possibles en Partie 3
+        formulationType: RichText; // phrase de concours prête à adapter (encart)
+      }[];
+    }
+
   // Encadré avec bandeau de titre coloré, contenant d'autres blocs
   | {
       type: "highlightBox";
