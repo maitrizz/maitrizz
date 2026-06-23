@@ -123,15 +123,24 @@ export const fichePhraseComplexe: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Dans une phrase complexe, les propositions sont reliées de trois façons :",
+                  text: "Dans une phrase complexe, les propositions sont reliées de trois façons. Pour les distinguer, posez-vous une seule question : **qu'est-ce qui relie les deux propositions, et sont-elles de même rang ?**",
                 },
                 {
-                  type: "bullets",
-                  items: [
-                    "**Juxtaposition :** les propositions sont placées côte à côte, séparées par une virgule, un point-virgule ou deux-points. « Il pleut, je reste. »",
-                    "**Coordination :** une conjonction de coordination (mais, ou, et, donc, or, ni, car) relie deux propositions de même rang. « Il pleut, mais je sors. »",
-                    "**Subordination :** une proposition dépend d'une autre (la principale) par un subordonnant (pronom relatif, conjonction…). « Je sais qu'il viendra. »",
+                  type: "table",
+                  title: "Les trois modes de liaison (un exemple par ligne)",
+                  headers: ["Mode", "Ce qui relie", "Rang des propositions", "Exemple"],
+                  rows: [
+                    ["**Juxtaposition**", "Un signe de ponctuation seul (virgule, point-virgule, deux-points)", "Même rang (deux indépendantes)", "« Il pleut, je reste. »"],
+                    ["**Coordination**", "Une conjonction de coordination", "Même rang (deux indépendantes)", "« Il pleut, mais je sors. »"],
+                    ["**Subordination**", "Un subordonnant (pronom relatif, conjonction de subordination…)", "Rangs inégaux : la subordonnée dépend de la principale", "« Je sais qu'il viendra. »"],
                   ],
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  icon: "🔑",
+                  title: "Mémoriser les 7 conjonctions de coordination",
+                  text: "**« Mais où est donc Ornicar ? »** : *mais, ou, et, donc, or, ni, car*. Ce sont les seuls mots qui coordonnent. Tout autre mot de liaison (quand, parce que, qui, que…) introduit une **subordination**.",
                 },
                 {
                   type: "callout",
@@ -157,6 +166,7 @@ export const fichePhraseComplexe: Fiche = {
                     ["Virgule", "Juxtaposition", "Elle relie deux propositions de même rang sans conjonction : « Il entra, il s'assit. »"],
                     ["Virgule", "Subordonnée antéposée", "Elle sépare une subordonnée placée avant la principale : « Quand il arriva, elle lisait. »"],
                     ["Virgule", "Détachement", "Elle isole un constituant mobile ou mis en relief : « Épuisée, elle s'endormit. »"],
+                    ["Virgule", "Relative explicative", "Elle isole une relative qui ajoute une information non essentielle (par opposition à la relative déterminative, sans virgule) : « Mon frère, qui habite Lyon, vient demain. »"],
                     ["Virgule", "Énumération", "Elle sépare les éléments d'une série : « Il prit son manteau, son sac et ses clés. »"],
                     ["Point-virgule", "Relation logique implicite", "Il sépare deux propositions indépendantes fortement liées par le sens : opposition, conséquence, parallèle."],
                     ["Deux-points", "Annonce explicite", "Ils annoncent une explication, une conséquence, une énumération ou une citation."],
@@ -178,7 +188,20 @@ export const fichePhraseComplexe: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Chaque subordonnée se reconnaît à son **introducteur** et se nomme par sa **nature** (la famille) et sa **fonction globale** dans la phrase.",
+                  text: "Chaque subordonnée se reconnaît à son **introducteur** et se nomme par sa **nature** (la famille) et sa **fonction globale** dans la phrase. Les appellations retenues ici (relative, complétive, circonstancielle, interrogative indirecte, infinitive, participiale) sont celles de la [terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download). Voici la vue d'ensemble à mémoriser ; les cartes qui suivent détaillent chaque famille avec son test.",
+                },
+                {
+                  type: "table",
+                  title: "Les 6 familles en un coup d'œil",
+                  headers: ["Famille", "Introducteur", "Fonction globale", "Test express"],
+                  rows: [
+                    ["**Relative**", "qui, que, dont, où, lequel (pronom relatif)", "Épithète du nom (antécédent)", "Un antécédent nominal juste avant le pronom ?"],
+                    ["**Complétive**", "que (conjonction, sans antécédent)", "COD, sujet ou attribut du verbe", "« que » non déplaçable, sans antécédent ?"],
+                    ["**Circonstancielle**", "quand, parce que, si, bien que, pour que…", "CC (temps, cause, condition, but…)", "Supprimable et déplaçable ?"],
+                    ["**Interrogative indirecte**", "si, qui, ce que, comment, où, pourquoi…", "COD d'un verbe de question", "Verbe demander/savoir/ignorer + pas d'antécédent ?"],
+                    ["**Infinitive**", "aucun (verbe à l'infinitif)", "COD d'un verbe de perception/factitif", "Verbe de perception ou factitif + sujet propre distinct ?"],
+                    ["**Participiale**", "aucun (participe présent ou passé)", "CC (temps, cause, condition)", "Participe + sujet propre distinct, détaché par une virgule ?"],
+                  ],
                 },
                 {
                   type: "notionCardGrid",
@@ -191,7 +214,7 @@ export const fichePhraseComplexe: Fiche = {
                       exemples: [
                         "« les portes **qui me séparaient du monde** » : relative, épithète du nom « portes »",
                       ],
-                      piege: "Le pronom relatif a une nature stable. Sa fonction dans la relative (qui = sujet, dont = CDN ou COI…) se trouve par dépronominalisation : voir les notions 2 et 3.",
+                      piege: "Le pronom relatif a une nature stable. Sa fonction dans la relative (qui = sujet, dont = CDN ou COI…) se trouve par dépronominalisation : voir [Les fonctions syntaxiques](fiche:fonctions-syntaxiques) et [Le groupe nominal et ses expansions](fiche:groupe-nominal-expansions).",
                       test: "Y a-t-il un antécédent nominal juste avant le pronom relatif ? Si oui : relative.",
                     },
                     {
@@ -250,7 +273,14 @@ export const fichePhraseComplexe: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "Nommer une subordonnée, c'est donner sa **nature** (la famille) et sa **fonction globale** (épithète, COD, CC…). Pour analyser la fonction d'un mot à l'intérieur de la subordonnée (le pronom relatif notamment), voir les notions 2 et 3.",
+                  icon: "📌",
+                  title: "Trois précisions que le jury valorise",
+                  text: "**La complétive n'est pas toujours COD.** Elle peut être **sujet** (« *Qu'il vienne* me rassure »), **attribut** (« Mon espoir est *qu'il revienne* ») ou compléter un nom ou un adjectif (« l'idée *qu'il parte* », « heureux *qu'il vienne* »).\n\n**La relative se nuance.** *Déterminative* (sans virgule) : elle restreint le nom et n'est pas supprimable (« les élèves *qui travaillent* réussissent »). *Explicative* (entre virgules) : elle ajoute une information non essentielle (« mes élèves, *qui travaillent*, réussissent »).\n\n**La consécutive existe.** Avec *si… que, tellement… que, au point que*, on a une circonstancielle de **conséquence** (« Il pleut *tellement que* la rue est inondée »).",
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  text: "Nommer une subordonnée, c'est donner sa **nature** (la famille) et sa **fonction globale** (épithète, COD, CC…). Pour analyser la fonction d'un mot à l'intérieur de la subordonnée (le pronom relatif notamment), voir les notions [Les fonctions syntaxiques](fiche:fonctions-syntaxiques) et [Le groupe nominal et ses expansions](fiche:groupe-nominal-expansions).",
                 },
               ],
             },
@@ -276,7 +306,7 @@ export const fichePhraseComplexe: Fiche = {
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Exception : si l'infinitif ou le participe a un **sujet propre distinct** du sujet principal, il forme une subordonnée infinitive ou participiale (étape ③) et compte alors comme une proposition.",
+                  text: "⚠️ Exception : si l'infinitif ou le participe a un **sujet propre distinct** du sujet principal, il forme une subordonnée infinitive ou participiale (étape ④) et compte alors comme une proposition.",
                 },
               ],
             },
@@ -319,7 +349,7 @@ export const fichePhraseComplexe: Fiche = {
             {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** les élèves travaillent surtout la phrase simple, repèrent le verbe et observent les signes de ponctuation.\n\n**Cycle 3 :** on introduit la phrase complexe par observation : compter les verbes conjugués, repérer les mots de liaison (et, mais, parce que, qui, que). Les termes savants (subordonnée, principale) arrivent au cycle 4.\n\n**Ce que vous devez savoir dire :** « On part du verbe conjugué : autant de verbes conjugués, autant de propositions. On observe ensuite comment elles sont reliées (juxtaposition, coordination, subordination). Cette démarche de comptage et de découpage se construit dès le cycle 3. »",
+              text: "**Cycle 1 (maternelle) :** tout se joue à l'oral. L'enfant passe de la juxtaposition de mots à des phrases de plus en plus longues, et commence à relier ses idées avec « et », « parce que », « quand ». C'est la première forme de complexité, sans aucun terme savant.\n\n**Cycle 2 (CP-CE2) :** les élèves travaillent surtout la phrase simple à l'écrit, repèrent le verbe conjugué et observent les signes de ponctuation (point, virgule, point d'interrogation).\n\n**Cycle 3 (CM1-6e) :** on introduit la phrase complexe par observation : compter les verbes conjugués, repérer les mots de liaison (et, mais, parce que, qui, que). Les termes savants (subordonnée, principale) arrivent au cycle 4. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « On part du verbe conjugué : autant de verbes conjugués, autant de propositions. On observe ensuite comment elles sont reliées (juxtaposition, coordination, subordination). Cette démarche se prépare à l'oral dès la maternelle, puis se construit à l'écrit du cycle 2 au cycle 3. »",
             },
             {
               type: "ctaBox",
@@ -366,7 +396,7 @@ export const fichePhraseComplexe: Fiche = {
               number: "①",
               title: "Analyser une phrase complexe pas à pas",
               intro:
-                "**Exemple :** « On écrit parce qu'on cherche à saisir le réel. »\nOn applique les 4 étapes dans l'ordre.",
+                "**Question typique :** « Délimitez les propositions de la phrase suivante, précisez leur nature et la manière dont elles sont reliées : *On écrit parce qu'on cherche à saisir le réel.* »\nOn déroule les 4 étapes sur cette phrase, jusqu'à la réponse rédigée.",
               steps: [
                 {
                   number: "1",
@@ -383,7 +413,7 @@ export const fichePhraseComplexe: Fiche = {
                 },
                 {
                   number: "💡",
-                  text: "**Réponse attendue :** La phrase comporte deux propositions : [On écrit] est la proposition principale ; [parce qu'on cherche à saisir le réel] est une proposition subordonnée conjonctive circonstancielle, complément circonstanciel de cause. Elles sont reliées par subordination au moyen de la locution conjonctive « parce que ».",
+                  text: "**Réponse attendue (formulation modèle) :** « La phrase comporte deux propositions. [On écrit] est la proposition principale ; [parce qu'on cherche à saisir le réel] est une proposition subordonnée conjonctive circonstancielle, complément circonstanciel de cause de “écrit”. Elles sont reliées par **subordination**, au moyen de la locution conjonctive “parce que”. »",
                   warn: "⚠️ Ne pas oublier de nommer la principale, et toujours donner nature ET fonction.",
                 },
               ],
@@ -395,7 +425,8 @@ export const fichePhraseComplexe: Fiche = {
               badge: "30 secondes",
               question: "Combien de propositions dans : « Quand il arriva, elle lisait un roman » ? Nommez-les.",
               correction: [
-                { type: "line", text: "2 verbes conjugués (arriva, lisait) → 2 propositions. [Quand il arriva] = subordonnée circonstancielle de temps ; [elle lisait un roman] = proposition principale." },
+                { type: "line", text: "**Explication :** deux verbes conjugués (« arriva », « lisait ») → deux propositions. « Quand » introduit une subordonnée circonstancielle de temps, supprimable et déplaçable." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « La phrase comporte deux propositions. [Quand il arriva] est une subordonnée circonstancielle de temps ; [elle lisait un roman] est la proposition principale. Elles sont reliées par subordination. »" },
                 {
                   type: "note",
                   text: "Trouvé du premier coup ? Vous tenez la méthode. Sinon, reprenez les étapes 1 à 3.",
@@ -419,7 +450,7 @@ export const fichePhraseComplexe: Fiche = {
                 },
                 {
                   number: "💡",
-                  text: "**Réponse attendue :** La phrase comporte deux propositions : [Ma mère regardait] est la proposition principale ; [les enfants jouer dans le jardin] est une proposition subordonnée infinitive, COD de « regardait ». La seconde dépend du verbe « regardait », mais elle n'est introduite par aucun mot subordonnant.",
+                  text: "**Réponse attendue (formulation modèle) :** « La phrase comporte deux propositions. [Ma mère regardait] est la proposition principale ; [les enfants jouer dans le jardin] est une proposition subordonnée infinitive, COD de “regardait”. La seconde dépend du verbe “regardait”, mais elle n'est introduite par aucun mot subordonnant : c'est le sujet propre “les enfants” qui en fait une proposition. »",
                 },
               ],
             },
@@ -430,8 +461,8 @@ export const fichePhraseComplexe: Fiche = {
               badge: "30 secondes",
               question: "« Le rideau levé, le spectacle commença. » Délimitez et nommez les propositions.",
               correction: [
-                { type: "line", text: "Le sujet de « levé » est « le rideau » ; le sujet de « commença » est « le spectacle ». Les deux sujets sont distincts." },
-                { type: "line", text: "**Réponse attendue :** [Le rideau levé] est une proposition subordonnée participiale, complément circonstanciel de temps ; [le spectacle commença] est la proposition principale." },
+                { type: "line", text: "**Explication :** le sujet de « levé » est « le rideau » ; le sujet de « commença » est « le spectacle ». Les deux sujets sont distincts : le participe forme donc bien une proposition." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « [Le rideau levé] est une proposition subordonnée participiale, complément circonstanciel de temps ; [le spectacle commença] est la proposition principale. »" },
                 { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
               ],
             },
@@ -440,7 +471,7 @@ export const fichePhraseComplexe: Fiche = {
               number: "③",
               title: "Justifier un signe de ponctuation",
               intro:
-                "**Question typique :** « Justifiez l'emploi de la virgule dans cette phrase. »\nExemple d'appui : « Quand il arriva, elle lisait un roman. » On nomme l'emploi puis on justifie par la structure.",
+                "**Question typique :** « Justifiez l'emploi de la virgule dans la phrase suivante : *Quand il arriva, elle lisait un roman.* »\nOn nomme l'emploi, puis on le justifie par la structure de la phrase.",
               steps: [
                 {
                   number: "1",
@@ -452,7 +483,7 @@ export const fichePhraseComplexe: Fiche = {
                 },
                 {
                   number: "💡",
-                  text: "**Réponse attendue :** La virgule marque ici la séparation entre une **subordonnée circonstancielle antéposée** et la proposition principale. Elle isole « Quand il arriva », placée avant « elle lisait un roman ».",
+                  text: "**Réponse attendue (formulation modèle) :** « La virgule marque ici la séparation entre une **subordonnée circonstancielle de temps antéposée** (“Quand il arriva”) et la proposition principale (“elle lisait un roman”) : elle signale que la subordonnée est placée avant la principale. »",
                   warn: "⚠️ Ne pas répondre seulement : « la virgule marque une pause ». Le jury attend le nom de l'emploi.",
                 },
               ],
@@ -464,7 +495,8 @@ export const fichePhraseComplexe: Fiche = {
               badge: "30 secondes",
               question: "Justifiez les deux-points : « Il comprit enfin : la porte était restée ouverte. »",
               correction: [
-                { type: "line", text: "Les deux-points annoncent une **explication** : le second segment explicite ce que le personnage comprend." },
+                { type: "line", text: "**Explication :** la seconde proposition (« la porte était restée ouverte ») dit le contenu de ce que le personnage comprend. Le signe introduit ce que la première proposition annonce." },
+                { type: "line", text: "**Réponse attendue (formulation modèle) :** « Les deux-points marquent une **annonce explicative** : ils introduisent la proposition qui explicite ce que le personnage comprend (la cause de sa compréhension). »" },
                 { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
               ],
             },
@@ -634,10 +666,11 @@ export const fichePhraseComplexe: Fiche = {
               question:
                 "Pour chaque phrase, dites si elle est simple ou complexe. Justifiez en repérant les verbes conjugués et les éventuelles formes non conjuguées à sujet propre :\na) « Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »   b) « Ma mère regardait les enfants jouer dans le jardin. »   c) « On écrit parce qu'on cherche à saisir le réel. »   d) « Le rideau levé, le spectacle commença. »",
               correction: [
-                { type: "line", label: "a)", text: "**Complexe** : [Elle se hâtait, pressée d'atteindre sa maison] est la principale ; [les yeux baissés] est une subordonnée participiale, avec le sujet propre « les yeux »." },
-                { type: "line", label: "b)", text: "**Complexe** : 1 verbe conjugué (regardait) + 1 subordonnée infinitive (« jouer », sujet propre « les enfants »)." },
-                { type: "line", label: "c)", text: "**Complexe** : 2 verbes conjugués (écrit, cherche), donc 2 propositions." },
-                { type: "line", label: "d)", text: "**Complexe** : 1 verbe conjugué (commença) + 1 subordonnée participiale (« levé », sujet propre « le rideau »)." },
+                { type: "line", label: "a)", text: "**Explication :** un seul verbe conjugué (« se hâtait »), mais « les yeux baissés » a le sujet propre « les yeux » : il forme une proposition. « pressée d'atteindre » garde le sujet « elle » : ce n'est pas une proposition." },
+                { type: "line", label: "b)", text: "**Explication :** 1 verbe conjugué (« regardait ») + « jouer » (infinitif à sujet propre « les enfants ») : une subordonnée infinitive." },
+                { type: "line", label: "c)", text: "**Explication :** 2 verbes conjugués (« écrit », « cherche »), donc 2 propositions. « saisir » est un infinitif, il ne compte pas." },
+                { type: "line", label: "d)", text: "**Explication :** 1 verbe conjugué (« commença ») + « levé » (participe à sujet propre « le rideau ») : une subordonnée participiale." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « Les quatre phrases sont **complexes** : a) une principale et une subordonnée participiale (“les yeux baissés”) ; b) une principale et une subordonnée infinitive ; c) deux propositions reliées par subordination ; d) une principale et une subordonnée participiale. »" },
               ],
             },
             {
@@ -649,12 +682,13 @@ export const fichePhraseComplexe: Fiche = {
               question:
                 "Identifiez la famille de chaque subordonnée :\na) « les portes <u>qui me séparaient du monde</u> »   b) « Je sais <u>qu'il viendra</u>. »   c) « On écrit <u>parce qu'on ne sait pas</u>. »   d) « Je me demande <u>s'il viendra</u>. »   e) « regardait <u>les enfants jouer</u> »   f) « <u>Le rideau levé</u>, le spectacle commença. »",
               correction: [
-                { type: "line", label: "a)", text: "Relative (pronom relatif « qui », antécédent « portes »)" },
-                { type: "line", label: "b)", text: "Complétive (conjonction « que », COD de « sais »)" },
-                { type: "line", label: "c)", text: "Circonstancielle de cause (locution « parce que », supprimable)" },
-                { type: "line", label: "d)", text: "Interrogative indirecte totale (« si » + verbe de questionnement « me demande »)" },
-                { type: "line", label: "e)", text: "Subordonnée infinitive (verbe de perception « regardait », sujet propre « les enfants »)" },
-                { type: "line", label: "f)", text: "Subordonnée participiale (participe « levé », sujet propre « le rideau »)" },
+                { type: "line", label: "a)", text: "**Explication :** antécédent nominal « portes » juste avant « qui » → relative." },
+                { type: "line", label: "b)", text: "**Explication :** « que » sans antécédent, non déplaçable → complétive, COD de « sais »." },
+                { type: "line", label: "c)", text: "**Explication :** « parce que » introduit une proposition supprimable et déplaçable → circonstancielle de cause." },
+                { type: "line", label: "d)", text: "**Explication :** « si » dépend du verbe de questionnement « me demande », sans antécédent → interrogative indirecte." },
+                { type: "line", label: "e)", text: "**Explication :** verbe de perception « regardait » + sujet propre « les enfants » → infinitive." },
+                { type: "line", label: "f)", text: "**Explication :** participe « levé » + sujet propre « le rideau » → participiale." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) subordonnée **relative**, épithète de “portes” ; b) subordonnée **complétive**, COD de “sais” ; c) subordonnée **circonstancielle de cause** ; d) subordonnée **interrogative indirecte** totale, COD de “me demande” ; e) subordonnée **infinitive**, COD de “regardait” ; f) subordonnée **participiale**, CC de temps. »" },
               ],
             },
             {
@@ -666,11 +700,12 @@ export const fichePhraseComplexe: Fiche = {
               question:
                 "Identifiez la nature : infinitif · participe présent · gérondif · participe passé · verbe conjugué.\na) « Une femme passa, <u>tenant</u> son enfant. »   b) « les yeux <u>baissés</u> »   c) « Il rentra <u>en chantant</u>. »   d) « <u>Vivre</u>, sans l'écriture, me va mal. »   e) « Ma mère <u>regardait</u> les enfants jouer. »",
               correction: [
-                { type: "line", label: "a)", text: "**tenant** → participe présent (-ant, sans « en », invariable)" },
-                { type: "line", label: "b)", text: "**baissés** → participe passé (accord masculin pluriel avec « yeux »)" },
-                { type: "line", label: "c)", text: "**en chantant** → gérondif (« en » + -ant), CC de manière" },
-                { type: "line", label: "d)", text: "**Vivre** → infinitif, sujet du verbe « va »" },
-                { type: "line", label: "e)", text: "**regardait** → verbe conjugué (imparfait), délimite la proposition principale" },
+                { type: "line", label: "a)", text: "**Explication :** terminaison -ant, sans « en », forme invariable → participe présent." },
+                { type: "line", label: "b)", text: "**Explication :** accord masculin pluriel avec « yeux » (-és) → participe passé." },
+                { type: "line", label: "c)", text: "**Explication :** « en » + forme en -ant → gérondif." },
+                { type: "line", label: "d)", text: "**Explication :** forme en -re invariable placée en tête, commande le verbe « va » → infinitif sujet." },
+                { type: "line", label: "e)", text: "**Explication :** forme conjuguée à l'imparfait (porte les marques de personne et de temps) → verbe conjugué." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) “tenant” = participe présent, épithète détachée ; b) “baissés” = participe passé ; c) “en chantant” = gérondif, CC de manière ; d) “Vivre” = infinitif, sujet de “va” ; e) “regardait” = verbe conjugué (imparfait), noyau de la proposition principale. »" },
               ],
             },
             {
@@ -682,10 +717,11 @@ export const fichePhraseComplexe: Fiche = {
               question:
                 "Appliquez les deux conditions (verbe de perception ou factitif + sujet propre distinct) :\na) « J'entends les oiseaux chanter. »   b) « Il est monté pour regarder les nuages. »   c) « Il sentait le vide de sa vie s'étendre. »   d) « Elle veut partir tôt. »",
               correction: [
-                { type: "line", label: "a)", text: "**Oui** : verbe de perception « entends » + sujet propre « les oiseaux » (distinct de « je »)." },
-                { type: "line", label: "b)", text: "**Non** : « monter » n'est pas un verbe de perception et le sujet est le même → groupe infinitif, CC de but." },
-                { type: "line", label: "c)", text: "**Oui** : verbe de perception « sentait » + sujet propre « le vide de sa vie »." },
-                { type: "line", label: "d)", text: "**Non** : « vouloir » n'est pas un verbe de perception et le sujet est le même → groupe infinitif, COD." },
+                { type: "line", label: "a)", text: "**Explication :** verbe de perception « entends » + sujet propre « les oiseaux » (distinct de « je ») : les deux conditions sont réunies." },
+                { type: "line", label: "b)", text: "**Explication :** « monter » n'est pas un verbe de perception, et le sujet de « regarder » reste « il » : aucune condition remplie." },
+                { type: "line", label: "c)", text: "**Explication :** verbe de perception « sentait » + sujet propre « le vide de sa vie » : les deux conditions sont réunies." },
+                { type: "line", label: "d)", text: "**Explication :** « vouloir » n'est pas un verbe de perception, et le sujet de « partir » reste « elle »." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) **oui**, subordonnée infinitive, COD de “entends” ; b) **non**, groupe infinitif, CC de but de “est monté” ; c) **oui**, subordonnée infinitive, COD de “sentait” ; d) **non**, groupe infinitif, COD de “veut”. »" },
               ],
             },
             {
@@ -703,10 +739,11 @@ export const fichePhraseComplexe: Fiche = {
               question:
                 "Appliquez le critère du sujet propre :\na) « Elle passa, tenant son enfant. »   b) « Le rideau levé, le spectacle commença. »   c) « Épuisée, elle s'endormit. »   d) « Tout le monde étant parti, elle ferma la porte. »",
               correction: [
-                { type: "line", label: "a)", text: "**Épithète détachée** : sujet de « tenant » = elle (même que « passa »)." },
-                { type: "line", label: "b)", text: "**Subordonnée participiale** : sujet de « levé » = le rideau (distinct de « le spectacle »), CC de temps." },
-                { type: "line", label: "c)", text: "**Épithète détachée** : sujet de « Épuisée » = elle (même que « s'endormit »)." },
-                { type: "line", label: "d)", text: "**Subordonnée participiale** : sujet de « étant parti » = tout le monde (distinct de « elle »), CC de temps, avec une nuance possible de cause." },
+                { type: "line", label: "a)", text: "**Explication :** sujet de « tenant » = « elle », identique à celui de « passa » → pas de proposition." },
+                { type: "line", label: "b)", text: "**Explication :** sujet de « levé » = « le rideau », distinct de « le spectacle » → proposition." },
+                { type: "line", label: "c)", text: "**Explication :** sujet de « Épuisée » = « elle », identique à celui de « s'endormit » → pas de proposition." },
+                { type: "line", label: "d)", text: "**Explication :** sujet de « étant parti » = « tout le monde », distinct de « elle » → proposition." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) **épithète détachée** du sujet “elle” ; b) **subordonnée participiale**, CC de temps ; c) **épithète détachée** du sujet “elle” ; d) **subordonnée participiale**, CC de temps (nuance de cause possible). »" },
               ],
             },
             {
@@ -717,9 +754,10 @@ export const fichePhraseComplexe: Fiche = {
               question:
                 "Distinguez et justifiez :\na) « Je me demande s'il viendra. »   b) « Si elle vient, je serai heureux. »   c) « Il ignore si tout est prêt. »",
               correction: [
-                { type: "line", label: "a)", text: "**Interrogatif** : verbe de questionnement « me demande » → interrogative indirecte totale." },
-                { type: "line", label: "b)", text: "**Conjonction de condition** : la proposition est supprimable et déplaçable ; c'est une subordonnée circonstancielle de condition." },
-                { type: "line", label: "c)", text: "**Interrogatif** : verbe de questionnement « ignore » → interrogative indirecte totale." },
+                { type: "line", label: "a)", text: "**Explication :** « si » dépend du verbe de questionnement « me demande » et ne peut pas se déplacer → « si » interrogatif." },
+                { type: "line", label: "b)", text: "**Explication :** « si » introduit une condition supprimable et déplaçable (« Je serai heureux si elle vient ») → « si » conjonction de condition." },
+                { type: "line", label: "c)", text: "**Explication :** « si » dépend du verbe de questionnement « ignore » → « si » interrogatif." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) subordonnée **interrogative indirecte** totale, COD de “me demande” ; b) subordonnée **circonstancielle de condition** ; c) subordonnée **interrogative indirecte** totale, COD de “ignore”. »" },
               ],
             },
             {
@@ -730,15 +768,16 @@ export const fichePhraseComplexe: Fiche = {
               question:
                 "Délimitez toutes les propositions par des crochets et nommez chacune :\na) « Je sais que le livre qu'il lit est passionnant. »   b) « Elle reste parce qu'elle ignore quand il rentrera. »",
               correction: [
+                { type: "line", text: "**Explication :** chaque phrase a 3 verbes conjugués → 3 propositions. En a), le « que » de « que le livre… » n'a pas d'antécédent (complétive), mais le « qu' » de « qu'il lit » a pour antécédent « livre » (relative). En b), « ignore » est un verbe de questionnement, donc « quand il rentrera » est interrogative indirecte (et non circonstancielle de temps)." },
                 {
                   type: "line",
                   label: "a)",
-                  text: "[Je sais] principale ; [que le livre … est passionnant] complétive, COD de « sais » ; [qu'il lit] relative, épithète de « livre ».",
+                  text: "**Réponse attendue :** [Je sais] principale ; [que le livre … est passionnant] complétive, COD de « sais » ; [qu'il lit] relative, épithète de « livre ».",
                 },
                 {
                   type: "line",
                   label: "b)",
-                  text: "[Elle reste] principale ; [parce qu'elle ignore …] circonstancielle de cause ; [quand il rentrera] interrogative indirecte, COD de « ignore ».",
+                  text: "**Réponse attendue :** [Elle reste] principale ; [parce qu'elle ignore …] circonstancielle de cause ; [quand il rentrera] interrogative indirecte, COD de « ignore ».",
                 },
                 { type: "note", text: "⚠️ Une subordonnée peut en contenir une autre (enchâssement) : on délimite de la plus large à la plus enchâssée." },
               ],
@@ -752,6 +791,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »",
               question: "Donnez la nature et la fonction de chaque forme non conjuguée, et dites si elle crée une proposition.",
               correction: [
+                { type: "line", text: "**Explication :** on teste le sujet de chaque forme. Seul « les yeux baissés » a un sujet propre (« les yeux » ≠ « elle ») : c'est la seule forme qui crée une proposition. Les autres gardent le sujet de la phrase, ce sont donc des épithètes détachées ou des compléments." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Forme", "Nature", "Fonction", "Crée une proposition ?"],
@@ -781,6 +822,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. »",
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
+                { type: "line", text: "**Explication :** 3 verbes conjugués ? Non : « regardait » et « vieillissait » sont conjugués (« jouer » est un infinitif). La relative « dont… » est encadrée de virgules → explicative. « les enfants jouer » a le sujet propre « les enfants » après un verbe de perception → infinitive." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -790,7 +833,7 @@ export const fichePhraseComplexe: Fiche = {
                     ["les enfants jouer dans le jardin", "Subordonnée infinitive, COD de « regardait » (sujet propre : « les enfants »)"],
                   ],
                 },
-                { type: "note", text: "💡 La fonction de « dont » (CDN du nom « regard ») se trouve par dépronominalisation : voir les notions 2 et 3." },
+                { type: "note", text: "💡 La fonction de « dont » (CDN du nom « regard ») se trouve par dépronominalisation : voir [Les fonctions syntaxiques](fiche:fonctions-syntaxiques) et [Le groupe nominal et ses expansions](fiche:groupe-nominal-expansions)." },
               ],
             },
             {
@@ -802,6 +845,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« On écrit parce qu'on ne sait par quel autre biais attraper le réel. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
               question: "Délimitez et nommez toutes les propositions, et analysez chaque subordonnée.",
               correction: [
+                { type: "line", text: "**Explication :** « écrit » et « sait » sont les verbes conjugués. « parce que » introduit une cause (supprimable et déplaçable). « par quel biais » est un groupe interrogatif après le verbe de savoir « sait » : interrogative indirecte partielle, construite ici autour de l'infinitif « attraper »." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -823,6 +868,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« Elle regardait les eaux du fleuve avec une attention que rien ne semblait pouvoir distraire. »",
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
+                { type: "line", text: "**Explication :** deux verbes conjugués (« regardait », « semblait » ; « pouvoir » et « distraire » sont des infinitifs). « que » a pour antécédent « attention » → relative. Sans virgule, elle restreint le nom → déterminative." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -831,7 +878,7 @@ export const fichePhraseComplexe: Fiche = {
                     ["que rien ne semblait pouvoir distraire", "Subordonnée relative déterminative, épithète de « attention »"],
                   ],
                 },
-                { type: "note", text: "💡 « que » est ici un pronom relatif (antécédent « attention ») ; sa fonction (COD de « distraire ») relève des notions 2 et 3." },
+                { type: "note", text: "💡 « que » est ici un pronom relatif (antécédent « attention ») ; sa fonction (COD de « distraire ») relève de [Les fonctions syntaxiques](fiche:fonctions-syntaxiques)." },
               ],
             },
             {
@@ -843,6 +890,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
               question: "Délimitez et donnez la nature des différentes propositions.",
               correction: [
+                { type: "line", text: "**Explication :** verbes conjugués : « ai vu », « séparaient », « suis monté », « étaient ». « ai vu » est un verbe de perception et « les portes » est le sujet propre de l'infinitif « se rouvrir » → infinitive. Les deux-points puis « mais » articulent ensuite deux indépendantes (juxtaposition puis coordination). Attention : « pour regarder » garde le sujet « je » → groupe infinitif, pas une infinitive." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -866,9 +915,10 @@ export const fichePhraseComplexe: Fiche = {
                 "« Quand la pluie cessa, les enfants sortirent ; la cour, silencieuse jusque-là, se remplit de cris. »",
               question: "Justifiez la virgule après « cessa », le point-virgule, puis les deux virgules qui encadrent « silencieuse jusque-là ».",
               correction: [
-                { type: "line", label: "a)", text: "La virgule après « cessa » sépare une **subordonnée circonstancielle de temps antéposée** (« Quand la pluie cessa ») de la proposition principale (« les enfants sortirent »)." },
-                { type: "line", label: "b)", text: "Le point-virgule sépare deux propositions indépendantes liées par une relation logique implicite : la seconde prolonge la première en montrant sa conséquence dans la cour." },
-                { type: "line", label: "c)", text: "Les deux virgules encadrent une **épithète détachée** (« silencieuse jusque-là ») rapportée au nom « cour » ; elles isolent un constituant supprimable et mis en relief." },
+                { type: "line", label: "a)", text: "**Explication :** « Quand la pluie cessa » est une subordonnée circonstancielle de temps placée avant la principale ; la virgule signale cette antéposition." },
+                { type: "line", label: "b)", text: "**Explication :** « les enfants sortirent » et « la cour… se remplit de cris » sont deux indépendantes ; aucun mot de liaison ne les unit, mais le sens les rattache (conséquence)." },
+                { type: "line", label: "c)", text: "**Explication :** « silencieuse jusque-là » est supprimable et se rapporte au nom « cour » ; les deux virgules l'isolent comme épithète détachée." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) la virgule sépare une **subordonnée circonstancielle de temps antéposée** de la principale ; b) le point-virgule marque une **relation logique implicite** entre deux indépendantes (conséquence) ; c) les deux virgules marquent le **détachement d'une épithète** (“silencieuse jusque-là”) rapportée au nom “cour”. »" },
               ],
             },
           ],
@@ -892,6 +942,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. »",
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
+                { type: "line", text: "**Explication :** « regardait » et « vieillissait » sont les verbes conjugués. La relative « dont… » est entre virgules (explicative) ; « les enfants jouer » a un sujet propre après un verbe de perception (infinitive)." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -911,6 +963,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« Elle regardait les eaux du fleuve avec une attention que rien ne semblait pouvoir distraire. »",
               question: "Délimitez et nommez toutes les propositions.",
               correction: [
+                { type: "line", text: "**Explication :** « regardait » et « semblait » sont les seuls verbes conjugués. « que » a pour antécédent « attention » → relative ; sans virgule, elle restreint le nom → déterminative." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -929,6 +983,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« On écrit parce qu'on ne sait par quel autre biais attraper le réel. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
               question: "Délimitez les propositions et donnez leur nature.",
               correction: [
+                { type: "line", text: "**Explication :** « écrit » et « sait » sont les verbes conjugués. « parce que » introduit une cause supprimable et déplaçable. « par quel biais » est un groupe interrogatif dépendant du verbe de savoir « sait » → interrogative indirecte partielle." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -950,6 +1006,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
               question: "Délimitez et donnez la nature des différentes propositions.",
               correction: [
+                { type: "line", text: "**Explication :** verbes conjugués : « ai vu », « séparaient », « suis monté », « étaient ». « ai vu » (perception) + sujet propre « les portes » → infinitive ; « qui » a pour antécédent « portes » → relative. Les deux-points puis « mais » articulent deux indépendantes (juxtaposition, puis coordination)." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition", "Nature et fonction"],
@@ -973,6 +1031,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« Vivre, sans l'écriture, me va mal, comme un habit trop lâche dans lequel je m'empêtre. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
               question: "Délimitez et nommez toutes les propositions, puis analysez « comme ».",
               correction: [
+                { type: "line", text: "**Explication :** « va » et « m'empêtre » sont les verbes conjugués (« Vivre » est un infinitif sujet). « comme un habit trop lâche » introduit une comparaison ; « dans lequel » a pour antécédent « habit » → relative déterminative." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :**" },
                 {
                   type: "table",
                   headers: ["Proposition / groupe", "Nature et fonction"],
@@ -993,9 +1053,8 @@ export const fichePhraseComplexe: Fiche = {
                 "« Épuisée par la marche, elle s'assit sur le banc ; autour d'elle, la place se vidait lentement. »",
               question: "Analysez deux emplois de la virgule et justifiez le point-virgule.",
               correction: [
-                { type: "line", text: "« Épuisée par la marche, » : la virgule marque un **détachement** ; elle isole le groupe adjectival épithète détachée rapporté au sujet « elle »." },
-                { type: "line", text: "« autour d'elle, » : la virgule marque le **détachement d'un complément circonstanciel de lieu antéposé** à la proposition « la place se vidait lentement »." },
-                { type: "line", text: "Le point-virgule sépare deux propositions indépendantes liées par une relation de simultanéité descriptive : le geste du personnage et l'évolution de la place restent dans la même scène." },
+                { type: "line", text: "**Explication :** « Épuisée par la marche » se rapporte au sujet « elle » et reste supprimable → épithète détachée isolée par la virgule. « autour d'elle » est un CC de lieu placé avant son verbe « se vidait » → détachement d'un complément antéposé. Le point-virgule relie deux indépendantes appartenant à la même scène." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « La première virgule marque le **détachement d'une épithète** (“Épuisée par la marche”) rapportée au sujet “elle” ; la seconde marque le **détachement d'un CC de lieu antéposé** (“autour d'elle”) ; le point-virgule marque une **relation logique implicite** (simultanéité descriptive) entre deux indépendantes. »" },
               ],
             },
           ],
@@ -1134,7 +1193,7 @@ export const fichePhraseComplexe: Fiche = {
                   question: "La méthode en 4 étapes pour analyser une phrase complexe ?",
                   answer:
                     "1. Compter les verbes conjugués.\n2. Délimiter chaque proposition entre crochets.\n3. Identifier le mot introducteur (quelle famille ?).\n4. Nommer nature et fonction (principale comprise).",
-                  astuce: "💡 Pour une relative, la fonction du pronom relatif se trouve par dépronominalisation (notions 2 et 3).",
+                  astuce: "💡 Pour une relative, la fonction du pronom relatif se trouve par dépronominalisation : voir [Les fonctions syntaxiques](fiche:fonctions-syntaxiques).",
                 },
               ],
             },
