@@ -49,9 +49,13 @@ import { ficheFormationDesMots } from "./francais/formation-des-mots";
 import { ficheRelationsSemantiques } from "./francais/relations-semantiques";
 import { ficheFiguresRegistres } from "./francais/figures-de-style-registres";
 import {
-  ficheProduireDeveloppementL3,
-  ficheProduireDeveloppementM2,
-} from "./francais/produire-le-developpement";
+  ficheConstruirePlanL3,
+  ficheConstruirePlanM2,
+} from "./francais/construire-un-plan";
+import {
+  ficheRedigerDeveloppementL3,
+  ficheRedigerDeveloppementM2,
+} from "./francais/rediger-le-developpement";
 import {
   ficheCultureLitteraireL3,
   ficheCultureLitteraireM2,
@@ -120,13 +124,15 @@ const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSynta
 const FRANCAIS_L3: Fiche[] = [
   ficheMethodologieL3,
   ...FRANCAIS_COMMUN,
-  ficheProduireDeveloppementL3,
+  ficheConstruirePlanL3,
+  ficheRedigerDeveloppementL3,
   ficheCultureLitteraireL3,
 ];
 const FRANCAIS_M2: Fiche[] = [
   ficheMethodologieM2,
   ...FRANCAIS_COMMUN,
-  ficheProduireDeveloppementM2,
+  ficheConstruirePlanM2,
+  ficheRedigerDeveloppementM2,
   ficheCultureLitteraireM2,
 ];
 

@@ -225,9 +225,9 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           { title: "3 · Rédaction", value: "~10 pts", lines: ["Développement argumenté", "Environ 30 lignes", "Réponse à une question sur le texte"], variant: "success" },
                         ]
                       : [
-                          { title: "1 · Étude de la langue", value: "~7 pts", lines: ["Grammaire, syntaxe", "Orthographe", "Questions précises sur le texte"], variant: "info" },
+                          { title: "1 · Étude de la langue", value: "~8 pts", lines: ["Grammaire, syntaxe", "Orthographe", "Questions précises sur le texte"], variant: "info" },
                           { title: "2 · Lexique", value: "~4 pts", lines: ["Formation des mots", "Sens contextuel", "Figures, registres, relations sémantiques"], variant: "info" },
-                          { title: "3 · Réflexion rédigée", value: "9 pts", lines: ["Développement structuré, argumenté", "Références personnelles", "Culture littéraire"], variant: "success" },
+                          { title: "3 · Réflexion rédigée", value: "~8 pts", lines: ["Développement structuré, argumenté", "Références personnelles", "Culture littéraire"], variant: "success" },
                         ],
                   },
                   {
@@ -237,7 +237,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                     title: "Un barème estimé, non officiel",
                     text: l3
                       ? "Le barème exact par sous-partie n'est pas communiqué officiellement. D'après le sujet zéro officiel et le sujet de la session 2026, on est généralement autour de 6 points en grammaire, 4 en lexique et 10 en rédaction. La répartition peut bouger un peu selon les sujets, mais ces ordres de grandeur restent utiles pour gérer son temps."
-                      : "Le barème par partie n'est pas fixé une fois pour toutes. À la session 2025, l'étude de la langue et le lexique comptaient ensemble pour 11 points, et la réflexion rédigée pour 9 points. La répartition entre les parties 1 et 2 peut varier selon les sujets et les groupements : retenez surtout que la réflexion pèse près de la moitié de la note.",
+                      : "Le barème exact par partie n'est pas communiqué officiellement. Les points indiqués (environ 8, 4 et 8) sont une estimation d'après les sujets et les rapports de jury : ils peuvent varier selon les sessions et les groupements.",
                   },
                   ...(l3
                     ? [
@@ -304,7 +304,6 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           title: "Partie 3, Réflexion rédigée : ce qu'on teste",
                           headers: ["Élément", "Détail"],
                           rows: [
-                            ["Poids dans l'épreuve", "9 points sur 20 à la session 2025, soit près de la moitié de la note : c'est la partie qui fait la différence."],
                             ["Nature de l'exercice", "Une réflexion organisée à partir d'une question liée au texte. On ne vous demande pas un commentaire composé : il faut répondre au sujet, construire deux ou trois idées, les appuyer sur le texte et sur quelques références personnelles."],
                             ["Format attendu", "Introduction, développement en parties, conclusion. La longueur attendue dépend de la consigne du sujet."],
                             ["Les trois appuis", "1) le texte support (cité et analysé), 2) des lectures personnelles (titre et auteur), 3) une culture générale (arts, histoire, cinéma...)."],
@@ -317,71 +316,10 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                     type: "callout",
                     variant: "info",
                     icon: "💡",
-                    title: "La Partie 3 n'est pas un commentaire",
+                    title: l3 ? "La rédaction L3 répond à une question sur le texte" : "La Partie 3 n'est pas un commentaire",
                     text: l3
-                      ? "En L3 comme en M2, la Partie 3 est une réflexion suscitée par le texte : on répond à une question en s'appuyant sur le texte, sa culture et ses lectures (y compris celles du lycée), pas en commentant les procédés de l'auteur. Ici, on pose le cadre ; la méthode détaillée est vue plus loin, aux notions 19 et 20."
-                      : "La Partie 3 est une réflexion suscitée par le texte, pas un résumé de ce que dit l'auteur ni un commentaire de ses procédés. Le texte est un appui parmi d'autres, aux côtés de votre culture et de vos lectures. Détail aux notions 19 et 20.",
-                  },
-                ],
-              },
-              {
-                type: "highlightBox",
-                variant: "marine",
-                icon: "📄",
-                title: "À quoi ressemble un vrai sujet",
-                blocks: [
-                  {
-                    type: "paragraph",
-                    text: l3
-                      ? "Pour vous projeter concrètement, voici le profil du sujet zéro officiel, le seul exemple cadré publié par le ministère pour la session 2026."
-                      : "Pour vous projeter concrètement, voici le profil d'une épreuve récente (sessions 2025 et 2026).",
-                  },
-                  {
-                    type: "table",
-                    headers: ["Élément du sujet", l3 ? "Ce que contenait le sujet zéro" : "Ce que demandait l'épreuve"],
-                    rows: l3
-                      ? [
-                          ["Texte support", "Un extrait du conte « La Barbe bleue » de Charles Perrault (XVIIe siècle)."],
-                          ["Partie 1, grammaire (6 pts)", "Des questions d'analyse de la langue portant sur des phrases précises du texte."],
-                          ["Partie 2, lexique (4 pts)", "Le sens en contexte et la formation de mots tirés du texte."],
-                          ["Partie 3, expression écrite (10 pts)", "« Un développement structuré et argumenté d'une trentaine de lignes », répondant à une question sur l'actualité du conte (ici, le rapport entre les femmes et les hommes)."],
-                        ]
-                      : [
-                          ["Texte support", "Un extrait d'une œuvre contemporaine ou patrimoniale, de 400 à 600 mots. En 2026, un texte d'Amin Maalouf."],
-                          ["Parties 1 et 2 (≈ 11 pts)", "L'étude de la langue et le lexique : des questions précises sur le texte, auxquelles on répond en phrases rédigées."],
-                          ["Partie 3 (9 pts)", "Une question de réflexion, par exemple « Quel est, selon vous, l'intérêt pour une personne de mettre par écrit ses expériences vécues ? », traitée par « un développement présentant un raisonnement rédigé et structuré »."],
-                        ],
-                  },
-                  {
-                    type: "paragraph",
-                    text: l3
-                      ? "La méthode pour ce développement est détaillée à la [notion 19](fiche:produire-le-developpement). Source : [sujets zéro du CRPE bac+3](https://www.devenirenseignant.gouv.fr/exemples-de-sujets-des-concours-externes-bac3-de-recrutement-d-enseignants-1405)."
-                      : "La méthode pour ce développement est détaillée à la [notion 19](fiche:produire-le-developpement). Source : [sujets et rapports des jurys du CRPE](https://www.devenirenseignant.gouv.fr/les-sujets-des-epreuves-ecrites-et-rapports-des-jurys-des-crpe-1163).",
-                  },
-                ],
-              },
-              {
-                type: "highlightBox",
-                variant: "marine",
-                icon: "📋",
-                title: "Ce que rappellent les rapports de jury",
-                blocks: [
-                  {
-                    type: "paragraph",
-                    text: "Les rapports de jury, publiés après chaque session, disent assez clairement ce qui est attendu. Quelques constantes reviennent, quel que soit le sujet.",
-                  },
-                  {
-                    type: "bullets",
-                    items: [
-                      "Une réflexion organisée en paragraphes, introduite et conclue brièvement, appuyée sur des exemples variés : c'est ce qui répond aux attentes.",
-                      "La correction de la langue est prise au sérieux sur toute la copie, orthographe, syntaxe et ponctuation comprises. De futurs enseignants doivent montrer une expression aussi soignée que possible.",
-                      "Les réponses se rédigent en phrases complètes, y compris en lexique. Dans le développement, on n'écrit pas les titres des parties : on les fond dans la rédaction.",
-                      "Une copie lisible et aérée facilite le travail du correcteur et joue en votre faveur.",
-                    ],
-                  },
-                  {
-                    type: "paragraph",
-                    text: "Les rapports, publiés par académie, sont publics et valent la lecture : [sujets et rapports des jurys du CRPE](https://www.devenirenseignant.gouv.fr/les-sujets-des-epreuves-ecrites-et-rapports-des-jurys-des-crpe-1163).",
+                      ? "En L3, la rédaction répond directement à une question portant sur le texte : votre analyse du texte est au centre. Ne transposez pas la méthode du M2, où la Partie 3 est une réflexion plus large. Ici, on pose le cadre ; la méthode détaillée de la Partie 3 sera vue plus loin, dans les notions 19 à 21."
+                      : "La Partie 3 est une réflexion personnelle sur une thématique suscitée par le texte, pas un résumé de ce que dit l'auteur. Le texte est un appui parmi d'autres. Détail aux notions 19 à 21.",
                   },
                 ],
               },
@@ -484,7 +422,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                   : "Passer trop de temps sur les Parties 1 et 2 et ne rédiger que quelques lignes en Partie 3.",
                 vrai: l3
                   ? "La rédaction vaut environ la moitié de la note de français. Une rédaction correcte avec des questions un peu incomplètes vaut mieux qu'une grammaire parfaite et une rédaction de cinq lignes."
-                  : "La Partie 3 vaut 9 points sur 20, près de la moitié de la note. Une copie qui finit la Partie 3 vaut souvent mieux qu'une Partie 1 parfaite et une Partie 3 vierge.",
+                  : "La Partie 3 vaut environ un tiers des points. Une copie qui finit la Partie 3 vaut souvent mieux qu'une Partie 1 parfaite et une Partie 3 vierge.",
                 methode: "Bloquer dès le départ le temps de la rédaction et s'y tenir.",
               },
               ...(l3
@@ -558,7 +496,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                         ]
                       : [
                           "Ne jamais laisser une partie vide : la note de 5/20 est éliminatoire.",
-                          "La réflexion rédigée vaut 9 points sur 20 : on ne la sacrifie jamais.",
+                          "Chaque partie vaut environ un tiers des points : on les équilibre.",
                           "La langue est évaluée sur toute la copie : on garde du temps pour relire.",
                         ],
                   },
@@ -566,33 +504,6 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                     type: "callout",
                     variant: "warning",
                     text: "⚠️ Les réponses se rédigent en phrases complètes, même en grammaire et en lexique : un mot seul, sans justification, ne rapporte pas tous les points.",
-                  },
-                ],
-              },
-              {
-                type: "highlightBox",
-                variant: "neutral",
-                icon: "✍️",
-                title: "Des formulations qui rapportent des points",
-                blocks: [
-                  {
-                    type: "paragraph",
-                    text: "Une réponse juste se reconnaît à sa forme : le bon terme, une justification, un appui dans le texte. Voici des trames à réutiliser pour les réponses courtes.",
-                  },
-                  {
-                    type: "table",
-                    headers: ["Type de question", "Formulation type"],
-                    rows: [
-                      ["Nature (classe grammaticale)", "« Ce mot est un nom commun (un adjectif qualificatif, une conjonction de subordination...). » On nomme la classe et on l'appuie d'un indice. Voir [les classes grammaticales](fiche:classes-grammaticales)."],
-                      ["Fonction", "« Il est complément d'objet direct du verbe (ou sujet, ou épithète du nom...). » On nomme la fonction et le mot dont elle dépend. Voir [les fonctions syntaxiques](fiche:fonctions-syntaxiques)."],
-                      ["Mode et temps d'un verbe", "« Ce verbe est au passé simple de l'indicatif ; il exprime ici une action brève de premier plan. » On nomme, puis on donne la valeur en contexte. Voir [les modes et les temps](fiche:modes-et-temps)."],
-                      ["Sens d'un mot en contexte", "« Dans ce passage, ce terme signifie..., et non son sens courant de... » On s'appuie sur la phrase. Voir [les relations sémantiques](fiche:relations-semantiques)."],
-                      ["Figure de style", "« Il s'agit d'une métaphore ; en citant le passage, on montre l'effet produit sur le lecteur. » On nomme, on cite, on explique l'effet. Voir [les figures de style](fiche:figures-de-style-registres)."],
-                    ],
-                  },
-                  {
-                    type: "paragraph",
-                    text: "Pour le développement de la Partie 3 (introduction, transitions, conclusion), les formulations sont détaillées à la [notion 19](fiche:produire-le-developpement).",
                   },
                 ],
               },
