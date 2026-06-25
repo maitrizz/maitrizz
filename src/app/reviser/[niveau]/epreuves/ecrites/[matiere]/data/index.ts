@@ -30,6 +30,7 @@ import { ficheSectionsReperageEspaceM2, ficheSectionsReperageEspaceL3 } from "./
 import { ficheAlgorithmiqueScratchTableur } from "./mathematiques/algorithmique-scratch-tableur";
 import { ficheMethodologieMathematiquesM2, ficheMethodologieMathematiquesL3 } from "./mathematiques/methodologie-de-l-epreuve";
 import { ficheVecteurs } from "./mathematiques/vecteurs";
+import { ficheProblemesTransversaux } from "./mathematiques/problemes-transversaux";
 import { ficheClassesGrammaticales } from "./francais/classes-grammaticales";
 import { ficheFonctionsSyntaxiques } from "./francais/fonctions-syntaxiques";
 import { ficheGroupeNominalExpansions } from "./francais/groupe-nominal-expansions";
@@ -57,6 +58,10 @@ import {
   ficheCultureLitteraireM2,
 } from "./francais/culture-litteraire";
 import {
+  ficheSujetBlancHugoL3,
+  ficheSujetBlancHugoM2,
+} from "./francais/sujet-blanc-hugo";
+import {
   ficheMethodologieL3,
   ficheMethodologieM2,
 } from "./francais/methodologie-de-l-epreuve";
@@ -71,6 +76,7 @@ export { NIVEAUX, NIVEAU_LABELS, isValidNiveau };
 export type FicheMeta = {
   slug: string;
   numero: number;
+  kind?: "notion" | "sujet";
   partie: string;
   title: string;
   subtitle: string;
@@ -93,7 +99,10 @@ export const MATIERE_LABELS: Record<Matiere, string> = {
 // Mathématiques. Les 27 notions disciplinaires sont en grande partie communes
 // L3/M2 ; MATHEMATIQUES_NOTIONS donne l'ordre et les variantes M2.
 const MATHEMATIQUES_NOTIONS: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptivesM2, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspaceM2, ficheAlgorithmiqueScratchTableur];
-const MATHEMATIQUES_M2: Fiche[] = [ficheMethodologieMathematiquesM2, ...MATHEMATIQUES_NOTIONS];
+// La fiche « Problèmes transversaux » (n°28, Partie 7) est pour l'instant M2
+// uniquement : tous ses problèmes relèvent déjà du cycle 4, sa dérivation L3
+// (ajout à MATHEMATIQUES_L3) sera faite dans un second temps.
+const MATHEMATIQUES_M2: Fiche[] = [ficheMethodologieMathematiquesM2, ...MATHEMATIQUES_NOTIONS, ficheProblemesTransversaux];
 
 // L3 : programme cycle 4 (2025). Dérivation fidèle à partir du M2 :
 //  - « suites » retirée (hors cycle 4) ;
@@ -122,12 +131,14 @@ const FRANCAIS_L3: Fiche[] = [
   ...FRANCAIS_COMMUN,
   ficheProduireDeveloppementL3,
   ficheCultureLitteraireL3,
+  ficheSujetBlancHugoL3,
 ];
 const FRANCAIS_M2: Fiche[] = [
   ficheMethodologieM2,
   ...FRANCAIS_COMMUN,
   ficheProduireDeveloppementM2,
   ficheCultureLitteraireM2,
+  ficheSujetBlancHugoM2,
 ];
 
 // Sciences et technologie : chantier en cours (plan dans SUIVI_FICHES_SCIENCES.md).
@@ -163,6 +174,7 @@ function toMeta(fiche: Fiche): FicheMeta {
   return {
     slug: fiche.slug,
     numero: fiche.numero,
+    kind: fiche.kind,
     partie: fiche.partie,
     title: fiche.title,
     subtitle: fiche.subtitle,

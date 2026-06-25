@@ -156,7 +156,7 @@ export const fichePhraseComplexe: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Dans une phrase complexe, la ponctuation sert souvent à rendre visible la relation entre les groupes et les propositions. Au concours, il ne suffit pas d'écrire que « la virgule marque une pause » : il faut **nommer l'emploi** et le justifier par la structure de la phrase. Cette question est tombée à la session 2024, où il fallait justifier l'emploi d'une virgule.",
+                  text: "Dans une phrase complexe, la ponctuation sert souvent à rendre visible la relation entre les groupes et les propositions. Au concours, il ne suffit pas d'écrire que « la virgule marque une pause » : il faut **nommer l'emploi** et le justifier par la structure de la phrase. C'est un grand classique de l'épreuve : justifier l'emploi d'une virgule revient régulièrement.",
                 },
                 {
                   type: "table",

@@ -74,7 +74,7 @@ export default async function FichePage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LearningResource",
-    name: fiche.numero > 0 ? `Notion ${fiche.numero} : ${fiche.title}` : fiche.title,
+    name: fiche.numero > 0 && fiche.kind !== "sujet" ? `Notion ${fiche.numero} : ${fiche.title}` : fiche.title,
     description: fiche.metaDescription,
     inLanguage: "fr",
     isAccessibleForFree: true,

@@ -245,7 +245,43 @@ export type Block =
 
   // Schéma ou illustration : image (SVG/PNG) servie depuis /public, avec légende.
   // `alt` est obligatoire (accessibilité). `maxWidth` en pixels (défaut : pleine largeur).
-  | { type: "schema"; src: string; alt: string; caption?: RichText; maxWidth?: number };
+  | { type: "schema"; src: string; alt: string; caption?: RichText; maxWidth?: number }
+
+  // Épreuve blanche « tout-en-un » (sujets blancs). Un seul composant orchestre
+  // toute l'expérience : écran de départ (choix du mode examen / entraînement),
+  // composition sur le site (texte côté gauche, questions et champs de réponse
+  // côté droit), chronomètre global + temps par partie, puis correction
+  // (réponse vs attendu, auto-évaluation cochable, note estimée /20, bilan par
+  // partie, récap du temps, plan de révision, historique des tentatives).
+  // Tout l'état est persisté en localStorage par fiche.
+  | {
+      type: "examRunner";
+      intro?: RichText;
+      tips?: RichText[]; // conseils « pour progresser », affichés dans le bilan
+      text: {
+        title: string; // ex: "Victor Hugo, Le Dernier Jour d'un condamné (1829)"
+        paragraphs: RichText[];
+        note?: RichText; // mise en situation sous le texte
+      };
+      totalMinutes: number;
+      parts: {
+        id: string;
+        title: string; // ex: "Partie 1 — Étude de la langue"
+        points: number; // total de la partie
+        recommendedMinutes: number;
+        intro?: RichText; // consigne de partie (ex: sujet du développement rédigé)
+        questions: {
+          id: string;
+          label: string;
+          enonce: RichText; // l'énoncé de la question
+          answerPrompt?: string; // placeholder du champ de réponse
+          answerRows?: number; // hauteur du champ (défaut : 2)
+          elements: { label: RichText; points: number }[]; // réponse attendue, cochable
+          note?: RichText; // justification / développement-modèle (révélé)
+          revise?: { label: string; slug: string }; // fiche à revoir si la question est ratée
+        }[];
+      }[];
+    };
 
 /* ────────────────────────────────────────────────────────────
    Onglets et fiche
@@ -275,6 +311,10 @@ export type Matiere = "mathematiques" | "francais" | "sciences";
 export type Fiche = {
   slug: string;
   matiere: Matiere;
+  // "notion" (défaut) : fiche de cours numérotée, affichée « Notion N : … ».
+  // "sujet" : sujet blanc (entraînement en conditions réelles), affiché sans
+  // préfixe « Notion ».
+  kind?: "notion" | "sujet";
   numero: number;
   partie: string; // ex: "Partie 1 — Nombres et calcul"
   title: string; // ex: "Numération · Systèmes de bases"

@@ -649,7 +649,7 @@ export const ficheFormationDesMots: Fiche = {
                 "a) Identifiez le préfixe et son sens : décomposer · surnaturel · prénatal · transporter.\nb) Identifiez le suffixe et la classe produite : formation · lentement · portable · liberté.",
               correction: [
                 { type: "line", text: "**Méthode :** le préfixe se place avant le radical et conserve la classe ; le suffixe se place après et peut la changer." },
-                { type: "line", label: "a)", text: "**Réponse attendue —** dé- (action inverse) · sur- (au-delà) · pré- (antériorité) · trans- (à travers)." },
+                { type: "line", label: "a)", text: "**Réponse attendue :** dé- (action inverse) · sur- (au-delà) · pré- (antériorité) · trans- (à travers)." },
                 { type: "line", label: "b)", text: "-tion → nom · -ment → adverbe · -able → adjectif · -té → nom." },
               ],
             },
@@ -679,7 +679,7 @@ export const ficheFormationDesMots: Fiche = {
               question: "Analysez la formation et indiquez si la classe change :\nraisonnement · lentement · liberté · lecteur · portable",
               correction: [
                 { type: "line", text: "raisonnement : raisonner + -ment → nom (verbe → nom) · lentement : lente + -ment → adverbe (adjectif → adverbe) · liberté : libre + -té → nom (adjectif → nom) · lecteur : lire + -eur → nom (verbe → nom) · portable : porter + -able → adjectif (verbe → adjectif)." },
-                { type: "line", text: "**Réponse attendue :** dans les cinq cas le suffixe change la classe — *raisonnement* → nom, *lentement* → adverbe, *liberté* → nom, *lecteur* → nom, *portable* → adjectif." },
+                { type: "line", text: "**Réponse attendue :** dans les cinq cas le suffixe change la classe : *raisonnement* → nom, *lentement* → adverbe, *liberté* → nom, *lecteur* → nom, *portable* → adjectif." },
                 { type: "note", text: "💡 Le suffixe change ici toujours la classe ; le préfixe, lui, la conserve." },
               ],
             },
@@ -691,7 +691,7 @@ export const ficheFormationDesMots: Fiche = {
               enonce: "« Vivre, sans l'écriture, me va mal. » (Lola Lafon, Quand tu écouteras cette chanson)",
               question: "Analysez la formation de « écriture » et expliquez son sens. Donnez trois mots de la même famille.",
               correction: [
-                { type: "line", text: "**Analyse :** suffixation — radical **écrit-** (verbe écrire) + suffixe **-ure** (résultat, procédé). Classe : verbe → nom. « Écriture » désigne l'acte d'écrire et son résultat ; le contexte en fait un mode d'être indispensable." },
+                { type: "line", text: "**Analyse :** suffixation, radical **écrit-** (verbe écrire) + suffixe **-ure** (résultat, procédé). Classe : verbe → nom. « Écriture » désigne l'acte d'écrire et son résultat ; le contexte en fait un mode d'être indispensable." },
                 { type: "line", text: "Famille : écrire, écrivain, écrit, réécriture." },
                 { type: "line", text: "**Réponse attendue :** « *Écriture* est formé par **suffixation** : le radical *écrit-* (du verbe écrire) reçoit le suffixe *-ure*, qui marque le résultat et transforme le verbe en nom. Le mot désigne l'acte d'écrire et son résultat ; dans la phrase, il devient une condition vitale de l'existence. Mots de la même famille : *écrire*, *écrivain*, *réécriture*. »" },
               ],
@@ -737,7 +737,7 @@ export const ficheFormationDesMots: Fiche = {
               enonce: "« Camille travaille le bois brut, trop sinueux, avec une dégauchisseuse. »",
               question: "« dégauchisseuse » n'est pas courant. Montrez comment l'analyse morphologique et le contexte permettent d'en inférer le sens.",
               correction: [
-                { type: "line", text: "**Analyse :** dérivation — préfixe **dé-** (action corrective) + radical **gauch-** (gauchir : être tordu, sinueux) + suffixe **-euse** (nom d'outil, comme perceuse). L'analyse suggère un outil qui « dégauchit », qui redresse ce qui est tordu." },
+                { type: "line", text: "**Analyse :** dérivation, préfixe **dé-** (action corrective) + radical **gauch-** (gauchir : être tordu, sinueux) + suffixe **-euse** (nom d'outil, comme perceuse). L'analyse suggère un outil qui « dégauchit », qui redresse ce qui est tordu." },
                 { type: "line", text: "Le contexte confirme : le bois est « sinueux » et l'outil sert à le travailler." },
                 { type: "line", text: "**Réponse attendue :** « En décomposant *dé-* (action corrective) + *gauch-* (gauchir, être tordu) + *-euse* (nom d'outil), j'infère qu'une *dégauchisseuse* est un outil qui redresse le bois tordu. Le contexte le confirme : le bois est *sinueux* et l'outil sert à le travailler. »" },
               ],
@@ -763,7 +763,7 @@ export const ficheFormationDesMots: Fiche = {
               enonce: "« Ce savoir-faire est irremplaçable dans le monde artisanal. »",
               question: "Analysez la formation de l'adjectif « irremplaçable » : procédé, segmentation, sens de chaque morphème, sens global.",
               correction: [
-                { type: "line", text: "**Analyse :** dérivation affixale. Étape 1 — radical **remplac-** (verbe remplacer) + suffixe **-able** (possibilité) → remplaçable. Étape 2 — préfixe **ir-** (allomorphe de in- devant r, négation) → irremplaçable. Classe conservée : adjectif → adjectif. Le doublement du r vient de l'assimilation du préfixe." },
+                { type: "line", text: "**Analyse :** dérivation affixale. Étape 1 : radical **remplac-** (verbe remplacer) + suffixe **-able** (possibilité) → remplaçable. Étape 2 : préfixe **ir-** (allomorphe de in- devant r, négation) → irremplaçable. Classe conservée : adjectif → adjectif. Le doublement du r vient de l'assimilation du préfixe." },
                 { type: "formulationCrpe", text: "« *Irremplaçable* est un adjectif formé par **dérivation** : sur le verbe *remplacer*, le suffixe *-able* (possibilité) donne *remplaçable*, puis le préfixe négatif *ir-* (allomorphe de *in-* devant r) donne *irremplaçable*. La classe reste l'adjectif. Le mot signifie *qu'on ne peut pas remplacer*. »" },
               ],
             },

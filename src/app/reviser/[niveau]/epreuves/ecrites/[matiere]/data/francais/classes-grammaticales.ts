@@ -321,7 +321,7 @@ export const ficheClassesGrammaticales: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Quelques formes très fréquentes recouvrent **plusieurs natures possibles** : le dictionnaire les range sous plusieurs classes. Le mot ne « change » pas de nature tout seul — c'est **l'emploi dans la phrase** qui révèle laquelle de ces natures est réalisée. La méthode est toujours la même : **regarder ce qui précède et ce qui suit le mot** avant de conclure.",
+                  text: "Quelques formes très fréquentes recouvrent **plusieurs natures possibles** : le dictionnaire les range sous plusieurs classes. Le mot ne « change » pas de nature tout seul : c'est **l'emploi dans la phrase** qui révèle laquelle de ces natures est réalisée. La méthode est toujours la même : **regarder ce qui précède et ce qui suit le mot** avant de conclure.",
                 },
                 {
                   type: "highlightBox",

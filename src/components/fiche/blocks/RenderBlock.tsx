@@ -6,6 +6,7 @@ import { AutoEvalChecklist } from "../AutoEvalChecklist";
 import { MindmapLite } from "../MindmapLite";
 import { QuizBlock } from "../QuizBlock";
 import { MatchGame } from "../MatchGame";
+import { ExamRunner } from "../ExamRunner";
 import type { Block, Step } from "../types";
 
 type RenderBlockProps = {
@@ -540,6 +541,9 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
 
     case "matchGame":
       return <MatchGame block={block} ficheSlug={ficheSlug} />;
+
+    case "examRunner":
+      return <ExamRunner block={block} ficheSlug={ficheSlug} />;
 
     case "sommaireApercu":
       return (
