@@ -666,12 +666,6 @@ export const ficheClassesGrammaticalesV2: Fiche = {
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              text: "**Appliquez maintenant ce que vous venez d'apprendre.** Répondez à chaque question, confrontez votre réponse à la correction, et montez en difficulté à votre rythme. C'est aussi l'occasion de situer vos acquis.",
-            },
-            {
               type: "exerciceBank",
               title: "Classes grammaticales",
               savoirFaire: SAVOIR_FAIRE,

@@ -81,8 +81,9 @@ export function ExerciceBank({ block, ficheSlug }: { block: ExerciceBankData; fi
 
       <div className="bg-base-100 px-5 py-5 flex flex-col gap-4">
         <p className="text-sm text-base-content/70 leading-relaxed">
-          Trois niveaux, des bases au niveau expert. Pour chaque question : rédigez votre réponse, comparez-la au corrigé, puis
-          auto-évaluez-vous. Peu d&apos;exercices, mais choisis, pour faire le point sur vos acquis.
+          Appliquez ce que vous venez d&apos;apprendre. Trois niveaux, des bases au niveau expert : pour chaque question, rédigez
+          votre réponse, comparez-la au corrigé, puis auto-évaluez-vous. Peu d&apos;exercices, mais choisis, pour faire le point sur
+          vos acquis et monter en difficulté à votre rythme.
         </p>
 
         {/* Choix du niveau */}
