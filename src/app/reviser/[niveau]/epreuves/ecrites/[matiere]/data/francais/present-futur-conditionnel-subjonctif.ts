@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const fichePresentFuturConditionnelSubjonctif: Fiche = {
   slug: "present-futur-conditionnel-subjonctif",
   matiere: "francais",
-  numero: 8,
+  numero: 9,
   partie: "Partie 1 : Le verbe",
   title: "Présent, futur, conditionnel et subjonctif",
   subtitle:
@@ -75,7 +75,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Le présent, le futur, le conditionnel et le subjonctif complètent le système verbal. Deux difficultés dominent les copies : confondre conditionnel et imparfait, et employer l'indicatif à la place du subjonctif. Cette fiche donne les valeurs précises et les formules de réponse jury. L'identification de la forme (terminaisons, test du « r ») relève de la notion 6.",
+              text: "Le présent, le futur, le conditionnel et le subjonctif complètent le système verbal. Deux difficultés dominent les copies : confondre conditionnel et imparfait, et employer l'indicatif à la place du subjonctif. Cette fiche donne les valeurs précises et les formules de réponse jury. L'identification de la forme (terminaisons, test du « r ») relève de la notion 7.",
             },
             {
               type: "subsection",
@@ -185,7 +185,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                         "Conditionnel présent : terminaison avec « r » (-rais, -rait, -rions) → « nous serions »",
                         "Imparfait : terminaison sans « r » (-ais, -ait, -ions) → « nous étions »",
                       ],
-                      note: "Les deux sont des temps de l'indicatif. Le « r » est la marque du conditionnel présent (voir notion 6 pour l'identification de la forme).",
+                      note: "Les deux sont des temps de l'indicatif. Le « r » est la marque du conditionnel présent (voir notion 7 pour l'identification de la forme).",
                     },
                   ],
                 },
@@ -797,7 +797,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                   type: "formulationCrpe",
                   text: "« *serait* est au conditionnel présent (temps de l'indicatif), à valeur de fait non confirmé : il présente l'information avec prudence, comme non vérifiée par l'énonciateur. »",
                 },
-                { type: "note", text: "💡 Test de la forme (« nous serions » → -rions) : voir notion 6." },
+                { type: "note", text: "💡 Test de la forme (« nous serions » → -rions) : voir notion 7." },
               ],
             },
             {
@@ -980,7 +980,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
                 },
                 {
                   title: "Renvoi",
-                  lines: ["Identifier la forme (terminaisons)", "→ notion 6"],
+                  lines: ["Identifier la forme (terminaisons)", "→ notion 7"],
                   variant: "purple",
                   dashed: true,
                 },

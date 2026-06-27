@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const fichePhonologie: Fiche = {
   slug: "phonologie",
   matiere: "francais",
-  numero: 15,
+  numero: 16,
   partie: "Partie 1 : Grammaire du texte et du discours",
   title: "La phonologie",
   subtitle:
@@ -1061,7 +1061,7 @@ export const fichePhonologie: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Homophones → notion 12", "Formation des mots → notion 16"],
+                  lines: ["Homophones → notion 13", "Formation des mots → notion 17"],
                   variant: "purple",
                   dashed: true,
                 },

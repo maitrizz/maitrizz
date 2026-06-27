@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const ficheRelationsSemantiques: Fiche = {
   slug: "relations-semantiques",
   matiere: "francais",
-  numero: 17,
+  numero: 18,
   partie: "Partie 2 : Lexique",
   title: "Les relations sémantiques",
   subtitle:
@@ -197,7 +197,7 @@ export const ficheRelationsSemantiques: Fiche = {
                 {
                   type: "comparisonGrid",
                   rows: [
-                    { label: "Champ lexical (un thème, plusieurs mots)", good: "Tous les mots d'un texte liés à un même thème : nuit, ombre, obscur, lune… (voir la notion 13)" },
+                    { label: "Champ lexical (un thème, plusieurs mots)", good: "Tous les mots d'un texte liés à un même thème : nuit, ombre, obscur, lune… (voir la notion 14)" },
                     { label: "Champ sémantique (un mot, plusieurs sens)", good: "Tous les sens d'un même mot : « vol » = déplacement aérien / larcin / nuée d'oiseaux" },
                   ],
                 },
@@ -907,7 +907,7 @@ export const ficheRelationsSemantiques: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Champ lexical → notion 13", "Formation des mots → notion 16", "Figures et registres → notion 18"],
+                  lines: ["Champ lexical → notion 14", "Formation des mots → notion 17", "Figures et registres → notion 19"],
                   variant: "purple",
                   dashed: true,
                 },

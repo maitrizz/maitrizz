@@ -15,7 +15,7 @@ const OBJECTIFS = [
 export const ficheHomophonesGrammaticaux: Fiche = {
   slug: "homophones-grammaticaux",
   matiere: "francais",
-  numero: 12,
+  numero: 13,
   partie: "Partie 1 : Orthographe grammaticale",
   title: "Les homophones grammaticaux",
   subtitle:

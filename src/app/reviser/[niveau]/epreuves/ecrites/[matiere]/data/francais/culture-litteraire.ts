@@ -6,7 +6,7 @@ import type { Fiche } from "@/components/fiche/types";
  *
  * Recueil de références, pour donner aux candidats de la matière à mobiliser
  * en Partie 3 (voir reference_crpe_partie3_nature en mémoire). La méthode
- * (citer / intégrer / relier une référence) est dans la notion 19.
+ * (citer / intégrer / relier une référence) est dans la notion 20.
  *
  * Le recueil inclut aussi des références non écrites (cinéma, peinture,
  * chanson, théâtre) : recevables au titre de « votre culture » (surtout au
@@ -38,7 +38,7 @@ function ficheReferentielCulturel(): Fiche {
   return {
     slug: "culture-litteraire",
     matiere: "francais",
-    numero: 20,
+    numero: 21,
     partie: "Partie 3 : Développement rédigé",
     title: "Références culturelles et littéraires",
     subtitle:
@@ -70,7 +70,7 @@ function ficheReferentielCulturel(): Fiche {
                 text:
                   "En Partie 3, la consigne attend que vous appuyiez votre réflexion sur vos lectures. La vraie difficulté n'est pas de connaître des œuvres : c'est de retrouver vite, le jour de l'épreuve, celle qui éclaire la question posée, et de savoir l'employer. " +
                   "Ce recueil sert à cela. Les œuvres sont **classées par grands thèmes** du concours ; pour chacune, une carte donne un résumé, des idées à défendre et une formulation prête à adapter. " +
-                  "Le jour J, reliez votre référence à votre idée selon la méthode de la [notion 19](fiche:produire-le-developpement).",
+                  "Le jour J, reliez votre référence à votre idée selon la méthode de la [notion 20](fiche:produire-le-developpement).",
               },
               {
                 type: "subsection",
@@ -113,8 +113,8 @@ function ficheReferentielCulturel(): Fiche {
                     cards: [
                       { title: "Le récit", definition: "Raconte une histoire : narrateur, personnages, actions.", exemples: ["Roman, nouvelle, conte, récit autobiographique."], test: "Repères : qui raconte (point de vue), à quel temps, dans quel ordre." },
                       { title: "Le théâtre", definition: "Texte destiné à être joué : dialogue, didascalies, double énonciation.", exemples: ["Tragédie, comédie, drame."], test: "Repères : répliques, didascalies, ce que sait le spectateur." },
-                      { title: "La poésie", definition: "Travaille la forme et les images : rythme, sonorités, figures.", exemples: ["Poème en vers, poème en prose."], test: "Repères : disposition, rythme, sonorités, figures (notion 18)." },
-                      { title: "Le texte d'idées", definition: "Défend un point de vue : essai, article, lettre, discours.", exemples: ["Essai, tribune, discours, lettre ouverte."], test: "Repères : thèse, arguments, exemples, marques de l'énonciateur (notion 14)." },
+                      { title: "La poésie", definition: "Travaille la forme et les images : rythme, sonorités, figures.", exemples: ["Poème en vers, poème en prose."], test: "Repères : disposition, rythme, sonorités, figures (notion 19)." },
+                      { title: "Le texte d'idées", definition: "Défend un point de vue : essai, article, lettre, discours.", exemples: ["Essai, tribune, discours, lettre ouverte."], test: "Repères : thèse, arguments, exemples, marques de l'énonciateur (notion 15)." },
                     ],
                   },
                   {
@@ -122,7 +122,7 @@ function ficheReferentielCulturel(): Fiche {
                     variant: "info",
                     icon: "💡",
                     title: "Genre n'est pas registre",
-                    text: "Le **genre** est la catégorie (récit, théâtre, poésie, texte d'idées) ; le **registre** est le ton (lyrique, épique, pathétique, comique, ironique). Les registres et figures relèvent de la [notion 18](fiche:figures-de-style-registres).",
+                    text: "Le **genre** est la catégorie (récit, théâtre, poésie, texte d'idées) ; le **registre** est le ton (lyrique, épique, pathétique, comique, ironique). Les registres et figures relèvent de la [notion 19](fiche:figures-de-style-registres).",
                   },
                 ],
               },
@@ -160,7 +160,7 @@ function ficheReferentielCulturel(): Fiche {
                     variant: "warning",
                     icon: "⚠️",
                     title: "Relier, jamais plaquer",
-                    text: "Citer une œuvre sans la relier (« Cela me fait penser à 1984 d'Orwell. ») ne démontre rien. C'est l'**analyse qui relie** la référence à l'idée et à la question qui fait l'apport, pas le nom cité. On adapte toujours la « formulation type » au sujet, on ne la recopie pas. La méthode complète est à la [notion 19](fiche:produire-le-developpement).",
+                    text: "Citer une œuvre sans la relier (« Cela me fait penser à 1984 d'Orwell. ») ne démontre rien. C'est l'**analyse qui relie** la référence à l'idée et à la question qui fait l'apport, pas le nom cité. On adapte toujours la « formulation type » au sujet, on ne la recopie pas. La méthode complète est à la [notion 20](fiche:produire-le-developpement).",
                   },
                 ],
               },
@@ -1344,7 +1344,7 @@ function ficheReferentielCulturel(): Fiche {
                 variant: "info",
                 icon: "💡",
                 title: "Comment s'en servir le jour J",
-                text: "Repérez la notion clé de la question, ouvrez le thème correspondant, choisissez UNE œuvre que vous connaissez vraiment, adaptez sa **formulation type** à la question posée et reliez-la à votre idée selon la méthode de la [notion 19](fiche:produire-le-developpement). Une référence sûre et bien reliée vaut mieux qu'une longue liste.",
+                text: "Repérez la notion clé de la question, ouvrez le thème correspondant, choisissez UNE œuvre que vous connaissez vraiment, adaptez sa **formulation type** à la question posée et reliez-la à votre idée selon la méthode de la [notion 20](fiche:produire-le-developpement). Une référence sûre et bien reliée vaut mieux qu'une longue liste.",
               },
             ],
           },

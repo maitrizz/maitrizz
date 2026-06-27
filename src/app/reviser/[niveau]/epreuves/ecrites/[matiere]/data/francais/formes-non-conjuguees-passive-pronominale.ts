@@ -12,7 +12,7 @@ const OBJECTIFS = [
 export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
   slug: "formes-non-conjuguees-passive-pronominale",
   matiere: "francais",
-  numero: 9,
+  numero: 10,
   partie: "Partie 1 : Le verbe",
   title: "Infinitif, participes et gérondif",
   subtitle:
@@ -909,7 +909,7 @@ export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Subordonnées infinitive / participiale → notion 5", "Temps composés → notion 6", "Accord du participe passé → notion 11"],
+                  lines: ["Subordonnées infinitive / participiale → notion 5", "Temps composés → notion 7", "Accord du participe passé → notion 12"],
                   variant: "purple",
                   dashed: true,
                 },

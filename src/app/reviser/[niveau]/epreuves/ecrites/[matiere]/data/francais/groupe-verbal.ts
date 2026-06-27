@@ -239,7 +239,7 @@ export const ficheGroupeVerbal: Fiche = {
                         "**À sens passif :** « Ce livre **se vend** bien » : il est bien vendu",
                         "**À sens actif :** « Elle **se souvient** » : verbe essentiellement pronominal",
                       ],
-                      piege: "Le pronom réfléchi « se » peut être COD ou COI : « Elle se lave » (se = COD) mais « Elle se lave les mains » (se = COI, les mains = COD). Cette distinction commande l'accord du participe passé, traité dans la [notion 11 sur l'accord du participe passé](fiche:accord-participe-passe).",
+                      piege: "Le pronom réfléchi « se » peut être COD ou COI : « Elle se lave » (se = COD) mais « Elle se lave les mains » (se = COI, les mains = COD). Cette distinction commande l'accord du participe passé, traité dans la [notion 12 sur l'accord du participe passé](fiche:accord-participe-passe).",
                       test: "Pour analyser « se », retrouver la construction du verbe : laver quelqu'un → COD ; parler à quelqu'un → COI. Ce test ne s'applique pas mécaniquement aux verbes essentiellement pronominaux.",
                     },
                     {
@@ -295,7 +295,7 @@ export const ficheGroupeVerbal: Fiche = {
                   blocks: [
                     {
                       type: "paragraph",
-                      text: "Dans « Elle **fait travailler** ses élèves », ce n'est pas elle qui travaille : elle fait accomplir l'action par ses élèves. On appelle cela la **construction factitive**. Pour le concours, retenez surtout que « faire + infinitif » s'analyse comme un seul noyau verbal : « fait travailler ». L'infinitif « travailler » n'est donc pas COD de « faire ».\n\nLe verbe **laisser** et les verbes de perception (**voir, entendre, sentir, regarder**) fonctionnent de façon voisine avec un infinitif : « Elle **laisse partir** les invités », « J'ai **vu se rouvrir** les portes ». On parle alors de proposition infinitive ou de noyau verbal complexe ; ces analyses sont reprises dans la [notion 9 sur les formes non conjuguées](fiche:formes-non-conjuguees-passive-pronominale).",
+                      text: "Dans « Elle **fait travailler** ses élèves », ce n'est pas elle qui travaille : elle fait accomplir l'action par ses élèves. On appelle cela la **construction factitive**. Pour le concours, retenez surtout que « faire + infinitif » s'analyse comme un seul noyau verbal : « fait travailler ». L'infinitif « travailler » n'est donc pas COD de « faire ».\n\nLe verbe **laisser** et les verbes de perception (**voir, entendre, sentir, regarder**) fonctionnent de façon voisine avec un infinitif : « Elle **laisse partir** les invités », « J'ai **vu se rouvrir** les portes ». On parle alors de proposition infinitive ou de noyau verbal complexe ; ces analyses sont reprises dans la [notion 10 sur les formes non conjuguées](fiche:formes-non-conjuguees-passive-pronominale).",
                     },
                   ],
                 },
@@ -499,7 +499,7 @@ export const ficheGroupeVerbal: Fiche = {
                   number: "3",
                   text: "**Retrouver la construction du verbe pour analyser “se”.** On dit *écrire à quelqu'un* : la construction est indirecte, donc le pronom *se* est **COI**, et non COD.",
                   example: { lines: ["*écrire **à** quelqu'un* → *se* = COI (et non COD)"] },
-                  warn: "⚠️ Le geste décisif : *se* n'est pas automatiquement COD. On retrouve toujours la construction du verbe (*laver quelqu'un* → COD ; *écrire à quelqu'un* → COI). Cette analyse commande l'accord du participe passé, traité dans la [notion 11](fiche:accord-participe-passe) : ici *écrit* reste invariable, car *se* est COI.",
+                  warn: "⚠️ Le geste décisif : *se* n'est pas automatiquement COD. On retrouve toujours la construction du verbe (*laver quelqu'un* → COD ; *écrire à quelqu'un* → COI). Cette analyse commande l'accord du participe passé, traité dans la [notion 12](fiche:accord-participe-passe) : ici *écrit* reste invariable, car *se* est COI.",
                 },
                 {
                   number: "✅",

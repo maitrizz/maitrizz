@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const ficheAccordParticipePasse: Fiche = {
   slug: "accord-participe-passe",
   matiere: "francais",
-  numero: 11,
+  numero: 12,
   partie: "Partie 1 : Orthographe grammaticale",
   title: "L'accord du participe passé",
   subtitle:
@@ -80,7 +80,7 @@ export const ficheAccordParticipePasse: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Le participe passé est une **forme non conjuguée** du verbe (voir la notion 9). Son accord dépend entièrement de son **emploi** : seul, avec être, ou avec avoir. La règle générale des accords (nom noyau donneur, groupe sujet) a été vue à la notion 10 ; ici, on l'applique au cas particulier du participe passé. La confusion entre infinitif et participe passé et les erreurs sur les pronominaux sont des fautes fréquentes et lourdement sanctionnées au concours.",
+              text: "Le participe passé est une **forme non conjuguée** du verbe (voir la notion 10). Son accord dépend entièrement de son **emploi** : seul, avec être, ou avec avoir. La règle générale des accords (nom noyau donneur, groupe sujet) a été vue à la notion 11 ; ici, on l'applique au cas particulier du participe passé. La confusion entre infinitif et participe passé et les erreurs sur les pronominaux sont des fautes fréquentes et lourdement sanctionnées au concours.",
             },
             {
               type: "formulaBlock",
@@ -113,7 +113,7 @@ export const ficheAccordParticipePasse: Fiche = {
                         "« les yeux **baissés** » : épithète liée de « yeux » (masculin pluriel)",
                         "« **Épuisée**, elle s'endormit » : épithète détachée du sujet « elle » (féminin singulier)",
                       ],
-                      test: "Accord avec le nom noyau, comme un adjectif qualificatif (voir la notion 10).",
+                      test: "Accord avec le nom noyau, comme un adjectif qualificatif (voir la notion 11).",
                     },
                     {
                       title: "Attribut du sujet",
@@ -134,7 +134,7 @@ export const ficheAccordParticipePasse: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Avec l'auxiliaire **être**, le participe passé s'accorde avec le **groupe sujet**, en genre et en nombre. Cela concerne les temps composés conjugués avec être (passé composé, plus-que-parfait, futur antérieur…) et la voix passive (voir la notion 9).",
+                  text: "Avec l'auxiliaire **être**, le participe passé s'accorde avec le **groupe sujet**, en genre et en nombre. Cela concerne les temps composés conjugués avec être (passé composé, plus-que-parfait, futur antérieur…) et la voix passive (voir la notion 10).",
                 },
                 {
                   type: "table",
@@ -951,7 +951,7 @@ export const ficheAccordParticipePasse: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Formes non conjuguées → notion 9", "Accords GN / GV → notion 10", "Homophones → notion 12"],
+                  lines: ["Formes non conjuguées → notion 10", "Accords GN / GV → notion 11", "Homophones → notion 13"],
                   variant: "purple",
                   dashed: true,
                 },

@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const ficheAccordsGnGv: Fiche = {
   slug: "accords-gn-gv",
   matiere: "francais",
-  numero: 10,
+  numero: 11,
   partie: "Partie 1 : Orthographe grammaticale",
   title: "Les accords dans le GN et le GV",
   subtitle:
@@ -75,7 +75,7 @@ export const ficheAccordsGnGv: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "L'accord est un mécanisme par lequel un mot (le **receveur**) reçoit le genre et le nombre d'un autre (le **donneur**). Dans le GN, le donneur est le nom noyau ; dans le GV, c'est le groupe sujet. Ces accords sont une source d'erreurs très fréquente dans les copies, y compris dans la Partie 3. L'accord du participe passé (avec être, avec avoir, pronominaux) fait l'objet d'une notion à part : la notion 11.",
+              text: "L'accord est un mécanisme par lequel un mot (le **receveur**) reçoit le genre et le nombre d'un autre (le **donneur**). Dans le GN, le donneur est le nom noyau ; dans le GV, c'est le groupe sujet. Ces accords sont une source d'erreurs très fréquente dans les copies, y compris dans la Partie 3. L'accord du participe passé (avec être, avec avoir, pronominaux) fait l'objet d'une notion à part : la notion 12.",
             },
             {
               type: "subsection",
@@ -589,7 +589,7 @@ export const ficheAccordsGnGv: Fiche = {
                 { type: "line", text: "Groupe sujet « Les premières neiges de l'hiver » (noyau « neiges », féminin pluriel) → « avaient recouvert » à la 3e personne du pluriel." },
                 { type: "line", text: "« premières » : épithète liée de « neiges » (féminin pluriel)." },
                 { type: "line", text: "« silencieuse » : épithète liée de « plaine » (féminin singulier)." },
-                { type: "note", text: "💡 L'accord du participe passé « recouvert » (avec l'auxiliaire « avoir ») relève de la notion 11." },
+                { type: "note", text: "💡 L'accord du participe passé « recouvert » (avec l'auxiliaire « avoir ») relève de la notion 12." },
               ],
             },
             {
@@ -868,7 +868,7 @@ export const ficheAccordsGnGv: Fiche = {
                 },
                 {
                   title: "Renvoi",
-                  lines: ["Accord du participe passé", "(être, avoir, pronominaux)", "→ notion 11"],
+                  lines: ["Accord du participe passé", "(être, avoir, pronominaux)", "→ notion 12"],
                   variant: "purple",
                   dashed: true,
                 },

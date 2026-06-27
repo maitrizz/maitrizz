@@ -75,7 +75,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Identifier une fonction, c'est comprendre le rôle d'un mot ou d'un groupe dans la phrase. Il n'y a pas de hasard : on suit toujours le même chemin, presque comme un algorithme, jusqu'à ce que les réflexes deviennent automatiques. Face à un groupe souligné, demandez-vous d'abord s'il dépend du verbe, d'un nom ou de l'ensemble de la phrase, puis affinez : sujet, complément du verbe, attribut, complément circonstanciel… Cette fiche porte sur la **fonction** ; la **nature** a été travaillée dans la [notion 1](classes-grammaticales).",
+              text: "Identifier une fonction, c'est comprendre le rôle d'un mot ou d'un groupe dans la phrase. Il n'y a pas de hasard : on suit toujours le même chemin, presque comme un algorithme, jusqu'à ce que les réflexes deviennent automatiques. Face à un groupe souligné, demandez-vous d'abord s'il dépend du verbe, d'un nom ou de l'ensemble de la phrase, puis affinez : sujet, complément du verbe, attribut, complément circonstanciel… Cette fiche porte sur la **fonction** ; la **nature** a été travaillée dans la [notion 1](fiche:classes-grammaticales).",
             },
             {
               type: "subsection",
@@ -84,7 +84,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "La **nature** d'un mot ou d'un groupe correspond à ce qu'il est : nom, verbe, adjectif, groupe nominal… Elle est **stable** et ne change pas selon la phrase (voir la [notion 1](classes-grammaticales)).\n\nLa **fonction** syntaxique, elle, correspond à son **rôle dans la phrase** : sujet, complément, attribut… Elle **dépend du contexte** et peut varier. Un même groupe nominal peut par exemple être sujet dans « Le chat dort » et COD dans « Je regarde le chat ». Au concours, la réponse complète donne **toujours les deux** : nature ET fonction.",
+                  text: "La **nature** d'un mot ou d'un groupe correspond à ce qu'il est : nom, verbe, adjectif, groupe nominal… Elle est **stable** et ne change pas selon la phrase (voir la [notion 1](fiche:classes-grammaticales)).\n\nLa **fonction** syntaxique, elle, correspond à son **rôle dans la phrase** : sujet, complément, attribut… Elle **dépend du contexte** et peut varier. Un même groupe nominal peut par exemple être sujet dans « Le chat dort » et COD dans « Je regarde le chat ». Au concours, la réponse complète donne **toujours les deux** : nature ET fonction.",
                 },
               ],
             },

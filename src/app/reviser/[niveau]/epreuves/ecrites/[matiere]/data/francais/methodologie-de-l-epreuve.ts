@@ -282,7 +282,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           ["Analyser mode et temps d'un verbe", "Nommer le mode et le temps, justifier la valeur en contexte : « est à l'imparfait de l'indicatif, valeur de... »."],
                           ["Analyser une proposition subordonnée", "Nommer la nature (relative, conjonctive...) et la fonction (voir notion 05)."],
                           ["Justifier un accord, une terminaison", "Donner la règle appliquée et les éléments qui commandent l'accord (notions 10-11)."],
-                          ["Questions d'orthographe", "Appliquer la règle, distinguer les homophones par un critère de substitution (notion 12)."],
+                          ["Questions d'orthographe", "Appliquer la règle, distinguer les homophones par un critère de substitution (notion 13)."],
                         ],
                   },
                   ...(!l3
@@ -292,11 +292,11 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                           title: "Partie 2, Lexique : ce qu'on teste",
                           headers: ["Type de question", "Ce qu'on attend"],
                           rows: [
-                            ["Formation des mots", "Identifier préfixe, suffixe, radical, étymologie, et expliquer le sens apporté (notion 16)."],
-                            ["Sens contextuel d'un mot", "Expliquer le sens précis dans le contexte, distinguer sens propre et figuré (notion 17)."],
-                            ["Relations sémantiques", "Synonyme, antonyme, hyperonyme, champ lexical, avec justification (notion 17)."],
-                            ["Figures de style", "Identifier, nommer et expliquer l'effet produit dans le texte (notion 18)."],
-                            ["Registres", "Identifier le registre et le justifier par des indices textuels (notion 18)."],
+                            ["Formation des mots", "Identifier préfixe, suffixe, radical, étymologie, et expliquer le sens apporté (notion 17)."],
+                            ["Sens contextuel d'un mot", "Expliquer le sens précis dans le contexte, distinguer sens propre et figuré (notion 18)."],
+                            ["Relations sémantiques", "Synonyme, antonyme, hyperonyme, champ lexical, avec justification (notion 18)."],
+                            ["Figures de style", "Identifier, nommer et expliquer l'effet produit dans le texte (notion 19)."],
+                            ["Registres", "Identifier le registre et le justifier par des indices textuels (notion 19)."],
                           ],
                         },
                         {
@@ -355,8 +355,8 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                   {
                     type: "paragraph",
                     text: l3
-                      ? "La méthode pour ce développement est détaillée à la [notion 19](fiche:produire-le-developpement). Source : [sujets zéro du CRPE bac+3](https://www.devenirenseignant.gouv.fr/exemples-de-sujets-des-concours-externes-bac3-de-recrutement-d-enseignants-1405)."
-                      : "La méthode pour ce développement est détaillée à la [notion 19](fiche:produire-le-developpement). Source : [sujets et rapports des jurys du CRPE](https://www.devenirenseignant.gouv.fr/les-sujets-des-epreuves-ecrites-et-rapports-des-jurys-des-crpe-1163).",
+                      ? "La méthode pour ce développement est détaillée à la [notion 20](fiche:produire-le-developpement). Source : [sujets zéro du CRPE bac+3](https://www.devenirenseignant.gouv.fr/exemples-de-sujets-des-concours-externes-bac3-de-recrutement-d-enseignants-1405)."
+                      : "La méthode pour ce développement est détaillée à la [notion 20](fiche:produire-le-developpement). Source : [sujets et rapports des jurys du CRPE](https://www.devenirenseignant.gouv.fr/les-sujets-des-epreuves-ecrites-et-rapports-des-jurys-des-crpe-1163).",
                   },
                 ],
               },
@@ -592,7 +592,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                   },
                   {
                     type: "paragraph",
-                    text: "Pour le développement de la Partie 3 (introduction, transitions, conclusion), les formulations sont détaillées à la [notion 19](fiche:produire-le-developpement).",
+                    text: "Pour le développement de la Partie 3 (introduction, transitions, conclusion), les formulations sont détaillées à la [notion 20](fiche:produire-le-developpement).",
                   },
                 ],
               },

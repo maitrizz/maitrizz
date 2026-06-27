@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const ficheFormationDesMots: Fiche = {
   slug: "formation-des-mots",
   matiere: "francais",
-  numero: 16,
+  numero: 17,
   partie: "Partie 2 : Lexique",
   title: "La formation des mots",
   subtitle:
@@ -983,7 +983,7 @@ export const ficheFormationDesMots: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Phonologie → notion 15", "Champ lexical → notion 17", "Relations sémantiques → notion 17"],
+                  lines: ["Phonologie → notion 16", "Champ lexical → notion 18", "Relations sémantiques → notion 18"],
                   variant: "purple",
                   dashed: true,
                 },

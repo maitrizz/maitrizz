@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const ficheFiguresRegistres: Fiche = {
   slug: "figures-de-style-registres",
   matiere: "francais",
-  numero: 18,
+  numero: 19,
   partie: "Partie 2 : Lexique",
   title: "Les figures de style et les registres",
   subtitle:

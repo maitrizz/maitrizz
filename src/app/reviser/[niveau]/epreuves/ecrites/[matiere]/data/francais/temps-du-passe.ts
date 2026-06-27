@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const ficheTempsDuPasse: Fiche = {
   slug: "temps-du-passe",
   matiere: "francais",
-  numero: 7,
+  numero: 8,
   partie: "Partie 1 : Le verbe",
   title: "Les temps du passé",
   subtitle:
@@ -75,7 +75,7 @@ export const ficheTempsDuPasse: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Dans la notion 6, vous avez appris à identifier le mode et le temps d'un verbe. Ici, vous allez déterminer la **valeur des temps du passé dans leur contexte** : description, habitude, événement ou antériorité.",
+              text: "Dans la notion 7, vous avez appris à identifier le mode et le temps d'un verbe. Ici, vous allez déterminer la **valeur des temps du passé dans leur contexte** : description, habitude, événement ou antériorité.",
             },
             {
               type: "subsection",
@@ -97,7 +97,7 @@ export const ficheTempsDuPasse: Fiche = {
                         "[verbe] est à [temps] de l'indicatif, valeur [nom de la valeur] : il exprime [ce qu'il fait dans le texte].",
                         "Exemple : « regardait » est à l'imparfait de l'indicatif, valeur descriptive : il exprime une action en cours dans le passé qui forme le décor de la scène.",
                       ],
-                      note: "L'identification du temps (imparfait, passé simple…) se justifie comme en notion 6. Ici, l'essentiel est la valeur, formulée précisément.",
+                      note: "L'identification du temps (imparfait, passé simple…) se justifie comme en notion 7. Ici, l'essentiel est la valeur, formulée précisément.",
                     },
                   ],
                 },
@@ -297,7 +297,7 @@ export const ficheTempsDuPasse: Fiche = {
               badge: "Auxiliaire décisif",
               faux: "« avait relu » analysé comme un passé composé.",
               vrai: "L'auxiliaire « avait » est à l'imparfait : c'est un **plus-que-parfait** (le passé composé aurait l'auxiliaire au présent, « a relu »).",
-              methode: "Repérer d'abord le temps de l'auxiliaire (voir notion 6), puis nommer la valeur d'antériorité.",
+              methode: "Repérer d'abord le temps de l'auxiliaire (voir notion 7), puis nommer la valeur d'antériorité.",
             },
             {
               type: "piegeCard",
@@ -356,7 +356,7 @@ export const ficheTempsDuPasse: Fiche = {
               steps: [
                 {
                   number: "1",
-                  text: "**Identifier le temps** (imparfait, passé simple, passé composé, plus-que-parfait), comme en notion 6.",
+                  text: "**Identifier le temps** (imparfait, passé simple, passé composé, plus-que-parfait), comme en notion 7.",
                   example: { lines: ["« regardait » → imparfait"] },
                 },
                 {
@@ -821,7 +821,7 @@ export const ficheTempsDuPasse: Fiche = {
                   type: "formulationCrpe",
                   text: "« *avait relu* est au plus-que-parfait de l'indicatif, à valeur d'antériorité : il exprime une action accomplie avant un autre moment du passé, ici avant de poster la lettre. »",
                 },
-                { type: "note", text: "💡 Identification de l'auxiliaire (« avait » = imparfait → plus-que-parfait) : voir notion 6." },
+                { type: "note", text: "💡 Identification de l'auxiliaire (« avait » = imparfait → plus-que-parfait) : voir notion 7." },
               ],
             },
             {
@@ -1007,7 +1007,7 @@ export const ficheTempsDuPasse: Fiche = {
                 },
                 {
                   title: "Renvoi",
-                  lines: ["Identifier mode et temps", "→ notion 6"],
+                  lines: ["Identifier mode et temps", "→ notion 7"],
                   variant: "purple",
                   dashed: true,
                 },

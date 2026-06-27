@@ -44,7 +44,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
   return {
     slug: "produire-le-developpement",
     matiere: "francais",
-    numero: 19,
+    numero: 20,
     partie: "Partie 3 : Développement rédigé",
     title: "Produire le développement rédigé",
     subtitle:
@@ -658,7 +658,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
                   { title: "Arguments", lines: ["Appui texte (citation)", "Appui culture (œuvre, auteur)", "Une analyse qui relie"], variant: "green" },
                   { title: "Rédiger", lines: ["Intro : amorce, problématique, annonce", "Paragraphe : idée, appui, analyse", "Conclusion : bilan, ouverture"], variant: "green" },
                   { title: "Pièges classiques", lines: ["Commentaire de procédés", "Culture absente ou plaquée", "Paraphrase du texte"], variant: "yellow" },
-                  { title: "Renvois", lines: ["Cohérence, connecteurs → notion 13", "Procédés, lexique → notions 16-18", "Culture et références → notion 20"], variant: "purple", dashed: true },
+                  { title: "Renvois", lines: ["Cohérence, connecteurs → notion 14", "Procédés, lexique → notions 16-18", "Culture et références → notion 21"], variant: "purple", dashed: true },
                 ],
               },
             ],
@@ -689,7 +689,7 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
   return {
     slug: "produire-le-developpement",
     matiere: "francais",
-    numero: 19,
+    numero: 20,
     partie: "Partie 3 : Développement rédigé",
     title: "Produire le développement rédigé",
     subtitle:
@@ -1293,7 +1293,7 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
                   { title: "Arguments", lines: ["Appui texte (citation)", "Lecture en appoint", "Une analyse qui relie"], variant: "green" },
                   { title: "Rédiger bref", lines: ["Intro : amorce, problématique, annonce", "Paragraphe : idée, citation, analyse", "Conclusion : bilan, ouverture"], variant: "green" },
                   { title: "Pièges classiques", lines: ["Paraphrase / commentaire", "Hors-sujet (oublier le texte)", "Développement inachevé"], variant: "yellow" },
-                  { title: "Renvois", lines: ["Cohérence, connecteurs → notion 13", "Procédés, lexique → notions 16-18", "Culture et références → notion 20"], variant: "purple", dashed: true },
+                  { title: "Renvois", lines: ["Cohérence, connecteurs → notion 14", "Procédés, lexique → notions 16-18", "Culture et références → notion 21"], variant: "purple", dashed: true },
                 ],
               },
             ],

@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const ficheCoherenceTextuelle: Fiche = {
   slug: "coherence-textuelle",
   matiere: "francais",
-  numero: 13,
+  numero: 14,
   partie: "Partie 1 : Grammaire du texte et du discours",
   title: "La cohérence textuelle",
   subtitle:
@@ -118,7 +118,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                     },
                     {
                       title: "Reprise nominale infidèle",
-                      definition: "Le référent est repris par un autre mot (synonyme, hyperonyme, périphrase…). Voir les [relations sémantiques](fiche:relations-semantiques) (notion 17).",
+                      definition: "Le référent est repris par un autre mot (synonyme, hyperonyme, périphrase…). Voir les [relations sémantiques](fiche:relations-semantiques) (notion 18).",
                       exemples: [
                         "« un chien… **l'animal**… » (hyperonyme) ; « Victor Hugo… **le poète du peuple**… » (périphrase)",
                       ],
@@ -404,7 +404,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                 {
                   type: "callout",
                   variant: "warning",
-                  text: "⚠️ Pour les reprises nominales infidèles, penser aux [relations sémantiques](fiche:relations-semantiques) (synonyme, hyperonyme) : voir la notion 17.",
+                  text: "⚠️ Pour les reprises nominales infidèles, penser aux [relations sémantiques](fiche:relations-semantiques) (synonyme, hyperonyme) : voir la notion 18.",
                 },
               ],
             },
@@ -932,7 +932,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                   question: "Les types de reprise anaphorique ?",
                   answer:
                     "**Pronominale** : un pronom reprend l'antécédent (« le chien… il… »).\n**Nominale fidèle** : même nom, déterminant différent (« un enfant… cet enfant… »).\n**Nominale infidèle** : synonyme, hyperonyme, hyponyme, périphrase, nominalisation (« Hugo… le poète du peuple… »).",
-                  astuce: "💡 Les reprises infidèles s'appuient sur les relations sémantiques (notion 17).",
+                  astuce: "💡 Les reprises infidèles s'appuient sur les relations sémantiques (notion 18).",
                 },
                 {
                   question: "Thème et rhème ?",
@@ -997,7 +997,7 @@ export const ficheCoherenceTextuelle: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Relations sémantiques → notion 17", "Énonciation → notion 14"],
+                  lines: ["Relations sémantiques → notion 18", "Énonciation → notion 15"],
                   variant: "purple",
                   dashed: true,
                 },

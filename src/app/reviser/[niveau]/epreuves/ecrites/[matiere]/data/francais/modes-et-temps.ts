@@ -14,7 +14,7 @@ const OBJECTIFS = [
 export const ficheModesEtTemps: Fiche = {
   slug: "modes-et-temps",
   matiere: "francais",
-  numero: 6,
+  numero: 7,
   partie: "Partie 1 : Le verbe",
   title: "Modes et temps",
   subtitle:

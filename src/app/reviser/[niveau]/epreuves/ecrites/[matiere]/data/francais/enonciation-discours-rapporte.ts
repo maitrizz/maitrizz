@@ -15,7 +15,7 @@ const OBJECTIFS = [
 export const ficheEnonciationDiscoursRapporte: Fiche = {
   slug: "enonciation-discours-rapporte",
   matiere: "francais",
-  numero: 14,
+  numero: 15,
   partie: "Partie 1 : Grammaire du texte et du discours",
   title: "L'énonciation et le discours rapporté",
   subtitle:
@@ -973,7 +973,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                   question: "Discours ancré ou récit coupé : les indices ?",
                   answer:
                     "**Ancré** : je / tu, présent / futur, ici / maintenant / aujourd'hui. Essai, lettre, discours.\n**Récit coupé** : il / elle, passé simple / imparfait, ce jour-là / la veille. Roman, conte, fable.",
-                  astuce: "⚠️ Présent d'énonciation (le locuteur parle de maintenant) ≠ présent de narration (récit au passé, voir notion 7).",
+                  astuce: "⚠️ Présent d'énonciation (le locuteur parle de maintenant) ≠ présent de narration (récit au passé, voir notion 8).",
                 },
                 {
                   question: "Le DIL : comment le reconnaître à coup sûr ?",
@@ -1032,7 +1032,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Valeurs des temps → notion 7", "Cohérence textuelle → notion 13", "Phonologie → notion 15"],
+                  lines: ["Valeurs des temps → notion 8", "Cohérence textuelle → notion 14", "Phonologie → notion 16"],
                   variant: "purple",
                   dashed: true,
                 },
