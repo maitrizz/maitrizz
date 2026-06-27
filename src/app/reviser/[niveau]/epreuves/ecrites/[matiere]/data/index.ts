@@ -41,7 +41,7 @@ import { ficheTypesEtFormesDePhrase } from "./francais/types-et-formes-de-phrase
 import { ficheModesEtTemps } from "./francais/modes-et-temps";
 import { ficheTempsDuPasse } from "./francais/temps-du-passe";
 import { fichePresentFuturConditionnelSubjonctif } from "./francais/present-futur-conditionnel-subjonctif";
-import { ficheFormesNonConjugueesPassivePronominale } from "./francais/formes-non-conjuguees-passive-pronominale";
+import { ficheFormesNonConjuguees } from "./francais/formes-non-conjuguees";
 import { ficheAccordsGnGv } from "./francais/accords-gn-gv";
 import { ficheAccordParticipePasse } from "./francais/accord-participe-passe";
 import { ficheHomophonesGrammaticaux } from "./francais/homophones-grammaticaux";
@@ -126,7 +126,7 @@ const MATHEMATIQUES_L3: Fiche[] = [
 // Français : notions 01-19 communes L3/M2. La divergence commence à la
 // notion 20 (Partie 3) : les fiches propres à chaque niveau sont ajoutées
 // aux listes FRANCAIS_L3 / FRANCAIS_M2 ci-dessous.
-const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheTypesEtFormesDePhrase, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjugueesPassivePronominale, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesGrammaticaux, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres, ficheClassesGrammaticalesV2];
+const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheTypesEtFormesDePhrase, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjuguees, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesGrammaticaux, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres, ficheClassesGrammaticalesV2];
 
 const FRANCAIS_L3: Fiche[] = [
   ficheMethodologieL3,

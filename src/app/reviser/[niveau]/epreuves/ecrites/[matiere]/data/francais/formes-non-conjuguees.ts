@@ -9,8 +9,8 @@ const OBJECTIFS = [
   { id: "fv5", label: "Je rédige une réponse complète en donnant la nature, la construction et la fonction" },
 ];
 
-export const ficheFormesNonConjugueesPassivePronominale: Fiche = {
-  slug: "formes-non-conjuguees-passive-pronominale",
+export const ficheFormesNonConjuguees: Fiche = {
+  slug: "formes-non-conjuguees",
   matiere: "francais",
   numero: 10,
   partie: "Partie 1 : Le verbe",

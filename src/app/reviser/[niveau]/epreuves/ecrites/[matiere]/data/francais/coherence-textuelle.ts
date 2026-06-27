@@ -151,6 +151,11 @@ export const ficheCoherenceTextuelle: Fiche = {
                   caption: "Reconstituer une chaîne référentielle, c'est relier chaque reprise à un même antécédent et nommer son type.",
                   maxWidth: 620,
                 },
+                {
+                  type: "callout",
+                  variant: "info",
+                  text: "💡 **Anaphore associative** (rare) : une reprise peut désigner un élément simplement **associé** à ce qui précède, sans le reprendre directement. « Nous entrâmes dans **le village**. **L'église** était fermée. » « L'église » n'a pas d'antécédent exact : on la rattache au village par association. C'est un autre fil de cohésion, à côté de la chaîne référentielle.",
+                },
               ],
             },
             {

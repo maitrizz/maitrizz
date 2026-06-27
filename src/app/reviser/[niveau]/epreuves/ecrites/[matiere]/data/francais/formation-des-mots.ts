@@ -39,7 +39,7 @@ export const ficheFormationDesMots: Fiche = {
           blocks: [
             {
               type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
+              title: "Le programme en 5 étapes",
               intro:
                 "Comprendre comment un mot est formé, c'est comprendre son sens : chaque morphème porte une information. C'est la question la plus prévisible de la Partie 2.",
               items: [
@@ -62,6 +62,11 @@ export const ficheFormationDesMots: Fiche = {
                   number: "④",
                   title: "Étymons, doublets, familles",
                   text: "Mot populaire / mot savant, faux amis morphologiques, famille de mots et champ lexical.",
+                },
+                {
+                  number: "⑤",
+                  title: "Les autres procédés",
+                  text: "Abrègement, siglaison, mot-valise, emprunt : les formations plus brèves ou venues d'ailleurs.",
                 },
               ],
             },
@@ -306,6 +311,43 @@ export const ficheFormationDesMots: Fiche = {
                   icon: "⚠️",
                   title: "Faux amis morphologiques",
                   text: "Deux mots peuvent se ressembler sans partager le même étymon. « belladone » ressemble à bell- (guerre) mais vient de l'italien « bella donna » ; « acquérir » ressemble à aqua- (eau) mais vient de « acquirere » (obtenir). Toujours vérifier l'étymon avant de ranger un mot dans une famille (piège de l'exercice « intrus »).",
+                },
+              ],
+            },
+            {
+              type: "subsection",
+              number: "⑤",
+              title: "Les autres procédés de formation",
+              blocks: [
+                {
+                  type: "paragraph",
+                  text: "La dérivation et la composition ne sont pas les seules façons de fabriquer des mots. Quatre autres procédés, plus brefs ou venus d'ailleurs, sont à connaître.",
+                },
+                {
+                  type: "notionCardGrid",
+                  columns: 2,
+                  cards: [
+                    {
+                      title: "Abrègement (troncation)",
+                      definition: "Raccourcir un mot long ; la forme courte devient autonome.",
+                      exemples: ["**télé** (télévision), **prof** (professeur), **resto** (restaurant), **vélo** (vélocipède)"],
+                    },
+                    {
+                      title: "Siglaison",
+                      definition: "Former un mot avec les initiales d'un groupe de mots. **Sigle** : on épelle les lettres ; **acronyme** : on le prononce comme un mot.",
+                      exemples: ["Sigle : **SNCF**, **TGV**, **CRPE** · Acronyme : **OVNI**, **radar**, **sida**"],
+                    },
+                    {
+                      title: "Mot-valise",
+                      definition: "Fusionner deux mots en gardant une partie de chacun.",
+                      exemples: ["**franglais** (français + anglais), **alicament** (aliment + médicament), **courriel** (courrier + électronique)"],
+                    },
+                    {
+                      title: "Emprunt",
+                      definition: "Adopter un mot d'une autre langue, parfois adapté à l'orthographe française.",
+                      exemples: ["**week-end**, **football** (anglais) · **pizza** (italien) · **bazar** (persan)"],
+                    },
+                  ],
                 },
               ],
             },

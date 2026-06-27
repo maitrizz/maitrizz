@@ -23,7 +23,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | 07 | Modes et temps | ✅ | ✅ |
 | 08 | Temps du passé | ✅ | ✅ |
 | 09 | Présent / futur / conditionnel / subjonctif | ✅ | ✅ |
-| 10 | Formes passive et pronominale | ✅ | ✅ |
+| 10 | Formes verbales non conjuguées (infinitif, participe, gérondif) — la voix passive/pronominale est en notion 4 (GV) | ✅ | ✅ |
 | 11 | Accords dans le GN et le GV | ✅ | ✅ |
 | 12 | Accord du participe passé | ✅ | ✅ |
 | 13 | Les homophones grammaticaux (ponctuation déplacée en notion 5) | ✅ | ✅ |
@@ -31,7 +31,7 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 | 15 | Énonciation et discours rapporté | ✅ | ✅ |
 | 16 | Phonologie | ✅ | ✅ |
 
-> **Nouvelle notion 06 « Types et formes de phrase » (27/06/2026).** Issue de la comparaison avec le Grévisse de l'enseignant (compagnon CRPE) : la seule notion réellement absente du périmètre était les **types** (déclaratif, interrogatif, injonctif, exclamatif) et **formes** (négative, emphatique, impersonnelle) de phrase. Fiche au **modèle actuel** (le `GABARIT_NOTION.md` en labo réserve la nouvelle architecture à la notion 1). Périmètre tenu sans doublon : forme **passive** renvoyée à la notion 10, **interrogation indirecte** + **ponctuation** à la notion 5, **modalisation** (≠ type) à la notion 15. `slug: types-et-formes-de-phrase`, ajoutée à `FRANCAIS_COMMUN` (commune L3/M2).
+> **Nouvelle notion 06 « Types et formes de phrase » (27/06/2026).** Issue de la comparaison avec le Grévisse de l'enseignant (compagnon CRPE) : la seule notion réellement absente du périmètre était les **types** (déclaratif, interrogatif, injonctif, exclamatif) et **formes** (négative, emphatique, impersonnelle) de phrase. Fiche au **modèle actuel** (le `GABARIT_NOTION.md` en labo réserve la nouvelle architecture à la notion 1). Périmètre tenu sans doublon : forme **passive** renvoyée à la notion 4 (groupe verbal, où vit la voix passive), **interrogation indirecte** + **ponctuation** à la notion 5, **modalisation** (≠ type) à la notion 15. `slug: types-et-formes-de-phrase`, ajoutée à `FRANCAIS_COMMUN` (commune L3/M2).
 >
 > **Insérée en notion 06 (juste après Phrase complexe) avec renumérotation complète.** D'abord posée en `numero: 21` pour ne rien toucher, puis (à la demande, pour la cohérence du produit) **insérée à sa vraie place thématique** : toutes les fiches de numéro ≥ 6 décalées de +1 (champs `numero` ET mentions « notion N » en clair, ~60). Lexique = 17/18/19, Partie 3 = 20 (Produire) / 21 (Culture). Contrôle croisé « renvoi `[notion N](fiche:slug)` ↔ numéro réel du slug » : 100 % OK ; `tsc` OK ; hub affiché dans l'ordre 1→21.
 >

@@ -7,6 +7,7 @@ const OBJECTIFS = [
   { id: "fs3", label: "Je reconnais la personnification (attribut humain donné à un inanimé ou une abstraction)" },
   { id: "fs4", label: "Je connais les figures d'insistance et d'opposition : hyperbole, litote, antithèse, oxymore" },
   { id: "fs5", label: "Je distingue la litote (dire moins pour suggérer plus) de l'euphémisme (atténuer par pudeur)" },
+  { id: "fs8", label: "Je reconnais la métonymie (lien logique : contenant, lieu, auteur…) et la synecdoque (la partie pour le tout)" },
   { id: "fs6", label: "Je distingue le registre de langue (soutenu / courant / familier) du registre littéraire (lyrique, épique, pathétique, comique, ironique)" },
   { id: "fs7", label: "Je rédige l'analyse d'une figure en quatre temps : nommer, citer, expliquer le mécanisme, analyser l'effet" },
 ];
@@ -18,14 +19,14 @@ export const ficheFiguresRegistres: Fiche = {
   partie: "Partie 2 : Lexique",
   title: "Les figures de style et les registres",
   subtitle:
-    "Comparaison, métaphore, métaphore filée, personnification, hyperbole, litote, antithèse, registres de langue et littéraires",
+    "Comparaison, métaphore, personnification, métonymie, synecdoque, hyperbole, litote, antithèse, registres de langue et littéraires",
   badges: [
     { label: "★★★ Tombe à chaque session", variant: "hot" },
     { label: "Cycle 3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
   ],
   metaTitle: "Les figures de style et les registres (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les figures de style (comparaison, métaphore, métaphore filée, personnification, hyperbole, litote, antithèse, oxymore) et les registres (de langue : soutenu, courant, familier ; littéraires : lyrique, épique, pathétique, comique, ironique). Méthode d'analyse en quatre temps, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE complète sur les figures de style (comparaison, métaphore, métaphore filée, personnification, métonymie, synecdoque, hyperbole, litote, antithèse, oxymore) et les registres (de langue : soutenu, courant, familier ; littéraires : lyrique, épique, pathétique, comique, ironique). Méthode d'analyse en quatre temps, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -39,7 +40,7 @@ export const ficheFiguresRegistres: Fiche = {
           blocks: [
             {
               type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
+              title: "Le programme en 5 étapes",
               intro:
                 "Au concours, la question est toujours la même : identifier la figure, la nommer précisément, et analyser son effet dans le texte. Nommer sans analyser ne rapporte pas de points.",
               items: [
@@ -55,11 +56,16 @@ export const ficheFiguresRegistres: Fiche = {
                 },
                 {
                   number: "③",
+                  title: "Les figures de substitution",
+                  text: "Métonymie et synecdoque : désigner une réalité par une autre, liée par contiguïté ou inclusion.",
+                },
+                {
+                  number: "④",
                   title: "Les registres",
                   text: "Registre de langue (soutenu, courant, familier) et registre littéraire (lyrique, épique…).",
                 },
                 {
-                  number: "④",
+                  number: "⑤",
                   title: "L'analyse en quatre temps",
                   text: "Nommer, citer, expliquer le mécanisme, analyser l'effet : la structure attendue par le jury.",
                 },
@@ -193,6 +199,43 @@ export const ficheFiguresRegistres: Fiche = {
             {
               type: "subsection",
               number: "③",
+              title: "Les figures de substitution",
+              blocks: [
+                {
+                  type: "notionCardGrid",
+                  columns: 1,
+                  cards: [
+                    {
+                      title: "Métonymie",
+                      definition: "Désigne une réalité par un autre terme uni à elle par un lien logique réel : le contenant pour le contenu, la cause pour l'effet, le lieu pour l'institution, l'auteur pour l'œuvre, l'instrument pour celui qui s'en sert.",
+                      exemples: [
+                        "« **Boire un verre** » (le contenant pour le contenu) ; « lire **un Zola** » (l'auteur pour l'œuvre) ; « **l'Élysée** a démenti » (le lieu pour l'institution)",
+                      ],
+                      astuce: "Lien réel (de contiguïté), pas de ressemblance : c'est ce qui la sépare de la métaphore.",
+                      test: "**Effet :** condense l'expression et évoque une réalité par association ; rapide et imagée, elle évite la répétition et joue sur la connivence avec le lecteur.",
+                    },
+                    {
+                      title: "Synecdoque",
+                      definition: "Variété de métonymie fondée sur un rapport d'inclusion : la partie pour le tout (ou l'inverse), le singulier pour le pluriel, la matière pour l'objet.",
+                      exemples: [
+                        "« **Une voile** à l'horizon » (la partie pour le tout : le bateau) ; « les **fers** » pour les chaînes (la matière pour l'objet) ; « gagner son **pain** » (un aliment pour la nourriture)",
+                      ],
+                      test: "**Effet :** suggère un ensemble par un détail significatif ; en isolant un fragment, elle attire l'attention sur lui et donne du relief à l'image.",
+                    },
+                  ],
+                },
+                {
+                  type: "callout",
+                  variant: "warning",
+                  icon: "⚠️",
+                  title: "Métonymie, synecdoque ou métaphore ?",
+                  text: "La **synecdoque** est une métonymie particulière, fondée sur l'**inclusion** (« une voile » pour un bateau) ; la **métonymie** au sens large repose sur un autre lien logique (contenant, cause, lieu…). Au concours, nommer « métonymie » une synecdoque est le plus souvent **accepté** (la synecdoque est un cas de métonymie). À distinguer de la **métaphore**, qui repose sur une **ressemblance** (analogie), non sur un lien réel : « boire un verre » est une métonymie, « un torrent de larmes » une métaphore.",
+                },
+              ],
+            },
+            {
+              type: "subsection",
+              number: "④",
               title: "Les registres",
               blocks: [
                 {
@@ -448,7 +491,7 @@ export const ficheFiguresRegistres: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
             },
             {
               type: "quizBlock",
@@ -521,6 +564,14 @@ export const ficheFiguresRegistres: Fiche = {
                   correctIndex: 2,
                   explanation:
                     "La structure attendue : nommer, citer, expliquer le mécanisme, analyser l'effet. Nommer sans analyser ne rapporte rien.",
+                },
+                {
+                  objectifId: "fs8",
+                  question: "« Toute la salle a applaudi. » Par quelle figure « la salle » désigne-t-elle le public ?",
+                  options: ["une métaphore", "une métonymie", "une personnification", "une hyperbole"],
+                  correctIndex: 1,
+                  explanation:
+                    "Le lieu (« la salle ») désigne les spectateurs qu'il contient : c'est une métonymie (lien logique réel, pas une ressemblance comme dans la métaphore).",
                 },
               ],
             },

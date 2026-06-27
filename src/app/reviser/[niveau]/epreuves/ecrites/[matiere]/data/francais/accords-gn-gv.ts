@@ -156,6 +156,32 @@ export const ficheAccordsGnGv: Fiche = {
                   icon: "💡",
                   text: "Exception pour les couleurs : rose, mauve, écarlate, pourpre, fauve sont devenus de vrais adjectifs et s'accordent (« des robes roses »).",
                 },
+                {
+                  type: "table",
+                  title: "Accord de « tel », « tel que », « tel quel »",
+                  headers: ["Forme", "Règle", "Exemple"],
+                  rows: [
+                    ["**tel** (sans « que »)", "S'accorde avec le nom qui **suit**", "« de **tels** efforts », « une **telle** ardeur »"],
+                    ["**tel que**", "S'accorde avec le nom qui **précède** (l'antécédent)", "« des qualités **telles que** la patience » (telles = avec « qualités »)"],
+                    ["**tel quel**", "S'accorde avec le nom auquel il se rapporte", "« j'ai laissé les choses **telles quelles** »"],
+                  ],
+                },
+                {
+                  type: "table",
+                  title: "Les numéraux : vingt, cent, mille",
+                  headers: ["Numéral", "Règle", "Exemple"],
+                  rows: [
+                    ["**vingt** et **cent**", "Prennent un **s** quand ils sont multipliés ET terminent le nombre ; invariables s'ils sont suivis d'un autre numéral", "« quatre-**vingts** » mais « quatre-**vingt**-deux » ; « deux **cents** » mais « deux **cent** trois »"],
+                    ["**mille** (adjectif numéral)", "**Toujours invariable**", "« trois **mille** euros », « des **mille** et des **cents** »"],
+                    ["**million**, **milliard**", "Ce sont des **noms** : ils prennent un **s** au pluriel", "« trois **millions** d'habitants »"],
+                  ],
+                },
+                {
+                  type: "callout",
+                  variant: "info",
+                  icon: "💡",
+                  text: "« ci-joint », « ci-annexé », « ci-inclus » : **invariables** en tête de phrase ou devant un nom sans déterminant (« **Ci-joint** la facture », « veuillez trouver **ci-joint** copie du dossier ») ; **variables** quand ils suivent un nom déterminé (« la facture **ci-jointe** »).",
+                },
               ],
             },
             {
@@ -190,6 +216,9 @@ export const ficheAccordsGnGv: Fiche = {
                     ["Qui (pronom relatif)", "Avec l'antécédent", "« C'est moi qui suis venu. » ; « C'est toi qui es venu. »"],
                     ["Ce qui / Tout ce qui", "3e personne du singulier", "« Tout ce qui brille n'est pas or. »"],
                     ["Titre d'œuvre", "Singulier (l'œuvre)", "« Les Misérables est un roman de Victor Hugo. »"],
+                    ["Plus d'un", "Verbe au **singulier** (malgré le sens pluriel)", "« **Plus d'un** candidat **a** échoué. »"],
+                    ["Moins de deux", "Verbe au **pluriel**", "« **Moins de deux** ans **se sont** écoulés. »"],
+                    ["Le peu de", "Selon le sens : insuffisance → singulier ; une certaine quantité → accord avec le complément", "« **Le peu** d'efforts **l'a** découragé. » (insuffisance) ; « **Le peu** d'efforts qu'il a **faits** » (quantité)"],
                   ],
                 },
                 {

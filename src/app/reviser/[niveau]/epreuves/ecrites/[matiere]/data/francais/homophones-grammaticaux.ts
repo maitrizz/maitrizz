@@ -275,6 +275,25 @@ export const ficheHomophonesGrammaticaux: Fiche = {
                       ],
                       test: "Remplacer par « préparé(e) » : si ça marche et que le mot s'accorde, c'est l'adjectif « prêt » ; sinon, « près » (lieu, invariable).",
                     },
+                    {
+                      title: "quoique / quoi que",
+                      definition: "**quoique** (un mot) = conjonction de subordination (= bien que, concession) · **quoi que** (deux mots) = « quelle que soit la chose que » (= peu importe ce que).",
+                      exemples: [
+                        "« **Quoiqu'**il soit tard, je sors. » → « **bien qu'**il soit tard » ✓ → un mot",
+                        "« **Quoi que** tu fasses, je te soutiens. » → « **quelle que soit la chose que** tu fasses » ✓ → deux mots",
+                      ],
+                      test: "Remplacer par « bien que » : si ça marche, c'est « quoique » (un mot). Si « quelle que soit la chose que » convient, c'est « quoi que » (deux mots).",
+                    },
+                    {
+                      title: "quelque(s) / quel(s) que / quelle(s) que",
+                      definition: "**quelque** = déterminant (= plusieurs, un certain), accordé en nombre, ou **adverbe** invariable (= environ, devant un nombre) · **quel que** (deux mots) = « quel » + « que » devant le verbe **être** au subjonctif ; « quel » s'accorde alors avec le sujet.",
+                      exemples: [
+                        "« J'ai **quelques** doutes. » → déterminant, accord avec « doutes »",
+                        "« Il y a **quelque** vingt ans. » → adverbe (= environ), invariable",
+                        "« **Quels que** soient les obstacles… » → deux mots ; « quels » accordé avec « obstacles » (sujet de « soient »)",
+                      ],
+                      test: "Devant le verbe être au subjonctif → « quel que » en deux mots (accord avec le sujet). Sinon → « quelque » (déterminant accordé, ou adverbe = environ, invariable).",
+                    },
                   ],
                 },
               ],

@@ -255,6 +255,11 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
                   ],
                 },
                 {
+                  type: "callout",
+                  variant: "info",
+                  text: "💡 **Îlot textuel** (rare) : un fragment au discours direct, entre guillemets, peut s'enchâsser dans une phrase au discours indirect. « Il a répondu qu'il en avait « **assez de ces histoires** ». » On garde ainsi les mots exacts du locuteur au cœur d'un récit rapporté.",
+                },
+                {
                   type: "table",
                   title: "Tableau récapitulatif des 4 formes",
                   headers: ["Forme", "Guillemets", "Verbe introducteur", "Effet"],

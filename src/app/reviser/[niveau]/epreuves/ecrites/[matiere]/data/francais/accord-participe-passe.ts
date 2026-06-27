@@ -190,6 +190,27 @@ export const ficheAccordParticipePasse: Fiche = {
                   ],
                 },
                 {
+                  type: "highlightBox",
+                  variant: "marine",
+                  title: "Pour aller plus loin · mesure ou COD ? (hors attendus)",
+                  blocks: [
+                    {
+                      type: "paragraph",
+                      text: "**Tout ce qui est placé avant le verbe n'est pas un COD.** Des verbes comme *coûter, valoir, peser, mesurer, vivre, durer, courir, marcher* sont souvent suivis d'un complément qui répond à *combien ?* (prix, poids, durée, distance) : c'est un **complément de mesure**, pas un COD, donc le participe reste **invariable**, même placé avant. Au sens figuré, en revanche, ces verbes peuvent avoir un **vrai COD**, et l'accord se fait normalement. Hors attendus du concours, mais classique sur un texte littéraire.",
+                    },
+                    {
+                      type: "table",
+                      headers: ["Phrase", "Accord", "Pourquoi"],
+                      rows: [
+                        ["« Les mille euros que ce vélo m'a **coûté**. »", "invariable", "coûté *combien ?* → complément de prix (mesure), pas un COD"],
+                        ["« Les efforts que ce vélo m'a **coûtés**. »", "accord", "coûté *quoi ?* → les efforts = vrai COD antéposé (sens figuré)"],
+                        ["« Les trois heures que j'ai **couru**. »", "invariable", "couru *combien de temps ?* → complément de durée"],
+                        ["« Les dangers que j'ai **courus**. »", "accord", "courir *un danger* = COD (sens figuré)"],
+                      ],
+                    },
+                  ],
+                },
+                {
                   type: "callout",
                   variant: "warning",
                   icon: "⚠️",
@@ -197,11 +218,55 @@ export const ficheAccordParticipePasse: Fiche = {
                   text: "Avec le pronom **en**, le participe passé reste **invariable** : c'est un cas particulier qui échappe à la règle ordinaire du COD antéposé. On écrit : « Des livres ? J'en ai **lu**. » ; « Des erreurs ? Elle en a **commis**. » On n'accorde pas avec le nom repris par « en », même s'il est féminin pluriel.",
                 },
                 {
+                  type: "highlightBox",
+                  variant: "marine",
+                  title: "Pour aller plus loin · le neutre « l' » (hors attendus)",
+                  blocks: [
+                    {
+                      type: "paragraph",
+                      text: "**Un « l' » antéposé ne déclenche pas toujours l'accord.** Quand le COD antéposé est le pronom neutre *l'* (ou *le*) qui reprend **toute une proposition** (une idée, pas un nom précis), le participe reste **invariable**. Fréquent après *croire, penser, dire, savoir, espérer* dans une comparaison. Hors attendus, mais le piège est tentant.",
+                    },
+                    {
+                      type: "table",
+                      headers: ["Phrase", "Accord", "Pourquoi"],
+                      rows: [
+                        ["« Elle est moins fragile que je ne l'avais **cru**. »", "invariable", "*l'* = « qu'elle était fragile » (une idée), pas un nom"],
+                        ["« La nouvelle, je l'avais **dite** à tout le monde. »", "accord", "ici *l'* = « la nouvelle » (nom féminin) → accord ordinaire"],
+                      ],
+                    },
+                  ],
+                },
+                {
                   type: "callout",
                   variant: "info",
                   icon: "💡",
                   title: "« fait » et « laissé » suivis d'un infinitif",
                   text: "Le participe passé **fait** suivi d'un infinitif est **toujours invariable** : on écrit « la maison qu'il a **fait** construire », et non « qu'il a faite construire ». Depuis les rectifications de 1990, **laissé** suivi d'un infinitif est lui aussi recommandé **invariable** : on écrit « les enfants qu'elle a **laissé** jouer », et non « qu'elle a laissés jouer ».",
+                },
+                {
+                  type: "highlightBox",
+                  variant: "marine",
+                  title: "Pour aller plus loin · perception + infinitif (hors attendus)",
+                  blocks: [
+                    {
+                      type: "paragraph",
+                      text: "**Au-delà de *fait* et *laissé*.** Avec *vu, entendu, senti, regardé, aperçu* suivis d'un infinitif, le participe s'accorde avec le complément placé avant **seulement si ce complément fait l'action de l'infinitif** (s'il en est le sujet). S'il la subit, le participe reste **invariable**. Hors attendus du concours, mais c'est la nuance qui sépare *entendue* de *entendu*.",
+                    },
+                    {
+                      type: "table",
+                      headers: ["Phrase", "Accord", "Pourquoi"],
+                      rows: [
+                        ["« La cantatrice que j'ai entend**ue** chanter. »", "accord", "la cantatrice **chante** : elle fait l'action → accord"],
+                        ["« L'air que j'ai entend**u** chanter. »", "invariable", "l'air **est chanté** : il subit l'action → invariable"],
+                        ["« Les ouvriers que j'ai **vus** travailler. »", "accord", "ce sont eux qui travaillent"],
+                      ],
+                    },
+                    {
+                      type: "callout",
+                      variant: "info",
+                      text: "💡 Test : si l'on peut insérer « en train de » (*la cantatrice que j'ai entendue [en train de] chanter*), le complément fait l'action → accord.",
+                    },
+                  ],
                 },
               ],
             },
@@ -680,6 +745,32 @@ export const ficheAccordParticipePasse: Fiche = {
                 { type: "line", label: "a)", text: "**écrit** invariable : « écrire à » → « se » = COI ; le COD « des lettres » est placé après le verbe." },
                 { type: "line", label: "b)", text: "**lues** : « les » = COD antéposé, mis pour « les lettres » (féminin pluriel) → accord. (Ici « se » est COI, c'est « les » qui commande l'accord.)" },
                 { type: "note", text: "💡 Bien distinguer le pronom réfléchi « se » du pronom COD « les » : c'est le COD antéposé qui déclenche l'accord." },
+              ],
+            },
+            {
+              type: "niveauBanner",
+              level: "n3",
+              stars: "★★★★",
+              label: "Niveau Expert : cas délicats",
+              sub: "Pour viser la maîtrise, au-delà de l'épreuve courante",
+            },
+            {
+              type: "exerciceCard",
+              variant: "standard",
+              level: "n3",
+              title: "Exercice 9 : les cas délicats",
+              enonce:
+                "« Les mille euros que ce voyage m'a [coûté] en valaient la peine. La cantatrice que j'ai [entendu] chanter était éblouissante, mais l'œuvre que j'ai [entendu] jouer m'a déçu. La situation était plus grave qu'on ne l'avait [dit]. »",
+              question: "Accordez chaque participe entre crochets et justifiez votre choix.",
+              correction: [
+                { type: "line", text: "**coûté** invariable : *coûté combien ?* « mille euros » est un complément de prix (mesure), pas un COD." },
+                { type: "line", text: "**entendue** (la cantatrice) : la cantatrice **fait** l'action de chanter (elle chante) → accord avec « que », mis pour « cantatrice » (féminin singulier)." },
+                { type: "line", text: "**entendu** (l'œuvre) invariable : l'œuvre **subit** l'action (elle est jouée, elle ne joue pas) → pas d'accord." },
+                { type: "line", text: "**dit** invariable : « l' » est le pronom neutre, il reprend « que la situation était grave » (une idée), pas un nom." },
+                {
+                  type: "formulationCrpe",
+                  text: "« *coûté* reste invariable : *mille euros* répond à *combien ?*, c'est un complément de mesure, non un COD. *entendue chanter* s'accorde (la cantatrice fait l'action de chanter), tandis que *entendu jouer* reste invariable (l'œuvre subit l'action). *dit* reste invariable : *l'* est neutre et reprend toute la proposition, pas un nom. »",
+                },
               ],
             },
           ],

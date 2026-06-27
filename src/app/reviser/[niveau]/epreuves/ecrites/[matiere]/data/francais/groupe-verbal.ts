@@ -286,6 +286,11 @@ export const ficheGroupeVerbal: Fiche = {
                       variant: "warning",
                       text: "⚠️ La présence de l'auxiliaire « être » ne suffit pas. Pour vérifier un passif, reconstituez la phrase active : « Les portes ont été ouvertes » → « Quelqu'un a ouvert les portes. » En revanche, « Il est parti » ne peut pas être transformé ainsi : c'est un passé composé, pas un passif.",
                     },
+                    {
+                      type: "callout",
+                      variant: "info",
+                      text: "💡 **Passif impersonnel** : avec certains verbes, le passif se construit avec un « il » impersonnel, sans sujet réel, le vrai propos suivant le verbe : « **Il** a été décidé que la séance serait reportée », « **Il** est interdit de fumer ». Tournure fréquente dans les textes administratifs et juridiques.",
+                    },
                   ],
                 },
                 {
@@ -295,7 +300,7 @@ export const ficheGroupeVerbal: Fiche = {
                   blocks: [
                     {
                       type: "paragraph",
-                      text: "Dans « Elle **fait travailler** ses élèves », ce n'est pas elle qui travaille : elle fait accomplir l'action par ses élèves. On appelle cela la **construction factitive**. Pour le concours, retenez surtout que « faire + infinitif » s'analyse comme un seul noyau verbal : « fait travailler ». L'infinitif « travailler » n'est donc pas COD de « faire ».\n\nLe verbe **laisser** et les verbes de perception (**voir, entendre, sentir, regarder**) fonctionnent de façon voisine avec un infinitif : « Elle **laisse partir** les invités », « J'ai **vu se rouvrir** les portes ». On parle alors de proposition infinitive ou de noyau verbal complexe ; ces analyses sont reprises dans la [notion 10 sur les formes non conjuguées](fiche:formes-non-conjuguees-passive-pronominale).",
+                      text: "Dans « Elle **fait travailler** ses élèves », ce n'est pas elle qui travaille : elle fait accomplir l'action par ses élèves. On appelle cela la **construction factitive**. Pour le concours, retenez surtout que « faire + infinitif » s'analyse comme un seul noyau verbal : « fait travailler ». L'infinitif « travailler » n'est donc pas COD de « faire ».\n\nLe verbe **laisser** et les verbes de perception (**voir, entendre, sentir, regarder**) fonctionnent de façon voisine avec un infinitif : « Elle **laisse partir** les invités », « J'ai **vu se rouvrir** les portes ». On parle alors de proposition infinitive ou de noyau verbal complexe ; ces analyses sont reprises dans la [notion 10 sur les formes non conjuguées](fiche:formes-non-conjuguees).",
                     },
                   ],
                 },

@@ -59,7 +59,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                 {
                   number: "④",
                   title: "Les formes : négative, emphatique, impersonnelle",
-                  text: "Elles se superposent au type sans le changer. La forme passive, elle, est traitée à part dans la notion 10.",
+                  text: "Elles se superposent au type sans le changer. La forme passive, elle, relève de la voix du verbe : voir la notion 4 (le groupe verbal).",
                 },
               ],
             },
@@ -246,7 +246,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Les formes se **superposent** au type sans le modifier. On en retient trois pour le concours (la forme **passive** est traitée à part dans la notion [formes passive et pronominale](fiche:formes-non-conjuguees-passive-pronominale)).",
+                  text: "Les formes se **superposent** au type sans le modifier. On en retient trois pour le concours (la forme **passive** relève de la voix du verbe : voir la notion [groupe verbal](fiche:groupe-verbal)).",
                 },
                 {
                   type: "notionCardGrid",
@@ -283,6 +283,26 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                         "« **Il** manque trois élèves. » : le sujet réel (trois élèves) est rejeté après le verbe.",
                       ],
                       piege: "Distinguez le « il » impersonnel (« Il faut partir ») du « il » personnel qui reprend un nom (« Paul est là, **il** sourit »). Test : peut-on remplacer « il » par un nom ? Si oui, il est personnel ; si non, il est impersonnel.",
+                    },
+                  ],
+                },
+                {
+                  type: "highlightBox",
+                  variant: "marine",
+                  title: "Pour aller plus loin · la négation (hors attendus)",
+                  blocks: [
+                    {
+                      type: "paragraph",
+                      text: "**Le « ne » explétif n'est pas une négation.** Après certains verbes (craindre, redouter, avoir peur que) et certaines conjonctions (avant que, à moins que, de peur que), un « ne » apparaît **sans valeur négative** : « Je crains qu'il **ne** vienne » signifie « j'ai peur qu'il vienne ». On peut le supprimer sans changer le sens. Hors attendus du concours, mais fréquent en langue soutenue et en littérature.",
+                    },
+                    {
+                      type: "paragraph",
+                      text: "**Deux négations ne s'annulent pas toujours.** Certaines se cumulent et restent négatives : « Il **n'**a **rien** dit à **personne** ». D'autres se neutralisent et deviennent **affirmatives** : « Il **n'**est **pas sans** savoir » (= il sait), « Ce **n'**est **pas rien** » (= c'est important) : c'est une forme de litote.",
+                    },
+                    {
+                      type: "callout",
+                      variant: "info",
+                      text: "💡 Test du « ne » explétif : si l'on peut le supprimer sans changer le sens, il est explétif. « Je crains qu'il vienne » = « Je crains qu'il ne vienne ».",
                     },
                   ],
                 },
@@ -644,6 +664,27 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                 { type: "note", text: "La transformation est l'exercice CRPE par excellence : elle prouve qu'on a compris la marque de chaque type et de chaque forme." },
               ],
             },
+            {
+              type: "niveauBanner",
+              level: "n3",
+              stars: "★★★★",
+              label: "Niveau Expert : cas délicats",
+              sub: "Pour viser la maîtrise, au-delà de l'épreuve courante",
+            },
+            {
+              type: "exerciceCard",
+              variant: "standard",
+              level: "n3",
+              title: "Exercice 6 : ce « ne » est-il une négation ?",
+              question:
+                "Ces « ne » sont-ils des négations ? Justifiez.\na) « Je crains qu'il ne pleuve. »   b) « Il ne dit rien. »   c) « Je ne suis pas sans savoir ce qui se passe. »",
+              correction: [
+                { type: "line", label: "a)", text: "**Non, « ne » explétif** : « je crains qu'il pleuve » garde le même sens. Après « craindre que », ce « ne » n'a pas de valeur négative." },
+                { type: "line", label: "b)", text: "**Oui, négation** : « ne… rien » est une négation partielle portant sur le COD." },
+                { type: "line", label: "c)", text: "**Non, sens affirmatif** : « ne… pas sans » est une double négation qui s'annule (= « je sais ce qui se passe »), procédé de litote." },
+                { type: "formulationCrpe", text: "« Le « ne » de (a) est explétif (suppressible : *je crains qu'il pleuve*) ; celui de (b) est une vraie négation partielle (*ne… rien*) ; en (c), *ne… pas sans* est une double négation à valeur affirmative (= je sais), c'est une litote. »" },
+              ],
+            },
           ],
         },
         {
@@ -734,7 +775,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Passive → notion 10", "Interro. indirecte → notion 5", "Ponctuation → notion 5", "Modalisation → notion 15"],
+                  lines: ["Passive (voix) → notion 4", "Interro. indirecte → notion 5", "Ponctuation → notion 5", "Modalisation → notion 15"],
                   variant: "purple",
                 },
               ],
