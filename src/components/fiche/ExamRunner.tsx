@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { RichText } from "./richtext";
+import { HighlightableText, type Hl } from "./highlightText";
 import type { Block } from "./types";
 
 type ExamRunnerData = Extract<Block, { type: "examRunner" }>;
@@ -22,7 +23,23 @@ type RunnerState = {
   answers: Record<string, string>;
   evals: Record<string, QEval>;
 };
-type Attempt = { date: string; note: number };
+// Tentative enregistrée. On garde `date` et `note` (affichés tels quels dans
+// « Vos tentatives »), et on range en plus le détail utile à un futur tableau de
+// bord transversal : mode, score brut, temps, résultat et temps par partie,
+// notions à revoir. Tout est déjà calculé au moment de l'enregistrement : on ne
+// fait que le conserver. Les anciennes tentatives (sans ces champs) restent
+// lisibles puisque l'affichage ne lit que `date` et `note`.
+type AttemptPart = { id: string; title: string; score: number; points: number; timeMs: number };
+type Attempt = {
+  date: string;
+  note: number;
+  mode?: Mode;
+  score?: number;
+  maxNote?: number;
+  totalMs?: number;
+  parts?: AttemptPart[];
+  faibles?: { label: string; slug: string }[];
+};
 
 const DEFAULT: RunnerState = {
   phase: "intro",
@@ -43,6 +60,20 @@ function key(s: string) {
 }
 function historyKey(s: string) {
   return `maitrizz:runner-history:${s}`;
+}
+// Surlignages/annotations du texte support : stockés à part (clé dédiée) pour
+// survivre à « Recommencer » (ils portent sur le texte, pas sur la tentative).
+function annotKey(s: string) {
+  return `maitrizz:annot:v1:${s}`;
+}
+function loadHls(slug: string): Hl[] {
+  try {
+    const raw = localStorage.getItem(annotKey(slug));
+    if (raw) return JSON.parse(raw) as Hl[];
+  } catch {
+    /* ignore */
+  }
+  return [];
 }
 function loadState(slug: string): RunnerState {
   try {
@@ -158,6 +189,7 @@ const BAR: Record<"success" | "warning" | "danger", string> = {
 export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheSlug: string }) {
   const [state, setState] = useState<RunnerState>(DEFAULT);
   const [history, setHistory] = useState<Attempt[]>([]);
+  const [hls, setHls] = useState<Hl[]>([]);
   const [, setNow] = useState(0);
   const [textOverlay, setTextOverlay] = useState(false);
   const [justSaved, setJustSaved] = useState(false);
@@ -170,6 +202,7 @@ export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheS
   useEffect(() => {
     setState(loadState(ficheSlug));
     setHistory(loadHistory(ficheSlug));
+    setHls(loadHls(ficheSlug));
   }, [ficheSlug]);
 
   useEffect(() => {
@@ -191,6 +224,17 @@ export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheS
     } catch {
       /* ignore */
     }
+  }
+  function persistHls(next: Hl[]) {
+    setHls(next);
+    try {
+      localStorage.setItem(annotKey(ficheSlug), JSON.stringify(next));
+    } catch {
+      /* ignore */
+    }
+  }
+  function clearHls() {
+    persistHls([]);
   }
   function setAnswer(id: string, v: string) {
     persist({ ...state, answers: { ...state.answers, [id]: v } });
@@ -231,12 +275,29 @@ export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheS
   }
   function restart() {
     persist(DEFAULT);
+    clearHls(); // « Recommencer » repart d'un texte vierge : on efface aussi les surlignages
     setJustSaved(false);
     setConfirmReset(false);
     setEntered(false); // retour à l'écran de départ
   }
   function saveAttempt() {
-    const next = [{ date: new Date().toISOString(), note: note20 }, ...history].slice(0, 12);
+    const attempt: Attempt = {
+      date: new Date().toISOString(),
+      note: note20,
+      mode: state.mode,
+      score,
+      maxNote,
+      totalMs: elapsed,
+      parts: block.parts.map((part) => ({
+        id: part.id,
+        title: part.title,
+        score: part.questions.reduce((a, q) => a + (qAwarded(q, state.evals[q.id]) ?? 0), 0),
+        points: part.points,
+        timeMs: state.partTime[part.id] ?? 0,
+      })),
+      faibles: faibles.map((q) => ({ label: q.revise!.label, slug: q.revise!.slug })),
+    };
+    const next = [attempt, ...history].slice(0, 12);
     setHistory(next);
     try {
       localStorage.setItem(historyKey(ficheSlug), JSON.stringify(next));
@@ -274,17 +335,23 @@ export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheS
   function textContent() {
     return (
       <div className="flex flex-col gap-2">
-        <p className="text-sm font-bold text-base-content">{block.text.title}</p>
-        {block.text.paragraphs.map((p, i) => (
-          <p key={i} className="text-sm text-base-content/85 leading-relaxed">
-            <RichText text={p} />
-          </p>
-        ))}
-        {block.text.note && (
-          <p className="text-xs text-base-content/55 italic leading-relaxed">
-            <RichText text={block.text.note} />
-          </p>
-        )}
+        <HighlightableText
+          title={block.text.title}
+          paragraphs={block.text.paragraphs}
+          note={block.text.note}
+          hls={hls}
+          onChange={persistHls}
+        />
+        <div className="flex items-center justify-between gap-2 pt-1 border-t border-base-300">
+          <span className="text-[0.7rem] text-base-content/45 leading-snug">
+            Sélectionnez un passage pour le surligner et l&apos;annoter.
+          </span>
+          {hls.length > 0 && (
+            <button type="button" onClick={clearHls} className="shrink-0 text-[0.7rem] font-semibold text-base-content/50 hover:text-error">
+              Effacer mes surlignages
+            </button>
+          )}
+        </div>
       </div>
     );
   }
@@ -415,7 +482,7 @@ export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheS
           )}
           {confirmReset ? (
             <span className="flex items-center gap-1 text-xs text-base-content/70">
-              Effacer vos réponses ?
+              Effacer vos réponses et surlignages ?
               <button type="button" onClick={restart} className="btn btn-error btn-xs">
                 Oui
               </button>

@@ -20,7 +20,7 @@ const LEVEL_STYLES: Record<NonNullable<ExerciceCardBlock["level"]>, { border: st
   n3: { border: "border-error", header: "bg-error text-error-content" },
 };
 
-function CorrectionLine({ item }: { item: CorrectionItem }) {
+export function CorrectionLine({ item }: { item: CorrectionItem }) {
   switch (item.type) {
     case "line":
       return (

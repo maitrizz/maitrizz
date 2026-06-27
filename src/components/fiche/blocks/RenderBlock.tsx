@@ -7,6 +7,9 @@ import { MindmapLite } from "../MindmapLite";
 import { QuizBlock } from "../QuizBlock";
 import { MatchGame } from "../MatchGame";
 import { ExamRunner } from "../ExamRunner";
+import { Trainer } from "../Trainer";
+import { ExerciceBank } from "../ExerciceBank";
+import { CorrigerCopies } from "../CorrigerCopies";
 import type { Block, Step } from "../types";
 
 type RenderBlockProps = {
@@ -544,6 +547,15 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
 
     case "examRunner":
       return <ExamRunner block={block} ficheSlug={ficheSlug} />;
+
+    case "trainer":
+      return <Trainer block={block} ficheSlug={ficheSlug} />;
+
+    case "exerciceBank":
+      return <ExerciceBank block={block} ficheSlug={ficheSlug} />;
+
+    case "corrigerCopies":
+      return <CorrigerCopies block={block} ficheSlug={ficheSlug} />;
 
     case "sommaireApercu":
       return (

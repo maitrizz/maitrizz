@@ -281,7 +281,113 @@ export type Block =
           revise?: { label: string; slug: string }; // fiche à revoir si la question est ratée
         }[];
       }[];
+    }
+
+  // Trainer : entraînement par récupération espacée (boîtes de Leitner) sur une
+  // banque d'items fermés, auto-corrigeables. Sélectionne les items « échus »,
+  // les entrelace, donne un feedback-geste immédiat, et persiste l'avancement
+  // par item en localStorage. C'est la vraie fonction de l'onglet « Réviser ».
+  | {
+      type: "trainer";
+      title?: RichText;
+      intro?: RichText;
+      sessionSize?: number; // nombre d'items par session (défaut : 12)
+      savoirFaire?: { id: string; label: string }[]; // libellés du filtre « Ce que je travaille »
+      items: TrainerItem[];
+    }
+
+  // Banque d'exercices OUVERTS, à faire à fond : on produit sa réponse, on révèle
+  // le corrigé-modèle, on s'auto-évalue. Pas d'espacement : c'est de la pratique
+  // délibérée, en difficulté croissante. Le composant « génère » une série filtrée
+  // et mélangée à partir de la banque curée (filtres difficulté × objectif).
+  | {
+      type: "exerciceBank";
+      title?: RichText;
+      intro?: RichText;
+      serieSize?: number; // nombre d'exercices par série (défaut : 6)
+      savoirFaire?: { id: string; label: string }[];
+      exercices: TrainerExercice[];
+    }
+
+  // « Corriger des erreurs » : une copie d'élève (analyse JUSTE ou FAUSSE). On juge
+  // d'abord (« c'est juste » / « à corriger »), puis on dévoile si on avait raison, la
+  // bonne analyse, et — seulement quand c'est pertinent — une ligne « côté prof »
+  // (pourquoi l'élève se trompe, comment le détromper). Statut persisté par copie.
+  | {
+      type: "corrigerCopies";
+      title?: RichText;
+      intro?: RichText;
+      copies: {
+        id: string;
+        copie: RichText; // ce que l'élève affirme (la phrase + son analyse)
+        correcte: boolean; // l'analyse de l'élève est-elle juste ?
+        verdict: RichText; // la bonne analyse (ou la confirmation que c'est juste)
+        coteProf?: RichText; // ligne « côté prof », seulement si elle apporte
+      }[];
     };
+
+/* ────────────────────────────────────────────────────────────
+   Trainer (banque d'items)
+──────────────────────────────────────────────────────────── */
+// Modalité pédagogique = l'axe de filtre proposé à l'élève (distinct du `format`,
+// qui n'est que le mode de saisie). « tout mélangé » = on ne filtre pas.
+export type TrainerModalite = "rappel" | "application" | "type-concours" | "detection-erreur";
+
+type TrainerItemBase = {
+  id: string;
+  notion: string; // ex: "fr-01"
+  savoirFaire: string[]; // ids des savoir-faire travaillés (multi-tag) — voir GABARIT_NOTION.md
+  modalite: TrainerModalite;
+  difficulte: 1 | 2 | 3; // 1 échauffement · 2 standard · 3 piège
+  reponseType?: RichText; // réponse courte type CRPE, affichée en premier (hors flashcards)
+  feedback: RichText; // l'explication : le geste / le test à appliquer
+};
+
+export type TrainerItem =
+  | (TrainerItemBase & {
+      format: "qcm";
+      enonce?: RichText; // la phrase / l'extrait sur lequel on travaille
+      question: RichText;
+      options: RichText[];
+      correct: number; // index de la bonne option
+    })
+  | (TrainerItemBase & {
+      format: "vrai-faux";
+      enonce?: RichText;
+      affirmation: RichText;
+      correct: boolean; // true = l'affirmation est exacte
+    })
+  | (TrainerItemBase & {
+      format: "intrus";
+      consigne: RichText;
+      mots: RichText[];
+      intrus: number; // index du mot intrus
+    })
+  | (TrainerItemBase & {
+      format: "classer";
+      consigne: RichText;
+      categories: string[];
+      mots: { mot: RichText; categorie: number }[];
+    })
+  // Carte de rappel : on tente de répondre, on révèle, on s'auto-évalue.
+  | (TrainerItemBase & {
+      format: "flashcard";
+      question: RichText;
+      answer: RichText;
+    });
+
+// Exercice ouvert de la banque : on rédige, on compare au corrigé-modèle.
+export type TrainerExercice = {
+  id: string;
+  notion: string;
+  savoirFaire: string[]; // ids des savoir-faire travaillés (multi-tag)
+  difficulte: 1 | 2 | 3; // 1 Fondamentaux · 2 Concours · 3 Expert (au-delà de l'épreuve)
+  enonce?: RichText; // la phrase ou l'extrait à analyser
+  question: RichText; // la consigne
+  reponseType: RichText; // LA réponse attendue, formulée comme au CRPE (affichée en premier)
+  explication: CorrectionItem[]; // le détail / le pourquoi (réutilise le rendu des exerciceCard)
+  attendus?: RichText[]; // points attendus à cocher pour une auto-évaluation objective (surtout niveaux 2-3)
+};
 
 /* ────────────────────────────────────────────────────────────
    Onglets et fiche
