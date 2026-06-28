@@ -1,135 +1,260 @@
 // Banque d'exercices OUVERTS, notion 09 « Présent, futur, conditionnel et subjonctif ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : statut 2020 du
+// conditionnel, subjonctif imparfait, présent gnomique vs énonciation, subjonctif en
+// indépendante).
+// Périmètre : NOMMER LES VALEURS du présent/futur/conditionnel et les EMPLOIS du
+// subjonctif. Terminologie 2020 : le conditionnel est un temps de l'indicatif.
+// 6 savoir-faire : présent · futur · conditionnel · subjonctif · valeurs · concordance.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_PRESENT_FUTUR_CONDITIONNEL_SUBJONCTIF: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-09-exo-01",
+    id: "fr-09-exo-f1",
     notion: "fr-09",
-    savoirFaire: ["futur","valeurs"],
+    savoirFaire: ["present", "valeurs"],
     difficulte: 1,
-    question: "Donnez la valeur du présent :\na) « Un triangle possède trois côtés. »   b) « En ce moment, je lis le journal. »   c) « En 1789, la Révolution éclate. »   d) « Le train part demain à huit heures. »   e) « Chaque matin, il se lève à six heures. »",
-    reponseType: "a) Vérité générale : propriété toujours valable.\n\nb) Action en cours, signalée par « en ce moment ».\n\nc) Présent de narration (événement passé mis au présent ; indicateur « 1789 »)\n\nd) Présent à valeur de futur : l'action est programmée pour le lendemain.\n\ne) Habitude, signalée par « chaque matin ».",
+    question:
+      "Donnez la valeur du présent :\na) « Il lit dans sa chambre. »\nb) « Deux et deux font quatre. »\nc) « Je pars demain. »",
+    reponseType:
+      "a) **action en cours** (au moment où l'on parle).\nb) **vérité générale** (vrai en tout temps).\nc) présent à valeur de **futur proche** (« demain » le confirme).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-09-exo-02",
+    id: "fr-09-exo-f2",
+    notion: "fr-09",
+    savoirFaire: ["present", "valeurs"],
+    difficulte: 1,
+    question:
+      "Habitude ou vérité générale ?\na) « Le soleil se lève à l'est. »\nb) « Il se lève à six heures. »",
+    reponseType:
+      "a) **vérité générale** (valable toujours et pour tous).\nb) **habitude** (propre à une personne, action répétée). Le critère : la portée universelle (vérité générale) ou individuelle et répétée (habitude).",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-f3",
+    notion: "fr-09",
+    savoirFaire: ["futur", "valeurs"],
+    difficulte: 1,
+    question:
+      "Donnez la valeur du futur :\na) « Il arrivera lundi. »\nb) « Tu rangeras ta chambre. »\nc) « Qui vivra verra. »",
+    reponseType:
+      "a) **action à venir** (emploi de base).\nb) **futur injonctif** (ordre déguisé).\nc) **vérité générale future** (tournure de proverbe).",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-f4",
     notion: "fr-09",
     savoirFaire: ["conditionnel"],
     difficulte: 1,
-    question: "Appliquez le test « nous » :\na) « Elle serait malade. »   b) « Elle était fatiguée. »   c) « Il viendrait si on l'invitait. »   d) « Il venait souvent. »   e) « Ce traitement réduirait les risques. »",
-    reponseType: "a) « nous serions » → -rions → conditionnel présent\n\nb) « nous étions » → -ions sans « r » → imparfait\n\nc) « nous viendrions » → -rions → conditionnel présent\n\nd) « nous venions » → -ions sans « r » → imparfait\n\ne) « nous réduirions » → -rions → conditionnel présent",
+    question:
+      "Conditionnel présent ou imparfait ?\na) « je finirais »\nb) « je finissais »",
+    reponseType:
+      "a) **conditionnel présent** (« r » de l'infinitif + -ais).\nb) **imparfait** (-ais, sans « r »). En terminologie 2020, le conditionnel est un **temps de l'indicatif**.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-f5",
+    notion: "fr-09",
+    savoirFaire: ["subjonctif"],
+    difficulte: 1,
+    question:
+      "Relevez le verbe au subjonctif et son déclencheur :\na) « Il faut que tu partes. »\nb) « Je doute qu'il vienne. »",
+    reponseType:
+      "a) **partes** (subjonctif présent), déclencheur « il faut que » (nécessité).\nb) **vienne** (subjonctif présent), déclencheur « douter que » (doute). Le subjonctif est imposé par un déclencheur.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-f6",
+    notion: "fr-09",
+    savoirFaire: ["subjonctif", "concordance"],
+    difficulte: 1,
+    question:
+      "Indicatif ou subjonctif ? Justifiez :\na) « Bien qu'il (être) fatigué, il continue. »\nb) « Parce qu'il (être) fatigué, il s'arrête. »",
+    reponseType:
+      "a) **subjonctif** : « Bien qu'il **soit** fatigué » (« bien que » impose le subjonctif).\nb) **indicatif** : « Parce qu'il **est** fatigué » (« parce que » se construit avec l'indicatif).\nLe subordonnant commande le mode.",
+    explication: [],
+  },
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
+  {
+    id: "fr-09-exo-c1",
+    notion: "fr-09",
+    savoirFaire: ["present", "valeurs"],
+    difficulte: 2,
+    question:
+      "Nommez et justifiez la valeur du présent :\n« En 1492, Christophe Colomb débarque en Amérique. »",
+    reponseType:
+      "présent de **narration** (présent historique) : il rend un fait passé plus vivant, comme s'il se déroulait sous nos yeux. Justification : un contexte clairement passé (« en 1492 ») associé à un verbe au présent = actualisation du passé.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c2",
+    notion: "fr-09",
+    savoirFaire: ["conditionnel"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, que « aimerais » est un conditionnel et non un imparfait :\n« J'aimerais vous aider. »",
+    reponseType:
+      "Manipulation : changer de personne. « nous aim**erions** » fait apparaître le « r » du conditionnel ; l'imparfait donnerait « nous aimions ». Le « r » de l'infinitif « aimer » est la marque décisive. La valeur, ici, est la **politesse** (demande atténuée).",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c3",
+    notion: "fr-09",
+    savoirFaire: ["conditionnel", "valeurs"],
+    difficulte: 2,
+    question:
+      "Donnez la valeur du conditionnel :\na) « Si j'étais riche, je voyagerais. »\nb) « Le président serait souffrant. »\nc) « Pourriez-vous m'aider ? »\nd) « Il a promis qu'il viendrait. »",
+    reponseType:
+      "a) **hypothèse** (apodose d'un système « si + imparfait »).\nb) **fait non confirmé** (conditionnel journalistique).\nc) **politesse** (demande atténuée).\nd) **futur dans le passé** (transposition de « il viendra »).",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c4",
+    notion: "fr-09",
+    savoirFaire: ["subjonctif"],
+    difficulte: 2,
+    question:
+      "Pourquoi le subjonctif ?\na) « Je cherche un livre qui soit facile à lire. »\nb) « C'est le plus beau spectacle que j'aie vu. »",
+    reponseType:
+      "a) subjonctif dans la relative parce que l'antécédent est **visé, non encore identifié** (un livre pas encore trouvé : nuance d'éventualité).\nb) subjonctif après un **superlatif** (« le plus beau… que »), qui exprime une appréciation. Le subjonctif ne suit donc pas que les verbes de volonté.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c5",
+    notion: "fr-09",
+    savoirFaire: ["futur", "valeurs"],
+    difficulte: 2,
+    question:
+      "Donnez la valeur du futur :\na) « Vous me ferez trois copies pour demain. »\nb) « Il aura encore oublié, comme d'habitude. »",
+    reponseType:
+      "a) **futur injonctif** (ordre).\nb) **futur antérieur de probabilité** (conjecture : « il a sans doute oublié »). Le futur peut porter des valeurs modales.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c6",
+    notion: "fr-09",
+    savoirFaire: ["present", "valeurs"],
+    difficulte: 2,
+    question:
+      "Ces deux présents ont-ils la même valeur ? Justifiez :\na) « L'eau gèle à 0 °C. »\nb) « Hier, je rentrais tranquillement quand soudain, un chien surgit devant moi. »",
+    reponseType:
+      "Non.\na) **vérité générale** (loi physique, toujours vraie).\nb) **présent de narration** : il rend vivant un fait passé (le contexte « hier » le situe dans le passé).\nLe contexte temporel tranche entre l'intemporel et le récit actualisé.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c7",
+    notion: "fr-09",
+    savoirFaire: ["subjonctif"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, que le mode change :\na) « Je pense qu'il vient. »\nb) « Je ne pense pas qu'il vienne. »",
+    reponseType:
+      "a) **indicatif** (« vient ») : « penser que » à la forme affirmative pose le fait comme réel.\nb) **subjonctif** (« vienne ») : « ne pas penser que » introduit le doute, l'incertitude.\nManipulation : passer de l'affirmation à la négation fait basculer le mode de l'indicatif au subjonctif.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c8",
+    notion: "fr-09",
+    savoirFaire: ["concordance", "futur"],
+    difficulte: 2,
+    question:
+      "Mettez le verbe de la subordonnée au temps correct :\na) « Je partirai dès que tu (arriver). »\nb) « Préviens-moi quand tu (finir) ton travail. »",
+    reponseType:
+      "a) « dès que tu **arriveras** » : **futur** (après « dès que », le français met le futur quand la principale est au futur).\nb) « quand tu **auras fini** » : **futur antérieur** (antériorité par rapport à l'ordre donné).",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c9",
+    notion: "fr-09",
+    savoirFaire: ["present", "futur", "conditionnel", "valeurs"],
+    difficulte: 2,
+    question:
+      "Donnez la valeur de chaque verbe en gras :\n« Demain, je **partirai** tôt. Le train **part** à 7 h. J'**aimerais** arriver avant midi. »",
+    reponseType:
+      "- **partirai** : futur, action à venir.\n- **part** : présent à valeur de futur (horaire programmé).\n- **aimerais** : conditionnel de **souhait atténué / politesse**.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-c10",
+    notion: "fr-09",
+    savoirFaire: ["subjonctif"],
+    difficulte: 2,
+    question:
+      "Le mode change-t-il le sens ? Justifiez :\na) « Il a tout rangé, de sorte que la pièce est nette. »\nb) « Range tout, de sorte que la pièce soit nette. »",
+    reponseType:
+      "Oui.\na) **indicatif** (« est ») : « de sorte que » exprime la **conséquence** (un résultat réalisé).\nb) **subjonctif** (« soit ») : « de sorte que » exprime le **but** (un résultat visé, pas encore réalisé).\nLe mode distingue conséquence (indicatif) et but (subjonctif).",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-09-exo-e1",
+    notion: "fr-09",
+    savoirFaire: ["conditionnel"],
+    difficulte: 3,
+    question:
+      "Selon la terminologie 2020, à quel mode appartient le conditionnel ? Justifiez par sa valeur :\n« Il a dit qu'il viendrait. »",
+    reponseType:
+      "Selon la terminologie 2020, le conditionnel est un **temps de l'indicatif** (et non un mode autonome). Justification : ici, « viendrait » est un **futur dans le passé** (transposition de « il viendra » dans un récit passé), emploi purement temporel qui confirme son rattachement à l'indicatif. Le conditionnel garde des emplois modaux (hypothèse, politesse), mais son classement officiel est désormais temporel.",
     explication: [
-      { type: "note", text: "💡 Conditionnel présent et imparfait sont tous deux des temps de l'indicatif." },
+      {
+        type: "note",
+        text: "Côté correcteur : c'est le piège classique. Présenter le conditionnel comme un « mode » relève de l'ancienne terminologie ; le rattacher à l'indicatif (tout en signalant ses valeurs modales) est ce qui est attendu.",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-09-exo-03",
+    id: "fr-09-exo-e2",
     notion: "fr-09",
-    savoirFaire: ["futur","conditionnel","valeurs"],
-    difficulte: 1,
-    question: "Donnez la valeur du conditionnel :\na) « Si elle venait demain, je serais heureux. »   b) « Je voudrais vous demander un conseil. »   c) « Selon plusieurs sources, le suspect serait à l'étranger. »   d) « Elle savait qu'il viendrait le lendemain. »",
-    reponseType: "a) Hypothèse : « serais » exprime la conséquence de la venue envisagée.\n\nb) Politesse (atténuation d'une demande)\n\nc) Fait non confirmé, signalé par « selon plusieurs sources ».\n\nd) Futur dans le passé (action future vue depuis « savait »)",
+    savoirFaire: ["subjonctif", "concordance"],
+    difficulte: 3,
+    question:
+      "Identifiez le mode et le temps, et commentez le registre :\n« Il eût fallu qu'il vînt plus tôt. »",
+    reponseType:
+      "« vînt » : **subjonctif imparfait** (de « venir »), employé par concordance après un verbe de registre soutenu au passé. « eût fallu » : conditionnel passé deuxième forme (de morphologie identique au subjonctif plus-que-parfait). Registre **soutenu / littéraire**. En registre courant : « Il aurait fallu qu'il vienne ».",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-09-exo-04",
+    id: "fr-09-exo-e3",
+    notion: "fr-09",
+    savoirFaire: ["present", "valeurs"],
+    difficulte: 3,
+    question:
+      "Distinguez finement la valeur du présent :\na) « La Terre tourne autour du Soleil. »\nb) « Je t'aime. »",
+    reponseType:
+      "a) présent à valeur **gnomique** (vérité générale, intemporelle, valable hors du moment de parole).\nb) présent d'**énonciation** : il coïncide avec le moment où l'on parle, ancré dans l'instant.\nMême morphologie, deux ancrages opposés : l'intemporel et l'actuel.",
+    explication: [],
+  },
+  {
+    id: "fr-09-exo-e4",
+    notion: "fr-09",
+    savoirFaire: ["conditionnel", "valeurs"],
+    difficulte: 3,
+    question:
+      "Le conditionnel pourrait avoir deux valeurs. Laquelle retenir, et comment trancher ?\n« Selon la météo, il pleuvrait demain. »",
+    reponseType:
+      "Valeur retenue : **fait non confirmé** (conditionnel journalistique) : l'information n'est pas garantie, et « selon la météo » signale la source non assumée. Ce n'est **pas** un futur dans le passé, car il n'y a aucune principale au passé pour servir de repère. Le marqueur « selon » et l'absence de récit passé imposent la valeur modale d'information non confirmée.",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : trancher entre futur dans le passé (besoin d'un repère passé) et conditionnel d'information non confirmée (présence d'une source : « selon », « d'après ») est exactement le geste attendu.",
+      },
+    ],
+  },
+  {
+    id: "fr-09-exo-e5",
     notion: "fr-09",
     savoirFaire: ["subjonctif"],
-    difficulte: 1,
-    question: "Justifiez :\na) « Il faut qu'il vienne. »   b) « Je sais qu'il vient. »   c) « bien qu'elle soit fatiguée »   d) « Je crois qu'elle part demain. »   e) « pour qu'il réussisse »   f) « Je suis certain qu'il vient. »",
-    reponseType: "a) Subjonctif (« il faut que » : nécessité)\n\nb) Indicatif (« je sais que » : certitude)\n\nc) Subjonctif (« bien que » : concession, obligatoire)\n\nd) Indicatif (« je crois que » : opinion, pas doute)\n\ne) Subjonctif (« pour que » : but, obligatoire)\n\nf) Indicatif (« je suis certain que » : certitude)",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-09-exo-05",
-    notion: "fr-09",
-    savoirFaire: ["futur","conditionnel","subjonctif","valeurs"],
-    difficulte: 2,
-    question: "a) Le conditionnel est un temps de l'indicatif.\nb) Après « je crois que », on emploie le subjonctif.\nc) Le futur simple peut exprimer un ordre.\nd) « bien que » impose toujours le subjonctif.",
-    reponseType: "a) **Vrai** (terminologie retenue) : le conditionnel est un temps de l'indicatif. L'appellation « mode conditionnel » subsiste dans certains usages mais n'est pas retenue.\n\nb) **Faux** à la forme affirmative : « je crois que » appelle généralement l'indicatif. La négation ou l'interrogation peuvent favoriser le subjonctif.\n\nc) **Vrai** : « Tu feras tes devoirs » contient un futur injonctif qui formule une consigne.\n\nd) **Vrai** : « bien que » impose toujours le subjonctif, sans exception.",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-09-exo-06",
-    notion: "fr-09",
-    savoirFaire: ["subjonctif"],
-    difficulte: 2,
-    question: "Indiquez le mode imposé et justifiez :\na) parce que   b) bien que   c) pour que   d) quand   e) avant que   f) après que   g) à moins que   h) dès que",
-    reponseType: "a) parce que → indicatif (cause réelle)\n\nb) bien que → subjonctif (concession)\n\nc) pour que → subjonctif (but)\n\nd) quand → indicatif (temps, fait réel)\n\ne) avant que → subjonctif (antériorité envisagée)\n\nf) après que → indicatif attendu (fait accompli), même si le subjonctif est très fréquent dans l'usage\n\ng) à moins que → subjonctif (condition négative)\n\nh) dès que → indicatif (temps, fait réel)",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-09-exo-07",
-    notion: "fr-09",
-    savoirFaire: ["futur","conditionnel","subjonctif","valeurs"],
-    difficulte: 2,
-    question: "Ces analyses sont-elles correctes ? Corrigez :\na) « serait » → indicatif imparfait, valeur : état dans le passé\nb) « vienne » (après « bien que ») → indicatif présent\nc) Dans « Selon plusieurs sources, il viendrait demain », « viendrait » → conditionnel présent, valeur : conditionnel\nd) Dans « Le train partira demain à huit heures », « partira » → futur simple de l'indicatif, valeur : action à venir",
-    reponseType: "a) Erreur de temps : le mode indicatif est correct, mais « nous serions » (-rions) → conditionnel présent, pas imparfait. La valeur dépend du contexte.\n\nb) Faux : « bien que » impose le subjonctif → subjonctif présent.\n\nc) Temps correct, valeur trop vague : le repère « selon plusieurs sources » indique un fait non confirmé.\n\nd) Correct : « demain à huit heures » situe l'action dans l'avenir.",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-09-exo-08",
-    notion: "fr-09",
-    savoirFaire: ["subjonctif"],
-    difficulte: 2,
-    question: "Pourquoi ces phrases sont-elles incorrectes ? Corrigez :\na) « bien qu'il vient »   b) « il faut qu'elle vient »   c) « pour que tu réussis »",
-    reponseType: "a) « vient » (indicatif) incorrect → « bien qu'il **vienne** » (subjonctif, concession)\n\nb) « vient » incorrect → « il faut qu'elle **vienne** » (subjonctif, nécessité)\n\nc) « réussis » incorrect → « pour que tu **réussisses** » (subjonctif, but)",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-09-exo-09",
-    notion: "fr-09",
-    savoirFaire: ["valeurs"],
     difficulte: 3,
-    enonce: "« On écrit parce qu'on ne sait par quel autre biais attraper le réel. Vivre, sans l'écriture, me va mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-    question: "Rédigez la réponse jury pour « écrit », « sait » et « va ».",
-    reponseType: "« écrit » est au présent de l'indicatif, valeur de vérité générale : le sujet générique « on » inscrit l'affirmation dans une réflexion générale sur l'écriture.\n\n« sait » est au présent de l'indicatif et appartient à la même affirmation générale. Il présente l'impossibilité évoquée comme caractéristique de cette situation.\n\n« va » est au présent de l'indicatif, valeur d'énonciation : associé au pronom « me », il exprime le ressenti de l'auteure au moment où elle écrit.",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-09-exo-10",
-    notion: "fr-09",
-    savoirFaire: ["valeurs"],
-    difficulte: 3,
-    enonce: "« Depuis toujours, certaines histoires nous font rêver. En ce moment, une vive émotion monte en moi. »",
-    question: "Rédigez la réponse attendue pour « font » et « monte ».",
-    reponseType: "« font » est au présent de l'indicatif, valeur de vérité générale : le repère « depuis toujours » donne à l'affirmation une portée générale.\n\n« monte » est au présent de l'indicatif, valeur d'action en cours : le repère « en ce moment » situe l'émotion au moment de l'énonciation.",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-09-exo-11",
-    notion: "fr-09",
-    savoirFaire: ["conditionnel","valeurs"],
-    difficulte: 3,
-    enonce: "a) « Si elle venait demain, je serais heureux. »   b) « Pourriez-vous m'aider ? »   c) « Si elle était venue, j'aurais été heureux. »",
-    question: "Rédigez la réponse jury pour « serais », « Pourriez » et « aurais été ».",
-    reponseType: "a) « serais » est au conditionnel présent, temps de l'indicatif. Il exprime la conséquence de l'hypothèse « si elle venait demain », sans permettre à lui seul de la déclarer irréelle.\n\nb) « Pourriez » est au conditionnel présent (temps de l'indicatif), valeur de politesse : il atténue la demande.\n\nc) « aurais été » est au conditionnel passé (temps de l'indicatif), valeur d'irréel du passé : conséquence d'une condition non réalisée dans le passé (si + plus-que-parfait).",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-09-exo-12",
-    notion: "fr-09",
-    savoirFaire: ["subjonctif","concordance"],
-    difficulte: 3,
-    enonce: "a) « Il faut que chacun réussisse. »   b) « bien qu'il soit fatigué, il continue. »   c) « pour que la société avance »",
-    question: "Rédigez la réponse jury pour « réussisse », « soit » et « avance ».",
-    reponseType: "a) « réussisse » est au présent du subjonctif, imposé par « il faut que » : il exprime la nécessité que l'action ait lieu.\n\nb) « soit » est au présent du subjonctif, imposé par la conjonction de concession « bien que » : il exprime un état réel qui n'empêche pas l'action principale.\n\nc) « avance » est au présent du subjonctif, imposé par la conjonction de but « pour que » : il exprime le but visé.",
+    question:
+      "Identifiez l'emploi du subjonctif en proposition indépendante :\na) « Qu'il parte ! »\nb) « Vive la République ! »\nc) « Soit un triangle ABC. »",
+    reponseType:
+      "Subjonctif en **indépendante** (sans déclencheur subordonnant) :\na) **ordre / injonction** à la 3e personne (impératif impossible à cette personne).\nb) **souhait** (optatif, expression figée).\nc) **supposition** (langue mathématique : « soit » = « supposons »).\nLe subjonctif n'est donc pas toujours subordonné.",
     explication: [],
   },
 ];

@@ -1,275 +1,265 @@
 // Banque d'exercices OUVERTS, notion 02 « Fonctions syntaxiques ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux (un mot, un test) · Concours (la cible, format épreuve,
+// types de tâches variés dont « prouver par une manipulation ») · Expert (au-delà
+// de l'épreuve : attribut du COD, terminologie 2020 peser/coûter, accord qui tranche
+// le rattachement d'une épithète détachée).
+// Audit §9 appliqué : adjectif détaché = épithète détachée (apposition réservée au GN).
+// Citations vérifiées (Pascal, Verlaine, Beauvoir) ; ailleurs, phrases neutres.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_FONCTIONS_SYNTAXIQUES: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-02-exo-01",
+    id: "fr-02-exo-f1",
     notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "attribut", "cc"],
+    savoirFaire: ["sujet"],
     difficulte: 1,
-    question: "Quelle est la fonction du groupe souligné ?\na) « <u>Le soleil</u> se couchait lentement. »   b) « Il mange <u>une pomme</u>. »   c) « Elle parle <u>à son ami</u>. »   d) « <u>Rapidement</u>, il referma la porte. »   e) « Il semble <u>fatigué</u>. »",
-    reponseType: "a) **Le soleil** → sujet du verbe « se couchait » (« C'est le soleil qui se couchait »)\n\nb) **une pomme** → COD du verbe « mange » (quoi ? ; « Il la mange »)\n\nc) **à son ami** → COI du verbe « parle » (à qui ? ; « Elle lui parle »)\n\nd) **Rapidement** → CC de manière (mobile et supprimable)\n\ne) **fatigué** → attribut du sujet « il » (verbe d'état « semble »)",
+    question:
+      "Donnez la fonction du groupe souligné, et le test qui la prouve :\n« Dans le jardin chantait <u>un oiseau</u>. »",
+    reponseType:
+      "**un oiseau** : sujet du verbe « chantait ». Test : « C'est *un oiseau* qui chantait » (encadrement par *c'est… qui*). Le sujet est ici **postposé** (placé après le verbe), ce qui ne change pas sa fonction.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-02-exo-02",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "attribut", "cc", "epithete-apposition"],
-    difficulte: 1,
-    question: "Vrai ou faux, justifiez en une phrase :\na) Dans « Le chien de ma voisine aboie », « de ma voisine » est un CC de lieu.\nb) Dans « Elle paraît heureuse », « heureuse » est attribut du sujet.\nc) Dans « Il habite à Lyon », « à Lyon » est supprimable.\nd) Dans « Seul, il repartit », « Seul » est attribut du sujet.",
-    reponseType: "a) **Faux** : « de ma voisine » est CDN du nom « chien » (dans le GN, non mobile).\n\nb) **Vrai** : attribut du sujet « elle » via le verbe d'état « paraît ».\n\nc) **Faux** : « Il habite » seul est bancal, « à Lyon » est un complément essentiel de lieu.\n\nd) **Faux** : pas de verbe d'état, « Seul » est une épithète détachée.",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-03",
-    notion: "fr-02",
-    savoirFaire: ["cod-coi", "cc"],
-    difficulte: 1,
-    question: "Identifiez la fonction du groupe souligné :\na) « Il offre <u>des fleurs</u>. »   b) « Elle rêve <u>de voyages</u>. »   c) « Il travaille <u>avec soin</u>. »   d) « Je doute <u>de sa sincérité</u>. »   e) « Il lit <u>un roman</u>. »   f) « Ils partent <u>demain matin</u>. »",
-    reponseType: "a) **des fleurs** → COD (« Il les offre »)\n\nb) **de voyages** → COI (« Elle en rêve »)\n\nc) **avec soin** → CC de manière (mobile et supprimable)\n\nd) **de sa sincérité** → COI (« Il en doute »)\n\ne) **un roman** → COD (« Il le lit »)\n\nf) **demain matin** → CC de temps (mobile et supprimable)",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-04",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "cc"],
-    difficulte: 1,
-    question: "Identifiez le sujet et précisez sa nature :\na) « Les enfants courent dans le jardin. »   b) « Écrire est un plaisir. »   c) « Il est tard. »   d) « Que tu partes m'attriste. »   e) « Monte en moi une humble flamme. »",
-    reponseType: "a) Sujet : **Les enfants** → GN\n\nb) Sujet : **Écrire** → verbe à l'infinitif (infinitif sujet)\n\nc) Sujet : **Il** → pronom personnel impersonnel (sujet grammatical, sans référent réel)\n\nd) Sujet : **Que tu partes** → proposition subordonnée conjonctive\n\ne) Sujet : **une humble flamme** → GN (sujet postposé)",
-    explication: [
-      { type: "note", text: "⚠️ En e), « en moi » n'est pas le sujet mais un CC de lieu : le sujet est le GN postposé." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-05",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "attribut", "cc", "epithete-apposition"],
-    difficulte: 1,
-    question: "Fonctions possibles : sujet · attribut du sujet · COD · COI · CC · CDN · épithète · apposition · apostrophe.\na) « La maison <u>de Pierre</u> est grande. »   b) « <u>Mes amis</u>, écoutez-moi. »   c) « Hugo, <u>grand poète romantique</u>, vécut longtemps. »   d) « Il devient <u>professeur</u>. »   e) « Elle porte une <u>belle</u> robe. »   f) « Il part <u>pour fuir</u>. »",
-    reponseType: "a) **de Pierre** → CDN du nom « maison »\n\nb) **Mes amis** → apostrophe (interpelle, sans lien syntaxique)\n\nc) **grand poète romantique** → apposition (entre virgules, se rapporte à « Hugo »)\n\nd) **professeur** → attribut du sujet « il » (verbe d'état « devient »)\n\ne) **belle** → épithète liée du nom « robe »\n\nf) **pour fuir** → CC de but (groupe infinitif prépositionnel)",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-06",
-    notion: "fr-02",
-    savoirFaire: ["cod-coi", "cc", "epithete-apposition"],
-    difficulte: 1,
-    question: "Identifiez la fonction du groupe souligné en justifiant par la question après le verbe et, si besoin, par la suppression :\na) « Il téléphone <u>à sa mère</u>. »   b) « Elle raconte <u>son voyage</u>. »   c) « Ils habitent <u>à Paris</u>. »   d) « <u>Le matin</u>, il lit. »",
-    reponseType: "a) **à sa mère** → COI du verbe « téléphone » : il téléphone à qui ? à sa mère.\n\nb) **son voyage** → COD du verbe « raconte » : elle raconte quoi ? son voyage, sans préposition.\n\nc) **à Paris** → complément essentiel de lieu : il habite où ? à Paris ; « Ils habitent » seul est incomplet.\n\nd) **Le matin** → CC de temps : le groupe est supprimable (« il lit ») et déplaçable (« il lit le matin »).",
-    explication: [
-      { type: "note", text: "⚠️ La question après le verbe aide à repérer COD et COI, mais elle ne suffit pas pour les lieux : il faut aussi tester la suppression." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-07",
-    notion: "fr-02",
-    savoirFaire: ["cc", "epithete-apposition"],
-    difficulte: 1,
-    question: "Identifiez la fonction du groupe souligné :\na) « le chien <u>du voisin</u> »   b) « Il travaille <u>avec courage</u>. »   c) « un acte <u>de courage</u> »   d) « Elle revient <u>de Paris</u>. »   e) « la gare <u>de Paris</u> »",
-    reponseType: "a) **du voisin** → CDN (dans le GN, non mobile)\n\nb) **avec courage** → CC de manière (mobile et supprimable)\n\nc) **de courage** → CDN du nom « acte » (non mobile)\n\nd) **de Paris** → CC de lieu (mobile et supprimable)\n\ne) **de Paris** → CDN du nom « gare » (non mobile)",
-    explication: [
-      { type: "note", text: "⚠️ Même préposition, deux fonctions : le test de mobilité et de suppression est décisif." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-08",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "attribut", "cc", "epithete-apposition"],
-    difficulte: 1,
-    question: "Identifiez la fonction du groupe souligné :\na) « Je <u>le</u> crois <u>sincère</u>. »   b) « Il offre <u>des roses</u> <u>à sa femme</u>. »   c) « <u>Épuisée</u>, elle s'endormit. »   d) « Ils ont élu Paola <u>présidente</u>. »",
-    reponseType: "a) **sincère** → attribut du COD « le » : ce n'est pas « je » qui est sincère, mais « le » (« il est sincère »)\n\nb) **des roses** → COD ; **à sa femme** → COS\n\nc) **Épuisée** → épithète détachée du sujet « elle » (pas de verbe d'état)\n\nd) **présidente** → attribut du COD « Paola » (« Paola est présidente »)",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-09",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "cc"],
-    difficulte: 2,
-    question: "Justifiez la fonction par un test grammatical explicite :\na) « Elle aime son métier. » (COD ?)\nb) « Il obéit à ses parents. » (COI ?)\nc) « Les enfants jouent dehors. » (sujet ?)",
-    reponseType: "a) **son métier** → COD du verbe « aime ». Deux tests le confirment : 1) question après le verbe : « elle aime quoi ? » → « son métier », sans préposition ; 2) pronominalisation : « Elle l'aime ». Le groupe complète directement le verbe.\n\nb) **à ses parents** → COI du verbe « obéit ». Deux tests le confirment : 1) question après le verbe : « il obéit à qui ? » → « à ses parents » ; 2) pronominalisation : « Il leur obéit ». La préposition « à » est imposée par le verbe « obéir à ».\n\nc) **Les enfants** → sujet du verbe « jouent ». Test : encadrement par « c'est… qui » → « Ce sont les enfants qui jouent dehors ». Le groupe commande l'accord du verbe à la 3e personne du pluriel.\n\n**Réponse attendue (formulation jury) :** « a) *son métier* → COD de *aime* (elle *l'*aime) ; b) *à ses parents* → COI de *obéit* (obéir à ; il *leur* obéit) ; c) *Les enfants* → sujet de *jouent* (ce sont les enfants qui jouent). »",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-10",
-    notion: "fr-02",
-    savoirFaire: ["cod-coi", "cc", "epithete-apposition"],
-    difficulte: 2,
-    question: "« à » introduit des fonctions différentes. Identifiez-les :\na) « Il pense <u>à son avenir</u>. »   b) « Il court <u>à toute vitesse</u>. »   c) « Il habite <u>à Bordeaux</u>. »   d) « Il donne un livre <u>à sa sœur</u>. »",
-    reponseType: "a) **à son avenir** → COI (« Il y pense », non supprimable)\n\nb) **à toute vitesse** → CC de manière (mobile et supprimable)\n\nc) **à Bordeaux** → complément essentiel de lieu (« Il habite » seul est bancal)\n\nd) **à sa sœur** → COS (COD = « un livre »)",
-    explication: [
-      { type: "note", text: "⚠️ « à » introduit COI, CC ou COS selon le contexte : les tests de suppression et de pronominalisation sont indispensables." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-11",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "attribut", "cc", "epithete-apposition"],
-    difficulte: 2,
-    question: "Expliquez pourquoi la fonction entre parenthèses est fausse, donnez la bonne :\na) « <u>Heureuse</u>, elle entra dans la pièce. » (attribut du sujet ?)\nb) « Le livre <u>de Paul</u> est sur la table. » (CC de lieu ?)\nc) « <u>Mes chers amis</u>, je vous remercie. » (sujet ?)\nd) « Il semble <u>content</u>. » (épithète liée ?)",
-    reponseType: "a) Pas attribut du sujet (aucun verbe d'état) → **épithète détachée** du sujet « elle ».\n\nb) Pas CC de lieu (« de Paul » non mobile) → **CDN** du nom « livre ».\n\nc) Pas sujet (aucun lien avec un verbe, supprimable) → **apostrophe**.\n\nd) Pas épithète liée (« content » séparé du sujet par « semble ») → **attribut du sujet**.",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-12",
+    id: "fr-02-exo-f2",
     notion: "fr-02",
     savoirFaire: ["cod-coi"],
-    difficulte: 2,
-    question: "Identifiez la fonction du groupe souligné. Attention à la préposition qui introduit le groupe : elle fait partie de la construction du verbe et peut changer l'analyse.\na) « Il ressemble <u>à son père</u>. »   b) « Elle nuit <u>à ses intérêts</u>. »   c) « Il joue <u>de la guitare</u>. »   d) « Ils ont besoin <u>de repos</u>. »",
-    reponseType: "a) **à son père** → COI (ressembler À ; « Il lui ressemble »)\n\nb) **à ses intérêts** → COI (nuire À ; « Elle y nuit »)\n\nc) **de la guitare** → COI (jouer DE ; « Il en joue »)\n\nd) **de repos** → COI (avoir besoin DE ; « Ils en ont besoin »)",
-    explication: [
-      { type: "note", text: "💡 À retenir : obéir à, nuire à, ressembler à, parler à, penser à, jouer de, manquer de, avoir besoin de, se souvenir de sont tous transitifs indirects." },
-    ],
+    difficulte: 1,
+    question:
+      "Donnez la fonction du groupe souligné dans chaque phrase :\na) « Elle aide <u>son frère</u>. »\nb) « Elle pense <u>à son frère</u>. »",
+    reponseType:
+      "a) **son frère** : COD du verbe « aide » (« Elle *l'*aide » ; on aide *quelqu'un*, sans préposition).\n\nb) **à son frère** : COI du verbe « pense » (« Elle pense *à lui*, elle *y* pense » ; on pense *à quelqu'un*). Le test décisif : le COD se reprend par *le / la / les*, le COI garde la trace de la préposition (*à lui*, *y*, *en*).",
+    explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-02-exo-13",
+    id: "fr-02-exo-f3",
+    notion: "fr-02",
+    savoirFaire: ["attribut", "epithete-apposition"],
+    difficulte: 1,
+    question:
+      "Rangez les adjectifs en gras en deux listes : ceux qui sont **attribut du sujet**, ceux qui sont **épithète**.\n« une nuit **claire** » · « la nuit est **claire** » · « **Claire**, la nuit invitait à la flânerie » · « elle paraît **sereine** »",
+    reponseType:
+      "**Attribut du sujet** (il y a un verbe d'état) : « la nuit *est* claire » ; « elle *paraît* sereine ».\n\n**Épithète** (pas de verbe d'état) : « une nuit claire » (épithète liée) ; « *Claire*, la nuit… » (épithète détachée).\n\nLe seul test : un verbe d'état (*être, paraître, sembler, devenir…*) entre le sujet et l'adjectif → attribut ; sinon → épithète.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-f4",
+    notion: "fr-02",
+    savoirFaire: ["attribut"],
+    difficulte: 1,
+    question:
+      "Relevez l'attribut du sujet et nommez le verbe qui l'introduit :\n« Après l'orage, le ciel devint d'un bleu profond. »",
+    reponseType:
+      "**d'un bleu profond** : attribut du sujet « le ciel », introduit par le verbe d'état **devint** (« devenir »). Test : l'attribut ne se supprime pas (« le ciel devint » est incomplet) et se rattache au sujet par le verbe attributif.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-f5",
+    notion: "fr-02",
+    savoirFaire: ["cc"],
+    difficulte: 1,
+    question:
+      "Donnez la fonction précise (avec la nuance) du groupe souligné :\na) « Il travaille <u>avec méthode</u>. »\nb) « <u>Depuis l'aube</u>, ils marchent. »",
+    reponseType:
+      "a) **avec méthode** : CC de manière (mobile et supprimable : « Il travaille »).\n\nb) **Depuis l'aube** : CC de temps (mobile : « Ils marchent depuis l'aube » ; supprimable). Dans les deux cas, le test du CC est double : déplacement possible et suppression possible.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-f6",
+    notion: "fr-02",
+    savoirFaire: ["epithete-apposition"],
+    difficulte: 1,
+    question:
+      "Pour chaque élément en gras, dites s'il est **épithète liée**, **épithète détachée** ou **apposition** :\na) « un **vieux** chêne »\nb) « **Furieux**, il claqua la porte »\nc) « Rome, **capitale de l'Italie**, attire les touristes »",
+    reponseType:
+      "a) **vieux** : épithète liée du nom « chêne » (accolée, sans virgule).\n\nb) **Furieux** : adjectif, épithète détachée se rapportant au sujet « il » (isolé par une virgule, mobile, pas de verbe d'état). On peut aussi l'appeler *apposition de l'adjectif* : même fonction.\n\nc) **capitale de l'Italie** : GN, apposition à « Rome » (élément nominal coréférent, entre virgules). Convention : on retient **épithète détachée** pour l'adjectif (b) et **apposition** pour le GN (c).",
+    explication: [],
+  },
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
+  {
+    id: "fr-02-exo-c1",
+    notion: "fr-02",
+    savoirFaire: ["cc", "cod-coi"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, que dans « Il part demain » le mot « demain » est un complément circonstanciel, et non un COD.",
+    reponseType:
+      "**demain** : CC de temps. Trois manipulations le prouvent :\n1. **Déplacement** : « *Demain*, il part » reste correct (le CC est mobile).\n2. **Suppression** : « Il part » reste une phrase complète (le CC est facultatif).\n3. **Pronominalisation impossible** : on ne peut pas dire « *il le part* » (donc pas de COD).\nLes trois tests convergent : complément circonstanciel, pas COD.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-c2",
+    notion: "fr-02",
+    savoirFaire: ["cc", "cod-coi"],
+    difficulte: 2,
+    question:
+      "**Relevez tous les compléments circonstanciels** du passage et donnez la nuance de chacun :\n« Le matin, sans bruit, elle quittait la maison pour rejoindre l'atelier. »",
+    reponseType:
+      "Trois CC :\n- **Le matin** : CC de temps ;\n- **sans bruit** : CC de manière ;\n- **pour rejoindre l'atelier** : CC de but.\nChacun est mobile et supprimable, d'où sa fonction circonstancielle. ⚠️ Ne pas relever « la maison » : c'est le **COD** de « quittait » (« elle *la* quittait »), pas un CC.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-c3",
     notion: "fr-02",
     savoirFaire: ["sujet", "cod-coi", "epithete-apposition"],
     difficulte: 2,
-    question: "Identifiez le sujet et sa nature :\na) « Que tu aies réussi me comble de joie. »   b) « Partir serait une erreur. »   c) « Il neige depuis ce matin. »   d) « Tout est possible. »",
-    reponseType: "a) **Que tu aies réussi** → proposition subordonnée conjonctive sujet\n\nb) **Partir** → verbe à l'infinitif (infinitif sujet)\n\nc) **Il** → pronom personnel impersonnel (sujet grammatical, sans référent)\n\nd) **Tout** → pronom indéfini sujet",
+    question:
+      "Donnez la fonction de chaque groupe souligné :\n« <u>Ravie</u>, <u>la directrice</u> annonça <u>la nouvelle</u> <u>à l'assemblée</u>. »",
+    reponseType:
+      "- **Ravie** : adjectif, épithète détachée se rapportant au sujet « la directrice » (pas de verbe d'état, isolé par une virgule).\n- **la directrice** : sujet de « annonça ».\n- **la nouvelle** : COD de « annonça » (« elle *l'*annonça »).\n- **à l'assemblée** : COI / complément d'attribution (« annoncer qqch *à qqn* » ; « elle *leur* annonça »).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-02-exo-14",
+    id: "fr-02-exo-c4",
     notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "attribut", "cc"],
+    savoirFaire: ["sujet", "cod-coi"],
     difficulte: 2,
-    question: "Analysez la fonction du groupe souligné :\na) « Je le crois <u>parti</u>. »   b) « Elle regarde <u>les enfants jouer</u>. »   c) « Il entend <u>la pluie tomber</u>. »   d) « Elle le trouve <u>charmant</u>. »",
-    reponseType: "a) **parti** → attribut du COD « le » (« il est parti »)\n\nb) **les enfants jouer** → proposition subordonnée infinitive, COD du verbe « regarde »\n\nc) **la pluie tomber** → proposition subordonnée infinitive, COD du verbe « entend »\n\nd) **charmant** → attribut du COD « le » (« il est charmant »)",
-    explication: [
-      { type: "note", text: "⚠️ Après un verbe de perception (voir, entendre, regarder, sentir) + infinitif ayant son propre sujet → proposition subordonnée infinitive COD." },
-    ],
+    question:
+      "Donnez la fonction des quatre groupes en gras :\n« **Le cœur** a **ses raisons** **que** **la raison** ne connaît point. » (Pascal, *Pensées*)",
+    reponseType:
+      "- **Le cœur** : sujet du verbe « a ».\n- **ses raisons** : COD du verbe « a ».\n- **que** : pronom relatif, **COD** du verbe « connaît » (antécédent « raisons » ; on rétablit « la raison ne connaît point *ces raisons* »).\n- **la raison** : sujet du verbe « connaît », dans la subordonnée relative.",
+    explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-02-exo-15",
+    id: "fr-02-exo-c5",
+    notion: "fr-02",
+    savoirFaire: ["sujet", "cod-coi", "cc"],
+    difficulte: 2,
+    question:
+      "Délimitez le **groupe sujet**, puis donnez la fonction des deux autres groupes en gras :\n« Les sanglots longs des violons de l'automne blessent **mon cœur** **d'une langueur monotone**. » (Verlaine, *Chanson d'automne*)",
+    reponseType:
+      "- **Groupe sujet** : « *Les sanglots longs des violons de l'automne* », sujet de « blessent ». C'est un GN étendu (*des violons* et *de l'automne* sont des compléments du nom emboîtés) ; tout le groupe reste le sujet.\n- **mon cœur** : COD de « blessent » (« ils *le* blessent »).\n- **d'une langueur monotone** : CC de manière (blesser *de quelle façon ?*).",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-c6",
+    notion: "fr-02",
+    savoirFaire: ["attribut", "epithete-apposition"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, que « heureuse » n'a pas la même fonction dans les deux phrases :\na) « Elle semblait **heureuse**. »\nb) « **Heureuse**, elle entra dans la pièce. »",
+    reponseType:
+      "a) **heureuse** : attribut du sujet « elle ». Manipulation : l'adjectif dépend du verbe d'état « semblait » ; on ne peut ni le déplacer ni le supprimer sans détruire la phrase (« Elle semblait » est incomplet).\n\nb) **Heureuse** : épithète détachée se rapportant au sujet « elle ». Manipulation : aucun verbe d'état (le verbe est « entra ») ; l'adjectif est **mobile** (« Elle entra dans la pièce, *heureuse* ») et **supprimable**. Le test décisif est donc la présence ou l'absence d'un verbe d'état.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-c7",
     notion: "fr-02",
     savoirFaire: ["cc"],
     difficulte: 2,
-    question: "Précisez le type de CC (temps, lieu, manière, cause, but, condition, concession, moyen) :\na) « <u>Malgré la pluie</u>, il sortit. »   b) « Il court <u>pour gagner du temps</u>. »   c) « Elle tremblait <u>de peur</u>. »   d) « <u>Si tu viens</u>, je serai heureux. »   e) « Il écrit <u>avec un stylo rouge</u>. »",
-    reponseType: "a) **Malgré la pluie** → CC de concession\n\nb) **pour gagner du temps** → CC de but\n\nc) **de peur** → CC de cause\n\nd) **Si tu viens** → CC de condition\n\ne) **avec un stylo rouge** → CC de moyen",
+    question:
+      "Les deux groupes « de Lyon » ont-ils la même fonction ? Justifiez par un test :\na) « le train **de Lyon** »\nb) « elle revient **de Lyon** »",
+    reponseType:
+      "Non.\na) Dans « le train *de Lyon* » : **complément du nom** « train ». Il est interne au GN et non mobile (« *De Lyon* le train » est impossible).\nb) Dans « elle revient *de Lyon* » : **CC de lieu** (origine), qui dépend du verbe « revient » et reste mobile (« *De Lyon*, elle revient »).\nMême groupe prépositionnel, deux fonctions selon ce à quoi il se rattache : un nom (CDN) ou un verbe (CC).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-02-exo-16",
+    id: "fr-02-exo-c8",
     notion: "fr-02",
-    savoirFaire: ["cod-coi", "epithete-apposition"],
+    savoirFaire: ["cod-coi"],
     difficulte: 2,
-    question: "Distinguez et justifiez :\na) « Paris, <u>capitale de la France</u>, est magnifique. »   b) « La capitale <u>de la France</u> est magnifique. »   c) « Victor Hugo, <u>auteur des Misérables</u>, est né en 1802. »   d) « L'auteur <u>des Misérables</u> est né en 1802. »",
-    reponseType: "a) **capitale de la France** → apposition (entre virgules, se rapporte à « Paris », supprimable)\n\nb) **de la France** → CDN du nom « capitale » (dans le GN, non mobile)\n\nc) **auteur des Misérables** → apposition (entre virgules, se rapporte à « Victor Hugo »)\n\nd) **des Misérables** → CDN du nom « auteur »",
+    question:
+      "Donnez la fonction des deux compléments soulignés :\n« Le facteur remet <u>le colis</u> <u>au voisin</u>. »",
+    reponseType:
+      "- **le colis** : COD de « remet » (« il *le* remet »).\n- **au voisin** : COS (complément d'objet second) / complément d'attribution (« il *lui* remet le colis »). C'est un second complément, introduit par *à*, qui désigne le destinataire. En terminologie 2020, on l'analyse comme un COI ; la mention « second » indique seulement qu'il s'ajoute au COD.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-c9",
+    notion: "fr-02",
+    savoirFaire: ["epithete-apposition", "attribut"],
+    difficulte: 2,
+    question:
+      "Analysez la fonction de chaque élément détaché :\n« **Épuisé**, le marcheur, **un vieil homme pourtant robuste**, s'arrêta. »",
+    reponseType:
+      "- **Épuisé** : adjectif, épithète détachée se rapportant au sujet « le marcheur » (pas de verbe d'état, mobile ; *apposition de l'adjectif* est un synonyme admis).\n- **un vieil homme pourtant robuste** : GN, apposition à « le marcheur » (élément *nominal*, coréférent, supprimable).\nConvention retenue : **épithète détachée** pour l'adjectif, **apposition** pour le GN. Pas d'attribut ici, car le verbe (« s'arrêta ») n'est pas un verbe d'état.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-c10",
+    notion: "fr-02",
+    savoirFaire: ["sujet"],
+    difficulte: 2,
+    question:
+      "Dans chaque phrase, distinguez le **sujet grammatical** (apparent) et, s'il existe, le **sujet réel** (logique) :\na) « **Il** pleut. »\nb) « **Il** arrive parfois **des accidents**. »",
+    reponseType:
+      "a) **Il** : sujet grammatical (apparent) du verbe impersonnel « pleut ». Pas de sujet réel : « pleuvoir » est essentiellement impersonnel.\n\nb) **Il** : sujet grammatical (apparent) ; **des accidents** : sujet réel (logique) du verbe « arrive » (« *des accidents* arrivent parfois »). Test : c'est « des accidents » qui porte le sens, « il » n'est qu'un support.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-c11",
+    notion: "fr-02",
+    savoirFaire: ["sujet"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, quel est le sujet du verbe :\n« À l'horizon se dessinaient de hautes montagnes. »",
+    reponseType:
+      "**de hautes montagnes** : sujet du verbe « se dessinaient », bien que postposé. Preuve : l'**encadrement** « Ce sont *de hautes montagnes* qui se dessinaient » est correct, et l'**accord** confirme (verbe au pluriel commandé par « montagnes » ; au singulier, « une haute montagne *se dessinait* »). Le groupe en tête, « À l'horizon », est un CC de lieu, pas le sujet.",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-02-exo-e1",
+    notion: "fr-02",
+    savoirFaire: ["attribut", "cod-coi"],
+    difficulte: 3,
+    question:
+      "Analysez précisément la fonction de « femme », puis de « le » :\n« On ne naît pas **femme**, on **le** devient. » (Simone de Beauvoir, *Le Deuxième Sexe*, 1949)",
+    reponseType:
+      "- **femme** : attribut du sujet « on ». Le verbe *naître* fonctionne ici comme un verbe attributif (« naître + état »), reliant le sujet à une qualité, sans préposition.\n- **le** : attribut du sujet également, repris par le pronom neutre *le* (« on le devient » = « on devient *femme* », et *devenir* est un verbe d'état).\nCe que le correcteur attend : ne **pas** analyser *le* comme un COD. *Devenir* n'admet pas de COD ; le pronom neutre *le* reprend toujours un attribut (ou une proposition), jamais un objet.",
+    explication: [],
+  },
+  {
+    id: "fr-02-exo-e2",
+    notion: "fr-02",
+    savoirFaire: ["attribut", "cod-coi"],
+    difficulte: 3,
+    question:
+      "Nommez précisément la fonction de « président » et justifiez par une manipulation :\n« L'assemblée a élu **président** un jeune inconnu. »",
+    reponseType:
+      "**président** : **attribut du COD**. Le COD est « un jeune inconnu » (« l'assemblée *l'*a élu ») ; « président » exprime l'état attribué à ce COD par le verbe « élire ». Manipulation : on peut insérer un verbe d'état entre le COD et le mot (« un jeune inconnu *est devenu* président »), ce qui révèle la relation attributive. À distinguer d'un second complément : « président » ne désigne pas une autre chose élue, mais ce que *devient* le COD.",
     explication: [
-      { type: "note", text: "💡 Apposition : groupe entre virgules, supprimable. CDN : groupe prépositionnel dans le GN, non mobile." },
+      {
+        type: "note",
+        text: "Côté correcteur : « attribut du COD » (ou attribut de l'objet) dépasse les attendus de base, mais le savoir mobiliser est valorisé. L'erreur classique est de l'analyser en COS.",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-02-exo-17",
+    id: "fr-02-exo-e3",
     notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "cc", "epithete-apposition"],
+    savoirFaire: ["cod-coi"],
     difficulte: 3,
-    enonce: "« Une femme passa, tenant par la main un petit garçon <u>d'une dizaine d'années</u>. Elle se hâtait, les yeux <u>baissés</u>, <u>pressée d'atteindre sa maison</u> <u>avant la nuit</u>. »\n*(Émile Zola, Germinal, 1885)*",
-    question: "Précisez la nature et la fonction : « <u>Une femme</u> » · « <u>d'une dizaine d'années</u> » · « <u>baissés</u> » · « <u>avant la nuit</u> » · « <u>pressée d'atteindre sa maison</u> »",
-    reponseType: "Mot / groupe | Nature | Fonction\n--- | --- | ---\nUne femme | Groupe nominal | Sujet du verbe « passa »\nd'une dizaine d'années | GN prépositionnel | CDN du nom « garçon »\nbaissés | Participe passé employé comme adjectif | Épithète détachée du nom « yeux »\navant la nuit | GN prépositionnel | CC de temps du verbe « atteindre »\npressée d'atteindre sa maison | Adjectif + groupe infinitif prépositionnel | Épithète détachée du sujet « elle »\n\n**Réponse attendue (formulation jury) :** « *Une femme* → GN, sujet de *passa* ; *d'une dizaine d'années* → GN prépositionnel, CDN du nom *garçon* ; *baissés* → participe passé employé comme adjectif, épithète détachée du nom *yeux* ; *avant la nuit* → GN prépositionnel, CC de temps ; *pressée d'atteindre sa maison* → groupe adjectival, épithète détachée du sujet *elle*. »",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-18",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "cc", "epithete-apposition"],
-    difficulte: 3,
-    enonce: "« Il aimait <u>les promenades solitaires</u> <u>dans les bois</u>, les longues chevauchées silencieuses, et les soirs d'automne, quand il rentrait <u>seul</u>, il sentait <u>le vide de sa vie</u> s'étendre <u>autour de lui</u>. »\n*(Guy de Maupassant, Bel-Ami, 1885)*",
-    question: "Précisez la nature et la fonction : « <u>les promenades solitaires</u> » · « <u>dans les bois</u> » · « <u>seul</u> » · « <u>le vide de sa vie</u> » · « <u>autour de lui</u> »",
-    reponseType: "Mot / groupe | Nature | Fonction\n--- | --- | ---\nles promenades solitaires | Groupe nominal | COD du verbe « aimait »\ndans les bois | GN prépositionnel | CDN du nom « promenades » (ou CC de lieu selon la lecture)\nseul | Adjectif qualificatif | Épithète détachée du sujet « il »\nle vide de sa vie | Groupe nominal | COD du verbe « sentait »\nautour de lui | GN prépositionnel | CC de lieu du verbe « s'étendre »\n\n**Réponse attendue (formulation jury) :** « *les promenades solitaires* → GN, COD de *aimait* ; *dans les bois* → GN prépositionnel, CDN du nom *promenades* (ou CC de lieu, si on justifie) ; *seul* → adjectif qualificatif, épithète détachée du sujet *il* ; *le vide de sa vie* → GN, COD de *sentait* ; *autour de lui* → GN prépositionnel, CC de lieu de *s'étendre*. »",
+    question:
+      "Selon la **terminologie grammaticale de 2020**, quelle est la fonction des groupes soulignés ? (La réponse a changé par rapport à la grammaire traditionnelle.)\na) « Ce livre pèse <u>trois kilos</u>. »\nb) « Ce manteau coûte <u>deux cents euros</u>. »",
+    reponseType:
+      "a) **trois kilos** : **COD** du verbe « pèse ».\nb) **deux cents euros** : **COD** du verbe « coûte ».\nDans la terminologie 2020, qui abandonne la notion de « complément essentiel », les compléments des verbes *peser, coûter, mesurer, durer*… sont analysés comme des **COD**. Particularité : ces COD ne se pronominalisent pas en *le/la/les* et n'autorisent pas le passif, mais la terminologie officielle les range tout de même en COD.",
     explication: [
-      { type: "note", text: "⚠️ « dans les bois » peut s'analyser en CDN ou en CC de lieu : les deux sont défendables si on justifie." },
+      {
+        type: "note",
+        text: "Côté correcteur : maîtriser cette bascule de 2020 est apprécié. Répondre « CC de mesure » ou « complément essentiel » relève de l'ancienne terminologie.",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-02-exo-19",
+    id: "fr-02-exo-e4",
     notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "cc", "epithete-apposition"],
+    savoirFaire: ["epithete-apposition", "attribut"],
     difficulte: 3,
-    enonce: "« Ma mère, <u>dont</u> le regard ne vieillissait pas, regardait <u>les enfants jouer</u> <u>dans le jardin</u>. Elle souriait, <u>muette</u>, heureuse, et ne disait <u>rien</u>. »\n*(Colette, La Maison de Claudine, 1922)*",
-    question: "Précisez la nature et la fonction : « <u>dont</u> » · « <u>les enfants jouer</u> » · « <u>dans le jardin</u> » · « <u>muette</u> » · « <u>rien</u> »",
-    reponseType: "Mot / groupe | Nature | Fonction\n--- | --- | ---\ndont | Pronom relatif | CDN du nom « regard » (dépronominalisé : « le regard de ma mère »)\nles enfants jouer | Proposition subordonnée infinitive | COD du verbe « regardait » (verbe de perception)\ndans le jardin | GN prépositionnel | CC de lieu du verbe « jouer »\nmuette | Adjectif qualificatif | Épithète détachée du sujet « elle »\nrien | Pronom indéfini | COD du verbe « disait »\n\n**Réponse attendue (formulation jury) :** « *dont* → pronom relatif, CDN du nom *regard* (le regard *de ma mère*) ; *les enfants jouer* → proposition subordonnée infinitive, COD de *regardait* ; *dans le jardin* → GN prépositionnel, CC de lieu de *jouer* ; *muette* → adjectif qualificatif, épithète détachée du sujet *elle* ; *rien* → pronom indéfini, COD de *disait*. »",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-20",
-    notion: "fr-02",
-    savoirFaire: ["cod-coi", "cc", "epithete-apposition"],
-    difficulte: 3,
-    enonce: "« Elle rêvait <u>des contrées lointaines</u>, des rivages lumineux, des palais <u>de marbre</u> <u>où</u> des fontaines jaillissaient <u>sous des ciels toujours bleus</u>. »\n*(Gustave Flaubert, Madame Bovary, 1857)*",
-    question: "Précisez la nature et la fonction : « <u>des contrées lointaines</u> » · « <u>de marbre</u> » · « <u>où</u> » · « <u>sous des ciels toujours bleus</u> »",
-    reponseType: "Mot / groupe | Nature | Fonction\n--- | --- | ---\ndes contrées lointaines | Groupe nominal | COI du verbe « rêvait » (rêver DE ; « Elle en rêvait »)\nde marbre | GN prépositionnel | CDN du nom « palais »\noù | Pronom relatif | CC de lieu du verbe « jaillissaient » (dépronominalisé : « dans les palais »)\nsous des ciels toujours bleus | GN prépositionnel | CC de lieu du verbe « jaillissaient »\n\n**Réponse attendue (formulation jury) :** « *des contrées lointaines* → GN, COI de *rêvait* (rêver de ; elle *en* rêvait) ; *de marbre* → GN prépositionnel, CDN du nom *palais* ; *où* → pronom relatif, CC de lieu de *jaillissaient* (dans les palais) ; *sous des ciels toujours bleus* → GN prépositionnel, CC de lieu de *jaillissaient*. »",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-21",
-    notion: "fr-02",
-    savoirFaire: ["cod-coi", "epithete-apposition"],
-    difficulte: 3,
-    enonce: "« Elle regardait <u>les eaux du fleuve</u> avec une attention <u>que</u> rien ne semblait pouvoir distraire. Peut-être pensait-elle <u>à quelqu'un d'absent</u>, à des jours passés, à une autre vie <u>possible</u>. »\n*(Marguerite Duras, L'Amant, 1984)*",
-    question: "Précisez la nature et la fonction : « <u>les eaux du fleuve</u> » · « <u>que</u> » · « <u>à quelqu'un d'absent</u> » · « <u>possible</u> »",
-    reponseType: "Mot / groupe | Nature | Fonction\n--- | --- | ---\nles eaux du fleuve | Groupe nominal | COD du verbe « regardait »\nque | Pronom relatif | COD du verbe « distraire » (dépronominalisé : « distraire cette attention »)\nà quelqu'un d'absent | GN prépositionnel | COI du verbe « pensait » (penser À quelqu'un)\npossible | Adjectif qualificatif | Épithète liée du nom « vie »\n\n**Réponse attendue (formulation jury) :** « *les eaux du fleuve* → GN, COD de *regardait* ; *que* → pronom relatif, COD de *distraire* (distraire cette attention) ; *à quelqu'un d'absent* → GN prépositionnel, COI de *pensait* (penser à quelqu'un) ; *possible* → adjectif qualificatif, épithète liée du nom *vie*. »",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-22",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "attribut", "cc", "epithete-apposition"],
-    difficulte: 3,
-    enonce: "« <u>Écrire</u> n'est pas tout à fait un choix : c'est <u>un aveu d'impuissance</u>. On écrit <u>parce qu'on ne sait par quel autre biais attraper le réel</u>. Vivre, <u>sans l'écriture</u>, me va <u>mal</u>. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-    question: "Précisez la nature et la fonction : « <u>Écrire</u> » · « <u>un aveu d'impuissance</u> » · « <u>parce qu'on ne sait…</u> » · « <u>sans l'écriture</u> » · « <u>mal</u> »",
-    reponseType: "Mot / groupe | Nature | Fonction\n--- | --- | ---\nÉcrire | Verbe à l'infinitif | Sujet du verbe « est »\nun aveu d'impuissance | Groupe nominal | Attribut du sujet « c' » (verbe « est »)\nparce qu'on ne sait… | Proposition subordonnée circonstancielle | CC de cause du verbe « écrit »\nsans l'écriture | GN prépositionnel | CC de manière ou de condition du verbe « va »\nmal | Adverbe de manière | CC de manière du verbe « va »\n\n**Réponse attendue (formulation jury) :** « *Écrire* → verbe à l'infinitif, sujet de *est* ; *un aveu d'impuissance* → GN, attribut du sujet *c'* (verbe *est*) ; *parce qu'on ne sait…* → proposition subordonnée circonstancielle, CC de cause de *écrit* ; *sans l'écriture* → GN prépositionnel, CC (de condition ou de manière) de *va* ; *mal* → adverbe, CC de manière de *va*. »",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-23",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "attribut", "cc", "epithete-apposition"],
-    difficulte: 3,
-    enonce: "« <u>Les misérables</u> ne manquent pas <u>sur la terre</u>. <u>Partout</u>, hélas, les souffrances sont <u>grandes</u> et les hommes sont las <u>de ne plus croire</u>. »\n*(Victor Hugo, Les Misérables, 1862)*",
-    question: "Précisez la nature et la fonction : « <u>Les misérables</u> » · « <u>sur la terre</u> » · « <u>Partout</u> » · « <u>grandes</u> » · « <u>de ne plus croire</u> »",
-    reponseType: "Mot / groupe | Nature | Fonction\n--- | --- | ---\nLes misérables | Groupe nominal | Sujet du verbe « manquent »\nsur la terre | GN prépositionnel | CC de lieu du verbe « manquent »\nPartout | Adverbe de lieu | CC de lieu du verbe « sont »\ngrandes | Adjectif qualificatif | Attribut du sujet « souffrances »\nde ne plus croire | Groupe infinitif prépositionnel | Complément de l'adjectif « las » (las DE)\n\n**Réponse attendue (formulation jury) :** « *Les misérables* → GN, sujet de *manquent* ; *sur la terre* → GN prépositionnel, CC de lieu de *manquent* ; *Partout* → adverbe, CC de lieu de *sont* ; *grandes* → adjectif qualificatif, attribut du sujet *souffrances* (verbe d'état *sont*) ; *de ne plus croire* → groupe infinitif prépositionnel, complément de l'adjectif *las*. »",
+    question:
+      "À quel mot se rapporte « inquiète », et quelle est sa fonction ?\n« Paul observait Marie, **inquiète**. »",
+    reponseType:
+      "**inquiète** : épithète détachée se rapportant à « Marie », **COD** du verbe « observait » (et non au sujet « Paul »). L'indice est l'**accord** : *inquiète* est au féminin, donc il renvoie à « Marie », pas à « Paul ». Point fin : une épithète détachée peut se rapporter au **COD**, pas seulement au sujet. Ce n'est pas un attribut (aucun verbe d'état). *Apposition de l'adjectif* serait un terme admis ; le rattachement à « Marie » reste l'essentiel à démontrer.",
     explication: [
-      { type: "note", text: "💡 *de ne plus croire* complète l'adjectif *las* (las **de** quelque chose) : on dit *complément de l'adjectif*, pas complément du nom, car *las* est un adjectif et non un nom." },
+      {
+        type: "note",
+        text: "Côté correcteur : avec « Paul observait Marie, *inquiet* » (masculin), l'adjectif renverrait au sujet « Paul ». C'est l'accord qui tranche le rattachement : exactement ce qu'on attend que le candidat démontre.",
+      },
     ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-02-exo-24",
-    notion: "fr-02",
-    savoirFaire: ["sujet", "cod-coi", "attribut", "cc", "epithete-apposition"],
-    difficulte: 3,
-    enonce: "« <u>À seize ans</u>, j'ai vu se rouvrir <u>les portes qui me séparaient du monde</u>, je suis monté <u>sur la terrasse</u> du palais <u>pour regarder les nuages</u>, mais ils étaient <u>moins beaux</u> que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, Comment Wang-Fô fut sauvé, Nouvelles orientales, 1963)*",
-    question: "Précisez la nature et la fonction : « <u>À seize ans</u> » · « <u>les portes qui me séparaient du monde</u> » · « <u>sur la terrasse</u> » · « <u>pour regarder les nuages</u> » · « <u>moins beaux</u> »",
-    reponseType: "Mot / groupe | Nature | Fonction\n--- | --- | ---\nÀ seize ans | GN prépositionnel | CC de temps du verbe « ai vu »\nles portes qui me séparaient du monde | Groupe nominal (GN + subordonnée relative) | Sujet du verbe « se rouvrir » (proposition subordonnée infinitive)\nsur la terrasse | GN prépositionnel | CC de lieu du verbe « suis monté »\npour regarder les nuages | Groupe infinitif prépositionnel | CC de but du verbe « suis monté »\nmoins beaux | Adjectif qualificatif (au comparatif) | Attribut du sujet « ils »\n\n**Réponse attendue (formulation jury) :** « *À seize ans* → GN prépositionnel, CC de temps de *ai vu* ; *les portes qui me séparaient du monde* → GN (avec relative), sujet de l'infinitif *se rouvrir* (proposition subordonnée infinitive COD de *ai vu*) ; *sur la terrasse* → GN prépositionnel, CC de lieu de *suis monté* ; *pour regarder les nuages* → groupe infinitif prépositionnel, CC de but de *suis monté* ; *moins beaux* → adjectif qualificatif (comparatif), attribut du sujet *ils*. »",
-    explication: [],
   },
 ];

@@ -1,145 +1,261 @@
 // Banque d'exercices OUVERTS, notion 08 « Les temps du passé ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : imparfait
+// contrefactuel, passé surcomposé, discours indirect libre, passé antérieur).
+// Périmètre : NOMMER LA VALEUR / l'emploi des temps du passé (la « formule jury »)
+// et commenter le système imparfait/passé simple. La morphologie/identification
+// relève de la notion 07.
+// 6 savoir-faire : imparfait · passé simple · passé composé · plus-que-parfait
+// · valeurs des temps · concordance.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_TEMPS_DU_PASSE: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-08-exo-01",
+    id: "fr-08-exo-f1",
     notion: "fr-08",
-    savoirFaire: ["imparfait","passe-compose","valeurs"],
+    savoirFaire: ["imparfait", "valeurs"],
     difficulte: 1,
-    question: "Donnez la valeur de l'imparfait :\na) « Ce soir-là, ma mère regardait les enfants jouer. »   b) « Chaque soir, il rentrait seul. »   c) « Elle lisait quand il arriva. »   d) « Je voulais vous demander un service. »   e) « Si elle venait demain, je serais heureux. »",
-    reponseType: "a) Description (action en cours, décor affectif)\n\nb) Habitude (action répétée, signalée par « chaque soir »)\n\nc) Action en cours interrompue (par « arriva », passé simple)\n\nd) Politesse (atténuation de la demande)\n\ne) Hypothèse (la venue est envisagée ; le contexte ne permet pas de la déclarer irréelle)",
+    question:
+      "Donnez la valeur précise de l'imparfait :\na) « Il faisait nuit, le vent soufflait. »\nb) « Chaque été, nous allions à la mer. »",
+    reponseType:
+      "a) imparfait de **description** (décor, arrière-plan d'une scène).\nb) imparfait d'**habitude** (action répétée dans le passé, signalée par « chaque été »).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-08-exo-02",
+    id: "fr-08-exo-f2",
     notion: "fr-08",
-    savoirFaire: ["imparfait","passe-simple","passe-compose","valeurs"],
+    savoirFaire: ["passe-simple", "valeurs"],
     difficulte: 1,
-    question: "Donnez la valeur du passé simple :\na) « Une femme passa. »   b) « Elle posa son livre, regarda, se leva. »   c) « Elle lisait quand il arriva. »",
-    reponseType: "a) Action délimitée (événement ponctuel, surgissement)\n\nb) Succession (trois actions enchaînées chronologiquement)\n\nc) Rupture (interrompt l'action en cours à l'imparfait)",
+    question:
+      "Donnez la valeur du passé simple :\na) « Il ouvrit la porte, entra, s'assit. »\nb) « Soudain, un cri retentit. »",
+    reponseType:
+      "a) **succession** d'actions de premier plan (elles s'enchaînent).\nb) **rupture** : action ponctuelle qui surgit et fait avancer le récit.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-08-exo-03",
+    id: "fr-08-exo-f3",
     notion: "fr-08",
-    savoirFaire: ["passe-simple","passe-compose","valeurs"],
+    savoirFaire: ["imparfait", "passe-simple"],
     difficulte: 1,
-    question: "Donnez la valeur du passé composé :\na) « Depuis ce jour, je n'ai jamais oublié cette scène. »   b) « Je suis entré, j'ai posé mon sac et je me suis assis. »   c) « Il a fini son travail : il peut partir. »",
-    reponseType: "a) Lien avec le présent : le souvenir se prolonge jusqu'au moment de l'énonciation.\n\nb) Temps du récit : les passés composés enchaînent les événements de premier plan.\n\nc) Accompli avec résultat présent : le travail terminé permet de partir maintenant.",
+    question:
+      "Quel temps est en arrière-plan, lequel fait avancer l'action ?\n« Il dormait quand le téléphone sonna. »",
+    reponseType:
+      "« dormait » : imparfait, **arrière-plan** (situation en cours, durée). « sonna » : passé simple, **premier plan** (événement ponctuel qui survient). L'imparfait pose le cadre, le passé simple l'événement.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-08-exo-04",
+    id: "fr-08-exo-f4",
     notion: "fr-08",
-    savoirFaire: ["passe-compose","valeurs"],
+    savoirFaire: ["passe-compose", "valeurs"],
     difficulte: 1,
-    question: "Appuyez-vous sur les marqueurs du contexte :\na) « Ce soir-là, elle se hâtait. »   b) « Chaque soir, elle se hâtait. »   c) « Pendant le repas, elle ne disait rien. »   d) « À cette époque, elle ne disait jamais rien. »",
-    reponseType: "a) Description d'une action en cours dans une scène unique, signalée par « ce soir-là ».\n\nb) Habitude, signalée par « chaque soir ».\n\nc) Description d'un comportement pendant une scène précise, délimitée par « pendant le repas ».\n\nd) Habitude, signalée par « à cette époque » et « jamais ».",
+    question:
+      "Donnez la valeur du passé composé :\na) « J'ai fini mes devoirs, je peux jouer. »\nb) « Hier, il a plu toute la journée. »",
+    reponseType:
+      "a) **accompli** relié au présent (le résultat vaut maintenant).\nb) **action passée datée** (passé composé substitut du passé simple, registre courant).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-08-exo-05",
+    id: "fr-08-exo-f5",
     notion: "fr-08",
-    savoirFaire: ["imparfait","passe-simple","passe-compose","plus-que-parfait","valeurs"],
-    difficulte: 2,
-    question: "Rédigez la réponse jury complète :\na) « Ce soir-là, ma mère regardait les enfants jouer. »   b) « Une femme passa. »   c) « Depuis ce jour, je n'ai jamais oublié cette scène. »   d) « Elle avait relu sa lettre avant de la poster. »",
-    reponseType: "a) « regardait » est à l'imparfait de l'indicatif, valeur descriptive : il exprime une action en cours dans le passé qui forme le décor affectif de la scène.\n\nb) « passa » est au passé simple de l'indicatif, valeur d'action délimitée : il exprime un événement ponctuel qui ouvre le récit.\n\nc) « n'ai jamais oublié » est au passé composé de l'indicatif, valeur de lien avec le présent : l'oubli nié se prolonge jusqu'au moment de l'énonciation.\n\nd) « avait relu » est au plus-que-parfait de l'indicatif, valeur d'antériorité : il exprime une action accomplie avant un autre moment du passé.",
+    savoirFaire: ["plus-que-parfait", "valeurs"],
+    difficulte: 1,
+    question:
+      "Donnez la valeur du plus-que-parfait :\n« Quand je suis arrivé, il était déjà parti. »",
+    reponseType:
+      "**antériorité** : « était parti » exprime une action accomplie **avant** une autre action passée (« suis arrivé »). Le plus-que-parfait situe un fait avant un autre fait passé.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-08-exo-06",
+    id: "fr-08-exo-f6",
     notion: "fr-08",
-    savoirFaire: ["passe-compose","plus-que-parfait"],
-    difficulte: 2,
-    question: "Placez chaque verbe dans l'ordre chronologique et expliquez l'antériorité :\n« Elle avait relu sa lettre, puis la posta et sortit sans se retourner. »",
-    reponseType: "① avait relu (plus-que-parfait) : antérieur aux deux actions suivantes.\n\n② posta (passé simple) : premier événement.\n\n③ sortit (passé simple) : second événement.",
-    explication: [
-      { type: "note", text: "Le plus-que-parfait place « relire » avant le moment de référence du récit. Le connecteur « puis » ordonne ensuite les deux actions au passé simple." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-08-exo-07",
-    notion: "fr-08",
-    savoirFaire: ["imparfait","passe-compose","plus-que-parfait","valeurs"],
-    difficulte: 2,
-    question: "Ces analyses sont-elles correctes ? Corrigez si nécessaire :\na) Dans « Ce soir-là, elle regardait les enfants », « regardait » a une valeur d'habitude.   b) Dans « Chaque soir, elle se hâtait », « se hâtait » a une valeur descriptive.   c) « avait relu » est un passé composé à valeur d'accompli.   d) Dans « Pendant le repas, elle souriait et ne disait rien », les deux imparfaits ont la même valeur.",
-    reponseType: "a) Faux : « ce soir-là » situe une scène unique ; « regardait » décrit une action en cours.\n\nb) Faux : « chaque soir » marque la répétition ; « se hâtait » exprime une habitude.\n\nc) Double erreur : c'est un plus-que-parfait (auxiliaire « avait »), valeur d'antériorité.\n\nd) Correct : dans cette scène précise, « souriait » et « ne disait rien » décrivent deux états ou comportements en cours.",
+    savoirFaire: ["passe-compose", "plus-que-parfait"],
+    difficulte: 1,
+    question:
+      "Donnez le temps et ce qu'il marque :\na) « Il a mangé. »\nb) « Il avait mangé avant de partir. »",
+    reponseType:
+      "a) **passé composé** (auxiliaire au présent « a »).\nb) **plus-que-parfait** (auxiliaire à l'imparfait « avait ») : marque l'antériorité par rapport à « partir ». L'auxiliaire décide du temps.",
     explication: [],
   },
-  // TODO refonte exo
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
   {
-    id: "fr-08-exo-08",
+    id: "fr-08-exo-c1",
     notion: "fr-08",
-    savoirFaire: ["imparfait","passe-simple","passe-compose"],
+    savoirFaire: ["imparfait", "valeurs"],
     difficulte: 2,
-    question: "Réécrivez en remplaçant les passés simples par des imparfaits, puis proposez deux effets de lecture possibles :\n« Soudain, la porte s'ouvrit. Elle posa son livre, regarda autour d'elle, se leva. »",
-    reponseType: "« Soudain, la porte s'ouvrait. Elle posait son livre, regardait autour d'elle, se levait. »",
+    question:
+      "Rédigez la valeur de l'imparfait comme au concours (temps + valeur + justification) :\n« Il regardait la mer, songeur. »",
+    reponseType:
+      "« regardait » est un **imparfait de description** : il installe un arrière-plan et présente l'action sans bornes précises (ni début ni fin marqués), posant le décor de la scène. (Formule attendue : nommer le temps, la valeur, puis justifier par l'absence de délimitation.)",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c2",
+    notion: "fr-08",
+    savoirFaire: ["imparfait", "valeurs"],
+    difficulte: 2,
+    question:
+      "Ces deux imparfaits ont-ils la même valeur ? Justifiez :\na) « Le soleil se couchait sur la colline. »\nb) « Le dimanche, il se couchait tard. »",
+    reponseType:
+      "Non.\na) **description** : un moment unique, le décor d'une scène.\nb) **habitude** : action répétée, marquée par « le dimanche ».\nLe repère de répétition (« le dimanche ») signale l'habitude ; la scène unique signale la description. C'est le piège classique à éviter.",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c3",
+    notion: "fr-08",
+    savoirFaire: ["passe-simple", "imparfait"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, que les temps ne sont pas interchangeables :\n« Il lisait quand on frappa. »",
+    reponseType:
+      "« lisait » (imparfait) = action en cours, durée d'arrière-plan ; « frappa » (passé simple) = événement ponctuel qui l'interrompt. Manipulation : en inversant les temps (« Il lut quand on frappait »), le sens se brise (deux actions mal articulées, l'interruption disparaît). L'imparfait porte la durée, le passé simple l'événement : leur répartition n'est pas libre.",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c4",
+    notion: "fr-08",
+    savoirFaire: ["imparfait", "passe-simple", "valeurs"],
+    difficulte: 2,
+    question:
+      "Commentez l'emploi des temps dans ce récit (système imparfait / passé simple) :\n« La pluie tombait. Les rues étaient désertes. Soudain, une porte claqua et un homme surgit. »",
+    reponseType:
+      "« tombait », « étaient » : imparfaits d'**arrière-plan** (décor, situation durable). « claqua », « surgit » : passés simples de **premier plan** (événements ponctuels successifs qui déclenchent l'action). Le système oppose le **cadre** (imparfait) aux **événements** (passé simple) : c'est cette articulation qu'il faut commenter, pas chaque temps isolément.",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c5",
+    notion: "fr-08",
+    savoirFaire: ["passe-compose", "valeurs"],
+    difficulte: 2,
+    question:
+      "Donnez la valeur du passé composé :\na) « La science a beaucoup progressé. »\nb) « Napoléon est mort en 1821. »\nc) « J'ai compris, tu peux continuer. »",
+    reponseType:
+      "a) **bilan** relié au présent (un résultat qui vaut aujourd'hui).\nb) **passé daté**, substitut du passé simple (registre courant).\nc) **accompli immédiat** (l'action vient de s'achever, effet présent).",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c6",
+    notion: "fr-08",
+    savoirFaire: ["plus-que-parfait", "valeurs"],
+    difficulte: 2,
+    question:
+      "Donnez la valeur du plus-que-parfait :\na) « Il pleuvait ; le sol avait gelé pendant la nuit. »\nb) « Si tu m'avais prévenu, je serais venu. »",
+    reponseType:
+      "a) **antériorité** : le gel est antérieur à la scène décrite à l'imparfait.\nb) **irréel du passé** : dans le système hypothétique « si + plus-que-parfait », la condition n'a pas été réalisée (tu ne m'as pas prévenu).",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c7",
+    notion: "fr-08",
+    savoirFaire: ["concordance"],
+    difficulte: 2,
+    question:
+      "Mettez les verbes au temps du récit passé qui convient et nommez-les :\n« Il (comprendre) à ce moment que la nuit (tomber) déjà. »",
+    reponseType:
+      "« Il **comprit** (passé simple : l'événement) que la nuit **était** déjà **tombée** (plus-que-parfait : antériorité). » La concordance place l'action antérieure (la nuit tombée) avant l'événement principal du récit.",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c8",
+    notion: "fr-08",
+    savoirFaire: ["imparfait", "valeurs"],
+    difficulte: 2,
+    question:
+      "Donnez la valeur de l'imparfait (attention : il ne renvoie pas au passé) :\na) « Je voulais vous demander un service. »\nb) « Si on partait maintenant ? »",
+    reponseType:
+      "a) imparfait de **politesse** (atténuation : « je veux » adouci par mise à distance).\nb) imparfait de **suggestion / hypothèse** (proposition atténuée).\nCe sont des valeurs **modales** de l'imparfait : aucune des deux phrases ne se rapporte au passé.",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c9",
+    notion: "fr-08",
+    savoirFaire: ["imparfait", "valeurs"],
+    difficulte: 2,
+    question:
+      "Quelle est la valeur de l'imparfait, alors qu'on attendrait un passé simple ?\n« Le 3 septembre 1939, la guerre éclatait. »",
+    reponseType:
+      "**imparfait narratif** (ou de perspective) : il présente un événement ponctuel daté comme le ferait un passé simple, mais avec un effet de **mise en relief / ralenti** (le narrateur fait durer l'instant, le souligne). C'est un emploi stylistique fréquent dans le récit et le journalisme.",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-c10",
+    notion: "fr-08",
+    savoirFaire: ["imparfait", "passe-simple", "valeurs"],
+    difficulte: 2,
+    question:
+      "Donnez le temps et la valeur de chaque verbe :\n« Elle marchait vite ; tout à coup, elle s'arrêta net : une silhouette se tenait là. »",
+    reponseType:
+      "- « marchait » : imparfait, action en cours d'arrière-plan.\n- « s'arrêta » : passé simple, **rupture** (événement ponctuel).\n- « se tenait » : imparfait de **description** (le décor révélé, arrière-plan).\nLe passé simple porte l'événement, les imparfaits l'encadrent.",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-08-exo-e1",
+    notion: "fr-08",
+    savoirFaire: ["imparfait", "valeurs"],
+    difficulte: 3,
+    question:
+      "Analysez la valeur, particulièrement marquée, de l'imparfait :\n« Une seconde de plus et la bombe explosait. »",
+    reponseType:
+      "imparfait **contrefactuel** (d'imminence contrariée) : l'action **ne s'est pas produite**, mais elle a été sur le point de l'être. Cet imparfait présente comme presque réel un fait qui n'a pas eu lieu. C'est une valeur modale, à distinguer nettement des emplois temporels (description, habitude).",
     explication: [
-      { type: "note", text: "Deux lectures sont possibles. Les imparfaits peuvent donner une impression de répétition ou de déroulement ralenti. Avec « soudain », « s'ouvrait » peut aussi être un imparfait narratif : l'événement ponctuel est mis en relief comme s'il se déroulait sous les yeux du lecteur." },
+      {
+        type: "note",
+        text: "Côté correcteur : nommer précisément la valeur (imparfait contrefactuel) et signaler que le fait n'a pas eu lieu évite le piège n°1 (valeur trop vague).",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-08-exo-09",
+    id: "fr-08-exo-e2",
     notion: "fr-08",
-    savoirFaire: ["imparfait","passe-simple","passe-compose","valeurs"],
+    savoirFaire: ["passe-compose"],
     difficulte: 3,
-    enonce: "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. »",
-    question: "Rédigez la réponse jury pour « passa » et « se hâtait », et commentez leur opposition.",
-    reponseType: "« passa » est au passé simple de l'indicatif, valeur d'action délimitée : il fait surgir la femme dans le récit (premier plan).\n\n« se hâtait » est à l'imparfait de l'indicatif, valeur descriptive : il présente une action en cours à l'arrière-plan.",
+    question:
+      "Identifiez ce temps rare et sa valeur :\n« Quand il a eu fini de parler, tout le monde applaudit. »",
+    reponseType:
+      "« a eu fini » : **passé surcomposé** (double auxiliaire « a eu » + participe). Il marque l'**antériorité immédiate** par rapport à un autre passé (ici un passé simple), comme le plus-que-parfait le fait pour l'imparfait. Emploi de registre courant, surtout dans les subordonnées de temps (« quand, dès que »).",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-e3",
+    notion: "fr-08",
+    savoirFaire: ["imparfait", "passe-simple", "valeurs"],
+    difficulte: 3,
+    question:
+      "Commentez le système des temps de ce récit et l'effet produit :\n« Le soir tombait. Hélène rêvait à la fenêtre. Un cavalier passa, la salua, disparut. Elle ne bougea pas. »",
+    reponseType:
+      "Imparfaits (« tombait », « rêvait ») : arrière-plan, durée, état d'âme (décor + situation psychologique). Passés simples (« passa », « salua », « disparut », « ne bougea pas ») : événements ponctuels successifs de premier plan. L'effet : l'événement (le cavalier) surgit sur fond de rêverie immobile, et la dernière phrase au passé simple souligne par contraste l'**absence de réaction**. Commenter ce contraste vaut mieux que d'étiqueter chaque temps isolément.",
+    explication: [],
+  },
+  {
+    id: "fr-08-exo-e4",
+    notion: "fr-08",
+    savoirFaire: ["concordance", "imparfait"],
+    difficulte: 3,
+    question:
+      "Expliquez l'emploi de l'imparfait et du conditionnel dans ce passage au discours indirect libre :\n« Il hésitait. Partirait-il ? Demain, il prendrait sa décision. »",
+    reponseType:
+      "Au **discours indirect libre**, les pensées du personnage sont rapportées sans verbe introducteur. L'imparfait (« hésitait ») et surtout le **conditionnel** (« partirait », « prendrait » = futur dans le passé) transposent au passé ce qui serait, au style direct, un présent et un futur (« J'hésite. Est-ce que je pars ? Demain, je prendrai ma décision »). La concordance avec un récit passé impose ces temps.",
     explication: [
-      { type: "note", text: "Opposition : le passé simple ouvre la scène et fait avancer le récit ; l'imparfait décrit l'action en cours à l'arrière-plan." },
+      {
+        type: "note",
+        text: "Côté correcteur : repérer le discours indirect libre (absence de verbe introducteur + temps reculés) est un point d'analyse valorisé, à relier à la notion 15 (énonciation).",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-08-exo-10",
+    id: "fr-08-exo-e5",
     notion: "fr-08",
-    savoirFaire: ["imparfait","passe-compose","valeurs"],
+    savoirFaire: ["passe-simple"],
     difficulte: 3,
-    enonce: "« Ce soir-là, ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »",
-    question: "Rédigez la réponse jury pour « vieillissait », « regardait », « souriait », « disait », et commentez l'emploi exclusif de l'imparfait.",
-    reponseType: "Verbe | Temps · valeur\n--- | ---\nvieillissait | Imparfait, valeur descriptive (propriété permanente dans le passé)\nregardait | Imparfait, valeur descriptive (action en cours, décor affectif)\nsouriait | Imparfait, valeur descriptive (état en cours, portrait)\ndisait | Imparfait, valeur descriptive (comportement pendant cette scène)",
-    explication: [
-      { type: "note", text: "Les imparfaits présentent les propriétés, actions et comportements sans en montrer les limites. Le repère « ce soir-là » inscrit l'ensemble dans une scène précise." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-08-exo-11",
-    notion: "fr-08",
-    savoirFaire: ["imparfait","passe-compose","valeurs"],
-    difficulte: 3,
-    enonce: "« Il aimait les promenades solitaires dans les bois et, chaque soir d'automne, quand il rentrait seul, il sentait le vide de sa vie s'étendre autour de lui. »",
-    question: "Rédigez la réponse jury pour « aimait », « rentrait », « sentait », et commentez l'effet de l'imparfait exclusif.",
-    reponseType: "Verbe | Temps · valeur\n--- | ---\naimait | Imparfait, valeur descriptive (goût ou état durable)\nrentrait | Imparfait, valeur d'habitude (action répétée)\nsentait | Imparfait, valeur d'habitude (perception répétée à chaque retour)",
-    explication: [
-      { type: "note", text: "Le contexte distingue les valeurs : « aimait » décrit un état durable ; « chaque soir » donne à « rentrait » et « sentait » une valeur d'habitude. L'emploi exclusif de l'imparfait présente ici un état et des faits répétés, sans événement ponctuel de premier plan." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-08-exo-12",
-    notion: "fr-08",
-    savoirFaire: ["imparfait","passe-compose","valeurs"],
-    difficulte: 3,
-    enonce: "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
-    question: "Rédigez la réponse jury pour « ai vu », « séparaient », « suis monté », « étaient », et commentez le système des temps.",
-    reponseType: "Verbe | Temps · valeur\n--- | ---\nai vu | Passé composé, temps du récit (événement de premier plan)\nséparaient | Imparfait, valeur descriptive (état passé durable)\nsuis monté | Passé composé, temps du récit (événement de premier plan)\nétaient | Imparfait, valeur descriptive (constat, nuance de déception)",
-    explication: [
-      { type: "note", text: "Les passés composés portent les événements successifs du récit ; les imparfaits décrivent des états ou propriétés à l'arrière-plan." },
-    ],
+    question:
+      "Identifiez les deux temps et leur rapport :\n« Quand il eut terminé, il se leva. »",
+    reponseType:
+      "« eut terminé » : **passé antérieur** (auxiliaire au passé simple + participe) ; « se leva » : **passé simple**. Le passé antérieur marque l'**antériorité immédiate** par rapport au passé simple, dans un récit soutenu (souvent après « quand, dès que, lorsque »). Il est au passé simple ce que le plus-que-parfait est à l'imparfait.",
+    explication: [],
   },
 ];

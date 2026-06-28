@@ -57,8 +57,14 @@ export const COPIES_FONCTIONS_SYNTAXIQUES: CopieACorriger[] = [
     id: "fr-02-cop-paul-apposition",
     copie: "Pour « Paul, ravi, sourit », un candidat écrit : « *ravi* est une **apposition** à Paul ».",
     correcte: true,
-    verdict: "C'est recevable dans le cadre du cours : « ravi » est un adjectif qualificatif en apposition à « Paul ».",
-    coteProf: "Le cours range aussi ce cas dans les appositions : groupe entre virgules, supprimable, se rapportant au même référent.",
+    verdict: "C'est recevable : « ravi » est un adjectif détaché se rapportant au sujet « Paul ». On le nomme **épithète détachée** (terme retenu dans la fiche) ou *apposition de l'adjectif* selon les grammaires : les deux désignent la même fonction.",
+    coteProf: "Pour un adjectif détaché, « épithète détachée » et « apposition » sont admis. Le terme « apposition » reste en revanche réservé au GN quand on veut être précis (« Paul, *mon voisin*, sourit »).",
+  },
+  {
+    id: "fr-02-cop-hugo-apposition",
+    copie: "Pour « Hugo, grand poète, mourut âgé », un candidat écrit : « *grand poète* est une **apposition** à *Hugo* ».",
+    correcte: true,
+    verdict: "C'est juste : « grand poète » est un **GN apposé** à « Hugo » : isolé par des virgules, supprimable, il désigne la même personne que le nom.",
   },
   {
     id: "fr-02-cop-chien-voisine",

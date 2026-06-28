@@ -1,143 +1,261 @@
 // Banque d'exercices OUVERTS, notion 07 « Modes et temps ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : conditionnel
+// passé 2e forme, concordance au discours indirect, subjonctif imparfait, aspect
+// accompli, futur antérieur vs conditionnel passé).
+// Terminologie 2020 : le conditionnel est un TEMPS de l'indicatif (pas un mode à part).
+// La morphologie fine des formes non conjuguées relève de la notion 10.
+// 6 savoir-faire : modes personnels · modes non personnels · temps simples/composés
+// · valeurs temporelles · valeurs modales · concordance.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_MODES_ET_TEMPS: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-07-exo-01",
+    id: "fr-07-exo-f1",
     notion: "fr-07",
-    savoirFaire: ["modes-personnels","temps-simples-composes","valeurs-temporelles"],
+    savoirFaire: ["modes-personnels", "temps-simples-composes"],
     difficulte: 1,
-    question: "Identifiez le mode et le temps de chaque verbe souligné :\na) « Une femme <u>passa</u>. »   b) « Ma mère <u>regardait</u> les enfants. »   c) « On <u>écrit</u>. »   d) « Il faut qu'elle <u>vienne</u>. »   e) « Si elle venait, je <u>serais</u> heureux. »",
-    reponseType: "Verbe | Mode | Temps\n--- | --- | ---\npassa | Indicatif | Passé simple\nregardait | Indicatif | Imparfait\nécrit | Indicatif | Présent\nvienne | Subjonctif | Présent\nserais | Indicatif | Conditionnel présent",
+    question:
+      "Donnez le mode et le temps :\na) « il chantait »\nb) « qu'il chante »\nc) « chante ! »\nd) « il a chanté »",
+    reponseType:
+      "a) indicatif imparfait.\nb) subjonctif présent.\nc) impératif présent.\nd) indicatif passé composé (temps composé : auxiliaire + participe passé).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-07-exo-02",
+    id: "fr-07-exo-f2",
+    notion: "fr-07",
+    savoirFaire: ["temps-simples-composes", "modes-personnels"],
+    difficulte: 1,
+    question:
+      "Distinguez ces formes à la terminaison :\na) « je chanterais »\nb) « je chantais »\nc) « je chanterai »",
+    reponseType:
+      "a) **conditionnel présent** (-rais : le « r » de l'infinitif + -ais).\nb) **imparfait** (-ais, sans « r »).\nc) **futur simple** (-rai).\nEn terminologie 2020, le conditionnel est un **temps de l'indicatif**.",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-f3",
+    notion: "fr-07",
+    savoirFaire: ["modes-non-personnels"],
+    difficulte: 1,
+    question:
+      "Donnez le mode (non personnel) et la forme :\na) « chanter »\nb) « chantant »\nc) « ayant chanté »\nd) « en marchant »",
+    reponseType:
+      "a) **infinitif** présent.\nb) **participe** présent.\nc) **participe** passé (composé : « ayant » + participe).\nd) **gérondif** (« en » + participe présent).",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-f4",
+    notion: "fr-07",
+    savoirFaire: ["temps-simples-composes"],
+    difficulte: 1,
+    question:
+      "Le temps est-il simple ou composé ?\na) « il mangeait »\nb) « il avait mangé »\nc) « il mangera »\nd) « il a mangé »",
+    reponseType:
+      "a) **simple** (imparfait).\nb) **composé** (plus-que-parfait).\nc) **simple** (futur).\nd) **composé** (passé composé).\nUn temps composé = auxiliaire conjugué + participe passé.",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-f5",
+    notion: "fr-07",
+    savoirFaire: ["valeurs-temporelles"],
+    difficulte: 1,
+    question:
+      "Donnez la valeur du présent dans chaque phrase :\na) « L'eau bout à 100 °C. »\nb) « En 1789, le peuple prend la Bastille. »\nc) « J'arrive dans cinq minutes. »",
+    reponseType:
+      "a) présent de **vérité générale**.\nb) présent de **narration** (présent historique).\nc) présent à valeur de **futur proche**.",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-f6",
+    notion: "fr-07",
+    savoirFaire: ["valeurs-modales"],
+    difficulte: 1,
+    question:
+      "Donnez la valeur du conditionnel :\na) « Il viendrait demain. »\nb) « Il aurait gagné au loto. »\nc) « Je voudrais un café. »",
+    reponseType:
+      "a) **futur dans le passé** (valeur temporelle).\nb) **fait non confirmé** (valeur modale, « conditionnel journalistique »).\nc) **demande polie** (valeur modale d'atténuation).",
+    explication: [],
+  },
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
+  {
+    id: "fr-07-exo-c1",
+    notion: "fr-07",
+    savoirFaire: ["temps-simples-composes", "valeurs-temporelles"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, que « chanterais » et « chantais » ne sont pas au même temps :\n« Je chantais autrefois ; je chanterais si on me le demandait. »",
+    reponseType:
+      "« chantais » : **imparfait** (-ais, sans « r » avant la terminaison). « chanterais » : **conditionnel présent** (« r » de l'infinitif + -ais).\nManipulation décisive : changer de personne. « nous chant**ions** » (imparfait) vs « nous chant**erions** » (conditionnel) : le « r » réapparaît au conditionnel. Le contexte hypothétique (« si on me le demandait ») confirme la valeur.",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-c2",
+    notion: "fr-07",
+    savoirFaire: ["temps-simples-composes", "modes-personnels"],
+    difficulte: 2,
+    question:
+      "Donnez le temps exact et expliquez ce qui les distingue :\na) « Il a fermé la porte. »\nb) « Il avait fermé la porte. »",
+    reponseType:
+      "a) **passé composé** (auxiliaire au **présent** « a » + participe passé).\nb) **plus-que-parfait** (auxiliaire à l'**imparfait** « avait » + participe passé).\nC'est l'auxiliaire qui décide. Le plus-que-parfait marque l'antériorité par rapport à un autre fait passé.",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-c3",
+    notion: "fr-07",
+    savoirFaire: ["modes-personnels", "modes-non-personnels", "temps-simples-composes"],
+    difficulte: 2,
+    question:
+      "Donnez le mode et le temps de ces formes :\na) « il fit »\nb) « il fut »\nc) « il vit »\nd) « ayant pris »",
+    reponseType:
+      "a) **passé simple** (faire).\nb) **passé simple** (être).\nc) **passé simple** (voir).\nd) **participe passé composé** (mode non personnel : « ayant » + participe).\nPiège : « il fit / il vit » sont des passés simples irréguliers, **pas** des futurs malgré leur brièveté.",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-c4",
     notion: "fr-07",
     savoirFaire: ["modes-personnels"],
-    difficulte: 1,
-    question: "Appliquez le test « nous » :\na) « Elle serait malade. »   b) « Elle était fatiguée. »   c) « Il viendrait si on l'invitait. »   d) « Il venait souvent. »   e) « Ce médicament réduirait les risques. »",
-    reponseType: "a) « nous serions » → -rions → conditionnel présent\n\nb) « nous étions » → -ions sans « r » → imparfait\n\nc) « nous viendrions » → -rions → conditionnel présent\n\nd) « nous venions » → -ions sans « r » → imparfait\n\ne) « nous réduirions » → -rions → conditionnel présent",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-07-exo-03",
-    notion: "fr-07",
-    savoirFaire: ["temps-simples-composes","valeurs-temporelles"],
-    difficulte: 1,
-    question: "Justifiez par l'auxiliaire :\na) « j'ai vu se rouvrir les portes. »   b) « Elle avait relu sa lettre. »   c) « je suis monté sur la terrasse. »   d) « il était parti avant son arrivée. »",
-    reponseType: "a) « ai » = présent de avoir → passé composé\n\nb) « avait » = imparfait de avoir → plus-que-parfait\n\nc) « suis » = présent de être → passé composé\n\nd) « était » = imparfait de être → plus-que-parfait",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-07-exo-04",
-    notion: "fr-07",
-    savoirFaire: ["modes-personnels","valeurs-modales"],
-    difficulte: 1,
-    question: "Justifiez par le contexte :\na) « Il faut qu'il vienne. »   b) « Je sais qu'il vient. »   c) « bien qu'elle soit fatiguée »   d) « Je crois qu'elle part demain. »",
-    reponseType: "a) Subjonctif (« il faut que » : nécessité) → « vienne »\n\nb) Indicatif (« je sais que » : certitude) → « vient »\n\nc) Subjonctif (« bien que » : concession) → « soit »\n\nd) Indicatif (« je crois que » : opinion présentée comme réelle) → « part »",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-07-exo-05",
-    notion: "fr-07",
-    savoirFaire: ["modes-personnels","modes-non-personnels","temps-simples-composes","valeurs-temporelles"],
     difficulte: 2,
-    question: "Donnez l'infinitif, le mode et le temps de chaque forme :\na) « fut »   b) « vint »   c) « fit »   d) « put »   e) « sut »   f) « prit »",
-    reponseType: "Forme | Infinitif | Mode · Temps\n--- | --- | ---\nfut | être | Indicatif · passé simple\nvint | venir | Indicatif · passé simple\nfit | faire | Indicatif · passé simple\nput | pouvoir | Indicatif · passé simple\nsut | savoir | Indicatif · passé simple\nprit | prendre | Indicatif · passé simple",
+    question:
+      "À quel mode sont les verbes en gras ? Pourquoi ?\na) « Il faut que tu **viennes**. »\nb) « Je veux qu'il **fasse** un effort. »",
+    reponseType:
+      "a) **subjonctif présent** (« venir »), commandé par la locution « il faut que » (nécessité).\nb) **subjonctif présent** (« faire »), commandé par « vouloir que » (volonté).\nLe subjonctif s'emploie après certains déclencheurs (volonté, nécessité, sentiment, doute).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-07-exo-06",
+    id: "fr-07-exo-c5",
     notion: "fr-07",
-    savoirFaire: ["modes-personnels","temps-simples-composes","valeurs-temporelles"],
+    savoirFaire: ["valeurs-temporelles"],
     difficulte: 2,
-    question: "Identifiez le mode et le temps (attention à l'auxiliaire) :\na) « ils étaient moins beaux »   b) « j'ai vu se rouvrir »   c) « je suis monté »   d) « elle avait relu sa lettre »   e) « j'aurais voulu vous écrire »",
-    reponseType: "Verbe | Mode · Temps | Auxiliaire\n--- | --- | ---\nétaient | Indicatif · imparfait | Forme simple\nai vu | Indicatif · passé composé | « ai » = présent de avoir\nsuis monté | Indicatif · passé composé | « suis » = présent de être\navait relu | Indicatif · plus-que-parfait | « avait » = imparfait de avoir\naurais voulu | Indicatif · conditionnel passé | « aurais » = avoir au conditionnel présent",
+    question:
+      "Donnez la valeur de l'imparfait dans chaque phrase :\na) « Tous les matins, il se levait à six heures. »\nb) « Si j'avais le temps, je viendrais. »\nc) « Un pas de plus et il tombait. »",
+    reponseType:
+      "a) imparfait d'**habitude** (itératif).\nb) imparfait dans un **système hypothétique** (irréel du présent, après « si »).\nc) imparfait **d'imminence contrariée** : il a failli tomber (action sur le point de se produire mais évitée).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-07-exo-07",
+    id: "fr-07-exo-c6",
     notion: "fr-07",
-    savoirFaire: ["modes-personnels","temps-simples-composes","valeurs-temporelles"],
+    savoirFaire: ["modes-personnels"],
     difficulte: 2,
-    question: "Ces analyses sont-elles correctes ? Corrigez si nécessaire :\na) « serait » → indicatif imparfait   b) « avait vu » → passé composé   c) « vienne » (après « bien que ») → indicatif présent   d) « fut » → futur simple",
-    reponseType: "a) Faux : test « nous serions » (-rions, avec « r ») → conditionnel présent, pas imparfait.\n\nb) Faux : auxiliaire « avait » (imparfait) → plus-que-parfait.\n\nc) Faux : « bien que » impose le subjonctif → subjonctif présent.\n\nd) Faux : « fut » = passé simple de être ; le futur est « sera ».",
+    question:
+      "**Prouvez, par une manipulation**, que « voie » est au subjonctif et non à l'indicatif :\n« Il faut qu'il voie le médecin. »",
+    reponseType:
+      "**voie** : subjonctif présent. Manipulation : à l'indicatif présent, on aurait « il **voit** le médecin » ; après le déclencheur « il faut que », la forme devient « qu'il **voie** ». La comparaison des deux formes à la 3e personne (voit / voie) révèle le changement de mode imposé par « il faut que ».",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-07-exo-08",
+    id: "fr-07-exo-c7",
     notion: "fr-07",
-    savoirFaire: ["modes-personnels","modes-non-personnels","temps-simples-composes","valeurs-temporelles"],
+    savoirFaire: ["concordance"],
     difficulte: 2,
-    question: "Distinguez les deux « vit » et proposez un contexte pour chacun.",
-    reponseType: "Forme | Infinitif | Mode · Temps | Contexte\n--- | --- | --- | ---\nvit | vivre | Indicatif · présent | « Il vit à Paris depuis dix ans. »\nvit | voir | Indicatif · passé simple | « Il vit la femme traverser la rue. »",
+    question:
+      "Mettez le verbe de la subordonnée au temps correct et nommez-le :\na) « Je pense qu'il (venir) bientôt. »\nb) « Je pensais qu'il (venir) bientôt. »",
+    reponseType:
+      "a) « Je pense qu'il **viendra** » (futur simple : postérieur au présent de la principale).\nb) « Je pensais qu'il **viendrait** » (conditionnel présent = **futur dans le passé** : la concordance recule le repère avec le passé de la principale).",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-c8",
+    notion: "fr-07",
+    savoirFaire: ["temps-simples-composes", "valeurs-temporelles"],
+    difficulte: 2,
+    question:
+      "Donnez le mode, le temps et la valeur du verbe :\n« Longtemps, je me suis couché de bonne heure. » (Proust, *Du côté de chez Swann*)",
+    reponseType:
+      "**me suis couché** : indicatif, **passé composé** (temps composé : auxiliaire « suis » au présent + participe « couché »). Valeur : action **répétée / durative** dans le passé (soulignée par « longtemps »), envisagée comme un tout, avec un lien au moment de l'énonciation.",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-c9",
+    notion: "fr-07",
+    savoirFaire: ["valeurs-modales"],
+    difficulte: 2,
+    question:
+      "Donnez la valeur du futur dans chaque phrase :\na) « Tu prendras tes médicaments à midi. »\nb) « Ce sera sans doute le facteur. »\nc) « J'aurai bientôt fini. »",
+    reponseType:
+      "a) futur à valeur d'**ordre** (injonction atténuée).\nb) futur de **probabilité** (conjecture).\nc) **futur antérieur** à valeur d'accompli prochain.\nLe futur peut donc porter des valeurs modales, au-delà de la simple postériorité.",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-c10",
+    notion: "fr-07",
+    savoirFaire: ["valeurs-temporelles", "temps-simples-composes"],
+    difficulte: 2,
+    question:
+      "Relevez les temps et expliquez leur emploi dans ce récit :\n« Il marchait depuis une heure quand il aperçut une lumière. Il s'arrêta. »",
+    reponseType:
+      "- **marchait** : imparfait, **arrière-plan** (action en cours, durée).\n- **aperçut** : passé simple, **premier plan** (action ponctuelle qui rompt la durée).\n- **s'arrêta** : passé simple, action successive de premier plan.\nL'imparfait pose le décor, le passé simple fait avancer le récit.",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-07-exo-e1",
+    notion: "fr-07",
+    savoirFaire: ["modes-personnels", "temps-simples-composes"],
+    difficulte: 3,
+    question:
+      "Cette forme verbale a deux noms possibles. Lesquels, et lequel retenir ici ?\n« Il eût aimé partir plus tôt. »",
+    reponseType:
+      "« eût aimé » est, ici, un **conditionnel passé deuxième forme** (de morphologie identique au **subjonctif plus-que-parfait**). Le sens est conditionnel : « il aurait aimé ». On le rencontre en registre soutenu. La même forme s'analyse en subjonctif plus-que-parfait dans un autre contexte (« bien qu'il eût aimé… ») : c'est le sens et la construction qui tranchent.",
     explication: [
-      { type: "note", text: "💡 Seul le contexte tranche : récit au passé et événement ponctuel → passé simple de voir ; situation durable → présent de vivre." },
+      {
+        type: "note",
+        text: "Côté correcteur : reconnaître la « deuxième forme » du conditionnel passé (eût aimé = aurait aimé) et savoir qu'elle se confond formellement avec le subjonctif plus-que-parfait est un point fin valorisé.",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-07-exo-09",
+    id: "fr-07-exo-e2",
     notion: "fr-07",
-    savoirFaire: ["modes-personnels","temps-simples-composes","valeurs-temporelles"],
+    savoirFaire: ["concordance"],
     difficulte: 3,
-    enonce: "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »",
-    question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
-    reponseType: "Verbe | Mode | Temps\n--- | --- | ---\npassa | Indicatif | Passé simple\nse hâtait | Indicatif | Imparfait",
+    question:
+      "Transposez au discours indirect passé et justifiez les temps :\nIl a dit : « Je viendrai demain quand j'aurai fini. »",
+    reponseType:
+      "« Il a dit qu'il **viendrait** le lendemain quand il **aurait fini**. » Le futur simple → **conditionnel présent** (futur dans le passé) ; le futur antérieur → **conditionnel passé**. La concordance recule chaque temps d'un cran vers le passé ; « demain » → « le lendemain ».",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-e3",
+    notion: "fr-07",
+    savoirFaire: ["modes-personnels", "concordance"],
+    difficulte: 3,
+    question:
+      "Identifiez le mode et le temps, et commentez le registre :\n« Je craignais qu'il ne vînt. »",
+    reponseType:
+      "**vînt** : **subjonctif imparfait** (de « venir »). Il s'emploie par concordance après un verbe principal au passé (« craignais »), en registre **soutenu / littéraire**. En registre courant, on dirait « qu'il ne vienne » (subjonctif présent). Le « ne » est ici **explétif** (pas de négation).",
+    explication: [],
+  },
+  {
+    id: "fr-07-exo-e4",
+    notion: "fr-07",
+    savoirFaire: ["temps-simples-composes", "valeurs-temporelles"],
+    difficulte: 3,
+    question:
+      "« a mangé » exprime-t-il toujours le passé ? Analysez la valeur :\na) « Il a mangé à midi. »\nb) « Quand il a mangé, il fait la sieste. »\nc) « En deux minutes, c'est mangé. »",
+    reponseType:
+      "a) passé composé à valeur de **passé** (action révolue).\nb) valeur d'**accompli** dans le présent : antériorité immédiate, habitude (« dès qu'il a fini de manger »).\nc) valeur d'**accompli résultatif** (l'état présent issu de l'action).\nLe temps composé exprime d'abord l'**accompli** (aspect), pas seulement le passé.",
     explication: [
-      { type: "note", text: "⚠️ « tenant », « baissés », « pressée » et « atteindre » sont des formes non conjuguées : elles ne font pas partie du relevé demandé." },
+      {
+        type: "note",
+        text: "Côté correcteur : distinguer le temps (situation dans la chronologie) de l'aspect (accompli / inaccompli) est exactement ce que le jury attend sur les temps composés.",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-07-exo-10",
+    id: "fr-07-exo-e5",
     notion: "fr-07",
-    savoirFaire: ["modes-personnels","modes-non-personnels","valeurs-temporelles","valeurs-modales"],
+    savoirFaire: ["temps-simples-composes", "valeurs-modales"],
     difficulte: 3,
-    enonce: "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »",
-    question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
-    reponseType: "Verbe | Mode | Temps\n--- | --- | ---\nvieillissait | Indicatif | Imparfait\nregardait | Indicatif | Imparfait\nsouriait | Indicatif | Imparfait\ndisait | Indicatif | Imparfait",
-    explication: [
-      { type: "note", text: "💡 « jouer » est un infinitif : cette forme non conjuguée ne fait pas partie du relevé. La valeur des imparfaits est traitée dans les notions 7 et 8." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-07-exo-11",
-    notion: "fr-07",
-    savoirFaire: ["modes-personnels","modes-non-personnels","valeurs-temporelles"],
-    difficulte: 3,
-    enonce: "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
-    question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
-    reponseType: "Verbe | Mode | Temps\n--- | --- | ---\nai vu | Indicatif | Passé composé\nséparaient | Indicatif | Imparfait\nsuis monté | Indicatif | Passé composé\nétaient | Indicatif | Imparfait",
-    explication: [
-      { type: "note", text: "💡 « se rouvrir » et « regarder » sont des infinitifs : ces formes non conjuguées ne font pas partie du relevé." },
-    ],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-07-exo-12",
-    notion: "fr-07",
-    savoirFaire: ["modes-personnels","modes-non-personnels","valeurs-temporelles"],
-    difficulte: 3,
-    enonce: "« Les choses insensées nous font rêver ; une humble flamme monte en moi. »",
-    question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
-    reponseType: "Verbe | Mode | Temps\n--- | --- | ---\nfont | Indicatif | Présent\nmonte | Indicatif | Présent",
-    explication: [
-      { type: "note", text: "⚠️ « rêver » est un infinitif : cette forme non conjuguée ne fait pas partie du relevé." },
-    ],
+    question:
+      "Une lettre d'écart : distinguez le temps et la valeur :\na) « Il aura terminé avant midi. »\nb) « Il aurait terminé s'il avait eu le temps. »",
+    reponseType:
+      "a) **futur antérieur** (« aura » au futur + participe) : action future achevée avant un repère ; valeur possible de **probabilité** (« il a sans doute terminé »).\nb) **conditionnel passé** (« aurait » au conditionnel + participe) : **irréel du passé** (action non réalisée, sous une condition non remplie).\n« aura » / « aurait » : un son d'écart, deux temps et deux valeurs.",
+    explication: [],
   },
 ];
