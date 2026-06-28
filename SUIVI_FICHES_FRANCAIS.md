@@ -49,8 +49,8 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 
 | #  | Notion | MEF | Audit §9 |
 |----|--------|-----|----------|
-| 20 | Produire le développement rédigé (fusion ex « plan » + « rédiger ») | ✅ | 🔄 réorientée, en attente de validation |
-| 21 | Références culturelles et littéraires (transformée en recueil) | ✅ | 🔄 nouveau format, en attente de validation |
+| 20 | Produire le développement rédigé (fusion ex « plan » + « rédiger ») | ✅ | ✅ (réorientée, validée à l'écran le 28/06/2026) |
+| 21 | Références culturelles et littéraires (transformée en recueil) | ✅ | ✅ (nouveau format recueil, validé à l'écran le 28/06/2026) |
 
 > **Réorientation Partie 3 (juin 2026).** Les sujets officiels (CRPE 2025/2026 et sujet 0 bac+3, voir mémoire `reference_crpe_partie3_nature`) montrent que la Partie 3 est une **réflexion argumentée** suscitée par le texte (question d'idées, appui texte + culture + lectures), et **non un commentaire de procédés**. Les anciennes fiches 19/20 étaient bâties sur le modèle « analyse de procédés » : elles ont été **fusionnées et réorientées** en une notion 19 « Produire le développement rédigé » (`francais/produire-le-developpement.ts`). **Les attendus diffèrent entre L3 et M2** : la fiche est donc **différenciée par niveau (deux fabriques distinctes)** dans ce fichier : `ficheProduireDeveloppementM2Builder` (réflexion ample, texte + culture + lectures, exemple Maalouf 2026, 9 pts) et `ficheProduireDeveloppementL3Builder` (développement court « une trentaine de lignes », ancré sur le texte, gestion du temps, exemple sujet 0 Perrault, 10 pts). La culture littéraire passe de 21 à **20**. Renvois internes (méthodologie, culture) et `index.ts` mis à jour ; anciens fichiers `construire-un-plan.ts` et `rediger-le-developpement.ts` supprimés. `tsc` OK, rendu OK (L3 + M2).
 >
@@ -63,4 +63,16 @@ Deux étapes par fiche : **MEF** (mise en forme HTML → format du site) et **Au
 ## CHANTIER TERMINÉ
 **Rattrapage d'audit §9 sur les notions 01-10 : FAIT.** Les 10 fiches sont saines (terminologie 2020, conditionnel = temps de l'indicatif, périmètre nature/fonction, renvois corrects, pas de tirets cadratins ni d'annales non sourcées). Corrections appliquées : notion 01 (« 2015 » → « 2020 » partout, « tolérée avec réserve » → « à éviter », question de quiz re-rattachée à l'objectif e1) ; notion 05 (ajout d'une question de quiz couvrant l'objectif pc7, annonce 8 → 9 questions).
 
-**Les notions de français (désormais 20 après fusion 19+20) + la fiche méthodologie (L3/M2) sont produites ET auditées §9 ; la nouvelle notion 19 fusionnée/réorientée attend validation.**
+**TOUT LE FRANÇAIS ÉCRIT EST PRODUIT, AUDITÉ §9 ET VALIDÉ À L'ÉCRAN (28/06/2026) :** méthodologie (L3/M2) + 21 notions, y compris la Partie 3 refondue (notion 20 « Produire le développement rédigé » et notion 21 « Référentiel culturel »). Plus aucun chantier français en attente.
+
+---
+
+## CHANTIER EN COURS — Refonte de structure (migration nouveau format)
+
+Migration des notions 2 à 19 vers le format figé (voir `BRIEF_CODEX_MIGRATION.md`, `SPEC_STRUCTURE_NOTION.md`, `GABARIT_NOTION.md`). **MIGRATION 2-19 FAITE, VÉRIFIÉE ET VALIDÉE À L'ÉCRAN le 28/06/2026** (18 notions ; rendu contrôlé en L3 et M2). Contrôle groupé : verbatim cours/méthode **18/18 vert**, structure conforme (5 onglets, blocs attendus, Vue d'ensemble + Quiz éclair + trainer absents), `tsc`/`eslint` 0 erreur, 18 fiches enregistrées dans `FRANCAIS_COMMUN`, exercices reconditionnés (tagués `// TODO refonte exo`). **Correctif appliqué :** Codex avait rempli les copies « Corriger des erreurs » des notions 6 et 10 avec du texte bouchon (faute de `piegeCard` source) → **13 copies réécrites à la main** (vraies analyses de candidat, terminologie 2020, 3 justes/5 fausses chacune). **Restent : (1)** basculer la notion 1 v2 → officielle (slug `classes-grammaticales`, retirer la v1) pour l'aligner sur les autres ; **(2)** le travail n'est pas committé (working tree).
+
+### Points de contenu à traiter au chantier 2 / audit §9 (NE PAS corriger pendant la migration)
+
+Repérés en relisant les migrations. Le cours est repris verbatim, donc ces corrections de fond se font **après**, en passe dédiée.
+
+- **Notion 2 (fonctions) — incohérence apposition / épithète détachée.** Le cours classe le même cas (adjectif détaché entre virgules renvoyant au sujet) de deux façons contradictoires : « Seul, il repartit » = **épithète détachée** (carte Épithète) mais « Paul, ravi, sourit » = **apposition** (carte Apposition). En terminologie 2020, un adjectif détaché est plutôt une épithète détachée. À harmoniser (probablement sur « épithète détachée ») + ajuster la copie `fr-02-cop-paul-apposition` (« Corriger des erreurs ») qui a hérité de l'ambiguïté.

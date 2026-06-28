@@ -1,14 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { EXERCICES_PHONOLOGIE } from "./exercices-phonologie";
+import { COPIES_PHONOLOGIE } from "./copies-phonologie";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "ph1", label: "Je distingue phonème (unité sonore), graphème (unité graphique) et lettre (unité de l'alphabet)" },
-  { id: "ph2", label: "Je transcris un mot en API entre barres obliques, en notant l'oral et non l'écrit" },
-  { id: "ph3", label: "Je compte les phonèmes sans les confondre avec les lettres (digrammes, lettres muettes)" },
-  { id: "ph4", label: "Je distingue la polygraphie phonique (un phonème, plusieurs graphèmes) de la polyphonie graphique (un graphème, plusieurs valeurs)" },
-  { id: "ph5", label: "Je connais la valeur de position (c, g, s) et la valeur de combinaison (t dans -tion)" },
-  { id: "ph6", label: "Je distingue le h muet du h aspiré par leurs effets sur l'élision et la liaison" },
-  { id: "ph7", label: "Je distingue la phonétique (les sons) de la phonologie (les phonèmes) et je connais la paire minimale" },
+const SAVOIR_FAIRE = [
+  { id: "phonemes-graphemes", label: "Phonèmes/graphèmes" },
+  { id: "syllabes", label: "Syllabes" },
+  { id: "accents", label: "Accents" },
+  { id: "liaisons", label: "Liaisons" },
+  { id: "homophones", label: "Homophones" },
+  { id: "transcription", label: "Transcription" },
 ];
 
 export const fichePhonologie: Fiche = {
@@ -17,59 +17,29 @@ export const fichePhonologie: Fiche = {
   numero: 16,
   partie: "Partie 1 : Grammaire du texte et du discours",
   title: "La phonologie",
-  subtitle:
-    "Phonème, graphème, lettre, transcription API, correspondances grapho-phonémiques et valeurs d'une lettre",
+  subtitle: "Phonème, graphème, lettre, transcription API, correspondances grapho-phonémiques et valeurs d'une lettre",
   badges: [
-    { label: "★★☆ Fréquent", variant: "hot" },
-    { label: "Cycle 1 à 3 · BOEN n°1 du 22 janvier 2019", variant: "info" },
+      {
+          "label": "★★☆ Fréquent",
+          "variant": "hot"
+      },
+      {
+          "label": "Cycle 1 à 3 · BOEN n°1 du 22 janvier 2019",
+          "variant": "info"
+      }
   ],
   metaTitle: "La phonologie (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
     "Fiche CRPE complète sur la phonologie : phonème, graphème et lettre, transcription en API, les phonèmes du français, correspondances grapho-phonémiques (polygraphie phonique, polyphonie graphique), valeur de position et de combinaison, h muet et h aspiré, phonétique et phonologie. Méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              intro:
-                "La phonologie étudie les sons de la langue comme unités fonctionnelles. Au concours, quatre savoir-faire reviennent.",
-              items: [
-                {
-                  number: "①",
-                  title: "Phonème, graphème, lettre",
-                  text: "Trois niveaux distincts : l'unité sonore, l'unité graphique qui la transcrit, et l'unité de l'alphabet.",
-                },
-                {
-                  number: "②",
-                  title: "La transcription en API",
-                  text: "Noter l'oral entre barres obliques, en comptant les phonèmes et non les lettres.",
-                },
-                {
-                  number: "③",
-                  title: "Les correspondances grapho-phonémiques",
-                  text: "Polygraphie phonique, polyphonie graphique, valeur de position et de combinaison.",
-                },
-                {
-                  number: "④",
-                  title: "Lettres muettes, h muet et h aspiré",
-                  text: "Reconnaître ce qui ne se prononce pas et les effets du h sur l'élision et la liaison.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -573,458 +543,62 @@ export const fichePhonologie: Fiche = {
               question: "Quelle est la valeur de <s> dans « maison » ? Justifiez.",
               correction: [
                 { type: "line", text: "<s> a la valeur **/z/** : en position intervocalique (entre deux voyelles), le <s> se sonorise. « maison » → /mɛzɔ̃/." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "note", text: "@nav Méthode en tête ? Direction S’entraîner." },
               ],
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Passez à l’application.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
+          icon: "",
+          blocks: [
+            {
+              type: "exerciceBank",
+              title: "La phonologie",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_PHONOLOGIE,
+            },
+          ],
+        },
+        {
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
             },
             {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "ph1",
-                  question: "Dans « eau », combien de lettres, de graphèmes et de phonèmes ?",
-                  options: ["3, 3, 3", "3, 1, 1", "1, 1, 1", "3, 2, 1"],
-                  correctIndex: 1,
-                  explanation:
-                    "3 lettres, mais 1 seul graphème <eau> qui transcrit 1 seul phonème /o/.",
-                },
-                {
-                  objectifId: "ph3",
-                  question: "Combien de phonèmes dans « chant » ?",
-                  options: ["5", "4", "3", "2"],
-                  correctIndex: 3,
-                  explanation:
-                    "/ʃ/ (digramme <ch>) et /ɑ̃/ (digramme <an>) ; le <t> est muet. Donc /ʃɑ̃/, soit 2 phonèmes.",
-                },
-                {
-                  objectifId: "ph2",
-                  question: "Comment transcrit-on correctement « lait » ?",
-                  options: ["/lɛt/", "/lɛ/", "[lɛ]", "/lait/"],
-                  correctIndex: 1,
-                  explanation:
-                    "Le <t> final est muet : /lɛ/. On note entre barres obliques (phonologie), pas entre crochets.",
-                },
-                {
-                  objectifId: "ph4",
-                  question: "Le phonème /o/ qui s'écrit o, au ou eau illustre :",
-                  options: ["la polyphonie graphique", "la polygraphie phonique", "une paire minimale", "une liaison"],
-                  correctIndex: 1,
-                  explanation:
-                    "Un même phonème écrit de plusieurs façons : c'est la polygraphie phonique (difficulté à l'écriture).",
-                },
-                {
-                  objectifId: "ph5",
-                  question: "Dans « nation », la lettre <t> a la valeur :",
-                  options: ["/t/", "/s/", "muette", "/z/"],
-                  correctIndex: 1,
-                  explanation:
-                    "Devant <i> + voyelle, <t> prend la valeur /s/ (valeur de combinaison) : « nation » → /nasjɔ̃/.",
-                },
-                {
-                  objectifId: "ph6",
-                  question: "« honte » commence par :",
-                  options: ["un h muet (l'honte)", "un h aspiré (la honte)", "un phonème /h/", "une voyelle"],
-                  correctIndex: 1,
-                  explanation:
-                    "h aspiré : pas d'élision ni de liaison. On dit « la honte », jamais « l'honte ».",
-                },
-                {
-                  objectifId: "ph5",
-                  question: "Dans « maison », la lettre <s> se prononce :",
-                  options: ["/s/", "/z/", "muette", "/ʃ/"],
-                  correctIndex: 1,
-                  explanation:
-                    "En position intervocalique, <s> se sonorise en /z/ : /mɛzɔ̃/.",
-                },
-                {
-                  objectifId: "ph7",
-                  question: "Le /ʁ/ roulé et le /ʁ/ grasseyé sont :",
-                  options: [
-                    "deux phonèmes distincts",
-                    "deux réalisations (sons) du même phonème /ʁ/",
-                    "une paire minimale",
-                    "deux graphèmes",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Phonétiquement distincts, mais phonologiquement identiques : aucune paire minimale ne les oppose, ce sont des variantes du même phonème /ʁ/.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
-            },
-          ],
-        },
-        {
-          id: "appli",
-          label: "Application",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Progression en 3 niveaux. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              stars: "★☆☆",
-              label: "Niveau 1 : Identifier et transcrire",
-              sub: "Compter les phonèmes, transcrire, valeur de base",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 1 : Compter les phonèmes",
-              objectifTag: "Phonèmes",
-              question: "Combien de phonèmes dans chaque mot ?\npeur · chat · beau · main · yeux",
-              correction: [
-                { type: "line", text: "**Réponse attendue :** peur → 3 (/pœʁ/) · chat → 2 (/ʃa/) · beau → 2 (/bo/) · main → 2 (/mɛ̃/) · yeux → 2 (/jø/)." },
-                { type: "note", text: "💡 Explication : on compte les sons, jamais les lettres. Les graphèmes complexes ne valent qu'un seul phonème (<ch> → /ʃ/, <eau> → /o/, <ain> → /ɛ̃/, <eu> → /ø/) et les lettres finales muettes (le <t> de « chat ») ne comptent pas." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 2 : Lettres, graphèmes, phonèmes",
-              objectifTag: "Trois niveaux",
-              question: "Pour chaque mot, donnez le nombre de lettres, de graphèmes et de phonèmes :\nnuit · monde · eau · chant",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Mot", "Lettres", "Graphèmes", "Phonèmes", "Transcription"],
-                  rows: [
-                    ["nuit", "4", "4 (n · u · i · t muet)", "3", "/nɥi/"],
-                    ["monde", "5", "4 (m · on · d · e)", "3 ou 4", "/mɔ̃d/ ou /mɔ̃də/"],
-                    ["eau", "3", "1 (eau)", "1", "/o/"],
-                    ["chant", "5", "3 (ch · an · t muet)", "2", "/ʃɑ̃/"],
-                  ],
-                },
-                { type: "note", text: "💡 Explication : lettres ≥ graphèmes ≥ phonèmes. Un digramme (<on>, <ch>) fait baisser le nombre de graphèmes ; une lettre muette (<t>, <e> final) fait baisser le nombre de phonèmes. Dans « nuit », <u> et <i> notent deux sons (/ɥ/ et /i/) : ce sont deux graphèmes, pas un digramme." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 3 : Valeur de la lettre <c>",
-              question: "Donnez la valeur de <c> et la règle de position :\ncar · ciel · reçu · école · cygne",
-              correction: [
-                { type: "line", text: "**Règle (explication) :** <c> = /k/ devant a, o, u et les consonnes ; /s/ devant e, i, y. La cédille <ç> impose /s/ devant a, o, u." },
-                { type: "line", text: "**Réponse attendue :** car → /k/ (devant a) · ciel → /s/ (devant i) · reçu → /s/ (cédille, devant u) · école → /k/ (devant o) · cygne → /s/ (devant y)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : Analyser les correspondances",
-              sub: "Polygraphie, polyphonie, valeurs",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 4 : Valeur de <s>",
-              question: "Donnez la valeur de <s> et justifiez par la position :\nsol · raison · sport · insensé · tasse",
-              correction: [
-                { type: "line", text: "**Règle (explication) :** <s> = /z/ uniquement entre deux voyelles ; partout ailleurs (initiale, contre une consonne, doublé en <ss>) il vaut /s/." },
-                { type: "line", text: "**Réponse attendue :** sol → /s/ (initiale) · raison → /z/ (intervocalique) · sport → /s/ (devant consonne) · insensé → /s/ (après la consonne <n>) · tasse → /s/ (<ss> toujours /s/)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 5 : Polygraphie et polyphonie",
-              enonce: "« Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. » (Zola)",
-              question: "Relevez un exemple de polygraphie phonique et un de polyphonie graphique.",
-              correction: [
-                { type: "line", text: "**Polygraphie phonique** (un phonème, plusieurs graphèmes) : le phonème /ɛ/ s'écrit <e> dans « elle » et <ai> dans l'imparfait « hâtait » : un même son noté de deux façons." },
-                { type: "line", text: "**Polyphonie graphique** (un graphème, plusieurs valeurs) : le graphème <s> vaut /s/ dans « sa » (initiale) et /z/ dans « maison » (intervocalique) : une même lettre, deux sons." },
-                { type: "note", text: "💡 Réponse attendue : un exemple précis de chaque phénomène, en nommant le phonème (ou le graphème) concerné et en justifiant par la position dans le mot." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 6 : Valeur de <x>",
-              question: "Identifiez la valeur de <x> :\ntaxi · examen · dix · luxe · sixième",
-              correction: [
-                { type: "line", text: "**Réponse attendue :** taxi → /ks/ · examen → /gz/ (<ex> + voyelle) · dix → /s/ (en finale, mot isolé) · luxe → /ks/ · sixième → /z/." },
-                { type: "note", text: "💡 Explication : dans « sixième » (comme « dixième »), <x> prend la valeur /z/ devant le suffixe -ième. Ce n'est pas une liaison : la liaison ne joue qu'entre deux mots (« six enfants » → /sizɑ̃fɑ̃/)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : Analyse fine",
-              sub: "Transcription complète, phonétique vs phonologie",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 7 : Transcription complète",
-              enonce: "« j'ai vu se rouvrir les portes qui me séparaient du monde. » (Marguerite Yourcenar, Comment Wang-Fô fut sauvé)",
-              question: "Transcrivez « rouvrir » en API. Comptez phonèmes, graphèmes et lettres.",
-              correction: [
-                { type: "line", text: "**Réponse attendue :** « rouvrir » → **/ʁuvʁiʁ/** : 7 lettres, 6 graphèmes, 6 phonèmes. Décomposition : <r> /ʁ/, <ou> /u/ (digramme), <v> /v/, <r> /ʁ/, <i> /i/, <r> /ʁ/." },
-                { type: "note", text: "💡 Explication : 7 lettres pour 6 graphèmes car le digramme <ou> compte 2 lettres pour 1 unité ; 6 graphèmes pour 6 phonèmes car tous sont prononcés (aucune lettre muette ici)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 8 : Phonétique ou phonologie ?",
-              question: "Définissez phonétique et phonologie. Pourquoi le /ʁ/ roulé et le /ʁ/ grasseyé sont-ils phonétiquement distincts mais phonologiquement identiques ?",
-              correction: [
-                { type: "line", text: "**Explication :** la **phonétique** décrit physiquement les sons (articulation, acoustique) ; la **phonologie** étudie les sons comme unités fonctionnelles distinctives, les phonèmes." },
-                { type: "line", text: "**Réponse attendue :** le /ʁ/ roulé et le /ʁ/ grasseyé sont deux sons différents (plan phonétique), mais aucune paire minimale ne les oppose en français : les substituer ne change jamais le sens d'un mot. Ce sont donc des **variantes (allophones)** d'un seul et même phonème /ʁ/ (plan phonologique)." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              text: "Ces exercices reproduisent le format de la question de phonologie en Partie 1. Les exercices calqués sur des sujets récents portent le badge ✦.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format identique au concours",
-              title: "Exercice 1 : transcription d'un extrait",
-              enonce: "« j'ai vu se rouvrir les portes qui me séparaient du monde, je suis monté sur la terrasse du palais pour regarder les nuages. » (Marguerite Yourcenar, Comment Wang-Fô fut sauvé)",
-              question: "Transcrivez « portes », « palais » et « nuages » et indiquez le nombre de phonèmes. Pour « portes », précisez la valeur de chaque graphème.",
-              correction: [
-                {
-                  type: "formulationCrpe",
-                  text: "**portes** → /pɔʁt/ : 4 phonèmes ; valeur de chaque graphème : <p> /p/, <o> /ɔ/, <r> /ʁ/, <t> /t/, <e> muet, <s> muet.\n**palais** → /palɛ/ : 4 phonèmes (<ai> = /ɛ/, <s> muet).\n**nuages** → /nɥaʒ/ : 4 phonèmes (<u> = /ɥ/, <ge> = /ʒ/, <s> muet).",
-                },
-                { type: "note", text: "💡 Explication : on transcrit l'oral, donc le <e> et le <s> finaux (muets) ne sont jamais notés. Chaque graphème prononcé reçoit la valeur du phonème qu'il transcrit." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format identique au concours",
-              title: "Exercice 2 : valeur du h et lettres muettes",
-              enonce: "« Vivre, sans l'écriture, me va mal, comme un habit trop lâche. » (Lola Lafon, Quand tu écouteras cette chanson)",
-              question: "a) Le <h> de « habit » est-il muet ou aspiré ? Justifiez par l'élision et la liaison. b) Transcrivez « habit » et identifiez les lettres muettes.",
-              correction: [
-                { type: "line", label: "a)", text: "**h muet** : l'élision est possible (« l'habit ») et la liaison aussi (« un bel habit » /œ̃bɛlabi/)." },
-                { type: "line", label: "b)", text: "« habit » → /abi/ : 3 phonèmes. Lettres muettes : <h> (aucun phonème) et <t> final." },
-                {
-                  type: "formulationCrpe",
-                  text: "a) Le <h> de *habit* est muet : l'élision (*l'habit*) et la liaison (*un bel habit* /œ̃bɛlabi/) sont possibles. b) *habit* → /abi/ : 3 phonèmes ; les lettres muettes sont <h> et <t> final.",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 3 : le phonème /ɑ̃/",
-              enonce: "semblant · chambre · cependant · vantard",
-              question: "Transcrivez chaque mot, comptez les phonèmes et indiquez le graphème du phonème /ɑ̃/.",
-              correction: [
-                { type: "formulationCrpe", text: "semblant → /sɑ̃blɑ̃/ (5 phonèmes ; <em> = /ɑ̃/, <an> = /ɑ̃/) · chambre → /ʃɑ̃bʁ/ (4 ; <am> = /ɑ̃/, <e> final muet) · cependant → /səpɑ̃dɑ̃/ (6 ; <en> = /ɑ̃/, <an> = /ɑ̃/) · vantard → /vɑ̃taʁ/ (5 ; <an> = /ɑ̃/, <d> muet)." },
-                { type: "note", text: "💡 Explication : le phonème /ɑ̃/ se cache sous plusieurs graphèmes (an, am, en, em), chacun valant un seul son. Comptez bien : un digramme nasal = un phonème, et les lettres finales muettes (<t>, <d>, <e>) ne comptent pas." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              icon: "",
-              text: "Ces exercices reproduisent des **erreurs fréquentes** en phonologie. Repérer ce qui cloche et corriger rigoureusement est une compétence directement valorisée au concours.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : lettres vs phonèmes",
-              enonce: "Copie d'un candidat : « Le mot “chant” contient 5 phonèmes car il y a 5 lettres : c, h, a, n, t. »",
-              question: "Identifiez et corrigez l'erreur.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Confusion entre lettre et phonème : le candidat compte les lettres", bad: true },
-                    { text: "<ch> est un digramme (1 phonème /ʃ/), <an> aussi (/ɑ̃/), le <t> est muet" },
-                    { text: "Réponse attendue : « chant » → **/ʃɑ̃/**, soit 2 phonèmes" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 2 · Réponse à corriger : le <s> de « maison »",
-              enonce: "Copie d'un candidat : « Dans “maison”, <s> se prononce /s/ car s = /s/ en règle générale. »",
-              question: "Identifiez et corrigez l'erreur.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "La règle de position est ignorée : <s> est ici intervocalique", bad: true },
-                    { text: "Entre deux voyelles, <s> se sonorise en /z/" },
-                    { text: "Réponse attendue : « maison » → **/mɛzɔ̃/** (<s> = /z/)" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « l'honte »",
-              enonce: "Copie d'un candidat : « “honte” prend un h muet, donc on peut dire “l'honte” par élision. »",
-              question: "Identifiez et corrigez l'erreur.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "« honte » commence par un h aspiré, pas un h muet", bad: true },
-                    { text: "Le h aspiré bloque l'élision et la liaison" },
-                    { text: "Réponse attendue : on dit « **la** honte » (jamais « l'honte »)" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 4 · Réponse à corriger : le <t> de « nation »",
-              enonce: "Copie d'un candidat : « “nation” → /natiɔ̃/ car le t de -tion se prononce /t/, sa valeur normale. »",
-              question: "Identifiez et corrigez l'erreur.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "La valeur de combinaison de <t> devant <i> + voyelle est ignorée", bad: true },
-                    { text: "Dans -tion précédé d'une voyelle, <t> prend la valeur /s/" },
-                    { text: "Réponse attendue : « nation » → **/nasjɔ̃/**. (Exception : « question » /kɛstjɔ̃/, car <t> est précédé d'une consonne)" },
-                  ],
-                },
-              ],
+              type: "corrigerCopies",
+              title: "La phonologie",
+              copies: COPIES_PHONOLOGIE,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              icon: "",
-              text: "Cliquez sur chaque carte pour révéler la réponse. Essayez de répondre dans votre tête avant.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Phonème, graphème, lettre : quelles différences ?",
-                  answer:
-                    "**Phonème** : plus petite unité sonore fonctionnelle (oral), notée /…/.\n**Graphème** : une ou plusieurs lettres transcrivant un phonème (écrit).\n**Lettre** : unité de l'alphabet (peut être muette).",
-                  astuce: "💡 « eau » = 3 lettres, 1 graphème, 1 phonème /o/.",
-                },
-                {
-                  question: "Polygraphie phonique vs polyphonie graphique ?",
-                  answer:
-                    "**Polygraphie phonique** : un phonème, plusieurs graphèmes (/o/ → o, au, eau). Difficulté à l'écriture.\n**Polyphonie graphique** : un graphème, plusieurs valeurs (<s> → /s/, /z/, muet). Difficulté à la lecture.",
-                },
-                {
-                  question: "La règle de position de <c> ?",
-                  answer:
-                    "<c> = /k/ devant a, o, u et les consonnes (car, col, cube, crayon).\n<c> = /s/ devant e, i, y (ceci, ciel, cycle).\nLa cédille <ç> impose /s/ devant a, o, u (garçon, reçu).",
-                },
-                {
-                  question: "H muet ou h aspiré ?",
-                  answer:
-                    "**H muet** : élision et liaison possibles (l'heure, les hommes).\n**H aspiré** : élision et liaison impossibles (la honte, le hibou).\nDans les deux cas, le h ne correspond à aucun phonème.",
-                  astuce: "⚠️ Le dictionnaire signale le h aspiré (souvent par *).",
-                },
-                {
-                  question: "Combien de phonèmes en français ?",
-                  answer:
-                    "Environ **36 phonèmes** : 16 voyelles (11 orales, 4 nasales, le « e » caduc), 17 consonnes, 3 semi-consonnes (/j/, /w/, /ɥ/).",
-                  astuce: "💡 /œ̃/ et /ɛ̃/ se confondent dans plusieurs régions : on retient 36 pour le concours.",
-                },
-                {
-                  question: "La valeur de <-tion> dans « nation » vs « question » ?",
-                  answer:
-                    "« nation » /nasjɔ̃/ : <t> précédé d'une voyelle → valeur /s/.\n« question » /kɛstjɔ̃/ : <t> précédé d'une consonne → valeur /t/.\nC'est une valeur de combinaison du graphème <t>.",
-                },
-                {
-                  question: "Phonétique ou phonologie ?",
-                  answer:
-                    "**Phonétique** : description physique des sons.\n**Phonologie** : étude des phonèmes (unités fonctionnelles distinctives).\nLe /ʁ/ roulé et le /ʁ/ grasseyé sont 2 sons (phonétique) mais 1 seul phonème /ʁ/ (phonologie).",
-                  astuce: "💡 Au concours, on note entre barres obliques /…/, pas entre crochets.",
-                },
-                {
-                  question: "Qu'est-ce qu'une paire minimale ?",
-                  answer:
-                    "Deux mots qui ne diffèrent que par un seul phonème et ont des sens différents : « sol » /sɔl/ vs « vol » /vɔl/.\nElle prouve que la différence sonore est phonémiquement pertinente (deux phonèmes distincts).",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
@@ -1068,12 +642,6 @@ export const fichePhonologie: Fiche = {
               ],
             },
           ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
         },
       ],
     },

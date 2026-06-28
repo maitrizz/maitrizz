@@ -1,14 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { EXERCICES_TYPES_ET_FORMES_DE_PHRASE } from "./exercices-types-et-formes-de-phrase";
+import { COPIES_TYPES_ET_FORMES_DE_PHRASE } from "./copies-types-et-formes-de-phrase";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "tp1", label: "Je distingue les 4 types de phrase (déclaratif, interrogatif, injonctif, exclamatif) et je sais qu'une phrase porte un seul type" },
-  { id: "tp2", label: "Je distingue le type (obligatoire, unique) de la forme (facultative, cumulable) : une phrase a un type ET, éventuellement, une ou plusieurs formes" },
-  { id: "tp3", label: "Je maîtrise l'interrogation : totale ou partielle, et ses trois registres (inversion, est-ce que, intonation)" },
-  { id: "tp4", label: "Je reconnais la phrase injonctive même sans impératif (infinitif, subjonctif, phrase nominale)" },
-  { id: "tp5", label: "Je manie la forme négative : négation totale ou partielle, et je ne confonds pas « ne… que » (restriction) avec une négation" },
-  { id: "tp6", label: "Je repère les formes emphatique (c'est… qui/que, dislocation) et impersonnelle (il pleut, il manque…)" },
-  { id: "tp7", label: "Je sais ce qu'en dit le programme (la phrase et sa ponctuation, cycles 2 et 3) et je repère les erreurs d'élèves typiques" },
+const SAVOIR_FAIRE = [
+  { id: "types", label: "Types de phrase" },
+  { id: "negation", label: "Négation" },
+  { id: "interrogation", label: "Interrogation" },
+  { id: "injonction", label: "Injonction" },
+  { id: "emphase", label: "Emphase" },
+  { id: "actif-passif", label: "Actif/passif" },
 ];
 
 export const ficheTypesEtFormesDePhrase: Fiche = {
@@ -17,57 +17,29 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
   numero: 6,
   partie: "Partie 1 : Grammaire de la phrase",
   title: "Types et formes de phrase",
-  subtitle:
-    "Ce que fait la phrase (déclarer, interroger, ordonner, s'exclamer) et comment elle le fait (négative, emphatique, impersonnelle)",
+  subtitle: "Ce que fait la phrase (déclarer, interroger, ordonner, s'exclamer) et comment elle le fait (négative, emphatique, impersonnelle)",
   badges: [
-    { label: "★★☆ Fréquent", variant: "hot" },
-    { label: "Cycle 2 et 3 + lycée", variant: "info" },
+      {
+          "label": "★★☆ Fréquent",
+          "variant": "hot"
+      },
+      {
+          "label": "Cycle 2 et 3 + lycée",
+          "variant": "info"
+      }
   ],
   metaTitle: "Types et formes de phrase (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
     "Fiche CRPE sur les types et formes de phrase : les 4 types (déclaratif, interrogatif, injonctif, exclamatif), l'interrogation totale ou partielle et ses registres, la phrase injonctive sans impératif, les formes négative, emphatique et impersonnelle. Méthode, pièges, quiz, exercices corrigés et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                {
-                  number: "①",
-                  title: "Type et forme : deux questions différentes",
-                  text: "Le type dit ce que fait la phrase (un seul par phrase) ; la forme dit comment elle le fait (facultative, cumulable). On ne les range pas dans la même colonne.",
-                },
-                {
-                  number: "②",
-                  title: "Les 4 types de phrase",
-                  text: "Déclaratif, interrogatif, injonctif, exclamatif : chacun a sa fonction de communication et sa ponctuation.",
-                },
-                {
-                  number: "③",
-                  title: "Deux zooms qui tombent : interrogation et injonction",
-                  text: "L'interrogation (totale ou partielle, trois registres) et l'injonction (qui se passe souvent de l'impératif) sont les deux types les plus piégeux.",
-                },
-                {
-                  number: "④",
-                  title: "Les formes : négative, emphatique, impersonnelle",
-                  text: "Elles se superposent au type sans le changer. La forme passive, elle, relève de la voix du verbe : voir la notion 4 (le groupe verbal).",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -424,321 +396,62 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
               correction: [
                 { type: "line", text: "**Explication :** le mot exclamatif *comme* et le point d'exclamation marquent le type **exclamatif** (la phrase exprime un sentiment, ici l'agacement ou la surprise). On relève aussi « n'… rien » : forme **négative** (négation partielle portant sur le COD)." },
                 { type: "line", text: "**Réponse attendue (formulation jury) :** « Phrase de type **exclamatif** (mot exclamatif *comme*, point d'exclamation), à la forme **négative** (négation partielle *ne… rien*). »" },
-                { type: "note", text: "Trouvé du premier coup ? Direction le Quiz éclair. Sinon, relisez la grille type / forme de l'étape ①." },
+                { type: "note", text: "@nav Méthode en tête ? Direction S’entraîner." },
               ],
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Passez à l’application.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
+          icon: "",
+          blocks: [
+            {
+              type: "exerciceBank",
+              title: "Types et formes de phrase",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_TYPES_ET_FORMES_DE_PHRASE,
+            },
+          ],
+        },
+        {
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de passer aux exercices",
-              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
             },
             {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "tp1",
-                  question: "Combien de types une même phrase peut-elle avoir ?",
-                  options: ["Autant que de propositions", "Un seul", "Deux au maximum", "Un par verbe conjugué"],
-                  correctIndex: 1,
-                  explanation:
-                    "Une phrase a toujours un seul type (déclaratif, interrogatif, injonctif ou exclamatif). Ce sont les formes, elles, qui se cumulent.",
-                },
-                {
-                  objectifId: "tp2",
-                  question: "Dans « Il ne reste plus de pain. », quels sont le type et la forme ?",
-                  options: [
-                    "Type négatif, forme déclarative",
-                    "Type déclaratif, forme négative",
-                    "Type déclaratif, forme impersonnelle uniquement",
-                    "Type exclamatif, forme négative",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "« négatif » n'est pas un type : c'est une forme. La phrase est de type déclaratif, à la forme négative (et accessoirement impersonnelle avec « il reste »).",
-                },
-                {
-                  objectifId: "tp3",
-                  question: "« Quand pars-tu ? » est une interrogation…",
-                  options: ["totale, registre familier", "partielle, registre soutenu", "totale, registre soutenu", "partielle, registre courant"],
-                  correctIndex: 1,
-                  explanation:
-                    "Le mot « quand » fait porter la question sur un seul élément (le moment) : interrogation partielle. L'inversion « pars-tu » marque le registre soutenu.",
-                },
-                {
-                  objectifId: "tp3",
-                  question: "Laquelle de ces phrases est une interrogation totale ?",
-                  options: ["« Où vas-tu ? »", "« Pourquoi pleure-t-il ? »", "« Est-ce que tu viens ? »", "« Combien en veux-tu ? »"],
-                  correctIndex: 2,
-                  explanation:
-                    "« Est-ce que tu viens ? » appelle une réponse oui/non et porte sur tout le propos : interrogation totale. Les trois autres portent sur un élément (lieu, cause, quantité).",
-                },
-                {
-                  objectifId: "tp4",
-                  question: "« Battre les œufs en neige. » (dans une recette) est une phrase…",
-                  options: ["déclarative", "injonctive", "exclamative", "interrogative"],
-                  correctIndex: 1,
-                  explanation:
-                    "C'est une consigne : phrase injonctive à l'infinitif. L'absence d'impératif ne change pas le type.",
-                },
-                {
-                  objectifId: "tp5",
-                  question: "« Je n'ai qu'une question. » est une phrase…",
-                  options: [
-                    "négative (négation totale)",
-                    "affirmative restrictive (ne… que = seulement)",
-                    "négative (négation partielle)",
-                    "exclamative",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "« ne… que » exprime une restriction (= seulement), pas une négation : la phrase est affirmative. « Je n'ai qu'une question » signifie « j'ai seulement une question ».",
-                },
-                {
-                  objectifId: "tp6",
-                  question: "Dans « C'est la lecture qui le passionne. », quelle est la forme ?",
-                  options: ["Impersonnelle", "Négative", "Emphatique", "Aucune forme particulière"],
-                  correctIndex: 2,
-                  explanation:
-                    "Le présentatif « c'est… qui » met « la lecture » en relief : forme emphatique. La phrase reste de type déclaratif.",
-                },
-                {
-                  objectifId: "tp6",
-                  question: "Quelle phrase est à la forme impersonnelle ?",
-                  options: [
-                    "« Paul dort encore. »",
-                    "« Il a fermé la porte. »",
-                    "« Il faut partir tôt. »",
-                    "« Elle pleut de joie. »",
-                  ],
-                  correctIndex: 2,
-                  explanation:
-                    "Dans « Il faut partir tôt », « il » ne désigne personne : c'est un sujet grammatical impersonnel. Dans « Il a fermé la porte », « il » reprend une personne : forme personnelle.",
-                },
-                {
-                  objectifId: "tp7",
-                  question: "Un élève écrit « Tu viens. » à la place de « Tu viens ? ». Que travaille-t-il en priorité ?",
-                  options: [
-                    "L'accord du verbe",
-                    "La ponctuation de fin, marque écrite du type de phrase",
-                    "Le niveau de langue",
-                    "La conjugaison",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "À l'oral, l'intonation suffit à poser la question ; à l'écrit, c'est le point d'interrogation qui marque le type interrogatif. C'est précisément ce que l'école construit du cycle 2 au cycle 3.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "corrigerCopies",
+              title: "Types et formes de phrase",
+              copies: COPIES_TYPES_ET_FORMES_DE_PHRASE,
             },
           ],
         },
-        {
-          id: "appli",
-          label: "Application",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Progression en 3 niveaux. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              stars: "★☆☆",
-              label: "Niveau 1 : Identifier le type",
-              sub: "Phrases courtes, un seul critère",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 1 : Quel type ?",
-              objectifTag: "Types",
-              question:
-                "Donnez le type de chaque phrase.\na) « Range ta chambre. »   b) « Quelle chance ! »   c) « As-tu compris ? »   d) « La pluie a cessé. »",
-              correction: [
-                { type: "line", label: "a)", text: "**Injonctif** (ordre, verbe à l'impératif)." },
-                { type: "line", label: "b)", text: "**Exclamatif** (sentiment, mot exclamatif *quelle*, point d'exclamation)." },
-                { type: "line", label: "c)", text: "**Interrogatif** (demande d'information, inversion *as-tu*, point d'interrogation)." },
-                { type: "line", label: "d)", text: "**Déclaratif** (information, point final)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : Type + forme",
-              sub: "Cumuler les deux analyses, comme au concours",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              level: "n2",
-              title: "Exercice 2 : Type et forme",
-              objectifTag: "Type + forme",
-              question:
-                "Indiquez le type ET la ou les formes de chaque phrase.\na) « N'es-tu jamais content ? »   b) « Il manque deux chaises. »   c) « C'est ce livre que je cherchais. »",
-              correction: [
-                { type: "line", label: "a)", text: "Type **interrogatif** (interrogation totale, registre soutenu : inversion *es-tu*) + forme **négative** (négation **partielle** *ne… jamais*, qui porte sur le temps)." },
-                { type: "line", label: "b)", text: "Type **déclaratif** + forme **impersonnelle** (« il » ne désigne personne ; le sujet réel *deux chaises* est rejeté après le verbe)." },
-                { type: "line", label: "c)", text: "Type **déclaratif** + forme **emphatique** (présentatif *c'est… que* mettant *ce livre* en relief)." },
-                { type: "formulationCrpe", text: "Modèle de rédaction (a) : « Phrase de type **interrogatif**, interrogation **totale** de registre soutenu (inversion *es-tu*, point d'interrogation), à la forme **négative** (négation **partielle** *ne… jamais*, portant sur le temps). »" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              level: "n2",
-              title: "Exercice 3 : Caractériser une interrogation",
-              objectifTag: "Interrogation",
-              question:
-                "Pour chaque question, dites si elle est totale ou partielle, et donnez son registre.\na) « Tu pars quand ? »   b) « Est-ce qu'il a téléphoné ? »   c) « Pourquoi ris-tu ? »",
-              correction: [
-                { type: "line", label: "a)", text: "Interrogation **partielle** (porte sur le moment, *quand*), registre **familier** (mot interrogatif rejeté en fin, pas d'inversion)." },
-                { type: "line", label: "b)", text: "Interrogation **totale** (réponse oui/non), registre **courant** (*est-ce que*)." },
-                { type: "line", label: "c)", text: "Interrogation **partielle** (porte sur la cause, *pourquoi*), registre **soutenu** (inversion *ris-tu*)." },
-                { type: "note", text: "Deux axes indépendants : totale/partielle d'un côté, registre de l'autre. On donne toujours les deux." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : Pièges et manipulation",
-              sub: "Justifier, transformer, déjouer les confusions",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              level: "n3",
-              title: "Exercice 4 : Restriction ou négation ?",
-              objectifTag: "Négative",
-              question:
-                "Ces phrases sont-elles négatives ? Justifiez.\na) « Je ne bois que de l'eau. »   b) « Je ne bois pas d'alcool. »",
-              correction: [
-                { type: "line", label: "a)", text: "**Non, affirmative restrictive.** « ne… que » = seulement : « Je bois seulement de l'eau. » Le fait (boire) est bien posé, il est seulement restreint." },
-                { type: "line", label: "b)", text: "**Oui, négative** (négation totale *ne… pas*). Le fait est supprimé : « Je bois de l'alcool » devient faux." },
-                { type: "formulationCrpe", text: "Test à citer dans la copie : on remplace par « seulement ». En (a), le sens tient (« seulement de l'eau ») : c'est une restriction. En (b), le remplacement est impossible : c'est une vraie négation." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              level: "n3",
-              title: "Exercice 5 : Transformer",
-              objectifTag: "Type + forme",
-              question:
-                "Transformez « Tu fermes la fenêtre. » a) en phrase interrogative (registre soutenu), b) en phrase injonctive, c) en phrase de forme négative.",
-              correction: [
-                { type: "line", label: "a)", text: "« **Fermes-tu** la fenêtre ? » (inversion du sujet, point d'interrogation)." },
-                { type: "line", label: "b)", text: "« **Ferme** la fenêtre. » (impératif présent, 2e personne)." },
-                { type: "line", label: "c)", text: "« Tu **ne** fermes **pas** la fenêtre. » (négation totale *ne… pas*)." },
-                { type: "note", text: "La transformation est l'exercice CRPE par excellence : elle prouve qu'on a compris la marque de chaque type et de chaque forme." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★★",
-              label: "Niveau Expert : cas délicats",
-              sub: "Pour viser la maîtrise, au-delà de l'épreuve courante",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 6 : ce « ne » est-il une négation ?",
-              question:
-                "Ces « ne » sont-ils des négations ? Justifiez.\na) « Je crains qu'il ne pleuve. »   b) « Il ne dit rien. »   c) « Je ne suis pas sans savoir ce qui se passe. »",
-              correction: [
-                { type: "line", label: "a)", text: "**Non, « ne » explétif** : « je crains qu'il pleuve » garde le même sens. Après « craindre que », ce « ne » n'a pas de valeur négative." },
-                { type: "line", label: "b)", text: "**Oui, négation** : « ne… rien » est une négation partielle portant sur le COD." },
-                { type: "line", label: "c)", text: "**Non, sens affirmatif** : « ne… pas sans » est une double négation qui s'annule (= « je sais ce qui se passe »), procédé de litote." },
-                { type: "formulationCrpe", text: "« Le « ne » de (a) est explétif (suppressible : *je crains qu'il pleuve*) ; celui de (b) est une vraie négation partielle (*ne… rien*) ; en (c), *ne… pas sans* est une double négation à valeur affirmative (= je sais), c'est une litote. »" },
-              ],
-            },
-          ],
-        },
-        {
-          id: "flashcards",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Cachez la réponse, formulez la vôtre à voix haute, puis vérifiez. Idéal en révision rapide.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Quelle est la différence entre type et forme de phrase ?",
-                  answer:
-                    "**Type** : ce que fait la phrase (déclaratif, interrogatif, injonctif, exclamatif). Obligatoire et **unique**.\n**Forme** : comment elle le fait (négative, emphatique, impersonnelle…). Facultative et **cumulable**.",
-                  astuce: "💡 Une phrase = un type + zéro, une ou plusieurs formes.",
-                },
-                {
-                  question: "Interrogation totale ou partielle : comment trancher ?",
-                  answer:
-                    "**Totale** : porte sur tout le propos, réponse oui/non, pas de mot interrogatif (« Viens-tu ? »).\n**Partielle** : porte sur un élément, mot interrogatif (qui, où, quand, comment, pourquoi, combien, quel) (« Quand viens-tu ? »).",
-                  astuce: "💡 Un mot interrogatif portant sur un élément → partielle.",
-                },
-                {
-                  question: "Quels sont les trois registres de l'interrogation directe ?",
-                  answer:
-                    "**Soutenu** : inversion (« Viens-tu ? »).\n**Courant** : est-ce que (« Est-ce que tu viens ? »).\n**Familier** : intonation seule (« Tu viens ? »).",
-                },
-                {
-                  question: "Une phrase injonctive a-t-elle toujours un verbe à l'impératif ?",
-                  answer:
-                    "Non. Elle peut être à l'**infinitif** (« Battre les œufs »), au **subjonctif** (« Qu'il sorte ! »), au **futur** (« Vous prendrez… ») ou **nominale** (« Silence ! »). Le critère est l'intention de faire agir.",
-                  astuce: "💡 Pas d'impératif ≠ pas d'injonction.",
-                },
-                {
-                  question: "« ne… que » est-il une négation ?",
-                  answer:
-                    "Non, c'est une **restriction** (= seulement). « Je n'ai qu'un euro » = « j'ai seulement un euro » : phrase **affirmative** restrictive.",
-                  astuce: "💡 Remplacez par « seulement » : si le sens tient, c'est une restriction.",
-                },
-                {
-                  question: "Comment reconnaître la forme impersonnelle ?",
-                  answer:
-                    "Le sujet « il » ne désigne **personne** ni rien : il pleut, il faut, il y a, il manque… On ne peut pas le remplacer par un nom.",
-                  astuce: "💡 Test : « il » remplaçable par un nom → personnel ; sinon → impersonnel.",
-                },
-              ],
-            },
-          ],
-        },
+      ],
+    },
+    {
+      id: "memo",
+      label: "Mémo",
+      icon: "",
+      tabs: [
         {
           id: "memo",
           label: "Mémo",
@@ -781,12 +494,6 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
               ],
             },
           ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
         },
       ],
     },

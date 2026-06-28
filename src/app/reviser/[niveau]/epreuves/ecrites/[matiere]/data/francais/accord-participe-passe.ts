@@ -1,14 +1,12 @@
 import type { Fiche } from "@/components/fiche/types";
+import { EXERCICES_ACCORD_PARTICIPE_PASSE } from "./exercices-accord-participe-passe";
+import { COPIES_ACCORD_PARTICIPE_PASSE } from "./copies-accord-participe-passe";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "pp1", label: "Je sais que le participe passé employé seul s'accorde comme un adjectif : avec son nom noyau (épithète) ou avec le sujet (attribut)" },
-  { id: "pp2", label: "Je sais que le participe passé employé avec l'auxiliaire être s'accorde avec le groupe sujet" },
-  { id: "pp3", label: "Je sais que le participe passé employé avec l'auxiliaire avoir reste invariable, sauf si le COD est placé avant le verbe (COD antéposé)" },
-  { id: "pp4", label: "Je reconnais les trois façons d'antéposer le COD : pronom personnel, pronom relatif « que », mot interrogatif ou exclamatif" },
-  { id: "pp5", label: "Je sais que le participe passé reste invariable avec le pronom « en »" },
-  { id: "pp6", label: "Je sais accorder le participe passé d'un verbe pronominal en analysant le rôle du pronom « se » (COD, COI, ou verbe essentiellement pronominal)" },
-  { id: "pp7", label: "Je distingue l'infinitif en -er du participe passé en -é grâce au test de remplacement par un verbe en -ir" },
+const SAVOIR_FAIRE = [
+  { id: "etre", label: "Avec être" },
+  { id: "avoir-cod-avant", label: "Avec avoir (COD avant)" },
+  { id: "pronominaux", label: "Pronominaux" },
+  { id: "cas-particuliers", label: "Cas particuliers" },
 ];
 
 export const ficheAccordParticipePasse: Fiche = {
@@ -17,62 +15,29 @@ export const ficheAccordParticipePasse: Fiche = {
   numero: 12,
   partie: "Partie 1 : Orthographe grammaticale",
   title: "L'accord du participe passé",
-  subtitle:
-    "PP seul, avec être, avec avoir (COD antéposé), verbes pronominaux et piège infinitif / participe passé",
+  subtitle: "PP seul, avec être, avec avoir (COD antéposé), verbes pronominaux et piège infinitif / participe passé",
   badges: [
-    { label: "★★★ Très fréquent", variant: "hot" },
-    { label: "Cycle 3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
+      {
+          "label": "★★★ Très fréquent",
+          "variant": "hot"
+      },
+      {
+          "label": "Cycle 3-4 · BOEN n°1 du 22 janvier 2019",
+          "variant": "info"
+      }
   ],
   metaTitle: "L'accord du participe passé (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
     "Fiche CRPE complète sur l'accord du participe passé : PP employé seul, avec être (accord avec le sujet), avec avoir (règle du COD antéposé par pronom personnel, relatif ou interrogatif), le cas du pronom « en », l'accord des verbes pronominaux (rôle du pronom « se »), et la distinction infinitif / participe passé. Arbre de décision, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 5 étapes",
-              items: [
-                {
-                  number: "①",
-                  title: "Le participe passé employé seul",
-                  text: "Sans auxiliaire, il s'accorde comme un adjectif : avec son nom noyau (épithète) ou avec le sujet (attribut).",
-                },
-                {
-                  number: "②",
-                  title: "Avec l'auxiliaire être",
-                  text: "Temps composés avec être et voix passive : accord avec le groupe sujet.",
-                },
-                {
-                  number: "③",
-                  title: "Avec l'auxiliaire avoir",
-                  text: "Invariable par défaut. Accord avec le COD uniquement si celui-ci est placé avant le verbe.",
-                },
-                {
-                  number: "④",
-                  title: "Les verbes pronominaux",
-                  text: "Tout dépend du rôle du pronom « se » : COD, COI, ou verbe essentiellement pronominal.",
-                },
-                {
-                  number: "⑤",
-                  title: "Infinitif ou participe passé ?",
-                  text: "Le test de remplacement par un verbe en -ir tranche entre la forme en -er et la forme en -é.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -496,516 +461,62 @@ export const ficheAccordParticipePasse: Fiche = {
               question: "Infinitif ou participe passé : « Les erreurs (commettre) dans ce devoir sont nombreuses. »",
               correction: [
                 { type: "line", text: "**Réponse attendue :** Le remplacement par « choisies » montre qu'il faut un participe passé. « commises » est employé seul et se rapporte au nom « erreurs », féminin pluriel : il s'accorde donc avec lui." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "note", text: "@nav Méthode en tête ? Direction S’entraîner." },
               ],
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Passez à l’application.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
+          icon: "",
+          blocks: [
+            {
+              type: "exerciceBank",
+              title: "L'accord du participe passé",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_ACCORD_PARTICIPE_PASSE,
+            },
+          ],
+        },
+        {
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
             },
             {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "pp1",
-                  question: "Dans « les yeux baissés », avec quoi « baissés » s'accorde-t-il ?",
-                  options: ["Avec le sujet de la phrase", "Avec son nom noyau « yeux »", "Il est invariable", "Avec l'auxiliaire"],
-                  correctIndex: 1,
-                  explanation:
-                    "Employé seul, le participe passé fonctionne comme un adjectif épithète : il s'accorde avec son nom noyau « yeux » (masculin pluriel).",
-                },
-                {
-                  objectifId: "pp2",
-                  question: "« Les élèves sont (arriver) en retard. » Quelle forme ?",
-                  options: ["arrivé", "arrivée", "arrivés", "arriver"],
-                  correctIndex: 2,
-                  explanation:
-                    "Avec l'auxiliaire être, le PP s'accorde avec le groupe sujet « les élèves » (masculin pluriel) : arrivés.",
-                },
-                {
-                  objectifId: "pp3",
-                  question: "« Elle a (manger) les pommes. » Quelle forme ?",
-                  options: ["mangé", "mangée", "mangées", "manger"],
-                  correctIndex: 0,
-                  explanation:
-                    "Avec avoir, le COD « les pommes » est placé après le verbe : pas d'accord, le PP reste invariable (mangé).",
-                },
-                {
-                  objectifId: "pp4",
-                  question: "« les livres que j'ai (lire) » : pourquoi « lus » ?",
-                  options: ["L'auxiliaire est être", "« que » est un COD antéposé, antécédent « livres »", "Le PP s'accorde toujours", "« j' » est le COD"],
-                  correctIndex: 1,
-                  explanation:
-                    "« que » est un pronom relatif COD dont l'antécédent « livres » (masculin pluriel) est placé avant le verbe : le COD antéposé déclenche l'accord.",
-                },
-                {
-                  objectifId: "pp5",
-                  question: "« Des pommes, j'en ai (manger). » Quelle forme ?",
-                  options: ["mangées", "mangé", "mangées ou mangé", "mangé(e)s"],
-                  correctIndex: 1,
-                  explanation:
-                    "Avec le pronom « en », le participe passé reste invariable : « mangé ». C'est un cas particulier de la règle d'accord avec « avoir ».",
-                },
-                {
-                  objectifId: "pp6",
-                  question: "« Elle s'est (laver) les mains. » Quelle forme ?",
-                  options: ["lavée", "lavé", "lavés", "lavées"],
-                  correctIndex: 1,
-                  explanation:
-                    "« se » est COI (elle a lavé les mains à elle-même) ; le COD « les mains » est placé après. Le PP reste invariable : lavé.",
-                },
-                {
-                  objectifId: "pp6",
-                  question: "« Ils se sont (sourire). » Quelle forme ?",
-                  options: ["souris", "souries", "souri", "sourits"],
-                  correctIndex: 2,
-                  explanation:
-                    "« sourire à quelqu'un » : « se » est COI, donc le participe passé est invariable : souri.",
-                },
-                {
-                  objectifId: "pp7",
-                  question: "Quelle forme complète correctement « Il a décidé d'… voir ses parents » ?",
-                  options: ["un participe passé (allé)", "un infinitif (aller)", "indifféremment l'un ou l'autre", "un attribut"],
-                  correctIndex: 1,
-                  explanation:
-                    "Après « décider de », on attend un infinitif. Test : « il a décidé de choisir » ✓ → infinitif « aller ».",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
-            },
-          ],
-        },
-        {
-          id: "appli",
-          label: "Application",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Progression en 3 niveaux. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              stars: "★☆☆",
-              label: "Niveau 1 : Identifier",
-              sub: "Auxiliaire, COD, accord de base",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 1 : Choisir la bonne forme",
-              objectifTag: "Auxiliaire et accord",
-              question:
-                "Choisissez la forme correcte et justifiez (auxiliaire + règle) :\na) « Elle est (parti / partie) en voyage. »   b) « Il a (dormi / dormie) longtemps. »   c) « Les lettres qu'il a (envoyé / envoyées). »   d) « Nous les avons (vu / vus). » (les = masculin pluriel)   e) « Elle a (monté / montée) les valises. »",
-              correction: [
-                { type: "line", label: "a)", text: "**partie** : auxiliaire être → accord avec le sujet « elle » (féminin singulier)." },
-                { type: "line", label: "b)", text: "**dormi** : auxiliaire avoir, verbe intransitif, pas de COD → invariable." },
-                { type: "line", label: "c)", text: "**envoyées** : auxiliaire avoir, « que » = COD antéposé, antécédent « lettres » (féminin pluriel) → accord." },
-                { type: "line", label: "d)", text: "**vus** : auxiliaire avoir, « les » = COD antéposé (masculin pluriel) → accord." },
-                { type: "line", label: "e)", text: "**monté** : auxiliaire avoir (monter transitif), COD « les valises » placé après → invariable." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 2 : Infinitif ou participe passé ?",
-              objectifTag: "Test -ir",
-              question:
-                "Appliquez le test -ir à chaque forme soulignée :\na) « Il faut <u>manger</u> des légumes. »   b) « Le repas <u>terminé</u>, ils sortirent. »   c) « Je l'ai entendu <u>chanter</u>. »   d) « Elle a <u>regardé</u> le film. »   e) « Il est allé <u>chercher</u> du pain. »",
-              correction: [
-                { type: "line", label: "a)", text: "**infinitif** : « Il faut choisir » ✓ → manger." },
-                { type: "line", label: "b)", text: "**participe passé** : « Le repas choisi… » ✓ → terminé, accordé avec « repas » (masculin singulier)." },
-                { type: "line", label: "c)", text: "**infinitif** : « Je l'ai entendu choisir » ✓ → chanter (subordonnée infinitive)." },
-                { type: "line", label: "d)", text: "**participe passé** : « Elle a choisi » ✓ → regardé, COD « le film » après → invariable." },
-                { type: "line", label: "e)", text: "**infinitif** : « Il est allé choisir » ✓ → chercher." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 3 : Vrai ou faux",
-              question:
-                "Vrai ou faux, justifiez :\na) Avec le pronom « en », le PP s'accorde avec le COD antéposé.\nb) Les verbes essentiellement pronominaux s'accordent avec le sujet.\nc) « Ils se sont souri » → « souri » est invariable.\nd) « les livres que j'ai lus » → « lus » s'accorde avec « livres ».",
-              correction: [
-                { type: "line", label: "a)", text: "**Faux** : avec le pronom « en », le participe passé reste invariable : « J'en ai mangé »." },
-                { type: "line", label: "b)", text: "**Vrai** : s'enfuir, se souvenir, se méfier… s'accordent avec le sujet." },
-                { type: "line", label: "c)", text: "**Vrai** : « sourire à » → « se » est COI → PP invariable." },
-                { type: "line", label: "d)", text: "**Vrai** : « que » = COD antéposé, antécédent « livres » (masculin pluriel) → lus." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : Analyser",
-              sub: "Identifier le COD antéposé, justifier en phrase",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 4 : Le pronom « en » et les interrogatifs",
-              question:
-                "Accordez correctement et justifiez :\na) « Des efforts, il en a (fait / faits). »   b) « Combien de pages as-tu (lu / lues) ? »   c) « Quelle décision a-t-il (pris / prise) ? »   d) « Des erreurs ? Elle en a (commis / commises). »",
-              correction: [
-                { type: "line", label: "a)", text: "**fait** : avec le pronom « en », le participe passé reste invariable." },
-                { type: "line", label: "b)", text: "**lues** : « combien de pages » = COD antéposé (féminin pluriel) → accord." },
-                { type: "line", label: "c)", text: "**prise** : « quelle décision » = COD antéposé (féminin singulier) → accord." },
-                { type: "line", label: "d)", text: "**commis** : avec le pronom « en », le participe passé reste invariable, même si le nom repris est féminin pluriel." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 5 : Analyse d'un extrait",
-              enonce: "« Les photos qu'elle avait prises montraient les enfants qu'elle avait photographiés dans la cour. »",
-              question: "Pour « prises » et « photographiés », identifiez le COD antéposé (nature, antécédent, genre, nombre) et justifiez l'accord.",
-              correction: [
-                { type: "line", text: "**prises** : « que » = pronom relatif COD antéposé, antécédent « photos » (féminin pluriel) → prises. Justification : « prises » s'accorde avec l'antécédent du pronom relatif « que », « photos », COD placé avant l'auxiliaire avoir." },
-                { type: "line", text: "**photographiés** : « que » = pronom relatif COD antéposé, antécédent « enfants » (masculin pluriel) → photographiés." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 6 : Les verbes pronominaux",
-              question:
-                "Identifiez le rôle du pronom « se » (COD / COI / non analysable) et accordez :\na) « Elle s'est (laver). »   b) « Elle s'est (laver) les mains. »   c) « Ils se sont (téléphoner). »   d) « Elles se sont (souvenir). »   e) « Ils se sont (regarder). »",
-              correction: [
-                { type: "line", label: "a)", text: "**lavée** : « se » = COD → accord avec le sujet « elle » (féminin singulier)." },
-                { type: "line", label: "b)", text: "**lavé** : « se » = COI, COD « les mains » après → invariable." },
-                { type: "line", label: "c)", text: "**téléphoné** : « téléphoner à » → « se » = COI → invariable." },
-                { type: "line", label: "d)", text: "**souvenues** : essentiellement pronominal → accord avec le sujet « elles » (féminin pluriel)." },
-                { type: "line", label: "e)", text: "**regardés** : « se » = COD réciproque → accord avec le sujet « ils » (masculin pluriel)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : Maîtriser",
-              sub: "Analyse complète, justification rédigée",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 7 : Analyse complète",
-              enonce: "« La décision qu'il avait prise la veille, personne ne l'avait encore comprise. Les délégués s'étaient regardés sans mot dire. »",
-              question: "Justifiez en une phrase rédigée les accords de « prise », « comprise » et « regardés ».",
-              correction: [
-                { type: "line", text: "**prise** (féminin singulier) : auxiliaire avoir, « que » = pronom relatif COD antéposé, antécédent « décision » (féminin singulier) → accord." },
-                { type: "line", text: "**comprise** (féminin singulier) : auxiliaire avoir, pronom personnel « l' » = COD antéposé, mis pour « la décision » (féminin singulier) → accord." },
-                { type: "line", text: "**regardés** (masculin pluriel) : verbe pronominal réciproque, « se » = COD → accord avec le sujet « les délégués » (masculin pluriel)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 8 : Pronominaux et COI",
-              enonce: "« Elles se sont écrit des lettres touchantes, puis elles se les sont lues à voix haute. »",
-              question: "a) Justifiez l'invariabilité de « écrit ». b) Justifiez l'accord de « lues ».",
-              correction: [
-                { type: "line", label: "a)", text: "**écrit** invariable : « écrire à » → « se » = COI ; le COD « des lettres » est placé après le verbe." },
-                { type: "line", label: "b)", text: "**lues** : « les » = COD antéposé, mis pour « les lettres » (féminin pluriel) → accord. (Ici « se » est COI, c'est « les » qui commande l'accord.)" },
-                { type: "note", text: "💡 Bien distinguer le pronom réfléchi « se » du pronom COD « les » : c'est le COD antéposé qui déclenche l'accord." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★★",
-              label: "Niveau Expert : cas délicats",
-              sub: "Pour viser la maîtrise, au-delà de l'épreuve courante",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 9 : les cas délicats",
-              enonce:
-                "« Les mille euros que ce voyage m'a [coûté] en valaient la peine. La cantatrice que j'ai [entendu] chanter était éblouissante, mais l'œuvre que j'ai [entendu] jouer m'a déçu. La situation était plus grave qu'on ne l'avait [dit]. »",
-              question: "Accordez chaque participe entre crochets et justifiez votre choix.",
-              correction: [
-                { type: "line", text: "**coûté** invariable : *coûté combien ?* « mille euros » est un complément de prix (mesure), pas un COD." },
-                { type: "line", text: "**entendue** (la cantatrice) : la cantatrice **fait** l'action de chanter (elle chante) → accord avec « que », mis pour « cantatrice » (féminin singulier)." },
-                { type: "line", text: "**entendu** (l'œuvre) invariable : l'œuvre **subit** l'action (elle est jouée, elle ne joue pas) → pas d'accord." },
-                { type: "line", text: "**dit** invariable : « l' » est le pronom neutre, il reprend « que la situation était grave » (une idée), pas un nom." },
-                {
-                  type: "formulationCrpe",
-                  text: "« *coûté* reste invariable : *mille euros* répond à *combien ?*, c'est un complément de mesure, non un COD. *entendue chanter* s'accorde (la cantatrice fait l'action de chanter), tandis que *entendu jouer* reste invariable (l'œuvre subit l'action). *dit* reste invariable : *l'* est neutre et reprend toute la proposition, pas un nom. »",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              text: "Ces exercices entraînent à justifier précisément l'accord ou l'invariabilité d'un participe passé dans une phrase ou un extrait.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format identique au concours",
-              title: "Exercice 1 : justifier plusieurs accords",
-              enonce:
-                "« Les candidates que le jury avait <u>retenues</u> avaient toutes préparé leur dossier avec soin. Elles s'étaient <u>écrit</u> de nombreuses lettres d'encouragement et s'étaient <u>soutenues</u> mutuellement. La directrice, satisfaite des résultats <u>obtenus</u>, les avait <u>félicitées</u> chaleureusement. »",
-              question: "Justifiez les accords (ou l'invariabilité) de : retenues, écrit, soutenues, obtenus, félicitées.",
-              correction: [
-                { type: "line", text: "**retenues** : auxiliaire avoir, « que » = pronom relatif COD antéposé, antécédent « candidates » (féminin pluriel) → accord." },
-                { type: "line", text: "**écrit** invariable : « écrire à » → « se » = COI ; le COD « de nombreuses lettres » est placé après le verbe." },
-                { type: "line", text: "**soutenues** : verbe pronominal réciproque (soutenir quelqu'un), « se » = COD → accord avec le sujet « elles » (féminin pluriel)." },
-                { type: "line", text: "**obtenus** : participe passé employé seul, épithète de « résultats » (masculin pluriel) → accord." },
-                { type: "line", text: "**félicitées** : auxiliaire avoir, « les » = COD antéposé, mis pour « les candidates » (féminin pluriel) → accord." },
-                {
-                  type: "formulationCrpe",
-                  text: "« *retenues* et *félicitées*, employés avec l'auxiliaire *avoir*, s'accordent avec leur COD antéposé (le relatif *que* et le pronom *les*, mis pour *les candidates*), féminin pluriel. *soutenues* est le participe d'un pronominal réciproque dont *se* est COD : il s'accorde avec le sujet *elles*. *obtenus*, employé seul, est épithète de *résultats* (masculin pluriel). *écrit* reste invariable : dans *s'écrire des lettres*, *se* est COI et le COD *lettres* suit le verbe. »",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 2 : infinitif ou participe passé ?",
-              enonce:
-                "a) « Il a décidé de partir cherché* du travail en ville. »\nb) « Les erreurs commettre* dans ce devoir sont nombreuses. »\nc) « Elle a laissé entrer les candidats. »\nd) « J'ai entendu chanté* une belle mélodie. »",
-              question: "Corrigez les formes erronées et justifiez avec le test de remplacement.",
-              correction: [
-                { type: "line", label: "a)", text: "« partir **chercher** » : « partir choisir » ✓ → infinitif. La forme « cherché* » est une confusion infinitif / participe passé." },
-                { type: "line", label: "b)", text: "« Les erreurs **commises** » : « les erreurs choisies » ✓ → participe passé, accordé avec « erreurs » (féminin pluriel)." },
-                { type: "line", label: "c)", text: "« laissé » est correct : depuis les rectifications de 1990, le participe passé « laissé » suivi d'un infinitif est recommandé invariable." },
-                { type: "line", label: "d)", text: "« J'ai entendu **chanter** » : « j'ai entendu choisir » ✓ → infinitif. Aucun sujet propre de l'infinitif n'est exprimé : il ne s'agit pas d'une subordonnée infinitive." },
-                {
-                  type: "formulationCrpe",
-                  text: "« a) *partir chercher* : le remplacement par *choisir* (*partir choisir*) donne un infinitif. b) *les erreurs commises* : *les erreurs choisies* fonctionne → participe passé, accordé avec *erreurs*, féminin pluriel. c) *elle a laissé entrer* : depuis les rectifications de 1990, *laissé* suivi d'un infinitif reste invariable. d) *j'ai entendu chanter* : *entendu choisir* donne un infinitif, sans sujet propre exprimé. »",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 3 : analyse complète d'un extrait",
-              enonce:
-                "« Les lettres qu'elle avait <u>reçues</u> le matin, elle les avait <u>rangées</u> dans un tiroir. Bouleversée, elle s'était <u>assise</u> un instant. »",
-              question: "Justifiez en formule rédigée les accords de : reçues, rangées, assise.",
-              correction: [
-                { type: "line", text: "**reçues** : auxiliaire avoir, « que » = COD antéposé, antécédent « lettres » (féminin pluriel) → accord." },
-                { type: "line", text: "**rangées** : auxiliaire avoir, « les » = COD antéposé, mis pour « les lettres » (féminin pluriel) → accord." },
-                { type: "line", text: "**assise** : verbe pronominal réfléchi (s'asseoir), « se » = COD (elle a assis elle-même) → accord avec le sujet « elle » (féminin singulier)." },
-                {
-                  type: "formulationCrpe",
-                  text: "« *reçues* et *rangées*, employés avec l'auxiliaire *avoir*, s'accordent avec leur COD antéposé (le relatif *que* et le pronom *les*, mis pour *les lettres*), féminin pluriel. *assise* est le participe d'un pronominal réfléchi dont *se* est COD : il s'accorde avec le sujet *elle*, féminin singulier. »",
-                },
-                { type: "note", text: "💡 « Bouleversée » est un participe passé employé seul, épithète détachée du sujet « elle » (féminin singulier)." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              icon: "",
-              text: "Ces exercices reproduisent des **erreurs fréquentes** sur le participe passé, observées dans les copies, y compris dans la Partie 3. Repérer ce qui cloche et corriger rigoureusement est une compétence directement valorisée au concours.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : « choisit »",
-              enonce: "Copie d'un candidat : le participe passé de « choisir » écrit *choisit* (« le sujet choisit* par l'auteur »).",
-              question: "Identifiez l'erreur et expliquez l'orthographe correcte du participe passé.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Confusion avec la forme conjuguée « il choisit » (présent / passé simple) : ajout d'un -t final", bad: true },
-                    { text: "Le participe passé de « choisir » est « choisi », sans -t. On retrouve cette terminaison dans « fini » ou « réussi », mais tous les verbes en -ir ne suivent pas ce modèle." },
-                    { text: "Réponse attendue : « le sujet **choisi** par l'auteur »" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 2 · Réponse à corriger : « d'allé voir »",
-              enonce: "Copie d'un candidat : « *il a décidé d'allé voir ses parents* ».",
-              question: "Identifiez l'erreur et corrigez avec le test de remplacement.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Participe passé « allé » employé à la place de l'infinitif ; après « décider de », on attend un infinitif", bad: true },
-                    { text: "Test : « il a décidé de **choisir** » ✓ → infinitif requis" },
-                    { text: "Réponse attendue : « il a décidé d'**aller** voir ses parents »" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « se sont souries »",
-              enonce: "Copie d'un candidat : « *Elles se sont souries en se retrouvant* ».",
-              question: "Identifiez l'erreur et corrigez en justifiant le rôle du pronom « se ».",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Accord avec le sujet alors que « sourire à » a un « se » COI", bad: true },
-                    { text: "« se » COI ne déclenche pas l'accord : le PP reste invariable" },
-                    { text: "Réponse attendue : « Elles se sont **souri** »" },
-                  ],
-                },
-                { type: "note", text: "💡 Même logique pour se parler, s'écrire, se téléphoner, se succéder." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 4 · Réponse à corriger : « j'en ai lus »",
-              enonce: "Copie d'un candidat : « *Des livres, j'en ai lus* ».",
-              question: "Identifiez l'erreur sur le pronom « en » et corrigez.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "La règle ordinaire du COD antéposé a été appliquée à tort au pronom « en »", bad: true },
-                    { text: "Avec « en », le participe passé reste invariable : on ne l'accorde pas avec le nom repris" },
-                    { text: "Réponse attendue : « Des livres, j'en ai **lu** »" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 5 · Réponse à corriger : « assisent »",
-              enonce: "Copie d'un candidat : *assisent* pour « assis » (« ils sont assisent* »).",
-              question: "Identifiez la nature de l'erreur et expliquez pourquoi « assis » ne reçoit pas de terminaison verbale.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "« assis » est traité comme un verbe conjugué : ajout de la désinence -ent", bad: true },
-                    { text: "« assis » est un participe passé (ou adjectif) : il ne se conjugue pas, il s'accorde en genre et en nombre" },
-                    { text: "Réponse attendue : « Ils sont **assis** » (masculin pluriel) ; « Elle est **assise** » ; « Elles sont **assises** »" },
-                  ],
-                },
-              ],
+              type: "corrigerCopies",
+              title: "L'accord du participe passé",
+              copies: COPIES_ACCORD_PARTICIPE_PASSE,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              icon: "",
-              text: "Cliquez sur chaque carte pour révéler la réponse. Essayez de répondre dans votre tête avant.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Comment reconnaître un COD placé avant un participe passé avec « avoir » ?",
-                  answer:
-                    "Poser la question « qui ? » ou « quoi ? » après le verbe, puis chercher où se trouve la réponse.\nLe COD peut être placé avant sous trois formes :\n**un pronom personnel** (« Je les ai vus ») ;\n**le relatif « que »** (« les livres que j'ai lus ») ;\n**un groupe interrogatif ou exclamatif** (« Quelle décision a-t-il prise ? »).\nDans ces trois cas, le participe passé s'accorde avec le COD.",
-                },
-                {
-                  question: "Le pronom « en » : quel accord ?",
-                  answer:
-                    "Avec « en », le participe passé reste **invariable** : ce cas échappe à la règle ordinaire du COD antéposé.\n« Des efforts, il en a **fait**. » ; « Des erreurs ? Elle en a **commis**. »",
-                  astuce: "⚠️ Ne pas accorder avec le nom qui suit « en ».",
-                },
-                {
-                  question: "Comment accorder le participe passé d'un verbe pronominal ?",
-                  answer:
-                    "Reformuler avec « avoir », puis poser « qui ? », « quoi ? » ou « à qui ? ».\n**« se » est COD placé avant** → accord avec ce qu'il représente : « Elle s'est lavée. »\n**« se » est COI** → il ne commande pas l'accord : « Elle s'est lavé les mains. »\n**Verbe essentiellement pronominal ou passif pronominal** → accord avec le sujet : « Elle s'est enfuie. »",
-                  astuce: "S'il existe un autre COD placé avant, le participe s'accorde avec lui : « les mains qu'elle s'est lavées ».",
-                },
-                {
-                  question: "Test -ir : infinitif ou participe passé ?",
-                  answer:
-                    "Remplacer la forme en -er / -é par un verbe en -ir :\nSi « -ir » passe → **infinitif** → écrire -er.\nSi « -i » passe → **participe passé** → écrire -é.\n« Il faut manger » → « choisir » ✓ → infinitif. « Il a mangé » → « choisi » ✓ → PP.",
-                  astuce: "Confusion infinitif / PP : erreur lourdement sanctionnée au concours.",
-                },
-                {
-                  question: "Comment accorder « monter », « descendre », « sortir » et les autres verbes à double auxiliaire ?",
-                  answer:
-                    "Vérifier la construction du verbe.\n**Sans COD, avec « être »** : accord avec le sujet, « Elle est montée. »\n**Avec un COD, avec « avoir »** : appliquer la règle du COD, « Elle a monté les valises » ; « les valises qu'elle a montées ».",
-                },
-                {
-                  question: "Quel accord avec les verbes pronominaux construits avec « à quelqu'un » ?",
-                  answer:
-                    "Le pronom « se » est COI et ne commande donc aucun accord : le participe passé reste invariable s'il n'existe pas d'autre COD antéposé.\nExemples : se parler, s'écrire, se sourire, se nuire, se mentir, se téléphoner.\n« Ils se sont **souri**. » ; « Elles se sont **téléphoné**. »",
-                },
-                {
-                  question: "Comment rédiger la justification d'un accord avec « avoir » ?",
-                  answer:
-                    "Nommer l'auxiliaire, identifier le COD, préciser sa place, puis donner son genre et son nombre.\nExemple : « Dans “les photos qu'il a vues”, “que” reprend “les photos” et est COD de “voir”. Placé avant le verbe, ce COD féminin pluriel entraîne l'accord du participe passé : “vues”. »",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
@@ -1049,12 +560,6 @@ export const ficheAccordParticipePasse: Fiche = {
               ],
             },
           ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
         },
       ],
     },

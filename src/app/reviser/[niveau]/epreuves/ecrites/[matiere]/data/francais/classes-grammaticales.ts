@@ -1,15 +1,24 @@
-import type { Fiche } from "@/components/fiche/types";
+// Notion 01 « Classes grammaticales » au format figé (3 maisons : Apprendre / S'entraîner / Mémo).
+// Notion de référence du GABARIT_NOTION.md (anciennement le prototype classes-grammaticales-v2,
+// devenu la version officielle le 28/06/2026).
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je comprends que la nature d'un mot est stable : elle ne change pas selon la phrase (à la différence de la fonction, traitée à part)" },
-  { id: "e2", label: "Je connais les 9 classes grammaticales de référence et le repère mnémotechnique des 10 entrées avec l'onomatopée" },
-  { id: "e3", label: "Je distingue un adverbe d'un adjectif grâce au test de variabilité (accord au féminin pluriel)" },
-  { id: "e4", label: "Je sais analyser les mots-caméléons (tout, comme, que, si, leur, même) selon leur contexte d'emploi" },
-  { id: "e5", label: "J'utilise la terminologie grammaticale de référence : déterminant (et non « adjectif possessif / démonstratif / indéfini »)" },
-  { id: "e6", label: "Je sais qu'un infinitif reste un verbe, même quand il est employé comme un nom (par exemple comme sujet)" },
-  { id: "e7", label: "Je sais identifier et corriger une erreur de nature dans une copie de candidat" },
+import type { Fiche } from "@/components/fiche/types";
+import { EXERCICES_CLASSES_GRAMMATICALES } from "./exercices-classes-grammaticales";
+import { COPIES_CLASSES_GRAMMATICALES } from "./copies-classes-grammaticales";
+
+// Savoir-faire de la notion = filtre « Ce que je travaille » (Appliquer).
+// Multi-tag côté exercices. Voir GABARIT_NOTION.md §4.
+const SAVOIR_FAIRE = [
+  { id: "determinants", label: "Déterminants" },
+  { id: "adv-adj", label: "Adverbe ou adjectif" },
+  { id: "cameleons", label: "Mots-caméléons" },
+  { id: "pronoms", label: "Pronoms" },
+  { id: "infinitif", label: "L'infinitif" },
+  { id: "invariables", label: "Les invariables" },
 ];
+
+// « Corriger des erreurs » : copies de candidats (justes OU fausses) jugées une à une,
+// via le bloc interactif `corrigerCopies` (banque COPIES_CLASSES_GRAMMATICALES).
 
 export const ficheClassesGrammaticales: Fiche = {
   slug: "classes-grammaticales",
@@ -28,47 +37,17 @@ export const ficheClassesGrammaticales: Fiche = {
     "Fiche CRPE complète sur les classes grammaticales : les natures de mots (nom, déterminant, adjectif, pronom, verbe, adverbe, préposition, conjonction, interjection), le cas de l'onomatopée, les mots-caméléons (tout, comme, que, si) et les pièges fréquents. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Ce qu'il faut maîtriser",
-              items: [
-                {
-                  number: "①",
-                  title: "Comprendre ce qu'on vous demande",
-                  text: "Identifier la nature d'un mot, ce n'est pas donner sa fonction : on dit ce qu'il est, pas le rôle qu'il joue dans la phrase.",
-                },
-                {
-                  number: "②",
-                  title: "Les 5 classes grammaticales variables",
-                  text: "Nom, déterminant, adjectif, pronom, verbe : elles peuvent varier selon le genre, le nombre ou la personne.",
-                },
-                {
-                  number: "③",
-                  title: "Les classes grammaticales invariables",
-                  text: "Adverbe, préposition, conjonction, interjection : les classes retenues par la [terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download). Pour mémoriser, on ajoute souvent l'onomatopée, rattachée à l'interjection.",
-                },
-                {
-                  number: "④",
-                  title: "Justifier les cas qui piègent",
-                  text: "tout, comme, que, si, avant, fort... : le jury attend une réponse appuyée sur le contexte, pas une nature apprise isolément.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
-          icon: "",
+          // Cours repris À L'IDENTIQUE de la fiche v1 (classes-grammaticales.ts,
+          // onglet « Cours »). Contenu non modifié ; seul l'emballage (l'onglet
+          // où il vit + la cible du CTA final) est adapté à la v2.
           blocks: [
             {
               type: "callout",
@@ -529,7 +508,7 @@ export const ficheClassesGrammaticales: Fiche = {
             {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode →",
-              buttonLabel: "Voir la méthode pas-à-pas",
+              buttonLabel: "Voir la méthode",
               targetTab: "methode",
             },
           ],
@@ -667,677 +646,62 @@ export const ficheClassesGrammaticales: Fiche = {
               correction: [
                 { type: "line", text: "**Explication :** « Comme » est en tête de phrase exclamative ; il n'introduit ni GN ni subordonnée, il marque l'intensité." },
                 { type: "line", text: "**Réponse attendue (formulation jury) :** « Ici, *Comme* est un **adverbe** (exclamatif d'intensité) : placé en tête de l'exclamation, il porte sur tout l'énoncé. »" },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "note", text: "@nav Méthode en tête ? Direction S'entraîner pour l'automatiser." },
               ],
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous →",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous →",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
+          icon: "",
+          blocks: [
+            {
+              type: "exerciceBank",
+              title: "Classes grammaticales",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_CLASSES_GRAMMATICALES,
+            },
+          ],
+        },
+        {
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de passer aux exercices",
-              text: "10 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Chaque réponse alimente votre suivi de maîtrise : retrouvez le détail objectif par objectif dans l'onglet **Auto-évaluation**, avec la date de votre prochaine révision.",
+              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
             },
             {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e5",
-                  question: "Quelle est la nature de « Chaque » dans : « Chaque élève a rendu sa copie. » ?",
-                  options: ["Adjectif indéfini", "Déterminant indéfini", "Pronom indéfini", "Adverbe"],
-                  correctIndex: 1,
-                  explanation:
-                    "« Chaque » introduit le nom « élève » sans le qualifier → déterminant. [Terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download) : on ne dit plus « adjectif indéfini ».",
-                },
-                {
-                  objectifId: "e3",
-                  question: "« rapidement » est-il un adjectif ou un adverbe ? Pourquoi ?",
-                  options: [
-                    "Adjectif, car dérivé de « rapide »",
-                    "Adverbe, car invariable",
-                    "Adjectif, car il qualifie un verbe",
-                    "Adverbe, car il se termine par -ment uniquement",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "« rapidement » ne s'accorde jamais (rapidement/rapidements est impossible) → c'est un adverbe (de manière), qui modifie un verbe.",
-                },
-                {
-                  objectifId: "e1",
-                  question: "Dans « La maison dont il parle », quelle est la nature de « dont » ?",
-                  options: ["Pronom relatif", "Conjonction de subordination", "Adverbe", "Déterminant"],
-                  correctIndex: 0,
-                  explanation: "« dont » est toujours un pronom relatif : c'est sa nature, stable quel que soit le contexte.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Dans « Tout est perdu. », quelle est la nature de « Tout » ?",
-                  options: ["Déterminant indéfini", "Pronom indéfini", "Adverbe (d'intensité)", "Nom commun"],
-                  correctIndex: 1,
-                  explanation: "« Tout » remplace un nom et est sujet du verbe « est » → pronom indéfini.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Dans « Comme c'est étrange ! », quelle est la nature de « Comme » ?",
-                  options: ["Préposition", "Conjonction de subordination", "Adverbe exclamatif d'intensité", "Pronom interrogatif"],
-                  correctIndex: 2,
-                  explanation: "« Comme » est en tête de phrase exclamative, sans GN ni subordonnée derrière → adverbe (exclamatif d'intensité).",
-                },
-                {
-                  objectifId: "e6",
-                  question: "Dans « Chanter est un plaisir. », quelle est la nature de « Chanter » ?",
-                  options: ["Nom commun", "Verbe à l'infinitif", "Adjectif verbal", "Gérondif"],
-                  correctIndex: 1,
-                  explanation:
-                    "« Chanter » est un verbe à l'infinitif, même employé comme sujet. La nature reste verbale.",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Lesquelles de ces conjonctions sont des conjonctions de coordination ?",
-                  options: [
-                    "mais, ou, et, donc, or, ni, car",
-                    "que, si, quand, comme, lorsque",
-                    "parce que, afin que, bien que",
-                    "quoique, pendant que, dès que",
-                  ],
-                  correctIndex: 0,
-                  explanation: "Mnémo « Mais où est donc Ornicar ? » : Mais · Ou · Et · Donc · Or · Ni · Car. Tout le reste relève de la subordination.",
-                },
-                {
-                  objectifId: "e3",
-                  question: "« une femme souriante » vs « une femme souriant à son fils » : que peut-on dire de « souriant(e) » ?",
-                  options: [
-                    "Dans les deux cas, c'est un adjectif verbal",
-                    "« souriante » = adjectif verbal (accordé) ; « souriant » = participe présent (invariable)",
-                    "Dans les deux cas, c'est un participe présent invariable",
-                    "« souriante » = nom, « souriant » = adjectif",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "L'adjectif verbal s'accorde (souriante). Le participe présent reste invariable (souriant à son fils).",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Dans « Je leur ai prêté mes notes. », quelle est la nature de « leur » ?",
-                  options: ["Déterminant possessif", "Pronom personnel", "Pronom possessif", "Adverbe"],
-                  correctIndex: 1,
-                  explanation:
-                    "« leur » est placé devant le verbe « ai prêté », il signifie « à eux » et reste invariable (jamais de -s) → pronom personnel. Devant un nom, « leurs notes » serait au contraire un déterminant possessif.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "Un candidat répond : « Écrire : nom commun », pour « Écrire est difficile. » Que faut-il corriger ?",
-                  options: [
-                    "Rien, c'est correct",
-                    "L'orthographe du mot",
-                    "La nature : « Écrire » est un verbe à l'infinitif, pas un nom",
-                    "Le groupe du verbe",
-                  ],
-                  correctIndex: 2,
-                  explanation:
-                    "« Écrire » est un verbe à l'infinitif, jamais un nom, même employé comme sujet de « est difficile ».",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application pour des exercices plus complets →",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
-            },
-          ],
-        },
-        {
-          id: "appli",
-          label: "Application",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Progressez niveau par niveau. Chaque niveau ajoute une difficulté. Corrigez avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              stars: "",
-              label: "Échauffement : Je repère la nature d'un mot isolé",
-              sub: "Questions directes, une seule chose à la fois",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : Identifier la nature de mots isolés",
-              question:
-                "Donnez la classe grammaticale des mots soulignés :\na) « Il courait <u>vite</u>. »   b) « <u>Chaque</u> élève a rendu sa copie. »   c) « Elle est partie <u>sans</u> lui. »   d) « <u>Hélas</u>, il était trop tard. »",
-              correction: [
-                { type: "line", label: "a)", text: "**vite** → adverbe (de manière), invariable, modifie le verbe « courait »" },
-                { type: "line", label: "b)", text: "**Chaque** → déterminant indéfini (introduit le nom « élève », toujours singulier)" },
-                { type: "line", label: "c)", text: "**sans** → préposition (introduit le groupe nominal « lui »)" },
-                { type: "line", label: "d)", text: "**Hélas** → interjection (exprime la déploration, isolée par la virgule)" },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *vite* → adverbe (de manière) ; *Chaque* → déterminant indéfini ; *sans* → préposition ; *Hélas* → interjection. »" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : Associer un mot à sa classe",
-              question:
-                "Associez chaque mot à sa classe grammaticale :\n**pourtant · murmurer · soudain · envers · celle · bonjour · laquelle · immense**",
-              correction: [
-                { type: "line", text: "**pourtant** → adverbe (opposition/concession)" },
-                { type: "line", text: "**murmurer** → verbe (infinitif)" },
-                { type: "line", text: "**soudain** → adverbe (de temps), ou adjectif qualificatif si épithète : « un bruit soudain »" },
-                { type: "line", text: "**envers** → préposition" },
-                { type: "line", text: "**celle** → pronom démonstratif" },
-                { type: "line", text: "**bonjour** → interjection" },
-                { type: "line", text: "**laquelle** → pronom relatif (ou interrogatif selon contexte)" },
-                { type: "line", text: "**immense** → adjectif qualificatif" },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *pourtant* → adverbe ; *murmurer* → verbe (infinitif) ; *soudain* → adverbe (de temps) ; *envers* → préposition ; *celle* → pronom démonstratif ; *bonjour* → interjection ; *laquelle* → pronom relatif ou interrogatif selon le contexte ; *immense* → adjectif qualificatif. »" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : Sous-classes et tests",
-              sub: "Application directe du Cours",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : Sous-classes de déterminants",
-              objectifTag: "Sous-classes de déterminants",
-              question:
-                "Identifiez la sous-classe précise de chaque déterminant souligné :\na) « <u>ses</u> livres »   b) « <u>quelques</u> jours »   c) « <u>quel</u> talent ! »   d) « <u>du</u> pain »   e) « <u>la</u> maison »   f) « <u>deux</u> enfants »",
-              correction: [
-                { type: "line", label: "a)", text: "**ses** → déterminant possessif" },
-                { type: "line", label: "b)", text: "**quelques** → déterminant indéfini" },
-                { type: "line", label: "c)", text: "**quel** → déterminant exclamatif" },
-                { type: "line", label: "d)", text: "**du** → article partitif" },
-                { type: "line", label: "e)", text: "**la** → article défini" },
-                { type: "line", label: "f)", text: "**deux** → déterminant numéral cardinal" },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *ses* → déterminant possessif ; *quelques* → déterminant indéfini ; *quel* → déterminant exclamatif ; *du* → article partitif ; *la* → article défini ; *deux* → déterminant numéral cardinal. »" },
-                {
-                  type: "note",
-                  text: "⚠️ Piège : « du » peut être **article partitif** quand il introduit une quantité non comptable (« du pain », « du courage »). Il peut aussi être la contraction de **de + le** dans un groupe introduit par « de » (« le chien du voisin » = le chien **de le** voisin, complément du nom). Il faut donc regarder le groupe dans lequel il apparaît.",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : Sous-classes de pronoms",
-              objectifTag: "Sous-classes de pronoms",
-              question:
-                "Classez les pronoms suivants selon leur sous-classe (personnel · relatif · démonstratif · indéfini · possessif) :\n**on · le leur · rien · auquel · ceux · te · chacun · qui**",
-              correction: [
-                { type: "line", text: "**on** → pronom personnel indéfini" },
-                { type: "line", text: "**le leur** → pronom possessif" },
-                { type: "line", text: "**rien** → pronom indéfini" },
-                { type: "line", text: "**auquel** → pronom relatif" },
-                { type: "line", text: "**ceux** → pronom démonstratif" },
-                { type: "line", text: "**te** → pronom personnel (2e personne du singulier)" },
-                { type: "line", text: "**chacun** → pronom indéfini" },
-                { type: "line", text: "**qui** → pronom relatif (ou interrogatif selon contexte)" },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *on* → pronom personnel indéfini ; *le leur* → pronom possessif ; *rien* → pronom indéfini ; *auquel* → pronom relatif ; *ceux* → pronom démonstratif ; *te* → pronom personnel ; *chacun* → pronom indéfini ; *qui* → pronom relatif ou interrogatif selon le contexte. »" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 3 : Identifier la classe",
-              objectifTag: "Identifier la classe",
-              question:
-                "Identifiez la classe grammaticale des mots soulignés :\na) « <u>Cela</u> m'étonne. »   b) « Il part <u>demain</u>. »   c) « <u>Ni</u> l'un <u>ni</u> l'autre ne répondit. »   d) « Elle achète <u>du</u> café. »   e) « <u>Lequel</u> préfères-tu ? »",
-              correction: [
-                { type: "line", label: "a)", text: "**Cela** → pronom démonstratif" },
-                { type: "line", label: "b)", text: "**demain** → adverbe (de temps)" },
-                { type: "line", label: "c)", text: "**Ni…ni** → conjonctions de coordination" },
-                { type: "line", label: "d)", text: "**du** → article partitif" },
-                { type: "line", label: "e)", text: "**Lequel** → pronom interrogatif" },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Cela* → pronom démonstratif ; *demain* → adverbe (de temps) ; *Ni… ni* → conjonctions de coordination ; *du* → article partitif ; *Lequel* → pronom interrogatif. »" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : Mots-caméléons et justification",
-              sub: "Réponse rédigée, cas limites",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 4 : Même mot, nature différente",
-              question:
-                "Donnez la nature et justifiez en une phrase :\na) « Elle parle <u>fort</u>. » vs « C'est un homme <u>fort</u>. »\nb) « Il arrive <u>sans</u> crier gare. » vs « Il est <u>sans</u> emploi. »\nc) « <u>Debout</u> ! » vs « Il est resté <u>debout</u> toute la nuit. »",
-              correction: [
-                {
-                  type: "line",
-                  label: "a)",
-                  text: "« parle **fort** » → adverbe (de manière), invariable, modifie le verbe / « homme **fort** » → adjectif qualificatif (variable, épithète du nom)",
-                },
-                { type: "line", label: "b)", text: "Les deux : **sans** → préposition dans les deux cas (introduit un GN ou un infinitif)" },
-                {
-                  type: "line",
-                  label: "c)",
-                  text: "« **Debout** ! » → interjection (exprime un ordre, isolée) / « resté **debout** » → adverbe (de position), invariable",
-                },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « a) *fort* est adverbe (de manière) dans *parle fort* (invariable), adjectif qualificatif dans *homme fort* (il s'accorde) ; b) *sans* est préposition dans les deux phrases ; c) *Debout* est interjection dans *Debout !* (ordre isolé), adverbe (de position) dans *resté debout*. »" },
-                { type: "note", text: "⚠️ Méthode : identifier ce que le mot modifie ou introduit avant de conclure sur sa nature." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 5 : « comme », un mot-caméléon",
-              objectifTag: "Mots-caméléons",
-              question:
-                "« comme » a des natures différentes. Identifiez-les et justifiez :\na) « Elle chante <u>comme</u> sa mère. »   b) « <u>Comme</u> il était fatigué, il s'endormit. »   c) « Il est beau <u>comme</u> un dieu. »   d) « <u>Comme</u> c'est étrange ! »",
-              correction: [
-                { type: "line", label: "a)", text: "**comme** → préposition de comparaison (introduit le GN « sa mère »)" },
-                { type: "line", label: "b)", text: "**Comme** → conjonction de subordination de cause" },
-                { type: "line", label: "c)", text: "**comme** → préposition de comparaison (introduit le GN « un dieu », même règle qu'en a)" },
-                { type: "line", label: "d)", text: "**Comme** → adverbe (exclamatif d'intensité)" },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *comme* introduit le GN *sa mère* sans verbe → préposition de comparaison (a) ; il introduit la subordonnée *il était fatigué* → conjonction de subordination de cause (b) ; il introduit le GN *un dieu* → préposition de comparaison, comme en a (c) ; placé en tête d'exclamation, il marque l'intensité → adverbe, sens exclamatif (d). »" },
-                { type: "note", text: "⚠️ Piège : « comme » + GN seul (sans verbe) → préposition, même en comparaison (a et c). « comme » + sujet/verbe → conjonction de subordination (b). En tête de phrase exclamative → adverbe (d).\n\nÀ noter : en comparaison, l'analyse de « comme » + GN en **conjonction de subordination** (avec ellipse du verbe : « comme sa mère [chante] ») est aussi acceptée. Les deux réponses sont valables." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 6 : Nature fausse, nature correcte",
-              question:
-                "Expliquez pourquoi la nature indiquée entre parenthèses est fausse. Donnez la nature correcte :\na) « Il travaille <u>beaucoup</u>. » → (adjectif ?)   b) « <u>Ce</u> que tu dis m'intéresse. » → (déterminant ?)   c) « Elle est partie <u>avant</u> moi. » → (adverbe ?)   d) « Il a couru <u>vite</u>. » → (adjectif ?)",
-              correction: [
-                { type: "line", label: "a)", text: "**beaucoup** ≠ adjectif car invariable → **adverbe** (d'intensité)." },
-                { type: "line", label: "b)", text: "**Ce** ≠ déterminant car il ne précède pas directement un nom → **pronom démonstratif neutre** (il remplace un élément au lieu d'introduire un nom)." },
-                { type: "line", label: "c)", text: "**avant** ≠ adverbe car suivi du pronom « moi » (GN) → **préposition**." },
-                { type: "line", label: "d)", text: "**vite** ≠ adjectif car invariable → **adverbe** (de manière)." },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *beaucoup* → adverbe (d'intensité), invariable ; *Ce* → pronom démonstratif neutre (il ne précède aucun nom) ; *avant* → préposition (suivie du pronom *moi*) ; *vite* → adverbe (de manière), invariable. »" },
-                { type: "note", text: "⚠️ Méthode : un adjectif est toujours variable. Si le mot ne s'accorde pas, ce n'est pas un adjectif." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 7 : « que », un mot-caméléon",
-              objectifTag: "Mots-caméléons",
-              question:
-                "« que » a des natures différentes. Identifiez-les avec justification :\na) « Je sais <u>que</u> tu viendras. »   b) « L'homme <u>que</u> j'ai vu est parti. »   c) « <u>Que</u> c'est beau ! »   d) « Il est plus grand <u>que</u> son frère. »",
-              correction: [
-                { type: "line", label: "a)", text: "**que** → conjonction de subordination (elle introduit une complétive après « Je sais »)" },
-                { type: "line", label: "b)", text: "**que** → pronom relatif (il reprend « l'homme » et introduit la relative « que j'ai vu »)" },
-                { type: "line", label: "c)", text: "**Que** → adverbe (exclamatif d'intensité)" },
-                { type: "line", label: "d)", text: "**que** → conjonction de subordination de comparaison" },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *que* introduit une complétive après *Je sais* → conjonction de subordination (a) ; il reprend *l'homme* et introduit la relative → pronom relatif (b) ; placé en tête d'exclamation, il marque l'intensité → adverbe, sens exclamatif (c) ; il introduit le second terme de la comparaison → conjonction de subordination (d). »" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : Extraits littéraires",
-              sub: "Extraits littéraires, conditions proches du concours",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 8 · Extrait littéraire : Émile Zola",
-              enonce:
-                "« Une femme passa, <u>tenant</u> par la main un petit garçon <u>d'une dizaine d'années</u>. Elle se hâtait, les yeux <u>baissés</u>, pressée d'atteindre sa maison <u>avant</u> la nuit. »\n*(Émile Zola, Germinal, 1885)*",
-              question:
-                "Donnez la nature des mots ou groupes soulignés : « <u>Une femme</u> » · « <u>tenant</u> » · « <u>d'une dizaine d'années</u> » · « <u>baissés</u> » · « <u>avant</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Mot / groupe", "Nature"],
-                  rows: [
-                    ["Une femme", "Groupe nominal (GN) : déterminant + nom"],
-                    ["tenant", "Participe présent (forme verbale non conjuguée)"],
-                    ["d'une dizaine d'années", "Groupe nominal prépositionnel : groupe nominal introduit par une préposition (« de »)"],
-                    ["baissés", "Participe passé employé comme adjectif"],
-                    ["avant", "Préposition"],
-                  ],
-                },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Une femme* → groupe nominal ; *tenant* → participe présent (forme verbale, invariable) ; *d'une dizaine d'années* → groupe nominal prépositionnel introduit par *de* ; *baissés* → participe passé employé comme adjectif ; *avant* → préposition. »" },
-                { type: "note", text: "⚠️ Piège : « tenant » est un **participe présent** : il garde la forme en -ant et ne s'accorde pas. Le **gérondif** se reconnaît à « en » + participe présent (« en tenant »). L'**adjectif verbal**, lui, fonctionne comme un adjectif et s'accorde avec le nom (« une eau courante », « des élèves souriantes »)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 9 · Extrait littéraire : Victor Hugo",
-              enonce:
-                "« Les misérables ne manquent pas <u>sur la terre</u>. <u>Partout</u>, <u>hélas</u>, les souffrances sont <u>grandes</u> et les hommes sont <u>las</u>. »\n*(Victor Hugo, Les Misérables, 1862)*",
-              question:
-                "Donnez la nature des mots ou groupes soulignés : « <u>sur la terre</u> » · « <u>Partout</u> » · « <u>hélas</u> » · « <u>grandes</u> » · « <u>las</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Mot / groupe", "Nature"],
-                  rows: [
-                    ["sur la terre", "Groupe nominal prépositionnel : GN introduit par la préposition « sur »"],
-                    ["Partout", "Adverbe (de lieu)"],
-                    ["hélas", "Interjection"],
-                    ["grandes", "Adjectif qualificatif"],
-                    ["las", "Adjectif qualificatif"],
-                  ],
-                },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *sur la terre* → groupe nominal prépositionnel (préposition *sur*) ; *Partout* → adverbe (de lieu) ; *hélas* → interjection ; *grandes* → adjectif qualificatif ; *las* → adjectif qualificatif. »" },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              text: "Ces exercices reproduisent le format concours : extrait littéraire, identification de la nature des mots, formulation jury. Les exercices calqués sur des sujets récents portent le badge ✦.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 1 : Gustave Flaubert, Madame Bovary",
-              enonce:
-                "« Elle rêvait des contrées <u>lointaines</u>, des rivages lumineux, des palais <u>de marbre</u> <u>où</u> des fontaines jaillissaient sous des ciels <u>toujours</u> bleus. »\n*(Gustave Flaubert, Madame Bovary, 1857)*",
-              question: "Donnez la nature des mots soulignés : « <u>lointaines</u> » · « <u>de marbre</u> » · « <u>où</u> » · « <u>toujours</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Mot / groupe", "Nature"],
-                  rows: [
-                    ["lointaines", "Adjectif qualificatif"],
-                    ["de marbre", "GN prépositionnel, introduit par « de »"],
-                    ["où", "Pronom relatif"],
-                    ["toujours", "Adverbe (de temps)"],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *lointaines* → adjectif qualificatif ; *de marbre* → groupe nominal prépositionnel (préposition *de*) ; *où* → pronom relatif ; *toujours* → adverbe (de temps). »" },
-                {
-                  type: "note",
-                  text: "⚠️ Piège : « toujours » est ici un adverbe ; un adverbe peut modifier un verbe, un adjectif (ici « bleus ») ou un autre adverbe.",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 2 : Colette, La Maison de Claudine",
-              enonce:
-                "« Ma mère, <u>dont</u> le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, <u>muette</u>, <u>heureuse</u>, et ne disait <u>rien</u>. »\n*(Colette, La Maison de Claudine, 1922)*",
-              question: "Donnez la nature des mots soulignés : « <u>dont</u> » · « <u>muette</u> » · « <u>heureuse</u> » · « <u>rien</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Mot / groupe", "Nature"],
-                  rows: [
-                    ["dont", "Pronom relatif"],
-                    ["muette", "Adjectif qualificatif"],
-                    ["heureuse", "Adjectif qualificatif"],
-                    ["rien", "Pronom indéfini"],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *dont* → pronom relatif ; *muette* → adjectif qualificatif ; *heureuse* → adjectif qualificatif ; *rien* → pronom indéfini. »" },
-                {
-                  type: "note",
-                  text: "⚠️ « dont » est toujours un pronom relatif, quelle que soit la phrase : sa nature ne change pas.",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format concours récent",
-              title: "Exercice 3 : Marguerite Yourcenar, Comment Wang-Fô fut sauvé",
-              enonce:
-                "« … un <u>tapis dont</u> elles savaient par cœur le dessin » · « les provinces <u>de l'Empire</u> » · « Tu <u>m'</u>as menti, Wang-Fô, <u>vieil imposteur</u> »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
-              question: "Donnez la nature : « <u>dont</u> » · « <u>de l'Empire</u> » · « <u>m'</u> » · « <u>vieil imposteur</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Mot / groupe", "Nature"],
-                  rows: [
-                    ["dont", "Pronom relatif"],
-                    ["de l'Empire", "GN prépositionnel, introduit par « de »"],
-                    ["m'", "Pronom personnel (1re pers. sing., forme élidée de « me »)"],
-                    ["vieil imposteur", "Groupe nominal"],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *dont* → pronom relatif ; *de l'Empire* → groupe nominal prépositionnel (préposition *de*) ; *m'* → pronom personnel (forme élidée de *me*) ; *vieil imposteur* → groupe nominal. »" },
-                {
-                  type: "note",
-                  text: "⚠️ « m' » est un pronom personnel : c'est la forme élidée de « me » devant voyelle.",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format concours récent",
-              title: "Exercice 4 : Lola Lafon, Quand tu écouteras cette chanson",
-              enonce:
-                "« <u>Écrire</u> n'est pas tout à fait un choix : <u>c'</u>est un aveu d'impuissance. <u>On</u> écrit parce qu'on ne sait par quel autre biais attraper le réel. <u>Vivre</u>, sans l'écriture, me va mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question:
-                "Donnez la nature de : « <u>Écrire</u> » · « <u>c'</u> » · « <u>On</u> » · « <u>Vivre</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Mot", "Nature"],
-                  rows: [
-                    ["Écrire", "Verbe à l'infinitif (1er groupe)"],
-                    ["c'", "Pronom démonstratif élidé (forme de « ce »)"],
-                    ["On", "Pronom personnel indéfini"],
-                    ["Vivre", "Verbe à l'infinitif (3e groupe)"],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *Écrire* → verbe à l'infinitif (1er groupe), même employé comme sujet ; *c'* → pronom démonstratif élidé (forme de *ce*) ; *On* → pronom personnel indéfini ; *Vivre* → verbe à l'infinitif (3e groupe). »" },
-                {
-                  type: "note",
-                  text: "⚠️ Piège : un infinitif reste un verbe, même employé comme sujet (« Écrire est… »). « c' » est un pronom démonstratif élidé, à ne pas confondre avec le déterminant « ce ».",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 5 : Extrait poétique",
-              enonce:
-                "« <u>Jugez</u> ! <u>Insensées</u> choses qui nous font <u>rêver</u> ! <u>Monte</u> en moi une humble flamme. <u>Je</u> ne sais plus où aller. »",
-              question: "Donnez la nature des mots soulignés : « <u>Jugez</u> » · « <u>Insensées</u> » · « <u>rêver</u> » · « <u>Monte</u> » · « <u>Je</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Mot", "Nature et analyse"],
-                  rows: [
-                    ["Jugez", "Verbe « juger » à l'impératif présent, 2e pers. pluriel"],
-                    ["Insensées", "Adjectif qualificatif, féminin pluriel (accord avec « choses »)"],
-                    ["rêver", "Verbe à l'infinitif (1er groupe)"],
-                    ["Monte", "Verbe « monter » au présent de l'indicatif, 3e pers. sing."],
-                    ["Je", "Pronom personnel, 1re pers. sing."],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *Jugez* → verbe (impératif présent, 2e pers. pluriel) ; *Insensées* → adjectif qualificatif (féminin pluriel) ; *rêver* → verbe à l'infinitif ; *Monte* → verbe (présent de l'indicatif, 3e pers. sing.) ; *Je* → pronom personnel. »" },
-                {
-                  type: "note",
-                  text: "⚠️ Piège : « Insensées » n'est PAS un participe passé (il n'existe pas de verbe « insenser ») : c'est un adjectif qualificatif comme un autre, qui s'accorde simplement avec le nom « choses » (fém. pluriel).",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              icon: "",
-              text: "Ces exercices reproduisent des **erreurs fréquentes** relevées dans les copies. Repérer ce qui cloche dans une copie, c'est aussi ce que vous ferez plus tard avec vos élèves.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : « rapidement »",
-              enonce:
-                "Réponse d'un candidat : « **rapidement** : **adjectif qualificatif** formé sur le radical « rapide » », pour la phrase *« Il courait rapidement vers la sortie. »*",
-              question: "Identifiez les deux erreurs et proposez la correction.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Erreur 1 : nature fausse, « rapidement » est en réalité un adverbe (invariable, modifie le verbe « courait »)", bad: true },
-                    { text: "Erreur 2 : l'analyse morphologique (« formé sur le radical… ») est hors sujet pour la Partie 1", bad: true },
-                  ],
-                },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *rapidement* est un **adverbe** (de manière) : il est invariable et modifie le verbe *courait*. Son origine (formé sur l'adjectif *rapide*) ne change pas sa nature et n'a pas à figurer dans la réponse. »" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 2 · Réponse à corriger : « chaque »",
-              enonce: "Réponse d'un candidat : « **chaque** : **adjectif indéfini** », pour la phrase *« Chaque matin, il prenait le même chemin. »*",
-              question: "Cette réponse est-elle acceptable ? Quelle est la réponse attendue ?",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Ancienne appellation : « adjectif indéfini », à éviter", bad: true },
-                    { text: "[Terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download) : DÉTERMINANT INDÉFINI" },
-                  ],
-                },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *chaque* est un **déterminant indéfini** : il introduit le nom *matin* sans le qualifier. L'appellation *adjectif indéfini* relève de l'ancienne terminologie et n'est plus admise. »" },
-                { type: "note", text: "Règle : tout ce qui introduit un nom est un déterminant, quelle que soit sa sous-classe." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « Écrire »",
-              enonce: "Réponse d'un candidat : « **Écrire** : **nom commun** », pour la phrase *« Écrire est difficile. »*",
-              question: "Identifiez l'erreur et corrigez.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "« Écrire » n'est pas un nom commun : sa nature est fausse", bad: true },
-                    { text: "Un infinitif reste un VERBE même employé comme sujet ou comme complément" },
-                  ],
-                },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « *Écrire* est un **verbe à l'infinitif** (1er groupe). Même employé comme sujet de *est difficile*, il garde sa nature verbale : on ne parle jamais de *nom verbal*. »" },
-                {
-                  type: "note",
-                  text: "⚠️ Très fréquent : l'infinitif employé comme sujet est un grand classique de l'épreuve.",
-                },
-              ],
+              type: "corrigerCopies",
+              title: "Classes grammaticales",
+              copies: COPIES_CLASSES_GRAMMATICALES,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              icon: "",
-              text: "Cliquez sur chaque carte pour révéler la réponse. Questions formulées comme le jury.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Qu'est-ce que la nature (classe grammaticale) d'un mot ?",
-                  answer:
-                    "C'est **ce qu'est** le mot : une information **stable**, qu'on trouve dans le dictionnaire (nom, verbe, adjectif…). Elle ne change pas selon la phrase.",
-                  astuce: "À ne pas confondre avec la fonction (le rôle dans la phrase), qui est une autre notion.",
-                },
-                {
-                  question: "Les 7 conjonctions de coordination : moyen mnémotechnique ?",
-                  answer: "**Mais · Ou · Et · Donc · Or · Ni · Car**\n*« Mais où est donc Ornicar ? »*",
-                },
-                {
-                  question: "« ce » déterminant vs « ce/c' » pronom : comment distinguer ?",
-                  answer:
-                    "« **ce** » déterminant introduit un nom (« ce livre »).\n« **ce/c'** » pronom remplace un nom ou annonce ce qui suit (« c'est beau »).",
-                },
-                {
-                  question: "Un infinitif peut-il être sujet d'un verbe ? Donnez un exemple.",
-                  answer: "Oui : « *Écrire* est difficile ». Même employé comme sujet, « Écrire » reste un verbe à l'infinitif.",
-                  astuce: "⚠️ Grand classique de l'épreuve.",
-                },
-                {
-                  question: "Comment appelle-t-on les anciens « adjectifs indéfinis / possessifs » ?",
-                  answer:
-                    "Ce sont tous des **DÉTERMINANTS** ([terminologie grammaticale Éduscol 2020](https://eduscol.education.fr/document/1872/download)). Déterminant indéfini, possessif, démonstratif…",
-                },
-                {
-                  question: "Test rapide : comment distinguer adverbe et adjectif ?",
-                  answer:
-                    "L'**adjectif** est variable (accord en genre et nombre). L'**adverbe** est invariable. Test : peut-on faire l'accord ? Oui → adjectif. Non → adverbe.",
-                },
-                {
-                  question: "Quelle est la nature de « on » ? Et son accord ?",
-                  answer:
-                    "**Pronom personnel indéfini**, 3e pers. sing. : le verbe se met au singulier. Quand « on » = « nous », l'accord se fait souvent au pluriel (« on est partis »).",
-                },
-                {
-                  question: "« leur » : déterminant ou pronom ? Comment trancher ?",
-                  answer:
-                    "Devant un **nom**, il s'accorde en nombre → **déterminant possessif** (« **leurs** livres »).\nDevant un **verbe**, il est invariable et signifie « à eux » → **pronom personnel** (« je **leur** parle »).",
-                  astuce: "Test : peut-on ajouter un -s ? « leurs livres » oui (déterminant) ; « je leurs parle » non (pronom).",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
@@ -1348,45 +712,33 @@ export const ficheClassesGrammaticales: Fiche = {
               center: { title: "Classes grammaticales", subtitle: "Nature des mots" },
               branches: [
                 {
-                  title: "La nature d'un mot",
-                  lines: ["= ce qu'est le mot", "Stable : ne change jamais", "1re question : variable ou invariable ?"],
+                  title: "La nature",
+                  lines: ["= ce qu'est le mot", "stable, jamais changée", "1re question : variable ou invariable ?"],
                   variant: "blue",
                 },
                 {
-                  title: "5 classes variables",
-                  lines: ["Nom · Déterminant", "Adjectif · Pronom", "Verbe"],
+                  title: "5 variables",
+                  lines: ["nom · déterminant", "adjectif · pronom", "verbe"],
                   variant: "blue",
                 },
                 {
-                  title: "Invariables",
-                  lines: ["Officiel : adverbe · préposition", "Conjonction · interjection", "Mémo : + onomatopée"],
+                  title: "4 invariables",
+                  lines: ["adverbe · préposition", "conjonction · interjection", "(+ onomatopée)"],
                   variant: "green",
                 },
                 {
                   title: "Mots-caméléons",
-                  lines: ["tout · comme · que · si", "leur · même · des", "→ regarder le contexte", "(ce qui suit, ce qui est modifié)"],
+                  lines: ["tout · comme · que · si", "leur · même", "→ regarder le contexte"],
                   variant: "green",
                 },
                 {
-                  title: "Pièges classiques",
-                  lines: ["Adverbe ≠ adjectif (variabilité)", "Infinitif reste un verbe", "Déterminant ≠ adjectif", "« leur » + verbe = pronom", "« dont » = toujours pronom relatif"],
+                  title: "Pièges",
+                  lines: ["adverbe ≠ adjectif (variabilité)", "infinitif reste un verbe", "déterminant ≠ adjectif", "« leur » + verbe = pronom"],
                   variant: "yellow",
-                },
-                {
-                  title: "Recul primaire",
-                  lines: ["Cycle 2 : nom, verbe, adjectif, déterminant", "Cycle 3 : + pronom, adverbe, invariables"],
-                  variant: "purple",
-                  dashed: true,
                 },
               ],
             },
           ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
         },
       ],
     },

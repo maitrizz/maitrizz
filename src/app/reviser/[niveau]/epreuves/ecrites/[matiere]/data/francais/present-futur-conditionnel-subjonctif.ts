@@ -1,14 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { EXERCICES_PRESENT_FUTUR_CONDITIONNEL_SUBJONCTIF } from "./exercices-present-futur-conditionnel-subjonctif";
+import { COPIES_PRESENT_FUTUR_CONDITIONNEL_SUBJONCTIF } from "./copies-present-futur-conditionnel-subjonctif";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "vc1", label: "Je connais les 5 valeurs du présent de l'indicatif : action en cours, habitude, vérité générale, présent de narration, valeur de futur" },
-  { id: "vc2", label: "Je distingue l'habitude de la vérité générale grâce au contexte et au test « d'habitude »" },
-  { id: "vc3", label: "Je connais les 3 valeurs du futur simple : action à venir, injonction, vérité générale future" },
-  { id: "vc4", label: "Je connais les 4 valeurs du conditionnel présent (hypothèse, politesse, fait non confirmé, futur dans le passé), et je sais que le conditionnel est un temps de l'indicatif" },
-  { id: "vc5", label: "Je distingue le conditionnel présent de l'imparfait grâce au test « nous » (présence du « r »)" },
-  { id: "vc6", label: "Je sais justifier un subjonctif en nommant son déclencheur et la nuance exprimée" },
-  { id: "vc7", label: "Je connais les déclencheurs du subjonctif et je sais qu'une certitude affirmée appelle généralement l'indicatif" },
+const SAVOIR_FAIRE = [
+  { id: "present", label: "Présent" },
+  { id: "futur", label: "Futur" },
+  { id: "conditionnel", label: "Conditionnel" },
+  { id: "subjonctif", label: "Subjonctif" },
+  { id: "valeurs", label: "Valeurs des temps" },
+  { id: "concordance", label: "Concordance" },
 ];
 
 export const fichePresentFuturConditionnelSubjonctif: Fiche = {
@@ -17,57 +17,29 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
   numero: 9,
   partie: "Partie 1 : Le verbe",
   title: "Présent, futur, conditionnel et subjonctif",
-  subtitle:
-    "Nommer les valeurs du présent, du futur et du conditionnel, et reconnaître les emplois du subjonctif",
+  subtitle: "Nommer les valeurs du présent, du futur et du conditionnel, et reconnaître les emplois du subjonctif",
   badges: [
-    { label: "★★★ Tombe chaque année", variant: "hot" },
-    { label: "Cycle 3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
+      {
+          "label": "★★★ Tombe chaque année",
+          "variant": "hot"
+      },
+      {
+          "label": "Cycle 3-4 · BOEN n°1 du 22 janvier 2019",
+          "variant": "info"
+      }
   ],
   metaTitle: "Présent, futur, conditionnel, subjonctif (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
     "Fiche CRPE complète sur les valeurs du présent, du futur simple et du conditionnel, ainsi que sur les emplois du subjonctif. Analyse du contexte, test conditionnel/imparfait, réponses attendues, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                {
-                  number: "①",
-                  title: "Le présent : 5 valeurs",
-                  text: "Action en cours, habitude, vérité générale, présent de narration, valeur de futur.",
-                },
-                {
-                  number: "②",
-                  title: "Le futur simple : 3 valeurs",
-                  text: "Action à venir, injonction, vérité générale future.",
-                },
-                {
-                  number: "③",
-                  title: "Le conditionnel présent : 4 valeurs",
-                  text: "Hypothèse, politesse, fait non confirmé, futur dans le passé. C'est un temps de l'indicatif.",
-                },
-                {
-                  number: "④",
-                  title: "Le subjonctif : un mode imposé",
-                  text: "Pas de valeur propre : il est déclenché par un verbe ou une conjonction qui le précède.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -388,567 +360,62 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               question: "Justifiez le mode dans « bien qu'il soit fatigué ».",
               correction: [
                 { type: "line", text: "**Réponse attendue :** « soit » est au présent du subjonctif. Son emploi est déclenché par la conjonction « bien que », qui exprime la concession." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "note", text: "@nav Méthode en tête ? Direction S’entraîner." },
               ],
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Passez à l’application.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
+          icon: "",
+          blocks: [
+            {
+              type: "exerciceBank",
+              title: "Présent, futur, conditionnel et subjonctif",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_PRESENT_FUTUR_CONDITIONNEL_SUBJONCTIF,
+            },
+          ],
+        },
+        {
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
             },
             {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "vc1",
-                  question: "Dans « En 1789, la Révolution éclate », quelle est la valeur du présent ?",
-                  options: ["Action en cours", "Habitude", "Présent de narration", "Valeur de futur"],
-                  correctIndex: 2,
-                  explanation:
-                    "Un événement passé (1789) est raconté au présent pour le dynamiser : c'est un présent de narration.",
-                },
-                {
-                  objectifId: "vc2",
-                  question: "Comment distinguer l'habitude de la vérité générale au présent ?",
-                  options: [
-                    "Le test « nous »",
-                    "Lire le contexte, puis utiliser au besoin le test « d'habitude »",
-                    "Le test de l'auxiliaire",
-                    "Le test du passif",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Le contexte est décisif. Le test « d'habitude » peut confirmer l'analyse : naturel pour une habitude, incohérent avec une propriété toujours valable.",
-                },
-                {
-                  objectifId: "vc4",
-                  question: "Dans « Selon plusieurs sources, le président serait en déplacement », quelle est la valeur du conditionnel ?",
-                  options: ["Hypothèse", "Politesse", "Fait non confirmé", "Futur dans le passé"],
-                  correctIndex: 2,
-                  explanation:
-                    "Le conditionnel présente ici une information rapportée non vérifiée : valeur de fait non confirmé (usage journalistique).",
-                },
-                {
-                  objectifId: "vc4",
-                  question: "Dans la terminologie retenue, le conditionnel est :",
-                  options: [
-                    "Un mode autonome",
-                    "Un temps de l'indicatif",
-                    "Un temps du subjonctif",
-                    "Une forme non conjuguée",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Le conditionnel est analysé comme un temps de l'indicatif. L'appellation traditionnelle « mode conditionnel » existe encore mais n'est pas la formulation retenue.",
-                },
-                {
-                  objectifId: "vc5",
-                  question: "Comment distinguer le conditionnel présent de l'imparfait ?",
-                  options: [
-                    "Par la personne",
-                    "Par le test « nous » : -rions (conditionnel) ou -ions (imparfait)",
-                    "Par l'auxiliaire",
-                    "Par le sujet",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Le « r » distingue les deux : « nous serions » (-rions) → conditionnel présent ; « nous étions » (-ions) → imparfait.",
-                },
-                {
-                  objectifId: "vc7",
-                  question: "À la forme affirmative, après « Je crois que », quel mode emploie-t-on généralement ?",
-                  options: ["Le subjonctif", "L'indicatif", "Le conditionnel", "L'impératif"],
-                  correctIndex: 1,
-                  explanation:
-                    "À la forme affirmative, « Je crois que » présente généralement l'opinion comme vraie et appelle l'indicatif. La négation ou l'interrogation peuvent favoriser le subjonctif.",
-                },
-                {
-                  objectifId: "vc6",
-                  question: "Comment justifier l'emploi du subjonctif ?",
-                  options: [
-                    "En donnant seulement sa terminaison",
-                    "En nommant son déclencheur et la nuance exprimée",
-                    "En affirmant qu'il exprime toujours le futur",
-                    "En le remplaçant systématiquement par le conditionnel",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "La réponse identifie l'élément qui déclenche le subjonctif et précise la nuance exprimée : nécessité, volonté, doute, concession ou but, par exemple.",
-                },
-                {
-                  objectifId: "vc3",
-                  question: "Dans « Tu feras tes devoirs avant de sortir », quelle est la valeur du futur ?",
-                  options: ["Action à venir neutre", "Injonction", "Vérité générale future", "Présent à valeur de futur"],
-                  correctIndex: 1,
-                  explanation:
-                    "Le futur formule ici une consigne : c'est un futur injonctif.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
-            },
-          ],
-        },
-        {
-          id: "appli",
-          label: "Application",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Progression en 3 niveaux. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              stars: "★☆☆",
-              label: "Niveau 1 : Identifier",
-              sub: "Nommer la valeur, appliquer les tests, choisir le mode",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 1 : Valeurs du présent",
-              objectifTag: "Présent",
-              question:
-                "Donnez la valeur du présent :\na) « Un triangle possède trois côtés. »   b) « En ce moment, je lis le journal. »   c) « En 1789, la Révolution éclate. »   d) « Le train part demain à huit heures. »   e) « Chaque matin, il se lève à six heures. »",
-              correction: [
-                { type: "line", label: "a)", text: "Vérité générale : propriété toujours valable." },
-                { type: "line", label: "b)", text: "Action en cours, signalée par « en ce moment »." },
-                { type: "line", label: "c)", text: "Présent de narration (événement passé mis au présent ; indicateur « 1789 »)" },
-                { type: "line", label: "d)", text: "Présent à valeur de futur : l'action est programmée pour le lendemain." },
-                { type: "line", label: "e)", text: "Habitude, signalée par « chaque matin »." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 2 : Conditionnel présent ou imparfait ?",
-              objectifTag: "Conditionnel / imparfait",
-              question:
-                "Appliquez le test « nous » :\na) « Elle serait malade. »   b) « Elle était fatiguée. »   c) « Il viendrait si on l'invitait. »   d) « Il venait souvent. »   e) « Ce traitement réduirait les risques. »",
-              correction: [
-                { type: "line", label: "a)", text: "« nous serions » → -rions → conditionnel présent" },
-                { type: "line", label: "b)", text: "« nous étions » → -ions sans « r » → imparfait" },
-                { type: "line", label: "c)", text: "« nous viendrions » → -rions → conditionnel présent" },
-                { type: "line", label: "d)", text: "« nous venions » → -ions sans « r » → imparfait" },
-                { type: "line", label: "e)", text: "« nous réduirions » → -rions → conditionnel présent" },
-                { type: "note", text: "💡 Conditionnel présent et imparfait sont tous deux des temps de l'indicatif." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 3 : Valeurs du conditionnel présent",
-              objectifTag: "Conditionnel",
-              question:
-                "Donnez la valeur du conditionnel :\na) « Si elle venait demain, je serais heureux. »   b) « Je voudrais vous demander un conseil. »   c) « Selon plusieurs sources, le suspect serait à l'étranger. »   d) « Elle savait qu'il viendrait le lendemain. »",
-              correction: [
-                { type: "line", label: "a)", text: "Hypothèse : « serais » exprime la conséquence de la venue envisagée." },
-                { type: "line", label: "b)", text: "Politesse (atténuation d'une demande)" },
-                { type: "line", label: "c)", text: "Fait non confirmé, signalé par « selon plusieurs sources »." },
-                { type: "line", label: "d)", text: "Futur dans le passé (action future vue depuis « savait »)" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 4 : Indicatif ou subjonctif ?",
-              objectifTag: "Indicatif / subjonctif",
-              question:
-                "Justifiez :\na) « Il faut qu'il vienne. »   b) « Je sais qu'il vient. »   c) « bien qu'elle soit fatiguée »   d) « Je crois qu'elle part demain. »   e) « pour qu'il réussisse »   f) « Je suis certain qu'il vient. »",
-              correction: [
-                { type: "line", label: "a)", text: "Subjonctif (« il faut que » : nécessité)" },
-                { type: "line", label: "b)", text: "Indicatif (« je sais que » : certitude)" },
-                { type: "line", label: "c)", text: "Subjonctif (« bien que » : concession, obligatoire)" },
-                { type: "line", label: "d)", text: "Indicatif (« je crois que » : opinion, pas doute)" },
-                { type: "line", label: "e)", text: "Subjonctif (« pour que » : but, obligatoire)" },
-                { type: "line", label: "f)", text: "Indicatif (« je suis certain que » : certitude)" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : Analyser",
-              sub: "Réponse jury, déclencheurs du subjonctif, cas limites",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 5 : Vrai ou faux, justifiez",
-              question:
-                "a) Le conditionnel est un temps de l'indicatif.\nb) Après « je crois que », on emploie le subjonctif.\nc) Le futur simple peut exprimer un ordre.\nd) « bien que » impose toujours le subjonctif.",
-              correction: [
-                { type: "line", label: "a)", text: "**Vrai** (terminologie retenue) : le conditionnel est un temps de l'indicatif. L'appellation « mode conditionnel » subsiste dans certains usages mais n'est pas retenue." },
-                { type: "line", label: "b)", text: "**Faux** à la forme affirmative : « je crois que » appelle généralement l'indicatif. La négation ou l'interrogation peuvent favoriser le subjonctif." },
-                { type: "line", label: "c)", text: "**Vrai** : « Tu feras tes devoirs » contient un futur injonctif qui formule une consigne." },
-                { type: "line", label: "d)", text: "**Vrai** : « bien que » impose toujours le subjonctif, sans exception." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 6 : Quelles conjonctions imposent le subjonctif ?",
-              objectifTag: "Déclencheurs du subjonctif",
-              question:
-                "Indiquez le mode imposé et justifiez :\na) parce que   b) bien que   c) pour que   d) quand   e) avant que   f) après que   g) à moins que   h) dès que",
-              correction: [
-                { type: "line", label: "a)", text: "parce que → indicatif (cause réelle)" },
-                { type: "line", label: "b)", text: "bien que → subjonctif (concession)" },
-                { type: "line", label: "c)", text: "pour que → subjonctif (but)" },
-                { type: "line", label: "d)", text: "quand → indicatif (temps, fait réel)" },
-                { type: "line", label: "e)", text: "avant que → subjonctif (antériorité envisagée)" },
-                { type: "line", label: "f)", text: "après que → indicatif attendu (fait accompli), même si le subjonctif est très fréquent dans l'usage" },
-                { type: "line", label: "g)", text: "à moins que → subjonctif (condition négative)" },
-                { type: "line", label: "h)", text: "dès que → indicatif (temps, fait réel)" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 7 : Corriger l'analyse",
-              question:
-                "Ces analyses sont-elles correctes ? Corrigez :\na) « serait » → indicatif imparfait, valeur : état dans le passé\nb) « vienne » (après « bien que ») → indicatif présent\nc) Dans « Selon plusieurs sources, il viendrait demain », « viendrait » → conditionnel présent, valeur : conditionnel\nd) Dans « Le train partira demain à huit heures », « partira » → futur simple de l'indicatif, valeur : action à venir",
-              correction: [
-                { type: "line", label: "a)", text: "Erreur de temps : le mode indicatif est correct, mais « nous serions » (-rions) → conditionnel présent, pas imparfait. La valeur dépend du contexte." },
-                { type: "line", label: "b)", text: "Faux : « bien que » impose le subjonctif → subjonctif présent." },
-                { type: "line", label: "c)", text: "Temps correct, valeur trop vague : le repère « selon plusieurs sources » indique un fait non confirmé." },
-                { type: "line", label: "d)", text: "Correct : « demain à huit heures » situe l'action dans l'avenir." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 8 : Corriger les modes incorrects",
-              question:
-                "Pourquoi ces phrases sont-elles incorrectes ? Corrigez :\na) « bien qu'il vient »   b) « il faut qu'elle vient »   c) « pour que tu réussis »",
-              correction: [
-                { type: "line", label: "a)", text: "« vient » (indicatif) incorrect → « bien qu'il **vienne** » (subjonctif, concession)" },
-                { type: "line", label: "b)", text: "« vient » incorrect → « il faut qu'elle **vienne** » (subjonctif, nécessité)" },
-                { type: "line", label: "c)", text: "« réussis » incorrect → « pour que tu **réussisses** » (subjonctif, but)" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : Maîtriser",
-              sub: "Extraits littéraires, réponse jury rédigée",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 9 · Extrait littéraire : Lola Lafon",
-              enonce:
-                "« On écrit parce qu'on ne sait par quel autre biais attraper le réel. Vivre, sans l'écriture, me va mal. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Rédigez la réponse jury pour « écrit », « sait » et « va ».",
-              correction: [
-                { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : le sujet générique « on » inscrit l'affirmation dans une réflexion générale sur l'écriture." },
-                { type: "line", text: "« sait » est au présent de l'indicatif et appartient à la même affirmation générale. Il présente l'impossibilité évoquée comme caractéristique de cette situation." },
-                { type: "line", text: "« va » est au présent de l'indicatif, valeur d'énonciation : associé au pronom « me », il exprime le ressenti de l'auteure au moment où elle écrit." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 10 · Deux valeurs du présent",
-              enonce:
-                "« Depuis toujours, certaines histoires nous font rêver. En ce moment, une vive émotion monte en moi. »",
-              question: "Rédigez la réponse attendue pour « font » et « monte ».",
-              correction: [
-                { type: "line", text: "« font » est au présent de l'indicatif, valeur de vérité générale : le repère « depuis toujours » donne à l'affirmation une portée générale." },
-                { type: "line", text: "« monte » est au présent de l'indicatif, valeur d'action en cours : le repère « en ce moment » situe l'émotion au moment de l'énonciation." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 11 · Hypothèse et politesse",
-              enonce: "a) « Si elle venait demain, je serais heureux. »   b) « Pourriez-vous m'aider ? »   c) « Si elle était venue, j'aurais été heureux. »",
-              question: "Rédigez la réponse jury pour « serais », « Pourriez » et « aurais été ».",
-              correction: [
-                { type: "line", label: "a)", text: "« serais » est au conditionnel présent, temps de l'indicatif. Il exprime la conséquence de l'hypothèse « si elle venait demain », sans permettre à lui seul de la déclarer irréelle." },
-                { type: "line", label: "b)", text: "« Pourriez » est au conditionnel présent (temps de l'indicatif), valeur de politesse : il atténue la demande." },
-                { type: "line", label: "c)", text: "« aurais été » est au conditionnel passé (temps de l'indicatif), valeur d'irréel du passé : conséquence d'une condition non réalisée dans le passé (si + plus-que-parfait)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 12 · Le subjonctif imposé",
-              enonce: "a) « Il faut que chacun réussisse. »   b) « bien qu'il soit fatigué, il continue. »   c) « pour que la société avance »",
-              question: "Rédigez la réponse jury pour « réussisse », « soit » et « avance ».",
-              correction: [
-                { type: "line", label: "a)", text: "« réussisse » est au présent du subjonctif, imposé par « il faut que » : il exprime la nécessité que l'action ait lieu." },
-                { type: "line", label: "b)", text: "« soit » est au présent du subjonctif, imposé par la conjonction de concession « bien que » : il exprime un état réel qui n'empêche pas l'action principale." },
-                { type: "line", label: "c)", text: "« avance » est au présent du subjonctif, imposé par la conjonction de but « pour que » : il exprime le but visé." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              text: "Ces exercices reprennent les formulations du concours pour analyser les modes, les temps et leurs emplois. Lorsqu'un extrait vient d'un sujet récent mais que la question a été adaptée à cette notion, le badge le précise.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "Entraînement adapté d'un sujet récent",
-              title: "Exercice 1 : Lola Lafon, Quand tu écouteras cette chanson",
-              enonce:
-                "« On <u>écrit</u> parce qu'on ne <u>sait</u> par quel autre biais attraper le réel. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Rédigez la réponse attendue pour « écrit » et « sait ».",
-              correction: [
-                { type: "line", text: "« écrit » est au présent de l'indicatif, valeur de vérité générale : le sujet générique « on » inscrit l'énoncé dans une réflexion générale sur l'écriture." },
-                { type: "line", text: "« sait » est au présent de l'indicatif et appartient à la même affirmation générale." },
-                {
-                  type: "formulationCrpe",
-                  text: "« *écrit* est au présent de l'indicatif, à valeur de vérité générale : le sujet générique *on* inscrit l'énoncé dans une réflexion d'ensemble sur l'écriture. *sait* est lui aussi au présent de l'indicatif et relève de la même affirmation générale. »",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 2 : deux valeurs du présent",
-              enonce:
-                "« Depuis toujours, certaines histoires nous <u>font</u> rêver. En ce moment, une vive émotion <u>monte</u> en moi. »",
-              question: "Rédigez la réponse attendue pour « font » et « monte ».",
-              correction: [
-                { type: "line", text: "« font » est au présent de l'indicatif, valeur de vérité générale, justifiée par « depuis toujours »." },
-                { type: "line", text: "« monte » est au présent de l'indicatif, valeur d'action en cours, justifiée par « en ce moment »." },
-                {
-                  type: "formulationCrpe",
-                  text: "« *font* est au présent de l'indicatif, à valeur de vérité générale (justifiée par *depuis toujours*) ; *monte* est au présent de l'indicatif, à valeur d'action en cours (justifiée par *en ce moment*). »",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 3 : conditionnel d'hypothèse",
-              enonce: "« Si elle <u>venait</u> demain, je <u>serais</u> heureux. »",
-              question: "Rédigez la réponse jury pour « venait » et « serais ».",
-              correction: [
-                { type: "line", text: "« venait » est à l'imparfait de l'indicatif ; dans la subordonnée introduite par « si », il présente la venue comme une hypothèse." },
-                { type: "line", text: "« serais » est au conditionnel présent, temps de l'indicatif ; il exprime la conséquence de cette hypothèse." },
-                {
-                  type: "formulationCrpe",
-                  text: "« *venait* est à l'imparfait de l'indicatif : dans la subordonnée introduite par *si*, il présente la venue comme une hypothèse. *serais* est au conditionnel présent (temps de l'indicatif) : il exprime la conséquence de cette hypothèse. »",
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 4 : fait non confirmé",
-              enonce: "« Selon plusieurs sources, le président <u>serait</u> en déplacement à l'étranger. »",
-              question: "Rédigez la réponse jury pour « serait ».",
-              correction: [
-                { type: "line", text: "« serait » est au conditionnel présent (temps de l'indicatif), valeur de fait non confirmé : il présente l'information avec prudence énonciative, comme non vérifiée par l'énonciateur." },
-                {
-                  type: "formulationCrpe",
-                  text: "« *serait* est au conditionnel présent (temps de l'indicatif), à valeur de fait non confirmé : il présente l'information avec prudence, comme non vérifiée par l'énonciateur. »",
-                },
-                { type: "note", text: "💡 Test de la forme (« nous serions » → -rions) : voir notion 7." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 5 : le subjonctif imposé",
-              enonce: "« Il faut qu'elle <u>vienne</u> avant la nuit, bien qu'elle <u>soit</u> fatiguée. »",
-              question: "Rédigez la réponse jury pour « vienne » et « soit ».",
-              correction: [
-                { type: "line", text: "« vienne » est au présent du subjonctif, imposé par « il faut que » : il exprime la nécessité que l'action ait lieu." },
-                { type: "line", text: "« soit » est au présent du subjonctif, imposé par la conjonction de concession « bien que » : il exprime un état réel qui n'empêche pas l'action principale." },
-                {
-                  type: "formulationCrpe",
-                  text: "« *vienne* est au présent du subjonctif, imposé par *il faut que* : il exprime la nécessité que l'action ait lieu. *soit* est au présent du subjonctif, imposé par la conjonction de concession *bien que* : il exprime un état réel qui n'empêche pas l'action principale. »",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              icon: "",
-              text: "Ces exercices reproduisent des erreurs fréquentes relevées dans les copies. Repérer ce qui cloche dans une copie, c'est aussi ce que vous ferez plus tard avec vos élèves.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : « serait »",
-              enonce: "Réponse d'un candidat : « **serait** : indicatif imparfait, valeur : état dans le passé », pour *« Selon plusieurs sources, le président serait en déplacement. »*",
-              question: "Identifiez l'erreur et rédigez la réponse correcte.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Le mode indicatif est correct, mais le temps est faux : « nous serions » (-rions, avec « r ») → conditionnel présent, pas imparfait", bad: true },
-                    { text: "La valeur « état dans le passé » est fausse : préciser selon le contexte", bad: true },
-                    { text: "Réponse attendue : conditionnel présent (temps de l'indicatif), valeur de fait non confirmé (information présentée avec prudence)" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 2 · Réponse à corriger : « bien qu'il vient »",
-              enonce: "Réponse d'un candidat : « **bien qu'il vient** est correct : indicatif présent après « bien que ». »",
-              question: "Identifiez l'erreur et rédigez la correction.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "« bien que » impose toujours le subjonctif, jamais l'indicatif", bad: true },
-                    { text: "Forme correcte : « bien qu'il **vienne** »" },
-                    { text: "Réponse attendue : « vienne » est au présent du subjonctif, imposé par la conjonction de concession « bien que »" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : vérité générale",
-              enonce: "Réponse d'un candidat : « **possède** : présent d'habitude », pour *« Un triangle possède trois côtés. »*",
-              question: "Identifiez l'erreur et rédigez la réponse correcte.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "La phrase énonce une propriété toujours valable, et non une action répétée", bad: true },
-                    { text: "Réponse attendue : « possède » est au présent de l'indicatif, valeur de vérité générale" },
-                  ],
-                },
-              ],
+              type: "corrigerCopies",
+              title: "Présent, futur, conditionnel et subjonctif",
+              copies: COPIES_PRESENT_FUTUR_CONDITIONNEL_SUBJONCTIF,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              icon: "",
-              text: "Cliquez sur chaque carte pour révéler la réponse. Questions formulées comme le jury.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Quelles sont les 5 valeurs du présent de l'indicatif ?",
-                  answer:
-                    "**Action en cours** ; **habitude** ; **vérité générale** ; **présent de narration** ; **présent à valeur de futur**.",
-                },
-                {
-                  question: "Comment distinguer habitude et vérité générale au présent ?",
-                  answer:
-                    "Le contexte reste décisif. Un marqueur de répétition signale l'habitude ; une propriété toujours valable relève de la vérité générale. Le test « d'habitude » peut confirmer l'analyse.",
-                },
-                {
-                  question: "Quelles sont les 3 valeurs du futur simple ?",
-                  answer:
-                    "**Action à venir** ; **futur injonctif** (« Tu feras tes devoirs ») ; **vérité générale future** (« Qui vivra verra »).",
-                },
-                {
-                  question: "Quelles sont les 4 valeurs du conditionnel présent ?",
-                  answer:
-                    "**Hypothèse** (si + imparfait) ; **politesse** (« je voudrais ») ; **fait non confirmé** (information non vérifiée) ; **futur dans le passé** (vu depuis un verbe au passé).",
-                  astuce: "💡 Le conditionnel est un temps de l'indicatif ; on le distingue de l'imparfait par le test « nous » (présence du « r »).",
-                },
-                {
-                  question: "Le conditionnel est-il un mode ?",
-                  answer:
-                    "Non : dans la [Terminologie grammaticale publiée par Éduscol en 2020](https://eduscol.education.gouv.fr/media/67998/download?attachment=), c'est un **temps de l'indicatif**. On répond « conditionnel présent / passé (temps de l'indicatif) ».",
-                  astuce: "⚠️ L'appellation traditionnelle « mode conditionnel » subsiste dans certains usages scolaires, mais ce n'est pas la formulation retenue.",
-                },
-                {
-                  question: "Quand emploie-t-on le subjonctif ?",
-                  answer:
-                    "Après les verbes de **volonté, sentiment, doute** ; après les conjonctions **bien que, pour que, avant que, à moins que, pourvu que** ; après la **nécessité** (il faut que).",
-                  astuce: "⚠️ À la forme affirmative, une certitude appelle généralement l'indicatif : « je sais que », « je crois que », « je suis certain que ».",
-                },
-                {
-                  question: "Comment justifier un subjonctif ?",
-                  answer:
-                    "On nomme son déclencheur et la nuance exprimée : « subjonctif présent, déclenché par [verbe ou conjonction], qui exprime [nécessité, concession, but…] ».",
-                },
-                {
-                  question: "Formule jury pour un présent de vérité générale ?",
-                  answer:
-                    "« [verbe] est au présent de l'indicatif, valeur de vérité générale : il exprime une affirmation universelle sur [sujet], valable pour tous, en tout temps. »",
-                  astuce: "💡 Jamais « valeur : présent ».",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
@@ -987,12 +454,6 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               ],
             },
           ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
         },
       ],
     },

@@ -32,7 +32,6 @@ import { ficheMethodologieMathematiquesM2, ficheMethodologieMathematiquesL3 } fr
 import { ficheVecteurs } from "./mathematiques/vecteurs";
 import { ficheProblemesTransversaux } from "./mathematiques/problemes-transversaux";
 import { ficheClassesGrammaticales } from "./francais/classes-grammaticales";
-import { ficheClassesGrammaticalesV2 } from "./francais/classes-grammaticales-v2";
 import { ficheFonctionsSyntaxiques } from "./francais/fonctions-syntaxiques";
 import { ficheGroupeNominalExpansions } from "./francais/groupe-nominal-expansions";
 import { ficheGroupeVerbal } from "./francais/groupe-verbal";
@@ -126,7 +125,7 @@ const MATHEMATIQUES_L3: Fiche[] = [
 // Français : notions 01-19 communes L3/M2. La divergence commence à la
 // notion 20 (Partie 3) : les fiches propres à chaque niveau sont ajoutées
 // aux listes FRANCAIS_L3 / FRANCAIS_M2 ci-dessous.
-const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheTypesEtFormesDePhrase, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjuguees, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesGrammaticaux, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres, ficheClassesGrammaticalesV2];
+const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheTypesEtFormesDePhrase, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjuguees, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesGrammaticaux, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres];
 
 const FRANCAIS_L3: Fiche[] = [
   ficheMethodologieL3,

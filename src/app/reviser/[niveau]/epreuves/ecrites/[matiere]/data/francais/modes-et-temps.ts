@@ -1,14 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { EXERCICES_MODES_ET_TEMPS } from "./exercices-modes-et-temps";
+import { COPIES_MODES_ET_TEMPS } from "./copies-modes-et-temps";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "mt1", label: "Je sais que le jury attend trois éléments (mode, temps, valeur) et que cette fiche identifie le mode et le temps ; la valeur est approfondie aux notions 7 et 8" },
-  { id: "mt2", label: "Je connais les modes (indicatif, subjonctif, impératif ; infinitif, participe, gérondif), je sais que le conditionnel est un temps de l'indicatif, et qu'une forme non conjuguée n'a pas de temps personnel à indiquer" },
-  { id: "mt3", label: "Je distingue le conditionnel présent de l'imparfait grâce au test « nous » (présence du « r »)" },
-  { id: "mt4", label: "Je distingue le passé composé du plus-que-parfait grâce au temps de l'auxiliaire" },
-  { id: "mt5", label: "Je distingue l'indicatif du subjonctif grâce au contexte (après « que, bien que, pour que… » et les verbes de volonté ou de doute)" },
-  { id: "mt6", label: "Je reconnais le passé simple, y compris ses formes irrégulières (fut, vint, fit, put, sut, dit…)" },
-  { id: "mt7", label: "Je sais identifier une forme verbale en 4 questions : conjuguée ou non, mode, temps, valeur" },
+const SAVOIR_FAIRE = [
+  { id: "modes-personnels", label: "Modes personnels" },
+  { id: "modes-non-personnels", label: "Modes non personnels" },
+  { id: "temps-simples-composes", label: "Temps simples/composés" },
+  { id: "valeurs-temporelles", label: "Valeurs temporelles" },
+  { id: "valeurs-modales", label: "Valeurs modales" },
+  { id: "concordance", label: "Concordance" },
 ];
 
 export const ficheModesEtTemps: Fiche = {
@@ -17,57 +17,29 @@ export const ficheModesEtTemps: Fiche = {
   numero: 7,
   partie: "Partie 1 : Le verbe",
   title: "Modes et temps",
-  subtitle:
-    "Identifier le mode et le temps d'une forme verbale : morphologie, terminaisons, formes irrégulières",
+  subtitle: "Identifier le mode et le temps d'une forme verbale : morphologie, terminaisons, formes irrégulières",
   badges: [
-    { label: "★★★ Tombe chaque année", variant: "hot" },
-    { label: "Cycle 3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
+      {
+          "label": "★★★ Tombe chaque année",
+          "variant": "hot"
+      },
+      {
+          "label": "Cycle 3-4 · BOEN n°1 du 22 janvier 2019",
+          "variant": "info"
+      }
   ],
   metaTitle: "Modes et temps du verbe (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
     "Fiche CRPE complète sur les modes et les temps du verbe : panorama des modes, terminaisons caractéristiques (présent, imparfait, passé simple, futur, conditionnel, subjonctif), temps composés et auxiliaire, formes irrégulières. Méthode d'identification en 4 questions, pièges fréquents, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                {
-                  number: "①",
-                  title: "Les modes",
-                  text: "Indicatif, subjonctif, impératif (personnels) ; infinitif, participe, gérondif (non personnels). Le conditionnel est un temps de l'indicatif.",
-                },
-                {
-                  number: "②",
-                  title: "Reconnaître le temps aux terminaisons",
-                  text: "Présent, imparfait, passé simple, futur, conditionnel, subjonctif : chaque temps a sa marque.",
-                },
-                {
-                  number: "③",
-                  title: "Les temps composés",
-                  text: "Passé composé, plus-que-parfait, futur antérieur… C'est le temps de l'auxiliaire qui les distingue.",
-                },
-                {
-                  number: "④",
-                  title: "Les formes irrégulières à connaître",
-                  text: "Passé simple (fut, vint, fit…) et subjonctif (soit, ait, aille…) : les formes les plus testées.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -382,633 +354,62 @@ export const ficheModesEtTemps: Fiche = {
               question: "Mode et temps de « était parti » ?",
               correction: [
                 { type: "line", text: "**Réponse attendue :** « était parti » est conjugué à l'indicatif, au plus-que-parfait. L'auxiliaire « était » est à l'imparfait." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "note", text: "@nav Méthode en tête ? Direction S’entraîner." },
               ],
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Passez à l’application.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
+          icon: "",
+          blocks: [
+            {
+              type: "exerciceBank",
+              title: "Modes et temps",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_MODES_ET_TEMPS,
+            },
+          ],
+        },
+        {
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
             },
             {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "mt1",
-                  question: "Quels sont les trois éléments attendus par le jury pour une forme verbale ?",
-                  options: [
-                    "Le groupe, la personne et le nombre",
-                    "Le mode, le temps et la valeur",
-                    "Le radical, la terminaison et l'auxiliaire",
-                    "La nature, la fonction et le genre",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Le jury attend le mode, le temps et la valeur. Cette fiche traite le mode et le temps ; la valeur est approfondie aux notions 7 et 8.",
-                },
-                {
-                  objectifId: "mt3",
-                  question: "Comment distinguer le conditionnel présent de l'imparfait ?",
-                  options: [
-                    "Par la personne du verbe",
-                    "Par le test « nous » : -rions (conditionnel) ou -ions (imparfait)",
-                    "Par la présence d'un auxiliaire",
-                    "On ne peut pas les distinguer",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Le « r » est la marque du conditionnel : « nous serions » (-rions) → conditionnel ; « nous étions » (-ions) → imparfait.",
-                },
-                {
-                  objectifId: "mt4",
-                  question: "Dans « elle avait relu sa lettre », « avait relu » est :",
-                  options: ["Un passé composé", "Un plus-que-parfait", "Un conditionnel passé", "Un imparfait"],
-                  correctIndex: 1,
-                  explanation:
-                    "L'auxiliaire « avait » est à l'imparfait : c'est un plus-que-parfait. Le passé composé aurait l'auxiliaire au présent (« a relu »).",
-                },
-                {
-                  objectifId: "mt5",
-                  question: "Dans « Il faut qu'il vienne », « vienne » est :",
-                  options: ["Indicatif présent", "Subjonctif présent", "Conditionnel présent", "Impératif"],
-                  correctIndex: 1,
-                  explanation:
-                    "Après « il faut que » (nécessité), le verbe est au subjonctif : « vienne » est un subjonctif présent.",
-                },
-                {
-                  objectifId: "mt6",
-                  question: "« fut » est :",
-                  options: ["Le futur de être", "Le passé simple de être", "Le subjonctif de être", "Le présent de être"],
-                  correctIndex: 1,
-                  explanation:
-                    "« fut » est le passé simple de « être » (3e personne du singulier). Le futur est « sera », le subjonctif « soit ».",
-                },
-                {
-                  objectifId: "mt2",
-                  question: "Dans « Une femme passa, tenant son enfant », quel est le mode de « tenant » ?",
-                  options: ["Indicatif", "Participe (présent)", "Subjonctif", "Aucun : forme non conjuguée sans temps personnel"],
-                  correctIndex: 1,
-                  explanation:
-                    "« tenant » est un participe présent, mode non personnel : on donne sa nature, pas un temps personnel comme pour un verbe conjugué.",
-                },
-                {
-                  objectifId: "mt2",
-                  question: "Pour identifier la forme « il aurait voulu », on répond :",
-                  options: ["Indicatif passé composé", "Indicatif, conditionnel passé", "Subjonctif passé", "Indicatif plus-que-parfait"],
-                  correctIndex: 1,
-                  explanation:
-                    "L'auxiliaire « aurait » est au conditionnel présent : la forme est un conditionnel passé, temps de l'indicatif.",
-                },
-                {
-                  objectifId: "mt7",
-                  question: "Quelle est la première question à se poser devant une forme verbale ?",
-                  options: [
-                    "Quelle est sa valeur ?",
-                    "Est-elle conjuguée ou non conjuguée ?",
-                    "Quel est son groupe ?",
-                    "Quel est son sujet ?",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "On vérifie d'abord si la forme est conjuguée. Si elle ne l'est pas, on précise s'il s'agit d'un infinitif, d'un participe ou d'un gérondif, sans lui attribuer une personne ni un temps de conjugaison.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
-            },
-          ],
-        },
-        {
-          id: "appli",
-          label: "Application",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Progression en 3 niveaux. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              stars: "★☆☆",
-              label: "Niveau 1 : Identifier",
-              sub: "Mode et temps, formes simples",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 1 : Mode et temps",
-              objectifTag: "Mode et temps",
-              question:
-                "Identifiez le mode et le temps de chaque verbe souligné :\na) « Une femme <u>passa</u>. »   b) « Ma mère <u>regardait</u> les enfants. »   c) « On <u>écrit</u>. »   d) « Il faut qu'elle <u>vienne</u>. »   e) « Si elle venait, je <u>serais</u> heureux. »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["passa", "Indicatif", "Passé simple"],
-                    ["regardait", "Indicatif", "Imparfait"],
-                    ["écrit", "Indicatif", "Présent"],
-                    ["vienne", "Subjonctif", "Présent"],
-                    ["serais", "Indicatif", "Conditionnel présent"],
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 2 : Conditionnel présent ou imparfait ?",
-              objectifTag: "Conditionnel / imparfait",
-              question:
-                "Appliquez le test « nous » :\na) « Elle serait malade. »   b) « Elle était fatiguée. »   c) « Il viendrait si on l'invitait. »   d) « Il venait souvent. »   e) « Ce médicament réduirait les risques. »",
-              correction: [
-                { type: "line", label: "a)", text: "« nous serions » → -rions → conditionnel présent" },
-                { type: "line", label: "b)", text: "« nous étions » → -ions sans « r » → imparfait" },
-                { type: "line", label: "c)", text: "« nous viendrions » → -rions → conditionnel présent" },
-                { type: "line", label: "d)", text: "« nous venions » → -ions sans « r » → imparfait" },
-                { type: "line", label: "e)", text: "« nous réduirions » → -rions → conditionnel présent" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 3 : Passé composé ou plus-que-parfait ?",
-              objectifTag: "Temps composés",
-              question:
-                "Justifiez par l'auxiliaire :\na) « j'ai vu se rouvrir les portes. »   b) « Elle avait relu sa lettre. »   c) « je suis monté sur la terrasse. »   d) « il était parti avant son arrivée. »",
-              correction: [
-                { type: "line", label: "a)", text: "« ai » = présent de avoir → passé composé" },
-                { type: "line", label: "b)", text: "« avait » = imparfait de avoir → plus-que-parfait" },
-                { type: "line", label: "c)", text: "« suis » = présent de être → passé composé" },
-                { type: "line", label: "d)", text: "« était » = imparfait de être → plus-que-parfait" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 4 : Indicatif ou subjonctif ?",
-              objectifTag: "Indicatif / subjonctif",
-              question:
-                "Justifiez par le contexte :\na) « Il faut qu'il vienne. »   b) « Je sais qu'il vient. »   c) « bien qu'elle soit fatiguée »   d) « Je crois qu'elle part demain. »",
-              correction: [
-                { type: "line", label: "a)", text: "Subjonctif (« il faut que » : nécessité) → « vienne »" },
-                { type: "line", label: "b)", text: "Indicatif (« je sais que » : certitude) → « vient »" },
-                { type: "line", label: "c)", text: "Subjonctif (« bien que » : concession) → « soit »" },
-                { type: "line", label: "d)", text: "Indicatif (« je crois que » : opinion présentée comme réelle) → « part »" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : Analyser",
-              sub: "Formes composées, irrégulières, cas ambigus",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 5 : Passés simples irréguliers",
-              objectifTag: "Formes irrégulières",
-              question:
-                "Donnez l'infinitif, le mode et le temps de chaque forme :\na) « fut »   b) « vint »   c) « fit »   d) « put »   e) « sut »   f) « prit »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Forme", "Infinitif", "Mode · Temps"],
-                  rows: [
-                    ["fut", "être", "Indicatif · passé simple"],
-                    ["vint", "venir", "Indicatif · passé simple"],
-                    ["fit", "faire", "Indicatif · passé simple"],
-                    ["put", "pouvoir", "Indicatif · passé simple"],
-                    ["sut", "savoir", "Indicatif · passé simple"],
-                    ["prit", "prendre", "Indicatif · passé simple"],
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 6 : Formes composées",
-              objectifTag: "Temps composés",
-              question:
-                "Identifiez le mode et le temps (attention à l'auxiliaire) :\na) « ils étaient moins beaux »   b) « j'ai vu se rouvrir »   c) « je suis monté »   d) « elle avait relu sa lettre »   e) « j'aurais voulu vous écrire »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode · Temps", "Auxiliaire"],
-                  rows: [
-                    ["étaient", "Indicatif · imparfait", "Forme simple"],
-                    ["ai vu", "Indicatif · passé composé", "« ai » = présent de avoir"],
-                    ["suis monté", "Indicatif · passé composé", "« suis » = présent de être"],
-                    ["avait relu", "Indicatif · plus-que-parfait", "« avait » = imparfait de avoir"],
-                    ["aurais voulu", "Indicatif · conditionnel passé", "« aurais » = avoir au conditionnel présent"],
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 7 : Corriger l'analyse",
-              question:
-                "Ces analyses sont-elles correctes ? Corrigez si nécessaire :\na) « serait » → indicatif imparfait   b) « avait vu » → passé composé   c) « vienne » (après « bien que ») → indicatif présent   d) « fut » → futur simple",
-              correction: [
-                { type: "line", label: "a)", text: "Faux : test « nous serions » (-rions, avec « r ») → conditionnel présent, pas imparfait." },
-                { type: "line", label: "b)", text: "Faux : auxiliaire « avait » (imparfait) → plus-que-parfait." },
-                { type: "line", label: "c)", text: "Faux : « bien que » impose le subjonctif → subjonctif présent." },
-                { type: "line", label: "d)", text: "Faux : « fut » = passé simple de être ; le futur est « sera »." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 8 : « vit » et « vit »",
-              question:
-                "Distinguez les deux « vit » et proposez un contexte pour chacun.",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Forme", "Infinitif", "Mode · Temps", "Contexte"],
-                  rows: [
-                    ["vit", "vivre", "Indicatif · présent", "« Il vit à Paris depuis dix ans. »"],
-                    ["vit", "voir", "Indicatif · passé simple", "« Il vit la femme traverser la rue. »"],
-                  ],
-                },
-                { type: "note", text: "💡 Seul le contexte tranche : récit au passé et événement ponctuel → passé simple de voir ; situation durable → présent de vivre." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : Maîtriser",
-              sub: "Extraits littéraires, relevé complet des verbes conjugués",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 9 · Relever les formes conjuguées",
-              enonce:
-                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison. »",
-              question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["passa", "Indicatif", "Passé simple"],
-                    ["se hâtait", "Indicatif", "Imparfait"],
-                  ],
-                },
-                { type: "note", text: "⚠️ « tenant », « baissés », « pressée » et « atteindre » sont des formes non conjuguées : elles ne font pas partie du relevé demandé." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 10 · Relever les imparfaits",
-              enonce:
-                "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »",
-              question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["vieillissait", "Indicatif", "Imparfait"],
-                    ["regardait", "Indicatif", "Imparfait"],
-                    ["souriait", "Indicatif", "Imparfait"],
-                    ["disait", "Indicatif", "Imparfait"],
-                  ],
-                },
-                { type: "note", text: "💡 « jouer » est un infinitif : cette forme non conjuguée ne fait pas partie du relevé. La valeur des imparfaits est traitée dans les notions 7 et 8." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 11 · Extrait littéraire : Marguerite Yourcenar",
-              enonce:
-                "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
-              question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["ai vu", "Indicatif", "Passé composé"],
-                    ["séparaient", "Indicatif", "Imparfait"],
-                    ["suis monté", "Indicatif", "Passé composé"],
-                    ["étaient", "Indicatif", "Imparfait"],
-                  ],
-                },
-                { type: "note", text: "💡 « se rouvrir » et « regarder » sont des infinitifs : ces formes non conjuguées ne font pas partie du relevé." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 12 · Présent et infinitif",
-              enonce:
-                "« Les choses insensées nous font rêver ; une humble flamme monte en moi. »",
-              question: "Relevez tous les verbes conjugués et donnez leur mode et leur temps.",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["font", "Indicatif", "Présent"],
-                    ["monte", "Indicatif", "Présent"],
-                  ],
-                },
-                { type: "note", text: "⚠️ « rêver » est un infinitif : cette forme non conjuguée ne fait pas partie du relevé." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              text: "Ces exercices reprennent les formulations du concours pour identifier le mode et le temps d'une forme verbale. Lorsqu'un extrait provient d'un sujet récent mais que la question a été adaptée à cette notion, le badge le précise. La valeur des temps est approfondie dans les notions 7 et 8.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 1 : Passé simple et imparfait",
-              enonce:
-                "« Une femme <u>passa</u>, tenant par la main un petit garçon. Elle <u>se hâtait</u>, les yeux baissés. »",
-              question: "Donnez le mode et le temps de « passa » et « se hâtait ».",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["passa", "Indicatif", "Passé simple"],
-                    ["se hâtait", "Indicatif", "Imparfait"],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *passa* est conjugué à l'indicatif, au passé simple ; *se hâtait* est conjugué à l'indicatif, à l'imparfait. »" },
-                { type: "note", text: "💡 La valeur (action ponctuelle pour le passé simple, arrière-plan descriptif pour l'imparfait) s'analyse aux notions 7 et 8." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 2 : Deux imparfaits",
-              enonce:
-                "« Ma mère, dont le regard ne <u>vieillissait</u> pas, <u>regardait</u> les enfants jouer dans le jardin. »",
-              question: "Donnez le mode et le temps de « vieillissait » et « regardait ».",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["vieillissait", "Indicatif", "Imparfait"],
-                    ["regardait", "Indicatif", "Imparfait"],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *vieillissait* et *regardait* sont tous deux conjugués à l'indicatif, à l'imparfait. »" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 3 : forme ambiguë",
-              enonce: "« Selon la rumeur, il <u>serait</u> déjà parti. »",
-              question: "Donnez le mode et le temps de « serait », et justifiez par un test.",
-              correction: [
-                { type: "line", text: "« serait » contient un « r » avant la terminaison. Test « nous » : « nous serions » (-rions) → **conditionnel présent**." },
-                { type: "formulationCrpe", text: "« *serait* est conjugué à l'indicatif, au conditionnel présent. »" },
-                { type: "note", text: "⚠️ « -ait » fait penser à l'imparfait, mais le « r » signale le conditionnel. La valeur (information non confirmée) relève des notions 7 et 8." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "Entraînement adapté d'un sujet récent",
-              title: "Exercice 4 : Marguerite Yourcenar, Comment Wang-Fô fut sauvé",
-              enonce:
-                "« À seize ans, j'<u>ai vu</u> se rouvrir les portes qui me <u>séparaient</u> du monde : je <u>suis monté</u> sur la terrasse du palais pour regarder les nuages. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
-              question: "Donnez le mode et le temps de « ai vu », « séparaient » et « suis monté ».",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["ai vu", "Indicatif", "Passé composé"],
-                    ["séparaient", "Indicatif", "Imparfait"],
-                    ["suis monté", "Indicatif", "Passé composé"],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *ai vu* et *suis monté* sont conjugués à l'indicatif, au passé composé ; *séparaient* est conjugué à l'indicatif, à l'imparfait. »" },
-                { type: "note", text: "💡 « se rouvrir » et « regarder » sont des infinitifs : ils ne font pas partie des formes soulignées à analyser." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "Entraînement adapté d'un sujet récent",
-              title: "Exercice 5 : Lola Lafon, Quand tu écouteras cette chanson",
-              enonce:
-                "« On <u>écrit</u> parce qu'on ne <u>sait</u> par quel autre biais attraper le réel. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2023)*",
-              question: "Donnez le mode et le temps de « écrit » et « sait ».",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Mode", "Temps"],
-                  rows: [
-                    ["écrit", "Indicatif", "Présent"],
-                    ["sait", "Indicatif", "Présent"],
-                  ],
-                },
-                { type: "formulationCrpe", text: "« *écrit* et *sait* sont conjugués à l'indicatif, au présent. »" },
-                { type: "note", text: "💡 « attraper » est un infinitif (forme non conjuguée). La valeur de vérité générale de ces présents est traitée aux notions 7 et 8." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              icon: "",
-              text: "Ces exercices reproduisent des erreurs fréquentes relevées dans les copies. Repérer ce qui cloche dans une copie, c'est aussi ce que vous ferez plus tard avec vos élèves.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : « serait »",
-              enonce: "Réponse d'un candidat : « **serait** : indicatif imparfait », pour *« Selon la rumeur, il serait parti. »*",
-              question: "Identifiez l'erreur et rédigez la réponse attendue.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Erreur : le temps. « -ait » a été pris pour un imparfait", bad: true },
-                    { text: "Test « nous » : « nous serions » → -rions (avec « r ») → conditionnel présent" },
-                    { text: "Réponse attendue : indicatif, conditionnel présent (le mode indicatif était correct ; c'est le temps qui était faux)" },
-                  ],
-                },
-                { type: "note", text: "💡 La valeur (information rapportée non confirmée) s'analyse aux notions 7 et 8." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 2 · Réponse à corriger : « avait relu »",
-              enonce: "Réponse d'un candidat : « **avait relu** : passé composé », pour *« Elle avait relu sa lettre avant de la poster. »*",
-              question: "Identifiez l'erreur et rédigez la réponse attendue.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Erreur : passé composé annoncé alors que l'auxiliaire est à l'imparfait", bad: true },
-                    { text: "« avait » = imparfait de avoir → plus-que-parfait" },
-                    { text: "Réponse attendue : indicatif plus-que-parfait (le passé composé serait « a relu »)" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « fut »",
-              enonce: "Réponse d'un candidat : « **fut** : futur simple de être », pour *« La nuit fut longue. »*",
-              question: "Identifiez l'erreur et donnez la forme correcte du futur.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Erreur : « fut » confondu avec un futur", bad: true },
-                    { text: "« fut » est le passé simple de être (3e personne du singulier)" },
-                    { text: "Le futur simple de être (3e personne du singulier) est « sera »" },
-                    { text: "Réponse attendue : indicatif passé simple" },
-                  ],
-                },
-              ],
+              type: "corrigerCopies",
+              title: "Modes et temps",
+              copies: COPIES_MODES_ET_TEMPS,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              icon: "",
-              text: "Cliquez sur chaque carte pour révéler la réponse. Questions formulées comme le jury.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Quels sont les trois éléments attendus par le jury pour une forme verbale ?",
-                  answer:
-                    "1. **Mode** (indicatif, subjonctif, impératif, infinitif, participe, gérondif).\n2. **Temps** (présent, imparfait, passé simple, passé composé, conditionnel présent…).\n3. **Valeur** (ce que le temps exprime dans le contexte).",
-                  astuce: "⚠️ La valeur est le 3e élément, là où se perdent des points. Son analyse détaillée est aux notions 7 et 8.",
-                },
-                {
-                  question: "Comment distinguer conditionnel présent et imparfait ?",
-                  answer:
-                    "Test « nous » :\nImparfait → -ions sans « r » (« nous regardions »).\nConditionnel → -rions avec « r » (« nous regarderions »).",
-                  astuce: "💡 Le « r » est la marque du conditionnel.",
-                },
-                {
-                  question: "Comment distinguer passé composé et plus-que-parfait ?",
-                  answer:
-                    "On regarde le temps de l'auxiliaire :\nPassé composé → auxiliaire au présent (« a vu », « est parti »).\nPlus-que-parfait → auxiliaire à l'imparfait (« avait vu », « était parti »).",
-                },
-                {
-                  question: "Passé simple de être : les 6 formes ?",
-                  answer: "fus, fus, fut, fûmes, fûtes, furent.",
-                  astuce: "⚠️ « fut » et « furent » sont les plus fréquents en littérature. Ne pas confondre avec « sera » (futur) ou « soit » (subjonctif).",
-                },
-                {
-                  question: "Formes irrégulières du passé simple à connaître ?",
-                  answer:
-                    "être → fut · avoir → eut · faire → fit · voir → vit · venir → vint · pouvoir → put · savoir → sut · dire → dit · mettre → mit.",
-                },
-                {
-                  question: "Formes irrégulières du subjonctif présent à connaître ?",
-                  answer:
-                    "être → soit · avoir → ait · aller → aille · faire → fasse · pouvoir → puisse · savoir → sache · vouloir → veuille · venir → vienne.",
-                  astuce: "💡 On les rencontre après « que, bien que, pour que, avant que… ».",
-                },
-                {
-                  question: "Comment identifier une forme verbale ? (les 4 questions)",
-                  answer:
-                    "Q1 : conjuguée ou non ? Q2 : quel mode ? Q3 : quel temps ? Q4 : quelle valeur ?\nSi la forme n'est pas conjuguée, on précise s'il s'agit d'un infinitif, d'un participe ou d'un gérondif, sans lui attribuer une personne ni un temps de conjugaison.",
-                },
-                {
-                  question: "Comment identifier la forme du conditionnel ?",
-                  answer:
-                    "On répond « **indicatif, conditionnel présent** » ou « **indicatif, conditionnel passé** » : dans la terminologie Éduscol récente retenue, le conditionnel est un **temps de l'indicatif**, pas un mode autonome.",
-                  astuce: "💡 L'appellation traditionnelle « mode conditionnel » subsiste dans certains usages scolaires, mais ce n'est pas la formulation retenue.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
@@ -1052,12 +453,6 @@ export const ficheModesEtTemps: Fiche = {
               ],
             },
           ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
         },
       ],
     },
