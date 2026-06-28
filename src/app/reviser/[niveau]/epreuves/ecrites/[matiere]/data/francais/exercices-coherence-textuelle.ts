@@ -1,98 +1,261 @@
 // Banque d'exercices OUVERTS, notion 14 « La cohérence textuelle ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : reprises comme
+// marqueurs de point de vue, progressions mêlées, rupture de cohérence temporelle,
+// connecteurs argumentatifs, cohésion vs cohérence).
+// Périmètre : analyse de la cohérence d'un TEXTE (reprises, progression, connecteurs,
+// temps, ponctuation). Le champ lexical relève surtout du lexique (notions 18-19).
+// 6 savoir-faire : reprises nominales · pronoms · connecteurs · progression
+// thématique · temps verbaux · ponctuation.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_COHERENCE_TEXTUELLE: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-14-exo-01",
+    id: "fr-14-exo-f1",
     notion: "fr-14",
-    savoirFaire: ["reprises-nominales","pronoms","connecteurs"],
+    savoirFaire: ["pronoms"],
     difficulte: 1,
-    enonce: "« Une fillette traversait le marché. Elle portait un grand panier. La petite s'arrêta devant un étal de fleurs. Ces fleurs semblaient lui sourire. »",
-    question: "Relevez les reprises du référent « fillette » et précisez le type de chacune.",
-    reponseType: "**Elle** : reprise pronominale (pronom personnel sujet).\n\n**La petite** : reprise nominale infidèle (« la petite [fille] », dénomination plus spécifique à nuance affective).\n\n**lui** : reprise pronominale (pronom personnel COI).",
+    question:
+      "Relevez les mots qui reprennent « le chat » et donnez leur nature :\n« Le chat dormait. Il ronronnait. On l'entendait à peine. »",
+    reponseType:
+      "« **Il** » (pronom personnel sujet) et « **l'** » (pronom personnel COD) reprennent « le chat ». Ce sont des **reprises pronominales** (anaphores) qui assurent la continuité référentielle.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-f2",
+    notion: "fr-14",
+    savoirFaire: ["reprises-nominales"],
+    difficulte: 1,
+    question:
+      "La reprise est-elle fidèle ou infidèle ?\na) « Un chien aboyait. Le chien semblait perdu. »\nb) « Un chien aboyait. L'animal semblait perdu. »",
+    reponseType:
+      "a) reprise nominale **fidèle** (même nom « chien », seul le déterminant change).\nb) reprise nominale **infidèle** (« l'animal » : terme générique / hyperonyme).",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-f3",
+    notion: "fr-14",
+    savoirFaire: ["connecteurs"],
+    difficulte: 1,
+    question:
+      "Donnez la relation logique exprimée par le connecteur :\na) « Il pleut, donc je reste. »\nb) « Il est riche, pourtant il est malheureux. »\nc) « D'abord, range. Ensuite, sors. »",
+    reponseType:
+      "a) **conséquence** (« donc »).\nb) **opposition / concession** (« pourtant »).\nc) **succession / temps** (« d'abord… ensuite »).",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-f4",
+    notion: "fr-14",
+    savoirFaire: ["progression-thematique"],
+    difficulte: 1,
+    question:
+      "Quelle progression ?\n« Napoléon naquit en Corse. Il devint général. Il se fit couronner empereur. »",
+    reponseType:
+      "Progression à **thème constant** : un même thème (Napoléon, repris par « il ») reçoit des informations nouvelles (rhèmes) successives.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-f5",
+    notion: "fr-14",
+    savoirFaire: ["temps-verbaux"],
+    difficulte: 1,
+    question:
+      "Pourquoi le mélange des temps est-il cohérent ?\n« Il faisait nuit. Soudain, un bruit retentit. »",
+    reponseType:
+      "L'imparfait (« faisait ») installe le décor (arrière-plan), le passé simple (« retentit ») marque l'événement (premier plan). Le système des temps assure la cohérence du récit (cf. notion 8).",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-f6",
+    notion: "fr-14",
+    savoirFaire: ["ponctuation"],
+    difficulte: 1,
+    question:
+      "Quel est le rôle des deux-points ?\na) « Il hésita : la route était longue. »\nb) « Trois choses comptent : l'effort, la rigueur, la patience. »",
+    reponseType:
+      "a) ils introduisent une **explication** (la cause de l'hésitation).\nb) ils introduisent une **énumération**.\nLa ponctuation organise les liens logiques du texte.",
+    explication: [],
+  },
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
+  {
+    id: "fr-14-exo-c1",
+    notion: "fr-14",
+    savoirFaire: ["reprises-nominales", "pronoms"],
+    difficulte: 2,
+    question:
+      "Relevez toute la chaîne de reprises désignant « le loup » et donnez la nature de chacune :\n« Un loup rôdait. La bête avait faim. Il s'approcha du troupeau. Ce prédateur ne reculait devant rien. »",
+    reponseType:
+      "Chaîne référentielle : « Un loup » (1re mention) → « La bête » (reprise nominale infidèle, terme générique) → « Il » (reprise pronominale) → « Ce prédateur » (reprise nominale infidèle, désignation par une caractéristique). Toutes désignent le même référent.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c2",
+    notion: "fr-14",
+    savoirFaire: ["reprises-nominales"],
+    difficulte: 2,
+    question:
+      "Donnez le type de chaque reprise nominale infidèle de « Victor Hugo » :\na) « l'écrivain »\nb) « l'auteur des Misérables »\nc) « ce génie romantique »",
+    reponseType:
+      "a) **terme générique** (hyperonyme).\nb) **périphrase** (désignation par une caractéristique).\nc) reprise **appréciative / méliorative** (avec connotation).\nChacune évite la répétition tout en apportant une nuance.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c3",
+    notion: "fr-14",
+    savoirFaire: ["connecteurs"],
+    difficulte: 2,
+    question:
+      "Analysez le connecteur (relation + effet), façon concours :\n« Les preuves manquent. Néanmoins, le juge a tranché. »",
+    reponseType:
+      "« Néanmoins » : connecteur d'**opposition / concession**. Il indique que la décision a été prise *malgré* l'absence de preuves, articulant les deux propositions en contraste et soulignant le caractère discutable de la décision. (Formule : nommer la relation, puis interpréter l'effet.)",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c4",
+    notion: "fr-14",
+    savoirFaire: ["progression-thematique"],
+    difficulte: 2,
+    question:
+      "Nommez la progression :\na) « La forêt était dense. Cette densité gênait la marche. La marche devint épuisante. »\nb) « La maison était vaste. Le salon donnait sur le parc. Les chambres dominaient la mer. »",
+    reponseType:
+      "a) progression **linéaire** : le rhème d'une phrase devient le thème de la suivante (densité → marche, en cascade).\nb) progression à **thèmes dérivés** : un hyperthème (« la maison ») se décline en aspects (salon, chambres).",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c5",
+    notion: "fr-14",
+    savoirFaire: ["pronoms"],
+    difficulte: 2,
+    question:
+      "Pourquoi cette phrase manque-t-elle de cohérence ? Corrigez :\n« Paul a dit à Marc qu'il avait tort. »",
+    reponseType:
+      "Le pronom « il » a un **antécédent ambigu** : il peut renvoyer à Paul ou à Marc. La cohérence référentielle exige un référent identifiable. Correction : « Paul a dit à Marc que **ce dernier** avait tort » (ou « que lui, Paul, avait tort »).",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c6",
+    notion: "fr-14",
+    savoirFaire: ["connecteurs"],
+    difficulte: 2,
+    question:
+      "Distinguez la nuance de chaque connecteur :\na) « Il est parti car il était tard. »\nb) « Il est parti ; en effet, il était tard. »\nc) « Il est parti ; c'est pourquoi tout est calme. »",
+    reponseType:
+      "a) « car » : **cause** (justification).\nb) « en effet » : **explication / confirmation** (il appuie l'assertion précédente).\nc) « c'est pourquoi » : **conséquence**.\nCause, explication et conséquence sont proches mais distinctes.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c7",
+    notion: "fr-14",
+    savoirFaire: ["temps-verbaux"],
+    difficulte: 2,
+    question:
+      "Expliquez en quoi les temps assurent la cohérence :\n« Quand il aura fini, il rangera, puis il sortira. »",
+    reponseType:
+      "Le **futur antérieur** (« aura fini ») marque une action achevée **avant** les futurs simples qui suivent (« rangera », « sortira »). La concordance des temps ordonne les actions dans le temps et assure la cohésion du passage.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c8",
+    notion: "fr-14",
+    savoirFaire: ["ponctuation"],
+    difficulte: 2,
+    question:
+      "Justifiez la ponctuation et son rôle dans la cohésion :\n« Le ciel s'assombrit ; les oiseaux se turent ; la pluie commença. »",
+    reponseType:
+      "Les **points-virgules** relient trois propositions de même rang dans une progression : ils marquent une succession liée par le sens, plus unie que des points, plus séparée que des virgules. La ponctuation construit ici la cohésion du tableau.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c9",
+    notion: "fr-14",
+    savoirFaire: ["reprises-nominales", "pronoms"],
+    difficulte: 2,
+    question:
+      "Améliorez la cohésion en variant les reprises :\n« Le renard vit le corbeau. Le renard flatta le corbeau. Le renard mangea le fromage. »",
+    reponseType:
+      "Remplacer les répétitions par des reprises variées : « Le renard vit le corbeau. **Il** le flatta. **Le rusé animal** finit par manger le fromage. »\nAlterner reprises pronominales (« il », « le ») et nominales infidèles (« le rusé animal ») évite la répétition et fluidifie le texte.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-c10",
+    notion: "fr-14",
+    savoirFaire: ["connecteurs"],
+    difficulte: 2,
+    question:
+      "Corrigez l'emploi fautif et nommez la relation :\n« Malgré qu'il soit tard, il continue. »",
+    reponseType:
+      "« Malgré que » est à **éviter à l'écrit** (tournure critiquée). On écrit « **Bien qu'**il soit tard, il continue » ou « **Malgré** l'heure tardive, il continue ». La relation exprimée est la **concession**.",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-14-exo-e1",
+    notion: "fr-14",
+    savoirFaire: ["reprises-nominales", "pronoms"],
+    difficulte: 3,
+    question:
+      "Analysez la chaîne de reprises et ce qu'elle révèle du point de vue :\n« L'accusé entra. L'homme tremblait. Le misérable osa lever les yeux. La pauvre créature attendait son sort. »",
+    reponseType:
+      "Chaîne : « L'accusé » (neutre, juridique) → « L'homme » (générique neutre) → « Le misérable » (connotation compatissante) → « La pauvre créature » (connotation nettement apitoyée). L'**évolution** des reprises, du neutre à l'apitoiement, trahit un **point de vue** de plus en plus compatissant du narrateur. Les reprises ne sont pas neutres : elles portent un regard.",
     explication: [
-      { type: "note", text: "💡 « Ces fleurs » ne reprend pas « fillette » : l'expression renvoie aux fleurs de l'étal et appartient donc à une autre chaîne référentielle." },
+      {
+        type: "note",
+        text: "Côté correcteur : montrer que le choix des reprises construit un point de vue (et pas seulement la cohésion) est un raisonnement valorisé.",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-14-exo-02",
+    id: "fr-14-exo-e2",
     notion: "fr-14",
-    savoirFaire: ["pronoms","connecteurs"],
-    difficulte: 1,
-    question: "Identifiez la relation logique de chaque connecteur souligné :\na) « Il s'était entraîné ; <u>par conséquent</u>, il gagna. »   b) « Elle aimait voyager ; <u>cependant</u>, elle craignait l'avion. »   c) « <u>En effet</u>, les forêts produisent de l'oxygène. »   d) « <u>Par exemple</u>, la lecture développe l'empathie. »   e) « <u>Autrement dit</u>, le texte doit progresser. »",
-    reponseType: "a) **Conséquence** : le résultat découle de l'entraînement.\n\nb) **Opposition / concession** : la peur contredit le goût du voyage.\n\nc) **Cause / explication** : appuie l'affirmation.\n\nd) **Illustration** : donne un exemple concret.\n\ne) **Reformulation** : reprend l'idée en d'autres termes.",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-14-exo-03",
-    notion: "fr-14",
-    savoirFaire: ["pronoms","connecteurs"],
-    difficulte: 1,
-    enonce: "« La nuit tombait sur la plaine. Les étoiles s'allumaient dans le ciel obscur. La lune éclairait faiblement le chemin. L'obscurité semblait vivante. »",
-    question: "a) Nommez le champ lexical dominant et relevez ses termes. b) Quel effet produit-il ?",
-    reponseType: "a) Champ lexical de la **nuit / de l'obscurité** : « nuit, obscur, lune, éclairait faiblement, obscurité ».\n\nb) Il crée une atmosphère nocturne cohérente, aux tonalités mystérieuses et légèrement inquiétantes (renforcées par « semblait vivante »).",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-14-exo-04",
-    notion: "fr-14",
-    savoirFaire: ["pronoms","connecteurs","progression-thematique"],
-    difficulte: 1,
-    question: "Indiquez le schéma de progression (linéaire, à thème constant, à thèmes dérivés) :\na) « Paris est lumineuse. Elle attire les touristes. La capitale ne dort jamais. »   b) « Paul rencontra Marie. Cette femme changea sa vie. Ce changement fut radical. »   c) « La forêt est un écosystème. Les arbres produisent de l'oxygène. Les animaux y trouvent refuge. »",
-    reponseType: "a) **À thème constant** : toutes les phrases parlent de Paris (elle, la capitale).\n\nb) **Linéaire (en cascade)** : Marie → cette femme → ce changement.\n\nc) **À thèmes dérivés** : la forêt, puis ses composantes (arbres, animaux).",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-14-exo-05",
-    notion: "fr-14",
-    savoirFaire: ["reprises-nominales","pronoms","connecteurs","progression-thematique"],
-    difficulte: 2,
-    enonce: "« Un vieux professeur parcourait les rues chaque matin. L'homme s'arrêtait toujours devant la même boulangerie. Ce rituel lui semblait indispensable. Il achetait deux croissants et repartait sans un mot. »",
-    question: "a) Reconstituez la chaîne référentielle du personnage. b) Quel est le schéma de progression ? c) Relevez le champ lexical de la routine.",
-    reponseType: "a) « Un vieux professeur » (antécédent) → « L'homme » (nominale infidèle, hyperonyme) → « lui » (pronominale, COI) → « Il » (pronominale, sujet).\n\nb) Progression **à thème constant** : le professeur reste le sujet de bout en bout.\n\nc) Champ lexical de la routine : « chaque matin, toujours, même boulangerie, ce rituel, sans un mot ».",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-14-exo-06",
-    notion: "fr-14",
-    savoirFaire: ["pronoms","connecteurs"],
-    difficulte: 2,
-    question: "Complétez avec le connecteur le plus approprié (cependant · car · par exemple · en outre · par conséquent · autrement dit) et nommez la relation :\na) « La lecture développe le vocabulaire. ___, elle stimule l'imagination. »   b) « Il n'avait pas dormi. ___, il fit des erreurs. »   c) « Un texte sans reprises est lourd ; ___, il faut varier. »   d) « Il aimait la musique ; ___, il ne jouait d'aucun instrument. »   e) « Les élèves progressent ___ ils s'entraînent. »",
-    reponseType: "a) **En outre** (addition).\n\nb) **Par conséquent** (conséquence).\n\nc) **Autrement dit** (reformulation).\n\nd) **Cependant** (opposition / concession).\n\ne) **car** (cause).",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-14-exo-07",
-    notion: "fr-14",
-    savoirFaire: ["reprises-nominales","pronoms","connecteurs"],
+    savoirFaire: ["progression-thematique"],
     difficulte: 3,
-    enonce: "« Écrire est un engagement à ferrailler. On s'engage dans l'écriture comme dans une armée imaginaire, où l'on serait à la fois général et aspirant soldat. »",
-    question: "a) Nommez le champ lexical dominant et relevez ses termes. b) Relevez deux expressions qui relancent l'idée d'écrire et précisez leur rôle dans la cohérence du passage. c) Quel effet produit la métaphore filée ?",
-    reponseType: "a) Champ lexical du **combat / de la guerre** : « ferrailler, engagement, armée, général, aspirant soldat ».\n\nb) « l'écriture » reprend nominalement le verbe « écrire » (reprise par nominalisation) ; « une armée imaginaire » relance la même idée par métaphore. Ces reprises maintiennent le même référent abstrait tout en le développant.\n\nc) La métaphore filée du combat présente l'écriture comme une lutte intérieure, exigeante : elle traduit l'engagement total de l'écrivain et donne une dimension épique à un acte intime.",
+    question:
+      "Ce texte mêle deux progressions. Identifiez-les :\n« La ville était animée. Ses rues grouillaient de monde. Cette foule rendait la circulation difficile, si bien que les voitures avançaient au pas. »",
+    reponseType:
+      "Début : progression à **thèmes dérivés** (« la ville » → « ses rues », un aspect du tout).\nPuis progression **linéaire** : le rhème devient thème (« la foule » → « cette foule » → circulation difficile → voitures au pas, en cascade).\nUn texte réel combine souvent plusieurs types de progression.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-14-exo-08",
+    id: "fr-14-exo-e3",
     notion: "fr-14",
-    savoirFaire: ["pronoms","connecteurs","progression-thematique"],
+    savoirFaire: ["temps-verbaux"],
     difficulte: 3,
-    enonce: "« L'école est importante. L'école permet d'apprendre. L'école est un lieu de socialisation. L'école développe l'esprit critique. »",
-    question: "Réécrivez ce paragraphe en variant les reprises, en ajoutant des connecteurs et en assurant une progression lisible.",
-    reponseType: "**Proposition :** « L'école occupe une place centrale dans la formation des individus. Elle permet **d'abord** l'acquisition des savoirs fondamentaux. **Mais** l'établissement scolaire est **aussi** un espace de socialisation : les élèves y apprennent à vivre ensemble. **Enfin**, cette institution développe leur esprit critique, condition d'une citoyenneté éclairée. »",
+    question:
+      "Pourquoi ce passage est-il incohérent au plan temporel ? Corrigez :\n« Il entra dans la pièce. Il fait sombre. Il alluma la lumière. »",
+    reponseType:
+      "Rupture : le présent « fait » brise le système du récit au passé (« entra », « alluma »). La cohérence temporelle exige un système homogène : « Il **faisait** sombre » (imparfait de description, arrière-plan), qui s'accorde avec les passés simples de premier plan.",
+    explication: [],
+  },
+  {
+    id: "fr-14-exo-e4",
+    notion: "fr-14",
+    savoirFaire: ["connecteurs"],
+    difficulte: 3,
+    question:
+      "Rétablissez les connecteurs qui structurent l'argumentation et nommez chaque relation :\n« ___ certains pensent que la technique nuit. ___, elle a sauvé des vies. ___, elle est ambivalente. »",
+    reponseType:
+      "« **Certes / Sans doute** certains pensent que la technique nuit » (concession) ; « **Mais / Cependant**, elle a sauvé des vies » (opposition / réfutation) ; « **Donc / Ainsi**, elle est ambivalente » (conclusion).\nLes connecteurs balisent le mouvement concession → objection → conclusion d'un raisonnement.",
     explication: [
-      { type: "note", text: "Procédés : reprises variées (elle, l'établissement scolaire, cette institution), connecteurs (d'abord, mais, enfin), progression à thème constant." },
+      {
+        type: "note",
+        text: "Côté correcteur : repérer que les connecteurs dessinent le plan argumentatif (et pas seulement des liens locaux) est exactement ce qu'on attend dans l'analyse d'un texte d'idées.",
+      },
     ],
+  },
+  {
+    id: "fr-14-exo-e5",
+    notion: "fr-14",
+    savoirFaire: ["reprises-nominales", "connecteurs"],
+    difficulte: 3,
+    question:
+      "Ce texte est cohésif (bien lié) mais incohérent (absurde). Expliquez la différence :\n« Mon chat est malade. Donc je l'ai emmené au cinéma. Ensuite, il a guéri grâce au film. »",
+    reponseType:
+      "La **cohésion** est assurée (connecteurs « donc », « ensuite » ; reprises « l' », « il » correctes). Mais la **cohérence** manque : les enchaînements logiques sont absurdes (emmener un chat malade au cinéma, guérir par un film). Un texte peut donc être bien lié en surface (cohésion) sans faire sens (cohérence) : ce sont deux niveaux distincts.",
+    explication: [],
   },
 ];

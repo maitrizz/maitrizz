@@ -1,94 +1,261 @@
 // Banque d'exercices OUVERTS, notion 19 « Les figures de style et les registres ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : métaphore /
+// métonymie / synecdoque, litote canonique, oxymore et sens, registres mêlés,
+// analyse complète d'une figure).
+// Cap : nommer NE SUFFIT PAS, on interprète l'effet (les quatre temps de l'analyse).
+// Citations canoniques vérifiées.
+// 6 savoir-faire : images · opposition · insistance · atténuation · sonorités
+// · registres.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_FIGURES_DE_STYLE_REGISTRES: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-19-exo-01",
-    notion: "fr-19",
-    savoirFaire: ["images","opposition","insistance","attenuation"],
-    difficulte: 1,
-    question: "Nommez la figure :\na) « Il pleut des cordes. » · b) « Ce devoir n'est pas mal. » · c) « La vie est un voyage. » · d) « Je meurs de soif. » · e) « Le temps dévore tout. » · f) « une obscure clarté »",
-    reponseType: "**Explication (le réflexe) :** repérer l'écart, puis classer dans une famille. a) image sans outil → métaphore (la pluie est assimilée à des cordes) · b) atténuation qui en dit plus → litote (« pas mal » = très bien) · c) assimilation sans outil → métaphore · d) exagération → hyperbole · e) action humaine prêtée à une abstraction → personnification · f) deux contraires dans le même groupe → oxymore.\n\n**Réponse attendue (formulation modèle) :** « a) métaphore · b) litote · c) métaphore · d) hyperbole · e) personnification · f) oxymore. »",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-19-exo-02",
+    id: "fr-19-exo-f1",
     notion: "fr-19",
     savoirFaire: ["images"],
     difficulte: 1,
-    question: "Comparaison ou métaphore ? Indiquez l'outil s'il y en a un :\na) « fort comme un bœuf » · b) « c'est un bœuf, cet homme » · c) « ses yeux, deux étoiles » · d) « elle travaille telle une fourmi »",
-    reponseType: "**Explication (le test) :** chercher un outil de comparaison. S'il y en a un, c'est une comparaison ; sinon, c'est une métaphore. a) outil « comme » · b) aucun outil, le verbe « est » assimile · c) aucun outil, apposition directe · d) outil « telle ».\n\n**Réponse attendue (formulation modèle) :** « a) comparaison (outil “comme”) · b) métaphore (pas d'outil) · c) métaphore (apposition directe) · d) comparaison (outil “telle”). »",
+    question:
+      "Comparaison ou métaphore ?\na) « Il est fort comme un lion. »\nb) « Cet homme est un lion. »",
+    reponseType:
+      "a) **comparaison** (outil « comme » : comparé « il », comparant « lion », outil « comme »).\nb) **métaphore** (aucun outil : identification directe).\nLa présence ou l'absence d'outil de comparaison tranche.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-19-exo-03",
+    id: "fr-19-exo-f2",
+    notion: "fr-19",
+    savoirFaire: ["images"],
+    difficulte: 1,
+    question:
+      "Quelle figure ?\n« Le vent hurlait dans la nuit. »",
+    reponseType:
+      "**personnification** : on attribue à une chose (« le vent ») un comportement humain (« hurler »).",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-f3",
+    notion: "fr-19",
+    savoirFaire: ["insistance", "attenuation"],
+    difficulte: 1,
+    question:
+      "Exagération (hyperbole) ou atténuation (litote) ?\na) « Je meurs de faim. »\nb) « Ce n'est pas mauvais. »",
+    reponseType:
+      "a) **hyperbole** (exagération : « mourir » pour « avoir très faim »).\nb) **litote** (on dit moins pour suggérer plus : « pas mauvais » = très bon).",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-f4",
+    notion: "fr-19",
+    savoirFaire: ["opposition"],
+    difficulte: 1,
+    question:
+      "Antithèse ou oxymore ?\na) « La vie et la mort se côtoient. »\nb) « un silence assourdissant »",
+    reponseType:
+      "a) **antithèse** (opposition de deux termes ou idées dans la phrase).\nb) **oxymore** (deux mots contradictoires accolés : silence + assourdissant).\nL'oxymore réunit l'inconciliable en un même groupe de mots.",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-f5",
     notion: "fr-19",
     savoirFaire: ["registres"],
     difficulte: 1,
-    question: "Indiquez le registre de langue, puis reformulez en registre courant :\na) « Je n'ai pu y consentir. » · b) « J'peux pas. » · c) « C'est nul. »",
-    reponseType: "**Explication :** on lit le registre de langue dans le vocabulaire et la syntaxe. a) tournure soignée (« je n'ai pu », « consentir ») → soutenu · b) élision relâchée et omission du « ne » → familier · c) terme et construction relâchés → familier.\n\na) **Réponse attendue :** soutenu → reformulation courante : « Je n'ai pas pu accepter. »\n\nb) **Réponse attendue :** familier → reformulation courante : « Je ne peux pas. »\n\nc) **Réponse attendue :** familier → reformulation courante : « Ce n'est pas satisfaisant. »",
+    question:
+      "Donnez le registre de langue :\na) « Je suis fort marri de votre absence. »\nb) « Je suis triste que tu ne sois pas là. »\nc) « Chui dég que tu sois pas v'nu. »",
+    reponseType:
+      "a) **soutenu**.\nb) **courant**.\nc) **familier**.\nLe registre de langue se repère au lexique et à la syntaxe.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-19-exo-04",
+    id: "fr-19-exo-f6",
     notion: "fr-19",
-    savoirFaire: ["images","attenuation"],
-    difficulte: 2,
-    enonce: "« Vivre, sans l'écriture, me va mal, comme un habit trop lâche dans lequel je m'empêtre. » (Lola Lafon)",
-    question: "Nommez la figure, expliquez son mécanisme et analysez son effet.",
-    reponseType: "**Explication (mécanisme) :** l'outil « comme » signale une comparaison (la vie sans écriture, comparé ; un habit trop lâche, comparant). Elle se double d'une litote (« me va mal », qui en dit moins que la réalité).\n\n**Réponse attendue (formulation modèle) :** « “comme un habit trop lâche” est une comparaison : la vie sans écriture est rapprochée d'un vêtement mal taillé au moyen de l'outil “comme”. L'image corporalise une sensation abstraite, et le verbe “m'empêtre” prolonge l'idée d'entrave physique : sans écriture, l'autrice ne tient pas dans sa propre vie. La litote “me va mal” suggère, par retenue, une véritable nécessité vitale. »",
+    savoirFaire: ["sonorites"],
+    difficulte: 1,
+    question:
+      "Quelle figure de sonorité, et quel effet ?\n« Pour qui sont ces serpents qui sifflent sur vos têtes ? » (Racine, *Andromaque*)",
+    reponseType:
+      "**allitération** en /s/ : la répétition de la consonne sifflante imite le sifflement des serpents (harmonie imitative). Le son épouse le sens.",
     explication: [],
   },
-  // TODO refonte exo
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
   {
-    id: "fr-19-exo-05",
+    id: "fr-19-exo-c1",
     notion: "fr-19",
     savoirFaire: ["images"],
     difficulte: 2,
-    enonce: "« ma route est une impasse / chemin sans destination / terres inconnues / à tâtons / trébucher » (Lola Lafon)",
-    question: "Identifiez et analysez la métaphore filée : domaine comparant, termes, effet global.",
-    reponseType: "**Explication (mécanisme) :** plusieurs termes appartiennent au même domaine comparant, le voyage (route, impasse, chemin sans destination, terres inconnues, à tâtons, trébucher) : l'image est développée sur tout le passage, c'est une métaphore filée. Le domaine comparé est l'acte d'écrire.\n\n**Réponse attendue (formulation modèle) :** « Le passage construit une métaphore filée du voyage désorienté : l'écriture est assimilée à un périple sans boussole (route, impasse, terres inconnues, à tâtons). La cohérence de l'image fait de l'écriture une errance volontaire et risquée ; l'accumulation des termes négatifs amplifie la désorientation tout en valorisant le courage de s'y engager. »",
+    question:
+      "Métonymie ou synecdoque ?\na) « boire un verre »\nb) « voici une voile à l'horizon »",
+    reponseType:
+      "a) **métonymie** : le contenant (« verre ») pour le contenu (la boisson).\nb) **synecdoque** : la partie (« voile ») pour le tout (le bateau).\nLa synecdoque est un cas particulier (partie / tout) ; la métonymie joue sur d'autres liens (contenant/contenu, cause/effet…).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-19-exo-06",
+    id: "fr-19-exo-c2",
+    notion: "fr-19",
+    savoirFaire: ["images"],
+    difficulte: 2,
+    question:
+      "Analysez la figure (nommez puis interprétez l'effet) :\n« Cette femme était une rose fanée. »",
+    reponseType:
+      "**métaphore** : « rose fanée » identifie la femme à une fleur passée (sans outil de comparaison). Effet : elle suggère la beauté qui se flétrit, la fragilité, le passage du temps, avec une connotation mélancolique. Nommer ne suffit pas : on interprète l'effet.",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-c3",
+    notion: "fr-19",
+    savoirFaire: ["images"],
+    difficulte: 2,
+    question:
+      "Métaphore simple ou filée ?\n« Sa vie était un long fleuve : elle serpentait, charriait des regrets et se jetait enfin dans l'oubli. »",
+    reponseType:
+      "**métaphore filée** : l'image du fleuve (« vie = fleuve ») est **prolongée** par plusieurs mots du même réseau (serpentait, charriait, se jetait). Une métaphore filée se développe sur plusieurs termes ; une métaphore simple tient en une seule expression.",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-c4",
+    notion: "fr-19",
+    savoirFaire: ["attenuation"],
+    difficulte: 2,
+    question:
+      "Litote ou euphémisme ?\na) « Il n'est plus tout jeune. »\nb) « Il nous a quittés. » (pour : il est mort)",
+    reponseType:
+      "a) **litote** : on dit moins (« plus tout jeune ») pour faire entendre plus (il est vieux) ; l'atténuation **renforce**.\nb) **euphémisme** : on adoucit une réalité pénible (la mort) par une expression voilée ; l'atténuation **ménage**.\nLa litote sous-entend plus fort ; l'euphémisme adoucit.",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-c5",
+    notion: "fr-19",
+    savoirFaire: ["insistance"],
+    difficulte: 2,
+    question:
+      "Nommez la figure d'insistance :\na) « Paris ! Paris outragé ! Paris brisé ! Paris martyrisé ! » (de Gaulle)\nb) « Va, cours, vole et nous venge ! » (Corneille, *Le Cid*)",
+    reponseType:
+      "a) **anaphore** (« Paris » répété en tête) + **gradation** (outragé < brisé < martyrisé).\nb) **gradation** (va < cours < vole : verbes d'intensité croissante).\nCes figures martèlent et amplifient le propos.",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-c6",
     notion: "fr-19",
     savoirFaire: ["registres"],
     difficulte: 2,
-    enonce: "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. » (passage de type récit réaliste)",
-    question: "Quel registre littéraire domine ? Identifiez deux procédés qui le construisent.",
-    reponseType: "**Explication :** la scène met en avant une figure féminine fragile et pressée ; elle est construite pour susciter la pitié, marque du registre pathétique. Deux procédés y concourent : l'accumulation de détails concrets (« tenant par la main », « yeux baissés », « pressée ») qui rendent la femme vulnérable et proche du lecteur, et la valeur symbolique de « la nuit », menace implicite vers laquelle se précipite la scène.\n\n**Réponse attendue (formulation modèle) :** « Le passage relève du registre pathétique : il suscite la pitié pour une figure féminine vulnérable. Cet effet repose sur l'accumulation de détails réalistes (“tenant par la main”, “yeux baissés”, “pressée”), qui humanisent le personnage, et sur la connotation menaçante de “la nuit”, qui fait peser une inquiétude sur la scène. »",
+    question:
+      "Distinguez le registre de langue et le registre littéraire :\n« Hélas ! tout est perdu, je suis anéanti ! »",
+    reponseType:
+      "**Registre de langue** : soutenu (« Hélas », « anéanti »).\n**Registre littéraire** : **pathétique / tragique** (l'expression d'une douleur extrême, qui cherche à émouvoir).\nLe registre de langue concerne le niveau de langue ; le registre littéraire, le ton et l'émotion visée.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-19-exo-07",
+    id: "fr-19-exo-c7",
+    notion: "fr-19",
+    savoirFaire: ["registres"],
+    difficulte: 2,
+    question:
+      "Donnez le registre littéraire :\na) « Ô rage ! ô désespoir ! » (Corneille, *Le Cid*)\nb) « Ô temps, suspends ton vol ! » (Lamartine, *Le Lac*)\nc) une scène de quiproquo où chacun se trompe de porte",
+    reponseType:
+      "a) **tragique / pathétique** (douleur, désespoir).\nb) **lyrique** (expression du sentiment personnel, ici la fuite du temps).\nc) **comique** (le quiproquo provoque le rire).",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-c8",
+    notion: "fr-19",
+    savoirFaire: ["images"],
+    difficulte: 2,
+    question:
+      "Nommez la figure et analysez l'effet :\n« La nature pleurait la mort du poète. »",
+    reponseType:
+      "**personnification** : la nature reçoit un sentiment humain (« pleurer »). Effet : elle associe l'univers entier au deuil, amplifie l'émotion et donne une dimension cosmique à la perte. On interprète l'effet, on ne se contente pas de nommer.",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-c9",
+    notion: "fr-19",
+    savoirFaire: ["opposition"],
+    difficulte: 2,
+    question:
+      "Nommez la figure d'opposition :\na) « Je vis, je meurs ; je me brûle et me noie. » (Louise Labé)\nb) « cette obscure clarté » (Corneille, *Le Cid*)",
+    reponseType:
+      "a) **antithèses** (vivre / mourir, brûler / noyer) : des oppositions réparties dans le vers.\nb) **oxymore** (« obscure » + « clarté » : deux mots contradictoires soudés).\nAntithèse = opposition à distance dans la phrase ; oxymore = contradiction réunie en un même groupe.",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-c10",
+    notion: "fr-19",
+    savoirFaire: ["sonorites"],
+    difficulte: 2,
+    question:
+      "Quelle figure de sonorité, et quel effet ?\na) « Les souffles de la nuit flottaient sur Galgala. » (Hugo, *Booz endormi*)\nb) « Tout m'afflige et me nuit, et conspire à me nuire. » (Racine, *Phèdre*)",
+    reponseType:
+      "a) **allitération** en /f/ et /l/ : des consonnes douces qui miment le souffle léger de la nuit.\nb) **assonance** en /i/ : la voyelle aiguë, répétée, traduit la plainte et l'oppression.\nLes sonorités créent une harmonie imitative au service du sens.",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-19-exo-e1",
     notion: "fr-19",
     savoirFaire: ["images"],
     difficulte: 3,
-    enonce: "« la langue n'est pas un objet inerte dont on se saisit et qu'on plie à sa volonté. C'est elle qui nous transforme. » (Lola Lafon)",
-    question: "Identifiez la personnification et l'antithèse, et analysez leur effet combiné.",
-    reponseType: "**Explication (mécanismes) :** la langue « nous transforme » : une abstraction reçoit une action de sujet humain, c'est une personnification. Par ailleurs, « on se saisit / on plie à sa volonté » (domination de l'humain) s'oppose à « c'est elle qui nous transforme » (domination de la langue) : ces deux groupes contraires forment une antithèse.\n\n**Réponse attendue (formulation modèle) :** « La phrase combine une personnification (la langue “nous transforme”, elle devient un sujet agissant) et une antithèse opposant la maîtrise humaine (“on se saisit”, “on plie à sa volonté”) à la puissance de la langue (“c'est elle qui nous transforme”). Le renversement du rapport de force porte la thèse de l'autrice : écrire, ce n'est pas maîtriser les mots, c'est se laisser transformer par eux. »",
+    question:
+      "Nommez précisément la figure :\na) « Il a lu tout Zola. »\nb) « Une mer de têtes. »\nc) « Cinquante voiles entrèrent au port. »",
+    reponseType:
+      "a) **métonymie** : l'auteur (« Zola ») pour son œuvre.\nb) **métaphore** : la foule assimilée à une « mer » (par ressemblance).\nc) **synecdoque** : « voiles » (la partie) pour les navires (le tout).\nTrois mécanismes : substitution par contiguïté (métonymie), par ressemblance (métaphore), par inclusion partie/tout (synecdoque).",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : distinguer métonymie, synecdoque et métaphore (au lieu de dire vaguement « image ») est exactement ce que le jury attend.",
+      },
+    ],
+  },
+  {
+    id: "fr-19-exo-e2",
+    notion: "fr-19",
+    savoirFaire: ["attenuation"],
+    difficulte: 3,
+    question:
+      "Analysez finement l'atténuation :\n« Va, je ne te hais point. » (Corneille, *Le Cid*)",
+    reponseType:
+      "**litote** (l'exemple canonique) : « je ne te hais point » dit le minimum (l'absence de haine) pour faire entendre le maximum (Chimène aime toujours Rodrigue). Par la double négation, l'atténuation **renforce** l'aveu au lieu de l'affaiblir : dire moins pour signifier beaucoup plus.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-19-exo-08",
+    id: "fr-19-exo-e3",
     notion: "fr-19",
-    savoirFaire: ["images"],
+    savoirFaire: ["opposition"],
     difficulte: 3,
-    enonce: "« Ces énormes vagues, mousseuses d'une écume verte, semblaient s'avancer vers le hameau. Le grondement d'océan du vent dans les montagnes. La cour : île protégée des tempêtes. » (passage de type récit contemporain)",
-    question: "Identifiez la métaphore filée et analysez son effet d'ensemble.",
-    reponseType: "**Explication (mécanisme) :** plusieurs termes relèvent du même domaine comparant, la mer (vagues, écume verte, grondement d'océan, île, tempêtes), alors que le comparé est le paysage de montagne et le hameau. L'image, développée sur tout le passage, est une métaphore filée maritime.\n\n**Réponse attendue (formulation modèle) :** « Le passage construit une métaphore filée maritime : les montagnes et le vent sont assimilés à une mer démontée (vagues, écume verte, grondement d'océan, tempêtes). La cour, désignée comme une “île protégée”, devient un refuge isolé au milieu de forces hostiles et gigantesques ; les “vagues” qui “s'avancent” donnent à la nature une dimension menaçante et annoncent les bouleversements à venir. »",
+    question:
+      "Analysez l'oxymore et son sens :\n« Cette obscure clarté qui tombe des étoiles. » (Corneille, *Le Cid*)",
+    reponseType:
+      "**oxymore** : « obscure clarté » réunit deux termes contradictoires (l'obscurité et la lumière). Sens : il rend la **lueur faible** des étoiles dans la nuit, une clarté qui n'éclaire pas vraiment. L'alliance des contraires traduit une réalité paradoxale (on devine sans bien voir, pendant la bataille nocturne).",
+    explication: [],
+  },
+  {
+    id: "fr-19-exo-e4",
+    notion: "fr-19",
+    savoirFaire: ["registres"],
+    difficulte: 3,
+    question:
+      "Quel effet produit le mélange des registres ?\n« Le héros, terrassé, glorieux, expira… puis se cassa la figure dans l'escalier. »",
+    reponseType:
+      "Mélange du registre **épique / tragique** (héros, terrassé, glorieux, expira) et du registre **familier** (« se cassa la figure »). Le décalage produit un effet **comique / parodique** (burlesque) : le trivial rabaisse brutalement le sublime. Le contraste de registres est lui-même une ressource expressive.",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : repérer un changement de registre et nommer l'effet (ici le burlesque) vaut mieux que d'attribuer au texte un registre unique.",
+      },
+    ],
+  },
+  {
+    id: "fr-19-exo-e5",
+    notion: "fr-19",
+    savoirFaire: ["opposition", "registres"],
+    difficulte: 3,
+    question:
+      "Faites l'analyse complète (repérer, nommer, expliquer, interpréter) :\n« Le soleil noir de la Mélancolie. » (Nerval, *El Desdichado*)",
+    reponseType:
+      "1. **Repérer** : « soleil noir ».\n2. **Nommer** : **oxymore** (soleil = lumière, noir = absence de lumière).\n3. **Expliquer** : il associe l'astre lumineux à l'obscurité.\n4. **Interpréter** : il dit une lumière qui n'éclaire pas, le paradoxe d'une mélancolie à la fois éclatante et ténébreuse ; registre **lyrique** et pathétique.\nL'analyse vaut par l'interprétation, jamais par la seule étiquette.",
     explication: [],
   },
 ];

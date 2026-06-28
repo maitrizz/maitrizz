@@ -1,94 +1,259 @@
 // Banque d'exercices OUVERTS, notion 17 « La formation des mots ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : faux amis
+// morphologiques, composés hybrides grec/latin, -able actif/passif, radical
+// populaire vs savant, néologie productive).
+// 6 savoir-faire : radical/famille · préfixation · suffixation · composition
+// · dérivation · étymologie.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_FORMATION_DES_MOTS: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-17-exo-01",
+    id: "fr-17-exo-f1",
     notion: "fr-17",
-    savoirFaire: ["suffixation","composition"],
+    savoirFaire: ["derivation"],
     difficulte: 1,
-    question: "Mot simple ou construit ? Si construit, nommez le procédé :\nrelire · sol · portefeuille · impossible · arc-en-ciel · surnaturel",
-    reponseType: "**Méthode :** on teste l'autonomie de chaque élément. Tous les éléments existent seuls → composition ; un élément non autonome (préfixe, suffixe) → dérivation.\n\n**Réponse attendue :** *sol* est un mot simple. *relire* (re- + lire), *impossible* (im- + possible) et *surnaturel* (sur- + naturel) sont construits par **dérivation préfixale** ; *portefeuille* et *arc-en-ciel* par **composition populaire**.",
+    question:
+      "Mot simple ou mot construit ?\na) « chat »\nb) « inclassable »\nc) « table »",
+    reponseType:
+      "a) **simple** (un seul radical, aucun affixe).\nb) **construit** (in- + class- + -able : préfixe + radical + suffixe).\nc) **simple**.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-17-exo-02",
+    id: "fr-17-exo-f2",
     notion: "fr-17",
-    savoirFaire: ["radical-famille","suffixation"],
+    savoirFaire: ["derivation", "prefixation", "suffixation"],
     difficulte: 1,
-    question: "a) Identifiez le préfixe et son sens : décomposer · surnaturel · prénatal · transporter.\nb) Identifiez le suffixe et la classe produite : formation · lentement · portable · liberté.",
-    reponseType: "**Méthode :** le préfixe se place avant le radical et conserve la classe ; le suffixe se place après et peut la changer.\n\na) **Réponse attendue :** dé- (action inverse) · sur- (au-delà) · pré- (antériorité) · trans- (à travers).\n\nb) -tion → nom · -ment → adverbe · -able → adjectif · -té → nom.",
+    question:
+      "Décomposez en préfixe / radical / suffixe :\na) « refaire »\nb) « dénaturé »",
+    reponseType:
+      "a) « refaire » = **re-** (préfixe) + **faire** (radical).\nb) « dénaturé » = **dé-** (préfixe) + **natur-** (radical) + **-é** (suffixe).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-17-exo-03",
+    id: "fr-17-exo-f3",
     notion: "fr-17",
     savoirFaire: ["radical-famille"],
     difficulte: 1,
-    question: "Donnez l'allomorphe et la règle :\nindécis · impossible · illégal · irrégulier",
-    reponseType: "**Règle :** le préfixe négatif s'assimile à la consonne initiale du radical : b/m/p → im-, l → il-, r → ir-, sinon in-.\n\n**Réponse attendue :** in- (indécis : consonne ordinaire) · im- (impossible : devant p) · il- (illégal : devant l) · ir- (irrégulier : devant r).",
+    question:
+      "Quel est le radical commun ?\n« terre, terrien, atterrir, enterrer »",
+    reponseType:
+      "Radical **terr-** (de « terre »). Ces mots forment une **famille** : même radical, sens apparentés.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-17-exo-04",
+    id: "fr-17-exo-f4",
+    notion: "fr-17",
+    savoirFaire: ["prefixation"],
+    difficulte: 1,
+    question:
+      "Donnez le sens du préfixe :\na) « relire » (re-)\nb) « impossible » (im-)\nc) « antivol » (anti-)",
+    reponseType:
+      "a) **re-** = répétition.\nb) **im-** = négation (allomorphe de in-).\nc) **anti-** = opposition / contre.",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-f5",
+    notion: "fr-17",
+    savoirFaire: ["suffixation"],
+    difficulte: 1,
+    question:
+      "Quelle classe le suffixe produit-il ?\na) « lentement » (-ment)\nb) « rougir » (-ir)\nc) « beauté » (-té)",
+    reponseType:
+      "a) -ment forme un **adverbe**.\nb) -ir forme un **verbe**.\nc) -té forme un **nom** (abstrait).\nLe suffixe peut changer la classe grammaticale du mot.",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-f6",
+    notion: "fr-17",
+    savoirFaire: ["composition"],
+    difficulte: 1,
+    question:
+      "Ces mots sont-ils composés ? Comment ?\na) « porte-manteau »\nb) « pomme de terre »",
+    reponseType:
+      "a) oui : **composition** (porte + manteau, reliés par un trait d'union).\nb) oui : composition (groupe figé « pomme de terre »).\nPlusieurs mots autonomes forment une seule unité de sens.",
+    explication: [],
+  },
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
+  {
+    id: "fr-17-exo-c1",
+    notion: "fr-17",
+    savoirFaire: ["derivation", "prefixation", "suffixation"],
+    difficulte: 2,
+    question:
+      "Analysez la formation de « inclassable ».",
+    reponseType:
+      "« inclassable » = **in-** (préfixe, négation) + **class-** (radical de « classer ») + **-able** (suffixe, « qui peut être »). Mot construit par **dérivation** (préfixe + suffixe sur un radical), de sens « qui ne peut pas être classé ».",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c2",
+    notion: "fr-17",
+    savoirFaire: ["derivation", "composition"],
+    difficulte: 2,
+    question:
+      "**Dérivation ou composition** ? Justifiez :\na) « inacceptable »\nb) « lave-vaisselle »\nc) « décollage »",
+    reponseType:
+      "a) **dérivation** (in- + accept- + -able : des affixes sur un radical).\nb) **composition** (lave + vaisselle : deux mots autonomes assemblés).\nc) **dérivation** (dé- + coll- + -age).\nLa dérivation ajoute des affixes à un radical ; la composition assemble des mots (ou des racines) autonomes.",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c3",
+    notion: "fr-17",
+    savoirFaire: ["composition", "etymologie"],
+    difficulte: 2,
+    question:
+      "Décomposez et donnez le sens (racines savantes) :\na) « thermomètre »\nb) « démocratie »",
+    reponseType:
+      "a) **thermo-** (grec « chaleur ») + **-mètre** (grec « mesure ») = appareil qui mesure la chaleur.\nb) **démo-** (grec « peuple ») + **-cratie** (grec « pouvoir ») = pouvoir du peuple.\nC'est de la **composition savante** (racines grecques).",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c4",
+    notion: "fr-17",
+    savoirFaire: ["prefixation"],
+    difficulte: 2,
+    question:
+      "Justifiez la forme du préfixe de négation in- :\na) « impossible »\nb) « illégal »\nc) « irréel »\nd) « inactif »",
+    reponseType:
+      "Le préfixe in- s'assimile à la consonne suivante :\n- **im-** devant p, b, m (impossible) ;\n- **il-** devant l (illégal) ;\n- **ir-** devant r (irréel) ;\n- **in-** ailleurs (inactif).\nCe sont des **allomorphes** d'un même préfixe.",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c5",
     notion: "fr-17",
     savoirFaire: ["suffixation"],
     difficulte: 2,
-    question: "Analysez la formation et indiquez si la classe change :\nraisonnement · lentement · liberté · lecteur · portable",
-    reponseType: "raisonnement : raisonner + -ment → nom (verbe → nom) · lentement : lente + -ment → adverbe (adjectif → adverbe) · liberté : libre + -té → nom (adjectif → nom) · lecteur : lire + -eur → nom (verbe → nom) · portable : porter + -able → adjectif (verbe → adjectif).\n\n**Réponse attendue :** dans les cinq cas le suffixe change la classe : *raisonnement* → nom, *lentement* → adverbe, *liberté* → nom, *lecteur* → nom, *portable* → adjectif.",
+    question:
+      "« -ment » : suffixe d'adverbe ou de nom ?\na) « rapidement »\nb) « aboiement »",
+    reponseType:
+      "a) « rapidement » : suffixe **adverbial** (formé sur l'adjectif « rapide »).\nb) « aboiement » : suffixe **nominal** (forme un nom d'action sur le verbe « aboyer »).\nLe même suffixe -ment a donc deux valeurs distinctes : c'est un piège classique.",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c6",
+    notion: "fr-17",
+    savoirFaire: ["radical-famille"],
+    difficulte: 2,
+    question:
+      "Pour « mer », distinguez sa famille de mots et un champ lexical.",
+    reponseType:
+      "- **Famille de mots** (même radical mer- / mar-) : marin, maritime, marée, amerrir, outre-mer.\n- **Champ lexical** de la mer (mots liés par le sens, radicaux différents) : vague, océan, plage, bateau, écume.\nLa famille relève de la morphologie (le radical) ; le champ lexical, de la sémantique (le thème).",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c7",
+    notion: "fr-17",
+    savoirFaire: ["composition"],
+    difficulte: 2,
+    question:
+      "Nommez le procédé de formation :\na) « vélo »\nb) « SNCF »\nc) « franglais »\nd) « resto »",
+    reponseType:
+      "a) « vélo » : **abrègement / troncation** (de « vélocipède »).\nb) « SNCF » : **siglaison**.\nc) « franglais » : **mot-valise** (français + anglais).\nd) « resto » : **troncation** (de « restaurant »).\nCe sont des procédés modernes de formation, à côté de la dérivation et de la composition.",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c8",
+    notion: "fr-17",
+    savoirFaire: ["etymologie"],
+    difficulte: 2,
+    question:
+      "Ces deux mots viennent du même étymon latin. Lequel, et pourquoi diffèrent-ils ?\n« frêle » et « fragile »",
+    reponseType:
+      "Tous deux viennent du latin *fragilis*. « frêle » est issu de la voie **populaire** (évolution orale, transformation progressive) ; « fragile » de la voie **savante** (emprunt direct au latin écrit). Ce sont des **doublets** (mêmes que hôtel / hôpital, écouter / ausculter).",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c9",
+    notion: "fr-17",
+    savoirFaire: ["derivation", "suffixation"],
+    difficulte: 2,
+    question:
+      "À partir du radical « port- » (porter), formez quatre dérivés de classes différentes et nommez la classe.",
+    reponseType:
+      "Par exemple : **porteur** (nom, -eur), **portable** (adjectif, -able), **portage** (nom, -age), **transporter** (verbe, préfixe trans-). La dérivation permet d'enrichir une famille en variant les classes grammaticales.",
+    explication: [],
+  },
+  {
+    id: "fr-17-exo-c10",
+    notion: "fr-17",
+    savoirFaire: ["derivation", "prefixation"],
+    difficulte: 2,
+    question:
+      "Le préfixe « dé- » a-t-il le même sens partout ?\na) « défaire »\nb) « déborder »\nc) « déguster »",
+    reponseType:
+      "a) « défaire » : dé- = **action inverse** (sens négatif).\nb) « déborder » : dé- = **hors de** (sortir du bord).\nc) « déguster » : dé- est ici **intensif**, non négatif (déguster ≠ « ne pas goûter »).\nLe sens d'un préfixe dépend du mot : il faut le vérifier dans le contexte, pas le plaquer.",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-17-exo-e1",
+    notion: "fr-17",
+    savoirFaire: ["etymologie", "radical-famille"],
+    difficulte: 3,
+    question:
+      "Ces mots se ressemblent, mais sont-ils de la même famille ?\na) « dent » et « dentier »\nb) « dent » et « accident »",
+    reponseType:
+      "a) **oui** : même famille (radical dent-, sens lié : dentier, dentaire, édenté).\nb) **non** : « accident » vient du latin *cadere* (« tomber ») et n'a aucun lien avec « dent » malgré la ressemblance graphique. C'est un **faux ami morphologique** : la ressemblance de forme ne prouve pas la parenté étymologique.",
     explication: [
-      { type: "note", text: "💡 Le suffixe change ici toujours la classe ; le préfixe, lui, la conserve." },
+      {
+        type: "note",
+        text: "Côté correcteur : pour prouver une famille, le critère est double : radical commun ET sens apparenté. La seule ressemblance de lettres ne suffit pas.",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-17-exo-05",
+    id: "fr-17-exo-e2",
     notion: "fr-17",
-    savoirFaire: ["radical-famille","suffixation"],
-    difficulte: 2,
-    enonce: "« Vivre, sans l'écriture, me va mal. » (Lola Lafon, Quand tu écouteras cette chanson)",
-    question: "Analysez la formation de « écriture » et expliquez son sens. Donnez trois mots de la même famille.",
-    reponseType: "**Analyse :** suffixation, radical **écrit-** (verbe écrire) + suffixe **-ure** (résultat, procédé). Classe : verbe → nom. « Écriture » désigne l'acte d'écrire et son résultat ; le contexte en fait un mode d'être indispensable.\n\nFamille : écrire, écrivain, écrit, réécriture.\n\n**Réponse attendue :** « *Écriture* est formé par **suffixation** : le radical *écrit-* (du verbe écrire) reçoit le suffixe *-ure*, qui marque le résultat et transforme le verbe en nom. Le mot désigne l'acte d'écrire et son résultat ; dans la phrase, il devient une condition vitale de l'existence. Mots de la même famille : *écrire*, *écrivain*, *réécriture*. »",
+    savoirFaire: ["composition", "etymologie"],
+    difficulte: 3,
+    question:
+      "Analysez la formation et signalez l'anomalie :\na) « télévision »\nb) « automobile »",
+    reponseType:
+      "a) « télévision » = télé- (grec « loin ») + vision (latin « vue ») : composé **hybride** (grec + latin).\nb) « automobile » = auto- (grec « soi-même ») + mobile (latin « qui se meut ») : hybride également.\nCes formations savantes mêlent les deux origines, ce que les puristes ont longtemps critiqué.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-17-exo-06",
+    id: "fr-17-exo-e3",
     notion: "fr-17",
-    savoirFaire: ["radical-famille"],
-    difficulte: 2,
-    question: "Pour le thème de l'écriture, donnez 4 mots de la même famille et 4 mots du champ lexical, puis expliquez la différence.",
-    reponseType: "**Famille** (même radical) : écrire, écriture, écrivain, réécriture.\n\n**Champ lexical** (même thème) : plume, encre, page, roman.\n\n**Explication :** la famille repose sur la morphologie (un radical commun), le champ lexical sur le sens (un thème commun). « écriture » appartient aux deux ; « plume » au champ lexical seulement.\n\n**Réponse attendue :** « Quatre mots de la même **famille** que *écriture* (radical *écri-*) : *écrire*, *écrivain*, *réécriture*, *écriteau*. Quatre mots du **champ lexical** de l'écriture (même thème) : *plume*, *encre*, *page*, *roman*. La famille se définit par la forme, le champ lexical par le sens. »",
+    savoirFaire: ["suffixation"],
+    difficulte: 3,
+    question:
+      "Le suffixe « -able » a-t-il le même sens ?\na) « lavable »\nb) « secourable »\nc) « périssable »",
+    reponseType:
+      "a) « lavable » : sens **passif** (« qui peut être lavé »).\nb) « secourable » : sens **actif** (« qui porte secours »).\nc) « périssable » : sens **actif / moyen** (« qui peut périr »).\nLe suffixe -able, le plus souvent passif, prend parfois une valeur active selon le verbe support.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-17-exo-07",
+    id: "fr-17-exo-e4",
     notion: "fr-17",
     savoirFaire: ["radical-famille"],
     difficulte: 3,
-    enonce: "« Il avait grandi dans la déraison des enfances paysannes. » (d'après Jean-Paul Sartre, Les Mots)",
-    question: "Analysez la formation de « déraison » pour en expliquer le sens, et donnez quatre mots de la même famille.",
-    reponseType: "**Analyse :** dérivation préfixale à partir du nom « raison ». Le préfixe **dé-** a une valeur privative (absence, opposé). Classe conservée : nom → nom. « Déraison » = absence de raison, manque de discernement ; dans le texte, le terme désigne l'état de ceux privés d'accès à la culture lettrée.\n\nFamille : raison, raisonnement, raisonnable, déraisonnable.\n\n**Réponse attendue :** « *Déraison* est formé par **dérivation préfixale** : le préfixe privatif *dé-* s'ajoute au nom *raison*, sans changer la classe (nom → nom). Le mot signifie *l'absence de raison, le manque de discernement* ; dans le texte, il qualifie ceux qui sont privés d'accès à la culture lettrée. Mots de la même famille : *raison*, *raisonnement*, *raisonnable*, *déraisonnable*. »",
-    explication: [],
+    question:
+      "Le radical varie dans cette famille. Relevez ses formes :\n« main, manuel, manier, manuscrit, manœuvre »",
+    reponseType:
+      "Le radical apparaît sous deux formes : **main** (forme populaire) et **man(u)-** (forme savante, du latin *manus*) dans manuel, manier, manuscrit, manœuvre. Une même famille peut donc avoir un radical **populaire** et un radical **savant** (allomorphes du radical).",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : signaler la double forme (populaire / savante) d'un radical (main ~ man-, eau ~ aqua-, œil ~ ocul-) est un raffinement valorisé.",
+      },
+    ],
   },
-  // TODO refonte exo
   {
-    id: "fr-17-exo-08",
+    id: "fr-17-exo-e5",
     notion: "fr-17",
-    savoirFaire: ["radical-famille","suffixation"],
+    savoirFaire: ["composition", "suffixation"],
     difficulte: 3,
-    enonce: "« Camille travaille le bois brut, trop sinueux, avec une dégauchisseuse. »",
-    question: "« dégauchisseuse » n'est pas courant. Montrez comment l'analyse morphologique et le contexte permettent d'en inférer le sens.",
-    reponseType: "**Analyse :** dérivation, préfixe **dé-** (action corrective) + radical **gauch-** (gauchir : être tordu, sinueux) + suffixe **-euse** (nom d'outil, comme perceuse). L'analyse suggère un outil qui « dégauchit », qui redresse ce qui est tordu.\n\nLe contexte confirme : le bois est « sinueux » et l'outil sert à le travailler.\n\n**Réponse attendue :** « En décomposant *dé-* (action corrective) + *gauch-* (gauchir, être tordu) + *-euse* (nom d'outil), j'infère qu'une *dégauchisseuse* est un outil qui redresse le bois tordu. Le contexte le confirme : le bois est *sinueux* et l'outil sert à le travailler. »",
+    question:
+      "Quel procédé crée ces mots récents, et est-il encore productif ?\n« covoiturage », « télétravail », « ubériser »",
+    reponseType:
+      "- « covoiturage » : **dérivation** (co- + voiture + -age).\n- « télétravail » : **composition savante** (télé- + travail).\n- « ubériser » : **dérivation** sur un nom propre (Uber + -iser, verbe).\nCes créations montrent que les procédés (préfixation, suffixation, composition) restent **productifs** : la langue continue de fabriquer des mots par les mêmes mécanismes.",
     explication: [],
   },
 ];
