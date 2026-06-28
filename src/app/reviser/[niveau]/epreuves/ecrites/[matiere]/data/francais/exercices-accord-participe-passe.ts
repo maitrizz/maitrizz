@@ -1,105 +1,263 @@
 // Banque d'exercices OUVERTS, notion 12 « L'accord du participe passé ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà = les cas « hors
+// attendus » du cours : perception + infinitif, pronominaux dont « se » est toujours
+// COI, COD de mesure, neutre « l' », COD antéposé d'un pronominal).
+// 4 savoir-faire : avec être · avec avoir (COD avant) · pronominaux · cas particuliers.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_ACCORD_PARTICIPE_PASSE: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-12-exo-01",
+    id: "fr-12-exo-f1",
     notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux"],
+    savoirFaire: ["etre"],
     difficulte: 1,
-    question: "Choisissez la forme correcte et justifiez (auxiliaire + règle) :\na) « Elle est (parti / partie) en voyage. »   b) « Il a (dormi / dormie) longtemps. »   c) « Les lettres qu'il a (envoyé / envoyées). »   d) « Nous les avons (vu / vus). » (les = masculin pluriel)   e) « Elle a (monté / montée) les valises. »",
-    reponseType: "a) **partie** : auxiliaire être → accord avec le sujet « elle » (féminin singulier).\n\nb) **dormi** : auxiliaire avoir, verbe intransitif, pas de COD → invariable.\n\nc) **envoyées** : auxiliaire avoir, « que » = COD antéposé, antécédent « lettres » (féminin pluriel) → accord.\n\nd) **vus** : auxiliaire avoir, « les » = COD antéposé (masculin pluriel) → accord.\n\ne) **monté** : auxiliaire avoir (monter transitif), COD « les valises » placé après → invariable.",
+    question:
+      "Accordez le participe passé :\na) « Elle est (parti). »\nb) « Les fleurs sont (fané). »",
+    reponseType:
+      "a) « **partie** » (accord avec le sujet « elle », féminin singulier).\nb) « **fanées** » (accord avec « fleurs », féminin pluriel).\nAvec l'auxiliaire **être**, le participe passé s'accorde avec le sujet.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-12-exo-02",
+    id: "fr-12-exo-f2",
     notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux"],
+    savoirFaire: ["avoir-cod-avant"],
     difficulte: 1,
-    question: "Appliquez le test -ir à chaque forme soulignée :\na) « Il faut <u>manger</u> des légumes. »   b) « Le repas <u>terminé</u>, ils sortirent. »   c) « Je l'ai entendu <u>chanter</u>. »   d) « Elle a <u>regardé</u> le film. »   e) « Il est allé <u>chercher</u> du pain. »",
-    reponseType: "a) **infinitif** : « Il faut choisir » ✓ → manger.\n\nb) **participe passé** : « Le repas choisi… » ✓ → terminé, accordé avec « repas » (masculin singulier).\n\nc) **infinitif** : « Je l'ai entendu choisir » ✓ → chanter (subordonnée infinitive).\n\nd) **participe passé** : « Elle a choisi » ✓ → regardé, COD « le film » après → invariable.\n\ne) **infinitif** : « Il est allé choisir » ✓ → chercher.",
+    question:
+      "Accordez le participe passé :\na) « Elles ont (mangé). »\nb) « Elle a (pris) une pomme. »",
+    reponseType:
+      "a) « **mangé** » (invariable : aucun COD).\nb) « **pris** » (invariable : le COD « une pomme » est placé après le verbe).\nAvec **avoir**, pas d'accord si le COD est absent ou placé après.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-12-exo-03",
+    id: "fr-12-exo-f3",
     notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux"],
+    savoirFaire: ["avoir-cod-avant"],
     difficulte: 1,
-    question: "Vrai ou faux, justifiez :\na) Avec le pronom « en », le PP s'accorde avec le COD antéposé.\nb) Les verbes essentiellement pronominaux s'accordent avec le sujet.\nc) « Ils se sont souri » → « souri » est invariable.\nd) « les livres que j'ai lus » → « lus » s'accorde avec « livres ».",
-    reponseType: "a) **Faux** : avec le pronom « en », le participe passé reste invariable : « J'en ai mangé ».\n\nb) **Vrai** : s'enfuir, se souvenir, se méfier… s'accordent avec le sujet.\n\nc) **Vrai** : « sourire à » → « se » est COI → PP invariable.\n\nd) **Vrai** : « que » = COD antéposé, antécédent « livres » (masculin pluriel) → lus.",
+    question:
+      "Accordez le participe passé :\na) « La pomme que j'ai (mangé). »\nb) « Les lettres, je les ai (écrit). »",
+    reponseType:
+      "a) « **mangée** » (le COD « que » = « la pomme » est placé avant → accord féminin singulier).\nb) « **écrites** » (le COD « les » = « les lettres » est avant → accord féminin pluriel).\nAvec **avoir**, le PP s'accorde avec le COD quand celui-ci précède.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-12-exo-04",
+    id: "fr-12-exo-f4",
     notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux","cas-particuliers"],
+    savoirFaire: ["cas-particuliers"],
+    difficulte: 1,
+    question:
+      "« -er » ou « -é » ? Justifiez par le test (mordre / mordu) :\na) « Il faut (travailler). »\nb) « Il a (travaillé). »",
+    reponseType:
+      "a) « **travailler** » (infinitif : « il faut *mordre* » fonctionne).\nb) « **travaillé** » (participe : « il a *mordu* »).\nLe remplacement par un verbe du 3e groupe (mordre / mordu) tranche entre l'infinitif et le participe.",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-f5",
+    notion: "fr-12",
+    savoirFaire: ["cas-particuliers"],
+    difficulte: 1,
+    question:
+      "Accordez le participe passé employé seul :\na) « une lettre (signé) »\nb) « (Étonné), elles se turent. »",
+    reponseType:
+      "a) « **signée** » (épithète du nom « lettre »).\nb) « **Étonnées** » (épithète détachée, accord avec « elles »).\nEmployé seul (sans auxiliaire), le participe passé s'accorde comme un adjectif.",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-f6",
+    notion: "fr-12",
+    savoirFaire: ["pronominaux"],
+    difficulte: 1,
+    question:
+      "Accordez le participe passé :\na) « Elle s'est (lavé). »\nb) « Ils se sont (rencontré). »",
+    reponseType:
+      "a) « **lavée** » (« se » = COD, accord avec le sujet).\nb) « **rencontrés** » (« se » = COD réciproque, accord avec le sujet pluriel).\nQuand « se » est COD, le participe passé s'accorde.",
+    explication: [],
+  },
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
+  {
+    id: "fr-12-exo-c1",
+    notion: "fr-12",
+    savoirFaire: ["avoir-cod-avant"],
     difficulte: 2,
-    question: "Accordez correctement et justifiez :\na) « Des efforts, il en a (fait / faits). »   b) « Combien de pages as-tu (lu / lues) ? »   c) « Quelle décision a-t-il (pris / prise) ? »   d) « Des erreurs ? Elle en a (commis / commises). »",
-    reponseType: "a) **fait** : avec le pronom « en », le participe passé reste invariable.\n\nb) **lues** : « combien de pages » = COD antéposé (féminin pluriel) → accord.\n\nc) **prise** : « quelle décision » = COD antéposé (féminin singulier) → accord.\n\nd) **commis** : avec le pronom « en », le participe passé reste invariable, même si le nom repris est féminin pluriel.",
+    question:
+      "**Justifiez l'accord par une manipulation** (trouvez le COD et sa place) :\n« Les efforts que vous avez (fourni). »",
+    reponseType:
+      "« **fournis** ». Manipulation : « avez fourni *quoi* ? » → « que » = « les efforts », placé **avant** le verbe → accord au masculin pluriel. Avec **avoir**, le PP s'accorde avec le COD seulement s'il précède le verbe.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-12-exo-05",
+    id: "fr-12-exo-c2",
     notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux"],
+    savoirFaire: ["pronominaux"],
     difficulte: 2,
-    enonce: "« Les photos qu'elle avait prises montraient les enfants qu'elle avait photographiés dans la cour. »",
-    question: "Pour « prises » et « photographiés », identifiez le COD antéposé (nature, antécédent, genre, nombre) et justifiez l'accord.",
-    reponseType: "**prises** : « que » = pronom relatif COD antéposé, antécédent « photos » (féminin pluriel) → prises. Justification : « prises » s'accorde avec l'antécédent du pronom relatif « que », « photos », COD placé avant l'auxiliaire avoir.\n\n**photographiés** : « que » = pronom relatif COD antéposé, antécédent « enfants » (masculin pluriel) → photographiés.",
+    question:
+      "Accordez et justifiez le rôle de « se » :\na) « Elle s'est (lavé) les mains. »\nb) « Ils se sont (parlé). »",
+    reponseType:
+      "a) « **lavé** » (invariable) : « se » est **COI** (elle lave les mains *à elle-même*) ; le COD « les mains » est placé après.\nb) « **parlé** » (invariable) : « se » est **COI** (on parle *à* quelqu'un).\nQuand « se » est COI, le participe passé ne s'accorde pas.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-12-exo-06",
+    id: "fr-12-exo-c3",
     notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux"],
+    savoirFaire: ["etre", "avoir-cod-avant"],
     difficulte: 2,
-    question: "Identifiez le rôle du pronom « se » (COD / COI / non analysable) et accordez :\na) « Elle s'est (laver). »   b) « Elle s'est (laver) les mains. »   c) « Ils se sont (téléphoner). »   d) « Elles se sont (souvenir). »   e) « Ils se sont (regarder). »",
-    reponseType: "a) **lavée** : « se » = COD → accord avec le sujet « elle » (féminin singulier).\n\nb) **lavé** : « se » = COI, COD « les mains » après → invariable.\n\nc) **téléphoné** : « téléphoner à » → « se » = COI → invariable.\n\nd) **souvenues** : essentiellement pronominal → accord avec le sujet « elles » (féminin pluriel).\n\ne) **regardés** : « se » = COD réciproque → accord avec le sujet « ils » (masculin pluriel).",
+    question:
+      "Accordez (attention au double auxiliaire) :\na) « Elle est (descendu) très vite. »\nb) « Elle a (descendu) les valises. »",
+    reponseType:
+      "a) « **descendue** » (emploi intransitif, auxiliaire **être** → accord avec le sujet).\nb) « **descendu** » (emploi transitif, auxiliaire **avoir**, COD « les valises » placé après → invariable).\nLe même verbe change d'auxiliaire et de règle selon sa construction.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-12-exo-07",
+    id: "fr-12-exo-c4",
     notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux"],
+    savoirFaire: ["cas-particuliers"],
+    difficulte: 2,
+    question:
+      "Accordez (attention au pronom « en ») :\na) « Des erreurs, j'en ai (commis). »\nb) « Ces livres, j'en ai (lu) plusieurs. »",
+    reponseType:
+      "a) « **commis** » (invariable : le COD est « en », pronom neutre → pas d'accord).\nb) « **lu** » (invariable : avec « en », le PP ne s'accorde pas).\nLe pronom « en » comme COD laisse le participe passé invariable.",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-c5",
+    notion: "fr-12",
+    savoirFaire: ["cas-particuliers"],
+    difficulte: 2,
+    question:
+      "Accordez le participe suivi d'un infinitif :\na) « Les robes qu'elle a (fait) faire. »\nb) « La maison qu'il a (laissé) construire. »",
+    reponseType:
+      "a) « **fait** » (invariable : « fait » suivi d'un infinitif reste toujours invariable).\nb) « **laissé** » (invariable : depuis la rectification de 1990, « laissé » + infinitif est invariable, comme « fait »).",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-c6",
+    notion: "fr-12",
+    savoirFaire: ["pronominaux"],
+    difficulte: 2,
+    question:
+      "Accordez (verbes essentiellement pronominaux) :\na) « Elles se sont (souvenu) de tout. »\nb) « Ils se sont (enfui). »",
+    reponseType:
+      "a) « **souvenues** » (« se souvenir » n'existe qu'à la forme pronominale → accord avec le sujet).\nb) « **enfuis** » (« s'enfuir » essentiellement pronominal → accord avec le sujet).\nLes verbes essentiellement pronominaux accordent leur PP avec le sujet.",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-c7",
+    notion: "fr-12",
+    savoirFaire: ["cas-particuliers"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par le test de remplacement**, la bonne terminaison :\n« Il a commencé à (ranger / rangé) sa chambre, qu'il avait (laisser / laissé) en désordre. »",
+    reponseType:
+      "« **ranger** » (infinitif après « à » : test « commencé à *prendre* ») et « **laissé** » (participe après « avait » : test « avait *pris* »).\nLe remplacement par un verbe du 3e groupe (prendre / pris) tranche entre -er (infinitif) et -é (participe).",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-c8",
+    notion: "fr-12",
+    savoirFaire: ["avoir-cod-avant"],
+    difficulte: 2,
+    question:
+      "Accordez (le COD est antéposé par un mot exclamatif ou interrogatif) :\na) « Quelle joie nous avons (éprouvé) ! »\nb) « Combien de fautes a-t-il (fait) ? »",
+    reponseType:
+      "a) « **éprouvée** » (COD antéposé « quelle joie », féminin singulier → accord).\nb) « **faites** » (COD « combien de fautes » placé avant → accord féminin pluriel).\nL'antéposition du COD peut venir d'un mot exclamatif ou interrogatif, pas seulement d'un pronom.",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-c9",
+    notion: "fr-12",
+    savoirFaire: ["pronominaux"],
+    difficulte: 2,
+    question:
+      "Accordez et justifiez :\na) « La ville s'est (construit) en un siècle. »\nb) « Elle s'est (acheté) une voiture. »",
+    reponseType:
+      "a) « **construite** » (pronominal de **sens passif** : accord avec le sujet « la ville »).\nb) « **acheté** » (invariable : « se » est COI — elle a acheté une voiture *à elle-même* —, le COD « une voiture » est placé après).",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-c10",
+    notion: "fr-12",
+    savoirFaire: ["etre", "avoir-cod-avant", "pronominaux"],
+    difficulte: 2,
+    question:
+      "Corrigez tous les accords de participe passé :\n« Les lettres qu'elle a écrit sont parti ce matin ; elle s'est dépêché de les poster. »",
+    reponseType:
+      "« Les lettres qu'elle a **écrites** sont **parties** ce matin ; elle s'est **dépêchée** de les poster. »\n- « écrites » : COD « que » (= les lettres) antéposé, avec *avoir* ;\n- « parties » : auxiliaire *être*, accord avec « les lettres » ;\n- « dépêchée » : « se dépêcher » essentiellement pronominal → accord avec le sujet.",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-12-exo-e1",
+    notion: "fr-12",
+    savoirFaire: ["avoir-cod-avant", "cas-particuliers"],
     difficulte: 3,
-    enonce: "« La décision qu'il avait prise la veille, personne ne l'avait encore comprise. Les délégués s'étaient regardés sans mot dire. »",
-    question: "Justifiez en une phrase rédigée les accords de « prise », « comprise » et « regardés ».",
-    reponseType: "**prise** (féminin singulier) : auxiliaire avoir, « que » = pronom relatif COD antéposé, antécédent « décision » (féminin singulier) → accord.\n\n**comprise** (féminin singulier) : auxiliaire avoir, pronom personnel « l' » = COD antéposé, mis pour « la décision » (féminin singulier) → accord.\n\n**regardés** (masculin pluriel) : verbe pronominal réciproque, « se » = COD → accord avec le sujet « les délégués » (masculin pluriel).",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-12-exo-08",
-    notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux"],
-    difficulte: 3,
-    enonce: "« Elles se sont écrit des lettres touchantes, puis elles se les sont lues à voix haute. »",
-    question: "a) Justifiez l'invariabilité de « écrit ». b) Justifiez l'accord de « lues ».",
-    reponseType: "a) **écrit** invariable : « écrire à » → « se » = COI ; le COD « des lettres » est placé après le verbe.\n\nb) **lues** : « les » = COD antéposé, mis pour « les lettres » (féminin pluriel) → accord. (Ici « se » est COI, c'est « les » qui commande l'accord.)",
+    question:
+      "Accordez et justifiez finement (verbe de perception + infinitif) :\na) « Les musiciens que j'ai (entendu) jouer. »\nb) « La sonate que j'ai (entendu) jouer. »",
+    reponseType:
+      "a) « **entendus** » : le COD « que » (= les musiciens) **fait** l'action de l'infinitif « jouer » → accord.\nb) « **entendu** » : le COD « que » (= la sonate) **subit** l'action (elle ne joue pas) → pas d'accord.\nAvec un verbe de perception suivi d'un infinitif, le PP s'accorde si le COD fait l'action, pas s'il la subit.",
     explication: [
-      { type: "note", text: "💡 Bien distinguer le pronom réfléchi « se » du pronom COD « les » : c'est le COD antéposé qui déclenche l'accord." },
+      {
+        type: "note",
+        text: "Côté correcteur : ce cas est hors des attendus de base ; le maîtriser (et le justifier par « qui fait l'action ? ») est valorisé. « fait » + infinitif, lui, reste toujours invariable.",
+      },
     ],
   },
-  // TODO refonte exo
   {
-    id: "fr-12-exo-09",
+    id: "fr-12-exo-e2",
     notion: "fr-12",
-    savoirFaire: ["etre","avoir-cod-avant","pronominaux","cas-particuliers"],
+    savoirFaire: ["pronominaux"],
     difficulte: 3,
-    enonce: "« Les mille euros que ce voyage m'a [coûté] en valaient la peine. La cantatrice que j'ai [entendu] chanter était éblouissante, mais l'œuvre que j'ai [entendu] jouer m'a déçu. La situation était plus grave qu'on ne l'avait [dit]. »",
-    question: "Accordez chaque participe entre crochets et justifiez votre choix.",
-    reponseType: "**coûté** invariable : *coûté combien ?* « mille euros » est un complément de prix (mesure), pas un COD.\n\n**entendue** (la cantatrice) : la cantatrice **fait** l'action de chanter (elle chante) → accord avec « que », mis pour « cantatrice » (féminin singulier).\n\n**entendu** (l'œuvre) invariable : l'œuvre **subit** l'action (elle est jouée, elle ne joue pas) → pas d'accord.\n\n**dit** invariable : « l' » est le pronom neutre, il reprend « que la situation était grave » (une idée), pas un nom.\n\n« *coûté* reste invariable : *mille euros* répond à *combien ?*, c'est un complément de mesure, non un COD. *entendue chanter* s'accorde (la cantatrice fait l'action de chanter), tandis que *entendu jouer* reste invariable (l'œuvre subit l'action). *dit* reste invariable : *l'* est neutre et reprend toute la proposition, pas un nom. »",
+    question:
+      "Accordez (ces pronominaux ne s'accordent jamais) :\na) « Ils se sont (succédé) au pouvoir. »\nb) « Elles se sont (plu) immédiatement. »",
+    reponseType:
+      "a) « **succédé** » (invariable : « se succéder » = succéder *à* qqn → « se » COI).\nb) « **plu** » (invariable : « se plaire » = plaire *à* qqn → « se » COI).\nListe à connaître (« se » toujours COI, PP invariable) : se succéder, se plaire, se complaire, se nuire, se parler, se ressembler, se sourire, se téléphoner, se mentir…",
     explication: [],
+  },
+  {
+    id: "fr-12-exo-e3",
+    notion: "fr-12",
+    savoirFaire: ["cas-particuliers", "avoir-cod-avant"],
+    difficulte: 3,
+    question:
+      "Accordez et justifiez (complément de mesure ou COD ?) :\na) « Les trois heures que j'ai (dormi). »\nb) « Les efforts que ce travail m'a (coûté). »",
+    reponseType:
+      "a) « **dormi** » (invariable : « les trois heures » est un complément de **durée** (CC), pas un vrai COD).\nb) « **coûté** » (invariable au sens propre : « coûter » a un complément de prix/mesure). Au sens figuré (« coûter » = valoir), l'accord redevient possible : « les efforts que ce projet m'a coûtés ».\nLe départage : vrai COD (qui répond à « quoi ? ») ou complément de mesure ?",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : « courir, valoir, peser, coûter, vivre, dormir » ont souvent un complément de mesure (CC) qui n'entraîne pas l'accord, à distinguer de leur emploi figuré transitif.",
+      },
+    ],
+  },
+  {
+    id: "fr-12-exo-e4",
+    notion: "fr-12",
+    savoirFaire: ["cas-particuliers"],
+    difficulte: 3,
+    question:
+      "Accordez et justifiez :\n« La situation est plus grave que je ne l'avais (pensé). »",
+    reponseType:
+      "« **pensé** » (invariable) : « l' » est un **pronom neutre** qui reprend toute une proposition (« que la situation était grave »), et non un nom doté d'un genre et d'un nombre. Un COD neutre n'entraîne pas l'accord. (Le « ne » est ici explétif.)",
+    explication: [],
+  },
+  {
+    id: "fr-12-exo-e5",
+    notion: "fr-12",
+    savoirFaire: ["pronominaux", "avoir-cod-avant"],
+    difficulte: 3,
+    question:
+      "Accordez et justifiez (COD antéposé d'un verbe pronominal) :\na) « Les mains qu'elle s'est (lavé). »\nb) « Elle se les est (lavé). »",
+    reponseType:
+      "a) « **lavées** » : le COD « que » (= les mains) est placé **avant** → accord, bien que « se » soit COI.\nb) « **lavées** » : le COD « les » (= les mains) est antéposé → accord.\nChez les pronominaux réfléchis assimilés à « avoir », c'est la **place du vrai COD** qui commande l'accord, et non le pronom « se ».",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : ne pas accorder avec « se » (COI) mais bien avec le COD antéposé (« les mains ») est exactement le raisonnement attendu sur ce cas mixte.",
+      },
+    ],
   },
 ];

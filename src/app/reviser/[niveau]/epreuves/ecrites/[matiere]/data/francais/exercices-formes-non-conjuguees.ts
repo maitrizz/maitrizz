@@ -1,125 +1,261 @@
 // Banque d'exercices OUVERTS, notion 10 « Infinitif, participes et gérondif ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : sujet du
+// gérondif, triple distinction négligent/négligents/négligeant, participes
+// prépositionnels invariables, participiale absolue vs gérondif).
+// Périmètre : NATURE + FONCTION de la forme non conjuguée dans la phrase. L'accord
+// du participe passé relève de la notion 12 ; la voix passive/pronominale de la 04.
+// 5 savoir-faire : infinitif · participe présent · participe passé · gérondif
+// · infinitive/participiale.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_FORMES_NON_CONJUGUEES: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-10-exo-01",
+    id: "fr-10-exo-f1",
     notion: "fr-10",
-    savoirFaire: ["infinitif","participe-present","gerondif"],
+    savoirFaire: ["infinitif", "participe-present", "gerondif"],
     difficulte: 1,
-    question: "Identifiez la nature de la forme soulignée :\na) « Le candidat, <u>relisant</u> sa copie, hésita. »   b) « des lettres soigneusement <u>rédigées</u> »   c) « <u>Pressée</u> d'arriver, elle accéléra. »   d) « <u>Comprendre</u> demande du temps. »   e) « Il monta sur la terrasse pour <u>regarder</u> les nuages. »   f) « Il progressa <u>en travaillant</u>. »",
-    reponseType: "a) Participe présent, reconnaissable à sa terminaison en -ant et invariable.\n\nb) Participe passé, accordé au féminin pluriel avec « lettres ».\n\nc) Participe passé, accordé au féminin singulier avec le pronom « elle » auquel il se rapporte.\n\nd) Infinitif en -re, sujet du verbe « demande ».\n\ne) Infinitif en -er ; le groupe « pour regarder les nuages » est complément circonstanciel de but de « monta ».\n\nf) Gérondif, formé de « en » et du participe présent « travaillant ».",
+    question:
+      "Donnez la forme verbale non conjuguée :\na) « chanter »\nb) « chantant »\nc) « en chantant »\nd) « ayant chanté »",
+    reponseType:
+      "a) **infinitif**.\nb) **participe présent**.\nc) **gérondif** (« en » + forme en -ant).\nd) **participe passé** (forme composée : « ayant » + participe).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-02",
+    id: "fr-10-exo-f2",
+    notion: "fr-10",
+    savoirFaire: ["gerondif", "participe-present"],
+    difficulte: 1,
+    question:
+      "Participe présent ou gérondif ?\na) « Il partit en courant. »\nb) « Les enfants courant dans la cour riaient. »",
+    reponseType:
+      "a) **gérondif** (présence de « en » ; CC de manière de « partit »).\nb) **participe présent** (sans « en » ; équivaut à « qui couraient », épithète de « enfants »).\nLe « en » est le signe du gérondif.",
+    explication: [],
+  },
+  {
+    id: "fr-10-exo-f3",
     notion: "fr-10",
     savoirFaire: ["infinitif"],
     difficulte: 1,
-    question: "Donnez la fonction du groupe infinitif souligné :\na) « <u>Lire chaque jour</u> enrichit le vocabulaire. »   b) « Elle aime <u>lire des romans</u>. »   c) « Il s'entraîne <u>pour réussir</u>. »   d) « Elle est heureuse <u>de partir</u>. »",
-    reponseType: "a) Sujet du verbe « enrichit ».\n\nb) COD du verbe « aime ».\n\nc) Complément circonstanciel de but du verbe « s'entraîne ».\n\nd) Complément de l'adjectif « heureuse ».",
+    question:
+      "Donnez la fonction de l'infinitif souligné :\na) « <u>Fumer</u> est dangereux. »\nb) « Il aime <u>lire</u>. »",
+    reponseType:
+      "a) **sujet** du verbe « est ».\nb) **COD** du verbe « aime ».\nL'infinitif peut occuper les fonctions d'un nom (rôle nominal).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-03",
+    id: "fr-10-exo-f4",
+    notion: "fr-10",
+    savoirFaire: ["participe-passe"],
+    difficulte: 1,
+    question:
+      "Donnez la nature et la fonction du participe passé en gras :\na) « une porte **fermée** »\nb) « **Épuisés**, ils s'arrêtèrent. »",
+    reponseType:
+      "a) participe passé employé comme adjectif, **épithète** (liée) du nom « porte ».\nb) participe passé, **épithète détachée** se rapportant au sujet « ils ».\nEmployé seul (sans auxiliaire), le participe passé fonctionne comme un adjectif.",
+    explication: [],
+  },
+  {
+    id: "fr-10-exo-f5",
+    notion: "fr-10",
+    savoirFaire: ["participe-present"],
+    difficulte: 1,
+    question:
+      "Participe présent (invariable) ou adjectif verbal (accordé) ?\na) « des enfants **obéissant** à leurs parents »\nb) « des enfants **obéissants** »",
+    reponseType:
+      "a) **participe présent** (invariable ; suivi d'un complément « à leurs parents » ; valeur verbale).\nb) **adjectif verbal** (accordé : « -s » ; il qualifie, valeur d'adjectif).\nLe participe présent reste toujours invariable.",
+    explication: [],
+  },
+  {
+    id: "fr-10-exo-f6",
+    notion: "fr-10",
+    savoirFaire: ["gerondif"],
+    difficulte: 1,
+    question:
+      "Donnez la fonction du gérondif :\na) « Il lit en mangeant. »\nb) « En forgeant, on devient forgeron. »",
+    reponseType:
+      "a) **CC de manière** (simultanéité) de « lit ».\nb) **CC de moyen / condition** (« c'est en forgeant que… »).\nLe gérondif est toujours CC et se rapporte au sujet du verbe principal.",
+    explication: [],
+  },
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
+  {
+    id: "fr-10-exo-c1",
     notion: "fr-10",
     savoirFaire: ["infinitif"],
-    difficulte: 1,
-    question: "Dites si le participe passé est employé seul ou avec un auxiliaire, puis précisez sa fonction lorsqu'il est employé seul :\na) « une porte <u>fermée</u> »   b) « Elle a <u>fermé</u> la porte. »   c) « <u>Pressée</u> de partir, elle salua ses amis. »   d) « Les voyageurs sont <u>arrivés</u>. »",
-    reponseType: "a) Employé seul, épithète liée du nom « porte ».\n\nb) Employé avec l'auxiliaire « avoir » pour former le passé composé de « fermer ».\n\nc) Employé seul, épithète détachée du pronom « elle ».\n\nd) Employé avec l'auxiliaire « être » pour former le passé composé de « arriver ».",
+    difficulte: 2,
+    question:
+      "Donnez la nature et la fonction de l'infinitif :\na) « Il rêve de voyager. »\nb) « Partir, c'est mourir un peu. »",
+    reponseType:
+      "a) « voyager » : infinitif, **COI** de « rêve » (rêver *de* qqch).\nb) « Partir » : infinitif, **sujet** (repris par « c' ») ; « mourir » : infinitif, **attribut**. L'infinitif occupe ici des fonctions nominales.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-04",
+    id: "fr-10-exo-c2",
+    notion: "fr-10",
+    savoirFaire: ["participe-present"],
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, lequel est participe présent et lequel est adjectif verbal :\n« une situation provocante » / « des propos provoquant la colère »",
+    reponseType:
+      "« provocante » : **adjectif verbal** (accordé au féminin ; orthographe « -cante » ; il qualifie « situation »).\n« provoquant » : **participe présent** (invariable ; orthographe « -quant » ; suivi du COD « la colère » ; valeur verbale).\nManipulation : s'il s'accorde et se remplace par un autre adjectif → adjectif verbal ; s'il a un complément d'objet et reste invariable → participe présent. (Les deux orthographes diffèrent : provocant / provoquant, fatigant / fatiguant.)",
+    explication: [],
+  },
+  {
+    id: "fr-10-exo-c3",
     notion: "fr-10",
     savoirFaire: ["gerondif"],
     difficulte: 2,
-    question: "Identifiez la nature de la forme soulignée :\na) « une réponse <u>convaincante</u> »   b) « Elle quitta la salle <u>en souriant</u>. »   c) « Les élèves <u>attendant leur tour</u> restent calmes. »   d) « des résultats <u>encourageants</u> »   e) « Il apprend <u>en observant</u>. »",
-    reponseType: "Forme | Nature | Indice\n--- | --- | ---\nconvaincante | Adjectif verbal | S'accorde au féminin singulier avec « réponse »\nen souriant | Gérondif | « en » + -ant, complément circonstanciel\nattendant | Participe présent | Invariable et suivi du COD « leur tour »\nencourageants | Adjectif verbal | S'accorde au masculin pluriel avec « résultats »\nen observant | Gérondif | « en » + -ant, complément circonstanciel",
+    question:
+      "Donnez le rapport exprimé par le gérondif :\na) « En arrivant, il salua tout le monde. »\nb) « Il s'est blessé en tombant. »\nc) « En travaillant, tu réussiras. »",
+    reponseType:
+      "a) **temps / simultanéité**.\nb) **cause / moyen**.\nc) **condition**.\nLe gérondif est toujours CC ; seule sa nuance change selon le contexte.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-05",
+    id: "fr-10-exo-c4",
     notion: "fr-10",
-    savoirFaire: ["gerondif"],
+    savoirFaire: ["infinitive-participiale", "infinitif"],
     difficulte: 2,
-    question: "Précisez la fonction et la valeur du groupe gérondif :\na) « En glissant sur le sol mouillé, il s'est fracturé le poignet. »   b) « Elle a ouvert la boîte en utilisant une clé. »   c) « En suivant ces consignes, vous éviterez plusieurs erreurs. »",
-    reponseType: "a) Complément circonstanciel de cause : la glissade explique la fracture.\n\nb) Complément circonstanciel de moyen : la clé permet d'ouvrir la boîte.\n\nc) Complément circonstanciel de condition : si vous suivez ces consignes.",
+    question:
+      "Subordonnée infinitive ou simple groupe infinitif ? Justifiez :\na) « J'entends les enfants crier. »\nb) « Je vais chercher du pain. »",
+    reponseType:
+      "a) **subordonnée infinitive** : « crier » a un **sujet propre** (« les enfants ») et dépend d'un verbe de perception (« entends »).\nb) **groupe infinitif** : « chercher » a le même sujet que « vais » (je), sans sujet propre → ce n'est pas une proposition.\nLe sujet propre est le critère décisif.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-06",
+    id: "fr-10-exo-c5",
     notion: "fr-10",
-    savoirFaire: ["gerondif","infinitive-participiale"],
+    savoirFaire: ["infinitive-participiale", "participe-passe"],
     difficulte: 2,
-    question: "Ces analyses sont-elles correctes ? Corrigez :\na) « en réfléchissant » : participe présent, épithète détachée\nb) « une histoire émouvante » : participe présent invariable\nc) « elle a fermé la porte » : « fermé » est une épithète\nd) « les portes refermées, le silence revint » : « refermées » est une simple épithète détachée",
-    reponseType: "a) Faux : « en » + -ant = gérondif (CC), pas participe présent.\n\nb) Faux : « émouvante » est un adjectif verbal accordé avec « histoire ».\n\nc) Faux : « fermé » est employé avec l'auxiliaire « avoir » pour former le passé composé.\n\nd) Faux : « refermées » possède un sujet propre, « les portes ». L'ensemble forme une subordonnée participiale, complément circonstanciel de temps.",
+    question:
+      "Y a-t-il une subordonnée participiale ? Justifiez :\na) « Le chat parti, les souris dansent. »\nb) « Parti tôt, il arriva avant tous. »",
+    reponseType:
+      "a) **oui** : « Le chat parti » est une participiale (sujet propre « le chat » + participe « parti »), CC de temps/cause.\nb) **non** : « Parti tôt » se rapporte au sujet de la principale (« il »), sans sujet propre → c'est une épithète détachée.\nLe sujet propre fait la proposition.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-07",
-    notion: "fr-10",
-    savoirFaire: ["infinitif","infinitive-participiale"],
-    difficulte: 2,
-    question: "Analysez les groupes infinitifs :\na) « Partir maintenant serait imprudent. »   b) « Elle renonce à partir. »   c) « Il ouvre la fenêtre pour aérer la pièce. »   d) « J'observe les oiseaux construire leur nid. »",
-    reponseType: "a) « Partir maintenant » est un groupe infinitif, sujet de « serait ».\n\nb) « à partir » est un groupe infinitif prépositionnel, COI de « renonce ».\n\nc) « pour aérer la pièce » est un groupe infinitif prépositionnel, complément circonstanciel de but de « ouvre ».\n\nd) « les oiseaux construire leur nid » est une subordonnée infinitive, COD de « observe » : l'infinitif possède son propre sujet, « les oiseaux ».",
-    explication: [],
-  },
-  // TODO refonte exo
-  {
-    id: "fr-10-exo-08",
+    id: "fr-10-exo-c6",
     notion: "fr-10",
     savoirFaire: ["infinitif"],
-    difficulte: 3,
-    enonce: "« Portant une lourde valise, la voyageuse avançait lentement, décidée à rejoindre la gare avant la nuit. »",
-    question: "Analysez la nature et la fonction de chaque forme non conjuguée.",
-    reponseType: "Forme | Nature | Analyse\n--- | --- | ---\nportant | Participe présent | Épithète détachée du nom « voyageuse » (même sujet)\ndécidée | Participe passé | Épithète détachée du nom « voyageuse » (accord féminin singulier)\nrejoindre | Infinitif | Groupe infinitif prépositionnel, complément de l'adjectif « décidée »",
+    difficulte: 2,
+    question:
+      "**Prouvez, par une manipulation**, que « rire » n'a pas la même nature :\na) « Le rire est bon pour la santé. »\nb) « Il aime rire. »",
+    reponseType:
+      "a) « le rire » : infinitif **substantivé** (devenu un nom : précédé d'un déterminant « le », pluralisable « des rires », sans complément verbal).\nb) « rire » : infinitif **verbal**, COD de « aime » (on peut lui adjoindre un complément : « rire *de bon cœur* »).\nManipulation : la présence d'un déterminant et l'impossibilité d'un complément verbal signent la nominalisation.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-09",
+    id: "fr-10-exo-c7",
     notion: "fr-10",
-    savoirFaire: ["infinitif","infinitive-participiale"],
-    difficulte: 3,
-    enonce: "« À seize ans, j'ai vu se rouvrir les portes qui me séparaient du monde : je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, « Comment Wang-Fô fut sauvé », Nouvelles orientales)*",
-    question: "Rédigez la réponse jury pour « se rouvrir » et « regarder ».",
-    reponseType: "« se rouvrir » est un infinitif : tête d'une subordonnée infinitive COD de « ai vu » (verbe de perception). Son sujet propre « les portes » est distinct du sujet principal « je ».\n\n« regarder » est un infinitif : groupe infinitif prépositionnel (pour + infinitif) CC de but de « suis monté ». Même sujet que le verbe principal : ce n'est pas une subordonnée infinitive.",
+    savoirFaire: ["participe-passe"],
+    difficulte: 2,
+    question:
+      "« fini » est-il un élément de temps composé ou un adjectif ?\na) « Il a fini son travail. »\nb) « Un travail fini. »",
+    reponseType:
+      "a) participe passé dans un **temps composé** (auxiliaire « a » + participe = passé composé de « finir »).\nb) participe passé employé comme **adjectif**, épithète du nom « travail ».\nTest : présence d'un auxiliaire conjugué → temps composé ; absence d'auxiliaire → emploi adjectival.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-10",
+    id: "fr-10-exo-c8",
     notion: "fr-10",
-    savoirFaire: ["participe-present","gerondif"],
-    difficulte: 3,
-    enonce: "a) « Les enfants, fatiguant leurs parents, refusaient de dormir. »   b) « Ces journées étaient fatigantes. »",
-    question: "Analysez « fatiguant » et « fatigantes » en justifiant leur nature.",
-    reponseType: "a) « fatiguant » est un participe présent, invariable. Il conserve un complément d'objet direct, « leurs parents », et est épithète détachée du nom « enfants ».\n\nb) « fatigantes » est un adjectif verbal, attribut du sujet « journées ». Il s'accorde au féminin pluriel.",
+    savoirFaire: ["infinitif", "participe-passe", "gerondif"],
+    difficulte: 2,
+    question:
+      "Relevez les formes verbales non conjuguées et donnez leur nature et fonction :\n« En rentrant, fatigué, il décida de se reposer. »",
+    reponseType:
+      "- « En rentrant » : **gérondif**, CC de temps.\n- « fatigué » : **participe passé** adjectival, épithète détachée (sujet « il »).\n- « se reposer » : **infinitif**, COI de « décida » (décider *de* faire).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-10-exo-11",
+    id: "fr-10-exo-c9",
     notion: "fr-10",
-    savoirFaire: ["infinitif","infinitive-participiale"],
+    savoirFaire: ["infinitif"],
+    difficulte: 2,
+    question:
+      "Donnez la valeur de l'infinitif :\na) « Ne pas se pencher au-dehors. »\nb) « Que faire ? »\nc) « Moi, mentir ? »",
+    reponseType:
+      "a) infinitif **injonctif** (consigne).\nb) infinitif **délibératif** (interrogation).\nc) infinitif **exclamatif** (indignation).\nSeul, l'infinitif peut faire phrase avec des valeurs variées.",
+    explication: [],
+  },
+  {
+    id: "fr-10-exo-c10",
+    notion: "fr-10",
+    savoirFaire: ["participe-present"],
+    difficulte: 2,
+    question:
+      "Analysez le participe présent :\n« Les candidats ayant réussi recevront un diplôme. »",
+    reponseType:
+      "« ayant réussi » : participe présent (forme **composée**) à valeur verbale ; il équivaut à une relative (« qui ont réussi ») et est épithète du nom « candidats ». La forme composée (« ayant » + participe) marque une action **antérieure**.",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-10-exo-e1",
+    notion: "fr-10",
+    savoirFaire: ["infinitive-participiale", "infinitif"],
     difficulte: 3,
-    enonce: "« Elle entendit la pluie tomber sur les toits. Debout devant la fenêtre, les bras croisés, elle regardait le jardin en silence. »",
-    question: "Analysez les formes verbales non conjuguées et les groupes auxquels elles appartiennent.",
-    reponseType: "Forme | Nature | Analyse\n--- | --- | ---\ntomber | Infinitif | Subordonnée infinitive COD de « entendit » (sujet propre « la pluie »)\ncroisés | Participe passé | Noyau de la subordonnée participiale « les bras croisés », complément circonstanciel de manière ou d'accompagnement",
+    question:
+      "Analysez « les oiseaux » et la nature de l'ensemble :\n« Je regarde les oiseaux voler. »",
+    reponseType:
+      "« les oiseaux voler » = **proposition subordonnée infinitive**, COD de « regarde ». « les oiseaux » est le **sujet** de l'infinitif « voler », mais fonctionne aussi comme support du COD de « regarde » (double analyse classiquement débattue). Reconnaître l'infinitive et son sujet propre est l'essentiel.",
     explication: [
-      { type: "note", text: "💡 « en silence » n'est pas un gérondif (« en » + nom, pas « en » + -ant) : c'est un GN prépositionnel, CC de manière." },
+      {
+        type: "note",
+        text: "Côté correcteur : la proposition infinitive n'existe qu'après les verbes de perception (voir, entendre, sentir, regarder…) et « laisser / faire ». Le sujet propre de l'infinitif est la condition.",
+      },
     ],
+  },
+  {
+    id: "fr-10-exo-e2",
+    notion: "fr-10",
+    savoirFaire: ["gerondif"],
+    difficulte: 3,
+    question:
+      "Pourquoi cette phrase est-elle fautive, et que révèle-t-elle sur le gérondif ?\n« En arrivant à la gare, le train était déjà parti. »",
+    reponseType:
+      "Faute : le gérondif (« en arrivant ») doit avoir le **même sujet** que le verbe principal. Or le sujet de « était parti » est « le train » : la phrase laisse entendre que c'est le train qui arrive, ce qui est absurde. Règle : le sujet du gérondif est obligatoirement celui du verbe principal. Correction : « En arrivant à la gare, **je** vis que le train était déjà parti. »",
+    explication: [],
+  },
+  {
+    id: "fr-10-exo-e3",
+    notion: "fr-10",
+    savoirFaire: ["participe-present"],
+    difficulte: 3,
+    question:
+      "Distinguez les trois formes proches et justifiez l'orthographe :\na) « Ils négligent leurs devoirs. »\nb) « des élèves négligents »\nc) « négligeant leurs devoirs, ils échouèrent »",
+    reponseType:
+      "a) « négligent » : **verbe conjugué** (présent, 3e personne du pluriel de « négliger »).\nb) « négligents » : **adjectif verbal** (accordé ; orthographe « -ent »).\nc) « négligeant » : **participe présent** (invariable ; orthographe « -eant » ; ici suivi du COD « leurs devoirs »).\nTrois formes proches, trois natures, trois orthographes.",
+    explication: [],
+  },
+  {
+    id: "fr-10-exo-e4",
+    notion: "fr-10",
+    savoirFaire: ["participe-passe"],
+    difficulte: 3,
+    question:
+      "Pourquoi ces participes passés sont-ils invariables ici ?\na) « Ci-joint les pièces demandées. »\nb) « Vu les circonstances, il renonça. »",
+    reponseType:
+      "Placés **en tête, devant le nom**, ces participes passés (« ci-joint », « vu », mais aussi « étant donné », « passé », « excepté », « y compris ») se figent en **locutions prépositives** et restent **invariables**. Placés après le nom, ils redeviennent adjectifs et s'accordent : « les pièces **ci-jointes** ». C'est la position qui décide.",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : reconnaître que ces participes « prépositionnels » sortent du système de l'accord du PP (notion 12) est un point fin valorisé.",
+      },
+    ],
+  },
+  {
+    id: "fr-10-exo-e5",
+    notion: "fr-10",
+    savoirFaire: ["infinitive-participiale", "participe-present", "gerondif"],
+    difficulte: 3,
+    question:
+      "Analysez chaque forme en -ant et en -é :\n« La nuit tombant, les promeneurs, fatigués, rentrèrent en pressant le pas. »",
+    reponseType:
+      "- « La nuit tombant » : participe présent à **sujet propre** (« la nuit ») → **subordonnée participiale** (CC de temps).\n- « fatigués » : participe passé adjectival, **épithète détachée** (sujet « les promeneurs »).\n- « en pressant » : **gérondif** (CC de manière, sujet = celui de « rentrèrent »).\nTrois formes proches, trois analyses : le sujet propre et le « en » sont les critères.",
+    explication: [],
   },
 ];

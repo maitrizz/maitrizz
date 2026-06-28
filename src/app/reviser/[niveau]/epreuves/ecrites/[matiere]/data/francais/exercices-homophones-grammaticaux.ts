@@ -1,70 +1,261 @@
 // Banque d'exercices OUVERTS, notion 13 « Les homophones grammaticaux ».
 //
-// Migration de structure : exercices repris depuis l'onglet « Application » v1,
-// sans réécriture pédagogique. Le fond sera repris dans un chantier ultérieur.
+// CHANTIER 2 (refonte façon Grévisse, DOCTRINE_EXERCICES.md) : exercices réécrits.
+// 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : c'est/s'est/
+// sais/sait, leur possessif singulier/pluriel, « on » + négation « n' », ce pronom
+// vs déterminant).
+// Méthode signature : le test de l'imparfait (a→avait, est→était, ont→avaient…).
+// Les paires hors filtre (on/ont, ou/où…) sont travaillées dans les exercices
+// « corriger un texte » multi-paires.
+// 6 savoir-faire : a/à · et/est · son/sont · ce/se · ces/ses/c'est/s'est · leur/leurs.
 
 import type { TrainerExercice } from "@/components/fiche/types";
 
 export const EXERCICES_HOMOPHONES_GRAMMATICAUX: TrainerExercice[] = [
-  // TODO refonte exo
+  // ————————————————————————— Fondamentaux —————————————————————————
   {
-    id: "fr-13-exo-01",
+    id: "fr-13-exo-f1",
     notion: "fr-13",
-    savoirFaire: ["a-a","et-est","son-sont","ce-se"],
+    savoirFaire: ["a-a"],
     difficulte: 1,
-    question: "Choisissez et justifiez :\na) « Il ___ terminé son travail. » (a/à)   b) « Elle pense ___ son avenir. » (a/à)   c) « Ils ___ arrivés en retard. » (son/sont)   d) « ___ mange bien dans ce restaurant. » (On/Ont)   e) « Tu viens ___ tu restes ? » (ou/où)",
-    reponseType: "a) **a** : « il avait terminé » ✓ → verbe avoir.\n\nb) **à** : « elle pense avait » impossible → préposition.\n\nc) **sont** : « ils étaient arrivés » ✓ → verbe être (3e pluriel).\n\nd) **On** : « Il mange » ✓ → pronom personnel indéfini.\n\ne) **ou** : « ou bien tu restes » ✓ → conjonction de coordination.",
+    question:
+      "Complétez par « a » ou « à » et justifiez par le test de l'imparfait :\n« Il ___ pris le train ___ huit heures. »",
+    reponseType:
+      "« Il **a** pris le train **à** huit heures. » Test : « a » → « avait » (verbe avoir) fonctionne ; « à » → « avait » impossible (c'est une préposition).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-13-exo-02",
+    id: "fr-13-exo-f2",
     notion: "fr-13",
-    savoirFaire: ["a-a","et-est","son-sont","ce-se","ces-ses-cest-sest","leur-leurs"],
+    savoirFaire: ["et-est"],
     difficulte: 1,
-    question: "Choisissez et justifiez :\na) « Il range ___ affaires. » (ses/ces)   b) « Je ___ ai parlé. » (leur/leurs)   c) « ___ maison est grande. » (Leur/Leurs)   d) « Il ___ lève tôt. » (se/ce)   e) « Il travaille ___ il est épuisé. » (mais/mes)",
-    reponseType: "a) **ses** : « son affaire » au singulier ✓ → déterminant possessif.\n\nb) **leur** : « Je lui ai parlé » ✓ → pronom personnel COI, invariable.\n\nc) **Leur** : « lui » impossible → déterminant possessif ; un seul nom → singulier.\n\nd) **se** : pronom réfléchi du verbe pronominal « se lever » ; à la 1re personne, on dirait « je me lève ».\n\ne) **mais** : « cependant » ✓ → conjonction de coordination (opposition).",
+    question:
+      "Complétez par « et » ou « est » :\n« Mon frère ___ grand ___ mince. »",
+    reponseType:
+      "« Mon frère **est** grand **et** mince. » Test : « est » → « était » (verbe être) ; « et » → « était » impossible (conjonction = « et puis »).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-13-exo-03",
+    id: "fr-13-exo-f3",
     notion: "fr-13",
-    savoirFaire: ["a-a","et-est","son-sont","ce-se","ces-ses-cest-sest"],
+    savoirFaire: ["son-sont"],
+    difficulte: 1,
+    question:
+      "Complétez par « son » ou « sont » :\n« ___ frère et ___ cousin ___ venus. »",
+    reponseType:
+      "« **Son** frère et **son** cousin **sont** venus. » « son » = déterminant possessif (→ « mon ») ; « sont » = verbe être (→ « étaient »).",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-f4",
+    notion: "fr-13",
+    savoirFaire: ["ce-se"],
+    difficulte: 1,
+    question:
+      "Complétez par « ce » ou « se » :\n« ___ chien ___ promène seul. »",
+    reponseType:
+      "« **Ce** chien **se** promène seul. » « ce » = déterminant démonstratif (devant un nom, → « le ») ; « se » = pronom réfléchi (devant un verbe, → « il se promène »).",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-f5",
+    notion: "fr-13",
+    savoirFaire: ["ces-ses-cest-sest"],
+    difficulte: 1,
+    question:
+      "Complétez par « ces » ou « ses » :\n« Range ___ affaires (les tiennes) et regarde ___ photos (celles-là). »",
+    reponseType:
+      "« Range **ses** affaires et regarde **ces** photos. » « ses » = possessif (les siennes, → « mes ») ; « ces » = démonstratif (= ceux-là, → « ce / cette » au singulier).",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-f6",
+    notion: "fr-13",
+    savoirFaire: ["leur-leurs"],
+    difficulte: 1,
+    question:
+      "Complétez par « leur » ou « leurs » :\n« Je ___ ai rendu ___ livres. »",
+    reponseType:
+      "« Je **leur** ai rendu **leurs** livres. » « leur » devant un verbe = pronom personnel **invariable** (= « lui » au pluriel) ; « leurs » devant un nom pluriel = déterminant possessif (qui s'accorde).",
+    explication: [],
+  },
+
+  // ————————————————————————— Concours (la cible) —————————————————————————
+  {
+    id: "fr-13-exo-c1",
+    notion: "fr-13",
+    savoirFaire: ["a-a"],
     difficulte: 2,
-    question: "Complétez et justifiez chaque choix :\n« ___ (Ce/Se) matin-là, il ___ (se/ce) leva plus tôt que d'habitude. ___ (Son/Sont) frère ___ (est/et) sa sœur dormaient encore. Il prit ___ (ses/ces) affaires en silence : ___ (ou/où) irait-il ? »",
-    reponseType: "**Ce** matin-là : déterminant démonstratif (devant un nom).\n\nil **se** leva : pronom réfléchi du verbe pronominal « se lever » ; à la 1re personne, on dirait « je me lève ».\n\n**Son** frère : déterminant possessif (« mon frère » ✓).\n\n**et** sa sœur : conjonction de coordination (« était sa sœur » impossible).\n\n**ses** affaires : déterminant possessif (« son affaire » au singulier ✓).\n\n**où** irait-il : adverbe interrogatif (« ou bien irait-il » impossible).",
+    question:
+      "**Justifiez la graphie** (nature + test) :\n« Elle a réussi à convaincre. »",
+    reponseType:
+      "« **a** » : verbe avoir (3e personne, → « elle avait réussi »).\n« **à** » : préposition introduisant l'infinitif « convaincre » (→ « avait » impossible).\nFormule attendue : nommer la nature, puis appliquer le test de l'imparfait.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-13-exo-04",
+    id: "fr-13-exo-c2",
     notion: "fr-13",
-    savoirFaire: ["a-a","et-est","ce-se","ces-ses-cest-sest"],
+    savoirFaire: ["a-a", "et-est"],
     difficulte: 2,
-    question: "Choisissez et justifiez :\na) « Il faut travailler ___ pour progresser. »   b) « Cette solution présente beaucoup ___. »   c) « Il ne voit pas ___ à changer de méthode. »",
-    reponseType: "a) **davantage** : adverbe, remplaçable par « plus ».\n\nb) **d'avantages** : nom pluriel, remplaçable par « beaucoup d'avantages » / « beaucoup de bénéfices ».\n\nc) **d'avantage** : préposition « de » + nom singulier « avantage » ; on peut reformuler par « aucun avantage à changer de méthode ».",
+    question:
+      "Corrigez les homophones mal orthographiés (test de l'imparfait) :\n« A huit heures, on ont fini, et chacun et rentré. »",
+    reponseType:
+      "« **À** huit heures, on **a** fini, et chacun **est** rentré. »\n- « A » → « À » (préposition de temps) ;\n- « ont » → « a » (« on » = pronom singulier → verbe au singulier) ;\n- second « et » → « est » (verbe être : « était rentré »).",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-13-exo-05",
+    id: "fr-13-exo-c3",
     notion: "fr-13",
-    savoirFaire: ["a-a","et-est","son-sont","ce-se","ces-ses-cest-sest"],
+    savoirFaire: ["ces-ses-cest-sest"],
     difficulte: 2,
-    question: "Choisissez et justifiez :\na) « ___ une erreur fréquente. » (C'est/S'est)   b) « Il ___ aperçu de son oubli. » (c'est/s'est)   c) « ___ réponse est claire. » (Sa/Ça)   d) « ___ me paraît juste. » (Sa/Ça)   e) « Elle ___ compris trop tard. » (la/l'a/là)",
-    reponseType: "a) **C'est** : « cela est une erreur fréquente » ✓.\n\nb) **s'est** : verbe pronominal « s'apercevoir » au passé composé.\n\nc) **Sa** : déterminant possessif devant le nom féminin « réponse ».\n\nd) **Ça** : pronom démonstratif, remplaçable par « cela ».\n\ne) **l'a** : pronom « l' » + verbe avoir ; test « elle l'avait compris ».",
+    question:
+      "Complétez par « ces », « ses », « c'est » ou « s'est » :\n« ___ un fait : il ___ trompé en rangeant ___ affaires dans ___ cartons. »",
+    reponseType:
+      "« **C'est** un fait : il **s'est** trompé en rangeant **ses** affaires dans **ces** cartons. »\n« c'est » = « cela est » ; « s'est » = pronominal (« il se… », → « je me suis ») ; « ses » = possessif ; « ces » = démonstratif.",
     explication: [],
   },
-  // TODO refonte exo
   {
-    id: "fr-13-exo-06",
+    id: "fr-13-exo-c4",
     notion: "fr-13",
-    savoirFaire: ["a-a","et-est","son-sont","ce-se","ces-ses-cest-sest","leur-leurs"],
+    savoirFaire: ["ce-se"],
+    difficulte: 2,
+    question:
+      "Complétez et justifiez :\n« ___ que je sais ___ voit. »",
+    reponseType:
+      "« **Ce** que je sais **se** voit. » « ce » = pronom démonstratif (→ « cela ») ; « se » = pronom réfléchi (pronominal de sens passif « est vu », → « il se voit »).",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-c5",
+    notion: "fr-13",
+    savoirFaire: ["leur-leurs"],
+    difficulte: 2,
+    question:
+      "Complétez et justifiez :\n« Les enfants ouvrent ___ cadeaux ; je ___ souris. »",
+    reponseType:
+      "« Les enfants ouvrent **leurs** cadeaux ; je **leur** souris. » « leurs » = déterminant possessif (plusieurs cadeaux → accord) ; « leur » = pronom personnel **invariable** (= « à eux », jamais de « s »).",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-c6",
+    notion: "fr-13",
+    savoirFaire: ["son-sont"],
+    difficulte: 2,
+    question:
+      "Complétez par « son » ou « sont » (test de l'imparfait) :\n« ___ cartable et ___ cahier ___ restés sur la table. »",
+    reponseType:
+      "« **Son** cartable et **son** cahier **sont** restés sur la table. » « son » → « mon » (possessif) ; « sont » → « étaient » (verbe être).",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-c7",
+    notion: "fr-13",
+    savoirFaire: ["ces-ses-cest-sest", "a-a", "et-est"],
+    difficulte: 2,
+    question:
+      "Corrigez tous les homophones :\n« Son ami ses trompé : ces livres sont a lui, est il les a oubliés. »",
+    reponseType:
+      "« Son ami **s'est** trompé : **ses** livres sont **à** lui, **et** il les a oubliés. »\n- « ses » → « s'est » (pronominal) ;\n- « ces » → « ses » (possessif : ses livres à lui) ;\n- « a » → « à » (préposition) ;\n- « est » → « et » (conjonction).",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-c8",
+    notion: "fr-13",
+    savoirFaire: ["leur-leurs"],
+    difficulte: 2,
+    question:
+      "Complétez et justifiez chaque « leur » :\n« Je ___ ai dit de prendre ___ manteaux et ___ parapluie. »",
+    reponseType:
+      "« Je **leur** ai dit de prendre **leurs** manteaux et **leur** parapluie. »\n- « leur » (devant le verbe « ai dit ») : pronom invariable ;\n- « leurs » manteaux : un chacun, plusieurs au total → pluriel ;\n- « leur » parapluie : un seul partagé → singulier (le nombre du possessif suit l'objet possédé).",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-c9",
+    notion: "fr-13",
+    savoirFaire: ["a-a"],
+    difficulte: 2,
+    question:
+      "Dans une copie, justifiez les corrections de a / à :\n« Cette œuvre invite a réfléchir et a pour but de convaincre. »",
+    reponseType:
+      "« Cette œuvre invite **à** réfléchir et **a** pour but de convaincre. »\n- « à réfléchir » : préposition (test « avait » impossible) ;\n- « a pour but » : verbe avoir (→ « avait pour but »).\nC'est le piège du développement rédigé : a / à reste fréquent dans une phrase soutenue.",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-c10",
+    notion: "fr-13",
+    savoirFaire: ["ce-se", "ces-ses-cest-sest", "son-sont", "a-a"],
+    difficulte: 2,
+    question:
+      "Corrigez tous les homophones :\n« Ce matin, il ce lève tôt ; ses enfants jouent dans ses jardins qui son a eux. »",
+    reponseType:
+      "« Ce matin, il **se** lève tôt ; ses enfants jouent dans **ces** jardins qui **sont** **à** eux. »\n- « ce » → « se » (pronom réfléchi devant le verbe) ;\n- « ses » jardins → « ces » jardins (démonstratif : ces jardins-là) ;\n- « son » → « sont » (verbe être) ;\n- « a » → « à » (préposition).",
+    explication: [],
+  },
+
+  // ————————————————————————— Expert (au-delà de l'épreuve) —————————————————————————
+  {
+    id: "fr-13-exo-e1",
+    notion: "fr-13",
+    savoirFaire: ["ces-ses-cest-sest"],
     difficulte: 3,
-    enonce: "« Tous ces élèves se demandent où sont leurs cahiers ; on leur a pourtant dit de ranger davantage leurs affaires, mais ils ne savent pas quelle méthode appliquer. »",
-    question: "Justifiez les formes « Tous », « ces », « se », « où », « sont », « leurs », « on », « leur », « davantage », le second « leurs », « mais » et « quelle ».",
-    reponseType: "**Tous** : déterminant indéfini masculin pluriel, accordé avec « élèves ».\n\n**Ces** : déterminant démonstratif, test « cet élève » au singulier.\n\n**se** : pronom réfléchi du verbe pronominal « se demander » ; à la 1re personne, « je me demande ».\n\n**où** : adverbe interrogatif de lieu ; « ou bien » est impossible.\n\n**sont** : verbe être, test « étaient ».\n\n**leurs cahiers** : déterminant possessif accordé avec le nom pluriel « cahiers ».\n\n**on** : pronom personnel indéfini, test « il ».\n\n**leur** : pronom personnel COI, test « lui » ; il est donc invariable.\n\n**davantage** : adverbe, remplaçable par « plus ».\n\n**leurs affaires** : déterminant possessif accordé avec le nom pluriel « affaires ».\n\n**mais** : conjonction de coordination exprimant une opposition, remplaçable par « cependant ».\n\n**quelle méthode** : déterminant interrogatif féminin singulier, accordé avec le nom « méthode ».",
+    question:
+      "Complétez par « c'est », « s'est », « sais » ou « sait » :\n« ___ difficile : personne ne ___ pourquoi il ___ enfui, et je ne ___ pas où il est. »",
+    reponseType:
+      "« **C'est** difficile : personne ne **sait** pourquoi il **s'est** enfui, et je ne **sais** pas où il est. »\n- « c'est » = cela est ;\n- « sait » / « sais » = verbe *savoir* (3e / 1re personne) ;\n- « s'est » = pronominal (« il s'est enfui »).",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : la série c'est / s'est / sais / sait se tranche en identifiant qui parle (sais = je/tu, sait = il), et en testant « cela est » (c'est) ou « se + verbe » (s'est).",
+      },
+    ],
+  },
+  {
+    id: "fr-13-exo-e2",
+    notion: "fr-13",
+    savoirFaire: ["leur-leurs"],
+    difficulte: 3,
+    question:
+      "Justifiez le nombre du « leur » possessif :\na) « Ils ont perdu leur chemin. »\nb) « Ils ont perdu leurs illusions. »",
+    reponseType:
+      "a) « **leur** chemin » : un seul chemin commun → singulier.\nb) « **leurs** illusions » : plusieurs → pluriel.\nLe nombre du déterminant possessif « leur(s) » suit le **nombre de l'objet possédé**, pas celui des possesseurs : c'est ce qui rend ce cas délicat.",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-e3",
+    notion: "fr-13",
+    savoirFaire: ["a-a"],
+    difficulte: 3,
+    question:
+      "Complétez et justifiez (attention au « n' » de la négation et au test) :\n« ___ ___ rien dit ___ personne. »",
+    reponseType:
+      "« **On** **n'a** rien dit **à** personne. »\n- « on » = pronom (→ « il n'a ») ;\n- « a » = verbe avoir (→ « avait ») ;\n- le « n' » de la négation est **obligatoire** avec « rien » / « personne » (« on a rien dit » est fautif) ;\n- « à personne » = préposition.",
+    explication: [
+      {
+        type: "note",
+        text: "Côté correcteur : le piège n'est pas seulement l'homophone, c'est le « ne » de négation effacé à l'oral. « On n'a rien » s'entend comme « on a rien » : le test du sens (négation) doit rétablir le « n' ».",
+      },
+    ],
+  },
+  {
+    id: "fr-13-exo-e4",
+    notion: "fr-13",
+    savoirFaire: ["ce-se"],
+    difficulte: 3,
+    question:
+      "« ce » ou « se » ? Donnez la nature de chaque graphie :\na) « Il ne sait pas ce qu'il veut. »\nb) « Tout se sait dans ce village. »",
+    reponseType:
+      "a) « **ce** qu'il veut » : « ce » est un **pronom démonstratif** (antécédent de la relative, = « la chose que »).\nb) « **se** sait » : pronom réfléchi (pronominal de sens passif, « est su ») ; « **ce** village » : déterminant démonstratif.\nMême son, trois emplois : pronom démonstratif, pronom réfléchi, déterminant démonstratif.",
+    explication: [],
+  },
+  {
+    id: "fr-13-exo-e5",
+    notion: "fr-13",
+    savoirFaire: ["a-a", "et-est", "son-sont", "ce-se", "ces-ses-cest-sest", "leur-leurs"],
+    difficulte: 3,
+    question:
+      "Corrigez tous les homophones de ce texte :\n« Ses élèves on bien travaillé ; leurs maîtresse et fière, est elle leur a dit que ces un bon résultat. »",
+    reponseType:
+      "« **Ces** élèves **ont** bien travaillé ; **leur** maîtresse **est** fière, **et** elle leur a dit que **c'est** un bon résultat. »\n- « Ses » → « Ces » (démonstratif : ces élèves-là) ;\n- « on » → « ont » (verbe avoir) ;\n- « leurs » → « leur » (une seule maîtresse) ;\n- « et » → « est » (verbe être) ;\n- « est » → « et » (conjonction) ;\n- « ces » → « c'est » (cela est).",
     explication: [],
   },
 ];
