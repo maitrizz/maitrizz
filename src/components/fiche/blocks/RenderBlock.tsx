@@ -143,9 +143,9 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
     case "subsection":
       return (
         <div className="flex flex-col gap-3">
-          <h3 className="text-base font-bold text-primary pb-2 border-b-2 border-primary/10">
+          <h2 className="text-base font-bold text-primary pb-2 border-b-2 border-primary/10">
             {block.number} {block.title}
-          </h3>
+          </h2>
           <div className="flex flex-col gap-3">
             {block.blocks.map((b, i) => (
               <RenderBlock key={i} block={b} ficheSlug={ficheSlug} onNavigateTab={onNavigateTab} />

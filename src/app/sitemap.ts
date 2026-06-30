@@ -5,6 +5,7 @@ import {
   getFicheMetas,
 } from "./reviser/[niveau]/epreuves/ecrites/[matiere]/data";
 import { articles } from "./blog/data";
+import { getMatiereLastModified } from "@/lib/seo-dates";
 
 const BASE_URL = "https://www.maitrizz.fr";
 
@@ -44,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const matierePages: MetadataRoute.Sitemap = NIVEAUX.flatMap((niveau) =>
     MATIERES.map((matiere) => ({
       url: `${BASE_URL}/reviser/${niveau}/epreuves/ecrites/${matiere}`,
+      lastModified: getMatiereLastModified(matiere),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     }))
@@ -53,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     MATIERES.flatMap((matiere) =>
       getFicheMetas(niveau, matiere).map((fiche) => ({
         url: `${BASE_URL}/reviser/${niveau}/epreuves/ecrites/${matiere}/${fiche.slug}`,
+        lastModified: getMatiereLastModified(matiere),
         changeFrequency: "monthly" as const,
         priority: 0.9,
       }))

@@ -13,6 +13,9 @@ import {
   isValidMatiere,
   isValidNiveau,
 } from "../data";
+import { getMatiereLastModified } from "@/lib/seo-dates";
+
+const SITE_URL = "https://www.maitrizz.fr";
 
 export async function generateStaticParams() {
   return NIVEAUX.flatMap((niveau) =>
@@ -70,11 +73,14 @@ export default async function FichePage({
   const label = MATIERE_LABELS[matiere];
   const { prev, next } = getAdjacentFiches(niveau, matiere, slug);
   const base = `/reviser/${niveau}/epreuves/ecrites/${matiere}`;
+  const pageName =
+    fiche.numero > 0 && fiche.kind !== "sujet" ? `Notion ${fiche.numero} : ${fiche.title}` : fiche.title;
+  const lastModified = getMatiereLastModified(matiere);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LearningResource",
-    name: fiche.numero > 0 && fiche.kind !== "sujet" ? `Notion ${fiche.numero} : ${fiche.title}` : fiche.title,
+    name: pageName,
     description: fiche.metaDescription,
     inLanguage: "fr",
     isAccessibleForFree: true,
@@ -82,7 +88,34 @@ export default async function FichePage({
     educationalLevel: "CRPE",
     about: fiche.partie,
     teaches: fiche.subtitle,
-    url: `https://www.maitrizz.fr${base}/${slug}`,
+    keywords: [fiche.title, label, "CRPE", "fiche de révision", fiche.partie],
+    ...(lastModified ? { dateModified: lastModified } : {}),
+    publisher: {
+      "@type": "Organization",
+      name: "Maitrizz",
+      url: SITE_URL,
+    },
+    url: `${SITE_URL}${base}/${slug}`,
+  };
+
+  // Fil d'Ariane en données structurées : reflète exactement la navigation
+  // visible ci-dessous, pour le rich result « breadcrumb » de Google.
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { name: "Accueil", item: `${SITE_URL}/` },
+      { name: "Réviser", item: `${SITE_URL}/reviser` },
+      { name: "Épreuves", item: `${SITE_URL}/reviser/${niveau}/epreuves` },
+      { name: "Écrites", item: `${SITE_URL}/reviser/${niveau}/epreuves/ecrites` },
+      { name: label, item: `${SITE_URL}${base}` },
+      { name: pageName, item: `${SITE_URL}${base}/${slug}` },
+    ].map((entry, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: entry.name,
+      item: entry.item,
+    })),
   };
 
   return (
@@ -90,6 +123,10 @@ export default async function FichePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       <div className="max-w-4xl mx-auto px-6 lg:px-8 py-8 flex flex-col gap-6">
