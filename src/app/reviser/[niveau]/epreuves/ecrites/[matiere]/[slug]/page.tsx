@@ -10,6 +10,7 @@ import {
   getFiche,
   getFicheMetas,
   getAdjacentFiches,
+  getCanonicalNiveau,
   isValidMatiere,
   isValidNiveau,
 } from "../data";
@@ -40,15 +41,18 @@ export async function generateMetadata({
   const fiche = getFiche(niveau, matiere, slug);
   if (!fiche) return {};
 
-  const url = `/reviser/${niveau}/epreuves/ecrites/${matiere}/${slug}`;
+  // Contenu identique en L3/M2 => canonical vers le niveau de référence, pour
+  // éviter le contenu dupliqué. Sinon, la fiche est sa propre canonique.
+  const canonicalNiveau = getCanonicalNiveau(niveau, matiere, slug);
+  const canonicalUrl = `/reviser/${canonicalNiveau}/epreuves/ecrites/${matiere}/${slug}`;
   return {
     title: fiche.metaTitle,
     description: fiche.metaDescription,
-    alternates: { canonical: url },
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: fiche.metaTitle,
       description: fiche.metaDescription,
-      url,
+      url: canonicalUrl,
       type: "article",
     },
   };
@@ -76,6 +80,10 @@ export default async function FichePage({
   const pageName =
     fiche.numero > 0 && fiche.kind !== "sujet" ? `Notion ${fiche.numero} : ${fiche.title}` : fiche.title;
   const lastModified = getMatiereLastModified(matiere);
+  // URL canonique (cf. getCanonicalNiveau) : c'est elle que doit référencer le
+  // JSON-LD quand le contenu est partagé entre L3 et M2.
+  const canonicalNiveau = getCanonicalNiveau(niveau, matiere, slug);
+  const canonicalUrl = `${SITE_URL}/reviser/${canonicalNiveau}/epreuves/ecrites/${matiere}/${slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -95,7 +103,7 @@ export default async function FichePage({
       name: "Maitrizz",
       url: SITE_URL,
     },
-    url: `${SITE_URL}${base}/${slug}`,
+    url: canonicalUrl,
   };
 
   // Fil d'Ariane en données structurées : reflète exactement la navigation

@@ -171,6 +171,30 @@ export function getFiche(
   return getFiches(niveau, matiere).find((f) => f.slug === slug);
 }
 
+// Niveau de référence pour le canonical des fiches partagées à l'identique entre
+// L3 et M2 (mêmes objets réutilisés des deux côtés, ex. les 19 notions de
+// grammaire du français). Voir getCanonicalNiveau.
+const CANONICAL_NIVEAU: Niveau = "m2";
+
+// Détermine le niveau « canonique » d'une fiche pour le SEO.
+// Quand le contenu est strictement identique en L3 et M2 (le code réutilise le
+// MÊME objet Fiche des deux côtés), les deux URL sont du contenu dupliqué : on
+// fait pointer leur canonical vers un seul niveau de référence, pour que Google
+// consolide le classement sur une page au lieu de le diluer sur deux.
+// Une variante propre au niveau (objet distinct, ex. statistiques L3 vs M2) ou
+// une fiche présente d'un seul côté reste sa propre canonique.
+export function getCanonicalNiveau(
+  niveau: Niveau,
+  matiere: Matiere,
+  slug: string
+): Niveau {
+  const here = getFiche(niveau, matiere, slug);
+  if (!here) return niveau;
+  const other: Niveau = niveau === "m2" ? "l3" : "m2";
+  const twin = getFiche(other, matiere, slug);
+  return twin && twin === here ? CANONICAL_NIVEAU : niveau;
+}
+
 function toMeta(fiche: Fiche): FicheMeta {
   return {
     slug: fiche.slug,
