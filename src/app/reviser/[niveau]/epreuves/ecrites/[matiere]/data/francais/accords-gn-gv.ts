@@ -29,7 +29,7 @@ export const ficheAccordsGnGv: Fiche = {
   ],
   metaTitle: "Les accords dans le GN et le GV (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les accords : le nom noyau donneur d'accord, l'adjectif épithète et attribut, l'accord avec plusieurs noms, les adjectifs de couleur, l'accord sujet-verbe (test « c'est / ce sont… qui »), les sujets collectifs et coordonnés, l'attraction. Chaîne d'accord, méthode de relecture, exercices corrigés, flashcards et auto-évaluation.",
+    "Les accords au CRPE : dans le groupe nominal (épithète, attribut) et l'accord sujet-verbe, sujets collectifs ou coordonnés. Méthode et exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

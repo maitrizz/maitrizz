@@ -28,7 +28,7 @@ export const ficheAccordParticipePasse: Fiche = {
   ],
   metaTitle: "L'accord du participe passé (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur l'accord du participe passé : PP employé seul, avec être (accord avec le sujet), avec avoir (règle du COD antéposé par pronom personnel, relatif ou interrogatif), le cas du pronom « en », l'accord des verbes pronominaux (rôle du pronom « se »), et la distinction infinitif / participe passé. Arbre de décision, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "L'accord du participe passé au CRPE : PP seul, avec être, avec avoir et le COD antéposé, le cas de « en », les verbes pronominaux. Méthode et exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

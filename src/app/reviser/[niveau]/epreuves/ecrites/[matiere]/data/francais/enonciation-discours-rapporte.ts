@@ -30,7 +30,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
   ],
   metaTitle: "L'énonciation et le discours rapporté (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur l'énonciation (discours ancré / récit coupé, embrayeurs) et le discours rapporté (direct, indirect, indirect libre, récit de paroles), avec la concordance des temps et la transposition des embrayeurs. Méthode pas-à-pas, formules d'analyse, exercices corrigés, flashcards et auto-évaluation.",
+    "L'énonciation et le discours rapporté au CRPE : embrayeurs, discours direct, indirect et indirect libre, concordance des temps. Méthode et exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

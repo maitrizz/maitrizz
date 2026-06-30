@@ -30,7 +30,7 @@ export const ficheTempsDuPasse: Fiche = {
   ],
   metaTitle: "Les temps du passé (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les principaux emplois de l'imparfait, du passé simple, du passé composé et du plus-que-parfait, ainsi que sur le système du récit. Méthode d'analyse en contexte, exercices corrigés, flashcards et auto-évaluation.",
+    "Les temps du passé au CRPE : emplois de l'imparfait, du passé simple, du passé composé et du plus-que-parfait, le système du récit. Méthode et exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

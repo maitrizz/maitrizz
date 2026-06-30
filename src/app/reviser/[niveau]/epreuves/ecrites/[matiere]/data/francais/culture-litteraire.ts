@@ -50,7 +50,7 @@ function ficheReferentielCulturel(): Fiche {
     metaTitle:
       "Références culturelles et littéraires mobilisables : Partie 3 du CRPE · Fiche de révision | Maitrizz",
     metaDescription:
-      "Recueil d'œuvres pour la Partie 3 du CRPE (développement rédigé), classées par grands thèmes. Pour chaque œuvre : un résumé concret, des idées à défendre prêtes à servir d'axe et une formulation type prête à adapter. De la matière directement exploitable dans votre réflexion argumentée.",
+      "Références culturelles et littéraires pour la Partie 3 du CRPE : un recueil d'œuvres classées par thèmes, avec résumé, idées à défendre et formulation type.",
     tabGroups: [
       {
         id: "mode-emploi",

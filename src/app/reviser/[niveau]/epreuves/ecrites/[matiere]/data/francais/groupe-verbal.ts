@@ -30,7 +30,7 @@ export const ficheGroupeVerbal: Fiche = {
   ],
   metaTitle: "Le groupe verbal (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur le groupe verbal : verbe noyau, GV transitifs, intransitifs et attributifs, voix pronominale, voix impersonnelle, voix passive et construction factitive « faire + infinitif ». Cours, méthode, exercices corrigés, flashcards et auto-évaluation.",
+    "Le groupe verbal au CRPE : verbe noyau, constructions transitive, intransitive, attributive, et les voix pronominale, passive, impersonnelle. Cours et exercices.",
   tabGroups: [
     {
       id: "apprendre",

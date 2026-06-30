@@ -30,7 +30,7 @@ export const ficheHomophonesGrammaticaux: Fiche = {
   ],
   metaTitle: "Les homophones grammaticaux (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les homophones grammaticaux (a/à, est/et, son/sont, on/ont, ou/où, ses/ces, ce/se, leur/leurs, mais/mes, davantage/d'avantage, c'est/s'est/sais/sait, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous, peu/peut/peux, quand/quant/qu'en, près/prêt) avec leurs tests de remplacement, une méthode pas-à-pas, des exercices corrigés, des flashcards et une auto-évaluation.",
+    "Les homophones grammaticaux au CRPE : a/à, est/et, son/sont, on/ont, ses/ces, ce/se, leur/leurs, c'est/s'est. Tests de remplacement, méthode, exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

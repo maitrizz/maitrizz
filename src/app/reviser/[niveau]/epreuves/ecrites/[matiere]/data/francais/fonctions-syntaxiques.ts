@@ -24,7 +24,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
   ],
   metaTitle: "Fonctions syntaxiques (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les fonctions syntaxiques : sujet, attribut du sujet, COD, COI, COS, attribut du COD, complément d'agent, complément circonstanciel, complément du nom, épithète, apposition, apostrophe. Les tests de repérage, pièges fréquents, méthode, exercices corrigés, flashcards et auto-évaluation.",
+    "Les fonctions syntaxiques au CRPE : sujet, attribut, COD, COI, complément circonstanciel, épithète, apposition. Tests de repérage, méthode, exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

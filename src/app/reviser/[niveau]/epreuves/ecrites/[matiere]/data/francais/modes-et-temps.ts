@@ -30,7 +30,7 @@ export const ficheModesEtTemps: Fiche = {
   ],
   metaTitle: "Modes et temps du verbe (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les modes et les temps du verbe : panorama des modes, terminaisons caractéristiques (présent, imparfait, passé simple, futur, conditionnel, subjonctif), temps composés et auxiliaire, formes irrégulières. Méthode d'identification en 4 questions, pièges fréquents, exercices corrigés, flashcards et auto-évaluation.",
+    "Modes et temps du verbe au CRPE : les modes, terminaisons du présent, imparfait, passé simple, futur, conditionnel, subjonctif. Méthode et exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

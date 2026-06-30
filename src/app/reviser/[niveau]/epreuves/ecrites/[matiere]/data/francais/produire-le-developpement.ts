@@ -56,7 +56,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
     metaTitle:
       "Produire le développement rédigé (M2) : Partie 3 du CRPE · Fiche de révision | Maitrizz",
     metaDescription:
-      "Fiche CRPE M2 sur la Partie 3 (réflexion et développement) : analyser la question, formuler une problématique, choisir un plan, mobiliser le texte et sa culture, rédiger l'introduction, les paragraphes et la conclusion d'une réflexion argumentée. Méthode déroulée sur le sujet officiel 2026, exercices d'après les sujets réels, flashcards et auto-évaluation.",
+      "Produire le développement rédigé du CRPE (Partie 3) : analyser la question, poser la problématique, bâtir le plan et rédiger. Méthode déroulée et exercices.",
     tabGroups: [
       {
         id: "decouvrir",

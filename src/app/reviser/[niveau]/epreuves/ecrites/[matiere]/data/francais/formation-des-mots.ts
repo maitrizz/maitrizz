@@ -30,7 +30,7 @@ export const ficheFormationDesMots: Fiche = {
   ],
   metaTitle: "La formation des mots (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur la formation des mots : mots simples et construits, dérivation (radical, préfixe, suffixe, allomorphes de in-, double valeur de -ment), composition populaire et savante, doublets, faux amis morphologiques, familles de mots et champ lexical. Méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "La formation des mots au CRPE : mots simples et construits, dérivation (radical, préfixe, suffixe), composition et familles de mots. Méthode et exercices.",
   tabGroups: [
     {
       id: "apprendre",

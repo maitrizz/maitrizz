@@ -34,7 +34,7 @@ export const ficheClassesGrammaticales: Fiche = {
   ],
   metaTitle: "Classes grammaticales (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur les classes grammaticales : les natures de mots (nom, déterminant, adjectif, pronom, verbe, adverbe, préposition, conjonction, interjection), le cas de l'onomatopée, les mots-caméléons (tout, comme, que, si) et les pièges fréquents. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "Les classes grammaticales au CRPE : nom, déterminant, adjectif, pronom, verbe, adverbe, et les mots-caméléons (tout, que, si). Cours, méthode, exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

@@ -30,7 +30,7 @@ export const fichePhonologie: Fiche = {
   ],
   metaTitle: "La phonologie (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur la phonologie : phonème, graphème et lettre, transcription en API, les phonèmes du français, correspondances grapho-phonémiques (polygraphie phonique, polyphonie graphique), valeur de position et de combinaison, h muet et h aspiré, phonétique et phonologie. Méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "La phonologie au CRPE : phonème, graphème et lettre, transcription en API, correspondances grapho-phonémiques, h muet et h aspiré. Méthode et exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

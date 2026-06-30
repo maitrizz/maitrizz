@@ -30,7 +30,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
   ],
   metaTitle: "Le groupe nominal et ses expansions (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE complète sur le groupe nominal et ses expansions : nom noyau, déterminant, GN minimal et GN étendu, les 4 expansions (épithète liée, épithète détachée, complément du nom, proposition subordonnée relative), relative déterminative ou explicative. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "Le groupe nominal et ses expansions au CRPE : nom noyau, déterminant et les quatre expansions (épithète, complément du nom, relative). Cours et exercices.",
   tabGroups: [
     {
       id: "apprendre",
