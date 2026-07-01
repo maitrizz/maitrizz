@@ -32,7 +32,7 @@ export const ficheClassesGrammaticales: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 3-4 · Terminologie grammaticale", variant: "info" },
   ],
-  metaTitle: "Classes grammaticales (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Classes grammaticales · Fiche de révision CRPE",
   metaDescription:
     "Les classes grammaticales au CRPE : nom, déterminant, adjectif, pronom, verbe, adverbe, et les mots-caméléons (tout, que, si). Cours, méthode, exercices corrigés.",
   tabGroups: [

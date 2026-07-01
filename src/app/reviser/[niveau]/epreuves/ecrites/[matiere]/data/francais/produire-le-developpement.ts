@@ -53,8 +53,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
       { label: "★★★ Le cœur de la Partie 3", variant: "hot" },
       { label: "Épreuve écrite de français · 3 h", variant: "info" },
     ],
-    metaTitle:
-      "Produire le développement rédigé (M2) : Partie 3 du CRPE · Fiche de révision | Maitrizz",
+    metaTitle: "Produire le développement rédigé · Fiche de révision CRPE",
     metaDescription:
       "Produire le développement rédigé du CRPE (Partie 3) : analyser la question, poser la problématique, bâtir le plan et rédiger. Méthode déroulée et exercices.",
     tabGroups: [

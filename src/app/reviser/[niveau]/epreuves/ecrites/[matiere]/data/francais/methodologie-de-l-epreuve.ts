@@ -46,7 +46,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
         variant: "info",
       },
     ],
-    metaTitle: "Méthodologie de l'écrit de français (CRPE) | Maitrizz",
+    metaTitle: "Méthodologie de l'écrit de français · Fiche de révision CRPE",
     metaDescription: l3
       ? "Méthodologie du CRPE L3 : épreuve commune français et maths (4 h), barème, note éliminatoire, les trois sous-parties de français, stratégie et gestion du temps."
       : "Méthodologie de l'épreuve écrite de français du CRPE M2 (3 h) : format, barème, les trois parties (langue, lexique, réflexion rédigée) et gestion du temps.",

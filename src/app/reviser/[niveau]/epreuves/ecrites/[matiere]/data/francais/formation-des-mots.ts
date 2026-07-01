@@ -28,7 +28,7 @@ export const ficheFormationDesMots: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "La formation des mots (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Formation des mots · Fiche de révision CRPE",
   metaDescription:
     "La formation des mots au CRPE : mots simples et construits, dérivation (radical, préfixe, suffixe), composition et familles de mots. Méthode et exercices.",
   tabGroups: [

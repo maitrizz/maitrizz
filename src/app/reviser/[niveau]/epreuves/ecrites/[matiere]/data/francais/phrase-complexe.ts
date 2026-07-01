@@ -26,7 +26,7 @@ export const fichePhraseComplexe: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "La phrase complexe et sa ponctuation (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Phrase complexe et ponctuation · Fiche de révision CRPE",
   metaDescription:
     "La phrase complexe au CRPE : juxtaposition, coordination, subordination, les familles de subordonnées et la ponctuation. Méthode et exercices corrigés.",
   tabGroups: [

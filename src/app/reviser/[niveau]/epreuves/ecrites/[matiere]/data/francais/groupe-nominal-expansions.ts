@@ -28,7 +28,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "Le groupe nominal et ses expansions (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Groupe nominal et expansions · Fiche de révision CRPE",
   metaDescription:
     "Le groupe nominal et ses expansions au CRPE : nom noyau, déterminant et les quatre expansions (épithète, complément du nom, relative). Cours et exercices.",
   tabGroups: [

@@ -28,7 +28,7 @@ export const ficheTempsDuPasse: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "Les temps du passé (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Temps du passé · Fiche de révision CRPE",
   metaDescription:
     "Les temps du passé au CRPE : emplois de l'imparfait, du passé simple, du passé composé et du plus-que-parfait, le système du récit. Méthode et exercices corrigés.",
   tabGroups: [

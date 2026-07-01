@@ -27,7 +27,7 @@ export const ficheFormesNonConjuguees: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "Infinitif, participes et gérondif (CRPE) · Fiche | Maitrizz",
+  metaTitle: "Infinitif, participes et gérondif · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur l'analyse des formes non conjuguées du verbe : infinitif, participe présent, gérondif et participe passé, avec la distinction de l'adjectif verbal.",
   tabGroups: [

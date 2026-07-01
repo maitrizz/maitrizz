@@ -28,7 +28,7 @@ export const fichePhonologie: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "La phonologie (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Phonologie · Fiche de révision CRPE",
   metaDescription:
     "La phonologie au CRPE : phonème, graphème et lettre, transcription en API, correspondances grapho-phonémiques, h muet et h aspiré. Méthode et exercices corrigés.",
   tabGroups: [

@@ -22,7 +22,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 + lycée", variant: "info" },
   ],
-  metaTitle: "Fonctions syntaxiques (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Fonctions syntaxiques · Fiche de révision CRPE",
   metaDescription:
     "Les fonctions syntaxiques au CRPE : sujet, attribut, COD, COI, complément circonstanciel, épithète, apposition. Tests de repérage, méthode, exercices corrigés.",
   tabGroups: [

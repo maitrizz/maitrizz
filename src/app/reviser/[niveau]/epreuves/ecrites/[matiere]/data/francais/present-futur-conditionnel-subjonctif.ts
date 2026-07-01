@@ -28,7 +28,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "Présent, futur, conditionnel, subjonctif (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Présent, futur, conditionnel, subjonctif · Fiche de révision CRPE",
   metaDescription:
     "Présent, futur, conditionnel et subjonctif au CRPE : les valeurs de chaque temps et les emplois du subjonctif. Test conditionnel/imparfait, exercices corrigés.",
   tabGroups: [

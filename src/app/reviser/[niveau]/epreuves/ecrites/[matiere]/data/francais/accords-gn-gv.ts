@@ -27,7 +27,7 @@ export const ficheAccordsGnGv: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "Les accords dans le GN et le GV (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Accords dans le GN et le GV · Fiche de révision CRPE",
   metaDescription:
     "Les accords au CRPE : dans le groupe nominal (épithète, attribut) et l'accord sujet-verbe, sujets collectifs ou coordonnés. Méthode et exercices corrigés.",
   tabGroups: [

@@ -28,7 +28,7 @@ export const ficheGroupeVerbal: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "Le groupe verbal (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Groupe verbal · Fiche de révision CRPE",
   metaDescription:
     "Le groupe verbal au CRPE : verbe noyau, constructions transitive, intransitive, attributive, et les voix pronominale, passive, impersonnelle. Cours et exercices.",
   tabGroups: [

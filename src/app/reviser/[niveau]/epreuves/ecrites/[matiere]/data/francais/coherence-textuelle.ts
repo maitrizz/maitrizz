@@ -28,7 +28,7 @@ export const ficheCoherenceTextuelle: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "La cohérence textuelle (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Cohérence textuelle · Fiche de révision CRPE",
   metaDescription:
     "La cohérence textuelle au CRPE : reprises anaphoriques, chaîne référentielle, progression thématique, connecteurs logiques. Méthode et exercices corrigés.",
   tabGroups: [

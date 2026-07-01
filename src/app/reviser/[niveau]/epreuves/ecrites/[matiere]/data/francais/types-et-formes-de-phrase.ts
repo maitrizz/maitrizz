@@ -28,7 +28,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "Types et formes de phrase (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Types et formes de phrase · Fiche de révision CRPE",
   metaDescription:
     "Types et formes de phrase au CRPE : les quatre types (déclaratif, interrogatif, injonctif, exclamatif) et les formes de phrase. Méthode et exercices corrigés.",
   tabGroups: [

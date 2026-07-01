@@ -28,7 +28,7 @@ export const ficheFiguresRegistres: Fiche = {
           "variant": "info"
       }
   ],
-  metaTitle: "Les figures de style et les registres (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Figures de style et registres · Fiche de révision CRPE",
   metaDescription:
     "Figures de style et registres au CRPE : métaphore, métonymie, hyperbole, antithèse, oxymore, et les registres lyrique, épique, comique. Exercices corrigés.",
   tabGroups: [
