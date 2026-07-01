@@ -29,8 +29,7 @@ export const ficheRelationsSemantiques: Fiche = {
       }
   ],
   metaTitle: "Relations sémantiques · Fiche de révision CRPE",
-  metaDescription:
-    "Les relations sémantiques au CRPE : synonymie, antonymie, hyperonymie, polysémie, sens propre et figuré, dénotation et connotation. Méthode et exercices corrigés.",
+  metaDescription: "Les relations sémantiques au CRPE : synonymie, antonymie, hyperonymie, polysémie, sens propre et figuré, dénotation et connotation. Exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

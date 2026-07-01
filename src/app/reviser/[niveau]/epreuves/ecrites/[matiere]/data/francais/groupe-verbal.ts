@@ -29,8 +29,7 @@ export const ficheGroupeVerbal: Fiche = {
       }
   ],
   metaTitle: "Groupe verbal · Fiche de révision CRPE",
-  metaDescription:
-    "Le groupe verbal au CRPE : verbe noyau, constructions transitive, intransitive, attributive, et les voix pronominale, passive, impersonnelle. Cours et exercices.",
+  metaDescription: "Le groupe verbal au CRPE : verbe noyau, constructions transitive, intransitive, attributive, voix pronominale, passive, impersonnelle. Exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

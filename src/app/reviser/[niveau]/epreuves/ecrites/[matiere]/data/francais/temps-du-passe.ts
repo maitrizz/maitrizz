@@ -29,8 +29,7 @@ export const ficheTempsDuPasse: Fiche = {
       }
   ],
   metaTitle: "Temps du passé · Fiche de révision CRPE",
-  metaDescription:
-    "Les temps du passé au CRPE : emplois de l'imparfait, du passé simple, du passé composé et du plus-que-parfait, le système du récit. Méthode et exercices corrigés.",
+  metaDescription: "Les temps du passé au CRPE : imparfait, passé simple, passé composé, plus-que-parfait, le système du récit. Méthode et exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",

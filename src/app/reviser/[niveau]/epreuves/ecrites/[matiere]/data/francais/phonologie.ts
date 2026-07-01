@@ -29,8 +29,7 @@ export const fichePhonologie: Fiche = {
       }
   ],
   metaTitle: "Phonologie · Fiche de révision CRPE",
-  metaDescription:
-    "La phonologie au CRPE : phonème, graphème et lettre, transcription en API, correspondances grapho-phonémiques, h muet et h aspiré. Méthode et exercices corrigés.",
+  metaDescription: "La phonologie au CRPE : phonème, graphème et lettre, transcription en API, correspondances grapho-phonémiques, h muet et h aspiré. Exercices corrigés.",
   tabGroups: [
     {
       id: "apprendre",
