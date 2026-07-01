@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_PHRASE_COMPLEXE } from "./exercices-phrase-complexe";
 import { COPIES_PHRASE_COMPLEXE } from "./copies-phrase-complexe";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "juxtaposition-coordination-subordination", label: "Juxtaposition/coordination/subordination" },
   { id: "relative", label: "Relative" },
   { id: "conjonctive", label: "Conjonctive" },
@@ -29,6 +29,7 @@ export const fichePhraseComplexe: Fiche = {
   metaTitle: "Phrase complexe et ponctuation · Fiche de révision CRPE",
   metaDescription:
     "La phrase complexe au CRPE : juxtaposition, coordination, subordination, les familles de subordonnées et la ponctuation. Méthode et exercices corrigés.",
+  maitriseNotionSlug: "phrase-complexe",
   tabGroups: [
     {
       id: "apprendre",

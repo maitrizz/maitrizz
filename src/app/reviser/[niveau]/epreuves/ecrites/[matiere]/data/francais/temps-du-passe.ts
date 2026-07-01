@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_TEMPS_DU_PASSE } from "./exercices-temps-du-passe";
 import { COPIES_TEMPS_DU_PASSE } from "./copies-temps-du-passe";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "imparfait", label: "Imparfait" },
   { id: "passe-simple", label: "Passé simple" },
   { id: "passe-compose", label: "Passé composé" },
@@ -30,6 +30,7 @@ export const ficheTempsDuPasse: Fiche = {
   ],
   metaTitle: "Temps du passé · Fiche de révision CRPE",
   metaDescription: "Les temps du passé au CRPE : imparfait, passé simple, passé composé, plus-que-parfait, le système du récit. Méthode et exercices corrigés.",
+  maitriseNotionSlug: "temps-du-passe",
   tabGroups: [
     {
       id: "apprendre",

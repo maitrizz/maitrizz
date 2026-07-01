@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_FORMES_NON_CONJUGUEES } from "./exercices-formes-non-conjuguees";
 import { COPIES_FORMES_NON_CONJUGUEES } from "./copies-formes-non-conjuguees";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "infinitif", label: "Infinitif" },
   { id: "participe-present", label: "Participe présent" },
   { id: "participe-passe", label: "Participe passé" },
@@ -29,6 +29,7 @@ export const ficheFormesNonConjuguees: Fiche = {
   ],
   metaTitle: "Infinitif, participes et gérondif · Fiche de révision CRPE",
   metaDescription: "Formes non conjuguées du verbe au CRPE : infinitif, participe présent, gérondif et participe passé, avec la distinction de l'adjectif verbal.",
+  maitriseNotionSlug: "formes-non-conjuguees",
   tabGroups: [
     {
       id: "apprendre",

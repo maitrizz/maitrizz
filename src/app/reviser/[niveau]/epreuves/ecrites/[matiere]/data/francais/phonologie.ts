@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_PHONOLOGIE } from "./exercices-phonologie";
 import { COPIES_PHONOLOGIE } from "./copies-phonologie";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "phonemes-graphemes", label: "Phonèmes/graphèmes" },
   { id: "syllabes", label: "Syllabes" },
   { id: "accents", label: "Accents" },
@@ -30,6 +30,7 @@ export const fichePhonologie: Fiche = {
   ],
   metaTitle: "Phonologie · Fiche de révision CRPE",
   metaDescription: "La phonologie au CRPE : phonème, graphème et lettre, transcription en API, correspondances grapho-phonémiques, h muet et h aspiré. Exercices corrigés.",
+  maitriseNotionSlug: "phonologie",
   tabGroups: [
     {
       id: "apprendre",

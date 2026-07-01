@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_HOMOPHONES_GRAMMATICAUX } from "./exercices-homophones-grammaticaux";
 import { COPIES_HOMOPHONES_GRAMMATICAUX } from "./copies-homophones-grammaticaux";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "a-a", label: "a/à" },
   { id: "et-est", label: "et/est" },
   { id: "son-sont", label: "son/sont" },
@@ -30,6 +30,7 @@ export const ficheHomophonesGrammaticaux: Fiche = {
   ],
   metaTitle: "Homophones grammaticaux · Fiche de révision CRPE",
   metaDescription: "Les homophones grammaticaux au CRPE : a/à, est/et, son/sont, on/ont, ses/ces, ce/se, leur/leurs, c'est/s'est. Tests de remplacement et exercices corrigés.",
+  maitriseNotionSlug: "homophones-grammaticaux",
   tabGroups: [
     {
       id: "apprendre",

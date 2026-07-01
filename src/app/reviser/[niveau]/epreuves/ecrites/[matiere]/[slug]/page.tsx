@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { FicheHeader } from "@/components/fiche/FicheHeader";
 import { FicheTabs } from "@/components/fiche/FicheTabs";
+import { MaitriseVoyants } from "@/components/fiche/MaitriseVoyants";
 import {
   MATIERES,
   MATIERE_LABELS,
@@ -152,6 +153,10 @@ export default async function FichePage({
         </div>
 
         <FicheHeader fiche={fiche} />
+
+        {fiche.maitriseNotionSlug && (
+          <MaitriseVoyants notionSlug={fiche.maitriseNotionSlug} />
+        )}
 
         <FicheTabs tabGroups={fiche.tabGroups} ficheSlug={fiche.slug} niveau={niveau} matiere={matiere} />
 

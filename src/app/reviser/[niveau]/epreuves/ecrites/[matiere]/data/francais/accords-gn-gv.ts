@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_ACCORDS_GN_GV } from "./exercices-accords-gn-gv";
 import { COPIES_ACCORDS_GN_GV } from "./copies-accords-gn-gv";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "accords-gn", label: "Accords dans le GN" },
   { id: "sujet-verbe", label: "Sujet-verbe" },
   { id: "sujet-inverse-eloigne", label: "Sujet inversé/éloigné" },
@@ -30,6 +30,7 @@ export const ficheAccordsGnGv: Fiche = {
   metaTitle: "Accords dans le GN et le GV · Fiche de révision CRPE",
   metaDescription:
     "Les accords au CRPE : dans le groupe nominal (épithète, attribut) et l'accord sujet-verbe, sujets collectifs ou coordonnés. Méthode et exercices corrigés.",
+  maitriseNotionSlug: "accords-gn-gv",
   tabGroups: [
     {
       id: "apprendre",

@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_COHERENCE_TEXTUELLE } from "./exercices-coherence-textuelle";
 import { COPIES_COHERENCE_TEXTUELLE } from "./copies-coherence-textuelle";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "reprises-nominales", label: "Reprises nominales" },
   { id: "pronoms", label: "Pronoms" },
   { id: "connecteurs", label: "Connecteurs" },
@@ -31,6 +31,7 @@ export const ficheCoherenceTextuelle: Fiche = {
   metaTitle: "Cohérence textuelle · Fiche de révision CRPE",
   metaDescription:
     "La cohérence textuelle au CRPE : reprises anaphoriques, chaîne référentielle, progression thématique, connecteurs logiques. Méthode et exercices corrigés.",
+  maitriseNotionSlug: "coherence-textuelle",
   tabGroups: [
     {
       id: "apprendre",

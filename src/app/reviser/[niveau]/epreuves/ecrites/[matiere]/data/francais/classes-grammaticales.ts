@@ -8,7 +8,7 @@ import { COPIES_CLASSES_GRAMMATICALES } from "./copies-classes-grammaticales";
 
 // Savoir-faire de la notion = filtre « Ce que je travaille » (Appliquer).
 // Multi-tag côté exercices. Voir GABARIT_NOTION.md §4.
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "determinants", label: "Déterminants" },
   { id: "adv-adj", label: "Adverbe ou adjectif" },
   { id: "cameleons", label: "Mots-caméléons" },
@@ -34,6 +34,7 @@ export const ficheClassesGrammaticales: Fiche = {
   ],
   metaTitle: "Classes grammaticales · Fiche de révision CRPE",
   metaDescription: "Les classes grammaticales au CRPE : nom, déterminant, adjectif, pronom, verbe, adverbe, et les mots-caméléons (tout, que, si). Cours et exercices corrigés.",
+  maitriseNotionSlug: "classes-grammaticales",
   tabGroups: [
     {
       id: "apprendre",

@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_ACCORD_PARTICIPE_PASSE } from "./exercices-accord-participe-passe";
 import { COPIES_ACCORD_PARTICIPE_PASSE } from "./copies-accord-participe-passe";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "etre", label: "Avec être" },
   { id: "avoir-cod-avant", label: "Avec avoir (COD avant)" },
   { id: "pronominaux", label: "Pronominaux" },
@@ -28,6 +28,7 @@ export const ficheAccordParticipePasse: Fiche = {
   ],
   metaTitle: "Accord du participe passé · Fiche de révision CRPE",
   metaDescription: "L'accord du participe passé au CRPE : PP seul, avec être, avec avoir, COD antéposé, « en », verbes pronominaux. Méthode et exercices corrigés.",
+  maitriseNotionSlug: "accord-participe-passe",
   tabGroups: [
     {
       id: "apprendre",

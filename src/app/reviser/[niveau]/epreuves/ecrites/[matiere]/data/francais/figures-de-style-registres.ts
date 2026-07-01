@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_FIGURES_DE_STYLE_REGISTRES } from "./exercices-figures-de-style-registres";
 import { COPIES_FIGURES_DE_STYLE_REGISTRES } from "./copies-figures-de-style-registres";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "images", label: "Images" },
   { id: "opposition", label: "Opposition" },
   { id: "insistance", label: "Insistance" },
@@ -31,6 +31,7 @@ export const ficheFiguresRegistres: Fiche = {
   metaTitle: "Figures de style et registres · Fiche de révision CRPE",
   metaDescription:
     "Figures de style et registres au CRPE : métaphore, métonymie, hyperbole, antithèse, oxymore, et les registres lyrique, épique, comique. Exercices corrigés.",
+  maitriseNotionSlug: "figures-de-style-registres",
   tabGroups: [
     {
       id: "apprendre",

@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_ENONCIATION_DISCOURS_RAPPORTE } from "./exercices-enonciation-discours-rapporte";
 import { COPIES_ENONCIATION_DISCOURS_RAPPORTE } from "./copies-enonciation-discours-rapporte";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "indices-enonciation", label: "Indices d’énonciation" },
   { id: "discours-direct", label: "Discours direct" },
   { id: "discours-indirect", label: "Discours indirect" },
@@ -31,6 +31,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
   metaTitle: "Énonciation et discours rapporté · Fiche de révision CRPE",
   metaDescription:
     "L'énonciation et le discours rapporté au CRPE : embrayeurs, discours direct, indirect et indirect libre, concordance des temps. Méthode et exercices corrigés.",
+  maitriseNotionSlug: "enonciation-discours-rapporte",
   tabGroups: [
     {
       id: "apprendre",

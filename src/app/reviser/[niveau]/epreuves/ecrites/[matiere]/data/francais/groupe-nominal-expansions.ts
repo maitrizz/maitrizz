@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_GROUPE_NOMINAL_EXPANSIONS } from "./exercices-groupe-nominal-expansions";
 import { COPIES_GROUPE_NOMINAL_EXPANSIONS } from "./copies-groupe-nominal-expansions";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "noyau-gn", label: "Noyau du GN" },
   { id: "determinants", label: "Déterminants" },
   { id: "epithete", label: "Épithète" },
@@ -31,6 +31,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
   metaTitle: "Groupe nominal et expansions · Fiche de révision CRPE",
   metaDescription:
     "Le groupe nominal et ses expansions au CRPE : nom noyau, déterminant et les quatre expansions (épithète, complément du nom, relative). Cours et exercices.",
+  maitriseNotionSlug: "groupe-nominal-expansions",
   tabGroups: [
     {
       id: "apprendre",

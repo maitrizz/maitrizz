@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_RELATIONS_SEMANTIQUES } from "./exercices-relations-semantiques";
 import { COPIES_RELATIONS_SEMANTIQUES } from "./copies-relations-semantiques";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "synonymie", label: "Synonymie" },
   { id: "antonymie", label: "Antonymie" },
   { id: "hyperonymie", label: "Hyperonymie" },
@@ -30,6 +30,7 @@ export const ficheRelationsSemantiques: Fiche = {
   ],
   metaTitle: "Relations sémantiques · Fiche de révision CRPE",
   metaDescription: "Les relations sémantiques au CRPE : synonymie, antonymie, hyperonymie, polysémie, sens propre et figuré, dénotation et connotation. Exercices corrigés.",
+  maitriseNotionSlug: "relations-semantiques",
   tabGroups: [
     {
       id: "apprendre",

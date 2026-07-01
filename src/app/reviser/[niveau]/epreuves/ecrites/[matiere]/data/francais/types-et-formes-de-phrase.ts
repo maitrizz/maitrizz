@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_TYPES_ET_FORMES_DE_PHRASE } from "./exercices-types-et-formes-de-phrase";
 import { COPIES_TYPES_ET_FORMES_DE_PHRASE } from "./copies-types-et-formes-de-phrase";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "types", label: "Types de phrase" },
   { id: "negation", label: "Négation" },
   { id: "interrogation", label: "Interrogation" },
@@ -31,6 +31,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
   metaTitle: "Types et formes de phrase · Fiche de révision CRPE",
   metaDescription:
     "Types et formes de phrase au CRPE : les quatre types (déclaratif, interrogatif, injonctif, exclamatif) et les formes de phrase. Méthode et exercices corrigés.",
+  maitriseNotionSlug: "types-et-formes-de-phrase",
   tabGroups: [
     {
       id: "apprendre",

@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_FORMATION_DES_MOTS } from "./exercices-formation-des-mots";
 import { COPIES_FORMATION_DES_MOTS } from "./copies-formation-des-mots";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "radical-famille", label: "Radical/famille" },
   { id: "prefixation", label: "Préfixation" },
   { id: "suffixation", label: "Suffixation" },
@@ -31,6 +31,7 @@ export const ficheFormationDesMots: Fiche = {
   metaTitle: "Formation des mots · Fiche de révision CRPE",
   metaDescription:
     "La formation des mots au CRPE : mots simples et construits, dérivation (radical, préfixe, suffixe), composition et familles de mots. Méthode et exercices.",
+  maitriseNotionSlug: "formation-des-mots",
   tabGroups: [
     {
       id: "apprendre",

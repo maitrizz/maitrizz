@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_FONCTIONS_SYNTAXIQUES } from "./exercices-fonctions-syntaxiques";
 import { COPIES_FONCTIONS_SYNTAXIQUES } from "./copies-fonctions-syntaxiques";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "sujet", label: "Sujet" },
   { id: "cod-coi", label: "COD/COI" },
   { id: "attribut", label: "Attribut" },
@@ -25,6 +25,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
   metaTitle: "Fonctions syntaxiques · Fiche de révision CRPE",
   metaDescription:
     "Les fonctions syntaxiques au CRPE : sujet, attribut, COD, COI, complément circonstanciel, épithète, apposition. Tests de repérage, méthode, exercices corrigés.",
+  maitriseNotionSlug: "fonctions-syntaxiques",
   tabGroups: [
     {
       id: "apprendre",

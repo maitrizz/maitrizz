@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_MODES_ET_TEMPS } from "./exercices-modes-et-temps";
 import { COPIES_MODES_ET_TEMPS } from "./copies-modes-et-temps";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "modes-personnels", label: "Modes personnels" },
   { id: "modes-non-personnels", label: "Modes non personnels" },
   { id: "temps-simples-composes", label: "Temps simples/composés" },
@@ -31,6 +31,7 @@ export const ficheModesEtTemps: Fiche = {
   metaTitle: "Modes et temps du verbe · Fiche de révision CRPE",
   metaDescription:
     "Modes et temps du verbe au CRPE : les modes, terminaisons du présent, imparfait, passé simple, futur, conditionnel, subjonctif. Méthode et exercices corrigés.",
+  maitriseNotionSlug: "modes-et-temps",
   tabGroups: [
     {
       id: "apprendre",

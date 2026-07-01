@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_PRESENT_FUTUR_CONDITIONNEL_SUBJONCTIF } from "./exercices-present-futur-conditionnel-subjonctif";
 import { COPIES_PRESENT_FUTUR_CONDITIONNEL_SUBJONCTIF } from "./copies-present-futur-conditionnel-subjonctif";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "present", label: "Présent" },
   { id: "futur", label: "Futur" },
   { id: "conditionnel", label: "Conditionnel" },
@@ -31,6 +31,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
   metaTitle: "Présent, futur, conditionnel, subjonctif · Fiche de révision CRPE",
   metaDescription:
     "Présent, futur, conditionnel et subjonctif au CRPE : les valeurs de chaque temps et les emplois du subjonctif. Test conditionnel/imparfait, exercices corrigés.",
+  maitriseNotionSlug: "present-futur-conditionnel-subjonctif",
   tabGroups: [
     {
       id: "apprendre",

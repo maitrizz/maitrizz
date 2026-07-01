@@ -2,7 +2,7 @@ import type { Fiche } from "@/components/fiche/types";
 import { EXERCICES_GROUPE_VERBAL } from "./exercices-groupe-verbal";
 import { COPIES_GROUPE_VERBAL } from "./copies-groupe-verbal";
 
-const SAVOIR_FAIRE = [
+export const SAVOIR_FAIRE = [
   { id: "verbe-noyau", label: "Verbe noyau" },
   { id: "complements-verbe", label: "Compléments du verbe" },
   { id: "attributs", label: "Attributs" },
@@ -30,6 +30,7 @@ export const ficheGroupeVerbal: Fiche = {
   ],
   metaTitle: "Groupe verbal · Fiche de révision CRPE",
   metaDescription: "Le groupe verbal au CRPE : verbe noyau, constructions transitive, intransitive, attributive, voix pronominale, passive, impersonnelle. Exercices corrigés.",
+  maitriseNotionSlug: "groupe-verbal",
   tabGroups: [
     {
       id: "apprendre",
