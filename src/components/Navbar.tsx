@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Le prototype (/proto) a son propre header.
+  if (pathname?.startsWith("/proto")) return null;
 
   return (
     <header className="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">

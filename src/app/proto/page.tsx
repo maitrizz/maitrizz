@@ -1,23 +1,27 @@
 import Link from "next/link";
-import { Caveat } from "next/font/google";
+import Reveal from "./Reveal";
 
 /* ──────────────────────────────────────────────────────────────────────────
-   PROTOTYPE v2 — « LA COPIE CORRIGÉE »
-   Isolé sur /proto. Les codes de la copie d'examen deviennent l'interface :
-   - la marge (filet rouge du cahier) structure la page
-   - le stylo terracotta = vraie annotation manuscrite, porteuse de sens
-   - le barème /20 = motif récurrent (programme, tarif)
-   - 3 voix typo : Source Serif (contenu) / Work Sans (interface) / Caveat (main)
-   - du contenu RÉEL et dense (vraie correction grammaticale), pas d'abstractions
+   PROTOTYPE v3 — « ÉDITION SCOLAIRE PREMIUM CONTEMPORAINE »
+   Isolé sur /proto. Évolution de la v2 selon le brief :
+   - 1 seule annotation manuscrite par section, même main, même rouge-brun
+   - hiérarchie typo nette : serif (titres) / Work Sans (texte courant) /
+     capitales espacées RÉSERVÉES aux petits labels / manuscrit = annotations
+   - hiérarchie de boutons constante : plein / contour / lien
+   - plus de contraste, plus d'espace, bordures fines + ombre douce diffuse
    ────────────────────────────────────────────────────────────────────────── */
 
-const caveat = Caveat({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-caveat",
-});
+/* Largeurs cohérentes pour toute la grille éditoriale */
+const WRAP = "mx-auto w-full max-w-[1080px] px-5 md:px-12";
 
-/* La main du correcteur (manuscrit terracotta) */
+/* Boutons — hiérarchie fixe */
+const BTN_PRIMARY =
+  "inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-7 py-3.5 font-ui text-base font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-95";
+const BTN_SECONDARY =
+  "inline-flex items-center justify-center gap-2 rounded-md border border-primary/30 px-7 py-3.5 font-ui text-base font-bold text-primary transition-all hover:border-primary/60 hover:bg-primary/[0.04] active:scale-95";
+
+/* La main du correcteur : une seule police, un seul poids, un seul rouge-brun,
+   une légère inclinaison constante. */
 function Hand({
   children,
   className = "",
@@ -27,18 +31,36 @@ function Hand({
 }) {
   return (
     <span
-      className={`text-secondary ${className}`}
-      style={{ fontFamily: "var(--font-caveat), cursive" }}
+      className={`-rotate-2 text-secondary ${className}`}
+      style={{ fontFamily: "var(--font-hand), cursive" }}
     >
       {children}
     </span>
   );
 }
 
-/* Petite étiquette interface (Work Sans, capitales) */
+/* Petit label : capitales espacées, réservé aux étiquettes courtes */
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <span className="font-ui text-[11px] font-bold uppercase tracking-[0.22em] text-on-surface-variant">
+    <span className="font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-on-surface-variant">
+      {children}
+    </span>
+  );
+}
+
+/* Intertitre de section : lisible, terracotta, peu espacé */
+function Kicker({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="font-ui text-sm font-bold uppercase tracking-[0.1em] text-secondary">
+      {children}
+    </span>
+  );
+}
+
+/* Tampon « officiel » : un seul style, légèrement incliné */
+function Tampon({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-block -rotate-2 rounded-sm border-2 border-secondary/50 px-3 py-1.5 font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-secondary/90">
       {children}
     </span>
   );
@@ -73,7 +95,7 @@ function Coche({ className = "" }: { className?: string }) {
     <svg
       aria-hidden
       viewBox="0 0 32 32"
-      className={`h-6 w-6 overflow-visible ${className}`}
+      className={`overflow-visible ${className}`}
     >
       <path
         d="M4 17 C 8 19 11 24 13 28 C 18 16 24 7 31 2"
@@ -87,14 +109,10 @@ function Coche({ className = "" }: { className?: string }) {
   );
 }
 
-/* Flèche manuscrite (annotation -> contenu) */
+/* Flèche manuscrite */
 function Fleche({ className = "" }: { className?: string }) {
   return (
-    <svg
-      aria-hidden
-      viewBox="0 0 80 50"
-      className={`overflow-visible ${className}`}
-    >
+    <svg aria-hidden viewBox="0 0 80 50" className={`overflow-visible ${className}`}>
       <path
         d="M75 6 C 50 4 18 12 8 38"
         fill="none"
@@ -113,95 +131,48 @@ function Fleche({ className = "" }: { className?: string }) {
   );
 }
 
-/* La marge rouge double du cahier Seyès, en filet vertical */
-function Marge() {
-  return (
-    <div aria-hidden className="absolute inset-y-0 left-0 flex">
-      <div className="w-px bg-secondary/40" />
-      <div className="w-[3px]" />
-      <div className="w-px bg-secondary/40" />
-    </div>
-  );
-}
-
-/* ── HERO : le haut d'une copie ───────────────────────────────────────────── */
+/* ── HERO ─────────────────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="bg-seyes px-5 py-16 md:px-12 lg:py-20">
-      <div className="mx-auto max-w-[1180px]">
-        {/* La feuille de copie */}
-        <div className="relative overflow-hidden rounded-sm border border-outline-variant/60 bg-white shadow-xl">
-          <Marge />
-          <div className="pl-12 pr-6 py-10 md:pl-20 md:pr-16 md:py-14">
-            {/* En-tête d'épreuve, comme le cartouche d'une copie */}
-            <div className="mb-12 flex flex-wrap items-center justify-between gap-4 border-b border-dashed border-outline-variant pb-5">
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-                <span>
-                  <Label>Épreuve</Label>{" "}
-                  <span className="font-ui text-sm font-semibold text-primary">
-                    CRPE écrit
-                  </span>
-                </span>
-                <span>
-                  <Label>Session</Label>{" "}
-                  <span className="font-ui text-sm font-semibold text-primary">
-                    2026
-                  </span>
-                </span>
-                <span>
-                  <Label>Candidat</Label>{" "}
-                  <span className="font-ui text-sm font-semibold text-primary">
-                    vous
-                  </span>
-                </span>
-              </div>
-              <span className="rounded-sm border border-secondary/40 px-3 py-1 font-ui text-sm font-bold text-secondary">
-                Objectif : admis·e
+    <section className="bg-seyes px-5 py-24 md:px-12 lg:py-28">
+      <div className="mx-auto w-full max-w-[1080px]">
+        {/* Feuille de copie : bordure fine, ombre douce et diffuse */}
+        <div className="relative overflow-hidden rounded-xl bg-white px-8 py-14 shadow-[0_24px_70px_-30px_rgba(12,67,78,0.25)] ring-1 ring-primary/[0.06] md:px-16 md:py-20">
+          {/* Annotation manuscrite, en note de marge rattachée au titre */}
+          <div className="pointer-events-none absolute right-12 top-16 hidden w-60 text-right lg:block xl:right-16">
+            <Hand className="block text-[1.9rem] leading-tight">
+              enfin une prépa
+              <br />
+              qui va à l&apos;essentiel
+            </Hand>
+            <Fleche className="ml-auto mt-1 h-14 w-24" />
+          </div>
+
+          <div className="max-w-[660px]">
+            <Tampon>Programme officiel</Tampon>
+
+            <h1 className="mt-7 text-balance text-5xl font-bold leading-[1.07] text-primary lg:text-[4.25rem] lg:leading-[1.04]">
+              Préparez le{" "}
+              <span className="whitespace-nowrap">
+                <Entoure>CRPE</Entoure>
               </span>
-            </div>
+              <br />
+              sans vous perdre.
+            </h1>
 
-            <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-              <div>
-                <h1 className="text-balance text-5xl font-medium leading-[1.08] text-primary lg:text-6xl lg:leading-[1.06]">
-                  Préparez le CRPE
-                  <br />
-                  sans vous{" "}
-                  <span className="relative whitespace-nowrap">
-                    <Entoure>perdre.</Entoure>
-                  </span>
-                </h1>
+            <p className="mt-7 max-w-lg font-ui text-lg leading-relaxed text-on-surface-variant">
+              Des fiches fidèles aux attendus, des entraînements corrigés et un
+              parcours lisible. Vous travaillez l&apos;essentiel, dans le bon
+              ordre, et vous savez exactement ce que le jury attend.
+            </p>
 
-                <p className="mt-8 max-w-lg text-lg leading-relaxed text-on-surface-variant">
-                  Des fiches fidèles aux attendus, des entraînements corrigés et
-                  un parcours lisible. Vous travaillez l&apos;essentiel, dans le
-                  bon ordre, et vous savez exactement ce que le jury attend.
-                </p>
-
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Link
-                    href="/reviser"
-                    className="rounded-sm bg-secondary px-8 py-3.5 font-ui text-base font-bold text-white transition-all hover:-translate-y-0.5 active:scale-95"
-                  >
-                    Commencer à réviser
-                  </Link>
-                  <Link
-                    href="#correction"
-                    className="font-ui text-base font-bold text-primary underline decoration-secondary/40 decoration-2 underline-offset-8 transition-colors hover:decoration-secondary"
-                  >
-                    Voir une fiche corrigée
-                  </Link>
-                </div>
-              </div>
-
-              {/* Annotation manuscrite dans la marge de droite */}
-              <div className="relative hidden lg:block">
-                <Hand className="block text-right text-3xl leading-tight">
-                  enfin une prépa
-                  <br />
-                  qui va à l&apos;essentiel
-                </Hand>
-                <Fleche className="ml-auto mt-1 h-12 w-20 -scale-x-100" />
-              </div>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Link href="/reviser" className={BTN_PRIMARY}>
+                Commencer à réviser
+              </Link>
+              <Link href="#correction" className={BTN_SECONDARY}>
+                Voir une fiche corrigée
+              </Link>
             </div>
           </div>
         </div>
@@ -210,150 +181,198 @@ function Hero() {
   );
 }
 
-/* ── LA CORRECTION : l'artefact central, contenu RÉEL ─────────────────────── */
-function Correction() {
-  return (
-    <section id="correction" className="px-5 py-24 md:px-12">
-      <div className="mx-auto grid max-w-[1180px] gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        {/* Discours */}
-        <div>
-          <Label>Ce que Maitrizz vous apprend</Label>
-          <h2 className="mt-4 text-balance text-4xl font-medium leading-tight text-primary lg:text-5xl">
-            À éviter la faute qui coûte des points.
-          </h2>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-on-surface-variant">
-            Confondre la <em className="text-primary not-italic font-semibold">nature</em>{" "}
-            et la <em className="text-primary not-italic font-semibold">fonction</em> d&apos;un
-            mot, c&apos;est l&apos;erreur classique du concours. Chaque fiche
-            vous entraîne sur le cas précis qui fait trébucher, et vous corrige
-            comme le ferait le jury.
-          </p>
-          <Link
-            href="/reviser"
-            className="mt-8 inline-block font-ui font-bold text-secondary underline decoration-2 underline-offset-4 transition-colors hover:text-primary"
-          >
-            Voir toutes les notions de grammaire →
-          </Link>
-        </div>
-
-        {/* La copie corrigée (artefact) */}
-        <div className="relative overflow-hidden rounded-sm border border-outline-variant/60 bg-white p-8 shadow-xl md:p-10">
-          <div className="mb-6 flex items-center justify-between">
-            <Label>Exercice — nature &amp; fonction</Label>
-            <span className="font-ui text-xs text-on-surface-variant">
-              Notion 02
-            </span>
-          </div>
-
-          <p className="text-lg leading-relaxed text-on-surface">
-            Donnez la nature et la fonction du mot souligné.
-          </p>
-          <p className="mt-4 text-xl leading-relaxed text-primary">
-            La petite fille{" "}
-            <span className="underline decoration-primary/50 decoration-2 underline-offset-4">
-              rêveuse
-            </span>{" "}
-            regarde les étoiles.
-          </p>
-
-          {/* La réponse du candidat, corrigée au stylo */}
-          <div className="mt-8 border-t border-dashed border-outline-variant pt-6">
-            <Label>Votre réponse</Label>
-            <div className="relative mt-3 space-y-1 text-lg text-on-surface">
-              <p>
-                Nature :{" "}
-                <span className="relative">
-                  <span className="text-on-surface-variant line-through decoration-secondary decoration-2">
-                    épithète
-                  </span>{" "}
-                  <Hand className="text-2xl">adjectif !</Hand>
-                </span>
-              </p>
-              <p>Fonction : épithète du nom « fille »</p>
-            </div>
-
-            {/* Annotation marginale + barème */}
-            <div className="mt-6 flex items-start justify-between gap-4 rounded-sm bg-surface-container/50 p-4">
-              <div className="flex items-start gap-3">
-                <Coche className="mt-0.5 shrink-0" />
-                <Hand className="text-2xl leading-snug">
-                  « épithète » est une fonction, pas une nature. Bien vu pour le
-                  reste.
-                </Hand>
-              </div>
-              <span className="shrink-0 font-ui text-2xl font-bold text-secondary">
-                7<span className="text-base text-on-surface-variant">/8</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── LE RELEVÉ : un bulletin scolaire des matières couvertes ───────────────── */
-const matieres = [
-  { t: "Français", c: "21 notions", p: "4 parties", note: "écrit + oral" },
-  { t: "Mathématiques", c: "27 fiches", p: "6 parties", note: "écrit + oral" },
-  { t: "Sciences", c: "18 modules", p: "4 parties", note: "écrit" },
+/* ── BANDE DE PREUVE (sobre, éditoriale, sans chiffres) ────────────────────── */
+const preuves = [
+  {
+    t: "Programmes officiels",
+    d: "Chaque notion est calée sur les textes en vigueur pour la session 2026.",
+  },
+  {
+    t: "Relu par des enseignants",
+    d: "Professeurs en poste et formateurs valident le contenu de chaque fiche.",
+  },
+  {
+    t: "Rapports de jury",
+    d: "Les entraînements ciblent précisément ce que le jury attend le jour J.",
+  },
 ];
 
-function Releve() {
+function Preuve() {
   return (
-    <section className="border-y border-outline-variant/60 bg-surface-container/30 px-5 py-24 md:px-12">
-      <div className="mx-auto max-w-[1180px]">
-        <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <Label>Le programme</Label>
-            <h2 className="mt-4 text-balance text-4xl font-medium leading-tight text-primary lg:text-5xl">
-              Tout le concours, traité fiche par fiche.
-            </h2>
-          </div>
-          <Hand className="text-3xl">rien d&apos;oublié ✓</Hand>
-        </div>
-
-        {/* La feuille de relevé */}
-        <div className="relative overflow-hidden rounded-sm border border-outline-variant/60 bg-white shadow-xl">
-          <Marge />
-          <div className="pl-12 pr-6 py-2 md:pl-20 md:pr-12">
-            {/* En-tête de colonnes */}
-            <div className="hidden grid-cols-[1.5fr_1fr_1fr_1fr] gap-4 border-b border-outline-variant py-4 sm:grid">
-              <Label>Matière</Label>
-              <Label>Contenu</Label>
-              <Label>Découpage</Label>
-              <Label>Épreuves</Label>
-            </div>
-
-            {matieres.map((m) => (
-              <div
-                key={m.t}
-                className="grid grid-cols-2 items-center gap-4 border-b border-dashed border-outline-variant py-6 last:border-b-0 sm:grid-cols-[1.5fr_1fr_1fr_1fr]"
-              >
-                <div className="col-span-2 flex items-center gap-3 sm:col-span-1">
-                  <Coche className="shrink-0" />
-                  <span className="text-2xl font-medium text-primary">{m.t}</span>
-                </div>
-                <span className="text-lg text-on-surface">{m.c}</span>
-                <span className="text-lg text-on-surface-variant">{m.p}</span>
-                <span className="font-ui text-sm text-on-surface-variant">
-                  {m.note}
-                </span>
+    <section className="border-y border-on-surface/[0.08] bg-surface-container/40 py-14">
+      <div className={WRAP}>
+        <div className="grid gap-y-8 sm:grid-cols-3">
+          {preuves.map((p, i) => (
+            <div
+              key={p.t}
+              className={`flex items-start gap-3 sm:px-8 first:sm:pl-0 last:sm:pr-0 ${
+                i > 0 ? "sm:border-l sm:border-on-surface/[0.1]" : ""
+              }`}
+            >
+              <Coche className="mt-0.5 h-5 w-5 shrink-0" />
+              <div>
+                <h3 className="font-ui text-sm font-bold text-primary">{p.t}</h3>
+                <p className="mt-1 font-ui text-sm leading-relaxed text-on-surface-variant">
+                  {p.d}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-
-        <p className="mt-6 font-ui text-sm text-on-surface-variant">
-          Chaque fiche est sourcée sur les programmes officiels et les rapports
-          de jury du CRPE.
-        </p>
       </div>
     </section>
   );
 }
 
-/* ── LA FAQ : des questions corrigées dans la marge ───────────────────────── */
+/* ── LA CORRECTION : l'artefact central ───────────────────────────────────── */
+function Correction() {
+  return (
+    <section id="correction" className="py-28 md:py-32">
+      <div className={WRAP}>
+        <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          {/* Discours */}
+          <div>
+            <Kicker>Ce que Maitrizz vous apprend</Kicker>
+            <h2 className="mt-4 text-balance text-4xl font-bold leading-tight text-primary lg:text-5xl">
+              À éviter la faute qui coûte des points.
+            </h2>
+            <p className="mt-6 max-w-md font-ui text-lg leading-relaxed text-on-surface-variant">
+              Confondre la nature et la fonction d&apos;un mot, c&apos;est
+              l&apos;erreur classique du concours. Chaque fiche vous entraîne sur
+              le cas précis qui fait trébucher, et vous corrige comme le ferait le
+              jury.
+            </p>
+            <Link
+              href="/reviser"
+              className="mt-8 inline-flex items-center gap-1.5 font-ui font-bold text-secondary underline decoration-2 underline-offset-4 transition-colors hover:text-primary"
+            >
+              Voir toutes les notions de grammaire
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          {/* La copie corrigée : feuilles superposées */}
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute inset-0 translate-x-3 translate-y-4 rotate-2 rounded-xl bg-white shadow-[0_20px_50px_-30px_rgba(12,67,78,0.3)] ring-1 ring-primary/[0.05]"
+            />
+            <div className="group relative rounded-xl bg-white p-8 shadow-[0_24px_60px_-30px_rgba(12,67,78,0.28)] ring-1 ring-primary/[0.07] transition-transform duration-500 hover:-translate-y-1 md:p-10">
+              <div className="mb-6 flex items-center justify-between">
+                <Label>Exercice — nature &amp; fonction</Label>
+                <span className="font-ui text-xs font-semibold text-on-surface-variant">
+                  Notion 02
+                </span>
+              </div>
+
+              <p className="font-ui leading-relaxed text-on-surface">
+                Donnez la nature et la fonction du mot souligné.
+              </p>
+              <p className="mt-3 text-2xl leading-relaxed text-primary">
+                La petite fille{" "}
+                <span className="underline decoration-primary/50 decoration-2 underline-offset-4">
+                  rêveuse
+                </span>{" "}
+                regarde les étoiles.
+              </p>
+
+              {/* Réponse corrigée au stylo, révélée progressivement */}
+              <div className="mt-8 border-t border-dashed border-on-surface-variant/30 pt-6">
+                <Label>Votre réponse</Label>
+                <Reveal delay={120} className="mt-3 space-y-1.5 font-ui text-lg text-on-surface">
+                  <p>
+                    Nature :{" "}
+                    <span className="text-on-surface-variant line-through decoration-secondary decoration-2">
+                      épithète
+                    </span>{" "}
+                    <Hand className="ml-1 inline-block text-2xl">adjectif</Hand>
+                  </p>
+                  <p>Fonction : épithète du nom « fille »</p>
+                </Reveal>
+
+                {/* Retour du jury + barème */}
+                <Reveal delay={420} className="mt-6 flex items-stretch gap-4">
+                  <div className="flex flex-1 items-start gap-3 rounded-lg bg-surface-container/60 p-4">
+                    <Coche className="mt-0.5 h-5 w-5 shrink-0" />
+                    <p className="font-ui text-sm leading-relaxed text-on-surface">
+                      <span className="font-bold text-primary">Retour du jury — </span>
+                      « épithète » est une fonction, pas une nature. Le reste est
+                      juste.
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center rounded-lg border border-secondary/40 px-5">
+                    <span className="font-serif text-3xl font-bold leading-none text-secondary">
+                      12
+                    </span>
+                    <span className="font-ui text-xs text-on-surface-variant">
+                      / 20
+                    </span>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── LE PROGRAMME : tableau cliquable ──────────────────────────────────────── */
+const matieres = [
+  { href: "/reviser", t: "Français", c: "21 notions", p: "Écrit et oral" },
+  { href: "/reviser", t: "Mathématiques", c: "27 fiches", p: "Écrit et oral" },
+  { href: "/reviser", t: "Sciences", c: "18 modules", p: "Écrit" },
+];
+
+function Programme() {
+  return (
+    <section
+      id="programme"
+      className="border-y border-on-surface/[0.08] bg-surface-container/30 py-28 md:py-32 scroll-mt-24"
+    >
+      <div className={WRAP}>
+        <div className="mb-14 max-w-[620px]">
+          <Kicker>Le programme</Kicker>
+          <h2 className="mt-4 text-balance text-4xl font-bold leading-tight text-primary lg:text-5xl">
+            Tout le concours, traité fiche par fiche.
+          </h2>
+          <p className="mt-6 font-ui text-lg leading-relaxed text-on-surface-variant">
+            De la grammaire aux sciences, chaque matière est découpée en notions
+            courtes et sourcées. Choisissez une matière pour ouvrir son programme.
+          </p>
+        </div>
+
+        <div className="overflow-hidden rounded-xl bg-white ring-1 ring-on-surface/[0.08]">
+          {matieres.map((m) => (
+            <Link
+              key={m.t}
+              href={m.href}
+              className="group flex items-center gap-5 border-b border-on-surface/[0.07] px-6 py-7 transition-colors last:border-b-0 hover:bg-surface-container/50 md:px-8"
+            >
+              <Coche className="h-5 w-5 shrink-0" />
+              <span className="flex-1 text-2xl font-bold text-primary">{m.t}</span>
+              <span className="hidden w-32 font-ui text-sm font-semibold text-on-surface sm:block">
+                {m.c}
+              </span>
+              <span className="hidden w-28 font-ui text-sm text-on-surface-variant md:block">
+                {m.p}
+              </span>
+              <span
+                aria-hidden
+                className="font-ui text-xl text-secondary transition-transform duration-200 group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── FAQ ───────────────────────────────────────────────────────────────────── */
 const questions = [
   {
     q: "Le contenu est-il à jour de la réforme du CRPE ?",
@@ -371,40 +390,36 @@ const questions = [
 
 function Faq() {
   return (
-    <section className="px-5 py-24 md:px-12">
-      <div className="mx-auto max-w-[1180px]">
-        <div className="mb-12">
-          <Label>Vos questions, corrigées</Label>
-          <h2 className="mt-4 text-balance text-4xl font-medium leading-tight text-primary lg:text-5xl">
+    <section className="py-28 md:py-32">
+      <div className={WRAP}>
+        <div className="mb-14 max-w-[620px]">
+          <Kicker>Questions fréquentes</Kicker>
+          <h2 className="mt-4 text-balance text-4xl font-bold leading-tight text-primary lg:text-5xl">
             Tout ce qu&apos;on nous demande avant de se lancer.
           </h2>
         </div>
 
-        <div className="relative pl-12 md:pl-16">
-          <Marge />
-          <dl>
-            {questions.map((item) => (
-              <div
-                key={item.q}
-                className="border-b border-outline-variant/50 py-8 first:pt-0"
-              >
-                <dt className="flex items-baseline gap-4 text-xl font-medium text-primary">
-                  <Hand className="shrink-0 text-2xl">Q.</Hand>
-                  {item.q}
-                </dt>
-                <dd className="mt-3 max-w-2xl pl-9 text-lg leading-relaxed text-on-surface-variant">
-                  {item.r}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+        <dl className="border-t border-on-surface/[0.1]">
+          {questions.map((item) => (
+            <div
+              key={item.q}
+              className="grid gap-2 border-b border-on-surface/[0.1] py-8 md:grid-cols-[0.9fr_1.1fr] md:gap-10"
+            >
+              <dt className="text-xl font-bold leading-snug text-primary">
+                {item.q}
+              </dt>
+              <dd className="font-ui text-lg leading-relaxed text-on-surface-variant">
+                {item.r}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
 }
 
-/* ── LE TARIF : une ligne de barème ───────────────────────────────────────── */
+/* ── TARIF ─────────────────────────────────────────────────────────────────── */
 const perks = [
   "Accès illimité à tous les modules",
   "Fiches fidèles aux attendus du jury",
@@ -414,42 +429,36 @@ const perks = [
 
 function Tarif() {
   return (
-    <section className="px-5 py-24 md:px-12">
-      <div className="mx-auto grid max-w-[1180px] items-center gap-14 lg:grid-cols-2">
-        <div>
-          <Label>L&apos;accès</Label>
-          <h2 className="mt-4 text-balance text-4xl font-medium leading-tight text-primary lg:text-5xl">
-            Un seul tarif, sans piège.
-          </h2>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-on-surface-variant">
-            Pas de formules à étages. Tout est compris, et vous partez quand
-            vous voulez.
-          </p>
-          <ul className="mt-8 space-y-3">
-            {perks.map((perk) => (
-              <li key={perk} className="flex items-center gap-3">
-                <Coche className="h-5 w-5 shrink-0" />
-                <span className="text-on-surface">{perk}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <section className="border-t border-on-surface/[0.08] bg-surface-container/30 py-28 md:py-32">
+      <div className={WRAP}>
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          <div>
+            <Kicker>L&apos;accès</Kicker>
+            <h2 className="mt-4 text-balance text-4xl font-bold leading-tight text-primary lg:text-5xl">
+              Un seul tarif, sans piège.
+            </h2>
+            <p className="mt-6 max-w-md font-ui text-lg leading-relaxed text-on-surface-variant">
+              Pas de formules à étages. Tout est compris, et vous partez quand
+              vous voulez.
+            </p>
+            <ul className="mt-8 space-y-3">
+              {perks.map((perk) => (
+                <li key={perk} className="flex items-center gap-3">
+                  <Coche className="h-5 w-5 shrink-0" />
+                  <span className="font-ui text-on-surface">{perk}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div className="relative overflow-hidden rounded-sm border border-outline-variant/60 bg-white p-10 shadow-xl">
-          <Marge />
-          <div className="pl-8">
+          <div className="rounded-xl bg-white p-10 shadow-[0_24px_60px_-30px_rgba(12,67,78,0.25)] ring-1 ring-primary/[0.07]">
             <Label>Abonnement mensuel</Label>
             <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-7xl font-medium text-primary">6 €</span>
-              <span className="font-ui text-lg text-on-surface-variant">
-                / mois
-              </span>
+              <span className="font-serif text-7xl font-bold text-primary">6 €</span>
+              <span className="font-ui text-lg text-on-surface-variant">/ mois</span>
             </div>
-            <Hand className="mt-2 block text-2xl">le prix d&apos;un café par semaine</Hand>
-            <Link
-              href="#fin"
-              className="mt-8 block rounded-sm bg-primary py-4 text-center font-ui text-base font-bold text-on-primary transition-all hover:bg-primary-container active:scale-[0.98]"
-            >
+            <Hand className="mt-3 block text-2xl">le prix d&apos;un café par semaine</Hand>
+            <Link href="#fin" className={`${BTN_PRIMARY} mt-8 w-full`}>
               Être prévenu·e du lancement
             </Link>
           </div>
@@ -462,50 +471,45 @@ function Tarif() {
 /* ── CLÔTURE ──────────────────────────────────────────────────────────────── */
 function Cloture() {
   return (
-    <section id="fin" className="px-5 pb-20 md:px-12">
-      <div className="bg-seyes-dark relative overflow-hidden rounded-sm bg-primary px-8 py-20 text-center text-on-primary md:px-16">
-        <h2 className="text-balance text-4xl font-medium leading-tight lg:text-5xl">
-          Prêt·e à préparer le CRPE sereinement ?
-        </h2>
-        <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-on-primary-container">
-          Laissez votre adresse : vous serez prévenu·e dès l&apos;ouverture,
-          avec nos conseils de révision d&apos;ici là.
-        </p>
-        <form className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row">
-          <input
-            type="email"
-            placeholder="votre.email@exemple.fr"
-            className="flex-1 rounded-sm bg-white px-5 py-3.5 font-ui text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none"
-          />
-          <button
-            type="button"
-            className="rounded-sm bg-secondary px-7 py-3.5 font-ui font-bold text-white transition-all hover:-translate-y-0.5 active:scale-95"
-          >
-            Me prévenir
-          </button>
-        </form>
+    <section id="fin" className="py-24 md:py-28">
+      <div className={WRAP}>
+        <div className="bg-seyes-dark relative overflow-hidden rounded-2xl bg-primary px-8 py-20 text-center text-white md:px-16">
+          <h2 className="text-balance text-4xl font-bold leading-tight lg:text-5xl">
+            Prêt·e à préparer le CRPE sereinement ?
+          </h2>
+          <p className="mx-auto mt-6 max-w-lg font-ui text-lg leading-relaxed text-white/75">
+            Laissez votre adresse : vous serez prévenu·e dès l&apos;ouverture,
+            avec nos conseils de révision d&apos;ici là.
+          </p>
+          <form className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row">
+            <input
+              type="email"
+              placeholder="votre.email@exemple.fr"
+              className="flex-1 rounded-md bg-white px-5 py-3.5 font-ui text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none"
+            />
+            <button
+              type="button"
+              className="rounded-md bg-secondary px-7 py-3.5 font-ui font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-95"
+            >
+              Me prévenir
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
 }
 
-/* Surcharge de charte LOCALE au prototype (ne touche pas la charte globale).
-   Fond « blanc chaud épuré » : plus lumineux et net que le crème #fbf9f4. */
-const charteProto = {
-  "--color-surface": "#fcfcfa",
-  "--color-surface-container": "#f1f1ed",
-  backgroundColor: "#fcfcfa",
-} as React.CSSProperties;
-
 export default function ProtoPage() {
   return (
-    <div className={caveat.variable} style={charteProto}>
+    <>
       <Hero />
+      <Preuve />
       <Correction />
-      <Releve />
+      <Programme />
       <Faq />
       <Tarif />
       <Cloture />
-    </div>
+    </>
   );
 }

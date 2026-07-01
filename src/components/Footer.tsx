@@ -1,7 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Le prototype (/proto) a son propre footer.
+  if (pathname?.startsWith("/proto")) return null;
+
   return (
     <footer className="border-t border-outline-variant/30 bg-white/50 px-5 py-20 md:px-16">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 md:grid-cols-4">
