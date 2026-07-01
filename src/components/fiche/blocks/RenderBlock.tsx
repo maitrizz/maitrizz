@@ -10,6 +10,7 @@ import { ExamRunner } from "../ExamRunner";
 import { Trainer } from "../Trainer";
 import { ExerciceBank } from "../ExerciceBank";
 import { CorrigerCopies } from "../CorrigerCopies";
+import { MaitriseVoyants } from "../MaitriseVoyants";
 import type { Block, Step } from "../types";
 
 type RenderBlockProps = {
@@ -556,6 +557,9 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
 
     case "corrigerCopies":
       return <CorrigerCopies block={block} ficheSlug={ficheSlug} />;
+
+    case "maitriseVoyants":
+      return <MaitriseVoyants notionSlug={block.notionSlug} title={block.title} intro={block.intro} />;
 
     case "sommaireApercu":
       return (

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { RichText } from "./richtext";
+import { CorrectionLine } from "./ExerciceCard";
 import type { Block, TrainerItem, TrainerModalite } from "./types";
 import {
   loadTrainerState,
@@ -13,7 +14,7 @@ import {
 } from "./trainerProgress";
 
 type TrainerData = Extract<Block, { type: "trainer" }>;
-type Phase = "setup" | "running" | "done";
+type Phase = "loading" | "setup" | "running" | "done";
 type ModaliteFilter = "tout" | TrainerModalite;
 
 const MODALITE_LABELS: Record<TrainerModalite, string> = {
@@ -22,13 +23,23 @@ const MODALITE_LABELS: Record<TrainerModalite, string> = {
   "type-concours": "Type concours",
   "detection-erreur": "Détection d'erreur",
 };
-const MODALITE_ORDER: TrainerModalite[] = ["application", "detection-erreur", "rappel"];
+const MODALITE_ORDER: TrainerModalite[] = ["application", "type-concours", "detection-erreur", "rappel"];
 
-export function Trainer({ block, ficheSlug }: { block: TrainerData; ficheSlug: string }) {
+export function Trainer({
+  block,
+  ficheSlug,
+  autoStart,
+}: {
+  block: TrainerData;
+  ficheSlug: string;
+  // "due" : démarre tout de suite une séance sur les seuls items échus (séance du jour),
+  // en sautant l'écran de réglages. Absent : comportement libre habituel (écran setup).
+  autoStart?: "due";
+}) {
   const items = block.items;
   const sessionSize = block.sessionSize ?? 12;
 
-  const [phase, setPhase] = useState<Phase>("setup");
+  const [phase, setPhase] = useState<Phase>(autoStart ? "loading" : "setup");
   const [state, setState] = useState<TrainerState>({});
   const [modaliteFilter, setModaliteFilter] = useState<ModaliteFilter>("tout");
   const [sfFilter, setSfFilter] = useState<string>("tous");
@@ -70,14 +81,14 @@ export function Trainer({ block, ficheSlug }: { block: TrainerData; ficheSlug: s
     setRevealed(false);
   }
 
-  function start(mod: ModaliteFilter = modaliteFilter, sf: string = sfFilter) {
+  function start(mod: ModaliteFilter = modaliteFilter, sf: string = sfFilter, forceAll = true) {
     const fresh = loadTrainerState(ficheSlug);
     const pool = items.filter(
       (it) =>
         (mod === "tout" || it.modalite === mod) &&
         (sf === "tous" || it.savoirFaire.includes(sf)),
     );
-    const q = buildSessionQueue(pool, fresh, { limit: sessionSize, forceAll: true });
+    const q = buildSessionQueue(pool, fresh, { limit: sessionSize, forceAll });
     firstAnswered.current.clear();
     requeued.current.clear();
     setState(fresh);
@@ -85,8 +96,15 @@ export function Trainer({ block, ficheSlug }: { block: TrainerData; ficheSlug: s
     setPos(0);
     resetItemAnswer();
     setQueue(q);
-    setPhase(q.length === 0 ? "setup" : "running");
+    // Séance du jour vide (rien d'échu) : on montre le bilan « tout est à jour ».
+    setPhase(q.length === 0 ? (forceAll ? "setup" : "done") : "running");
   }
+
+  // Séance du jour : dès le montage, on lance une série sur les seuls items échus.
+  useEffect(() => {
+    if (autoStart === "due") start("tout", "tous", false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoStart, ficheSlug]);
 
   const current = queue[pos];
   const stats = useMemo(() => computeStats(items, state), [items, state]);
@@ -130,6 +148,14 @@ export function Trainer({ block, ficheSlug }: { block: TrainerData; ficheSlug: s
   }
 
   // ── Écrans ────────────────────────────────────────────────────────────────
+  if (phase === "loading") {
+    return (
+      <div className="rounded-xl border-2 border-primary/20 bg-base-100 px-6 py-10 text-center text-sm text-base-content/50">
+        Préparation de votre séance…
+      </div>
+    );
+  }
+
   if (phase === "setup") {
     const chip = (active: boolean) =>
       `rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${
@@ -229,6 +255,24 @@ export function Trainer({ block, ficheSlug }: { block: TrainerData; ficheSlug: s
     const seen = results.length;
     const ok = results.filter((r) => r.correct).length;
     const pct = seen > 0 ? Math.round((ok / seen) * 100) : 0;
+
+    // Séance du jour lancée alors que plus rien n'était échu.
+    if (seen === 0) {
+      return (
+        <div className="rounded-xl border-2 border-primary bg-primary/5 px-6 py-8 flex flex-col items-center gap-2 text-center">
+          <span className="text-3xl">✅</span>
+          <p className="font-bold text-primary">Tout est à jour</p>
+          <p className="text-sm text-base-content/60">
+            Rien à revoir dans l&apos;immédiat.{" "}
+            {stats.nextDue ? `Prochaine révision ${formatNextDue(stats.nextDue)}.` : ""}
+          </p>
+          <button type="button" onClick={() => setPhase("setup")} className="btn btn-outline btn-primary btn-sm mt-2">
+            S&apos;entraîner quand même
+          </button>
+        </div>
+      );
+    }
+
     return (
       <div className="rounded-xl border-2 border-primary bg-primary/5 px-6 py-8 flex flex-col items-center gap-2 text-center">
         <span className="text-3xl">{pct >= 70 ? "🎉" : "💪"}</span>
@@ -321,10 +365,11 @@ export function Trainer({ block, ficheSlug }: { block: TrainerData; ficheSlug: s
 
 // ── Énoncé de l'item ────────────────────────────────────────────────────────
 function ItemPrompt({ item }: { item: TrainerItem }) {
-  const enonce = item.format === "qcm" || item.format === "vrai-faux" ? item.enonce : undefined;
+  const enonce =
+    item.format === "qcm" || item.format === "vrai-faux" || item.format === "ouvert" ? item.enonce : undefined;
 
   const prompt =
-    item.format === "qcm" || item.format === "flashcard"
+    item.format === "qcm" || item.format === "flashcard" || item.format === "ouvert"
       ? item.question
       : item.format === "vrai-faux"
         ? item.affirmation
@@ -428,38 +473,11 @@ function ItemInput({
   }
 
   if (item.format === "flashcard") {
-    if (!revealed) {
-      return (
-        <button type="button" onClick={onReveal} className="btn btn-outline btn-primary btn-sm self-start">
-          Voir la réponse
-        </button>
-      );
-    }
-    return (
-      <div className="flex flex-col gap-3">
-        <div className="bg-base-200 rounded-lg px-4 py-3 text-sm leading-relaxed">
-          <RichText text={item.answer} />
-        </div>
-        {!answered && (
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={() => onPick(false, false)}
-              className="flex-1 rounded-lg border-2 border-base-300 px-4 py-2.5 text-sm font-semibold hover:border-error/40"
-            >
-              À revoir
-            </button>
-            <button
-              type="button"
-              onClick={() => onPick(true, true)}
-              className="flex-1 rounded-lg border-2 border-base-300 px-4 py-2.5 text-sm font-semibold hover:border-success/40"
-            >
-              Je savais
-            </button>
-          </div>
-        )}
-      </div>
-    );
+    return <FlashcardInput item={item} answered={answered} revealed={revealed} onReveal={onReveal} onPick={onPick} />;
+  }
+
+  if (item.format === "ouvert") {
+    return <OpenInput item={item} answered={answered} revealed={revealed} onReveal={onReveal} onPick={onPick} />;
   }
 
   // format « classer »
@@ -516,6 +534,177 @@ function ItemInput({
         >
           Valider
         </button>
+      )}
+    </div>
+  );
+}
+
+// ── Zone de réponse OUVERTE (type concours) ─────────────────────────────────
+// On rédige dans un encart, on révèle la réponse-modèle + le détail, on s'auto-évalue
+// (la note pilote la boîte de Leitner, comme une flashcard). Mireroir de la carte d'« Appliquer ».
+function OpenInput({
+  item,
+  answered,
+  revealed,
+  onReveal,
+  onPick,
+}: {
+  item: Extract<TrainerItem, { format: "ouvert" }>;
+  answered: boolean;
+  revealed: boolean;
+  onReveal: () => void;
+  onPick: (value: boolean, correct: boolean) => void;
+}) {
+  const [answer, setAnswer] = useState("");
+
+  if (!revealed) {
+    return (
+      <div className="flex flex-col gap-1.5">
+        <label className="text-xs font-semibold text-base-content/60 flex items-center justify-between gap-2">
+          <span>Votre réponse</span>
+          <span className="font-normal text-base-content/40">Entrée : à la ligne · deux fois : valider</span>
+        </label>
+        <textarea
+          className="textarea textarea-bordered w-full text-sm leading-relaxed min-h-[80px]"
+          placeholder="Rédigez votre analyse : la nature, puis la justification (le test appliqué)…"
+          value={answer}
+          onChange={(e) => setAnswer(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              const before = e.currentTarget.value.slice(0, e.currentTarget.selectionStart ?? 0);
+              if (before.endsWith("\n") && answer.trim() !== "") {
+                e.preventDefault();
+                setAnswer(answer.replace(/\n+$/, ""));
+                onReveal();
+              }
+            }
+          }}
+        />
+        <button
+          type="button"
+          disabled={answer.trim() === ""}
+          onClick={onReveal}
+          className="btn btn-outline btn-primary btn-sm self-start mt-1 disabled:opacity-50"
+        >
+          Voir le corrigé
+        </button>
+        {answer.trim() === "" && (
+          <span className="text-xs text-base-content/40">Rédigez d&apos;abord votre réponse, même imparfaite.</span>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 flex flex-col gap-2.5">
+        {item.reponseType && (
+          <div className="text-sm leading-relaxed">
+            <span className="text-[11px] font-bold uppercase tracking-wide text-primary mr-1.5">Réponse type</span>
+            <RichText text={item.reponseType} />
+          </div>
+        )}
+        {item.explication && item.explication.length > 0 && (
+          <div className="flex flex-col gap-2 text-sm border-t border-primary/15 pt-2.5 text-base-content/80">
+            {item.explication.map((it, i) => (
+              <CorrectionLine key={i} item={it} />
+            ))}
+          </div>
+        )}
+      </div>
+      {!answered && (
+        <div className="flex gap-2">
+          <button
+            type="button"
+            onClick={() => onPick(false, false)}
+            className="flex-1 rounded-lg border-2 border-base-300 px-4 py-2.5 text-sm font-semibold hover:border-error/40"
+          >
+            À retravailler
+          </button>
+          <button
+            type="button"
+            onClick={() => onPick(true, true)}
+            className="flex-1 rounded-lg border-2 border-base-300 px-4 py-2.5 text-sm font-semibold hover:border-success/40"
+          >
+            Réussi
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Carte de rappel (flashcard) ─────────────────────────────────────────────
+// On tente de répondre dans un encart (rappel actif, plus efficace que la simple
+// relecture mentale), on révèle la réponse, puis on s'auto-évalue. L'encart est
+// FACULTATIF : le rappel purement mental reste valide (bouton toujours actif).
+function FlashcardInput({
+  item,
+  answered,
+  revealed,
+  onReveal,
+  onPick,
+}: {
+  item: Extract<TrainerItem, { format: "flashcard" }>;
+  answered: boolean;
+  revealed: boolean;
+  onReveal: () => void;
+  onPick: (value: boolean, correct: boolean) => void;
+}) {
+  const [answer, setAnswer] = useState("");
+
+  if (!revealed) {
+    return (
+      <div className="flex flex-col gap-1.5">
+        <label className="text-xs font-semibold text-base-content/60 flex items-center justify-between gap-2">
+          <span>Votre réponse (facultatif)</span>
+          <span className="font-normal text-base-content/40">Entrée : à la ligne · deux fois : valider</span>
+        </label>
+        <textarea
+          className="textarea textarea-bordered w-full text-sm leading-relaxed min-h-[64px]"
+          placeholder="Tentez de répondre de mémoire, puis vérifiez…"
+          value={answer}
+          onChange={(e) => setAnswer(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              const before = e.currentTarget.value.slice(0, e.currentTarget.selectionStart ?? 0);
+              if (before.endsWith("\n") && answer.trim() !== "") {
+                e.preventDefault();
+                setAnswer(answer.replace(/\n+$/, ""));
+                onReveal();
+              }
+            }
+          }}
+        />
+        <button type="button" onClick={onReveal} className="btn btn-outline btn-primary btn-sm self-start mt-1">
+          Voir la réponse
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="bg-base-200 rounded-lg px-4 py-3 text-sm leading-relaxed">
+        <RichText text={item.answer} />
+      </div>
+      {!answered && (
+        <div className="flex gap-2">
+          <button
+            type="button"
+            onClick={() => onPick(false, false)}
+            className="flex-1 rounded-lg border-2 border-base-300 px-4 py-2.5 text-sm font-semibold hover:border-error/40"
+          >
+            À revoir
+          </button>
+          <button
+            type="button"
+            onClick={() => onPick(true, true)}
+            className="flex-1 rounded-lg border-2 border-base-300 px-4 py-2.5 text-sm font-semibold hover:border-success/40"
+          >
+            Je savais
+          </button>
+        </div>
       )}
     </div>
   );

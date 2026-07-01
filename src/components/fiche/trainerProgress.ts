@@ -150,6 +150,43 @@ export function computeStats(
   return { total: items.length, dueCount, masteredCount, nextDue };
 }
 
+/**
+ * Plan du jour : ce que l'élève a intérêt à faire maintenant, en distinguant
+ * les items JAMAIS VUS (« nouvelles ») de ceux DÉJÀ VUS dont l'échéance est passée
+ * (« à revoir »). `dueTotal` = ce qui alimentera la séance (nouvelles + à revoir).
+ * `nextDue` = prochaine échéance parmi ce qui n'est pas encore dû (rien à faire aujourd'hui).
+ */
+export type DailyPlan = {
+  total: number;
+  dueTotal: number;
+  nouveaux: number;
+  aRevoir: number;
+  nextDue: number | null;
+};
+
+export function computeDailyPlan(
+  items: TrainerItem[],
+  state: TrainerState,
+  now = Date.now(),
+): DailyPlan {
+  let nouveaux = 0;
+  let aRevoir = 0;
+  let nextDue: number | null = null;
+
+  for (const item of items) {
+    const s = state[item.id];
+    if (!s) {
+      nouveaux++; // jamais vu
+    } else if (s.due <= now) {
+      aRevoir++; // déjà vu, échéance passée
+    } else if (nextDue === null || s.due < nextDue) {
+      nextDue = s.due;
+    }
+  }
+
+  return { total: items.length, dueTotal: nouveaux + aRevoir, nouveaux, aRevoir, nextDue };
+}
+
 /** Formate une échéance future en texte court (« dans 3 jours », « demain »…). */
 export function formatNextDue(nextDue: number | null, now = Date.now()): string {
   if (nextDue === null) return "";

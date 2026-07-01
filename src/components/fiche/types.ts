@@ -324,7 +324,12 @@ export type Block =
         verdict: RichText; // la bonne analyse (ou la confirmation que c'est juste)
         coteProf?: RichText; // ligne « côté prof », seulement si elle apporte
       }[];
-    };
+    }
+  // Voyants « Où j'en suis » dans la notion : état détaillé par savoir-faire,
+  // dérivé des magasins existants (hub + exercices). `notionSlug` désigne la notion
+  // à lire dans l'annuaire du hub. Renvoie un message doux si la notion n'est pas
+  // encore branchée au hub.
+  | { type: "maitriseVoyants"; notionSlug: string; title?: string; intro?: RichText };
 
 /* ────────────────────────────────────────────────────────────
    Trainer (banque d'items)
@@ -374,6 +379,15 @@ export type TrainerItem =
       format: "flashcard";
       question: RichText;
       answer: RichText;
+    })
+  // Exercice OUVERT type concours : on rédige dans un encart, on révèle la réponse-modèle
+  // (`reponseType`) + le détail (`explication`), puis on s'auto-évalue (la note pilote Leitner,
+  // comme une flashcard). Ramène le geste de rédaction du jour J dans l'entraînement espacé.
+  | (TrainerItemBase & {
+      format: "ouvert";
+      enonce?: RichText; // la phrase ou l'extrait à analyser
+      question: RichText; // la consigne
+      explication?: CorrectionItem[]; // détail du corrigé (réutilise le rendu des exercices)
     });
 
 // Exercice ouvert de la banque : on rédige, on compare au corrigé-modèle.
@@ -428,5 +442,9 @@ export type Fiche = {
   badges: FicheBadge[];
   metaTitle: string;
   metaDescription: string;
+  // Si renseigné, affiche le panneau « Où j'en suis » (voyants par savoir-faire)
+  // juste sous l'en-tête, visible dès l'ouverture de la notion. Valeur = slug de la
+  // notion dans l'annuaire du hub. Opt-in : seules les notions branchées au hub l'ont.
+  maitriseNotionSlug?: string;
   tabGroups: FicheTabGroup[];
 };
