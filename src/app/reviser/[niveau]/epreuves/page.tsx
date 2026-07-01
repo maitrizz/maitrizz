@@ -1,9 +1,29 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { NIVEAUX, isValidNiveau } from "./ecrites/[matiere]/data";
 
 export async function generateStaticParams() {
   return NIVEAUX.map((niveau) => ({ niveau }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ niveau: string }>;
+}): Promise<Metadata> {
+  const { niveau } = await params;
+  if (!isValidNiveau(niveau)) return {};
+  const n = niveau.toUpperCase();
+  const canonicalUrl = `/reviser/${niveau}/epreuves`;
+  const title = `Préparer le CRPE ${n} : écrits et oraux | Maitrizz`;
+  const description = `Préparez le CRPE ${n} : épreuves écrites (français, mathématiques) et orales (entretien, système éducatif). Fiches, méthode et exercices corrigés.`;
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { title, description, url: canonicalUrl, type: "website" },
+  };
 }
 
 function PenIcon() {

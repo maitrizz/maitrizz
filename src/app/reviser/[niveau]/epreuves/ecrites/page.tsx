@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import type { Matiere } from "@/components/fiche/types";
 import {
   MATIERES,
@@ -11,6 +12,25 @@ import {
 
 export async function generateStaticParams() {
   return NIVEAUX.map((niveau) => ({ niveau }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ niveau: string }>;
+}): Promise<Metadata> {
+  const { niveau } = await params;
+  if (!isValidNiveau(niveau)) return {};
+  const n = niveau.toUpperCase();
+  const canonicalUrl = `/reviser/${niveau}/epreuves/ecrites`;
+  const title = `Écrits du CRPE ${n} : français et maths | Maitrizz`;
+  const description = `Révisez les épreuves écrites du CRPE ${n} : français et mathématiques. Fiches de cours, méthode pas-à-pas et exercices corrigés pour l'admissibilité.`;
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { title, description, url: canonicalUrl, type: "website" },
+  };
 }
 
 function LockIcon() {

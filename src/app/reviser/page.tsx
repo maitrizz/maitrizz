@@ -1,4 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Réviser le CRPE : concours L3 et M2 | Maitrizz",
+  description:
+    "Choisissez votre concours (L3 ou M2) et révisez le CRPE : fiches de cours, méthode et exercices corrigés pour les épreuves écrites et orales.",
+  alternates: { canonical: "/reviser" },
+};
 
 function GraduationIcon() {
   return (
