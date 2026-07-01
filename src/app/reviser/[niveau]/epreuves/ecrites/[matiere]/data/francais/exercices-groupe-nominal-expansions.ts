@@ -135,7 +135,7 @@ export const EXERCICES_GROUPE_NOMINAL_EXPANSIONS: TrainerExercice[] = [
     question:
       "Donnez la nature de chaque élément détaché et le mot auquel il se rapporte :\n« Le château, **vieille demeure du XVe siècle**, dominait la vallée, **silencieuse**. »",
     reponseType:
-      "- **vieille demeure du XVe siècle** : GN, apposition à « château » (élément nominal coréférent, entre virgules).\n- **silencieuse** : adjectif, épithète détachée se rapportant à « la vallée » (pas de verbe d'état, isolé par une virgule).\nLa nature de l'élément tranche : GN détaché coréférent = apposition ; adjectif détaché = épithète détachée.",
+      "- **vieille demeure du XVe siècle** : GN, apposition à « château » (il désigne le même lieu que « château », entre virgules).\n- **silencieuse** : adjectif, épithète détachée se rapportant à « la vallée » (pas de verbe d'état, isolé par une virgule).\nLa nature de l'élément tranche : GN détaché qui désigne la même réalité = apposition ; adjectif détaché = épithète détachée.",
     explication: [],
   },
   {
@@ -190,7 +190,7 @@ export const EXERCICES_GROUPE_NOMINAL_EXPANSIONS: TrainerExercice[] = [
     question:
       "Donnez la nature de l'élément en gras et justifiez :\n« **Professeur exigeant**, monsieur Martin notait sévèrement. »",
     reponseType:
-      "**Professeur exigeant** : GN apposé (apposition) à « monsieur Martin », placé en tête de phrase. Bien que sans déterminant, c'est un groupe **nominal** coréférent (« monsieur Martin, qui est un professeur exigeant »), supprimable. C'est donc une apposition, pas une épithète (qui serait adjectivale).",
+      "**Professeur exigeant** : GN apposé (apposition) à « monsieur Martin », placé en tête de phrase. Bien que sans déterminant, c'est un groupe **nominal** qui désigne la même personne que « monsieur Martin » (« monsieur Martin, qui est un professeur exigeant »), supprimable. C'est donc une apposition, pas une épithète (qui serait adjectivale).",
     explication: [],
   },
 
@@ -219,7 +219,7 @@ export const EXERCICES_GROUPE_NOMINAL_EXPANSIONS: TrainerExercice[] = [
     question:
       "Analysez chaque élément détaché :\n« Mon oncle, **médecin de campagne**, **infatigable**, parcourait les routes. »",
     reponseType:
-      "- **médecin de campagne** : GN, apposition à « Mon oncle » (élément nominal coréférent).\n- **infatigable** : adjectif, épithète détachée se rapportant à « Mon oncle » (élément adjectival ; *apposition de l'adjectif* est un terme admis, cf. notion 2).\nConvention : on réserve **apposition** au GN et **épithète détachée** à l'adjectif, ces deux derniers désignant la même fonction.",
+      "- **médecin de campagne** : GN, apposition à « Mon oncle » (il désigne la même personne que « Mon oncle »).\n- **infatigable** : adjectif, épithète détachée se rapportant à « Mon oncle » (élément adjectival ; *apposition de l'adjectif* est un terme admis, cf. notion 2).\nConvention : on réserve **apposition** au GN et **épithète détachée** à l'adjectif, ces deux derniers désignant la même fonction.",
     explication: [],
   },
   {

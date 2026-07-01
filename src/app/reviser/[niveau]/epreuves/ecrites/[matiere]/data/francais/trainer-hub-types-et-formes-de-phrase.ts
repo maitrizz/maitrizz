@@ -3,10 +3,12 @@
 // Contenu NEUF, distinct des banques de la fiche. Quatre types d'items : QCM (application),
 // détection d'erreur (vrai/faux), flashcards (rappel), exercice ouvert (type concours).
 //
-// Convention de la fiche : 4 TYPES (déclaratif, interrogatif, injonctif, exclamatif) ; les
-// FORMES (négative, emphatique, impersonnelle) et la voix (actif/passif) se superposent au type.
-// Pièges retenus : un « ! » ne suffit pas (« Sors ! » reste injonctif) ; l'injonction n'est pas
-// toujours à l'impératif ; l'interrogation indirecte n'est pas un type (phrase déclarative).
+// Convention de la fiche (terminologie 2020) : 3 TYPES (déclaratif, interrogatif, injonctif),
+// exclusifs ; 5 FORMES (exclamative, négative, emphatique, impersonnelle, passive) qui se
+// superposent au type. L'EXCLAMATIF N'EST PAS UN TYPE mais une forme.
+// Pièges retenus : un « ! » ne fait pas un « type exclamatif » (« Sors ! » reste injonctif) ;
+// l'injonction n'est pas toujours à l'impératif ; l'interrogation indirecte n'est pas un type
+// (phrase déclarative).
 //
 // Curé à la main. Six savoir-faire × 5 items, 3 niveaux :
 // types · negation · interrogation · injonction · emphase · actif-passif.
@@ -22,11 +24,15 @@ export const TRAINER_HUB_TYPES_ET_FORMES_DE_PHRASE: TrainerItem[] = [
     modalite: "application",
     difficulte: 1,
     format: "qcm",
-    enonce: "Quelle belle journée !",
-    question: "Quel est le type de cette phrase ?",
-    options: ["exclamatif", "injonctif", "déclaratif"],
+    enonce: "Cette histoire est magnifique !",
+    question: "Comment analyser cette phrase ?",
+    options: [
+      "type déclaratif, forme exclamative",
+      "type exclamatif",
+      "type déclaratif, forme emphatique",
+    ],
     correct: 0,
-    feedback: "Émotion exprimée, mot exclamatif « quelle » et point d'exclamation : type exclamatif.",
+    feedback: "L'exclamation n'est pas un type : la phrase énonce un fait (type déclaratif) et l'exprime avec émotion (forme exclamative, marquée par le « ! »).",
   },
   {
     id: "fr-06-hub-app-type-decl",
@@ -51,7 +57,7 @@ export const TRAINER_HUB_TYPES_ET_FORMES_DE_PHRASE: TrainerItem[] = [
     enonce: "Sors !",
     affirmation: "Un candidat dit que cette phrase est de type exclamatif. A-t-il raison ?",
     correct: false,
-    feedback: "Le point d'exclamation ne suffit pas : la phrase donne un ordre, elle est injonctive.",
+    feedback: "Non : « exclamatif » n'est pas un type. La phrase donne un ordre, elle est de type injonctif ; le « ! » n'ajoute que la forme exclamative.",
   },
   {
     id: "fr-06-hub-rap-types-def",
@@ -60,9 +66,9 @@ export const TRAINER_HUB_TYPES_ET_FORMES_DE_PHRASE: TrainerItem[] = [
     modalite: "rappel",
     difficulte: 1,
     format: "flashcard",
-    question: "Quels sont les quatre types de phrase ?",
-    answer: "**Déclaratif**, **interrogatif**, **injonctif** et **exclamatif**. Une phrase a un seul type, reconnaissable à son **intention** et à ses **marques** (ponctuation, construction).",
-    feedback: "Un seul type par phrase ; les formes (négative, emphatique…) viennent en plus.",
+    question: "Quels sont les types de phrase (terminologie actuelle) ?",
+    answer: "Il y en a **trois**, exclusifs : **déclaratif**, **interrogatif**, **injonctif**. Une phrase a un seul type, reconnaissable à son **intention** et à ses **marques**. ⚠️ L'**exclamatif** n'est plus un type : c'est une **forme** (exclamative) qui se superpose au type.",
+    feedback: "Trois types exclusifs ; l'exclamation est une forme, pas un type.",
   },
   {
     id: "fr-06-hub-ouv-type-paysage",
@@ -72,15 +78,15 @@ export const TRAINER_HUB_TYPES_ET_FORMES_DE_PHRASE: TrainerItem[] = [
     difficulte: 2,
     format: "ouvert",
     enonce: "Comme ce paysage est magnifique !",
-    question: "Quel est le type de cette phrase ? Justifiez.",
-    reponseType: "Type **exclamatif** : la phrase manifeste une émotion, introduite par « comme » et close par un point d'exclamation.",
+    question: "Quel est le type de cette phrase, et quelle forme s'y ajoute ? Justifiez.",
+    reponseType: "Type **déclaratif** (elle énonce un fait), à la **forme exclamative** : le mot exclamatif « comme » et le point d'exclamation expriment une émotion.",
     explication: [
       {
         type: "line",
-        text: "Le mot exclamatif « comme » et l'expression d'un affect signalent l'exclamatif (à distinguer d'un simple « ! » qui ne suffirait pas).",
+        text: "« Comme » et le « ! » marquent la forme exclamative ; ils ne changent pas le type, qui reste déclaratif (la phrase affirme quelque chose). L'exclamatif n'est pas un type.",
       },
     ],
-    feedback: "Mot exclamatif (quel, que, comme, combien) + émotion : exclamatif.",
+    feedback: "Mot exclamatif (quel, que, comme, combien) + « ! » = forme exclamative ; le type reste déclaratif.",
   },
 
   // ── Interrogation ───────────────────────────────────────────────────────
@@ -162,7 +168,7 @@ export const TRAINER_HUB_TYPES_ET_FORMES_DE_PHRASE: TrainerItem[] = [
     format: "qcm",
     enonce: "Ferme la porte.",
     question: "Quel est le type de cette phrase ?",
-    options: ["injonctif", "déclaratif", "exclamatif"],
+    options: ["injonctif", "déclaratif", "interrogatif"],
     correct: 0,
     feedback: "La phrase donne un ordre (verbe à l'impératif) : type injonctif.",
   },
@@ -175,7 +181,7 @@ export const TRAINER_HUB_TYPES_ET_FORMES_DE_PHRASE: TrainerItem[] = [
     format: "qcm",
     enonce: "Ne pas fumer.",
     question: "Quel est le type de cette phrase ?",
-    options: ["injonctif", "déclaratif", "exclamatif"],
+    options: ["injonctif", "déclaratif", "interrogatif"],
     correct: 0,
     feedback: "Elle exprime une défense (faire ne pas agir), à l'infinitif : type injonctif, sans impératif.",
   },

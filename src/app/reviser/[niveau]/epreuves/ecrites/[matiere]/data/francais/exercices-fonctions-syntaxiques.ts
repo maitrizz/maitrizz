@@ -75,7 +75,7 @@ export const EXERCICES_FONCTIONS_SYNTAXIQUES: TrainerExercice[] = [
     question:
       "Pour chaque élément en gras, dites s'il est **épithète liée**, **épithète détachée** ou **apposition** :\na) « un **vieux** chêne »\nb) « **Furieux**, il claqua la porte »\nc) « Rome, **capitale de l'Italie**, attire les touristes »",
     reponseType:
-      "a) **vieux** : épithète liée du nom « chêne » (accolée, sans virgule).\n\nb) **Furieux** : adjectif, épithète détachée se rapportant au sujet « il » (isolé par une virgule, mobile, pas de verbe d'état). On peut aussi l'appeler *apposition de l'adjectif* : même fonction.\n\nc) **capitale de l'Italie** : GN, apposition à « Rome » (élément nominal coréférent, entre virgules). Convention : on retient **épithète détachée** pour l'adjectif (b) et **apposition** pour le GN (c).",
+      "a) **vieux** : épithète liée du nom « chêne » (accolée, sans virgule).\n\nb) **Furieux** : adjectif, épithète détachée se rapportant au sujet « il » (isolé par une virgule, mobile, pas de verbe d'état). On peut aussi l'appeler *apposition de l'adjectif* : même fonction.\n\nc) **capitale de l'Italie** : GN, apposition à « Rome » (il désigne le même lieu que « Rome », entre virgules). Convention : on retient **épithète détachée** pour l'adjectif (b) et **apposition** pour le GN (c).",
     explication: [],
   },
 
@@ -176,7 +176,7 @@ export const EXERCICES_FONCTIONS_SYNTAXIQUES: TrainerExercice[] = [
     question:
       "Analysez la fonction de chaque élément détaché :\n« **Épuisé**, le marcheur, **un vieil homme pourtant robuste**, s'arrêta. »",
     reponseType:
-      "- **Épuisé** : adjectif, épithète détachée se rapportant au sujet « le marcheur » (pas de verbe d'état, mobile ; *apposition de l'adjectif* est un synonyme admis).\n- **un vieil homme pourtant robuste** : GN, apposition à « le marcheur » (élément *nominal*, coréférent, supprimable).\nConvention retenue : **épithète détachée** pour l'adjectif, **apposition** pour le GN. Pas d'attribut ici, car le verbe (« s'arrêta ») n'est pas un verbe d'état.",
+      "- **Épuisé** : adjectif, épithète détachée se rapportant au sujet « le marcheur » (pas de verbe d'état, mobile ; *apposition de l'adjectif* est un synonyme admis).\n- **un vieil homme pourtant robuste** : GN, apposition à « le marcheur » (élément *nominal* qui désigne la même personne que « le marcheur », supprimable).\nConvention retenue : **épithète détachée** pour l'adjectif, **apposition** pour le GN. Pas d'attribut ici, car le verbe (« s'arrêta ») n'est pas un verbe d'état.",
     explication: [],
   },
   {

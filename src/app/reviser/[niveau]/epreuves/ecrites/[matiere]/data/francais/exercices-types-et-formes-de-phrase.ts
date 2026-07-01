@@ -4,9 +4,10 @@
 // 3 niveaux : Fondamentaux · Concours (la cible) · Expert (au-delà : interrogation
 // oratoire, « ne » explétif, litote/cumul de négations, dislocations, type ≠ acte
 // de langage).
-// Périmètre : un type (déclaratif/interrogatif/injonctif/exclamatif) + d'éventuelles
-// formes (négative, emphatique, active/passive). Le mécanisme de la voix passive
-// relève de la notion 4 ; on s'en tient ici à la FORME de phrase.
+// Périmètre (terminologie 2020) : un type parmi TROIS (déclaratif/interrogatif/injonctif),
+// exclusifs, + d'éventuelles formes (exclamative, négative, emphatique, passive,
+// impersonnelle). L'exclamatif N'EST PAS un type mais une forme. Le mécanisme de la voix
+// passive relève de la notion 4 ; on s'en tient ici à la FORME de phrase.
 // 6 savoir-faire : types · négation · interrogation · injonction · emphase · actif-passif.
 
 import type { TrainerExercice } from "@/components/fiche/types";
@@ -19,9 +20,9 @@ export const EXERCICES_TYPES_ET_FORMES_DE_PHRASE: TrainerExercice[] = [
     savoirFaire: ["types"],
     difficulte: 1,
     question:
-      "Donnez le type de chaque phrase :\na) « Quelle heure est-il ? »\nb) « Ferme la porte. »\nc) « Le train part à huit heures. »\nd) « Comme c'est beau ! »",
+      "Donnez le type de chaque phrase (et signalez la forme s'il y en a une) :\na) « Quelle heure est-il ? »\nb) « Ferme la porte. »\nc) « Le train part à huit heures. »\nd) « Comme c'est beau ! »",
     reponseType:
-      "a) **interrogatif**.\nb) **injonctif**.\nc) **déclaratif**.\nd) **exclamatif**.",
+      "a) **interrogatif**.\nb) **injonctif**.\nc) **déclaratif**.\nd) **déclaratif**, à la forme **exclamative** (« comme » + « ! ») : l'exclamation est une forme, pas un type.",
     explication: [],
   },
   {
@@ -89,7 +90,7 @@ export const EXERCICES_TYPES_ET_FORMES_DE_PHRASE: TrainerExercice[] = [
     question:
       "Donnez le **type** et **toutes les formes** :\n« Ce n'est pas lui qui décidera ! »",
     reponseType:
-      "Type : **déclaratif**. Formes : **négative** (« ne… pas ») + **emphatique** (présentatif « c'est… qui »). Le point d'exclamation marque l'**intonation**, il ne fait pas de la phrase un type exclamatif.",
+      "Type : **déclaratif**. Formes : **négative** (« ne… pas ») + **emphatique** (présentatif « c'est… qui ») + **exclamative** (le point d'exclamation, marque d'un affect). L'exclamation est une forme, pas un type : la phrase cumule donc trois formes.",
     explication: [],
   },
   {
@@ -98,9 +99,9 @@ export const EXERCICES_TYPES_ET_FORMES_DE_PHRASE: TrainerExercice[] = [
     savoirFaire: ["types", "injonction"],
     difficulte: 2,
     question:
-      "**Prouvez, par une manipulation**, que ces deux phrases ne sont pas du même type, malgré le point d'exclamation :\na) « Sors ! »\nb) « Comme tu as grandi ! »",
+      "**Prouvez, par une manipulation**, que ces deux phrases n'ont pas le même type, malgré leur point d'exclamation :\na) « Sors ! »\nb) « Comme tu as grandi ! »",
     reponseType:
-      "a) **injonctif** : la phrase donne un ordre (verbe à l'impératif, pas de sujet exprimé) ; on peut la reformuler « Je t'ordonne de sortir ».\nb) **exclamatif** : elle exprime un sentiment, structurée par un mot exclamatif (« comme ») ; aucune reformulation en ordre n'est possible.\nLe point d'exclamation est commun aux deux ; c'est la structure et l'intention qui fixent le type.",
+      "a) type **injonctif** : la phrase donne un ordre (impératif, pas de sujet exprimé) ; on peut la reformuler « Je t'ordonne de sortir ».\nb) type **déclaratif** : elle énonce un constat ; aucune reformulation en ordre n'est possible. « Comme » et le « ! » n'y ajoutent qu'une **forme exclamative**.\nLe point d'exclamation (forme exclamative) est commun aux deux ; il ne fixe pas le type. C'est l'intention qui tranche : ordre → injonctif, constat → déclaratif.",
     explication: [],
   },
   {
@@ -144,7 +145,7 @@ export const EXERCICES_TYPES_ET_FORMES_DE_PHRASE: TrainerExercice[] = [
     question:
       "« quel » introduit-il une exclamation ou une interrogation ? Justifiez :\na) « Quel courage ! »\nb) « Quel jour sommes-nous ? »",
     reponseType:
-      "a) **exclamatif** : « quel » exclamatif, exprime l'admiration (intonation montante, point d'exclamation).\nb) **interrogatif** : « quel » interrogatif, demande une information (point d'interrogation).\nMême mot « quel », deux types : ne pas se fier au seul mot.",
+      "a) « quel » **exclamatif** : la phrase exprime l'admiration, c'est une **exclamation** (forme exclamative, point d'exclamation).\nb) « quel » **interrogatif** : la phrase demande une information, c'est une **interrogation** (type interrogatif, point d'interrogation).\nMême mot « quel », deux valeurs. Rappel : l'exclamation est une forme, l'interrogation un type ; ne pas se fier au seul mot.",
     explication: [],
   },
   {
@@ -188,7 +189,7 @@ export const EXERCICES_TYPES_ET_FORMES_DE_PHRASE: TrainerExercice[] = [
     question:
       "Pour chaque phrase, donnez le type et l'éventuelle forme :\n« Qui a éteint la lumière ? Je n'y vois rien. Rallume-la tout de suite ! »",
     reponseType:
-      "1. « Qui a éteint la lumière ? » : **interrogatif** (interrogation partielle).\n2. « Je n'y vois rien. » : **déclaratif**, forme **négative** (partielle, « ne… rien »).\n3. « Rallume-la tout de suite ! » : **injonctif** (impératif ; le point d'exclamation ne le rend pas exclamatif).",
+      "1. « Qui a éteint la lumière ? » : type **interrogatif** (interrogation partielle).\n2. « Je n'y vois rien. » : type **déclaratif**, forme **négative** (partielle, « ne… rien »).\n3. « Rallume-la tout de suite ! » : type **injonctif** (impératif), à la forme **exclamative** (le « ! ») : l'exclamation ne change pas le type.",
     explication: [],
   },
 

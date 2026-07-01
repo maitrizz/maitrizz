@@ -17,14 +17,14 @@ export const COPIES_TYPES_ET_FORMES_DE_PHRASE: CopieACorriger[] = [
     id: "fr-06-cop-quel-exclam",
     copie: "Pour « Quel courage il a montré ! », un candidat écrit : « phrase de type **interrogatif** (présence de *quel*) ».",
     correcte: false,
-    verdict: "À corriger : la phrase est de type **exclamatif** (point d'exclamation, mot exclamatif *quel*). Elle n'attend aucune réponse.",
-    coteProf: "*quel* est ici exclamatif, pas interrogatif : c'est la ponctuation finale qui tranche.",
+    verdict: "À corriger : ce n'est pas une interrogation (aucune question, pas de point d'interrogation). La phrase énonce un fait avec émotion : type **déclaratif**, à la **forme exclamative** (mot exclamatif *quel*, point d'exclamation).",
+    coteProf: "*quel* est ici exclamatif, pas interrogatif ; et l'exclamation est une **forme**, pas un type.",
   },
   {
     id: "fr-06-cop-sors-injonctif",
     copie: "Pour « Sors immédiatement ! », un candidat écrit : « type **exclamatif**, à cause du point d'exclamation ».",
     correcte: false,
-    verdict: "À corriger : la phrase donne un ordre, elle est de type **injonctif**. Un simple point d'exclamation ne suffit pas à rendre une phrase exclamative.",
+    verdict: "À corriger : « exclamatif » n'est pas un type. La phrase donne un ordre : type **injonctif**. Le point d'exclamation n'ajoute qu'une **forme exclamative**.",
     coteProf: "Le type se lit sur ce que **fait** la phrase (ici : ordonner), pas seulement sur la ponctuation.",
   },
   {
@@ -49,9 +49,9 @@ export const COPIES_TYPES_ET_FORMES_DE_PHRASE: CopieACorriger[] = [
   },
   {
     id: "fr-06-cop-comme-exclam",
-    copie: "Pour « Comme cette histoire est triste ! », un candidat écrit : « type **exclamatif** (mot exclamatif *comme*, point d'exclamation) ».",
+    copie: "Pour « Comme cette histoire est triste ! », un candidat écrit : « type **déclaratif**, à la forme **exclamative** (mot exclamatif *comme*, point d'exclamation) ».",
     correcte: true,
-    verdict: "C'est juste : type **exclamatif**, marqué par *comme* et le point d'exclamation. La phrase exprime un sentiment, sans attendre de réponse.",
+    verdict: "C'est juste : la phrase énonce un constat (type **déclaratif**) avec émotion (forme **exclamative**, marquée par *comme* et le « ! »). L'exclamation est une forme, pas un type.",
   },
   {
     id: "fr-06-cop-ou-partielle",

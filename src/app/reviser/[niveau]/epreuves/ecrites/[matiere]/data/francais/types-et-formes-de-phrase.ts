@@ -17,7 +17,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
   numero: 6,
   partie: "Partie 1 : Grammaire de la phrase",
   title: "Types et formes de phrase",
-  subtitle: "Ce que fait la phrase (déclarer, interroger, ordonner, s'exclamer) et comment elle le fait (négative, emphatique, impersonnelle)",
+  subtitle: "Ce que fait la phrase (déclarer, interroger, ordonner) et comment elle le fait (exclamative, négative, emphatique, impersonnelle, passive)",
   badges: [
       {
           "label": "★★☆ Fréquent",
@@ -30,7 +30,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
   ],
   metaTitle: "Types et formes de phrase · Fiche de révision CRPE",
   metaDescription:
-    "Types et formes de phrase au CRPE : les quatre types (déclaratif, interrogatif, injonctif, exclamatif) et les formes de phrase. Méthode et exercices corrigés.",
+    "Types et formes de phrase au CRPE : les trois types (déclaratif, interrogatif, injonctif) et les cinq formes de phrase. Méthode et exercices corrigés.",
   maitriseNotionSlug: "types-et-formes-de-phrase",
   tabGroups: [
     {
@@ -48,7 +48,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Analyser une phrase, ce n'est pas seulement repérer ses propositions (voir la [phrase complexe](fiche:phrase-complexe)). C'est aussi dire **ce qu'elle fait** (elle déclare, interroge, ordonne ou s'exclame) et **comment elle le fait** (négative, emphatique, impersonnelle). La règle d'or tient en une phrase : **une phrase a toujours un seul type, et zéro, une ou plusieurs formes**. Gardez cette distinction en tête, c'est elle qui sépare les bonnes copies des autres.",
+              text: "Analyser une phrase, ce n'est pas seulement repérer ses propositions (voir la [phrase complexe](fiche:phrase-complexe)). C'est aussi dire **ce qu'elle fait** (elle déclare, interroge ou ordonne) et **comment elle le fait** (négative, exclamative, emphatique, impersonnelle, passive). La règle d'or tient en une phrase : **une phrase a toujours un seul type, et zéro, une ou plusieurs formes**. C'est justement pour cela que l'**exclamation** n'est pas un type mais une **forme** : elle se superpose à un type. Gardez cette distinction en tête, c'est elle qui sépare les bonnes copies des autres.",
             },
             {
               type: "subsection",
@@ -57,7 +57,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Le **type** répond à la question « **que fait la phrase ?** » : elle déclare, elle interroge, elle ordonne ou elle s'exclame. Il est **obligatoire et unique** : toute phrase relève d'un type, et d'un seul.\n\nLa **forme** répond à la question « **comment le fait-elle ?** » : la phrase est-elle affirmative ou **négative**, neutre ou **emphatique**, personnelle ou **impersonnelle** ? La forme est **facultative et cumulable** : une phrase peut n'avoir aucune forme particulière (on parle alors de forme neutre ou affirmative), ou en cumuler plusieurs.",
+                  text: "Le **type** répond à la question « **que fait la phrase ?** » : elle déclare, elle interroge ou elle ordonne. Il est **obligatoire et unique** : toute phrase relève d'un type, et d'un seul. La terminologie actuelle n'en compte donc que **trois** (déclaratif, interrogatif, injonctif) : l'ancien « type exclamatif » est aujourd'hui rangé parmi les formes.\n\nLa **forme** répond à la question « **comment le fait-elle ?** » : la phrase est-elle **exclamative**, **négative**, **emphatique**, **impersonnelle** ou **passive** ? La forme est **facultative et cumulable** : une phrase peut n'avoir aucune de ces formes (on parle alors de forme neutre et affirmative), ou en cumuler plusieurs.",
                 },
                 {
                   type: "table",
@@ -69,7 +69,9 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                     ["« Ne viens-tu pas ? »", "Interrogatif", "Négative"],
                     ["« C'est Pierre qui viendra. »", "Déclaratif", "Emphatique"],
                     ["« Il manque trois élèves. »", "Déclaratif", "Impersonnelle"],
-                    ["« Comme cette histoire est belle ! »", "Exclamatif", "Neutre"],
+                    ["« Le voleur a été arrêté. »", "Déclaratif", "Passive"],
+                    ["« Comme cette histoire est belle ! »", "Déclaratif", "Exclamative"],
+                    ["« Comment as-tu pu faire ça ! »", "Interrogatif", "Exclamative"],
                   ],
                 },
                 {
@@ -77,18 +79,18 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                   variant: "warning",
                   icon: "",
                   title: "Ne confondez pas « type de phrase » et « modalisation »",
-                  text: "Le **type** est un fait de **structure** (la forme grammaticale de la phrase, marquée par la syntaxe et la ponctuation). La **modalisation** (verbes comme *devoir*, *pouvoir*, modalisateurs comme *peut-être*, *sans doute*, question rhétorique, exclamation comme trace d'affect) relève de l'**attitude du locuteur** : c'est un autre objet, traité dans la notion [énonciation](fiche:enonciation-discours-rapporte). Une « question rhétorique » est un **procédé d'énonciation** ; une phrase interrogative est un **type**. Le mot « modalité » sert pour les deux, d'où la confusion fréquente.",
+                  text: "Le **type** est un fait de **structure** (la forme grammaticale de la phrase, marquée par la syntaxe et la ponctuation). La **modalisation** (verbes comme *devoir*, *pouvoir*, modalisateurs comme *peut-être*, *sans doute*, question rhétorique) relève de l'**attitude du locuteur** : c'est un autre objet, traité dans la notion [énonciation](fiche:enonciation-discours-rapporte). Une « question rhétorique » est un **procédé d'énonciation** ; une phrase interrogative est un **type**. Le mot « modalité » sert pour les deux, d'où la confusion fréquente.",
                 },
               ],
             },
             {
               type: "subsection",
               number: "②",
-              title: "Les 4 types de phrase",
+              title: "Les 3 types de phrase",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Chaque type correspond à une **intention de communication** et se reconnaît à des **marques** (ponctuation, parfois construction ou mot spécifique). On en compte quatre. Attention : un point d'exclamation à la fin d'une phrase n'en fait pas automatiquement une phrase exclamative (voir les pièges en Méthode).",
+                  text: "Chaque type correspond à une **intention de communication** et se reconnaît à des **marques** (ponctuation, parfois construction ou mot spécifique). La terminologie actuelle en compte **trois**, et ils sont **exclusifs** : une phrase est soit déclarative, soit interrogative, soit injonctive. Attention : un point d'exclamation ne crée pas un « type exclamatif » ; l'exclamation est une **forme** (voir ⑤), qui vient se superposer à l'un de ces trois types.",
                 },
                 {
                   type: "notionCardGrid",
@@ -126,17 +128,6 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                       ],
                       piege: "Très souvent sans impératif : c'est le zoom ④.",
                       test: "La phrase cherche à faire agir (ordre, conseil, consigne) : elle est injonctive, quel que soit le mode du verbe.",
-                    },
-                    {
-                      title: "Exclamatif",
-                      definition: "La phrase exprime un sentiment vif (joie, surprise, indignation, admiration). Elle ne demande rien et n'ordonne rien : elle réagit.",
-                      sousClasses: "**Marque :** point d'exclamation, souvent un mot exclamatif (quel, que, comme, combien).",
-                      exemples: [
-                        "« Comme cette histoire est belle ! »",
-                        "« Quel courage ! »",
-                      ],
-                      piege: "Un simple point d'exclamation ne suffit pas : « Sors ! » reste injonctif, pas exclamatif.",
-                      test: "La phrase manifeste une émotion, souvent introduite par quel/que/comme/combien, et se termine par un point d'exclamation.",
                     },
                   ],
                 },
@@ -215,16 +206,28 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
             {
               type: "subsection",
               number: "⑤",
-              title: "Les formes : négative, emphatique, impersonnelle",
+              title: "Les formes : exclamative, négative, emphatique, impersonnelle, passive",
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Les formes se **superposent** au type sans le modifier. On en retient trois pour le concours (la forme **passive** relève de la voix du verbe : voir la notion [groupe verbal](fiche:groupe-verbal)).",
+                  text: "Les formes se **superposent** au type sans le modifier. La terminologie en distingue **cinq** : **exclamative**, **négative**, **emphatique**, **impersonnelle** et **passive**. On les détaille ci-dessous ; la forme **passive** relève de la **voix du verbe** et sa mécanique complète est traitée dans la notion [groupe verbal](fiche:groupe-verbal).",
                 },
                 {
                   type: "notionCardGrid",
                   columns: 1,
                   cards: [
+                    {
+                      title: "Forme exclamative",
+                      definition: "La phrase exprime un sentiment vif (joie, surprise, indignation, admiration). Ce n'est **pas un type** : l'exclamation se **superpose** au type de la phrase, qui reste déclaratif, injonctif ou interrogatif.",
+                      sousClasses: "**Marque :** point d'exclamation, souvent un mot exclamatif (*quel, que, comme, combien*).",
+                      exemples: [
+                        "Déclarative exclamative : « Il est vraiment magnifique ! »",
+                        "Injonctive exclamative : « Sors immédiatement ! »",
+                        "Interrogative exclamative : « Comment as-tu pu faire ça ! »",
+                      ],
+                      piege: "Un point d'exclamation ne change pas le type : « Sors ! » reste de type **injonctif** ; il est simplement à la **forme exclamative**.",
+                      astuce: "🔑 Demandez d'abord ce que fait la phrase (déclarer / interroger / ordonner) → c'est le type. L'exclamation ne vient qu'ensuite, comme une forme.",
+                    },
                     {
                       title: "Forme négative",
                       definition: "La phrase nie tout ou partie du propos. La négation s'écrit en **deux éléments** : « ne » + un second mot. À l'oral, le « ne » disparaît souvent, mais il est **obligatoire à l'écrit**.",
@@ -257,6 +260,16 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                       ],
                       piege: "Distinguez le « il » impersonnel (« Il faut partir ») du « il » personnel qui reprend un nom (« Paul est là, **il** sourit »). Test : peut-on remplacer « il » par un nom ? Si oui, il est personnel ; si non, il est impersonnel.",
                     },
+                    {
+                      title: "Forme passive",
+                      definition: "Le sujet ne fait pas l'action : il la **subit**. La phrase passive correspond à une phrase active dont le COD est devenu sujet (« La police a arrêté le voleur » → « Le voleur a été arrêté par la police »).",
+                      sousClasses: "**Marque :** auxiliaire *être* + participe passé ; l'auteur de l'action (le **complément d'agent**) est introduit par *par* (ou *de*), et peut être sous-entendu.",
+                      exemples: [
+                        "Active : « Le chat mange la souris. » → Passive : « La souris **est mangée** par le chat. »",
+                        "« Le voleur **a été arrêté**. » : le complément d'agent est sous-entendu.",
+                      ],
+                      piege: "La forme passive relève de la **voix du verbe** : sa mécanique complète (transformation, complément d'agent, accord) est traitée dans la notion « Le groupe verbal ». On la nomme ici pour compléter les cinq formes.",
+                    },
                   ],
                 },
                 {
@@ -284,7 +297,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
             {
               type: "primaireBox",
               title: "Le regard du futur enseignant",
-              text: "**Au primaire, les types de phrase passent d'abord par la ponctuation.** Dès le **cycle 2** (CP-CE2), les élèves identifient la phrase et ses signes de fin (point, point d'interrogation, point d'exclamation) et produisent des phrases déclaratives, interrogatives et injonctives, à l'oral comme à l'écrit. Au **cycle 3** (CM1-6e), on observe et on nomme les types de phrase, et on travaille la phrase négative ainsi que le passage de la forme affirmative à la forme négative (voir les [programmes en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3)).\n\n**Erreurs d'élèves à savoir repérer :** oublier le point d'interrogation à l'écrit ; écrire la négation sans « ne » (« j'ai pas vu »), calquée sur l'oral ; terminer par « ! » une phrase injonctive et la prendre pour une exclamative. **Ce que vous devez savoir dire :** la marque écrite (ponctuation de fin, « ne » de négation) est justement ce que l'école construit, parce qu'elle ne va pas de soi à l'oral.",
+              text: "**Au primaire, les types de phrase passent d'abord par la ponctuation.** Dès le **cycle 2** (CP-CE2), les élèves identifient la phrase et ses signes de fin (point, point d'interrogation, point d'exclamation) et produisent des phrases déclaratives, interrogatives et injonctives, à l'oral comme à l'écrit. Au **cycle 3** (CM1-6e), on observe et on nomme les types de phrase, et on travaille la phrase négative ainsi que le passage de la forme affirmative à la forme négative (voir les [programmes en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3)).\n\n**Erreurs d'élèves à savoir repérer :** oublier le point d'interrogation à l'écrit ; écrire la négation sans « ne » (« j'ai pas vu »), calquée sur l'oral ; croire qu'un point d'exclamation fait un « type exclamatif », alors que l'exclamation est une **forme** qui se superpose au type (déclaratif, injonctif…). **Ce que vous devez savoir dire :** la marque écrite (ponctuation de fin, « ne » de négation) est justement ce que l'école construit, parce qu'elle ne va pas de soi à l'oral.",
             },
           ],
         },
@@ -355,11 +368,11 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
             {
               type: "piegeCard",
               variant: "rouge",
-              title: "Exclamatif ou interrogatif : ne pas se fier au seul mot « quel »",
+              title: "« quel » : type interrogatif ou forme exclamative ?",
               badge: "Piège classique",
-              faux: "« Quelle heure est-il ? » serait exclamative parce qu'elle commence par « quelle ».",
-              vrai: "« Quelle heure est-il ? » est **interrogative** (partielle) : elle demande une information. « Quelle belle journée ! » est **exclamative** : elle exprime un sentiment. Le mot *quel* sert aux deux.",
-              methode: "Regardez la ponctuation et l'intention : point d'interrogation + demande → interrogatif ; point d'exclamation + émotion → exclamatif.",
+              faux: "« Quelle heure est-il ? » serait à la forme exclamative parce qu'elle commence par « quelle ».",
+              vrai: "« Quelle heure est-il ? » est de type **interrogatif** (elle demande une information). « Quelle belle journée ! » est à la **forme exclamative** (elle exprime un sentiment). Le mot *quel* sert aux deux, mais l'un est un **type**, l'autre une **forme**.",
+              methode: "Regardez la ponctuation et l'intention : point d'interrogation + demande → type interrogatif ; point d'exclamation + émotion → forme exclamative (le type restant déclaratif, injonctif…).",
             },
             {
               type: "piegeCard",
@@ -393,10 +406,10 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "Indiquez le type et la forme de la phrase : « Comme il n'a rien compris ! »",
+              question: "Indiquez le type et la ou les formes de la phrase : « Comme il n'a rien compris ! »",
               correction: [
-                { type: "line", text: "**Explication :** le mot exclamatif *comme* et le point d'exclamation marquent le type **exclamatif** (la phrase exprime un sentiment, ici l'agacement ou la surprise). On relève aussi « n'… rien » : forme **négative** (négation partielle portant sur le COD)." },
-                { type: "line", text: "**Réponse attendue (formulation jury) :** « Phrase de type **exclamatif** (mot exclamatif *comme*, point d'exclamation), à la forme **négative** (négation partielle *ne… rien*). »" },
+                { type: "line", text: "**Explication :** la phrase énonce un fait, son type est donc **déclaratif**. Le mot exclamatif *comme* et le point d'exclamation marquent la **forme exclamative** (un sentiment, ici l'agacement). On relève aussi « n'… rien » : **forme négative** (négation partielle portant sur le COD). La phrase cumule donc deux formes." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « Phrase de type **déclaratif**, aux formes **exclamative** (mot exclamatif *comme*, point d'exclamation) et **négative** (négation partielle *ne… rien*). »" },
                 { type: "note", text: "@nav Méthode en tête ? Direction S’entraîner." },
               ],
             },
@@ -468,8 +481,8 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                   variant: "blue",
                 },
                 {
-                  title: "Les 4 types",
-                  lines: ["Déclaratif (.)", "Interrogatif ( ? )", "Injonctif (ordre)", "Exclamatif ( ! ) sentiment"],
+                  title: "Les 3 types",
+                  lines: ["Déclaratif (.)", "Interrogatif ( ? )", "Injonctif (ordre)", "(exclusifs : un seul par phrase)"],
                   variant: "blue",
                 },
                 {
@@ -483,8 +496,8 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                   variant: "green",
                 },
                 {
-                  title: "Les formes",
-                  lines: ["Négative (totale / partielle)", "ne… que = restriction (≠ négation)", "Emphatique (c'est… qui/que)", "Impersonnelle (il pleut, il faut)"],
+                  title: "Les 5 formes",
+                  lines: ["Exclamative ( ! quel/comme)", "Négative (totale / partielle)", "ne… que = restriction (≠ négation)", "Emphatique (c'est… qui/que)", "Impersonnelle (il pleut, il faut)", "Passive (voix) → notion 4"],
                   variant: "yellow",
                 },
                 {

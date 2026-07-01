@@ -5,7 +5,7 @@
 //
 // Périmètre : la STRUCTURE du GN (noyau + déterminant) et ses EXPANSIONS (épithète,
 // complément du nom, relative, apposition). Convention de la fiche : apposition = GN
-// détaché coréférent.
+// détaché qui désigne la même réalité.
 //
 // Curé à la main. Six savoir-faire × 5 items, 3 niveaux :
 // noyau-gn · determinants · epithete · cdn · relative · apposition.
@@ -370,7 +370,7 @@ export const TRAINER_HUB_GROUPE_NOMINAL_EXPANSIONS: TrainerItem[] = [
     question: "Quelle est la fonction du groupe en gras ?",
     options: ["apposition", "complément du nom", "épithète"],
     correct: 0,
-    feedback: "GN coréférent à « Victor Hugo », détaché par des virgules : apposition.",
+    feedback: "GN qui désigne la même personne que « Victor Hugo », détaché par des virgules : apposition.",
   },
   {
     id: "fr-03-hub-app-appo-mai",
@@ -395,7 +395,7 @@ export const TRAINER_HUB_GROUPE_NOMINAL_EXPANSIONS: TrainerItem[] = [
     enonce: "La Loire, **le plus long fleuve de France**, traverse Orléans.",
     affirmation: "Un candidat analyse « le plus long fleuve de France » comme une apposition. A-t-il raison ?",
     correct: true,
-    feedback: "Oui : GN coréférent à « la Loire », détaché par des virgules et supprimable : apposition.",
+    feedback: "Oui : GN qui désigne la même réalité que « la Loire », détaché par des virgules et supprimable : apposition.",
   },
   {
     id: "fr-03-hub-rap-appo-def",
@@ -405,7 +405,7 @@ export const TRAINER_HUB_GROUPE_NOMINAL_EXPANSIONS: TrainerItem[] = [
     difficulte: 1,
     format: "flashcard",
     question: "Qu'est-ce qu'une apposition ?",
-    answer: "Un **groupe nominal coréférent** à un autre nom, **détaché par une virgule** (« Paris, **capitale de la France**, … »). Par convention, on réserve « apposition » au groupe nominal.",
+    answer: "Un **groupe nominal qui désigne la même réalité** qu'un autre nom, **détaché par une virgule** (« Paris, **capitale de la France**, … »). Par convention, on réserve « apposition » au groupe nominal.",
     feedback: "GN détaché qui désigne la même réalité : apposition.",
   },
   {
@@ -421,9 +421,9 @@ export const TRAINER_HUB_GROUPE_NOMINAL_EXPANSIONS: TrainerItem[] = [
     explication: [
       {
         type: "line",
-        text: "C'est un GN coréférent à « oncle » (il désigne la même personne), détaché par des virgules et supprimable.",
+        text: "C'est un GN qui désigne la même personne que « oncle », détaché par des virgules et supprimable.",
       },
     ],
-    feedback: "Coréférence + détachement par virgules : apposition.",
+    feedback: "GN qui désigne la même personne, détaché par des virgules : apposition.",
   },
 ];

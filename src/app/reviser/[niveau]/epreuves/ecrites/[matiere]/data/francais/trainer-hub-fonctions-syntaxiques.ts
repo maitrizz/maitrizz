@@ -6,11 +6,15 @@
 // Quatre types : QCM (application), détection d'erreur (vrai/faux), flashcards (rappel),
 // exercice type concours (ouvert, on rédige dans l'encart).
 //
-// Périmètre : on travaille la FONCTION dans la phrase (pas la nature). Convention de la
-// fiche (auditée §9) : adjectif détaché = épithète détachée ; « apposition » réservée au GN.
+// Périmètre : on travaille la FONCTION dans la phrase. Les cinq premiers savoir-faire
+// s'en tiennent à la fonction (pas la nature). Le SIXIÈME, « nature-fonction », est un
+// savoir-faire de SYNTHÈSE, propre au hub (exercice type concours « donnez la nature ET
+// la fonction »), qui croise volontairement les deux plans sur toutes sortes de mots et de
+// propositions. Convention de la fiche (auditée §9) : adjectif détaché = épithète détachée ;
+// « apposition » réservée au GN.
 //
-// Curé et vérifié à la main. Cinq savoir-faire × ~6 items, 3 niveaux :
-// sujet · cod-coi · attribut · cc · epithete-apposition.
+// Curé et vérifié à la main. Six savoir-faire, 3 niveaux :
+// sujet · cod-coi · attribut · cc · epithete-apposition · nature-fonction (synthèse).
 
 import type { TrainerItem } from "@/components/fiche/types";
 
@@ -387,7 +391,7 @@ export const TRAINER_HUB_FONCTIONS_SYNTAXIQUES: TrainerItem[] = [
     enonce: "Paris, **capitale de la France**, est immense.",
     affirmation: "Un candidat analyse « capitale de la France » comme une apposition. A-t-il raison ?",
     correct: true,
-    feedback: "Oui : c'est un GN coréférent à « Paris », détaché par des virgules : apposition (terme réservé au groupe nominal).",
+    feedback: "Oui : c'est un GN qui désigne le même lieu que « Paris », détaché par des virgules : apposition (terme réservé au groupe nominal).",
   },
   {
     id: "fr-02-hub-rap-epithete-apposition",
@@ -397,7 +401,7 @@ export const TRAINER_HUB_FONCTIONS_SYNTAXIQUES: TrainerItem[] = [
     difficulte: 1,
     format: "flashcard",
     question: "Quelle différence entre épithète et apposition ?",
-    answer: "Même rôle (caractériser un nom), mais l'**épithète** est liée au nom (« un chien **fidèle** »), tandis que l'**apposition** est un **GN** coréférent **détaché par une virgule** (« Médor, **fidèle compagnon**, … »). L'adjectif détaché, lui, est une **épithète détachée**.",
+    answer: "Même rôle (caractériser un nom), mais l'**épithète** est liée au nom (« un chien **fidèle** »), tandis que l'**apposition** est un **GN** qui désigne la même réalité, **détaché par une virgule** (« Médor, **fidèle compagnon**, … »). L'adjectif détaché, lui, est une **épithète détachée**.",
     feedback: "Convention : « apposition » pour le GN détaché ; « épithète détachée » pour l'adjectif détaché.",
   },
   {
@@ -413,14 +417,14 @@ export const TRAINER_HUB_FONCTIONS_SYNTAXIQUES: TrainerItem[] = [
     explication: [
       {
         type: "line",
-        text: "C'est un groupe nominal coréférent à « frère » (il désigne la même personne), détaché par deux virgules et supprimable.",
+        text: "C'est un groupe nominal qui désigne la même personne que « frère », détaché par deux virgules et supprimable.",
       },
       {
         type: "note",
         text: "Convention : on réserve « apposition » au groupe nominal ; un adjectif détaché serait une épithète détachée.",
       },
     ],
-    feedback: "GN coréférent détaché par des virgules : apposition.",
+    feedback: "GN qui désigne la même personne, détaché par des virgules : apposition.",
   },
   {
     id: "fr-02-hub-app-attr-cod-trouve",
@@ -434,5 +438,259 @@ export const TRAINER_HUB_FONCTIONS_SYNTAXIQUES: TrainerItem[] = [
     options: ["attribut du COD", "épithète", "apposition"],
     correct: 0,
     feedback: "« passionnant » qualifie le COD « ce film » par l'intermédiaire du verbe « trouve » : attribut du COD. Dans « un film passionnant » (sans verbe), ce serait une épithète liée.",
+  },
+
+  // ── Nature ET fonction (synthèse transversale du hub) ──────────────────────
+  // Deux plans distincts pour un même mot ou une même proposition : la NATURE (à quelle
+  // classe grammaticale ou à quel type de proposition il appartient) et la FONCTION (le
+  // rôle qu'il joue dans la phrase). L'exercice-phare du concours : « donnez la nature et
+  // la fonction du mot souligné ». On balaie mots simples ET propositions subordonnées.
+  {
+    id: "fr-02-hub-rap-natfonc-methode",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "rappel",
+    difficulte: 1,
+    format: "flashcard",
+    question: "« Donnez la nature et la fonction » : que répond-on au juste ?",
+    answer: "Deux choses différentes pour le même élément :\n- **la nature** = ce qu'il *est* (sa classe : nom, adjectif, pronom, adverbe, verbe… ou le type de proposition) ;\n- **la fonction** = le *rôle* qu'il joue dans la phrase (sujet, COD, COI, attribut, complément circonstanciel, épithète…).\nUn même mot a toujours les deux : « **rapide** » est *par nature* un adjectif, et *par fonction* épithète ou attribut selon la phrase.",
+    feedback: "Nature = la classe (ce qu'il est) ; fonction = le rôle dans la phrase. Toujours les deux.",
+  },
+  {
+    id: "fr-02-hub-app-natfonc-nom-sujet",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "application",
+    difficulte: 1,
+    format: "qcm",
+    enonce: "**Le chien** du voisin aboie sans cesse.",
+    question: "Donnez la nature et la fonction du groupe en gras.",
+    options: ["groupe nominal, sujet", "groupe nominal, COD", "nom propre, attribut du sujet"],
+    correct: 0,
+    feedback: "« Le chien du voisin » est un groupe nominal (noyau « chien ») ; « qu'est-ce qui aboie ? » → lui : fonction sujet.",
+  },
+  {
+    id: "fr-02-hub-app-natfonc-adj-epithete",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "application",
+    difficulte: 1,
+    format: "qcm",
+    enonce: "Je regarde un film **passionnant**.",
+    question: "Donnez la nature et la fonction du mot en gras.",
+    options: ["adjectif qualificatif, épithète", "adjectif qualificatif, attribut du sujet", "adverbe, complément circonstanciel"],
+    correct: 0,
+    feedback: "« passionnant » est un adjectif qualificatif (nature) ; accolé au nom « film » sans verbe d'état, il est épithète (fonction).",
+  },
+  {
+    id: "fr-02-hub-app-natfonc-pronom-coi",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "application",
+    difficulte: 2,
+    format: "qcm",
+    enonce: "Elle **lui** a écrit une longue lettre.",
+    question: "Donnez la nature et la fonction du mot en gras.",
+    options: ["pronom personnel, COI", "pronom personnel, COD", "déterminant, COI"],
+    correct: 0,
+    feedback: "« lui » est un pronom personnel (nature) ; il équivaut à « à lui / à elle » (écrire À quelqu'un) : fonction COI.",
+  },
+  {
+    id: "fr-02-hub-app-natfonc-adverbe-cc",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "application",
+    difficulte: 2,
+    format: "qcm",
+    enonce: "Il a répondu **poliment** au client.",
+    question: "Donnez la nature et la fonction du mot en gras.",
+    options: ["adverbe, complément circonstanciel de manière", "adjectif, épithète", "adverbe, attribut du sujet"],
+    correct: 0,
+    feedback: "« poliment » est un adverbe (nature) ; « comment a-t-il répondu ? » → poliment : complément circonstanciel de manière (fonction).",
+  },
+  {
+    id: "fr-02-hub-app-natfonc-relative-cause",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "application",
+    difficulte: 2,
+    format: "qcm",
+    enonce: "Il est resté chez lui **parce qu'il pleuvait**.",
+    question: "Donnez la nature et la fonction de la proposition en gras.",
+    options: [
+      "proposition subordonnée conjonctive circonstancielle, CC de cause",
+      "proposition subordonnée relative, complément de l'antécédent",
+      "proposition subordonnée interrogative indirecte, COD",
+    ],
+    correct: 0,
+    feedback: "Introduite par la conjonction « parce que », c'est une subordonnée conjonctive circonstancielle (nature) ; « pourquoi ? » → CC de cause (fonction).",
+  },
+  {
+    id: "fr-02-hub-ouv-natfonc-attribut",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "type-concours",
+    difficulte: 2,
+    format: "ouvert",
+    enonce: "Ce matin, la mer est **calme**.",
+    question: "Donnez la nature et la fonction du mot en gras.",
+    reponseType: "« calme » est un **adjectif qualificatif** (nature) ; il est **attribut du sujet** « la mer » (fonction).",
+    explication: [
+      {
+        type: "line",
+        text: "Le verbe d'état « est » relie le sujet à la qualité « calme », qui s'accorde avec « la mer » : c'est un attribut du sujet, pas une épithète.",
+      },
+    ],
+    feedback: "Adjectif (nature) + verbe d'état = attribut du sujet (fonction).",
+  },
+  {
+    id: "fr-02-hub-ouv-natfonc-gn-coi",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "type-concours",
+    difficulte: 2,
+    format: "ouvert",
+    enonce: "Le maître parle **à ses élèves**.",
+    question: "Donnez la nature et la fonction du groupe en gras.",
+    reponseType: "« à ses élèves » est un **groupe nominal prépositionnel** (nature) ; il est **COI** du verbe « parle » (fonction).",
+    explication: [
+      {
+        type: "line",
+        text: "Le groupe est introduit par la préposition « à » : « parler à quelqu'un ». Le complément est donc indirect.",
+      },
+      {
+        type: "note",
+        text: "On donne la nature du groupe (groupe nominal, ici prépositionnel), pas seulement celle du noyau « élèves ».",
+      },
+    ],
+    feedback: "GN introduit par « à » (nature) → COI (fonction).",
+  },
+  {
+    id: "fr-02-hub-ouv-natfonc-relative",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "type-concours",
+    difficulte: 2,
+    format: "ouvert",
+    enonce: "L'élève **qui lève la main** connaît la réponse.",
+    question: "Donnez la nature et la fonction de la proposition en gras.",
+    reponseType: "« qui lève la main » est une **proposition subordonnée relative** (nature) ; elle est **complément de l'antécédent** « l'élève » (fonction, l'équivalent d'une épithète pour une proposition).",
+    explication: [
+      {
+        type: "line",
+        text: "Elle est introduite par le pronom relatif « qui », qui reprend le nom « élève » et le complète, comme le ferait une épithète.",
+      },
+    ],
+    feedback: "Introduite par un pronom relatif → relative ; elle complète l'antécédent (fonction d'expansion du nom).",
+  },
+  {
+    id: "fr-02-hub-ouv-natfonc-completive-cod",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "type-concours",
+    difficulte: 2,
+    format: "ouvert",
+    enonce: "Je crois **que tu as raison**.",
+    question: "Donnez la nature et la fonction de la proposition en gras.",
+    reponseType: "« que tu as raison » est une **proposition subordonnée conjonctive** (complétive, nature) ; elle est **COD** du verbe « crois » (fonction).",
+    explication: [
+      {
+        type: "line",
+        text: "Introduite par la conjonction « que », elle complète le verbe : « je crois quoi ? » → « que tu as raison ». On peut la remplacer par un GN (« je crois cela »).",
+      },
+      {
+        type: "note",
+        text: "Attention : ici « que » est une conjonction de subordination (complétive), pas un pronom relatif : il n'y a pas d'antécédent repris.",
+      },
+    ],
+    feedback: "Conjonctive introduite par « que » → complétive ; elle répond à « croire quoi ? » → COD.",
+  },
+  {
+    id: "fr-02-hub-ouv-natfonc-interro-indirecte",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "type-concours",
+    difficulte: 3,
+    format: "ouvert",
+    enonce: "Je me demande **où il est allé**.",
+    question: "Donnez la nature et la fonction de la proposition en gras.",
+    reponseType: "« où il est allé » est une **proposition subordonnée interrogative indirecte** (nature) ; elle est **COD** du verbe « me demande » (fonction).",
+    explication: [
+      {
+        type: "line",
+        text: "Elle pose une question sans point d'interrogation, introduite par le mot interrogatif « où ». « Je me demande quoi ? » → cette proposition : elle en est le COD.",
+      },
+    ],
+    feedback: "Question rapportée sans « ? » → interrogative indirecte ; « demander quoi ? » → COD.",
+  },
+  {
+    id: "fr-02-hub-ouv-natfonc-circ-temps",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "type-concours",
+    difficulte: 2,
+    format: "ouvert",
+    enonce: "**Dès qu'il arrivera**, nous passerons à table.",
+    question: "Donnez la nature et la fonction de la proposition en gras.",
+    reponseType: "« dès qu'il arrivera » est une **proposition subordonnée conjonctive circonstancielle** (nature) ; elle est **complément circonstanciel de temps** (fonction).",
+    explication: [
+      {
+        type: "line",
+        text: "Introduite par la locution conjonctive « dès que », elle répond à « quand ? » et se déplace (« nous passerons à table dès qu'il arrivera ») : CC de temps.",
+      },
+    ],
+    feedback: "Conjonctive introduite par « dès que » ; répond à « quand ? » et mobile → CC de temps.",
+  },
+  {
+    id: "fr-02-hub-ouv-natfonc-infinitif-cod",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "type-concours",
+    difficulte: 2,
+    format: "ouvert",
+    enonce: "Les enfants adorent **jouer** dans le jardin.",
+    question: "Donnez la nature et la fonction du mot en gras.",
+    reponseType: "« jouer » est un **verbe à l'infinitif** (nature) ; il est **COD** du verbe « adorent » (fonction).",
+    explication: [
+      {
+        type: "line",
+        text: "« Les enfants adorent quoi ? » → jouer. L'infinitif fonctionne ici comme un nom : il occupe la place d'un COD (« ils adorent les jeux »).",
+      },
+    ],
+    feedback: "Un infinitif peut occuper une fonction de nom : ici COD de « adorent ».",
+  },
+  {
+    id: "fr-02-hub-ouv-natfonc-participiale",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "type-concours",
+    difficulte: 3,
+    format: "ouvert",
+    enonce: "**La nuit tombée**, les randonneurs ont dressé le camp.",
+    question: "Donnez la nature et la fonction de la proposition en gras.",
+    reponseType: "« la nuit tombée » est une **proposition subordonnée participiale** (nature) ; elle est **complément circonstanciel de temps** (fonction).",
+    explication: [
+      {
+        type: "line",
+        text: "Elle a son propre sujet (« la nuit ») et un participe (« tombée »), sans mot subordonnant. Elle indique quand l'action a lieu : CC de temps.",
+      },
+      {
+        type: "note",
+        text: "La participiale se reconnaît à ce couple sujet + participe, détaché du reste de la phrase par une virgule.",
+      },
+    ],
+    feedback: "Sujet propre + participe, sans conjonction → participiale ; valeur de temps → CC de temps.",
+  },
+  {
+    id: "fr-02-hub-det-natfonc-relative-vs-completive",
+    notion: "fr-02",
+    savoirFaire: ["nature-fonction"],
+    modalite: "detection-erreur",
+    difficulte: 3,
+    format: "vrai-faux",
+    enonce: "L'homme **que je vois** est mon voisin.",
+    affirmation: "Un candidat dit que « que je vois » est une proposition conjonctive, COD de « vois ». A-t-il raison ?",
+    correct: false,
+    feedback: "Non : « que » reprend le nom « l'homme », c'est donc un pronom relatif : la proposition est une subordonnée relative, complément de l'antécédent « l'homme ». Ce serait une conjonctive complétive seulement si « que » n'avait pas d'antécédent (« je vois que tu comprends »).",
   },
 ];

@@ -8,6 +8,7 @@ export const SAVOIR_FAIRE = [
   { id: "attribut", label: "Attribut" },
   { id: "cc", label: "Compléments circonstanciels" },
   { id: "epithete-apposition", label: "Épithète/apposition" },
+  { id: "nature-fonction", label: "Nature et fonction (synthèse)" },
 ];
 
 export const ficheFonctionsSyntaxiques: Fiche = {
