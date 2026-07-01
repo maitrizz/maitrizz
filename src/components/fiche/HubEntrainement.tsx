@@ -42,7 +42,9 @@ const TOUS_SAVOIR_FAIRE = dedupeSavoirFaire(HUB_NOTIONS);
 export function HubEntrainement() {
   const [phase, setPhase] = useState<Phase>("accueil");
   const [sessionMode, setSessionMode] = useState<SessionMode>("quotidien");
-  const [selection, setSelection] = useState<string[]>(() => HUB_NOTIONS.map((n) => n.notionSlug));
+  // Défaut VIDE : « réviser une notion précise » = on choisit soi-même. (Le défaut « tout
+  // coché » faisait partir la série sur toutes les notions, d'où le mélange constaté.)
+  const [selection, setSelection] = useState<string[]>([]);
   // Choix manuel des notions : replié par défaut (l'action par défaut est la séance du jour).
   const [choixOuvert, setChoixOuvert] = useState(false);
   // Permet de recalculer le tableau de maîtrise au retour de l'entraînement.
@@ -381,7 +383,15 @@ const ETAT_UI: Record<EtatMaitrise, { dot: string; fill: string; text: string }>
 const LEGENDE: { etat: EtatMaitrise; mot: string }[] = [
   { etat: "acquis", mot: "Acquis" },
   { etat: "a-consolider", mot: "En cours" },
-  { etat: "pas-encore", mot: "Pas encore" },
+  { etat: "pas-encore", mot: "Non travaillées" },
+];
+
+// Clé de lecture des mini-barres par notion (à l'échelle des QUESTIONS).
+// « À revoir » = questions ratées à reprendre ; « Non travaillées » = pas encore tentées.
+const SEGMENTS: { cle: EtatMaitrise; mot: string }[] = [
+  { cle: "acquis", mot: "Acquises" },
+  { cle: "a-consolider", mot: "À revoir" },
+  { cle: "pas-encore", mot: "Non travaillées" },
 ];
 
 function TableauMaitrise() {
@@ -442,32 +452,59 @@ function TableauMaitrise() {
       {/* Détail par notion : liste aérée sans cadre, uniquement à la demande. */}
       {ouvert && (
         <>
-          <ul className="mt-4 grid grid-cols-1 gap-x-8 gap-y-2.5 sm:grid-cols-2">
-            {lignes.map(({ notion, jauge, etat }) => {
+          {/* Clé de lecture : des échantillons identiques aux segments des barres. */}
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 rounded-lg bg-base-200/60 px-3 py-2">
+            <span className="text-xs font-semibold text-base-content/50">Chaque barre&nbsp;=</span>
+            {SEGMENTS.map(({ cle, mot }) => (
+              <span key={cle} className="flex items-center gap-1.5 text-xs text-base-content/70">
+                <span className={`h-2 w-4 rounded-full ${ETAT_UI[cle].fill}`} />
+                {mot}
+              </span>
+            ))}
+          </div>
+
+          <ul className="mt-3 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+            {lignes.map(({ notion, jauge }) => {
               const { label } = jaugeLabel(jauge);
               return (
-                <li key={notion.notionSlug} className="flex items-center gap-2.5">
-                  <span
-                    className={`h-2.5 w-2.5 shrink-0 rounded-full ${ETAT_UI[etat].dot}`}
-                    role="img"
-                    aria-label={label}
-                    title={label}
-                  />
-                  <span className="truncate text-sm text-base-content/80">
+                <li key={notion.notionSlug} className="flex items-center gap-3">
+                  <span className="flex-1 truncate text-sm text-base-content/80">
                     {notion.numero}. {shortTitle(notion.title)}
                   </span>
+                  <MiniBarre jauge={jauge} label={label} />
                 </li>
               );
             })}
           </ul>
 
-          <p className="mt-4 text-xs leading-relaxed text-base-content/40">
-            Ni note ni pourcentage : chaque erreur est gratuite, vous réessayez et la pastille avance.
-            Le détail savoir-faire par savoir-faire reste dans chaque fiche.
+          <p className="mt-3 text-xs leading-relaxed text-base-content/40">
+            La barre ne fait que monter&nbsp;: une erreur ne pénalise pas, vous réessayez et elle avance. Le détail
+            savoir-faire par savoir-faire est dans chaque fiche.
           </p>
         </>
       )}
     </div>
+  );
+}
+
+// Mini-barre segmentée par notion : part des questions acquises (vert) / à revoir
+// (ambre) / pas encore vues (gris). Même langage que la barre de synthèse, mais à
+// l'échelle des questions de la notion : on voit le DEGRÉ, pas seulement l'état.
+function MiniBarre({ jauge, label }: { jauge: JaugeSavoirFaire; label: string }) {
+  const { reussis, tentes, total } = jauge;
+  const part = (x: number) => (total > 0 ? (x / total) * 100 : 0);
+  const vert = part(reussis);
+  const ambre = part(tentes - reussis);
+  return (
+    <span
+      className={`flex h-2 w-24 shrink-0 overflow-hidden rounded-full ${ETAT_UI["pas-encore"].fill}`}
+      role="img"
+      aria-label={label}
+      title={label}
+    >
+      {vert > 0 && <span className={ETAT_UI.acquis.fill} style={{ width: `${vert}%` }} />}
+      {ambre > 0 && <span className={ETAT_UI["a-consolider"].fill} style={{ width: `${ambre}%` }} />}
+    </span>
   );
 }
 

@@ -328,6 +328,7 @@ export function Trainer({
         <ItemPrompt item={current} />
 
         <ItemInput
+          key={current.id} // remonte la zone de réponse à chaque item (vide le textarea précédent)
           item={current}
           answered={answered}
           picked={picked}
