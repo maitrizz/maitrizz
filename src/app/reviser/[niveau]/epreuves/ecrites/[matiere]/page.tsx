@@ -1,18 +1,45 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import {
   MATIERES,
   MATIERE_LABELS,
   NIVEAUX,
+  getFicheMetas,
   getPartieGroups,
+  getCanonicalNiveau,
   isValidMatiere,
   isValidNiveau,
 } from "./data";
+
+const SITE_URL = "https://www.maitrizz.fr";
 
 export async function generateStaticParams() {
   return NIVEAUX.flatMap((niveau) =>
     MATIERES.map((matiere) => ({ niveau, matiere }))
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ niveau: string; matiere: string }>;
+}): Promise<Metadata> {
+  const { niveau, matiere } = await params;
+  if (!isValidNiveau(niveau) || !isValidMatiere(matiere)) return {};
+
+  const label = MATIERE_LABELS[matiere];
+  // La liste des fiches (et leurs variantes) diffère entre L3 et M2 : chaque page
+  // de hub est donc sa propre canonique, contrairement aux fiches partagées.
+  const canonicalUrl = `/reviser/${niveau}/epreuves/ecrites/${matiere}`;
+  const title = `${label} au CRPE : fiches de l'écrit | Maitrizz`;
+  const description = `Fiches de révision de ${label.toLowerCase()} pour l'épreuve écrite du CRPE, classées par grande partie du programme : cours, exemples et exercices corrigés.`;
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { title, description, url: canonicalUrl, type: "website" },
+  };
 }
 
 export default async function MatierePage({
@@ -28,9 +55,62 @@ export default async function MatierePage({
 
   const label = MATIERE_LABELS[matiere];
   const groups = getPartieGroups(niveau, matiere);
+  const base = `/reviser/${niveau}/epreuves/ecrites/${matiere}`;
+
+  // Données structurées : la liste des fiches de la matière (ItemList) + le fil
+  // d'Ariane, pour aider Google à comprendre que cette page est un sommaire. Les
+  // liens pointent vers l'URL canonique de chaque fiche (cf. getCanonicalNiveau).
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `Fiches de ${label} — épreuve écrite du CRPE`,
+    inLanguage: "fr",
+    url: `${SITE_URL}${base}`,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: getFicheMetas(niveau, matiere).map((fiche, i) => {
+        const canonicalNiveau = getCanonicalNiveau(niveau, matiere, fiche.slug);
+        const name =
+          fiche.numero > 0 && fiche.kind !== "sujet"
+            ? `Notion ${fiche.numero} : ${fiche.title}`
+            : fiche.title;
+        return {
+          "@type": "ListItem",
+          position: i + 1,
+          name,
+          url: `${SITE_URL}/reviser/${canonicalNiveau}/epreuves/ecrites/${matiere}/${fiche.slug}`,
+        };
+      }),
+    },
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { name: "Accueil", item: `${SITE_URL}/` },
+      { name: "Réviser", item: `${SITE_URL}/reviser` },
+      { name: "Épreuves", item: `${SITE_URL}/reviser/${niveau}/epreuves` },
+      { name: "Écrites", item: `${SITE_URL}/reviser/${niveau}/epreuves/ecrites` },
+      { name: label, item: `${SITE_URL}${base}` },
+    ].map((entry, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: entry.name,
+      item: entry.item,
+    })),
+  };
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       {/* Header */}
       <div className="bg-primary grid-paper-light py-16 relative overflow-hidden">
         <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/5 rounded-full pointer-events-none" />
@@ -57,6 +137,27 @@ export default async function MatierePage({
 
       {/* Contenu */}
       <div className="bg-base-100 max-w-5xl mx-auto px-6 lg:px-8 py-14">
+        {/* Accès à l'entraînement espacé (pilote français) */}
+        {matiere === "francais" && (
+          <Link
+            href={`/reviser/${niveau}/epreuves/ecrites/${matiere}/entrainement`}
+            className="mb-10 block bg-primary/5 grid-paper border-2 border-primary/40 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center gap-4 hover:border-primary hover:shadow-lg transition-all duration-200 group"
+          >
+            <div className="flex-1">
+              <h2 className="text-lg font-black text-base-content group-hover:text-primary transition-colors">
+                Entraînement espacé
+              </h2>
+              <p className="text-sm text-base-content/60 leading-relaxed mt-1">
+                Toutes notions mêlées : les questions reviennent au bon moment, ce que vous ratez revient plus tôt.
+                La fiche construit le geste ; ici, on l&apos;entretient.
+              </p>
+            </div>
+            <span className="inline-flex items-center gap-2 text-sm font-bold text-primary self-start sm:self-center whitespace-nowrap">
+              S&apos;entraîner →
+            </span>
+          </Link>
+        )}
+
         {groups.length === 0 && (
           <p className="text-base-content/55 text-center py-12">
             Les fiches de {label.toLowerCase()} arrivent très bientôt.
