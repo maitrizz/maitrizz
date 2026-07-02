@@ -6,9 +6,10 @@ import type { Block } from "./types";
 
 // « Corriger des erreurs » : on se met dans le siège du CORRECTEUR. On tranche d'abord
 // (« c'est juste » / « à corriger »), puis on dévoile si on avait raison + la bonne
-// analyse + une ligne « côté correcteur » (si elle apporte). Vue d'ensemble + statut
-// par copie (persisté), comme « Appliquer ». Certaines copies sont justes, pour ne pas
-// répondre « à corriger » machinalement.
+// analyse + une ligne « côté correcteur » (si elle apporte). Le statut est persisté PAR
+// copie (liseré + libellé) ; pas de barre agrégée « Où j'en suis » : juger une copie teste
+// la reconnaissance, pas la maîtrise du savoir-faire, donc pas de jauge façon maîtrise ici.
+// Certaines copies sont justes, pour ne pas répondre « à corriger » machinalement.
 
 type CorrigerCopiesData = Extract<Block, { type: "corrigerCopies" }>;
 type Copie = CorrigerCopiesData["copies"][number];
@@ -49,35 +50,18 @@ export function CorrigerCopies({ block, ficheSlug }: { block: CorrigerCopiesData
     });
   }
 
-  const ok = copies.filter((c) => results[c.id] === "ok").length;
-  const ko = copies.filter((c) => results[c.id] === "ko").length;
-  const todo = copies.length - ok - ko;
-
   return (
-    <div className="rounded-xl border-2 border-primary overflow-hidden">
-      <div className="bg-primary text-primary-content px-4 py-3 text-sm font-semibold">
-        📝 {block.title ? <RichText text={block.title} /> : "Corriger des erreurs"} · Corriger des erreurs
-      </div>
+    <div className="rounded-xl border border-base-300 bg-base-100 px-5 py-5 flex flex-col gap-4">
+      {block.intro && (
+        <p className="text-sm text-base-content/70 leading-relaxed">
+          <RichText text={block.intro} />
+        </p>
+      )}
 
-      <div className="bg-base-100 px-5 py-5 flex flex-col gap-4">
-        {block.intro && (
-          <p className="text-sm text-base-content/70 leading-relaxed">
-            <RichText text={block.intro} />
-          </p>
-        )}
-
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 rounded-lg bg-base-200 px-4 py-2.5 text-xs font-semibold">
-          <span className="text-base-content/50 uppercase tracking-wide text-[11px]">Où j&apos;en suis</span>
-          <span className="text-success">● {ok} réussies</span>
-          <span className="text-warning">◐ {ko} à revoir</span>
-          <span className="text-base-content/40">○ {todo} à voir</span>
-        </div>
-
-        <div className="flex flex-col gap-3">
-          {copies.map((c, i) => (
-            <CopieItem key={c.id} index={i} copie={c} result={results[c.id]} onJudge={judge} />
-          ))}
-        </div>
+      <div className="flex flex-col gap-3">
+        {copies.map((c, i) => (
+          <CopieItem key={c.id} index={i} copie={c} result={results[c.id]} onJudge={judge} />
+        ))}
       </div>
     </div>
   );
@@ -105,12 +89,12 @@ function CopieItem({
     onJudge(copie.id, choice === copie.correcte);
   }
 
-  const statusBorder = result === "ok" ? "border-l-success" : result === "ko" ? "border-l-warning" : "border-l-base-300";
+  const statusBorder = result === "ok" ? "border-l-success" : result === "ko" ? "border-l-[#d99a3a]" : "border-l-base-300";
   const statusLabel =
     result === "ok"
       ? { txt: "réussie", cls: "text-success" }
       : result === "ko"
-        ? { txt: "à revoir", cls: "text-warning" }
+        ? { txt: "à revoir", cls: "text-[#a9761d]" }
         : { txt: "à voir", cls: "text-base-content/40" };
 
   function judgeBtn(choice: boolean, label: string) {

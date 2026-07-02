@@ -16,8 +16,28 @@ import {
   isValidNiveau,
 } from "../data";
 import { getMatiereLastModified } from "@/lib/seo-dates";
+import type { FicheTabGroup } from "@/components/fiche/types";
 
 const SITE_URL = "https://www.maitrizz.fr";
+
+// Recroise les surfaces de la fiche pour les voyants « Où j'en suis » : on récupère les
+// items tagués `savoirFaire` de « Appliquer » (exercices) pour qu'ils comptent dans la
+// maîtrise, en plus de la banque du hub (§5).
+// NB : « Corriger des erreurs » n'est volontairement PAS agrégé (juger une copie teste la
+// reconnaissance, pas la production ; ce suivi reste local à son onglet). Décision 02/07/2026.
+function collectMaitriseItems(tabGroups: FicheTabGroup[]): { id: string; savoirFaire: string[] }[] {
+  const items: { id: string; savoirFaire: string[] }[] = [];
+  for (const group of tabGroups) {
+    for (const tab of group.tabs) {
+      for (const block of tab.blocks) {
+        if (block.type === "exerciceBank") {
+          for (const ex of block.exercices) items.push({ id: ex.id, savoirFaire: ex.savoirFaire });
+        }
+      }
+    }
+  }
+  return items;
+}
 
 export async function generateStaticParams() {
   return NIVEAUX.flatMap((niveau) =>
@@ -155,7 +175,10 @@ export default async function FichePage({
         <FicheHeader fiche={fiche} />
 
         {fiche.maitriseNotionSlug && (
-          <MaitriseVoyants notionSlug={fiche.maitriseNotionSlug} />
+          <MaitriseVoyants
+            notionSlug={fiche.maitriseNotionSlug}
+            extraItems={collectMaitriseItems(fiche.tabGroups)}
+          />
         )}
 
         <FicheTabs tabGroups={fiche.tabGroups} ficheSlug={fiche.slug} niveau={niveau} matiere={matiere} />

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { RichText } from "./richtext";
 import { CorrectionLine } from "./ExerciceCard";
+import { ETAT_STYLE, type EtatMaitrise } from "./maitrise";
 import type { Block, TrainerExercice } from "./types";
 
 // « Appliquer » : PAS un trainer. On choisit un niveau (Fondamentaux / Concours /
@@ -27,6 +28,14 @@ const DIFF_HINT: Record<1 | 2 | 3, string> = {
   2: "Le niveau attendu le jour de l'épreuve.",
   3: "Pour se dépasser, au-delà de l'épreuve.",
 };
+
+// Synthèse « Où j'en suis » : même langage que l'encart de maîtrise et le tableau du hub.
+// réussis = acquis (vert) · à retravailler = à consolider (ambre adouci) · à faire = gris.
+const SYNTHESE: { etat: EtatMaitrise; mot: string }[] = [
+  { etat: "acquis", mot: "Réussis" },
+  { etat: "a-consolider", mot: "À retravailler" },
+  { etat: "pas-encore", mot: "À faire" },
+];
 
 function storageKey(slug: string) {
   return `maitrizz:exos:${slug}`;
@@ -72,58 +81,71 @@ export function ExerciceBank({ block, ficheSlug }: { block: ExerciceBankData; fi
   const ok = list.filter((e) => ratings[e.id] === "ok").length;
   const ko = list.filter((e) => ratings[e.id] === "ko").length;
   const todo = list.length - ok - ko;
+  const total = list.length;
+  const compte: Record<EtatMaitrise, number> = { acquis: ok, "a-consolider": ko, "pas-encore": todo };
 
   return (
-    <div className="rounded-xl border-2 border-secondary overflow-hidden">
-      <div className="bg-secondary text-secondary-content px-4 py-3 text-sm font-semibold">
-        ✍️ {block.title ? <RichText text={block.title} /> : "Exercices"} · Appliquer
+    <div className="rounded-xl border border-base-300 bg-base-100 px-5 py-5 flex flex-col gap-4">
+      <p className="text-sm text-base-content/70 leading-relaxed">
+        Appliquez ce que vous venez d&apos;apprendre. Trois niveaux, des bases au niveau expert : pour chaque question, rédigez
+        votre réponse, comparez-la au corrigé, puis auto-évaluez-vous. Peu d&apos;exercices, mais choisis, pour faire le point sur
+        vos acquis et monter en difficulté à votre rythme.
+      </p>
+
+      {/* Choix du niveau */}
+      <div className="flex flex-wrap gap-2">
+        {niveaux.map((n) => {
+          const count = exercices.filter((e) => e.difficulte === n).length;
+          const active = level === n;
+          return (
+            <button
+              key={n}
+              type="button"
+              onClick={() => setLevel(n)}
+              className={`rounded-lg border-2 px-3.5 py-2 text-sm font-bold transition-colors ${
+                active
+                  ? "border-secondary bg-secondary text-secondary-content"
+                  : "border-base-300 bg-base-100 text-base-content/70 hover:border-secondary/50"
+              }`}
+            >
+              {DIFF_LABELS[n]}
+              <span className={`ml-1.5 text-xs font-normal ${active ? "opacity-90" : "opacity-50"}`}>({count})</span>
+            </button>
+          );
+        })}
       </div>
+      <p className="text-xs text-base-content/50 -mt-1.5">{DIFF_HINT[level]}</p>
 
-      <div className="bg-base-100 px-5 py-5 flex flex-col gap-4">
-        <p className="text-sm text-base-content/70 leading-relaxed">
-          Appliquez ce que vous venez d&apos;apprendre. Trois niveaux, des bases au niveau expert : pour chaque question, rédigez
-          votre réponse, comparez-la au corrigé, puis auto-évaluez-vous. Peu d&apos;exercices, mais choisis, pour faire le point sur
-          vos acquis et monter en difficulté à votre rythme.
-        </p>
-
-        {/* Choix du niveau */}
-        <div className="flex flex-wrap gap-2">
-          {niveaux.map((n) => {
-            const count = exercices.filter((e) => e.difficulte === n).length;
-            const active = level === n;
-            return (
-              <button
-                key={n}
-                type="button"
-                onClick={() => setLevel(n)}
-                className={`rounded-lg border-2 px-3.5 py-2 text-sm font-bold transition-colors ${
-                  active
-                    ? "border-secondary bg-secondary text-secondary-content"
-                    : "border-base-300 bg-base-100 text-base-content/70 hover:border-secondary/50"
-                }`}
-              >
-                {DIFF_LABELS[n]}
-                <span className={`ml-1.5 text-xs font-normal ${active ? "opacity-90" : "opacity-50"}`}>({count})</span>
-              </button>
-            );
-          })}
+      {/* « Où j'en suis » : barre segmentée + pastilles, identiques à l'encart de maîtrise. */}
+      <div>
+        <h3 className="text-xs font-bold uppercase tracking-wider text-base-content/40">Où j&apos;en suis</h3>
+        <div className="mt-2 flex h-2.5 w-full gap-1">
+          {total > 0 &&
+            SYNTHESE.map(({ etat }) =>
+              compte[etat] > 0 ? (
+                <div
+                  key={etat}
+                  className={`rounded-full ${ETAT_STYLE[etat].fill} transition-[width] duration-500`}
+                  style={{ width: `${(compte[etat] / total) * 100}%` }}
+                />
+              ) : null,
+            )}
         </div>
-        <p className="text-xs text-base-content/50 -mt-1.5">{DIFF_HINT[level]}</p>
-
-        {/* Vue d'ensemble du niveau */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 rounded-lg bg-base-200 px-4 py-2.5 text-xs font-semibold">
-          <span className="text-base-content/50 uppercase tracking-wide text-[11px]">Où j&apos;en suis</span>
-          <span className="text-success">● {ok} réussis</span>
-          <span className="text-warning">◐ {ko} à retravailler</span>
-          <span className="text-base-content/40">○ {todo} à faire</span>
-        </div>
-
-        {/* Les exercices du niveau, à la suite */}
-        <div className="flex flex-col gap-3">
-          {list.map((ex, i) => (
-            <ExerciceItem key={ex.id} index={i} ex={ex} rating={ratings[ex.id]} onRate={rate} />
+        <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1">
+          {SYNTHESE.map(({ etat, mot }) => (
+            <span key={etat} className="flex items-center gap-1.5 text-xs font-medium text-base-content/60">
+              <span className={`h-2 w-2 rounded-full ${ETAT_STYLE[etat].dot}`} />
+              {mot}
+            </span>
           ))}
         </div>
+      </div>
+
+      {/* Les exercices du niveau, à la suite */}
+      <div className="flex flex-col gap-3">
+        {list.map((ex, i) => (
+          <ExerciceItem key={ex.id} index={i} ex={ex} rating={ratings[ex.id]} onRate={rate} />
+        ))}
       </div>
     </div>
   );
@@ -143,12 +165,12 @@ function ExerciceItem({
   const [answer, setAnswer] = useState("");
   const [revealed, setRevealed] = useState(false);
 
-  const statusBorder = rating === "ok" ? "border-l-success" : rating === "ko" ? "border-l-warning" : "border-l-base-300";
+  const statusBorder = rating === "ok" ? "border-l-success" : rating === "ko" ? "border-l-[#d99a3a]" : "border-l-base-300";
   const statusLabel =
     rating === "ok"
       ? { txt: "réussi", cls: "text-success" }
       : rating === "ko"
-        ? { txt: "à retravailler", cls: "text-warning" }
+        ? { txt: "à retravailler", cls: "text-[#a9761d]" }
         : { txt: "à faire", cls: "text-base-content/40" };
 
   return (
@@ -228,7 +250,7 @@ function ExerciceItem({
               type="button"
               onClick={() => onRate(ex.id, "ko")}
               className={`flex-1 rounded-lg border-2 px-4 py-2 text-sm font-semibold transition-colors ${
-                rating === "ko" ? "border-warning bg-warning/10 text-warning" : "border-base-300 hover:border-warning/40"
+                rating === "ko" ? "border-[#d99a3a] bg-[#d99a3a]/10 text-[#a9761d]" : "border-base-300 hover:border-[#d99a3a]/40"
               }`}
             >
               À retravailler

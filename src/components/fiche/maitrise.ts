@@ -52,8 +52,9 @@ export const HUB_SLUG = "hub-francais-ecrit";
  *  - le hub d'entraînement (Leitner) `maitrizz:trainer:hub-francais-ecrit` → lastResult ok/ko ;
  *  - un éventuel trainer interne `maitrizz:trainer:<slug>` (aucun aujourd'hui : le trainer vit au hub) ;
  *  - « Appliquer » (exercices ouverts) `maitrizz:exos:<slug>` → ok/ko (auto-évaluation).
- * NB : « Corriger des erreurs » (`maitrizz:copies:<slug>`) n'est PAS encore inclus :
- * les copies ne portent pas encore de tags `savoirFaire` (à brancher quand elles seront taguées).
+ * NB : « Corriger des erreurs » (`maitrizz:copies:<slug>`) n'est volontairement PAS agrégé :
+ * juger la copie d'un candidat teste la reconnaissance, pas la production du savoir-faire ; ce
+ * suivi reste LOCAL à son onglet (barre de progression propre). Décision produit du 02/07/2026.
  * L'ordre de fusion fait primer le dernier signal connu (le hub espacé peut faire redescendre un voyant).
  */
 export function loadDerniersResultats(notionSlug: string): DerniersResultats {
@@ -145,6 +146,18 @@ export function jaugeLabel(j: JaugeSavoirFaire): { label: string; etat: EtatMait
   if (j.ratio >= 0.67) return { label: "Presque acquis", etat: "a-consolider" };
   return { label: "En cours", etat: "a-consolider" };
 }
+
+/**
+ * Habillage visuel PARTAGÉ par état — source unique pour que les voyants de la fiche
+ * et le tableau du hub coïncident exactement (mêmes couleurs, même langage).
+ * Feu tricolore doux (code couleur universel adouci) :
+ *   pas encore = gris · en cours = ambre adouci · acquis = vert.
+ */
+export const ETAT_STYLE: Record<EtatMaitrise, { dot: string; fill: string; text: string }> = {
+  acquis: { dot: "bg-success", fill: "bg-success", text: "text-success" },
+  "a-consolider": { dot: "bg-[#d99a3a]", fill: "bg-[#d99a3a]", text: "text-[#a9761d]" },
+  "pas-encore": { dot: "bg-base-300", fill: "bg-base-300", text: "text-base-content/40" },
+};
 
 /** Aide de typage : rassemble items fermés + exercices ouverts en briques taguées. */
 export function toItemsTagues(

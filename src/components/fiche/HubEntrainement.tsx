@@ -18,6 +18,7 @@ import {
   jaugeLabel,
   loadDerniersResultats,
   toItemsTagues,
+  ETAT_STYLE,
   HUB_SLUG,
   type EtatMaitrise,
   type JaugeSavoirFaire,
@@ -371,13 +372,8 @@ function useMounted(): boolean {
   );
 }
 
-// Habillage par état : feu tricolore doux (code couleur universel adouci).
-// pas encore = gris · en cours = ambre · acquis = vert.
-const ETAT_UI: Record<EtatMaitrise, { dot: string; fill: string; text: string }> = {
-  acquis: { dot: "bg-success", fill: "bg-success", text: "text-success" },
-  "a-consolider": { dot: "bg-[#d99a3a]", fill: "bg-[#d99a3a]", text: "text-[#a9761d]" },
-  "pas-encore": { dot: "bg-base-300", fill: "bg-base-300", text: "text-base-content/40" },
-};
+// Habillage par état : code couleur partagé avec les voyants de la fiche (ETAT_STYLE),
+// pour que les deux surfaces coïncident exactement.
 
 // Ordre d'affichage de la synthèse (du plus avancé au moins avancé).
 const LEGENDE: { etat: EtatMaitrise; mot: string }[] = [
@@ -434,7 +430,7 @@ function TableauMaitrise() {
           compte[etat] > 0 ? (
             <div
               key={etat}
-              className={`rounded-full ${ETAT_UI[etat].fill} transition-[width] duration-500`}
+              className={`rounded-full ${ETAT_STYLE[etat].fill} transition-[width] duration-500`}
               style={{ width: `${(compte[etat] / total) * 100}%` }}
             />
           ) : null,
@@ -443,7 +439,7 @@ function TableauMaitrise() {
       <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1">
         {LEGENDE.map(({ etat, mot }) => (
           <span key={etat} className="flex items-center gap-1.5 text-xs font-medium text-base-content/60">
-            <span className={`h-2 w-2 rounded-full ${ETAT_UI[etat].dot}`} />
+            <span className={`h-2 w-2 rounded-full ${ETAT_STYLE[etat].dot}`} />
             {mot}
           </span>
         ))}
@@ -457,7 +453,7 @@ function TableauMaitrise() {
             <span className="text-xs font-semibold text-base-content/50">Chaque barre&nbsp;=</span>
             {SEGMENTS.map(({ cle, mot }) => (
               <span key={cle} className="flex items-center gap-1.5 text-xs text-base-content/70">
-                <span className={`h-2 w-4 rounded-full ${ETAT_UI[cle].fill}`} />
+                <span className={`h-2 w-4 rounded-full ${ETAT_STYLE[cle].fill}`} />
                 {mot}
               </span>
             ))}
@@ -497,13 +493,13 @@ function MiniBarre({ jauge, label }: { jauge: JaugeSavoirFaire; label: string })
   const ambre = part(tentes - reussis);
   return (
     <span
-      className={`flex h-2 w-24 shrink-0 overflow-hidden rounded-full ${ETAT_UI["pas-encore"].fill}`}
+      className={`flex h-2 w-24 shrink-0 overflow-hidden rounded-full ${ETAT_STYLE["pas-encore"].fill}`}
       role="img"
       aria-label={label}
       title={label}
     >
-      {vert > 0 && <span className={ETAT_UI.acquis.fill} style={{ width: `${vert}%` }} />}
-      {ambre > 0 && <span className={ETAT_UI["a-consolider"].fill} style={{ width: `${ambre}%` }} />}
+      {vert > 0 && <span className={ETAT_STYLE.acquis.fill} style={{ width: `${vert}%` }} />}
+      {ambre > 0 && <span className={ETAT_STYLE["a-consolider"].fill} style={{ width: `${ambre}%` }} />}
     </span>
   );
 }
