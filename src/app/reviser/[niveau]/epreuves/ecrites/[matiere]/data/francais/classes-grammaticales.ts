@@ -138,7 +138,7 @@ export const ficheClassesGrammaticales: Fiche = {
                       exemples: [
                         "**Adjectif qualificatif :** « un **grand** jardin » / « une **grande** maison » : accord en genre",
                         "**Adjectif numéral ordinal :** « le **deuxième** rang »",
-                        "**Adjectif verbal :** « une eau **courante** », « une élève **souriante** » : accordé, à la différence du participe présent et du gérondif (« en souriant », toujours invariables)",
+                        "**Adjectif verbal :** « un travail **fatigant** », « une élève **souriante** » : accordé, et parfois d'orthographe différente du participe présent (« fatigant » adjectif ≠ « fatiguant » participe ; « en souriant » reste invariable)",
                       ],
                       piege: "Si le mot ne s'accorde pas, ce **n'est pas** un adjectif : c'est un adverbe.",
                       test: "Accord possible au féminin pluriel ? Si oui : adjectif.",

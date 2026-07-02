@@ -66,6 +66,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-work-sans), system-ui, sans-serif;
 }
 
+/* Police manuscrite (Caveat) : touches « copie corrigée » terracotta, en marge */
+.font-hand {
+  font-family: var(--font-hand), "Segoe Script", "Bradley Hand", cursive;
+}
+
 /* Équilibrage typographique des titres */
 .text-balance {
   text-wrap: balance;

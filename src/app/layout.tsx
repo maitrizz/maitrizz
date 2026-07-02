@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, Work_Sans } from "next/font/google";
+import { Caveat, Source_Serif_4, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -17,6 +17,14 @@ const workSans = Work_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+// Fonte manuscrite pour les touches « copie corrigée » (terracotta) — usage
+// décoratif, réservé aux annotations de marge (classe .font-hand).
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-hand",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.maitrizz.fr"),
   title: "Maitrizz - Révise ton concours CRPE",
@@ -30,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" data-theme="maitrizz" className={`${sourceSerif.variable} ${workSans.variable}`}>
+    <html lang="fr" data-theme="maitrizz" className={`${sourceSerif.variable} ${workSans.variable} ${caveat.variable}`}>
       <body className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
