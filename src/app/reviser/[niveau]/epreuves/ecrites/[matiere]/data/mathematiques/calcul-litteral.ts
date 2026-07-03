@@ -380,7 +380,7 @@ export const ficheCalculLitteral: Fiche = {
                   warn: "⚠️ Le − devant (x² + 4x + 4) change le signe de CHAQUE terme. C'est l'erreur la plus fréquente.",
                 },
                 {
-                  number: "💡",
+                  number: "4",
                   text: "**Vérifier avec x = 0.**",
                   example: { lines: ["A = 3 × (−1) − 4 = −7", "Formule : 0 − 0 − 7 = −7 ✓"] },
                 },
@@ -421,7 +421,7 @@ export const ficheCalculLitteral: Fiche = {
                   warn: "⚠️ Toujours factoriser au maximum : après le facteur commun, chercher une différence de carrés.",
                 },
                 {
-                  number: "💡",
+                  number: "4",
                   text: "**Vérifier en redéveloppant.**",
                   example: { lines: ["3(x + 2)(x − 2) = 3(x² − 4) = 3x² − 12 ✓"] },
                 },
@@ -567,11 +567,17 @@ export const ficheCalculLitteral: Fiche = {
                   explanation: "(a + b)² = a² + 2ab + b² : (x + 3)² = x² + 2 × x × 3 + 9 = x² + 6x + 9. Le terme 2ab ne disparaît jamais.",
                 },
                 {
-                  objectifId: "e4",
-                  question: "Factoriser 9x² − 1.",
-                  options: ["(3x − 1)²", "(9x + 1)(x − 1)", "(3x + 1)(3x − 1)", "3x(3x − 1)"],
-                  correctIndex: 2,
-                  explanation: "Différence de carrés : 9x² − 1 = (3x)² − 1² = (3x + 1)(3x − 1).",
+                  objectifId: "e7",
+                  question: "Pour prouver que la somme de trois entiers consécutifs est un multiple de 3, comment les modéliser ?",
+                  options: [
+                    "Tester trois exemples au hasard",
+                    "n, n + 1, n + 2 (n entier) : leur somme vaut 3n + 3 = 3(n + 1)",
+                    "2k et 2k + 1",
+                    "Écrire trois carrés",
+                  ],
+                  correctIndex: 1,
+                  explanation:
+                    "Trois consécutifs s'écrivent n, n + 1, n + 2. Leur somme n + (n + 1) + (n + 2) = 3n + 3 = 3(n + 1) est multiple de 3 pour tout entier n. Des exemples n'auraient rien prouvé.",
                 },
                 {
                   objectifId: "e5",

@@ -10,7 +10,7 @@ const OBJECTIFS = [
   { id: "e6", label: "Je retrouve la valeur initiale en divisant par le coefficient multiplicateur" },
   { id: "e7", label: "J'enchaîne des variations successives en multipliant les coefficients (jamais en additionnant les taux)" },
   { id: "e8", label: "Je résous un problème d'échelle et je convertis correctement cm → m → km" },
-  { id: "e9", label: "Je convertis une durée en heures décimales et j'applique vitesse, densité, débit" },
+  { id: "e9", label: "Je convertis une durée en heures décimales et j'applique vitesse, masse volumique, débit" },
 ];
 
 export const ficheProportionnalitePourcentages: Fiche = {
@@ -20,14 +20,14 @@ export const ficheProportionnalitePourcentages: Fiche = {
   partie: "Partie 2 : Organisation, données, fonctions",
   title: "Proportionnalité et pourcentages",
   subtitle:
-    "Coefficient et quatrième proportionnelle · ratio · pourcentages et coefficient multiplicateur · valeur initiale · successions · échelle · vitesse · densité · débit",
+    "Coefficient et quatrième proportionnelle · ratio · pourcentages et coefficient multiplicateur · valeur initiale · successions · échelle · vitesse · masse volumique · débit",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },
   ],
   metaTitle: "Proportionnalité et pourcentages (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE sur la proportionnalité et les pourcentages : coefficient, quatrième proportionnelle, ratio, coefficient multiplicateur, valeur initiale, successions de pourcentages, échelle, vitesse, densité et débit. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE sur la proportionnalité et les pourcentages : coefficient, quatrième proportionnelle, ratio, coefficient multiplicateur, valeur initiale, successions de pourcentages, échelle, vitesse, masse volumique et débit. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -61,7 +61,7 @@ export const ficheProportionnalitePourcentages: Fiche = {
                 {
                   number: "④",
                   title: "Applications",
-                  text: "Échelle, vitesse, densité, débit : la proportionnalité au service des situations concrètes.",
+                  text: "Échelle, vitesse, masse volumique, débit : la proportionnalité au service des situations concrètes.",
                 },
               ],
             },
@@ -107,7 +107,7 @@ export const ficheProportionnalitePourcentages: Fiche = {
                   type: "callout",
                   variant: "warning",
                   title: "⚠️ Le test du rapport",
-                  text: "Calculer y ÷ x pour chaque paire. Si tous les rapports sont égaux, c'est proportionnel ; si un seul diffère, non. Ne jamais répondre à l'instinct.",
+                  text: "Calculer y ÷ x pour chaque paire. Si tous les rapports sont égaux, c'est proportionnel ; si un seul diffère, non. Ne jamais répondre à l'instinct. L'effet d'un agrandissement sur les longueurs, aires et volumes (×k, ×k², ×k³) est détaillé dans la [fiche N°15](fiche:perimetres-aires-volumes).",
                 },
                 {
                   type: "highlightBox",
@@ -260,7 +260,7 @@ export const ficheProportionnalitePourcentages: Fiche = {
             {
               type: "subsection",
               number: "④",
-              title: "Applications : échelle, vitesse, densité, débit",
+              title: "Applications : échelle, vitesse, masse volumique, débit",
               blocks: [
                 {
                   type: "highlightBox",
@@ -291,13 +291,13 @@ export const ficheProportionnalitePourcentages: Fiche = {
                 {
                   type: "highlightBox",
                   variant: "marine",
-                  title: "Vitesse, densité, débit : la même structure",
+                  title: "Vitesse, masse volumique, débit : la même structure",
                   blocks: [
                     {
                       type: "formulaBlock",
                       lines: [
                         "Vitesse : v = d ÷ t · d = v × t · t = d ÷ v",
-                        "Densité : d = m ÷ V (eau : 1 g/cm³ = 1 kg/L)",
+                        "Masse volumique : ρ = m ÷ V (eau : 1 g/cm³ = 1 kg/L)",
                         "Débit : D = V ÷ t",
                       ],
                       note: "Même triangle de formules : grandeur = quantité ÷ temps (ou ÷ volume).",
@@ -306,7 +306,7 @@ export const ficheProportionnalitePourcentages: Fiche = {
                       type: "callout",
                       variant: "warning",
                       title: "⚠️ Heures décimales obligatoires",
-                      text: "Avant v = d ÷ t, convertir la durée : minutes ÷ 60. 1h 45min = 1 + 45/60 = 1,75 h (jamais 1,45 h). Conversions utiles : km/h ÷ 3,6 = m/s ; m/s × 3,6 = km/h.",
+                      text: "Avant v = d ÷ t, convertir la durée : minutes ÷ 60. 1h 45min = 1 + 45/60 = 1,75 h (jamais 1,45 h). Conversions utiles : km/h ÷ 3,6 = m/s ; m/s × 3,6 = km/h. Ces grandeurs composées (vitesse, masse volumique, débit) et leurs conversions d'unités sont approfondies dans la [fiche N°16](fiche:durees-masses-grandeurs-composees).",
                     },
                   ],
                 },
@@ -733,7 +733,7 @@ export const ficheProportionnalitePourcentages: Fiche = {
               type: "niveauBanner",
               level: "n2",
               stars: "★★☆",
-              label: "Niveau 2 : vitesse, densité",
+              label: "Niveau 2 : vitesse, masse volumique",
               sub: "Conversions et triangles de formules",
             },
             {
@@ -754,14 +754,14 @@ export const ficheProportionnalitePourcentages: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n2",
-              title: "Exercice 4 : densité",
-              objectifTag: "Densité",
-              enonce: "L'aluminium a une densité de 2,7 g/cm³. Une poutre a un volume de 800 cm³.",
+              title: "Exercice 4 : masse volumique",
+              objectifTag: "Masse volumique",
+              enonce: "L'aluminium a une masse volumique de 2,7 g/cm³. Une poutre a un volume de 800 cm³.",
               question: "a) Masse de la poutre en kg ?\nb) Volume d'une poutre de 5,4 kg ?\nc) L'aluminium flotte-t-il dans l'eau (1 g/cm³) ?",
               correction: [
                 { type: "line", label: "a)", text: "m = 2,7 × 800 = 2 160 g = 2,16 kg." },
                 { type: "line", label: "b)", text: "V = 5 400 ÷ 2,7 = 2 000 cm³." },
-                { type: "line", label: "c)", text: "Non : densité 2,7 > 1, l'aluminium coule." },
+                { type: "line", label: "c)", text: "Non : sa masse volumique (2,7 g/cm³) dépasse celle de l'eau (1 g/cm³), donc l'aluminium coule." },
               ],
             },
             {
@@ -975,9 +975,9 @@ export const ficheProportionnalitePourcentages: Fiche = {
                     "Minutes ÷ 60. 1h 45min = 1 + 45/60 = 1,75 h (jamais 1,45 h). Repères : 15min = 0,25 ; 20min = 0,333 ; 30min = 0,5 ; 40min = 0,667 ; 45min = 0,75.",
                 },
                 {
-                  question: "Quelle structure commune ont vitesse, densité et débit ?",
+                  question: "Quelle structure commune ont vitesse, masse volumique et débit ?",
                   answer:
-                    "Le même triangle de formules : grandeur = quantité ÷ référence. v = d ÷ t ; densité = m ÷ V ; débit = V ÷ t. Couvrir la grandeur cherchée donne la formule.",
+                    "Le même triangle de formules : grandeur = quantité ÷ référence. v = d ÷ t ; masse volumique ρ = m ÷ V ; débit = V ÷ t. Couvrir la grandeur cherchée donne la formule.",
                 },
               ],
             },
@@ -1027,7 +1027,7 @@ export const ficheProportionnalitePourcentages: Fiche = {
                   title: "Applications",
                   variant: "purple",
                   dashed: true,
-                  lines: ["Échelle : convertir cm → m → km", "Vitesse, densité, débit", "Durée en heures décimales"],
+                  lines: ["Échelle : convertir cm → m → km", "Vitesse, masse volumique, débit", "Durée en heures décimales"],
                 },
               ],
             },

@@ -72,8 +72,8 @@ function ficheSectionsReperageEspace(niveau: Niveau): Fiche {
               variant: "info",
               title: "Visualiser dans l'espace",
               text: l3
-                ? "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes)."
-                : "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche, et le repérage sur la sphère fait le pont avec la géographie. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes).",
+                ? "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes) ; le repère du plan et le théorème de Pythagore, dans les [fiche N°17](fiche:reperage-coordonnees) et [fiche N°21](fiche:theoreme-de-pythagore)."
+                : "La section d'un solide est souvent donnée dans un contexte concret (coupe d'une boîte, d'un bâtiment, d'un fruit). La difficulté est de visualiser la section et d'en identifier la forme. Pythagore dans l'espace complète naturellement la fiche, et le repérage sur la sphère fait le pont avec la géographie. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes) ; le repère du plan et le théorème de Pythagore, dans les [fiche N°17](fiche:reperage-coordonnees) et [fiche N°21](fiche:theoreme-de-pythagore).",
             },
             {
               type: "subsection",
@@ -344,7 +344,7 @@ function ficheSectionsReperageEspace(niveau: Niveau): Fiche {
                   example: { lines: ["d² = 25 + 12² = 169 → d = 13 (triplet 5-12-13)"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Formule directe équivalente.**",
                   example: { lines: ["d = √(L² + l² + h²) = √(9 + 16 + 144) = 13"] },
                 },

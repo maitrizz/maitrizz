@@ -61,7 +61,7 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
               type: "callout",
               variant: "info",
               title: "Le cœur de la géométrie plane",
-              text: "Le jury ne veut pas du vocabulaire récité : il veut voir que vous savez définir, distinguer et raisonner sur ces figures. Un carré n'est pas « un rectangle aux côtés égaux » au sens flou : c'est précisément un losange qui a un angle droit (ou un rectangle aux côtés consécutifs égaux). Cette rigueur de définition est exactement ce qu'on attend d'un futur enseignant. La somme des angles d'un polygone et les constructions à la règle et au compas (médiatrice, bissectrice) sont détaillées dans la [fiche N°18](fiche:droites-angles-parallelisme).",
+              text: "Le jury ne veut pas du vocabulaire récité : il veut voir que vous savez définir, distinguer et raisonner sur ces figures. Un carré n'est pas « un rectangle aux côtés égaux » au sens flou : c'est précisément un losange qui a un angle droit (ou un rectangle aux côtés consécutifs égaux). Cette rigueur de définition est exactement ce qu'on attend d'un futur enseignant. La somme des angles d'un polygone et les constructions à la règle et au compas (médiatrice, bissectrice) sont détaillées dans la [fiche N°18](fiche:droites-angles-parallelisme). Les calculs de milieu et de distance en repère, utilisés pour démontrer la nature d'un quadrilatère, sont dans la [fiche N°17](fiche:reperage-coordonnees).",
             },
             {
               type: "subsection",
@@ -341,7 +341,7 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
                   example: { lines: ["40° + 2 × (angle en B) = 180° → angle en B = 70°"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Vérifier.**",
                   example: { lines: ["40° + 70° + 70° = 180° ✓"] },
                 },

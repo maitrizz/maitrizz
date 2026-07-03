@@ -60,7 +60,7 @@ export const ficheTrigonometrieTriangleRectangle: Fiche = {
               type: "callout",
               variant: "info",
               title: "La trigonométrie complète Pythagore",
-              text: "Là où Pythagore calcule une longueur à partir de deux côtés, la trigonométrie calcule une longueur ou un angle à partir d'un côté et d'un angle. C'est l'outil des pentes, des hauteurs inaccessibles et de tous les problèmes où l'angle d'inclinaison est donné. La difficulté n'est pas le calcul : c'est de toujours rapporter sin, cos et tan à l'angle de référence, et de ne pas confondre côté adjacent et côté opposé selon l'angle choisi.",
+              text: "Là où Pythagore calcule une longueur à partir de deux côtés, la trigonométrie calcule une longueur ou un angle à partir d'un côté et d'un angle. C'est l'outil des pentes, des hauteurs inaccessibles et de tous les problèmes où l'angle d'inclinaison est donné. La difficulté n'est pas le calcul : c'est de toujours rapporter sin, cos et tan à l'angle de référence, et de ne pas confondre côté adjacent et côté opposé selon l'angle choisi. Elle prolonge le théorème de Pythagore ([fiche N°21](fiche:theoreme-de-pythagore)), qui reste l'outil de vérification, et se relie aux pourcentages via la pente ([fiche N°13](fiche:proportionnalite-pourcentages)).",
             },
             {
               type: "subsection",
@@ -393,7 +393,7 @@ export const ficheTrigonometrieTriangleRectangle: Fiche = {
                   example: { lines: ["tan α = sin α / cos α = (5/13)/(12/13) = 5/12"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Reconnaître le triplet.**",
                   example: { lines: ["5/13, 12/13, 5/12 : ce sont les rapports du triangle 5-12-13."] },
                 },

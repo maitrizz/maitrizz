@@ -167,7 +167,7 @@ export const ficheSuitesNumeriques: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "**Variation :** q > 1 croissante, 0 < q < 1 décroissante, q < 0 termes alternés. **Graphique :** les points ne sont pas alignés, ils forment une courbe (croissance ou décroissance exponentielle).",
+                  text: "**Variation :** q > 1 croissante, 0 < q < 1 décroissante, q < 0 termes alternés. **Graphique :** les points ne sont pas alignés, ils forment une courbe (croissance ou décroissance exponentielle). Le lien taux ↔ coefficient multiplicateur (1 + t/100) est détaillé dans la [fiche N°13](fiche:proportionnalite-pourcentages).",
                 },
               ],
             },
@@ -356,7 +356,7 @@ export const ficheSuitesNumeriques: Fiche = {
                   example: { lines: ["u₈ = 2 000 × 1,05^(8 − 1) = 2 000 × 1,05⁷ ≈ 2 814 €"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Interpréter et conclure.**",
                   example: { lines: ["Après 8 ans, le capital est d'environ 2 814 € (814 € d'intérêts)."] },
                 },
@@ -655,7 +655,7 @@ export const ficheSuitesNumeriques: Fiche = {
                 { type: "line", label: "1.1", text: "Municipalité : arithmétique, a₁ = 5 000, d = 800. Entreprise : géométrique, b₁ = 3 000, q = 1,10." },
                 { type: "line", label: "1.2", text: "aₙ = 4 200 + 800n ; bₙ = 3 000 × 1,10^(n − 1)." },
                 { type: "line", label: "1.3", text: "a₆ = 9 000 € ; b₆ = 3 000 × 1,10⁵ ≈ 4 831 €." },
-                { type: "line", label: "2.1", text: "Par tâtonnement : vers la 22e année, b dépasse a (b₂₂ ≈ 22 100 € contre a₂₂ = 21 800 €)." },
+                { type: "line", label: "2.1", text: "Par tâtonnement : vers la 22e année, b dépasse a (b₂₂ = 3 000 × 1,10²¹ ≈ 22 200 € contre a₂₂ = 21 800 €)." },
                 { type: "line", label: "2.2", text: "S₈ = 8 × (5 000 + 10 600) ÷ 2 = 62 400 €." },
                 { type: "line", label: "2.3", text: "La croissance géométrique l'emporte toujours à long terme sur la croissance arithmétique : l'entreprise sera inévitablement plus avantageuse après un certain nombre d'années, même en partant plus bas." },
               ],

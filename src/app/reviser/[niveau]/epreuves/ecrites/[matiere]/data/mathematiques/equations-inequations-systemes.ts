@@ -551,11 +551,17 @@ export const ficheEquationsInequationsSystemes: Fiche = {
                   explanation: "Produit nul : x − 3 = 0 ou 2x + 5 = 0, donc x = 3 ou x = −5/2.",
                 },
                 {
-                  objectifId: "e3",
-                  question: "Peut-on écrire « (x − 2)(x + 3) = 6 donc x − 2 = 6 ou x + 3 = 6 » ?",
-                  options: ["Oui, c'est la règle du produit", "Non : la règle du produit nul exige un membre de droite égal à 0", "Oui, si x est entier", "Non, il faut une calculatrice"],
+                  objectifId: "e8",
+                  question: "Un problème sur un nombre d'élèves conduit à une équation dont la solution est x = −4. Que faut-il en conclure ?",
+                  options: [
+                    "On écrit x = −4 comme réponse",
+                    "x = −4 vérifie l'équation mais n'a pas de sens pour un effectif (positif, entier) : on le signale, le problème n'a pas de solution acceptable",
+                    "On prend la valeur absolue, x = 4",
+                    "On arrondit à 0",
+                  ],
                   correctIndex: 1,
-                  explanation: "La règle A × B = 0 ⟺ A = 0 ou B = 0 ne s'applique que si le membre de droite est 0. Ici, il faut développer puis ramener à = 0.",
+                  explanation:
+                    "La solution mathématique doit toujours être confrontée au contexte : un effectif est un entier positif, donc −4 est à rejeter, ce qu'il faut expliciter.",
                 },
                 {
                   objectifId: "e4",

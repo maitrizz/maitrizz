@@ -272,7 +272,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "**Méthode :** déplacer la virgule jusqu'à avoir un chiffre entre 1 et 9 devant elle. Compter les rangs déplacés → c'est l'exposant. Gauche → positif · Droite → négatif.",
+                  text: "**Méthode :** déplacer la virgule jusqu'à avoir un chiffre entre 1 et 9 devant elle. Compter les rangs déplacés → c'est l'exposant. Gauche → positif · Droite → négatif. Les puissances (dont les puissances de 10) sont approfondies dans la [fiche N°4](fiche:puissances-racines-reels).",
                 },
               ],
             },
@@ -556,7 +556,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
               },
             },
             {
-              number: "💡",
+              number: "4",
               text: "**Mémorisez les puissances de 2, elles remplacent les \"centaines, dizaines, unités\" de la base 10.**",
               example: {
                 lines: [

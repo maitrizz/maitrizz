@@ -214,7 +214,7 @@ export const ficheTheoremeDeThalesSimilitude: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "Deux photos semblables, l'une 10 × 15 cm et l'autre 20 × 30 cm : le coefficient est k = 2. La grande photo a une aire 4 fois plus grande (k² = 4), pas 2 fois.",
+                  text: "Deux photos semblables, l'une 10 × 15 cm et l'autre 20 × 30 cm : le coefficient est k = 2. La grande photo a une aire 4 fois plus grande (k² = 4), pas 2 fois. L'effet du coefficient sur les aires et volumes est détaillé dans la [fiche N°15](fiche:perimetres-aires-volumes), et le lien avec les échelles dans la [fiche N°13](fiche:proportionnalite-pourcentages).",
                 },
                 {
                   type: "highlightBox",
@@ -240,7 +240,7 @@ export const ficheTheoremeDeThalesSimilitude: Fiche = {
                   type: "callout",
                   variant: "info",
                   title: "💡 Homothétie et Thalès, la même configuration",
-                  text: "Deux droites passant par O qui coupent deux parallèles découpent des segments dans le rapport k : c'est exactement la configuration de Thalès. C'est pourquoi homothétie, similitude et Thalès apparaissent souvent dans le même exercice de concours.",
+                  text: "Deux droites passant par O qui coupent deux parallèles découpent des segments dans le rapport k : c'est exactement la configuration de Thalès. C'est pourquoi homothétie, similitude et Thalès apparaissent souvent dans le même exercice de concours. L'homothétie comme transformation, avec les autres transformations du plan, est développée dans la [fiche N°24](fiche:transformations-du-plan).",
                 },
               ],
             },
@@ -427,7 +427,7 @@ export const ficheTheoremeDeThalesSimilitude: Fiche = {
                   example: { lines: ["Deux angles égaux → △ABH ∼ △CAH"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Exploiter la proportionnalité des côtés.**",
                   example: { lines: ["AB/CA = BH/AH = AH/CH → on en déduit AH² = BH × CH"] },
                 },
@@ -730,10 +730,10 @@ export const ficheTheoremeDeThalesSimilitude: Fiche = {
                   items: [
                     { bad: true, text: "SA/SA' compare deux sécantes différentes : ce n'est pas la forme de Thalès." },
                     { text: "Forme correcte : SA/SB = SA'/SB' (chaque rapport sur une seule sécante)." },
-                    { text: "4/10 = 6/SB' → SB' = 6 × 10/4 = 15. Le résultat est juste ici par coïncidence, mais la formule était fausse." },
+                    { text: "4/10 = 6/SB' → SB' = 6 × 10/4 = 15. L'écriture du candidat (SA/SA' = SB/SB') donne ici le même résultat car elle est algébriquement équivalente (même produit en croix : SA × SB' = SA' × SB), mais elle ne correspond pas à l'énoncé du théorème, qui écrit chaque rapport sur une même sécante." },
                   ],
                 },
-                { type: "note", text: "Le jury sanctionne une formule mal posée même si le résultat tombe juste." },
+                { type: "note", text: "Écrire chaque rapport sur une même sécante (la forme de l'énoncé) reste le plus sûr : cela évite la vraie erreur, qui est d'inverser un seul rapport (par exemple SA/SB = SB'/SA'), et cela permet d'ajouter le rapport AA'/BB'." },
               ],
             },
             {

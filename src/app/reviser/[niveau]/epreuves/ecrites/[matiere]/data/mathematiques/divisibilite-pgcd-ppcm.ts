@@ -272,7 +272,7 @@ export const ficheDivisibilitePgcdPpcm: Fiche = {
                     },
                     {
                       type: "paragraph",
-                      text: "**Premiers entre eux :** a et b sont premiers entre eux quand PGCD(a, b) = 1. Cela ne veut pas dire que chacun est premier : 8 et 15 sont premiers entre eux (PGCD = 1) bien qu'aucun ne soit premier. Application directe : rendre une fraction irréductible en divisant numérateur et dénominateur par leur PGCD (36/48, PGCD = 12, donne 3/4).",
+                      text: "**Premiers entre eux :** a et b sont premiers entre eux quand PGCD(a, b) = 1. Cela ne veut pas dire que chacun est premier : 8 et 15 sont premiers entre eux (PGCD = 1) bien qu'aucun ne soit premier. Application directe : rendre une fraction irréductible en divisant numérateur et dénominateur par leur PGCD (36/48, PGCD = 12, donne 3/4 ; voir la [fiche N°3](fiche:fractions-decimaux)).",
                     },
                   ],
                 },
@@ -437,7 +437,7 @@ export const ficheDivisibilitePgcdPpcm: Fiche = {
                   example: { lines: ["2 (max 3), 3 (max 2), 5, 7", "PPCM = 2³ × 3² × 5 × 7 = 2 520"] },
                 },
                 {
-                  number: "💡",
+                  number: "4",
                   text: "**Vérifier avec PGCD × PPCM = a × b.**",
                   example: { lines: ["18 × 2 520 = 45 360 = 360 × 126 ✓"] },
                 },

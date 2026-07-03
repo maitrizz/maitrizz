@@ -8,7 +8,7 @@ const OBJECTIFS = [
   { id: "e4", label: "Je convertis les masses (t, kg, g, mg) avec les coefficients ×1 000" },
   { id: "e5", label: "Je calcule une vitesse v = d ÷ t, avec t en heures décimales si v est en km/h" },
   { id: "e6", label: "Je convertis km/h en m/s (÷3,6) et m/s en km/h (×3,6)" },
-  { id: "e7", label: "Je calcule une densité d = m ÷ V et je retrouve m ou V" },
+  { id: "e7", label: "Je calcule une masse volumique ρ = m ÷ V et je retrouve m ou V" },
   { id: "e8", label: "Je calcule un débit Q = V ÷ t en vérifiant la cohérence des unités" },
   { id: "e9", label: "Je retrouve la formule d'une grandeur composée à partir de son unité" },
 ];
@@ -20,14 +20,14 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
   partie: "Partie 3 : Grandeurs et mesures",
   title: "Durées, masses et grandeurs composées",
   subtitle:
-    "Conversions de durées (base 60) · heures décimales · masses (base 10) · vitesse · densité · débit · prix unitaire",
+    "Conversions de durées (base 60) · heures décimales · masses (base 10) · vitesse · masse volumique · débit · prix unitaire",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème C", variant: "info" },
   ],
   metaTitle: "Durées, masses et grandeurs composées (CRPE) · Fiche de révision | Maitrizz",
   metaDescription:
-    "Fiche CRPE sur les durées, masses et grandeurs composées : conversions de durées en base 60, heures décimales, masses, vitesse moyenne, densité, débit et prix unitaire. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
+    "Fiche CRPE sur les durées, masses et grandeurs composées : conversions de durées en base 60, heures décimales, masses, vitesse moyenne, masse volumique, débit et prix unitaire. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
       id: "decouvrir",
@@ -45,7 +45,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
               items: [
                 { number: "①", title: "Les durées", text: "La base 60 : conversions, heures décimales, additions et soustractions." },
                 { number: "②", title: "Les masses", text: "La base 10 : t, kg, g, mg, avec les coefficients ×1 000." },
-                { number: "③", title: "Les grandeurs composées", text: "Vitesse, densité, débit, prix unitaire : retrouver la formule par l'unité." },
+                { number: "③", title: "Les grandeurs composées", text: "Vitesse, masse volumique, débit, prix unitaire : retrouver la formule par l'unité." },
               ],
             },
           ],
@@ -59,7 +59,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
               type: "callout",
               variant: "info",
               title: "La fiche des situations concrètes",
-              text: "Combien de temps dure un trajet ? À quelle vitesse roule ce véhicule ? Quelle masse de farine pour cette recette ? La difficulté : les durées ne se calculent pas en base 10 (1 h = 60 min, pas 100), et les grandeurs composées (vitesse, densité, débit) mettent en jeu deux unités à la fois. Le volet proportionnalité de ces grandeurs est détaillé dans la [fiche N°13](fiche:proportionnalite-pourcentages) ; ici, on se concentre sur les conversions et le maniement des unités.",
+              text: "Combien de temps dure un trajet ? À quelle vitesse roule ce véhicule ? Quelle masse de farine pour cette recette ? La difficulté : les durées ne se calculent pas en base 10 (1 h = 60 min, pas 100), et les grandeurs composées (vitesse, masse volumique, débit) mettent en jeu deux unités à la fois. Le volet proportionnalité de ces grandeurs est détaillé dans la [fiche N°13](fiche:proportionnalite-pourcentages) ; ici, on se concentre sur les conversions et le maniement des unités.",
             },
             {
               type: "subsection",
@@ -131,7 +131,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
             {
               type: "subsection",
               number: "③",
-              title: "Les grandeurs composées : vitesse, densité, débit",
+              title: "Les grandeurs composées : vitesse, masse volumique, débit",
               blocks: [
                 {
                   type: "paragraph",
@@ -142,7 +142,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
                   headers: ["Grandeur", "Formule", "Unité", "Exemple"],
                   rows: [
                     ["Vitesse moyenne", "v = d ÷ t", "km/h, m/s", "300 km en 2 h → 150 km/h"],
-                    ["Densité (masse volumique)", "d = m ÷ V", "g/cm³, kg/m³", "m = 270 g, V = 100 cm³ → 2,7 g/cm³"],
+                    ["Masse volumique", "ρ = m ÷ V", "g/cm³, kg/m³", "m = 270 g, V = 100 cm³ → 2,7 g/cm³"],
                     ["Débit", "Q = V ÷ t", "L/h, m³/s", "600 L en 3 h → 200 L/h"],
                     ["Prix unitaire", "p = P ÷ n", "€/kg, €/m²", "12 € pour 3 kg → 4 €/kg"],
                   ],
@@ -154,7 +154,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
                   blocks: [
                     {
                       type: "paragraph",
-                      text: "Pour la vitesse : d en haut, v et t en bas. On cache la grandeur cherchée, ce qui reste donne la formule : couvrir d → v × t, couvrir v → d ÷ t, couvrir t → d ÷ v. Même triangle pour la densité (m, d, V) et le débit (V, Q, t).",
+                      text: "Pour la vitesse : d en haut, v et t en bas. On cache la grandeur cherchée, ce qui reste donne la formule : couvrir d → v × t, couvrir v → d ÷ t, couvrir t → d ÷ v. Même triangle pour la masse volumique (m, ρ, V) et le débit (V, Q, t).",
                     },
                     {
                       type: "formulaBlock",
@@ -310,7 +310,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
             {
               type: "methodeGroup",
               number: "③",
-              title: "Calculer avec une grandeur composée (densité, débit)",
+              title: "Calculer avec une grandeur composée (masse volumique, débit)",
               intro:
                 "**Question type :** « Une cuve cylindrique de rayon 40 cm et hauteur 1,2 m se remplit à 150 L/min. Temps de remplissage ? »",
               steps: [
@@ -325,7 +325,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
                   example: { lines: ["t = 603 ÷ 150 ≈ 4 min"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Vérifier la cohérence des unités.**",
                   example: { lines: ["L ÷ (L/min) = min ✓"] },
                 },
@@ -336,10 +336,10 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
               variant: "standard",
               title: "Checkpoint : à vous de jouer",
               badge: "30 secondes",
-              question: "Un bloc de plomb de 50 cm³, densité 11,3 g/cm³. Masse ?",
+              question: "Un bloc de plomb de 50 cm³, masse volumique 11,3 g/cm³. Masse ?",
               correction: [
-                { type: "line", text: "m = d × V = 11,3 × 50 = **565 g**." },
-                { type: "note", text: "Le triangle : couvrir m donne d × V." },
+                { type: "line", text: "m = ρ × V = 11,3 × 50 = **565 g**." },
+                { type: "note", text: "Le triangle : couvrir m donne ρ × V." },
               ],
             },
             {
@@ -414,11 +414,11 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
                   explanation: "45 ÷ 60 = 0,75, donc 2h 45min = 2,75 h. On ne colle jamais les chiffres (2,45 h serait faux).",
                 },
                 {
-                  objectifId: "e1",
-                  question: "Convertir 3,4 h en heures et minutes.",
-                  options: ["3h 4min", "3h 40min", "3h 24min", "3h 14min"],
-                  correctIndex: 2,
-                  explanation: "Partie décimale × 60 : 0,4 × 60 = 24 min, donc 3,4 h = 3h 24min.",
+                  objectifId: "e9",
+                  question: "Un prix s'exprime en €/kg. Comment le calcule-t-on à partir d'un prix total et d'une masse ?",
+                  options: ["prix total × masse", "prix total ÷ masse", "masse ÷ prix total", "prix total − masse"],
+                  correctIndex: 1,
+                  explanation: "€/kg se lit « euros par kilogramme » → prix total ÷ masse. L'unité d'une grandeur composée contient sa formule.",
                 },
                 {
                   objectifId: "e2",
@@ -457,10 +457,10 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
                 },
                 {
                   objectifId: "e7",
-                  question: "Un bloc de volume 100 cm³ et de masse 270 g. Quelle densité ?",
+                  question: "Un bloc de volume 100 cm³ et de masse 270 g. Quelle masse volumique ?",
                   options: ["2,7 g/cm³", "0,37 g/cm³", "27 g/cm³", "370 g/cm³"],
                   correctIndex: 0,
-                  explanation: "d = m ÷ V = 270 ÷ 100 = 2,7 g/cm³ (proche de l'aluminium).",
+                  explanation: "ρ = m ÷ V = 270 ÷ 100 = 2,7 g/cm³ (proche de l'aluminium).",
                 },
                 {
                   objectifId: "e8",
@@ -548,11 +548,11 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
               type: "exerciceCard",
               variant: "standard",
               level: "n1",
-              title: "Exercice 2 : densité et débit",
+              title: "Exercice 2 : masse volumique et débit",
               objectifTag: "Grandeurs composées",
               enonce: "On étudie un cube d'aluminium et une piscine.",
               question:
-                "a) Cube d'aluminium d'arête 5 cm, densité 2,7 g/cm³ : masse en g, puis en kg.\nb) Piscine 25 m × 12,5 m × 1,8 m, remplie à 40 m³/h : temps de remplissage (h min) ?",
+                "a) Cube d'aluminium d'arête 5 cm, masse volumique 2,7 g/cm³ : masse en g, puis en kg.\nb) Piscine 25 m × 12,5 m × 1,8 m, remplie à 40 m³/h : temps de remplissage (h min) ?",
               correction: [
                 { type: "line", label: "a)", text: "V = 5³ = 125 cm³ ; m = 2,7 × 125 = 337,5 g = 0,3375 kg." },
                 { type: "line", label: "b)", text: "V = 25 × 12,5 × 1,8 = 562,5 m³ ; t = 562,5 ÷ 40 = 14,0625 h ; 0,0625 × 60 ≈ 4 min → 14h 04min." },
@@ -592,7 +592,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
               level: "n3",
               title: "Exercice 4 : le camion de sable",
               objectifTag: "Problème complet",
-              enonce: "Le bac d'un camion est un pavé droit de 4 m × 2 m × 0,8 m. La densité du sable humide est de 1 800 kg/m³.",
+              enonce: "Le bac d'un camion est un pavé droit de 4 m × 2 m × 0,8 m. La masse volumique du sable humide est de 1 800 kg/m³.",
               question:
                 "a) Volume du bac en m³ et en litres.\nb) Masse du sable en kg et en tonnes.\nc) Le camion part à 6h 35min et doit arriver avant 9h, sur 185 km : vitesse moyenne minimale (arrondie au km/h) ?\nd) Une pompe vide le bac à 0,3 m³/min : temps de vidange (min s) ?",
               correction: [
@@ -758,9 +758,9 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
                     "km/h → m/s : ÷ 3,6 ; m/s → km/h : × 3,6. Intuition : 1 m/s = 3 600 m/h = 3,6 km/h. Exemple : 72 km/h = 20 m/s.",
                 },
                 {
-                  question: "Formule de la densité et ses dérivées ?",
+                  question: "Formule de la masse volumique et ses dérivées ?",
                   answer:
-                    "d = m ÷ V, m = d × V, V = m ÷ d. Même triangle que la vitesse. Eau : 1 g/cm³ = 1 000 kg/m³. Vérifier la cohérence des unités (g/cm³ → m en g, V en cm³).",
+                    "ρ = m ÷ V, m = ρ × V, V = m ÷ ρ. Même triangle que la vitesse. Eau : 1 g/cm³ = 1 000 kg/m³. Vérifier la cohérence des unités (g/cm³ → m en g, V en cm³).",
                 },
                 {
                   question: "Formule du débit, et un exemple ?",
@@ -812,9 +812,9 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
                   lines: ["v = d ÷ t (t en heures)", "km/h ÷ 3,6 = m/s"],
                 },
                 {
-                  title: "Densité",
+                  title: "Masse volumique",
                   variant: "green",
-                  lines: ["d = m ÷ V", "eau : 1 g/cm³ = 1 000 kg/m³"],
+                  lines: ["ρ = m ÷ V", "eau : 1 g/cm³ = 1 000 kg/m³"],
                 },
                 {
                   title: "Débit",

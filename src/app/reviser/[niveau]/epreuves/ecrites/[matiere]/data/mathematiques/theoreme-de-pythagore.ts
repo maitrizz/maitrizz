@@ -194,7 +194,7 @@ export const ficheTheoremeDePythagore: Fiche = {
                   type: "callout",
                   variant: "info",
                   title: "💡 Diagonale du pavé en deux étapes",
-                  text: "On calcule d'abord la diagonale de la base (d_base² = L² + l²), puis la diagonale du pavé (d² = d_base² + h²). Cela revient à d² = L² + l² + h².",
+                  text: "On calcule d'abord la diagonale de la base (d_base² = L² + l²), puis la diagonale du pavé (d² = d_base² + h²). Cela revient à d² = L² + l² + h². Les sections et le repérage dans l'espace, où Pythagore intervient de la même façon, sont détaillés dans la [fiche N°26](fiche:sections-reperage-espace).",
                 },
               ],
             },
@@ -377,7 +377,7 @@ export const ficheTheoremeDePythagore: Fiche = {
                   example: { lines: ["d² = d_base² + h² = 25 + 144 = 169 → d = 13"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Formule directe possible.**",
                   example: { lines: ["d² = L² + l² + h² = 9 + 16 + 144 = 169"] },
                 },

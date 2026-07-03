@@ -120,7 +120,7 @@ export const ficheCalculNumeriquePriorites: Fiche = {
                     {
                       type: "callout",
                       variant: "warning",
-                      text: "Ne pas confondre avec la **division décimale** : 47 ÷ 5 = 9,4 (décimale) n'est pas « quotient 9, reste 2 » (euclidienne). Les deux sont correctes, mais répondent à des questions différentes.",
+                      text: "Ne pas confondre avec la **division décimale** : 47 ÷ 5 = 9,4 (décimale) n'est pas « quotient 9, reste 2 » (euclidienne). Les deux sont correctes, mais répondent à des questions différentes. La division euclidienne, les multiples et les diviseurs sont approfondis dans la [fiche N°6](fiche:divisibilite-pgcd-ppcm).",
                     },
                   ],
                 },
@@ -349,11 +349,17 @@ export const ficheCalculNumeriquePriorites: Fiche = {
                   explanation: "La multiplication est prioritaire : 3 × 4 = 12, puis 2 + 12 = 14.",
                 },
                 {
-                  objectifId: "e1",
-                  question: "Combien vaut 12 ÷ 3 × 4 ?",
-                  options: ["1", "16", "9", "12"],
-                  correctIndex: 1,
-                  explanation: "× et ÷ ont la même priorité, on va de gauche à droite : 12 ÷ 3 = 4, puis 4 × 4 = 16.",
+                  objectifId: "e8",
+                  question: "Après une division euclidienne, quel réflexe évite l'erreur type la plus fréquente ?",
+                  options: [
+                    "Vérifier que le reste est strictement inférieur au diviseur",
+                    "Toujours arrondir le quotient",
+                    "Compter les décimales du dividende",
+                    "Additionner les chiffres du dividende",
+                  ],
+                  correctIndex: 0,
+                  explanation:
+                    "Un reste supérieur ou égal au diviseur signale un quotient trop petit. Vérifier r < b après chaque division euclidienne (par exemple 95 ÷ 8 : reste 7, pas 15) évite cette erreur.",
                 },
                 {
                   objectifId: "e2",
@@ -539,7 +545,7 @@ export const ficheCalculNumeriquePriorites: Fiche = {
               correction: [
                 { type: "line", label: "a)", text: "n = 3k → n² = 3(3k²), reste 0. n = 3k+1 → n² = 3(3k²+2k)+1, reste 1. n = 3k+2 → n² = 3(3k²+4k+1)+1, reste 1. Donc n² laisse 0 ou 1." },
                 { type: "line", label: "b)", text: "Si 3 divise n², le reste de n² par 3 est 0, ce qui n'arrive que pour n = 3k. Donc 3 divise n." },
-                { type: "note", text: "C'est exactement le raisonnement utilisé pour montrer que √3 est irrationnel (fiche Puissances et réels)." },
+                { type: "note", text: "C'est exactement le raisonnement utilisé pour montrer que √3 est irrationnel ([fiche N°4](fiche:puissances-racines-reels))." },
               ],
             },
           ],

@@ -75,7 +75,7 @@ export const ficheProbabilites: Fiche = {
               type: "callout",
               variant: "info",
               title: "Pourquoi les probabilités ?",
-              text: "Vous lancez un dé : le résultat est imprévisible, mais vous savez que le 2 sort « 1 fois sur 6 en moyenne ». Une probabilité, c'est un nombre entre 0 et 1 qui mesure la chance qu'un événement se produise.\n\nElles sont partout : météo, jeux, assurances, médecine, sondages. Au CRPE, c'est l'un des sujets les plus testés (arbres pondérés, événement composé, lien avec le dénombrement, simulation tableur). Bonne nouvelle : les probabilités demandent surtout de la méthode (bien définir les événements, construire l'arbre, lire les bonnes branches). Avec la méthode, ce sont des points assurés.",
+              text: "Vous lancez un dé : le résultat est imprévisible, mais vous savez que le 2 sort « 1 fois sur 6 en moyenne ». Une probabilité, c'est un nombre entre 0 et 1 qui mesure la chance qu'un événement se produise.\n\nElles sont partout : météo, jeux, assurances, médecine, sondages. Au CRPE, c'est l'un des sujets les plus testés (arbres pondérés, événement composé, lien avec le dénombrement ([fiche N°7](fiche:denombrement)), simulation tableur). Bonne nouvelle : les probabilités demandent surtout de la méthode (bien définir les événements, construire l'arbre, lire les bonnes branches). Avec la méthode, ce sont des points assurés.",
             },
             {
               type: "subsection",
@@ -243,7 +243,7 @@ export const ficheProbabilites: Fiche = {
                     },
                     {
                       type: "paragraph",
-                      text: "Décortiquer =ENT(ALEA()*6)+1 : ALEA() donne un réel de [0 ; 1[, ×6 le ramène dans [0 ; 6[, ENT prend la partie entière (0 à 5), +1 décale vers {1, …, 6}.",
+                      text: "Décortiquer =ENT(ALEA()*6)+1 : ALEA() donne un réel de [0 ; 1[, ×6 le ramène dans [0 ; 6[, ENT prend la partie entière (0 à 5), +1 décale vers {1, …, 6}. Les formules de tableur sont détaillées dans la [fiche N°27](fiche:algorithmique-scratch-tableur).",
                     },
                   ],
                 },
@@ -434,7 +434,7 @@ export const ficheProbabilites: Fiche = {
                   example: { lines: ["SOMME(B1:B1000) = nombre de 6 sur 1 000 lancers", "÷ 1 000 = fréquence observée du 6"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Relier à la loi des grands nombres.**",
                   example: { lines: ["Cette fréquence approche 1/6 ≈ 0,167, d'autant mieux que n est grand."] },
                 },

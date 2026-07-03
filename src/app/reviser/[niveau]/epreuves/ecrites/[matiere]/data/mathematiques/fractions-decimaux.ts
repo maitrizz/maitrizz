@@ -75,7 +75,7 @@ export const ficheFractionsDecimaux: Fiche = {
                   type: "callout",
                   variant: "warning",
                   title: "⚠️ Décimal n'est pas synonyme de rationnel",
-                  text: "Tout décimal est un rationnel, mais tout rationnel n'est pas décimal (𝔻 ⊂ ℚ). En revanche, **√2 et π ne sont pas rationnels** : leur développement décimal est infini et non périodique, ils ne peuvent s'écrire sous aucune forme a/b.",
+                  text: "Tout décimal est un rationnel, mais tout rationnel n'est pas décimal (𝔻 ⊂ ℚ). En revanche, **√2 et π ne sont pas rationnels** : leur développement décimal est infini et non périodique, ils ne peuvent s'écrire sous aucune forme a/b. Les réels et les irrationnels sont détaillés dans la [fiche N°4](fiche:puissances-racines-reels).",
                 },
               ],
             },
@@ -112,7 +112,7 @@ export const ficheFractionsDecimaux: Fiche = {
               blocks: [
                 {
                   type: "paragraph",
-                  text: "Une fraction est **irréductible** quand son numérateur et son dénominateur n'ont plus aucun diviseur commun autre que 1 : c'est la forme la plus simple d'un rationnel. On l'obtient en divisant les deux termes par leur **PGCD** (plus grand commun diviseur, voir la fiche Divisibilité).",
+                  text: "Une fraction est **irréductible** quand son numérateur et son dénominateur n'ont plus aucun diviseur commun autre que 1 : c'est la forme la plus simple d'un rationnel. On l'obtient en divisant les deux termes par leur **PGCD** (plus grand commun diviseur, voir la [fiche N°6](fiche:divisibilite-pgcd-ppcm)).",
                 },
                 {
                   type: "formulaBlock",
@@ -344,7 +344,7 @@ export const ficheFractionsDecimaux: Fiche = {
                   warn: "⚠️ On n'inverse que la fraction par laquelle on divise, pas les deux.",
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Simplifier avant de multiplier** évite les grands nombres (ex. 3/9 = 1/3 avant de poser le produit).",
                 },
               ],

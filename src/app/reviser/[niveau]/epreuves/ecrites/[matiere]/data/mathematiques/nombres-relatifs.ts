@@ -98,7 +98,7 @@ export const ficheNombresRelatifs: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "**ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ** : le symbole ⊂ se lit « est inclus dans ». Tout entier naturel est aussi un relatif, un rationnel et un réel. Mais −3 n'est pas dans ℕ, et √2 n'est dans aucun des trois premiers ensembles.",
+                  text: "**ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ** : le symbole ⊂ se lit « est inclus dans ». Tout entier naturel est aussi un relatif, un rationnel et un réel. Mais −3 n'est pas dans ℕ, et √2 n'est dans aucun des trois premiers ensembles. Les rationnels et décimaux sont détaillés dans la [fiche N°3](fiche:fractions-decimaux), les réels et irrationnels dans la [fiche N°4](fiche:puissances-racines-reels).",
                 },
               ],
             },
@@ -214,7 +214,7 @@ export const ficheNombresRelatifs: Fiche = {
                   type: "callout",
                   variant: "info",
                   title: "Priorités opératoires : l'ordre à respecter",
-                  text: "**①** parenthèses (de l'intérieur vers l'extérieur), puis **②** × et ÷ (de gauche à droite), puis **③** + et − (de gauche à droite).\nExemple : 3 + 2 × (−4) − (−1) = 3 + (−8) − (−1) = 3 + (−8) + 1 = −4.",
+                  text: "**①** parenthèses (de l'intérieur vers l'extérieur), puis **②** × et ÷ (de gauche à droite), puis **③** + et − (de gauche à droite).\nExemple : 3 + 2 × (−4) − (−1) = 3 + (−8) − (−1) = 3 + (−8) + 1 = −4.\nLes priorités opératoires sont approfondies dans la [fiche N°5](fiche:calcul-numerique-priorites).",
                 },
                 {
                   type: "highlightBox",
@@ -370,7 +370,7 @@ export const ficheNombresRelatifs: Fiche = {
                   example: { lines: ["|−13| > |+5| → signe −", "Résultat : −(13 − 5) = **−8**"] },
                 },
                 {
-                  number: "💡",
+                  number: "4",
                   text: "**Vérifier par estimation :** il y a plus de négatifs que de positifs, le résultat doit être négatif. ✓",
                 },
               ],
@@ -509,11 +509,17 @@ export const ficheNombresRelatifs: Fiche = {
                   explanation: "|−7| est la distance de −7 à 0 : elle vaut 7. La valeur absolue est toujours positive ou nulle.",
                 },
                 {
-                  objectifId: "e3",
-                  question: "Quel est l'opposé de −3 ?",
-                  options: ["−3", "+3", "0", "1/3"],
+                  objectifId: "e6",
+                  question: "Un élève écrit « −5 > −2 car 5 > 2 ». Quelle remédiation est la plus adaptée ?",
+                  options: [
+                    "Lui dire que c'est correct",
+                    "Lui faire placer −5 et −2 sur une droite graduée : −5 est à gauche, donc plus petit",
+                    "Lui faire apprendre la règle par cœur sans support",
+                    "Passer à un autre exercice",
+                  ],
                   correctIndex: 1,
-                  explanation: "L'opposé de −3 est +3 : même distance à 0, signe changé. On a bien −3 + (+3) = 0.",
+                  explanation:
+                    "L'élève transfère l'ordre de ℕ à ℤ sans intégrer l'effet du signe. La droite graduée rend visible que −5 est à gauche de −2, donc −5 < −2.",
                 },
                 {
                   objectifId: "e4",
@@ -523,11 +529,17 @@ export const ficheNombresRelatifs: Fiche = {
                   explanation: "Soustraire un négatif, c'est ajouter son opposé : (−4) − (−7) = (−4) + (+7) = +3.",
                 },
                 {
-                  objectifId: "e4",
-                  question: "Quel est le signe de (−2) × (−3) × (−1) × (+4) ?",
-                  options: ["Positif", "Négatif", "Nul", "On ne peut pas savoir"],
+                  objectifId: "e7",
+                  question: "Quelle situation concrète introduit le mieux les nombres négatifs en classe ?",
+                  options: [
+                    "Le nombre de billes d'un enfant",
+                    "Une température sous zéro (−5 °C) ou une altitude sous le niveau de la mer",
+                    "Le périmètre d'un rectangle",
+                    "Le nombre d'élèves d'une classe",
+                  ],
                   correctIndex: 1,
-                  explanation: "Il y a trois facteurs négatifs (−2, −3, −1), soit un nombre impair : le résultat est négatif (il vaut −24).",
+                  explanation:
+                    "Températures, altitudes, dettes ou dates avant J.-C. donnent du sens aux négatifs avant de les abstraire. Les grandeurs toujours positives (nombre d'objets, périmètre) ne s'y prêtent pas.",
                 },
                 {
                   objectifId: "e4",

@@ -203,7 +203,7 @@ export const fichePuissancesRacinesReels: Fiche = {
                 {
                   type: "callout",
                   variant: "info",
-                  text: "Valeur absolue et intervalles s'articulent avec les inéquations : ils sont traités dans la fiche Équations, inéquations et systèmes.",
+                  text: "Valeur absolue et intervalles s'articulent avec les inéquations : ils sont traités dans la [fiche N°9](fiche:equations-inequations-systemes).",
                 },
               ],
             },
@@ -419,11 +419,11 @@ export const fichePuissancesRacinesReels: Fiche = {
                   explanation: "Même base : on additionne les exposants. 3² × 3⁵ = 3^(2+5) = 3⁷.",
                 },
                 {
-                  objectifId: "e1",
-                  question: "Combien vaut 2⁻³ ?",
-                  options: ["−8", "−6", "1/8", "1/6"],
-                  correctIndex: 2,
-                  explanation: "Un exposant négatif donne l'inverse : 2⁻³ = 1/2³ = 1/8 = 0,125.",
+                  objectifId: "e8",
+                  question: "Dans notre numération décimale, à quelle puissance de 10 correspond le rang des centaines ?",
+                  options: ["10¹", "10²", "10³", "2²"],
+                  correctIndex: 1,
+                  explanation: "Chaque rang vaut une puissance de 10 : unités 10⁰, dizaines 10¹, centaines 10². Ainsi 345 = 3×10² + 4×10¹ + 5×10⁰.",
                 },
                 {
                   objectifId: "e2",

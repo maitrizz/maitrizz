@@ -155,7 +155,7 @@ export const fichePerimetresAiresVolumes: Fiche = {
                   type: "callout",
                   variant: "info",
                   title: "💡 Le prisme et le cylindre, même logique",
-                  text: "Un prisme droit a une section constante : V = aire de la base × hauteur. Un cylindre est un prisme dont la base est un disque. La pyramide et le cône ajoutent le facteur ⅓.",
+                  text: "Un prisme droit a une section constante : V = aire de la base × hauteur. Un cylindre est un prisme dont la base est un disque. La pyramide et le cône ajoutent le facteur ⅓. La nature des solides (familles, patrons, représentations, aire latérale) est détaillée dans la [fiche N°25](fiche:solides-patrons-representation).",
                 },
                 {
                   type: "highlightBox",
@@ -198,7 +198,7 @@ export const fichePerimetresAiresVolumes: Fiche = {
                   type: "callout",
                   variant: "warning",
                   title: "⚠️ « Les côtés sont doublés, donc l'aire double » : FAUX",
-                  text: "Si les longueurs sont multipliées par 2, l'aire est multipliée par 4 et le volume par 8. C'est aussi pourquoi les facteurs de conversion sont 10, 100, 1 000 : ×10 pour les longueurs, ×10² = 100 pour les aires, ×10³ = 1 000 pour les volumes.",
+                  text: "Si les longueurs sont multipliées par 2, l'aire est multipliée par 4 et le volume par 8. C'est aussi pourquoi les facteurs de conversion sont 10, 100, 1 000 : ×10 pour les longueurs, ×10² = 100 pour les aires, ×10³ = 1 000 pour les volumes. Le lien avec les échelles et la proportionnalité est développé dans la [fiche N°13](fiche:proportionnalite-pourcentages).",
                 },
               ],
             },
@@ -280,7 +280,7 @@ export const fichePerimetresAiresVolumes: Fiche = {
                   example: { lines: ["Addition : 5 × 6 + 3 × 4 = 30 + 12 = 42 m² ✓"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Contrôler l'unité et l'ordre de grandeur.**",
                   example: { lines: ["42 m² entre 30 et 48 m² : cohérent"] },
                 },

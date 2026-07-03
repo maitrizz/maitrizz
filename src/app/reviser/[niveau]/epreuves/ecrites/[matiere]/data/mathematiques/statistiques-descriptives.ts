@@ -188,13 +188,13 @@ function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
                   rows: l3
                     ? [
                         ["Étendue", "max − min", "18 − 8 = 10"],
-                        ["Écart interquartile (EIQ)", "Q3 − Q1", "14 − 11 = 3"],
+                        ["Écart interquartile (EIQ)", "Q3 − Q1", "14 − 10 = 4"],
                       ]
                     : [
                         ["Étendue", "max − min", "18 − 8 = 10"],
-                        ["Écart interquartile (EIQ)", "Q3 − Q1", "14 − 11 = 3"],
-                        ["Variance (Seconde)", "Σ nᵢ × (xᵢ − x̄)² ÷ N", "≈ 5,82"],
-                        ["Écart-type (Seconde)", "√variance", "≈ 2,41"],
+                        ["Écart interquartile (EIQ)", "Q3 − Q1", "14 − 10 = 4"],
+                        ["Variance (Seconde)", "Σ nᵢ × (xᵢ − x̄)² ÷ N", "≈ 7,39"],
+                        ["Écart-type (Seconde)", "√variance", "≈ 2,72"],
                       ],
                 },
                 ...(l3
@@ -216,13 +216,13 @@ function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
                       type: "formulaBlock",
                       lines: [
                         "min · Q1 · médiane · Q3 · max",
-                        "Sur 28 élèves : 8 · 11 · 12 · 14 · 18 (EIQ = 3)",
+                        "Sur 28 élèves : 8 · 10 · 12 · 14 · 18 (EIQ = 4)",
                       ],
                       note: "La boîte contient les 50 % centraux. Comparer deux boîtes : regarder la position (médiane) ET la dispersion (longueur de la boîte).",
                     },
                     {
                       type: "paragraph",
-                      text: "Exemple comparatif : une classe B avec médiane 14 et EIQ 7 a de meilleurs résultats centraux qu'une classe A (médiane 12, EIQ 3), mais elle est bien moins homogène. On ne peut pas dire que B est « meilleure » sans préciser la dispersion.",
+                      text: "Exemple comparatif : une classe B avec médiane 14 et EIQ 7 a de meilleurs résultats centraux qu'une classe A (médiane 12, EIQ 4), mais elle est bien moins homogène. On ne peut pas dire que B est « meilleure » sans préciser la dispersion.",
                     },
                   ],
                 },
@@ -375,12 +375,12 @@ function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
                 {
                   number: "2",
                   text: "**Q1 = médiane de la moitié inférieure ; Q3 = médiane de la moitié supérieure.**",
-                  example: { lines: ["Q1 = (10 + 12) ÷ 2 = 11", "Q3 = (14 + 14) ÷ 2 = 14"] },
+                  example: { lines: ["Q1 = (10 + 10) ÷ 2 = 10", "Q3 = (14 + 14) ÷ 2 = 14"] },
                 },
                 {
                   number: "3",
                   text: "**Calculer l'EIQ et lister les 5 valeurs.**",
-                  example: { lines: ["EIQ = 14 − 11 = 3", "min 8 · Q1 11 · Mé 12 · Q3 14 · max 18"] },
+                  example: { lines: ["EIQ = 14 − 10 = 4", "min 8 · Q1 10 · Mé 12 · Q3 14 · max 18"] },
                   warn: "⚠️ Si N est impair, préciser si on inclut ou exclut la médiane des moitiés, et rester cohérent.",
                 },
               ],
@@ -401,7 +401,7 @@ function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
               number: "④",
               title: "Tracer une boîte à moustaches et interpréter un graphique",
               intro:
-                "**Question type :** « Construire la boîte (min 8, Q1 11, Mé 12, Q3 14, max 18), puis commenter un graphique. »",
+                "**Question type :** « Construire la boîte (min 8, Q1 10, Mé 12, Q3 14, max 18), puis commenter un graphique. »",
               steps: [
                 {
                   number: "1",
@@ -411,11 +411,11 @@ function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
                 {
                   number: "2",
                   text: "**Tracer la boîte de Q1 à Q3, le trait médian, les moustaches.**",
-                  example: { lines: ["Boîte 11 → 14, trait à 12, moustaches vers 8 et 18"] },
+                  example: { lines: ["Boîte 10 → 14, trait à 12, moustaches vers 8 et 18"] },
                   warn: "⚠️ Le jury pénalise un axe sans unité ou une boîte sans trait médian.",
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Interpréter en trois temps : chiffre → signification → déduction dans le contexte.**",
                   example: { lines: ["« Médiane 12 : la moitié des élèves ont une note ≤ 12. La moyenne plus haute (12,57) montre que quelques bonnes notes tirent vers le haut. »"] },
                 },

@@ -144,7 +144,7 @@ export const ficheProblemesTransversaux: Fiche = {
                   example: { lines: ["Aire → volume de peinture → nombre de pots → coût"] },
                 },
                 {
-                  number: "💡",
+                  number: "2",
                   text: "**Si une question est bloquante**, on la laisse et on traite les suivantes : elles sont souvent indépendantes.",
                   warn: "⚠️ Ne pas abandonner tout un problème à cause d'une seule question.",
                 },

@@ -123,7 +123,7 @@ export const ficheReperageCoordonnees: Fiche = {
                   type: "callout",
                   variant: "info",
                   title: "💡 Triplets pythagoriciens",
-                  text: "Reconnaître les triplets remarquables fait gagner du temps : 3-4-5 (et son double 6-8-10), 5-12-13. Si vous tombez sur √25 = 5 ou √100 = 10, c'est souvent un triplet.",
+                  text: "Reconnaître les triplets remarquables fait gagner du temps : 3-4-5 (et son double 6-8-10), 5-12-13. Si vous tombez sur √25 = 5 ou √100 = 10, c'est souvent un triplet. Ces triplets et le théorème de Pythagore sont détaillés dans la [fiche N°21](fiche:theoreme-de-pythagore).",
                 },
               ],
             },
@@ -330,7 +330,7 @@ export const ficheReperageCoordonnees: Fiche = {
                   example: { lines: ["3x − 2 = 10 → 3x = 12 → x = 4"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Vérifier.**",
                   example: { lines: ["3 × 4 − 2 = 10 ✓"] },
                 },

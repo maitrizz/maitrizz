@@ -444,11 +444,11 @@ export const ficheAlgorithmiqueScratchTableur: Fiche = {
                   explanation: "$D$1 est une référence absolue : la colonne et la ligne restent fixes lors de la recopie.",
                 },
                 {
-                  objectifId: "e7",
-                  question: "Que renvoie =SI(B2>=10 ; \"Admis\" ; \"Refusé\") si B2 vaut 8 ?",
-                  options: ["Admis", "Refusé", "8", "VRAI"],
+                  objectifId: "e8",
+                  question: "Qu'apporte un logiciel de géométrie dynamique comme GeoGebra ?",
+                  options: ["Il résout les équations à la place de l'élève", "Il permet de construire une figure, de déplacer des points et d'observer ce qui reste invariant", "Il remplace la règle et le compas à l'examen", "Il calcule les aires sans qu'on trace la figure"],
                   correctIndex: 1,
-                  explanation: "La condition B2>=10 est fausse (8 < 10), donc la fonction renvoie la valeur du cas faux : « Refusé ».",
+                  explanation: "Un logiciel de géométrie dynamique sert à construire, déplacer des points et repérer les propriétés invariantes ; au CRPE, on lit ou on décrit une construction.",
                 },
                 {
                   objectifId: "e9",

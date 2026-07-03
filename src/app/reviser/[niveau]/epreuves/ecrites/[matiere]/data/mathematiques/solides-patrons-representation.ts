@@ -60,7 +60,7 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
               type: "callout",
               variant: "info",
               title: "Le passage du 2D au 3D",
-              text: "Les solides sont présents dans presque tous les sujets : reconnaître un solide à partir de son patron, calculer une aire, identifier des vues. La difficulté n'est pas le calcul, c'est le passage du plan à l'espace : visualiser un solide depuis son patron, comprendre ce qu'est une vue, et ne pas confondre aire latérale et aire totale. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes).",
+              text: "Les solides sont présents dans presque tous les sujets : reconnaître un solide à partir de son patron, calculer une aire, identifier des vues. La difficulté n'est pas le calcul, c'est le passage du plan à l'espace : visualiser un solide depuis son patron, comprendre ce qu'est une vue, et ne pas confondre aire latérale et aire totale. Les calculs de volumes sont traités dans la [fiche N°15](fiche:perimetres-aires-volumes), et le théorème de Pythagore ([fiche N°21](fiche:theoreme-de-pythagore)) intervient pour les génératrices et les hauteurs.",
             },
             {
               type: "subsection",
@@ -413,11 +413,11 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
                   explanation: "Prisme à base n-gone : A = 3n. Pour n = 6 : A = 18.",
                 },
                 {
-                  objectifId: "e3",
-                  question: "Un polyèdre a 8 sommets et 6 faces. Combien d'arêtes ?",
-                  options: ["10", "12", "14", "16"],
+                  objectifId: "e6",
+                  question: "De quoi est composé le patron d'une pyramide à base carrée ?",
+                  options: ["4 carrés", "1 carré et 4 triangles", "2 carrés et 4 rectangles", "1 disque et 1 secteur"],
                   correctIndex: 1,
-                  explanation: "S + F = A + 2 → 8 + 6 = A + 2 → A = 12 (c'est le cube).",
+                  explanation: "Le patron d'une pyramide à base carrée : 1 carré (la base) et 4 triangles isocèles (les faces latérales).",
                 },
                 {
                   objectifId: "e3",
