@@ -1,16 +1,13 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_TRIGONOMETRIE_TRIANGLE_RECTANGLE } from "./copies-trigonometrie-triangle-rectangle";
+import { EXERCICES_TRIGONOMETRIE_TRIANGLE_RECTANGLE } from "./exercices-trigonometrie-triangle-rectangle";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je retiens SOH-CAH-TOA et j'identifie opposé, adjacent et hypoténuse pour un angle donné" },
-  { id: "e2", label: "Je calcule une longueur en choisissant sin, cos ou tan selon les côtés en jeu" },
-  { id: "e3", label: "Je calcule un angle avec arcsin, arccos ou arctan sur la calculatrice en mode degrés" },
-  { id: "e4", label: "Je connais les valeurs de sin, cos et tan pour 30°, 45° et 60° sans calculatrice" },
-  { id: "e5", label: "Je connais et j'utilise sin²α + cos²α = 1 pour trouver une valeur exacte" },
-  { id: "e6", label: "Je connais et j'utilise tan α = sin α / cos α" },
-  { id: "e7", label: "Je sais modéliser une hauteur inaccessible avec tan α = h/d" },
-  { id: "e8", label: "Je sais relier l'angle d'inclinaison d'une pente à son pourcentage" },
-  { id: "e9", label: "Je vérifie mes résultats (Pythagore, angles complémentaires, cohérence des valeurs)" },
+export const SAVOIR_FAIRE = [
+  { id: "definitions", label: "Identifier les côtés (SOH-CAH-TOA)" },
+  { id: "calcul-longueur", label: "Calculer une longueur" },
+  { id: "calcul-angle", label: "Calculer un angle (arcsin/arccos/arctan)" },
+  { id: "valeurs-remarquables", label: "Valeurs remarquables et identités" },
+  { id: "hauteur-pente", label: "Hauteur inaccessible et pente" },
 ];
 
 export const ficheTrigonometrieTriangleRectangle: Fiche = {
@@ -30,30 +27,13 @@ export const ficheTrigonometrieTriangleRectangle: Fiche = {
     "Fiche CRPE sur la trigonométrie du triangle rectangle : définitions de sin, cos et tan (SOH-CAH-TOA), calcul de longueurs et d'angles, valeurs remarquables, sin²+cos²=1, applications pente et hauteur inaccessible. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                { number: "①", title: "Définitions sin, cos, tan", text: "SOH-CAH-TOA : les trois rapports rapportés à l'angle de référence." },
-                { number: "②", title: "Calculer une longueur ou un angle", text: "Choisir la bonne formule, puis arcsin, arccos ou arctan pour un angle." },
-                { number: "③", title: "Valeurs remarquables et relations", text: "30°, 45°, 60° par cœur, sin²+cos²=1 et tan = sin/cos." },
-                { number: "④", title: "Applications", text: "Pente d'une route, hauteur inaccessible : modéliser avec la tangente." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -412,394 +392,58 @@ export const ficheTrigonometrieTriangleRectangle: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Que vaut le sinus d'un angle aigu dans un triangle rectangle ?",
-                  options: ["Adjacent / hypoténuse", "Opposé / hypoténuse", "Opposé / adjacent", "Hypoténuse / opposé"],
-                  correctIndex: 1,
-                  explanation: "SOH : sinus = opposé / hypoténuse.",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Hypoténuse 10, on cherche le côté adjacent à un angle de 37°. Quelle formule ?",
-                  options: ["adj = 10 × sin 37°", "adj = 10 × cos 37°", "adj = 10 × tan 37°", "adj = 10 / cos 37°"],
-                  correctIndex: 1,
-                  explanation: "Adjacent et hypoténuse connue : cos α = adj/hyp, donc adj = hyp × cos α.",
-                },
-                {
-                  objectifId: "e3",
-                  question: "On connaît opposé = 5 et hypoténuse = 13. Comment trouver l'angle ?",
-                  options: ["α = sin(5/13)", "α = arcsin(5/13)", "α = 1/sin(5/13)", "α = 5/13"],
-                  correctIndex: 1,
-                  explanation: "sin α = 5/13, donc α = arcsin(5/13) ≈ 22,6°. arcsin est la fonction réciproque.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Que vaut cos 30° ?",
-                  options: ["1/2", "√2/2", "√3/2", "1"],
-                  correctIndex: 2,
-                  explanation: "cos 30° = √3/2. À comparer avec cos 60° = 1/2.",
-                },
-                {
-                  objectifId: "e5",
-                  question: "α est aigu et cos α = 3/5. Que vaut sin α ?",
-                  options: ["2/5", "4/5", "5/3", "1/5"],
-                  correctIndex: 1,
-                  explanation: "sin²α = 1 − 9/25 = 16/25, donc sin α = 4/5 (positif car α est aigu).",
-                },
-                {
-                  objectifId: "e6",
-                  question: "Quelle relation lie tan, sin et cos ?",
-                  options: ["tan α = cos α / sin α", "tan α = sin α × cos α", "tan α = sin α / cos α", "tan α = sin α + cos α"],
-                  correctIndex: 2,
-                  explanation: "tan α = sin α / cos α, par définition des rapports.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "À 30 m d'un arbre, l'angle de visée du sommet est 35°. Quelle hauteur (au niveau des yeux) ?",
-                  options: ["30 × sin 35°", "30 × cos 35°", "30 × tan 35° ≈ 21 m", "30 / tan 35°"],
-                  correctIndex: 2,
-                  explanation: "h = d × tan α = 30 × tan 35° ≈ 21 m. L'opposé et l'adjacent sont en jeu, donc tangente.",
-                },
-                {
-                  objectifId: "e8",
-                  question: "Une pente de 100 % correspond à quel angle ?",
-                  options: ["30°", "45°", "60°", "90°"],
-                  correctIndex: 1,
-                  explanation: "tan α = 100/100 = 1, donc α = 45°.",
-                },
-                {
-                  objectifId: "e9",
-                  question: "Vous obtenez sin α = 1,2 pour un angle aigu. Que faut-il en conclure ?",
-                  options: ["L'angle est obtus", "C'est une erreur : un sinus est toujours ≤ 1", "Il faut diviser par 2", "C'est correct"],
-                  correctIndex: 1,
-                  explanation: "Un sinus (comme un cosinus) est toujours compris entre −1 et 1. Une valeur supérieure à 1 signale une erreur de calcul.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Trigonométrie dans le triangle rectangle",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_TRIGONOMETRIE_TRIANGLE_RECTANGLE,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Commencez toujours par un schéma, nommez les côtés par rapport à l'angle de référence, puis choisissez sin, cos ou tan. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : je vérifie que j'ai compris le Cours",
-              sub: "Calculs directs et valeurs remarquables",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : longueurs et angle",
-              objectifTag: "SOH-CAH-TOA",
-              enonce: "Triangle ABC rectangle en B. Angle en A = 40°, AB = 8 cm.",
-              question: "a) Calculer BC (opposé à l'angle en A).\nb) Calculer AC (hypoténuse).\nc) Vérifier avec Pythagore.",
-              correction: [
-                { type: "line", label: "a)", text: "tan 40° = BC/AB → BC = 8 × tan 40° ≈ 6,71 cm." },
-                { type: "line", label: "b)", text: "cos 40° = AB/AC → AC = 8/cos 40° ≈ 10,44 cm." },
-                { type: "line", label: "c)", text: "AB² + BC² ≈ 64 + 45,0 ≈ 109,0 ≈ AC² ✓." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : valeurs remarquables sans calculatrice",
-              objectifTag: "Valeurs exactes",
-              question:
-                "a) Hypoténuse 6 cm, un angle aigu 30°. Calculer les deux côtés de l'angle droit (valeurs exactes).\nb) Triangle rectangle isocèle, côté de l'angle droit 5 cm. Calculer l'hypoténuse (valeur exacte).",
-              correction: [
-                { type: "line", label: "a)", text: "Opposé à 30° = 6 × sin 30° = 6 × 1/2 = 3 cm. Adjacent = 6 × cos 30° = 6 × √3/2 = 3√3 cm." },
-                { type: "line", label: "b)", text: "Angles 45°-45°-90° : hyp = côté × √2 = 5√2 ≈ 7,07 cm." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : problèmes contextualisés",
-              sub: "Modéliser et interpréter",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : la rampe d'accès",
-              objectifTag: "Pente et angle",
-              enonce: "Une rampe d'accès doit respecter une pente maximale de 5 % et surmonter une marche de 20 cm de hauteur.",
-              question: "a) Calculer l'angle d'inclinaison correspondant à 5 % (pente = hauteur/longueur horizontale).\nb) Calculer la longueur horizontale minimale.\nc) Calculer la longueur de la rampe (hypoténuse).",
-              correction: [
-                { type: "line", label: "a)", text: "tan α = 5/100 = 0,05 → α = arctan(0,05) ≈ 2,86°." },
-                { type: "line", label: "b)", text: "tan α = h/d → d = h/tan α = 20/0,05 = 400 cm = 4 m." },
-                { type: "line", label: "c)", text: "hyp = √(400² + 20²) = √160 400 ≈ 400,5 cm (soit ≈ 4 m)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : sin²+cos²=1 et triplet",
-              objectifTag: "Valeurs exactes",
-              enonce: "α est un angle aigu d'un triangle rectangle, avec tan α = 3/4.",
-              question: "a) En déduire sin α et cos α sans calculatrice.\nb) Calculer α en degrés.",
-              correction: [
-                { type: "line", label: "a)", text: "tan α = 3/4 → opposé 3, adjacent 4, hypoténuse 5 (triplet 3-4-5). sin α = 3/5, cos α = 4/5 (vérif. : 9/25 + 16/25 = 1 ✓)." },
-                { type: "line", label: "b)", text: "α = arctan(3/4) = arctan(0,75) ≈ 36,9°." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : hauteur inaccessible",
-              sub: "Modélisation complète",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : la tour du château",
-              objectifTag: "Angle de visée",
-              enonce: "Pour estimer la hauteur d'une tour, un enseignant se place à 40 m de la base et mesure l'angle de visée du sommet à 52°. Ses yeux sont à 1,65 m du sol.",
-              question: "a) Calculer la hauteur h de la tour au-dessus de ses yeux.\nb) En déduire la hauteur totale de la tour.\nc) À quelle distance devrait-il se placer pour que l'angle de visée soit 45° ?",
-              correction: [
-                { type: "line", label: "a)", text: "tan 52° = h/40 → h = 40 × tan 52° ≈ 51,20 m." },
-                { type: "line", label: "b)", text: "Hauteur totale ≈ 51,20 + 1,65 ≈ 52,85 m." },
-                { type: "line", label: "c)", text: "tan 45° = 1, donc d = h = 51,20 m : il faut se placer à environ 51,2 m de la base." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Cet exercice reproduit le format d'un sujet de concours : il combine trigonométrie, géométrie et un volet de recul enseignant. Comptez environ 25 minutes, en conditions réelles.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 4 : le toit de l'école",
-              objectifTag: "Trigonométrie, surface, recul",
-              enonce:
-                "Le toit d'une école est formé de deux pans symétriques. La largeur du bâtiment est AB = 12 m, le faîte (sommet) est au point S. La demi-largeur à la base est donc 6 m. L'angle d'inclinaison d'un pan par rapport à l'horizontale est α = 35°. La longueur du bâtiment (perpendiculaire à la coupe) est 20 m.",
-              question:
-                "1.1 Calculer la hauteur h du faîte au-dessus du bas du toit.\n1.2 Calculer la longueur d'un pan de toit (de la gouttière au faîte).\n1.3 Calculer l'angle au sommet S (entre les deux pans).\n2.1 Calculer la surface totale de toiture (les deux pans).\n2.2 Un enseignant affirme que si α = 45°, le faîte serait à la même hauteur que la demi-largeur (6 m). Vérifier.",
-              correction: [
-                { type: "line", label: "1.1", text: "Triangle droit (demi-base 6 m, angle 35°) : tan 35° = h/6 → h = 6 × tan 35° ≈ 4,20 m." },
-                { type: "line", label: "1.2", text: "cos 35° = 6/L → L = 6/cos 35° ≈ 7,32 m." },
-                { type: "line", label: "1.3", text: "Le triangle du toit est isocèle, deux angles de base de 35° : angle au sommet = 180° − 2 × 35° = 110°." },
-                { type: "line", label: "2.1", text: "Un pan : L × 20 ≈ 7,32 × 20 ≈ 146,4 m². Surface totale ≈ 2 × 146,4 ≈ 292,8 m²." },
-                { type: "line", label: "2.2", text: "Pour α = 45° : tan 45° = 1 → h = 6 × 1 = 6 m. L'affirmation est correcte." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces erreurs reproduisent des fautes réelles de candidats. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 5 : opposé et adjacent confondus",
-              objectifTag: "Choix de la formule",
-              enonce: "**Copie d'un candidat :** triangle ABC rectangle en C, angle en A = 30°, on cherche AC.\n*Réponse produite :* « sin 30° = AC/AB, donc AC = AB × sin 30°. »",
-              question: "a) Identifier l'erreur.\nb) Rédiger correctement.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : AC est le côté adjacent à l'angle en A, pas l'opposé.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "sin α = opposé/hyp = BC/AB, pas AC/AB." },
-                    { text: "AC/AB est le cosinus : cos 30° = AC/AB → AC = AB × cos 30° = AB × √3/2." },
-                    { text: "Annoter Hyp, Opp, Adj sur le schéma avant de choisir la formule." },
-                  ],
-                },
-                { type: "note", text: "Opposé et adjacent dépendent de l'angle de référence : toujours le préciser." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 6 : mode radians",
-              objectifTag: "Calculatrice",
-              enonce: "**Copie d'un candidat :** « sin 30° = −0,988 » (lu sur la calculatrice).",
-              question: "a) Identifier l'erreur.\nb) Donner la bonne valeur.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : la calculatrice est en mode radians (RAD).**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "sin(30 rad) ≈ −0,988 : 30 radians n'a rien à voir avec 30°." },
-                    { text: "En mode DEG, sin 30° = 0,5." },
-                    { text: "Vérifier l'affichage « DEG » avant tout calcul trigonométrique." },
-                  ],
-                },
-                { type: "note", text: "Un résultat aberrant (valeur > 1 ou négative pour un angle aigu) trahit le mode RAD." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 7 : arcsin confondu avec 1/sin",
-              objectifTag: "Calcul d'un angle",
-              enonce: "**Copie d'un candidat :** sin α = 0,6, on cherche α.\n*Réponse produite :* « α = 1/sin(0,6) ≈ 1,76. »",
-              question: "a) Identifier l'erreur.\nb) Donner la bonne valeur.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : arcsin a été confondu avec 1/sin.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "arcsin (sin⁻¹) est la fonction réciproque de sinus, ce n'est pas 1/sin." },
-                    { text: "α = arcsin(0,6) = sin⁻¹(0,6) ≈ 36,87°." },
-                    { text: "Sur la calculatrice : touche 2nd ou SHIFT, puis sin." },
-                  ],
-                },
-                { type: "note", text: "L'exposant −1 de sin⁻¹ signifie « fonction réciproque », pas « 1 divisé par »." },
-              ],
+              type: "corrigerCopies",
+              title: "Trigonométrie dans le triangle rectangle",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_TRIGONOMETRIE_TRIANGLE_RECTANGLE,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous. Formulées comme des questions de jury d'oral.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Énoncer SOH-CAH-TOA avec les définitions complètes.",
-                  answer:
-                    "Pour un angle aigu α : sin α = opposé/hypoténuse, cos α = adjacent/hypoténuse, tan α = opposé/adjacent. Opposé = côté face à α ; adjacent = côté entre α et l'angle droit ; hypoténuse = côté face à l'angle droit.",
-                  astuce: "Opposé et adjacent dépendent de l'angle de référence : ils changent si on prend l'autre angle aigu.",
-                },
-                {
-                  question: "Valeurs remarquables de sin, cos et tan pour 30°, 45°, 60°.",
-                  answer:
-                    "30° : sin 1/2, cos √3/2, tan √3/3. 45° : sin et cos √2/2, tan 1. 60° : sin √3/2, cos 1/2, tan √3. Mémo : sin 30° = cos 60° et sin 60° = cos 30°.",
-                },
-                {
-                  question: "Les deux identités trigonométriques fondamentales ?",
-                  answer:
-                    "sin²α + cos²α = 1 (conséquence de Pythagore) et tan α = sin α / cos α. Si on connaît sin α, alors cos α = √(1 − sin²α), positif si α est aigu.",
-                },
-                {
-                  question: "Comment calculer un angle inconnu à partir des côtés ?",
-                  answer:
-                    "On calcule le rapport, puis la fonction réciproque : α = arcsin(opp/hyp), arccos(adj/hyp) ou arctan(opp/adj). Sur la calculatrice : 2nd ou SHIFT puis sin, cos ou tan, en mode DEG.",
-                  astuce: "sin⁻¹ = arcsin = fonction réciproque. Ce n'est pas 1/sin.",
-                },
-                {
-                  question: "Formule pour une hauteur inaccessible (angle de visée) ?",
-                  answer:
-                    "À une distance d de la base, angle de visée α du sommet : h = d × tan α. Si on est à 1,65 m de haut, hauteur totale = h + 1,65. Si on connaît l'hypoténuse L : h = L × sin α.",
-                },
-                {
-                  question: "Quelle formule pour chaque situation (opposé, adjacent, hypoténuse) ?",
-                  answer:
-                    "On choisit la formule qui contient les deux côtés en jeu : opposé + hypoténuse → sin (SOH) ; adjacent + hypoténuse → cos (CAH) ; opposé + adjacent → tan (TOA).",
-                },
-                {
-                  question: "Relation entre pente en % et angle d'inclinaison ?",
-                  answer:
-                    "Pente p % = (montée/longueur horizontale) × 100 = h/d × 100, donc tan α = p/100 et α = arctan(p/100). Pente 5 % → α ≈ 2,86° ; pente 100 % → α = 45°.",
-                },
-                {
-                  question: "Les deux triangles rectangles remarquables et leurs côtés exacts ?",
-                  answer:
-                    "Triangle 45°-45°-90° : côtés 1, 1, √2 (hypoténuse = côté × √2). Triangle 30°-60°-90° : côtés 1, √3, 2. Ils permettent des calculs exacts sans calculatrice.",
-                },
-                {
-                  question: "Si cos α = 5/13 (α aigu), calculer sin α et tan α.",
-                  answer:
-                    "sin²α = 1 − 25/169 = 144/169, donc sin α = 12/13. tan α = (12/13)/(5/13) = 12/5. Ce sont les rapports du triangle 5-12-13.",
-                },
-                {
-                  question: "Quelles vérifications après un calcul trigonométrique ?",
-                  answer:
-                    "Pythagore (opp² + adj² = hyp²), angles complémentaires (les deux aigus font 90°), cohérence (l'hypoténuse est le plus grand côté, sin et cos restent ≤ 1), et sin 30° doit valoir 0,5 (sinon mode RAD).",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche : un outil pour réviser rapidement avant le jour J, une fois chaque partie travaillée.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Trigonométrie", subtitle: "SOH-CAH-TOA" },
@@ -836,17 +480,6 @@ export const ficheTrigonometrieTriangleRectangle: Fiche = {
                   lines: ["pente : tan α = h/d", "hauteur : h = d × tan α"],
                 },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },

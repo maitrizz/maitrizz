@@ -1,16 +1,13 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_SOLIDES_PATRONS_REPRESENTATION } from "./copies-solides-patrons-representation";
+import { EXERCICES_SOLIDES_PATRONS_REPRESENTATION } from "./exercices-solides-patrons-representation";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je connais les 5 familles de solides et leurs cas particuliers (cube, tétraèdre…)" },
-  { id: "e2", label: "Je connais les formules S, A, F pour les prismes (2n, 3n, n+2) et les pyramides (n+1, 2n, n+1)" },
-  { id: "e3", label: "Je connais la formule d'Euler (S + F = A + 2) et ses conditions d'application (polyèdres seulement)" },
-  { id: "e4", label: "Je sais identifier un solide à partir de ses trois vues (face, dessus, côté)" },
-  { id: "e5", label: "Je connais les règles de la perspective cavalière (face en vraie grandeur, fuite réduite, arêtes cachées en pointillés)" },
-  { id: "e6", label: "Je décris le patron de chaque solide (formes et dimensions de chaque pièce)" },
-  { id: "e7", label: "Je calcule l'aire latérale d'un prisme (périmètre de base × hauteur) et d'un cylindre (2πrh)" },
-  { id: "e8", label: "Je sais que plusieurs patrons valides peuvent exister pour un même solide" },
-  { id: "e9", label: "Je vérifie la validité d'un patron (faces présentes, dimensions cohérentes, formule d'Euler)" },
+export const SAVOIR_FAIRE = [
+  { id: "comptage", label: "Compter sommets, arêtes, faces" },
+  { id: "euler", label: "Formule d'Euler" },
+  { id: "vues", label: "Identifier un solide par ses vues" },
+  { id: "patrons", label: "Décrire et valider un patron" },
+  { id: "aires", label: "Aire latérale et aire totale" },
 ];
 
 export const ficheSolidesPatronsRepresentation: Fiche = {
@@ -30,30 +27,13 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
     "Fiche CRPE sur les solides : prismes, pyramides, cylindres, cônes et sphères, formule d'Euler, perspective cavalière, vues et patrons. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                { number: "①", title: "Les 5 familles de solides", text: "Prisme, pyramide, cylindre, cône, sphère : reconnaître et nommer." },
-                { number: "②", title: "Sommets, arêtes, faces et Euler", text: "Les formules de comptage et la relation S + F = A + 2." },
-                { number: "③", title: "Représentations", text: "Perspective cavalière et les trois vues (face, dessus, côté)." },
-                { number: "④", title: "Patrons", text: "Déplier un solide, décrire ses pièces, vérifier qu'un patron est valide." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -371,391 +351,58 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Quel solide a deux bases circulaires reliées par une surface latérale ?",
-                  options: ["Le cône", "Le cylindre", "La sphère", "La pyramide"],
-                  correctIndex: 1,
-                  explanation: "Le cylindre de révolution a deux bases circulaires et une surface latérale (un rectangle déroulé).",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Combien d'arêtes a un prisme à base hexagonale ?",
-                  options: ["12", "18", "8", "6"],
-                  correctIndex: 1,
-                  explanation: "Prisme à base n-gone : A = 3n. Pour n = 6 : A = 18.",
-                },
-                {
-                  objectifId: "e6",
-                  question: "De quoi est composé le patron d'une pyramide à base carrée ?",
-                  options: ["4 carrés", "1 carré et 4 triangles", "2 carrés et 4 rectangles", "1 disque et 1 secteur"],
-                  correctIndex: 1,
-                  explanation: "Le patron d'une pyramide à base carrée : 1 carré (la base) et 4 triangles isocèles (les faces latérales).",
-                },
-                {
-                  objectifId: "e3",
-                  question: "À quels solides la formule d'Euler s'applique-t-elle ?",
-                  options: ["À tous les solides", "Aux polyèdres (faces planes)", "Aux cylindres et cônes", "À la sphère"],
-                  correctIndex: 1,
-                  explanation: "La formule d'Euler ne vaut que pour les polyèdres convexes. Cylindre, cône et sphère ont des faces courbes.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Un solide se voit comme un carré de dessus et un triangle de face. Qu'est-ce que c'est ?",
-                  options: ["Un cube", "Un prisme", "Une pyramide à base carrée", "Un cylindre"],
-                  correctIndex: 2,
-                  explanation: "Base carrée (vue de dessus) et rétrécissement vers un sommet (vue de face triangulaire) : une pyramide à base carrée.",
-                },
-                {
-                  objectifId: "e5",
-                  question: "En perspective cavalière, comment dessine-t-on les arêtes cachées ?",
-                  options: ["En gras", "En rouge", "En pointillés", "On ne les dessine pas"],
-                  correctIndex: 2,
-                  explanation: "Les arêtes cachées sont dessinées en pointillés.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "Aire latérale d'un cylindre de rayon r et de hauteur h ?",
-                  options: ["πr²", "2πr + h", "2πrh", "πr²h"],
-                  correctIndex: 2,
-                  explanation: "La surface latérale déroulée est un rectangle de largeur 2πr et de hauteur h, donc 2πrh.",
-                },
-                {
-                  objectifId: "e8",
-                  question: "Combien de patrons différents un cube admet-il ?",
-                  options: ["1", "6", "11", "Une infinité"],
-                  correctIndex: 2,
-                  explanation: "Un cube a 11 patrons distincts. Un solide peut donc avoir plusieurs patrons valides.",
-                },
-                {
-                  objectifId: "e9",
-                  question: "Que faut-il vérifier en priorité pour valider un patron de prisme triangulaire ?",
-                  options: ["Qu'il a 6 faces", "Qu'il a 2 triangles et 3 rectangles aux bonnes dimensions", "Qu'il est dessiné en couleur", "Qu'il tient sur une page"],
-                  correctIndex: 1,
-                  explanation: "Le prisme triangulaire a 5 faces : 2 triangles + 3 rectangles, dont les largeurs correspondent aux côtés du triangle.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Solides, représentation et patrons",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_SOLIDES_PATRONS_REPRESENTATION,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Identifiez d'abord la famille du solide, vérifiez avec Euler, distinguez aire latérale et aire totale. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : je vérifie que j'ai compris le Cours",
-              sub: "Compter et identifier",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : sommets, arêtes, faces",
-              objectifTag: "Comptage et Euler",
-              question:
-                "a) Un prisme droit a une base hexagonale. Combien de sommets, d'arêtes, de faces ?\nb) Vérifier la formule d'Euler pour le cube.\nc) Un polyèdre a 10 sommets et 7 faces. Combien d'arêtes ?",
-              correction: [
-                { type: "line", label: "a)", text: "n = 6 : S = 12, A = 18, F = 8. Vérif. : 12 + 8 = 18 + 2 = 20 ✓." },
-                { type: "line", label: "b)", text: "Cube : S = 8, F = 6, A = 12. 8 + 6 = 12 + 2 = 14 ✓." },
-                { type: "line", label: "c)", text: "S + F = A + 2 → 10 + 7 = A + 2 → A = 15." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : identifier un solide depuis ses vues",
-              objectifTag: "Vues",
-              enonce: "Trois vues d'un solide : vue de face = triangle isocèle, vue de dessus = carré, vue de côté = triangle isocèle.",
-              question: "Identifier le solide et justifier.",
-              correction: [
-                { type: "line", text: "Vue de dessus carrée : la base est un carré. Vues de face et de côté triangulaires : le solide se rétrécit vers un sommet." },
-                { type: "line", text: "C'est une pyramide à base carrée (régulière, car les triangles sont isocèles et identiques)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : patrons et aires",
-              sub: "Construire et calculer",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : patron d'un cylindre",
-              objectifTag: "Patron et aire",
-              enonce: "Un cylindre a un rayon de base r = 4 cm et une hauteur h = 10 cm.",
-              question: "a) Décrire le patron (formes et dimensions).\nb) Calculer l'aire latérale et l'aire totale (arrondir au cm²).",
-              correction: [
-                { type: "line", label: "a)", text: "2 disques de rayon 4 cm + 1 rectangle de largeur 2πr = 8π ≈ 25,1 cm et de hauteur 10 cm." },
-                { type: "line", label: "b)", text: "Aire latérale = 2πr × h = 80π ≈ 251 cm². Aire des 2 bases = 2πr² = 32π ≈ 101 cm². Aire totale ≈ 352 cm²." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : ce patron est-il valide ?",
-              objectifTag: "Validation d'un patron",
-              enonce: "On propose pour un prisme droit à base triangulaire : 2 triangles rectangles (côtés 3, 4, 5 cm) + 3 rectangles de hauteur 8 cm et de largeurs 3, 4 et 5 cm.",
-              question: "a) Vérifier la cohérence (faces, Euler).\nb) Calculer l'aire totale du prisme.",
-              correction: [
-                { type: "line", label: "a)", text: "5 faces (2 triangles + 3 rectangles) ✓. S = 6, A = 9 : 6 + 5 = 9 + 2 = 11 ✓. Les largeurs 3, 4, 5 correspondent aux côtés du triangle : patron cohérent." },
-                { type: "line", label: "b)", text: "2 bases = 2 × (½ × 3 × 4) = 12 cm². Aire latérale = (3 + 4 + 5) × 8 = 96 cm². Aire totale = 108 cm²." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : problème contextualisé",
-              sub: "Modéliser et calculer",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : la brique de jus de fruit",
-              objectifTag: "Aire latérale, cylindre",
-              enonce: "Pour un projet de CM2, les élèves recouvrent de papier des briques cylindriques de rayon 4 cm et de hauteur 12 cm. Chaque feuille fait 30 cm × 40 cm.",
-              question: "a) Calculer l'aire de la surface latérale d'une brique (arrondir au cm²).\nb) Combien de briques peut-on recouvrir avec une feuille (surface latérale seulement) ?",
-              correction: [
-                { type: "line", label: "a)", text: "Aire latérale = 2πr × h = 2π × 4 × 12 = 96π ≈ 302 cm²." },
-                { type: "line", label: "b)", text: "Aire de la feuille = 1 200 cm². 1 200 / 302 ≈ 3,97, donc on peut recouvrir 3 briques entières." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Cet exercice reproduit le format d'un sujet de concours : il combine description d'un solide, patron, et calculs d'aires avec Pythagore. Comptez environ 25 minutes, en conditions réelles.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 4 : la tente de camping",
-              objectifTag: "Prisme, patron, aire",
-              enonce:
-                "Une tente est modélisée par un prisme droit à base triangulaire isocèle. La base a une hauteur de 1,2 m et une largeur de 2,4 m. La longueur de la tente est 3 m.",
-              question:
-                "1.1 Combien ce prisme a-t-il de sommets, d'arêtes et de faces ? Vérifier avec Euler.\n1.2 Décrire le patron avec ses dimensions.\n2.1 Calculer l'aire de la base triangulaire.\n2.2 Calculer la longueur des côtés égaux du triangle isocèle.\n2.3 Calculer l'aire totale de la toile (toutes les faces sauf le sol).",
-              correction: [
-                { type: "line", label: "1.1", text: "Prisme triangulaire : S = 6, A = 9, F = 5. Euler : 6 + 5 = 9 + 2 = 11 ✓." },
-                { type: "line", label: "1.2", text: "2 triangles isocèles (base 2,4 m, hauteur 1,2 m) + 3 rectangles : 2 de côté isocèle × 3 m et 1 de 2,4 m × 3 m (le sol)." },
-                { type: "line", label: "2.1", text: "Aire de la base = ½ × 2,4 × 1,2 = 1,44 m²." },
-                { type: "line", label: "2.2", text: "La hauteur partage la base en deux segments de 1,2 m : côté isocèle = √(1,2² + 1,2²) = 1,2√2 ≈ 1,70 m." },
-                { type: "line", label: "2.3", text: "Toile (sans le sol) : 2 triangles + 2 rectangles latéraux. 2 × 1,44 + 2 × (1,2√2 × 3) ≈ 2,88 + 10,18 ≈ 13,06 m² (soit ≈ 1 306 dm²)." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces erreurs reproduisent des fautes réelles de candidats. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 5 : aire latérale prise pour aire totale",
-              objectifTag: "Aire totale",
-              enonce: "**Copie d'un candidat :** « Aire totale d'un cube de côté 5 cm : 5 × 5 = 25 cm². »",
-              question: "a) Identifier l'erreur.\nb) Donner la bonne réponse.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : 25 cm² est l'aire d'une seule face.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Le cube a 6 faces identiques." },
-                    { text: "Aire totale = 6 × 5² = 6 × 25 = 150 cm²." },
-                    { text: "Pour un prisme : aire totale = aire latérale + 2 × aire de base." },
-                  ],
-                },
-                { type: "note", text: "Toujours se demander combien de faces composent le solide." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 6 : Euler appliqué à un cylindre",
-              objectifTag: "Conditions d'Euler",
-              enonce: "**Copie d'un candidat :** « Cylindre : 0 sommet + 2 faces = 1 arête + 2, donc 2 = 3 ? »",
-              question: "a) Identifier l'erreur.\nb) Corriger.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : la formule d'Euler ne s'applique pas au cylindre.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Le cylindre a des faces courbes : ce n'est pas un polyèdre." },
-                    { text: "Cylindre, cône et sphère n'ont ni arêtes ni sommets au sens d'Euler." },
-                    { text: "Euler vaut uniquement pour les prismes et pyramides." },
-                  ],
-                },
-                { type: "note", text: "Vérifier que le solide est un polyèdre avant d'appliquer S + F = A + 2." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 7 : un seul patron possible",
-              objectifTag: "Patrons multiples",
-              enonce: "**Copie d'un candidat :** « Un solide n'a qu'un patron, donc entre ces deux patrons l'un est faux. »",
-              question: "a) Identifier l'erreur.\nb) Comment vérifier un patron ?",
-              correction: [
-                { type: "paragraph", text: "**Erreur : un solide peut avoir plusieurs patrons valides.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Le cube admet 11 patrons distincts." },
-                    { text: "Pour valider : toutes les faces présentes une fois, dimensions cohérentes." },
-                    { text: "Les faces voisines dans le solide doivent partager une arête dans le patron." },
-                  ],
-                },
-                { type: "note", text: "La question est « est-ce UN patron valide », pas « est-ce LE patron »." },
-              ],
+              type: "corrigerCopies",
+              title: "Solides, représentation et patrons",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_SOLIDES_PATRONS_REPRESENTATION,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous. Formulées comme des questions de jury d'oral.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Énoncer la formule d'Euler et ses conditions d'application.",
-                  answer:
-                    "S + F = A + 2 (sommets + faces = arêtes + 2). Elle vaut pour tout polyèdre convexe (prismes, pyramides, tétraèdre, cube). Pas pour le cylindre, le cône ni la sphère (faces courbes).",
-                  astuce: "Cylindres et cônes ne sont pas des polyèdres : Euler inapplicable.",
-                },
-                {
-                  question: "Sommets, arêtes et faces d'un prisme à base n-gone ?",
-                  answer:
-                    "S = 2n, A = 3n, F = n + 2 (n rectangles latéraux + 2 bases). Exemples : triangle (n = 3) → S = 6, A = 9, F = 5 ; hexagone (n = 6) → S = 12, A = 18, F = 8.",
-                },
-                {
-                  question: "Sommets, arêtes et faces d'une pyramide à base n-gone ?",
-                  answer:
-                    "S = n + 1, A = 2n, F = n + 1 (n triangles + 1 base). Exemples : base triangle → tétraèdre (S = 4, A = 6, F = 4) ; base carrée → S = 5, A = 8, F = 5.",
-                },
-                {
-                  question: "Décrire le patron d'un cylindre et ses dimensions.",
-                  answer:
-                    "2 disques de rayon r (les bases) + 1 rectangle de largeur 2πr (la circonférence) et de hauteur h. Aire latérale = 2πrh ; aire totale = 2πrh + 2πr².",
-                },
-                {
-                  question: "Formule générale de l'aire latérale d'un prisme droit ?",
-                  answer:
-                    "Aire latérale = périmètre de la base × hauteur. Chaque face latérale est un rectangle (côté de base × hauteur du prisme). Aire totale = aire latérale + 2 × aire de la base.",
-                },
-                {
-                  question: "Les trois vues d'un solide et leur direction d'observation ?",
-                  answer:
-                    "Vue de face (depuis l'avant), vue de dessus (depuis le haut), vue de côté (depuis la droite). Cube : trois carrés identiques. Cylindre : face = rectangle, dessus = cercle, côté = rectangle.",
-                },
-                {
-                  question: "Les règles de la perspective cavalière ?",
-                  answer:
-                    "Faces de face en vraie grandeur ; arêtes de fuite en oblique (souvent 45°) avec longueur réduite de moitié ; arêtes cachées en pointillés ; arêtes parallèles restant parallèles.",
-                },
-                {
-                  question: "Comment vérifier qu'un patron est valide ?",
-                  answer:
-                    "Compter les faces (bon nombre, bonnes formes), vérifier les dimensions (arêtes partagées de même longueur), appliquer Euler pour les polyèdres, et contrôler le repliage. Un solide peut avoir plusieurs patrons valides.",
-                },
-                {
-                  question: "Décrire le patron d'un cône.",
-                  answer:
-                    "1 disque de rayon r (la base) + 1 secteur angulaire de rayon l = √(r² + h²) (la génératrice) et d'arc 2πr. Aire latérale = πrl ; aire totale = πrl + πr².",
-                },
-                {
-                  question: "Comment distinguer rapidement un prisme d'une pyramide ?",
-                  answer:
-                    "Le prisme a deux bases parallèles et égales et des faces latérales rectangulaires (un « tube » à section constante). La pyramide a une seule base, un sommet, et des faces triangulaires : elle se rétrécit vers le sommet.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche : un outil pour réviser rapidement avant le jour J, une fois chaque partie travaillée.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Solides", subtitle: "S + F = A + 2" },
@@ -792,17 +439,6 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
                   lines: ["prisme : périmètre × h", "cylindre : 2πrh"],
                 },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },

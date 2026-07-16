@@ -1,14 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_NOMBRES_RELATIFS } from "./copies-nombres-relatifs";
+import { EXERCICES_NOMBRES_RELATIFS } from "./exercices-nombres-relatifs";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je connais le schéma d'inclusion ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ et je sais situer chaque ensemble" },
-  { id: "e2", label: "Je sais placer des entiers relatifs sur une droite graduée et les comparer" },
-  { id: "e3", label: "Je calcule l'opposé et la valeur absolue d'un nombre sans me tromper" },
-  { id: "e4", label: "Je maîtrise les règles des signes pour l'addition, la soustraction, la multiplication et la division" },
-  { id: "e5", label: "Je respecte les priorités opératoires (parenthèses, puis × et ÷, puis + et −)" },
-  { id: "e6", label: "Je peux analyser une erreur d'élève sur les relatifs et proposer une remédiation" },
-  { id: "e7", label: "Je connais des situations concrètes pour introduire les relatifs en classe" },
+export const SAVOIR_FAIRE = [
+  { id: "ensembles-nombres", label: "Situer ℕ, ℤ, ℚ, ℝ" },
+  { id: "comparer-relatifs", label: "Placer et comparer des relatifs" },
+  { id: "oppose-valeur-absolue", label: "Calculer opposé et valeur absolue" },
+  { id: "addition-soustraction", label: "Additionner et soustraire" },
+  { id: "multiplication-division", label: "Multiplier et diviser" },
+  { id: "priorites-signes", label: "Respecter les priorités et les signes" },
 ];
 
 export const ficheNombresRelatifs: Fiche = {
@@ -28,46 +28,13 @@ export const ficheNombresRelatifs: Fiche = {
     "Fiche CRPE sur les nombres relatifs : ensembles de nombres, droite graduée, opposé, valeur absolue, ordre, règles des signes, priorités opératoires et puissances. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                {
-                  number: "①",
-                  title: "La famille des nombres",
-                  text: "Où se situent les entiers relatifs : ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ.",
-                },
-                {
-                  number: "②",
-                  title: "Droite graduée, opposé, valeur absolue",
-                  text: "Visualiser les relatifs, les comparer, et deux notions à ne pas confondre.",
-                },
-                {
-                  number: "③",
-                  title: "Les règles des signes",
-                  text: "Additionner, soustraire, multiplier et diviser des relatifs sans hésiter.",
-                },
-                {
-                  number: "④",
-                  title: "Priorités et puissances",
-                  text: "L'ordre des opérations, et l'effet d'un exposant sur un nombre négatif.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -295,7 +262,7 @@ export const ficheNombresRelatifs: Fiche = {
             {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
-              buttonLabel: "Voir la méthode pas-à-pas",
+              buttonLabel: "Voir la méthode",
               targetTab: "methode",
             },
           ],
@@ -458,432 +425,58 @@ export const ficheNombresRelatifs: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Quel nombre appartient à ℤ mais **pas** à ℕ ?",
-                  options: ["0", "−5", "42", "3/4"],
-                  correctIndex: 1,
-                  explanation:
-                    "ℕ ne contient que les entiers positifs ou nuls. −5 est un entier négatif : il est dans ℤ mais pas dans ℕ. (3/4 n'est ni dans ℕ ni dans ℤ.)",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Quel est le rangement correct dans l'ordre croissant ?",
-                  options: ["−1 < −100 < 0 < 5", "−100 < −1 < 0 < 5", "0 < −1 < −100 < 5", "5 < 0 < −1 < −100"],
-                  correctIndex: 1,
-                  explanation:
-                    "Sur la droite graduée, plus un négatif a une grande valeur absolue, plus il est petit : −100 < −1 < 0 < 5.",
-                },
-                {
-                  objectifId: "e3",
-                  question: "Que vaut la valeur absolue de −7, notée |−7| ?",
-                  options: ["−7", "7", "0", "14"],
-                  correctIndex: 1,
-                  explanation: "|−7| est la distance de −7 à 0 : elle vaut 7. La valeur absolue est toujours positive ou nulle.",
-                },
-                {
-                  objectifId: "e6",
-                  question: "Un élève écrit « −5 > −2 car 5 > 2 ». Quelle remédiation est la plus adaptée ?",
-                  options: [
-                    "Lui dire que c'est correct",
-                    "Lui faire placer −5 et −2 sur une droite graduée : −5 est à gauche, donc plus petit",
-                    "Lui faire apprendre la règle par cœur sans support",
-                    "Passer à un autre exercice",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "L'élève transfère l'ordre de ℕ à ℤ sans intégrer l'effet du signe. La droite graduée rend visible que −5 est à gauche de −2, donc −5 < −2.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Combien vaut (−4) − (−7) ?",
-                  options: ["−11", "+3", "−3", "+11"],
-                  correctIndex: 1,
-                  explanation: "Soustraire un négatif, c'est ajouter son opposé : (−4) − (−7) = (−4) + (+7) = +3.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "Quelle situation concrète introduit le mieux les nombres négatifs en classe ?",
-                  options: [
-                    "Le nombre de billes d'un enfant",
-                    "Une température sous zéro (−5 °C) ou une altitude sous le niveau de la mer",
-                    "Le périmètre d'un rectangle",
-                    "Le nombre d'élèves d'une classe",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Températures, altitudes, dettes ou dates avant J.-C. donnent du sens aux négatifs avant de les abstraire. Les grandeurs toujours positives (nombre d'objets, périmètre) ne s'y prêtent pas.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Combien vaut (−3)² ?",
-                  options: ["−9", "+9", "−6", "+6"],
-                  correctIndex: 1,
-                  explanation:
-                    "(−3)² = (−3) × (−3) = +9. L'exposant est pair, donc le résultat est positif. Attention : −3² (sans parenthèses) vaudrait −9.",
-                },
-                {
-                  objectifId: "e5",
-                  question: "Combien vaut 3 + 2 × (−4) ?",
-                  options: ["−20", "−5", "11", "−2"],
-                  correctIndex: 1,
-                  explanation: "On multiplie d'abord : 2 × (−4) = −8. Puis 3 + (−8) = −5. Les × sont prioritaires sur les +.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Nombres relatifs",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_NOMBRES_RELATIFS,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Progressez niveau par niveau. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : je vérifie que j'ai compris le Cours",
-              sub: "Une chose à la fois",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : vocabulaire de base",
-              objectifTag: "Opposé et valeur absolue",
-              question:
-                "a) Donner l'opposé de : +5 · −3 · 0 · −17\nb) Donner la valeur absolue de : +7 · −4 · −12 · 0\nc) Parmi +3 · −5 · 0 · −1 · 42 · −100, lesquels appartiennent à ℕ, lesquels à ℤ seulement ?",
-              correction: [
-                { type: "line", label: "a)", text: "opposé de +5 = −5 · de −3 = +3 · de 0 = 0 · de −17 = +17" },
-                { type: "line", label: "b)", text: "|+7| = 7 · |−4| = 4 · |−12| = 12 · |0| = 0" },
-                { type: "line", label: "c)", text: "ℕ : +3, 0, 42 · ℤ seulement : −5, −1, −100. 0 appartient à ℕ et à ℤ ; les négatifs sont dans ℤ mais pas dans ℕ." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : ordre sur la droite graduée",
-              objectifTag: "Comparer des relatifs",
-              question: "Ranger dans l'ordre croissant : +4, −6, +1, −2, 0, −10, +3.",
-              correction: [
-                { type: "line", text: "−10 < −6 < −2 < 0 < +1 < +3 < +4" },
-                { type: "note", text: "−10 est plus petit que −6, même si 10 > 6 : vers la gauche de la droite, on diminue." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : calcul direct",
-              sub: "Application des règles une par une",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : addition et soustraction",
-              objectifTag: "Règles des signes",
-              question: "Calculer en montrant les étapes :\na) (−5) + (−3)   b) (+7) + (−10)   c) (−4) − (−6)   d) (+3) − (+8) − (−2)",
-              correction: [
-                { type: "line", label: "a)", text: "même signe → −(5+3) = **−8**" },
-                { type: "line", label: "b)", text: "signes différents, |−10| > |+7| → −(10−7) = **−3**" },
-                { type: "line", label: "c)", text: "(−4) − (−6) = (−4) + (+6) = **+2**" },
-                { type: "line", label: "d)", text: "3 − 8 + 2 = **−3**" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : multiplication et division",
-              objectifTag: "Règles des signes",
-              question: "Calculer :\na) (−4) × (+3)   b) (−5) × (−6)   c) (−18) ÷ (+3)   d) (−24) ÷ (−4)",
-              correction: [
-                { type: "line", label: "a)", text: "signes différents → **−12**" },
-                { type: "line", label: "b)", text: "même signe → **+30**" },
-                { type: "line", label: "c)", text: "signes différents → **−6**" },
-                { type: "line", label: "d)", text: "même signe → **+6**" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : expressions et mise en contexte",
-              sub: "Plusieurs étapes, priorités opératoires",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : expression avec priorités",
-              objectifTag: "Priorités opératoires",
-              question: "Calculer en respectant les priorités :\na) 3 − 2 × (−4) + (−1)   b) (−2)² − 3 × (−1 + 5)   c) −3 × (−2 − 4) ÷ (−3)",
-              correction: [
-                { type: "line", label: "a)", text: "3 + 8 − 1 = **10**" },
-                { type: "line", label: "b)", text: "(−2)² − 3 × 4 = 4 − 12 = **−8**" },
-                { type: "line", label: "c)", text: "−3 × (−6) ÷ (−3) = 18 ÷ (−3) = **−6**" },
-                { type: "note", text: "En b), (−2)² = +4 (et non −4) : un carré est toujours positif ou nul." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 4 : mise en contexte (températures)",
-              objectifTag: "Situations concrètes",
-              enonce: "La température est de −8 °C à Moscou, +5 °C à Paris, +32 °C à Dubaï.",
-              question:
-                "a) Ranger ces villes de la plus froide à la plus chaude.\nb) Quel est l'écart de température entre Moscou et Paris ?\nc) À Moscou, la température baisse encore de 6 °C : quelle est la nouvelle température ?",
-              correction: [
-                { type: "line", label: "a)", text: "Moscou (−8 °C) < Paris (+5 °C) < Dubaï (+32 °C)" },
-                { type: "line", label: "b)", text: "écart = +5 − (−8) = 5 + 8 = **13 °C**" },
-                { type: "line", label: "c)", text: "−8 − 6 = **−14 °C**" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : raisonnement",
-              sub: "Justification, généralisation",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 5 : raisonnement sur les signes",
-              objectifTag: "Règles des signes",
-              question:
-                "a) Montrer que le produit de deux relatifs est positif si et seulement s'ils ont le même signe.\nb) Un élève affirme : « (−1)ⁿ est toujours égal à −1 ». Donner un contre-exemple et la règle générale.\nc) Sans calculer, déterminer le signe de (−2)¹⁰⁰ × (−3)⁵¹ × (+4)³.",
-              correction: [
-                {
-                  type: "line",
-                  label: "a)",
-                  text: "Mêmes signes : (+|a|)(+|b|) = +|a||b| > 0, ou (−|a|)(−|b|) = +|a||b| > 0. Signes différents : (+|a|)(−|b|) = −|a||b| < 0. Le produit est donc positif exactement quand les signes sont égaux.",
-                },
-                { type: "line", label: "b)", text: "Contre-exemple : (−1)² = +1 ≠ −1. Règle : (−1)ⁿ = +1 si n est pair, −1 si n est impair." },
-                { type: "line", label: "c)", text: "(−2)¹⁰⁰ positif (100 pair), (−3)⁵¹ négatif (51 impair), (+4)³ positif. Produit : positif × négatif × positif = **négatif**." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Ces exercices reproduisent le format des sujets du concours. Rédigez comme le jour J : justifications complètes, présentation soignée.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 6",
-              objectifTag: "Analyser une erreur d'élève",
-              enonce:
-                "Une enseignante de 5e propose : « Je pense à un entier relatif. Si je le multiplie par −3 et que j'ajoute 7, j'obtiens −8. Quel est ce nombre ? »",
-              question:
-                "1. Résoudre en explicitant les étapes.\n2. Un élève répond « −5 » : identifier son erreur probable et corriger.\n3. En CM2, un enseignant propose une variante sans négatifs : « Je multiplie par 3 et j'ajoute 7, j'obtiens 22. » Quel est ce nombre, et en quoi cette activité travaille-t-elle les opérations inverses au cycle 3 ?",
-              correction: [
-                { type: "line", label: "1.", text: "Soit x le nombre. −3x + 7 = −8, donc −3x = −15, donc x = (−15) ÷ (−3) = **+5**. Vérification : −3 × 5 + 7 = −15 + 7 = −8 ✓" },
-                { type: "line", label: "2.", text: "L'élève a probablement oublié le signe à la division : (−15) ÷ (−3) = +5, pas −5 (deux négatifs donnent un positif)." },
-                { type: "line", label: "3.", text: "3x + 7 = 22 → 3x = 15 → x = 5. Cette « devinette de nombre » travaille le sens des opérations inverses dans ℕ (chercher la valeur inconnue dans une égalité, programme cycle 3) : on défait les opérations dans l'ordre inverse, sans formalisme algébrique." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 7",
-              objectifTag: "Analyser une erreur d'élève",
-              enonce: "On présente à des élèves de 5e : A = (−3) + (−5) · B = (−3) − (+5) · C = (−3) × (−5) · D = (−3) × (+5).",
-              question:
-                "1. Calculer A, B, C et D.\n2. Deux élèves confondent A et B : expliquer la différence entre ces deux expressions.\n3. Proposer une représentation sur la droite graduée pour visualiser A.",
-              correction: [
-                { type: "line", label: "1.", text: "A = −8 · B = (−3) + (−5) = −8 · C = +15 · D = −15" },
-                { type: "line", label: "2.", text: "A et B donnent le même résultat ici, mais diffèrent conceptuellement : A additionne deux négatifs ; B soustrait un positif, ce qui revient à ajouter son opposé (−(+5) = −5). La règle « soustraire = ajouter l'opposé » les relie." },
-                { type: "line", label: "3.", text: "On part de −3 et on se déplace de 5 rangs vers la gauche (ajouter un négatif = aller à gauche) : on arrive en −8. La règle « même signe → additionner et garder le signe » devient visuellement évidente." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces exercices reproduisent des erreurs réelles de candidats. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 8",
-              objectifTag: "Analyser une erreur d'élève",
-              enonce: "**Copie d'un candidat :** Calculer (−4) − (−7).\n*Réponse produite :* (−4) − (−7) = −4 − 7 = −11.",
-              question: "a) Cette réponse est-elle correcte ?\nb) Identifier précisément l'erreur.\nc) Donner la correction complète.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : un signe négatif ignoré.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Le candidat a traité − (−7) comme −7 : il a perdu un des deux signes." },
-                    { text: "Règle : soustraire un négatif, c'est ajouter son opposé, donc −(−7) = +7." },
-                    { text: "Correction : (−4) − (−7) = (−4) + (+7) = **+3**." },
-                    { text: "Vérification sur la droite : partir de −4, avancer de 7 vers la droite, arriver en +3 ✓." },
-                  ],
-                },
-                { type: "note", text: "L'erreur systématique : ignorer un signe quand on a − (−x). « Deux − font un + » doit être un automatisme." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 9",
-              objectifTag: "Priorités opératoires",
-              enonce: "**Copie d'un candidat :** Calculer 4 − 3 × (−2) + 1.\n*Réponse produite :* (4 − 3) × (−2) + 1 = 1 × (−2) + 1 = −2 + 1 = −1.",
-              question: "a) Identifier l'erreur.\nb) Donner le calcul correct avec toutes les étapes.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : priorités non respectées.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Le candidat a calculé (4 − 3) avant la multiplication, en allant de gauche à droite sans tenir compte des priorités." },
-                    { text: "On effectue d'abord 3 × (−2) = −6." },
-                    { text: "4 − 3 × (−2) + 1 = 4 − (−6) + 1 = 4 + 6 + 1 = **11**." },
-                  ],
-                },
-                { type: "note", text: "Règle impérative : × et ÷ avant + et −, sauf entre parenthèses." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 10 : analyse didactique",
-              objectifTag: "Analyser une erreur d'élève",
-              enonce: "Un élève de 5e écrit : « −3 > −1 parce que 3 est plus grand que 1. »",
-              question: "a) Identifier l'obstacle mathématique.\nb) Proposer une activité de remédiation.\nc) Quel lien avec l'enseignement de la droite graduée au primaire ?",
-              correction: [
-                { type: "line", label: "a)", text: "L'élève transfère une règle valide dans ℕ (3 > 1) à ℤ, sans intégrer l'effet du signe. Dans ℤ, l'ordre dépend du signe ET de la valeur absolue." },
-                { type: "line", label: "b)", text: "Travailler sur la droite graduée orientée : placer −3 et −1, demander « qui est à gauche ? ». La position rend visible que −3 < −1. Compléter par des contextes concrets (températures, altitudes)." },
-                { type: "line", label: "c)", text: "Au primaire, la droite numérique n'accueille que les positifs, le 0 servant de point de départ. L'extension aux négatifs demande de comprendre que les nombres augmentent vers la droite, qu'ils soient négatifs ou positifs : un vrai changement conceptuel, pas une inattention." },
-              ],
+              type: "corrigerCopies",
+              title: "Nombres relatifs",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_NOMBRES_RELATIFS,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous. Formulées comme des questions de jury d'oral.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Quelle est la différence entre ℕ et ℤ ? Donner un nombre dans ℤ mais pas dans ℕ.",
-                  answer:
-                    "ℕ est l'ensemble des entiers naturels (0, 1, 2, 3…, positifs ou nuls). ℤ contient ℕ et ajoute tous les entiers négatifs. On a ℕ ⊂ ℤ. Exemple dans ℤ mais pas ℕ : −5.",
-                },
-                {
-                  question: "Quelle est la valeur absolue de −7 ? En quoi diffère-t-elle de l'opposé ?",
-                  answer:
-                    "|−7| = 7 : la valeur absolue est la distance à 0, toujours positive ou nulle. L'opposé de −7 est +7 (même valeur, signe changé). Ici les deux coïncident, mais |+3| = 3 alors que l'opposé de +3 est −3.",
-                  astuce: "La valeur absolue est toujours ≥ 0 ; l'opposé peut être positif, négatif ou nul.",
-                },
-                {
-                  question: "Quel est le signe de (−2) × (−3) × (−1) × (+4) ? Justifier sans calculer.",
-                  answer:
-                    "Trois facteurs négatifs (nombre impair), donc résultat négatif. (Vérification : 2 × 3 × 1 × 4 = 24, soit −24.)",
-                },
-                {
-                  question: "Pourquoi dit-on que « soustraire revient à ajouter l'opposé » ?",
-                  answer:
-                    "Parce que a − b = a + (−b) par définition dans ℤ. La soustraction y est une addition déguisée, ce qui unifie toutes les opérations sous forme d'additions. Exemple : 5 − (−3) = 5 + (+3) = 8.",
-                },
-                {
-                  question: "Comparer −100 et −1 : lequel est le plus grand ? Justifier.",
-                  answer:
-                    "−1 > −100 : sur la droite graduée, −1 est plus à droite. Plus un négatif a une grande valeur absolue, plus il est petit. L'erreur classique est de croire que −100 > −1 « parce que 100 > 1 » : le signe inverse l'ordre.",
-                },
-                {
-                  question: "ℤ a-t-il un plus grand élément ? Un plus petit ?",
-                  answer:
-                    "Non : ℤ est infini dans les deux sens. Pour tout entier n, n + 1 est plus grand et n − 1 plus petit. Différence avec ℕ, qui a un plus petit élément (0) mais pas de plus grand.",
-                },
-                {
-                  question: "Comment introduire les relatifs à partir d'une situation concrète ?",
-                  answer:
-                    "Plusieurs contextes : températures (−5 °C), altitudes (−200 m), dettes (−50 €), dates avant J.-C. Ils rendent la nécessité des négatifs intuitive avant de l'abstraire.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche : un outil pour réviser rapidement avant le jour J, une fois chaque partie travaillée.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Nombres relatifs", subtitle: "ℤ" },
@@ -920,17 +513,6 @@ export const ficheNombresRelatifs: Fiche = {
                   lines: ["a − b = a + (−b)", "5 − (−3) = 5 + 3 = 8"],
                 },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },

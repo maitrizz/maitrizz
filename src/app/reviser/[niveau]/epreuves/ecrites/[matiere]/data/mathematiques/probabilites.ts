@@ -1,15 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_PROBABILITES } from "./copies-probabilites";
+import { EXERCICES_PROBABILITES } from "./exercices-probabilites";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je définis : expérience aléatoire, issue, univers Ω, événement, événement certain et impossible" },
-  { id: "e2", label: "Je calcule une probabilité classique P(A) = cas favorables ÷ total, en vérifiant l'équiprobabilité" },
-  { id: "e3", label: "J'utilise P(Ā) = 1 − P(A), surtout pour « au moins un… »" },
-  { id: "e4", label: "Je vérifie si deux événements sont incompatibles avant d'additionner leurs probabilités" },
-  { id: "e5", label: "Je construis un arbre pondéré et j'applique ses deux règles (multiplier sur un chemin, additionner entre chemins)" },
-  { id: "e6", label: "Je distingue tirage avec remise et sans remise dans un arbre" },
-  { id: "e7", label: "J'explique la loi des grands nombres : la fréquence se rapproche de la probabilité quand n grandit" },
-  { id: "e8", label: "Je lis et j'interprète une formule de simulation tableur (ALEA, ENT, SI, NB.SI)" },
+export const SAVOIR_FAIRE = [
+  { id: "proba-classique", label: "Calculer une probabilité classique" },
+  { id: "contraire", label: "Utiliser l'événement contraire" },
+  { id: "reunion", label: "Réunion d'événements composés" },
+  { id: "arbre", label: "Construire un arbre pondéré" },
+  { id: "remise", label: "Distinguer avec et sans remise" },
+  { id: "loi-grands-nombres", label: "Fréquence et loi des grands nombres" },
 ];
 
 export const ficheProbabilites: Fiche = {
@@ -29,46 +28,13 @@ export const ficheProbabilites: Fiche = {
     "Fiche CRPE sur les probabilités : vocabulaire, probabilité classique, événement contraire, événements incompatibles, arbres pondérés (avec et sans remise), loi des grands nombres et simulation tableur. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                {
-                  number: "①",
-                  title: "Vocabulaire et probabilité classique",
-                  text: "Univers, événement, et la règle des cas favorables en situation d'équiprobabilité.",
-                },
-                {
-                  number: "②",
-                  title: "Événements composés",
-                  text: "Le contraire, les événements incompatibles, la réunion.",
-                },
-                {
-                  number: "③",
-                  title: "Les arbres pondérés",
-                  text: "L'outil central du CRPE : deux règles, avec ou sans remise.",
-                },
-                {
-                  number: "④",
-                  title: "Loi des grands nombres et tableur",
-                  text: "Le lien fréquence / probabilité, et la simulation d'une expérience.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -453,414 +419,58 @@ export const ficheProbabilites: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Que vaut la probabilité d'un événement impossible ?",
-                  options: ["1", "0,5", "0", "Cela dépend"],
-                  correctIndex: 2,
-                  explanation: "Un événement impossible (l'ensemble vide) a une probabilité de 0. L'événement certain (Ω) a une probabilité de 1.",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Dé équilibré. Probabilité d'obtenir un multiple de 3 ?",
-                  options: ["1/2", "1/3", "1/6", "2/3"],
-                  correctIndex: 1,
-                  explanation: "Multiples de 3 sur un dé : {3, 6}, soit 2 issues sur 6. P = 2/6 = 1/3 (équiprobabilité).",
-                },
-                {
-                  objectifId: "e3",
-                  question: "P(obtenir 6) = 1/6. Que vaut P(ne pas obtenir 6) ?",
-                  options: ["1/6", "5/6", "1/2", "0"],
-                  correctIndex: 1,
-                  explanation: "P(Ā) = 1 − P(A) = 1 − 1/6 = 5/6.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Sur un dé, A = « pair » et B = « multiple de 3 ». Que vaut P(A ou B) ?",
-                  options: ["5/6", "2/3", "1/2", "1"],
-                  correctIndex: 1,
-                  explanation: "A = {2,4,6}, B = {3,6}, A ∩ B = {6}. P(A ∪ B) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3. Les événements ne sont pas incompatibles.",
-                },
-                {
-                  objectifId: "e5",
-                  question: "Dans un arbre, comment calcule-t-on la probabilité d'un chemin ?",
-                  options: ["En additionnant les branches", "En multipliant les branches du chemin", "En prenant la plus petite", "En divisant par le nombre de branches"],
-                  correctIndex: 1,
-                  explanation: "Règle 1 de l'arbre : la probabilité d'un chemin est le produit des probabilités des branches qui le composent.",
-                },
-                {
-                  objectifId: "e6",
-                  question: "Urne 3R, 5B. Sans remise, après avoir tiré une rouge, que vaut P(rouge au 2e tirage) ?",
-                  options: ["3/8", "2/7", "3/7", "2/8"],
-                  correctIndex: 1,
-                  explanation: "Sans remise, après une rouge il reste 2R et 5B, soit 7 billes : P(R au 2e) = 2/7.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "On lance un dé 1 000 fois : la fréquence du 6 vaut 0,168. Comment l'interpréter ?",
-                  options: ["Le dé est truqué", "C'est cohérent avec P(6) = 1/6 (loi des grands nombres)", "C'est une erreur de calcul", "La probabilité est devenue 0,168"],
-                  correctIndex: 1,
-                  explanation: "0,168 est une fréquence observée, très proche de 1/6 ≈ 0,167. La loi des grands nombres prévoit ce rapprochement quand n est grand.",
-                },
-                {
-                  objectifId: "e8",
-                  question: "Que simule la formule tableur =ENT(ALEA()*6)+1 ?",
-                  options: ["Un tirage entre 0 et 6", "Un lancer de dé équilibré (1 à 6)", "Une pièce de monnaie", "Un nombre décimal"],
-                  correctIndex: 1,
-                  explanation: "ALEA() ∈ [0 ; 1[, ×6 ∈ [0 ; 6[, ENT donne 0 à 5, +1 donne 1 à 6 : c'est un dé équilibré.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Probabilités",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_PROBABILITES,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Définissez l'univers, vérifiez l'équiprobabilité, choisissez le bon outil. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : je vérifie que j'ai compris le Cours",
-              sub: "Probabilité classique, contraire, réunion",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : une urne simple",
-              objectifTag: "Probabilité classique",
-              enonce: "Une urne contient 5 billes rouges, 3 bleues et 2 jaunes. On tire une bille au hasard.",
-              question: "a) Combien de billes au total ?\nb) Calculer P(rouge), P(bleue), P(jaune).\nc) Vérifier que la somme vaut 1.\nd) Calculer P(ne pas tirer une rouge).",
-              correction: [
-                { type: "line", label: "a)", text: "10 billes au total (tirage au hasard → équiprobabilité)." },
-                { type: "line", label: "b)", text: "P(rouge) = 5/10 = 1/2 ; P(bleue) = 3/10 ; P(jaune) = 2/10 = 1/5." },
-                { type: "line", label: "c)", text: "5/10 + 3/10 + 2/10 = 10/10 = 1 ✓." },
-                { type: "line", label: "d)", text: "P(pas rouge) = 1 − 1/2 = 1/2 (ou directement 5/10)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : dé et événements",
-              objectifTag: "Réunion d'événements",
-              enonce: "On lance un dé équilibré. A = « multiple de 3 », B = « nombre impair ».",
-              question: "a) Lister les issues de A et de B.\nb) Calculer P(A) et P(B).\nc) A et B sont-ils incompatibles ? Calculer P(A ∪ B).",
-              correction: [
-                { type: "line", label: "a)", text: "A = {3, 6}, B = {1, 3, 5}." },
-                { type: "line", label: "b)", text: "P(A) = 2/6 = 1/3 ; P(B) = 3/6 = 1/2." },
-                { type: "line", label: "c)", text: "A ∩ B = {3} ≠ ∅ → non incompatibles. P(A ∪ B) = 1/3 + 1/2 − 1/6 = 4/6 = 2/3." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : arbres pondérés",
-              sub: "Avec et sans remise",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : arbre avec remise",
-              objectifTag: "Arbre, contraire",
-              enonce: "Une boîte contient 2 jetons rouges et 3 jetons noirs. On tire 2 jetons successivement avec remise.",
-              question: "a) Donner les probabilités à chaque tirage.\nb) Calculer P(2 jetons de même couleur).\nc) Calculer P(au moins un rouge).",
-              correction: [
-                { type: "line", label: "a)", text: "Avec remise : P(R) = 2/5, P(N) = 3/5 à chaque tirage (somme 1 à chaque nœud)." },
-                { type: "line", label: "b)", text: "P(RR) = 4/25, P(NN) = 9/25 → même couleur = 13/25 = 0,52." },
-                { type: "line", label: "c)", text: "Contraire NN = 9/25 → P(au moins 1 rouge) = 1 − 9/25 = 16/25 = 0,64." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : arbre sans remise",
-              objectifTag: "Arbre sans remise",
-              enonce: "Un sac contient 3 boules blanches et 2 boules noires. On tire 2 boules successivement sans remise.",
-              question: "a) Donner les probabilités du 1er puis du 2e tirage.\nb) Calculer P(exactement 1 blanche).\nc) Calculer P(2 blanches).",
-              correction: [
-                { type: "line", label: "a)", text: "1er : P(B) = 3/5, P(N) = 2/5. Après B : P(B|B) = 2/4, P(N|B) = 2/4. Après N : P(B|N) = 3/4, P(N|N) = 1/4." },
-                { type: "line", label: "b)", text: "BN + NB = 3/5 × 2/4 + 2/5 × 3/4 = 3/10 + 3/10 = 6/10 = 3/5." },
-                { type: "line", label: "c)", text: "P(BB) = 3/5 × 2/4 = 6/20 = 3/10." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : dénombrement et probabilité",
-              sub: "Combiner les outils",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : nombre tiré au hasard",
-              objectifTag: "Dénombrement + probabilité",
-              enonce: "On choisit au hasard un entier de 1 à 20 inclus.",
-              question: "a) P(multiple de 3) ?\nb) P(multiple de 5) ?\nc) P(multiple de 3 ou de 5) ?\nd) P(multiple de 3 et de 5) ?",
-              correction: [
-                { type: "line", label: "a)", text: "{3, 6, 9, 12, 15, 18} → 6 valeurs → P = 6/20 = 3/10." },
-                { type: "line", label: "b)", text: "{5, 10, 15, 20} → 4 valeurs → P = 4/20 = 1/5." },
-                { type: "line", label: "c)", text: "A ∩ B = multiples de 15 = {15} → 1 valeur. P(A ∪ B) = 6/20 + 4/20 − 1/20 = 9/20." },
-                { type: "line", label: "d)", text: "P(multiple de 15) = 1/20 (lien avec le PPCM, [fiche N°6](fiche:divisibilite-pgcd-ppcm))." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : simulation et loi des grands nombres",
-              sub: "Interpréter une expérience",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 4 : fréquence et probabilité",
-              objectifTag: "Loi des grands nombres",
-              enonce: "On simule au tableur 1 000 lancers d'un dé. La fréquence observée du 6 est 0,154.",
-              question: "a) Quelle est la probabilité théorique d'obtenir 6 ?\nb) L'écart avec 0,154 est-il inquiétant ?\nc) Que prédit la loi des grands nombres si on passe à 100 000 lancers ?",
-              correction: [
-                { type: "line", label: "a)", text: "Dé équilibré : P(6) = 1/6 ≈ 0,167." },
-                { type: "line", label: "b)", text: "Non : 0,154 est une fréquence observée, proche de 0,167. Un petit écart est normal sur 1 000 lancers." },
-                { type: "line", label: "c)", text: "La fréquence se rapprochera encore davantage de 1/6 : plus n est grand, meilleure est l'estimation." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Cet exercice reproduit le format et la difficulté d'un sujet de concours. Comptez 25 minutes, en conditions réelles, avec justifications complètes.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 5 : la kermesse de l'école",
-              objectifTag: "Dénombrement, arbre, loi des grands nombres",
-              enonce:
-                "Jeu des dés : un élève lance deux dés équilibrés et gagne si la somme est supérieure ou égale à 10.\nJeu des jetons : un sachet contient 4 jetons rouges et 2 verts ; l'élève tire 2 jetons sans remise et gagne si les deux sont de même couleur.",
-              question:
-                "1.1 Combien de paires (d₁ ; d₂) au total ?\n1.2 Lister les paires de somme ≥ 10. En déduire P(gagner aux dés).\n1.3 Calculer P(perdre aux dés).\n2.1 Construire l'arbre du tirage de 2 jetons sans remise et vérifier que la somme des probabilités finales vaut 1.\n2.2 Calculer P(gagner aux jetons).\n2.3 Quel jeu donne le plus de chances de gagner ?\n3.1 On simule le jeu des dés 500 fois, 90 victoires. Calculer la fréquence et la comparer à la théorie.\n3.2 Que prédit la loi des grands nombres avec 10 000 simulations ?",
-              correction: [
-                { type: "line", label: "1.1", text: "6 × 6 = 36 paires équiprobables." },
-                { type: "line", label: "1.2", text: "Somme ≥ 10 : (4,6), (5,5), (6,4), (5,6), (6,5), (6,6) → 6 paires. P(gagner aux dés) = 6/36 = 1/6 ≈ 0,167." },
-                { type: "line", label: "1.3", text: "P(perdre aux dés) = 1 − 1/6 = 5/6 ≈ 0,833." },
-                { type: "line", label: "2.1", text: "1er : P(R) = 4/6 = 2/3, P(V) = 1/3. Après R : P(R|R) = 3/5, P(V|R) = 2/5. Après V : P(R|V) = 4/5, P(V|V) = 1/5. Vérif : 6/15 + 4/15 + 4/15 + 1/15 = 1 ✓." },
-                { type: "line", label: "2.2", text: "Même couleur = RR ou VV : 2/3 × 3/5 + 1/3 × 1/5 = 6/15 + 1/15 = 7/15 ≈ 0,467." },
-                { type: "line", label: "2.3", text: "Jetons (≈ 46,7 %) bien plus avantageux que les dés (≈ 16,7 %)." },
-                { type: "line", label: "3.1", text: "Fréquence = 90/500 = 0,18 = 18 %, cohérent avec 1/6 ≈ 16,7 % (écart normal sur 500 essais)." },
-                { type: "line", label: "3.2", text: "La fréquence observée se rapprochera de 1/6 : avec 10 000 simulations, elle sera très proche de 16,7 %." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces erreurs reproduisent des fautes réelles de candidats. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 6 : additionner sans vérifier l'incompatibilité",
-              objectifTag: "Réunion d'événements",
-              enonce: "**Copie d'un candidat :** dé équilibré, A = « pair », B = « multiple de 3 ». Calculer P(A ou B).\n*Réponse produite :* « P = 1/2 + 1/3 = 5/6 ».",
-              question: "a) Identifier l'erreur.\nb) Donner le calcul correct.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : addition directe sur des événements non incompatibles.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "6 est à la fois pair et multiple de 3 : A ∩ B = {6} ≠ ∅. Le 6 est compté deux fois." },
-                    { text: "P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3." },
-                  ],
-                },
-                { type: "note", text: "Toujours vérifier si A ∩ B = ∅ avant d'additionner." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 7 : probabilités figées sans remise",
-              objectifTag: "Tirage sans remise",
-              enonce: "**Copie d'un candidat :** urne 3 rouges, 2 bleues, 2 tirages sans remise. Calculer P(rouge puis bleue).\n*Réponse produite :* « 3/5 × 2/5 = 6/25 ».",
-              question: "a) Identifier l'erreur.\nb) Donner le calcul correct.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : probabilités du 2e tirage non recalculées.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Après une rouge, il reste 2R et 2B (4 billes), pas 5 : P(B|R) = 2/4, pas 2/5." },
-                    { text: "P(RB) = 3/5 × 2/4 = 3/5 × 1/2 = 3/10." },
-                  ],
-                },
-                { type: "note", text: "Sans remise : recompter le contenu de l'urne avant chaque branche." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 8 : fréquence prise pour la probabilité",
-              objectifTag: "Loi des grands nombres",
-              enonce: "**Copie d'un candidat :** on lance 20 fois un dé, le 6 sort 5 fois.\n*Réponse produite :* « P(6) = 5/20 = 0,25, le dé est truqué ».",
-              question: "a) Identifier l'erreur.\nb) Donner l'interprétation correcte.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : fréquence observée confondue avec la probabilité.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "5/20 est une fréquence observée sur 20 lancers, pas la probabilité." },
-                    { text: "Pour un dé équilibré, P(6) = 1/6 ≈ 0,167. Un écart sur 20 lancers est normal." },
-                    { text: "On ne peut pas conclure que le dé est truqué : il faudrait un très grand nombre d'essais." },
-                  ],
-                },
-                { type: "note", text: "La fréquence estime la probabilité ; la fiabilité augmente avec le nombre d'essais." },
-              ],
+              type: "corrigerCopies",
+              title: "Probabilités",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_PROBABILITES,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous. Formulées comme des questions de jury d'oral.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Que signifie P(A) = 0 ? Et P(A) = 1 ?",
-                  answer:
-                    "P(A) = 0 : événement impossible (jamais réalisé). P(A) = 1 : événement certain (toujours réalisé). Une probabilité est toujours entre 0 et 1.",
-                  astuce: "Un résultat comme P = 1,2 ou P = −0,3 signale une erreur de calcul.",
-                },
-                {
-                  question: "Formule de l'événement contraire ? Quand l'utiliser ?",
-                  answer:
-                    "P(Ā) = 1 − P(A). À utiliser surtout pour « au moins un… » : calculer « aucun » et soustraire à 1. Exemple : P(au moins un Pile sur 3 lancers) = 1 − (1/2)³ = 7/8.",
-                },
-                {
-                  question: "Quelle condition pour additionner P(A) + P(B) directement ?",
-                  answer:
-                    "A et B doivent être incompatibles (A ∩ B = ∅). Sinon : P(A ∪ B) = P(A) + P(B) − P(A ∩ B), pour ne pas compter deux fois les issues communes.",
-                },
-                {
-                  question: "Les deux règles d'or de l'arbre pondéré ?",
-                  answer:
-                    "Règle 1 : multiplier les probabilités des branches le long d'un chemin. Règle 2 : additionner les probabilités de tous les chemins menant à l'événement. En bref : × sur un chemin, + entre plusieurs chemins.",
-                  astuce: "Vérifier : somme des branches d'un nœud = 1, somme de tous les chemins = 1.",
-                },
-                {
-                  question: "Différence entre tirage avec et sans remise ?",
-                  answer:
-                    "Avec remise : on remet l'objet, les probabilités restent identiques (épreuves indépendantes). Sans remise : le total diminue et les probabilités du 2e tirage changent selon le 1er. Toujours recompter l'urne avant chaque branche.",
-                },
-                {
-                  question: "Qu'est-ce que la loi des grands nombres ?",
-                  answer:
-                    "Quand on répète une expérience un grand nombre de fois, la fréquence observée d'un événement converge vers sa probabilité théorique : quand n → ∞, fréquence(A) → P(A).",
-                  astuce: "Elle ne dit pas que les séquences s'équilibrent à court terme : chaque lancer est indépendant.",
-                },
-                {
-                  question: "Que simule =ENT(ALEA()*6)+1 dans un tableur ?",
-                  answer:
-                    "Un lancer de dé équilibré (résultat de 1 à 6). ALEA() ∈ [0 ; 1[, ×6 ∈ [0 ; 6[, ENT donne 0 à 5, +1 donne 1 à 6. Pour une pièce : =SI(ALEA()<0,5;\"P\";\"F\").",
-                },
-                {
-                  question: "Comment vérifier la cohérence d'un arbre pondéré ?",
-                  answer:
-                    "Deux vérifications : pour chaque nœud, la somme des branches sortantes = 1 ; pour tout l'arbre, la somme des chemins finaux = 1. Si l'une échoue, il y a une erreur de probabilité.",
-                },
-                {
-                  question: "Calculer P(au moins une rouge sur 2 tirages avec remise) dans une urne 2R, 3B ?",
-                  answer:
-                    "Par le contraire : « aucune rouge » = BB, P(BB) = 3/5 × 3/5 = 9/25. P(au moins 1R) = 1 − 9/25 = 16/25 = 0,64. Bien plus rapide que de sommer RR + RB + BR.",
-                },
-                {
-                  question: "Qu'est-ce que l'équiprobabilité ? Quand s'applique-t-elle ?",
-                  answer:
-                    "Toutes les issues ont la même probabilité. On peut alors écrire P(A) = nombre d'issues de A ÷ nombre total. Conditions : dé équilibré, pièce non truquée, tirage au hasard d'objets identiques.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche : un outil pour réviser rapidement avant le jour J, une fois chaque partie travaillée.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Probabilités", subtitle: "Mesurer le hasard" },
@@ -897,17 +507,6 @@ export const ficheProbabilites: Fiche = {
                   lines: ["=ENT(ALEA()*6)+1 → dé", "=NB.SI / 1000 → fréquence"],
                 },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },

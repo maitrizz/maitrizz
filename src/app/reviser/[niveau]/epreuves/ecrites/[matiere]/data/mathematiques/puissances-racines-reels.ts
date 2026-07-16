@@ -1,15 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_PUISSANCES_RACINES_REELS } from "./copies-puissances-racines-reels";
+import { EXERCICES_PUISSANCES_RACINES_REELS } from "./exercices-puissances-racines-reels";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je connais les 5 règles des puissances et je les applique sans erreur" },
-  { id: "e2", label: "Je connais les carrés parfaits de 1² à 12² dans les deux sens" },
-  { id: "e3", label: "Je sais simplifier une racine carrée (par exemple √72 = 6√2)" },
-  { id: "e4", label: "Je sais encadrer un irrationnel à une précision donnée, avec vérification par le carré" },
-  { id: "e5", label: "Je sais expliquer pourquoi √2 est irrationnel et ce que cela implique concrètement" },
-  { id: "e6", label: "Je connais le schéma ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ et je sais classer un nombre, rationnel ou irrationnel" },
-  { id: "e7", label: "Je connais les erreurs types (distribuer une puissance, additionner des racines, √(a²) = |a|)" },
-  { id: "e8", label: "Je sais relier les puissances de 10 à la numération décimale (recul primaire)" },
+export const SAVOIR_FAIRE = [
+  { id: "ensembles-nombres", label: "Classer un nombre (ℕ, ℤ, ℚ, ℝ)" },
+  { id: "regles-puissances", label: "Appliquer les 5 règles des puissances" },
+  { id: "carres-parfaits", label: "Connaître les carrés parfaits" },
+  { id: "simplifier-racine", label: "Simplifier une racine carrée" },
+  { id: "encadrer-irrationnel", label: "Encadrer un irrationnel" },
+  { id: "justifier-irrationalite", label: "Justifier qu'un nombre est irrationnel" },
 ];
 
 export const fichePuissancesRacinesReels: Fiche = {
@@ -29,31 +28,13 @@ export const fichePuissancesRacinesReels: Fiche = {
     "Fiche CRPE sur les puissances, les racines carrées et les réels : les 5 règles des puissances, carrés parfaits, simplification de racines, irrationalité de √2, ensemble ℝ, encadrements décimaux. Cours, méthode, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 5 étapes",
-              items: [
-                { number: "①", title: "L'ensemble ℝ", text: "Rationnels et irrationnels : la dernière frontière des nombres." },
-                { number: "②", title: "Les racines carrées", text: "Définition, propriétés et simplification." },
-                { number: "③", title: "Carrés parfaits", text: "Les 12 carrés à connaître par cœur pour aller vite." },
-                { number: "④", title: "√2 est irrationnel", text: "Ce que cela signifie et ce que le jury attend." },
-                { number: "⑤", title: "Puissances et encadrements", text: "Les 5 règles des puissances et comment situer un irrationnel." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -384,371 +365,58 @@ export const fichePuissancesRacinesReels: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Combien vaut 3² × 3⁵ ?",
-                  options: ["3¹⁰", "3⁷", "9⁷", "6⁷"],
-                  correctIndex: 1,
-                  explanation: "Même base : on additionne les exposants. 3² × 3⁵ = 3^(2+5) = 3⁷.",
-                },
-                {
-                  objectifId: "e8",
-                  question: "Dans notre numération décimale, à quelle puissance de 10 correspond le rang des centaines ?",
-                  options: ["10¹", "10²", "10³", "2²"],
-                  correctIndex: 1,
-                  explanation: "Chaque rang vaut une puissance de 10 : unités 10⁰, dizaines 10¹, centaines 10². Ainsi 345 = 3×10² + 4×10¹ + 5×10⁰.",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Combien vaut √144 ?",
-                  options: ["11", "12", "14", "72"],
-                  correctIndex: 1,
-                  explanation: "144 = 12², donc √144 = 12 (carré parfait à connaître).",
-                },
-                {
-                  objectifId: "e3",
-                  question: "Quelle est la forme simplifiée de √72 ?",
-                  options: ["8√2", "6√2", "2√18", "36√2"],
-                  correctIndex: 1,
-                  explanation: "72 = 36 × 2 et 36 = 6², donc √72 = 6√2.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "Combien vaut (3 + 4)² ?",
-                  options: ["25", "49", "12", "7"],
-                  correctIndex: 1,
-                  explanation: "(3 + 4)² = 7² = 49. On ne distribue pas le carré : 3² + 4² = 25 est faux.",
-                },
-                {
-                  objectifId: "e6",
-                  question: "À quel ensemble appartient √9 ?",
-                  options: ["Aux irrationnels (ℝ∖ℚ)", "À ℕ", "À aucun", "Seulement à ℝ"],
-                  correctIndex: 1,
-                  explanation: "√9 = 3, un entier naturel. 9 est un carré parfait, donc sa racine est rationnelle (et même entière).",
-                },
-                {
-                  objectifId: "e5",
-                  question: "√2 est-il rationnel ?",
-                  options: ["Oui, c'est une fraction", "Non, il est irrationnel", "Oui, il vaut 1,414", "Cela dépend de la calculatrice"],
-                  correctIndex: 1,
-                  explanation: "√2 est irrationnel : il ne s'écrit sous aucune forme a/b, et son développement décimal est infini non périodique. 1,414… n'est qu'une approximation.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Entre quels entiers consécutifs se situe √7 ?",
-                  options: ["1 et 2", "2 et 3", "3 et 4", "6 et 8"],
-                  correctIndex: 1,
-                  explanation: "2² = 4 < 7 < 9 = 3², donc 2 < √7 < 3.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Puissances, racines et réels",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_PUISSANCES_RACINES_REELS,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Progressez niveau par niveau. Corrigez chaque exercice avant de continuer.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : Mémo et carrés parfaits",
-              sub: "Réflexes à acquérir",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : carrés parfaits et racines directes",
-              objectifTag: "Carrés parfaits",
-              question:
-                "a) Calculer sans calculatrice : √25 · √144 · √1 · √0\nb) Encadrer √50 entre deux entiers consécutifs.\nc) Vrai ou faux : « √16 = ±4 » ?",
-              correction: [
-                { type: "line", label: "a)", text: "√25 = 5 · √144 = 12 · √1 = 1 · √0 = 0" },
-                { type: "line", label: "b)", text: "7² = 49 < 50 < 64 = 8² → 7 < √50 < 8" },
-                { type: "line", label: "c)", text: "Faux : √16 = 4 uniquement (racine positive). Les solutions de x² = 16 sont 4 et −4, mais √16 = 4." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : règles des puissances",
-              objectifTag: "Règles des puissances",
-              question: "Calculer : a) 3² × 3³   b) 5⁴ ÷ 5²   c) (2³)²   d) 4⁰   e) 2⁻³",
-              correction: [
-                { type: "line", label: "a)", text: "3²⁺³ = 3⁵ = 243" },
-                { type: "line", label: "b)", text: "5⁴⁻² = 5² = 25" },
-                { type: "line", label: "c)", text: "2^(3×2) = 2⁶ = 64" },
-                { type: "line", label: "d)", text: "4⁰ = 1" },
-                { type: "line", label: "e)", text: "2⁻³ = 1/2³ = 1/8 = 0,125" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : calcul direct",
-              sub: "Application des règles",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : simplifier puissances et racines",
-              objectifTag: "Simplifier une racine",
-              question: "a) (3² × 3⁵) / 3⁴   b) √32   c) √(3/4) × √12   d) (√5 − √5) + (√3)²   e) 2⁻² × 4³",
-              correction: [
-                { type: "line", label: "a)", text: "3⁷ / 3⁴ = 3³ = 27" },
-                { type: "line", label: "b)", text: "√32 = √(16×2) = 4√2" },
-                { type: "line", label: "c)", text: "√(3/4 × 12) = √9 = 3" },
-                { type: "line", label: "d)", text: "0 + 3 = 3" },
-                { type: "line", label: "e)", text: "2⁻² × (2²)³ = 2⁻² × 2⁶ = 2⁴ = 16" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : mise en contexte",
-              sub: "Plusieurs étapes, justification",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 2 : encadrements et précision",
-              objectifTag: "Encadrer un irrationnel",
-              question:
-                "a) Encadrer √5 à 0,1 près et donner l'arrondi au dixième.\nb) La diagonale d'un carré de côté 3 cm vaut 3√2 : l'encadrer à 0,01 cm près.\nc) Simplifier a = √3 + √12. Est-ce un irrationnel ?",
-              correction: [
-                { type: "line", label: "a)", text: "2,2² = 4,84 < 5 et 2,3² = 5,29 > 5 → 2,2 < √5 < 2,3. Arrondi : 2,2." },
-                { type: "line", label: "b)", text: "1,41 < √2 < 1,42 → 4,23 < 3√2 < 4,26 cm." },
-                { type: "line", label: "c)", text: "√12 = 2√3, donc a = √3 + 2√3 = 3√3, irrationnel (rationnel non nul × irrationnel)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : vrai ou faux justifiés",
-              objectifTag: "Classer un nombre",
-              question: "Vrai ou faux, en justifiant :\nA. √(4 + 9) = √4 + √9\nB. (√7)² = 7\nC. Tout irrationnel est un réel.\nD. 2⁻³ > 2⁻⁵",
-              correction: [
-                { type: "line", label: "A", text: "**Faux** : √13 ≈ 3,6, alors que √4 + √9 = 5. √(a+b) ≠ √a + √b." },
-                { type: "line", label: "B", text: "**Vrai** : (√a)² = a pour a ≥ 0." },
-                { type: "line", label: "C", text: "**Vrai** : ℝ = ℚ ∪ (irrationnels), tout irrationnel est dans ℝ." },
-                { type: "line", label: "D", text: "**Vrai** : 2⁻³ = 1/8 et 2⁻⁵ = 1/32, or 1/8 > 1/32." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : raisonnement",
-              sub: "Démonstration, généralisation",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 4 : irrationalité et raisonnement par l'absurde",
-              badge: "Pour aller plus loin",
-              objectifTag: "Expliquer l'irrationalité de √2",
-              enonce: "Cet exercice mobilise le raisonnement par l'absurde. Il n'est pas indispensable, mais distingue les meilleures copies.",
-              question:
-                "a) Montrer que √3 est irrationnel.\nb) Sachant que √2 est irrationnel, montrer que 1 + √2 l'est aussi.\nc) √2 × √8 est-il irrationnel ?",
-              correction: [
-                { type: "line", label: "a)", text: "Supposons √3 = p/q irréductible. Alors p² = 3q², donc 3 | p², donc 3 | p. En posant p = 3k : q² = 3k², donc 3 | q. Contradiction avec PGCD(p, q) = 1." },
-                { type: "line", label: "b)", text: "Si 1 + √2 = p/q rationnel, alors √2 = p/q − 1 serait rationnel : contradiction. Donc 1 + √2 est irrationnel." },
-                { type: "line", label: "c)", text: "√2 × √8 = √16 = 4, un entier (donc rationnel). Le produit de deux irrationnels peut être rationnel : un contre-exemple que le jury valorise." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Exercice au format des sujets du concours. Traitez-le en conditions réelles avant de regarder le corrigé.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE : ensembles de nombres et irrationnels",
-              objectifTag: "Classer un nombre",
-              enonce: "En fin de troisième, un enseignant fait classer des nombres et étudier leurs propriétés.",
-              question:
-                "Partie A : 1. Classer −5 · 3/7 · √9 · √2 · 0,333… · π · −2/1 dans ℕ, ℤ, ℚ ou ℝ∖ℚ.\n2. Justifier que 0,333… = 1/3 est rationnel.\n3. Un élève dit : « π ≈ 3,14 donc π = 314/100 est rationnel. » Expliquer l'erreur.\nPartie B : 4. Simplifier √50 + √8 − √18 et montrer que le résultat est irrationnel.\n5. Encadrer √10 au dixième et donner l'arrondi.\n6. Simplifier (2³ × 10²) / (4 × 10⁻¹) et l'écrire en notation scientifique.\nPartie C : 7. Pourquoi est-il pédagogiquement pertinent de montrer que √2 ne s'écrit pas exactement en décimales ?",
-              correction: [
-                { type: "line", label: "A1.", text: "−5 ∈ ℤ · 3/7 ∈ ℚ · √9 = 3 ∈ ℕ · √2 ∈ ℝ∖ℚ · 0,333… = 1/3 ∈ ℚ · π ∈ ℝ∖ℚ · −2/1 = −2 ∈ ℤ" },
-                { type: "line", label: "A2.", text: "x = 0,333… → 10x = 3,333… → 9x = 3 → x = 1/3, rationnel." },
-                { type: "line", label: "A3.", text: "3,14 est une valeur approchée de π, pas sa valeur exacte. π est le rapport exact circonférence / diamètre, qui n'est pas une fraction : 3,14 et π diffèrent dès le millième." },
-                { type: "line", label: "B4.", text: "√50 = 5√2, √8 = 2√2, √18 = 3√2 → 5√2 + 2√2 − 3√2 = 4√2, irrationnel." },
-                { type: "line", label: "B5.", text: "3,1² = 9,61 < 10 et 3,2² = 10,24 > 10 → 3,1 < √10 < 3,2. Arrondi : 3,2." },
-                { type: "line", label: "B6.", text: "(8 × 100) / (4 × 0,1) = 800 / 0,4 = 2000 = 2 × 10³." },
-                { type: "line", label: "C7.", text: "Cela fait comprendre la limite de toute écriture décimale : la calculatrice donne une approximation, jamais la valeur exacte. L'élève apprend à distinguer valeur exacte et valeur approchée, compétence clé en mesures et en géométrie." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces erreurs types représentent des pertes de points évitables. Les identifier et les corriger est valorisé au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 1 : distribuer la puissance sur l'addition",
-              objectifTag: "Erreurs types",
-              enonce: "**Copie type :** « (3 + 4)² = 3² + 4² = 25, donc (a + b)² = a² + b². »",
-              question: "Montrer que (a + b)² ≠ a² + b² en général.",
-              correction: [
-                { type: "line", text: "(3 + 4)² = 7² = 49 ≠ 3² + 4² = 25. L'affirmation est fausse." },
-                { type: "note", text: "Développement correct : (a + b)² = a² + 2ab + b². La puissance se distribue sur la multiplication, pas sur l'addition." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 2 : encadrement sans vérification",
-              objectifTag: "Encadrer un irrationnel",
-              enonce: "**Copie type :** « √6 ≈ 2,4 donc 2,4 < √6 < 2,5 », sans calcul de vérification.",
-              question: "Donner un encadrement de √6 à 0,1 près, correctement justifié.",
-              correction: [
-                { type: "line", text: "2,4² = 5,76 < 6 et 2,5² = 6,25 > 6 → 2,4 < √6 < 2,5. Arrondi : 2,4." },
-                { type: "note", text: "Les deux calculs de carré doivent apparaître : un encadrement non justifié ne vaut rien au CRPE." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 3 : additionner les racines",
-              objectifTag: "Erreurs types",
-              enonce: "**Copie type :** « √3 + √3 = √6 ».",
-              question: "Calculer correctement √3 + √3.",
-              correction: [
-                { type: "line", text: "√3 + √3 = 2√3 (on additionne les coefficients, comme 3x + 3x = 6x)." },
-                { type: "note", text: "√a + √b ≠ √(a+b). En revanche √a × √b = √(ab) : la règle du produit s'applique, pas celle de la somme." },
-              ],
+              type: "corrigerCopies",
+              title: "Puissances, racines et réels",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_PUISSANCES_RACINES_REELS,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Répondez dans votre tête avant de révéler, puis évaluez-vous.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Énoncer les 5 règles des puissances (même base).",
-                  answer:
-                    "aᵐ × aⁿ = aᵐ⁺ⁿ · aᵐ ÷ aⁿ = aᵐ⁻ⁿ · (aᵐ)ⁿ = aᵐⁿ · aⁿ × bⁿ = (ab)ⁿ · a⁰ = 1 et a⁻ⁿ = 1/aⁿ.",
-                  astuce: "Ces règles supposent la même base (sauf la 4e, qui demande le même exposant).",
-                },
-                {
-                  question: "Qu'est-ce qu'un nombre irrationnel ? Donner quatre exemples.",
-                  answer:
-                    "Un réel qui ne s'écrit pas sous forme p/q, dont le développement décimal est infini et non périodique. Exemples : √2, √3, π, e.",
-                  astuce: "Ne pas confondre avec un développement long : 1/7 = 0,142857… est périodique, donc rationnel.",
-                },
-                {
-                  question: "Quelle est la règle pour simplifier √n ?",
-                  answer: "Chercher le plus grand carré parfait qui divise n, puis appliquer √(a×b) = √a × √b. Exemple : √72 = √(36×2) = 6√2.",
-                },
-                {
-                  question: "Pourquoi √2 est-il irrationnel ? (résumé)",
-                  answer:
-                    "Supposons √2 = p/q irréductible. Alors p² = 2q² → p pair → p = 2k → q² = 2k² → q pair. Mais p et q pairs contredisent PGCD(p, q) = 1. Donc √2 ∉ ℚ.",
-                },
-                {
-                  question: "Que valent (√a)² et √(a²) ?",
-                  answer:
-                    "(√a)² = a pour a ≥ 0. √(a²) = |a| pour tout réel a, car la racine carrée est toujours positive. Exemple : √((−5)²) = 5.",
-                  astuce: "On ne peut pas écrire √(a²) = a si a peut être négatif.",
-                },
-                {
-                  question: "Le produit de deux irrationnels est-il toujours irrationnel ?",
-                  answer:
-                    "Non. Contre-exemple : √2 × √8 = √16 = 4, rationnel. En revanche, un irrationnel multiplié par un rationnel non nul est toujours irrationnel.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche, pour réviser vite avant le jour J.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Puissances, racines", subtitle: "ℝ" },
@@ -760,17 +428,6 @@ export const fichePuissancesRacinesReels: Fiche = {
                 { title: "Encadrer un irrationnel", variant: "yellow", lines: ["Vérifier par le carré", "1,41 < √2 < 1,42"] },
                 { title: "Pièges", variant: "purple", dashed: true, lines: ["(a+b)² ≠ a² + b²", "√(a+b) ≠ √a + √b"] },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },

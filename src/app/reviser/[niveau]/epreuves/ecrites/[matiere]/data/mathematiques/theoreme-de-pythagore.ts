@@ -1,16 +1,13 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_THEOREME_DE_PYTHAGORE } from "./copies-theoreme-de-pythagore";
+import { EXERCICES_THEOREME_DE_PYTHAGORE } from "./exercices-theoreme-de-pythagore";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "J'énonce le théorème de Pythagore : dans un triangle rectangle, le carré de l'hypoténuse égale la somme des carrés des deux autres côtés" },
-  { id: "e2", label: "Je connais la démonstration par les aires" },
-  { id: "e3", label: "J'utilise la réciproque pour démontrer qu'un triangle est rectangle" },
-  { id: "e4", label: "J'utilise la contraposée pour démontrer qu'un triangle n'est pas rectangle (et le qualifier)" },
-  { id: "e5", label: "Je calcule l'hypoténuse : c = √(a² + b²)" },
-  { id: "e6", label: "Je calcule un côté de l'angle droit : b = √(c² − a²)" },
-  { id: "e7", label: "Je reconnais les triplets pythagoriciens (3-4-5, 5-12-13, 8-15-17, 7-24-25) et leurs multiples" },
-  { id: "e8", label: "J'applique Pythagore dans les solides (diagonale d'un pavé, hauteur d'une pyramide)" },
-  { id: "e9", label: "Je rédige une justification rigoureuse et je prends toujours la racine positive d'une longueur" },
+export const SAVOIR_FAIRE = [
+  { id: "calcul-hypotenuse", label: "Calculer l'hypoténuse" },
+  { id: "calcul-cote", label: "Calculer un côté de l'angle droit" },
+  { id: "reciproque-contraposee", label: "Réciproque et contraposée" },
+  { id: "triplets", label: "Reconnaître les triplets pythagoriciens" },
+  { id: "pythagore-3d", label: "Pythagore dans les solides" },
 ];
 
 export const ficheTheoremeDePythagore: Fiche = {
@@ -30,30 +27,13 @@ export const ficheTheoremeDePythagore: Fiche = {
     "Fiche CRPE sur le théorème de Pythagore : énoncé, démonstration par les aires, réciproque, contraposée, calcul de longueurs, triplets pythagoriciens et applications dans les solides. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                { number: "①", title: "Énoncé et démonstration", text: "c² = a² + b², et la preuve classique par les aires." },
-                { number: "②", title: "Réciproque et contraposée", text: "Démontrer qu'un triangle est rectangle, ou qu'il ne l'est pas." },
-                { number: "③", title: "Calculer une longueur", text: "L'hypoténuse ou un côté de l'angle droit, et les triplets pythagoriciens." },
-                { number: "④", title: "Applications 3D", text: "Diagonale d'un pavé, hauteur d'une pyramide : Pythagore dans les solides." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -396,409 +376,58 @@ export const ficheTheoremeDePythagore: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Dans un triangle rectangle, que vaut le carré de l'hypoténuse ?",
-                  options: ["La différence des carrés des deux autres côtés", "La somme des carrés des deux autres côtés", "Le produit des deux autres côtés", "La somme des deux autres côtés"],
-                  correctIndex: 1,
-                  explanation: "Théorème de Pythagore : c² = a² + b², le carré de l'hypoténuse égale la somme des carrés des deux autres côtés.",
-                },
-                {
-                  objectifId: "e5",
-                  question: "Triangle rectangle, côtés de l'angle droit 3 et 4. Que vaut l'hypoténuse ?",
-                  options: ["7", "5", "25", "12"],
-                  correctIndex: 1,
-                  explanation: "c = √(3² + 4²) = √25 = 5. Triplet pythagoricien 3-4-5.",
-                },
-                {
-                  objectifId: "e6",
-                  question: "Hypoténuse 13, un côté de l'angle droit 5. Que vaut l'autre côté ?",
-                  options: ["18", "12", "8", "√194"],
-                  correctIndex: 1,
-                  explanation: "b = √(13² − 5²) = √(169 − 25) = √144 = 12. On soustrait pour un côté de l'angle droit.",
-                },
-                {
-                  objectifId: "e3",
-                  question: "Un triangle a pour côtés 9, 12, 15. Que peut-on conclure ?",
-                  options: ["Il n'est pas rectangle", "Il est rectangle (réciproque)", "Il est équilatéral", "On ne peut rien dire"],
-                  correctIndex: 1,
-                  explanation: "15² = 225 = 9² + 12² = 81 + 144 : par la réciproque, le triangle est rectangle.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Un triangle a pour côtés 5, 7, 9. Que peut-on conclure ?",
-                  options: ["Rectangle", "Non rectangle, et obtusangle", "Non rectangle, et acutangle", "Équilatéral"],
-                  correctIndex: 2,
-                  explanation: "9² = 81 et 5² + 7² = 74. 81 ≠ 74 → non rectangle (contraposée) ; 81 > 74 → obtusangle.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "Lequel est un triplet pythagoricien ?",
-                  options: ["(6, 7, 10)", "(8, 15, 17)", "(4, 5, 6)", "(2, 3, 4)"],
-                  correctIndex: 1,
-                  explanation: "8² + 15² = 64 + 225 = 289 = 17². Les autres ne vérifient pas a² + b² = c².",
-                },
-                {
-                  objectifId: "e8",
-                  question: "Quelle est la grande diagonale d'un cube d'arête a ?",
-                  options: ["a√2", "a√3", "3a", "2a"],
-                  correctIndex: 1,
-                  explanation: "d² = a² + a² + a² = 3a², donc d = a√3.",
-                },
-                {
-                  objectifId: "e9",
-                  question: "On a trouvé c² = 49. Que vaut c (longueur) ?",
-                  options: ["±7", "7", "49", "24,5"],
-                  correctIndex: 1,
-                  explanation: "Une longueur est positive : c = √49 = 7 (jamais ±7). Et il ne faut pas oublier de prendre la racine.",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Sur quoi repose la démonstration classique de Pythagore vue dans la fiche ?",
-                  options: ["Sur la trigonométrie", "Sur l'égalité de deux décompositions de l'aire d'un grand carré", "Sur le théorème de Thalès", "Sur les angles inscrits"],
-                  correctIndex: 1,
-                  explanation: "On calcule l'aire d'un carré de côté (a + b) de deux façons et on égalise : on obtient c² = a² + b².",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Théorème de Pythagore",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_THEOREME_DE_PYTHAGORE,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Identifiez l'angle droit, nommez l'hypoténuse, précisez la version du théorème. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : je vérifie que j'ai compris le Cours",
-              sub: "Calculs directs et triplets",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : calculer des longueurs",
-              objectifTag: "Théorème direct",
-              enonce: "Triangle ABC rectangle en A dans chaque cas.",
-              question: "a) AB = 6, AC = 8 : calculer BC.\nb) BC = 15, AB = 9 : calculer AC.\nc) AB = AC = 7 : calculer BC (forme exacte).",
-              correction: [
-                { type: "line", label: "a)", text: "BC² = 36 + 64 = 100 → BC = 10." },
-                { type: "line", label: "b)", text: "AC² = 225 − 81 = 144 → AC = 12 (triplet 9-12-15)." },
-                { type: "line", label: "c)", text: "BC² = 49 + 49 = 98 → BC = 7√2 ≈ 9,90 (triangle rectangle isocèle)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : reconnaître un triplet",
-              objectifTag: "Triplets pythagoriciens",
-              question: "Pour chaque triplet, dire s'il est pythagoricien :\na) (5, 12, 13)\nb) (8, 15, 17)\nc) (6, 7, 10)\nd) (20, 21, 29)",
-              correction: [
-                { type: "line", label: "a)", text: "13² = 169 = 25 + 144 ✓ : triplet." },
-                { type: "line", label: "b)", text: "17² = 289 = 64 + 225 ✓ : triplet." },
-                { type: "line", label: "c)", text: "10² = 100 ≠ 36 + 49 = 85 : pas un triplet (obtusangle)." },
-                { type: "line", label: "d)", text: "29² = 841 = 400 + 441 ✓ : triplet." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : réciproque et contraposée",
-              sub: "Rédiger une preuve",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : rectangle ou non ?",
-              objectifTag: "Réciproque / contraposée",
-              question:
-                "Pour chaque triangle, dire s'il est rectangle (réciproque) ou non (contraposée), et préciser le type sinon :\na) 10, 24, 26\nb) 5, 8, 10\nc) 9, 12, 16",
-              correction: [
-                { type: "line", label: "a)", text: "26² = 676 = 100 + 576 ✓ → rectangle (réciproque)." },
-                { type: "line", label: "b)", text: "10² = 100 ; 25 + 64 = 89 ; 100 > 89 → non rectangle, obtusangle." },
-                { type: "line", label: "c)", text: "16² = 256 ; 81 + 144 = 225 ; 256 > 225 → non rectangle, obtusangle." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : diagonale d'un écran",
-              objectifTag: "Application directe",
-              enonce: "Un écran rectangulaire mesure 60 cm de large et 32 cm de haut.",
-              question: "a) Calculer la longueur de la diagonale.\nb) Reconnaître un triplet pythagoricien (en simplifiant).",
-              correction: [
-                { type: "line", label: "a)", text: "d² = 60² + 32² = 3 600 + 1 024 = 4 624 → d = 68 cm." },
-                { type: "line", label: "b)", text: "60 = 4 × 15, 32 = 4 × 8, 68 = 4 × 17 : c'est le triplet (8, 15, 17) multiplié par 4." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : applications dans les solides",
-              sub: "Pythagore en 3D",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : diagonale d'un pavé et hauteur d'une pyramide",
-              objectifTag: "Pythagore 3D",
-              question:
-                "a) Pavé droit 8 × 9 × 12 : calculer la grande diagonale.\nb) Pyramide à base carrée de côté 6, hauteur 4 : calculer l'apothème (distance du sommet au milieu d'une arête de base), sachant qu'elle vérifie apothème² = hauteur² + (côté/2)².",
-              correction: [
-                { type: "line", label: "a)", text: "d² = 8² + 9² + 12² = 64 + 81 + 144 = 289 → d = 17." },
-                { type: "line", label: "b)", text: "apothème² = 4² + 3² = 16 + 9 = 25 → apothème = 5 (triplet 3-4-5)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : problème complet",
-              sub: "Combiner les outils",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 4 : l'échelle contre le mur",
-              objectifTag: "Modélisation",
-              enonce: "Une échelle de 5 m est appuyée contre un mur vertical. Son pied est à 1,4 m du mur.",
-              question: "a) À quelle hauteur l'échelle touche-t-elle le mur (arrondir au cm) ?\nb) On éloigne le pied à 3 m du mur : nouvelle hauteur ?\nc) Que se passerait-il si le pied était à 5 m du mur ?",
-              correction: [
-                { type: "line", label: "a)", text: "h² = 5² − 1,4² = 25 − 1,96 = 23,04 → h = 4,80 m." },
-                { type: "line", label: "b)", text: "h² = 25 − 9 = 16 → h = 4 m (triplet 3-4-5)." },
-                { type: "line", label: "c)", text: "h² = 25 − 25 = 0 → h = 0 : l'échelle serait à plat sur le sol (cas limite)." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Cet exercice reproduit le format d'un sujet de concours, combinant calcul de longueur, réciproque et application 3D. Comptez 20 minutes, en conditions réelles.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 5 : la tente de camping",
-              objectifTag: "Pythagore, réciproque, 3D",
-              enonce:
-                "Une tente a une base rectangulaire ABCD de 3 m × 4 m. Un mât vertical de hauteur 2,4 m est planté au centre O de la base. Des cordes relient le sommet S du mât aux quatre coins.",
-              question:
-                "1.1 Calculer la diagonale AC de la base.\n1.2 En déduire la distance OA (du centre à un coin).\n1.3 Calculer la longueur d'une corde SA (S au-dessus de O à 2,4 m).\n2.1 Un triangle de côtés 1,5 m, 2 m et 2,5 m est-il rectangle ? Justifier.\n2.2 À quoi sert ce triangle pour vérifier que le mât est bien vertical sur le terrain ?",
-              correction: [
-                { type: "line", label: "1.1", text: "AC² = 3² + 4² = 25 → AC = 5 m." },
-                { type: "line", label: "1.2", text: "O est le centre, donc OA = AC ÷ 2 = 2,5 m." },
-                { type: "line", label: "1.3", text: "SA² = OA² + OS² = 2,5² + 2,4² = 6,25 + 5,76 = 12,01 → SA ≈ 3,47 m." },
-                { type: "line", label: "2.1", text: "2,5² = 6,25 = 1,5² + 2² = 2,25 + 4 = 6,25 : par la réciproque, le triangle est rectangle (triplet 3-4-5 divisé par 2)." },
-                { type: "line", label: "2.2", text: "On peut matérialiser un angle droit au sol avec ce triangle (méthode du « 3-4-5 ») pour vérifier que le mât est perpendiculaire au sol." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces erreurs reproduisent des fautes réelles de candidats. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 6 : racine oubliée",
-              objectifTag: "Calcul de longueur",
-              enonce: "**Copie d'un candidat :** triangle rectangle en A, AB = 3, AC = 4.\n*Réponse produite :* « BC = 3² + 4² = 25 cm ».",
-              question: "a) Identifier l'erreur.\nb) Donner la bonne réponse.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : la racine carrée a été oubliée.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Pythagore donne BC² = 25, pas BC = 25." },
-                    { text: "BC = √25 = 5 cm." },
-                    { text: "Toujours conclure par la racine carrée." },
-                  ],
-                },
-                { type: "note", text: "Le théorème fournit le carré de la longueur, jamais la longueur directement." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 7 : somme au lieu de différence",
-              objectifTag: "Côté de l'angle droit",
-              enonce: "**Copie d'un candidat :** triangle rectangle en A, hypoténuse BC = 10, AB = 6. Calculer AC.\n*Réponse produite :* « AC² = 10² + 6² = 136 ».",
-              question: "a) Identifier l'erreur.\nb) Donner la bonne réponse.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : addition au lieu de soustraction.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "AC est un côté de l'angle droit, pas l'hypoténuse : on soustrait." },
-                    { text: "AC² = BC² − AB² = 100 − 36 = 64 → AC = 8." },
-                    { text: "Triplet 6-8-10." },
-                  ],
-                },
-                { type: "note", text: "Repérer l'hypoténuse (le plus grand côté) avant de choisir somme ou différence." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 8 : réciproque mal conclue",
-              objectifTag: "Réciproque / contraposée",
-              enonce: "**Copie d'un candidat :** triangle de côtés 4, 6, 7.\n*Réponse produite :* « 7² ≠ 4² + 6², donc le triangle est rectangle ».",
-              question: "a) Identifier l'erreur.\nb) Donner la bonne conclusion.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : conclusion inversée.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Une inégalité (c² ≠ a² + b²) prouve que le triangle n'est PAS rectangle (contraposée)." },
-                    { text: "7² = 49 ; 4² + 6² = 52 ; 49 ≠ 52 → non rectangle." },
-                    { text: "49 < 52 → triangle acutangle." },
-                  ],
-                },
-                { type: "note", text: "Égalité → rectangle (réciproque) ; inégalité → pas rectangle (contraposée)." },
-              ],
+              type: "corrigerCopies",
+              title: "Théorème de Pythagore",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_THEOREME_DE_PYTHAGORE,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous. Formulées comme des questions de jury d'oral.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Énoncer le théorème de Pythagore.",
-                  answer:
-                    "Si un triangle est rectangle, le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés : c² = a² + b² (c = hypoténuse, le côté opposé à l'angle droit).",
-                },
-                {
-                  question: "Sur quoi repose la démonstration par les aires ?",
-                  answer:
-                    "On calcule l'aire d'un carré de côté (a + b) de deux façons : (a + b)² = 4 triangles + c² d'un côté, et 4 triangles + a² + b² de l'autre. En égalisant : c² = a² + b².",
-                },
-                {
-                  question: "Que dit la réciproque de Pythagore ?",
-                  answer:
-                    "Si dans un triangle BC² = AB² + AC², alors le triangle est rectangle en A. On l'utilise pour prouver qu'un triangle est rectangle, après avoir identifié le plus grand côté.",
-                },
-                {
-                  question: "Que dit la contraposée ? À quoi sert-elle ?",
-                  answer:
-                    "Si BC² ≠ AB² + AC², alors le triangle n'est pas rectangle. Elle prouve qu'un triangle n'est PAS rectangle. Si le carré du plus grand côté est supérieur à la somme → obtusangle, sinon → acutangle.",
-                  astuce: "Égalité → rectangle ; inégalité → pas rectangle.",
-                },
-                {
-                  question: "Comment calculer l'hypoténuse ? Un côté de l'angle droit ?",
-                  answer:
-                    "Hypoténuse : c = √(a² + b²) (on somme). Côté de l'angle droit : b = √(c² − a²) (on soustrait). Toujours prendre la racine, et garder une longueur positive.",
-                },
-                {
-                  question: "Citer quatre triplets pythagoriciens.",
-                  answer:
-                    "(3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25). Tout multiple est aussi un triplet : (6, 8, 10), (9, 12, 15)… Les reconnaître évite les calculs de racines.",
-                },
-                {
-                  question: "Comment calculer la grande diagonale d'un pavé droit ?",
-                  answer:
-                    "En deux étapes : diagonale de la base (d_base² = L² + l²), puis d² = d_base² + h². Soit directement d² = L² + l² + h². Pour un cube d'arête a : d = a√3.",
-                },
-                {
-                  question: "Pourquoi citer l'angle droit dans la rédaction ?",
-                  answer:
-                    "Le théorème direct ne s'applique que si le triangle est rectangle. Écrire « par le théorème de Pythagore dans le triangle ABC rectangle en A » justifie l'emploi de la relation. Le jury valorise cette rigueur.",
-                },
-                {
-                  question: "Pourquoi une longueur n'a-t-elle pas de ± devant la racine ?",
-                  answer:
-                    "Une longueur est positive. Si c² = 49, alors c = √49 = 7 (et non ±7). Le ± concerne les équations x² = 49, pas les longueurs.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche : un outil pour réviser rapidement avant le jour J, une fois chaque partie travaillée.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Pythagore", subtitle: "c² = a² + b²" },
@@ -835,17 +464,6 @@ export const ficheTheoremeDePythagore: Fiche = {
                   lines: ["Diagonale pavé : √(L² + l² + h²)", "Cube : a√3"],
                 },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },

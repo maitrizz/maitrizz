@@ -1,17 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_TRIANGLES_QUADRILATERES_POLYGONES } from "./copies-triangles-quadrilateres-polygones";
+import { EXERCICES_TRIANGLES_QUADRILATERES_POLYGONES } from "./exercices-triangles-quadrilateres-polygones";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je classe un triangle selon ses côtés (scalène, isocèle, équilatéral) et ses angles (acutangle, rectangle, obtusangle)" },
-  { id: "e2", label: "J'applique l'inégalité triangulaire stricte pour décider si trois longueurs forment un triangle" },
-  { id: "e3", label: "Je calcule un angle dans un triangle (somme 180°), y compris les cas isocèle et rectangle" },
-  { id: "e4", label: "Je connais les cas d'égalité des triangles (CCC, CAC, ACA) et je sais que CCA ne suffit pas" },
-  { id: "e5", label: "Je connais les propriétés caractéristiques du parallélogramme" },
-  { id: "e6", label: "Je distingue rectangle (diagonales égales) et losange (diagonales perpendiculaires)" },
-  { id: "e7", label: "Je sais qu'un carré est à la fois un rectangle et un losange, et je maîtrise la hiérarchie des quadrilatères" },
-  { id: "e8", label: "Je connais le trapèze et le cerf-volant, qui ne sont pas des parallélogrammes" },
-  { id: "e9", label: "Je démontre la nature d'un quadrilatère en coordonnées (milieux des diagonales, longueurs)" },
-  { id: "e10", label: "Je connais les polygones réguliers et les trois pavages réguliers du plan" },
+export const SAVOIR_FAIRE = [
+  { id: "inegalite-classer", label: "Inégalité triangulaire et classification" },
+  { id: "angles-triangle", label: "Calculer un angle dans un triangle" },
+  { id: "cas-egalite", label: "Cas d'égalité des triangles" },
+  { id: "quadrilateres", label: "Quadrilatères et hiérarchie" },
+  { id: "nature-coordonnees", label: "Démontrer la nature en coordonnées" },
+  { id: "polygones-reguliers", label: "Polygones réguliers et pavages" },
 ];
 
 export const ficheTrianglesQuadrilateresPolygones: Fiche = {
@@ -31,30 +28,13 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
     "Fiche CRPE de géométrie plane : types de triangles, inégalité triangulaire, somme des angles, cas d'égalité, parallélogramme et sa hiérarchie (rectangle, losange, carré), trapèze, cerf-volant et polygones réguliers. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                { number: "①", title: "Les triangles", text: "Classification, inégalité triangulaire, somme des angles, cas d'égalité." },
-                { number: "②", title: "Le parallélogramme et sa famille", text: "Rectangle, losange, carré : propriétés caractéristiques et hiérarchie." },
-                { number: "③", title: "Trapèze et cerf-volant", text: "Les quadrilatères qui ne sont pas des parallélogrammes." },
-                { number: "④", title: "Polygones réguliers", text: "Angles, pavages réguliers, et démonstrations en coordonnées." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -427,426 +407,58 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "10 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Un triangle a trois angles de 60°. Quel est son type selon les côtés ?",
-                  options: ["Scalène", "Isocèle non équilatéral", "Équilatéral", "Rectangle"],
-                  correctIndex: 2,
-                  explanation: "Trois angles égaux (60°) impliquent trois côtés égaux : le triangle est équilatéral (et acutangle).",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Les longueurs 2, 3 et 6 forment-elles un triangle ?",
-                  options: ["Oui", "Non, car 6 n'est pas inférieur à 2 + 3 = 5", "Oui, c'est un triangle plat", "On ne peut pas savoir"],
-                  correctIndex: 1,
-                  explanation: "6 < 2 + 3 = 5 est faux : l'inégalité triangulaire n'est pas vérifiée, pas de triangle.",
-                },
-                {
-                  objectifId: "e3",
-                  question: "Triangle isocèle de sommet principal A avec angle en A = 40°. Que valent les angles à la base ?",
-                  options: ["40° chacun", "70° chacun", "100° chacun", "50° chacun"],
-                  correctIndex: 1,
-                  explanation: "(180° − 40°) ÷ 2 = 70° pour chacun des deux angles à la base.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Lequel n'est PAS un cas d'égalité des triangles ?",
-                  options: ["CCC", "CAC (angle compris)", "ACA", "CCA (angle non compris)"],
-                  correctIndex: 3,
-                  explanation: "CCA (deux côtés et un angle non compris) ne suffit pas. Les cas valides : CCC, CAC, ACA.",
-                },
-                {
-                  objectifId: "e5",
-                  question: "Quelle propriété caractérise un parallélogramme ?",
-                  options: ["Un angle droit", "Les diagonales se coupent en leur milieu", "Les diagonales sont égales", "Les diagonales sont perpendiculaires"],
-                  correctIndex: 1,
-                  explanation: "Diagonales de même milieu = propriété caractéristique du parallélogramme. Les autres caractérisent rectangle, losange ou carré.",
-                },
-                {
-                  objectifId: "e6",
-                  question: "Un parallélogramme dont les diagonales sont égales est un…",
-                  options: ["losange", "rectangle", "cerf-volant", "trapèze"],
-                  correctIndex: 1,
-                  explanation: "Diagonales égales dans un parallélogramme = rectangle. Diagonales perpendiculaires = losange.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "Quelle affirmation est correcte ?",
-                  options: ["Tout rectangle est un carré", "Tout carré est un rectangle", "Un losange est toujours un rectangle", "Un parallélogramme est toujours un losange"],
-                  correctIndex: 1,
-                  explanation: "Tout carré est un rectangle (et un losange), mais l'inverse est faux. Le carré est un cas particulier.",
-                },
-                {
-                  objectifId: "e8",
-                  question: "Combien de paires de côtés parallèles a un trapèze ?",
-                  options: ["Aucune", "Exactement une", "Deux", "Trois"],
-                  correctIndex: 1,
-                  explanation: "Le trapèze a exactement une paire de côtés parallèles (les bases). Le cerf-volant n'en a aucune.",
-                },
-                {
-                  objectifId: "e9",
-                  question: "Pour A(1 ; 2), B(4 ; 2), C(5 ; 5), D(2 ; 5), que valent les milieux des diagonales ?",
-                  options: ["Différents", "Tous deux (3 ; 3,5), donc c'est un parallélogramme", "(2,5 ; 3) et (3 ; 4)", "On ne peut pas conclure"],
-                  correctIndex: 1,
-                  explanation: "Milieu [AC] = (3 ; 3,5) et milieu [BD] = (3 ; 3,5) : même milieu, donc ABCD est un parallélogramme.",
-                },
-                {
-                  objectifId: "e10",
-                  question: "Quel polygone régulier NE pave PAS le plan ?",
-                  options: ["Le triangle équilatéral", "Le carré", "Le pentagone régulier", "L'hexagone régulier"],
-                  correctIndex: 2,
-                  explanation: "Son angle (108°) ne divise pas 360° (360 ÷ 108 ≈ 3,33). Seuls triangle, carré et hexagone pavent le plan.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Triangles, quadrilatères, polygones",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_TRIANGLES_QUADRILATERES_POLYGONES,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Identifiez la notion, choisissez la propriété, justifiez. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : je vérifie que j'ai compris le Cours",
-              sub: "Triangles : existence et angles",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : inégalité triangulaire",
-              objectifTag: "Existence d'un triangle",
-              question: "Pour chaque triplet (cm), dire si un triangle existe, et préciser son type selon les côtés :\na) 3, 5, 7\nb) 4, 4, 9\nc) 6, 6, 6\nd) 1, 10, 10",
-              correction: [
-                { type: "line", label: "a)", text: "7 < 3 + 5 = 8 ✓ : possible, scalène." },
-                { type: "line", label: "b)", text: "9 < 4 + 4 = 8 ? non : impossible." },
-                { type: "line", label: "c)", text: "6 < 12 ✓ : possible, équilatéral." },
-                { type: "line", label: "d)", text: "10 < 1 + 10 = 11 ✓ : possible, isocèle." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : angles dans les triangles",
-              objectifTag: "Somme des angles",
-              question: "Calculer les angles manquants :\na) angle A = 55°, angle B = 75°\nb) isocèle de sommet A, angle B = 35°\nc) rectangle en C, angle A = 27°",
-              correction: [
-                { type: "line", label: "a)", text: "angle C = 180° − 55° − 75° = 50°." },
-                { type: "line", label: "b)", text: "angle C = angle B = 35°, donc angle A = 180° − 70° = 110° (obtusangle)." },
-                { type: "line", label: "c)", text: "angle B = 180° − 90° − 27° = 63°." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : quadrilatères",
-              sub: "Identifier par les propriétés",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : reconnaître la figure",
-              objectifTag: "Propriétés caractéristiques",
-              question:
-                "Quelle figure obtient-on dans chaque cas ?\na) Parallélogramme dont les diagonales sont égales.\nb) Parallélogramme dont les diagonales sont perpendiculaires.\nc) Parallélogramme dont les diagonales sont égales et perpendiculaires.\nd) Quadrilatère avec une seule paire de côtés parallèles.",
-              correction: [
-                { type: "line", label: "a)", text: "Rectangle." },
-                { type: "line", label: "b)", text: "Losange." },
-                { type: "line", label: "c)", text: "Carré." },
-                { type: "line", label: "d)", text: "Trapèze." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : polygones réguliers",
-              objectifTag: "Angles et pavage",
-              question: "a) Angle intérieur d'un octogone régulier ?\nb) Angle extérieur d'un hexagone régulier ?\nc) Pourquoi le pentagone régulier ne pave-t-il pas le plan ?",
-              correction: [
-                { type: "line", label: "a)", text: "(8 − 2) × 180° ÷ 8 = 1 080° ÷ 8 = 135°." },
-                { type: "line", label: "b)", text: "360° ÷ 6 = 60°." },
-                { type: "line", label: "c)", text: "Angle 108° ; 360° ÷ 108° ≈ 3,33 n'est pas entier : les pentagones laissent des trous." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : démonstration en coordonnées",
-              sub: "Milieux, longueurs, nature",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : nature d'un quadrilatère",
-              objectifTag: "Démonstration en coordonnées",
-              enonce: "On donne A(0 ; 0), B(4 ; 0), C(4 ; 4) et D(0 ; 4).",
-              question: "a) Montrer que ABCD est un parallélogramme (milieux des diagonales).\nb) Calculer AC et BD.\nc) Conclure sur la nature exacte d'ABCD.",
-              correction: [
-                { type: "line", label: "a)", text: "Milieu [AC] = (2 ; 2) ; milieu [BD] = (2 ; 2) : même milieu → parallélogramme." },
-                { type: "line", label: "b)", text: "AC = √(4² + 4²) = √32 ; BD = √(4² + 4²) = √32 : diagonales égales." },
-                { type: "line", label: "c)", text: "Diagonales égales → rectangle ; côtés AB = AD = 4 (côtés consécutifs égaux) → c'est un carré." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : raisonnement complet",
-              sub: "Cas d'égalité, justification",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 4 : cas d'égalité des triangles",
-              objectifTag: "Congruence",
-              enonce: "ABC et DEF sont deux triangles. On sait que AB = DE = 5 cm, AC = DF = 7 cm.",
-              question:
-                "a) Si l'angle en A est égal à l'angle en D, les triangles sont-ils égaux ? Quel cas ?\nb) Si on connaît seulement l'angle en B (= angle en E), peut-on conclure ?\nc) Pourquoi la rigueur sur l'angle « compris » est-elle essentielle ?",
-              correction: [
-                { type: "line", label: "a)", text: "Oui : AB = DE, AC = DF, et l'angle en A (compris entre AB et AC) égal à l'angle en D → cas CAC, triangles égaux." },
-                { type: "line", label: "b)", text: "Non : l'angle en B n'est pas compris entre les deux côtés connus (AB et AC). C'est une configuration CCA, qui ne suffit pas." },
-                { type: "line", label: "c)", text: "Sans l'angle compris, deux triangles différents peuvent partager ces données : la conclusion serait fausse." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Cet exercice reproduit le format d'un sujet de concours : démonstration rigoureuse de la nature d'un quadrilatère en coordonnées. Comptez 25 minutes, en conditions réelles.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 5 : nature d'un quadrilatère",
-              objectifTag: "Démonstration, nature, justification",
-              enonce:
-                "Dans un repère orthonormé, on donne A(1 ; 1), B(5 ; 2), C(6 ; 6) et D(2 ; 5).",
-              question:
-                "1.1 Calculer les coordonnées des milieux des diagonales [AC] et [BD].\n1.2 En déduire que ABCD est un parallélogramme.\n2.1 Calculer les longueurs AC et BD.\n2.2 Calculer les longueurs des côtés AB et AD.\n3.1 ABCD est-il un rectangle ? Un losange ? Un carré ? Justifier rigoureusement.\n3.2 Rédiger une phrase de conclusion sur la nature exacte d'ABCD.",
-              correction: [
-                { type: "line", label: "1.1", text: "Milieu [AC] = ((1 + 6) ÷ 2 ; (1 + 6) ÷ 2) = (3,5 ; 3,5) ; milieu [BD] = ((5 + 2) ÷ 2 ; (2 + 5) ÷ 2) = (3,5 ; 3,5)." },
-                { type: "line", label: "1.2", text: "Les diagonales ont le même milieu : ABCD est un parallélogramme." },
-                { type: "line", label: "2.1", text: "AC = √[(6 − 1)² + (6 − 1)²] = √50 ; BD = √[(2 − 5)² + (5 − 2)²] = √18. AC ≠ BD." },
-                { type: "line", label: "2.2", text: "AB = √[(5 − 1)² + (2 − 1)²] = √17 ; AD = √[(2 − 1)² + (5 − 1)²] = √17. AB = AD." },
-                { type: "line", label: "3.1", text: "Diagonales non égales → pas un rectangle (ni carré). Côtés consécutifs égaux (AB = AD) dans un parallélogramme → losange." },
-                { type: "line", label: "3.2", text: "« ABCD est un parallélogramme dont deux côtés consécutifs sont égaux : c'est un losange (mais pas un carré, car ses diagonales ne sont pas égales). »" },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces erreurs reproduisent des fautes réelles de candidats. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 6 : inégalité triangulaire non stricte",
-              objectifTag: "Existence d'un triangle",
-              enonce: "**Copie d'un candidat :** « 3, 4 et 7 forment un triangle car 7 = 3 + 4. »",
-              question: "a) Identifier l'erreur.\nb) Donner la conclusion correcte.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : inégalité prise au sens large.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "L'inégalité triangulaire est stricte : il faut 7 < 3 + 4, or 7 = 7." },
-                    { text: "Quand le plus grand côté égale la somme des deux autres, les points sont alignés." },
-                    { text: "3, 4, 7 ne forment donc pas un triangle (cas dégénéré)." },
-                  ],
-                },
-                { type: "note", text: "Toujours vérifier une inégalité STRICTE." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 7 : CCA utilisé comme cas d'égalité",
-              objectifTag: "Cas d'égalité",
-              enonce: "**Copie d'un candidat :** « Les triangles ont deux côtés égaux et un angle égal, donc ils sont égaux. »",
-              question: "a) Identifier l'erreur.\nb) Préciser à quelle condition la conclusion serait valable.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : l'angle n'est pas compris entre les deux côtés (CCA).**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Deux côtés et un angle non compris (CCA) ne caractérisent pas l'égalité." },
-                    { text: "Il faut que l'angle soit COMPRIS entre les deux côtés (cas CAC)." },
-                    { text: "Les cas valides sont CCC, CAC, ACA (et hypoténuse-côté pour les rectangles)." },
-                  ],
-                },
-                { type: "note", text: "Vérifier la position de l'angle (compris ou non) avant de conclure." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 8 : propriété simple prise pour caractéristique",
-              objectifTag: "Démonstration de la nature",
-              enonce: "**Copie d'un candidat :** « Les côtés opposés d'ABCD sont égaux, donc ABCD est un rectangle. »",
-              question: "a) Identifier l'erreur.\nb) Donner la conclusion correcte.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : propriété du parallélogramme prise pour celle du rectangle.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Côtés opposés égaux caractérise le parallélogramme, pas le rectangle." },
-                    { text: "Pour un rectangle, il faut un angle droit, ou des diagonales égales." },
-                    { text: "On ne peut conclure qu'au parallélogramme avec cette seule propriété." },
-                  ],
-                },
-                { type: "note", text: "Pour conclure à une figure précise, utiliser sa propriété caractéristique." },
-              ],
+              type: "corrigerCopies",
+              title: "Triangles, quadrilatères, polygones",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_TRIANGLES_QUADRILATERES_POLYGONES,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous. Formulées comme des questions de jury d'oral.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Comment classe-t-on un triangle ?",
-                  answer:
-                    "Selon les côtés : scalène (aucun égal), isocèle (au moins deux égaux), équilatéral (trois égaux). Selon les angles : acutangle (trois aigus), rectangle (un droit), obtusangle (un obtus). Les deux classifications se combinent.",
-                },
-                {
-                  question: "Énoncer l'inégalité triangulaire.",
-                  answer:
-                    "Trois longueurs forment un triangle si chacune est strictement inférieure à la somme des deux autres. Raccourci : le plus grand côté < somme des deux autres.",
-                  astuce: "L'inégalité est stricte : si égalité, les points sont alignés.",
-                },
-                {
-                  question: "Que valent la somme des angles d'un triangle et d'un polygone ?",
-                  answer:
-                    "Triangle : 180°. Polygone à n côtés : (n − 2) × 180°. Pour un polygone régulier, chaque angle vaut cette somme divisée par n.",
-                },
-                {
-                  question: "Quels sont les cas d'égalité des triangles ?",
-                  answer:
-                    "CCC (trois côtés), CAC (deux côtés et l'angle compris), ACA (deux angles et le côté compris). Pour les triangles rectangles : hypoténuse et un côté. CCA ne suffit pas.",
-                  astuce: "L'angle doit être COMPRIS entre les deux côtés.",
-                },
-                {
-                  question: "Quelles propriétés caractérisent un parallélogramme ?",
-                  answer:
-                    "Côtés opposés parallèles (définition), ou côtés opposés égaux, ou angles opposés égaux, ou diagonales se coupant en leur milieu. Cette dernière est la plus rapide en coordonnées.",
-                },
-                {
-                  question: "Comment distinguer rectangle, losange et carré ?",
-                  answer:
-                    "Rectangle : parallélogramme à angle droit (diagonales égales). Losange : parallélogramme à côtés égaux (diagonales perpendiculaires). Carré : les deux à la fois (diagonales égales ET perpendiculaires).",
-                },
-                {
-                  question: "Quelle est la hiérarchie des quadrilatères ?",
-                  answer:
-                    "Carré ⊂ rectangle ⊂ parallélogramme, et carré ⊂ losange ⊂ parallélogramme. Tout carré est un rectangle et un losange, mais pas l'inverse.",
-                  astuce: "Le carré est un cas particulier, jamais le cas général.",
-                },
-                {
-                  question: "Qu'est-ce qu'un trapèze ? Un cerf-volant ?",
-                  answer:
-                    "Trapèze : exactement une paire de côtés parallèles (les bases) ; ce n'est pas un parallélogramme. Cerf-volant : deux paires de côtés adjacents égaux, diagonales perpendiculaires, une diagonale axe de symétrie.",
-                },
-                {
-                  question: "Comment démontrer la nature d'un quadrilatère en coordonnées ?",
-                  answer:
-                    "Vérifier d'abord le parallélogramme (mêmes milieux des diagonales), puis la propriété caractéristique : diagonales égales → rectangle, longueurs de côtés égales → losange, les deux → carré.",
-                },
-                {
-                  question: "Quels polygones réguliers pavent le plan ? Pourquoi ?",
-                  answer:
-                    "Le triangle équilatéral (60°), le carré (90°) et l'hexagone (120°) : leur angle intérieur divise 360° exactement. Le pentagone (108°) ne pave pas (360 ÷ 108 n'est pas entier).",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche : un outil pour réviser rapidement avant le jour J, une fois chaque partie travaillée.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Triangles et quadrilatères", subtitle: "géométrie plane" },
@@ -883,17 +495,6 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
                   lines: ["Angle = (n − 2) × 180° ÷ n", "Pavages : triangle, carré, hexagone"],
                 },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },

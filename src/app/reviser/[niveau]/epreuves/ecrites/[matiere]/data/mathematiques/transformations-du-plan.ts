@@ -1,16 +1,13 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_TRANSFORMATIONS_DU_PLAN } from "./copies-transformations-du-plan";
+import { EXERCICES_TRANSFORMATIONS_DU_PLAN } from "./exercices-transformations-du-plan";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je définis la symétrie axiale (l'axe est la médiatrice de [MM']) et je construis l'image d'un point" },
-  { id: "e2", label: "Je définis la symétrie centrale (O milieu de [MM']) et je calcule les coordonnées de l'image" },
-  { id: "e3", label: "Je définis la translation (MM' = v⃗) et je calcule l'image par les coordonnées" },
-  { id: "e4", label: "Je connais la définition de la rotation et ses cas particuliers (180° donne la symétrie centrale)" },
-  { id: "e5", label: "Je connais l'homothétie et ses effets : longueurs ×|k|, aires ×k², angles conservés" },
-  { id: "e6", label: "Je sais que la symétrie axiale est la seule isométrie qui inverse l'orientation" },
-  { id: "e7", label: "Je connais les axes et centres de symétrie des figures courantes (rectangle, losange, carré, cercle)" },
-  { id: "e8", label: "Je sais que tout parallélogramme admet un centre de symétrie (mais pas toujours d'axe)" },
-  { id: "e9", label: "Je sais identifier une transformation à partir d'une figure et de son image (vecteurs, invariants)" },
+export const SAVOIR_FAIRE = [
+  { id: "symetrie-axiale", label: "Symétrie axiale" },
+  { id: "symetrie-centrale", label: "Symétrie centrale (coordonnées)" },
+  { id: "translation", label: "Translation (coordonnées)" },
+  { id: "axes-centres", label: "Axes et centres de symétrie" },
+  { id: "identifier", label: "Identifier une transformation" },
 ];
 
 export const ficheTransformationsDuPlan: Fiche = {
@@ -30,30 +27,13 @@ export const ficheTransformationsDuPlan: Fiche = {
     "Fiche CRPE sur les transformations du plan : symétrie axiale, symétrie centrale, translation, rotation et homothétie, propriétés conservées, axes et centres de symétrie, frises et pavages. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                { number: "①", title: "Les isométries", text: "Symétrie axiale, symétrie centrale, translation et rotation : elles conservent les distances." },
-                { number: "②", title: "L'homothétie", text: "Agrandir ou réduire depuis un centre : longueurs ×|k|, aires ×k², angles conservés." },
-                { number: "③", title: "Ce qui est conservé", text: "Le tableau des propriétés et la seule transformation qui inverse l'orientation." },
-                { number: "④", title: "Axes, centres, frises et pavages", text: "Symétries des figures usuelles et transformations qui répètent un motif." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -410,395 +390,58 @@ export const ficheTransformationsDuPlan: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "9 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Qu'est-ce qui caractérise l'axe d dans la symétrie qui envoie M sur M' ?",
-                  options: ["d passe par M", "d est la médiatrice de [MM']", "d est parallèle à [MM']", "d est le milieu de [MM']"],
-                  correctIndex: 1,
-                  explanation: "M' est le symétrique de M par rapport à d si et seulement si d est la médiatrice de [MM'].",
-                },
-                {
-                  objectifId: "e2",
-                  question: "O = (3, 1), M = (5, 4). Quel est le symétrique de M par rapport à O ?",
-                  options: ["(1, −2)", "(8, 5)", "(4, 2,5)", "(−5, −4)"],
-                  correctIndex: 0,
-                  explanation: "M' = (2×3 − 5, 2×1 − 4) = (1, −2).",
-                },
-                {
-                  objectifId: "e3",
-                  question: "Image de M(1, 4) par la translation de vecteur v⃗ = (3, −2) ?",
-                  options: ["(4, 6)", "(3, −8)", "(4, 2)", "(−2, 6)"],
-                  correctIndex: 2,
-                  explanation: "M'(1 + 3, 4 − 2) = (4, 2).",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Une rotation d'angle 180° est équivalente à :",
-                  options: ["une translation", "une symétrie axiale", "une symétrie centrale", "l'identité"],
-                  correctIndex: 2,
-                  explanation: "La rotation de centre O et d'angle 180° est la symétrie centrale de centre O.",
-                },
-                {
-                  objectifId: "e5",
-                  question: "On applique une homothétie de rapport 3 à un triangle. Comment varient ses angles ?",
-                  options: ["Ils sont multipliés par 3", "Ils sont multipliés par 9", "Ils restent inchangés", "Ils sont divisés par 3"],
-                  correctIndex: 2,
-                  explanation: "L'homothétie conserve les angles. Seules les longueurs (×3) et les aires (×9) changent.",
-                },
-                {
-                  objectifId: "e6",
-                  question: "Quelle est la seule isométrie qui inverse l'orientation ?",
-                  options: ["La translation", "La rotation", "La symétrie centrale", "La symétrie axiale"],
-                  correctIndex: 3,
-                  explanation: "La symétrie axiale est la seule isométrie inversante (comme un miroir).",
-                },
-                {
-                  objectifId: "e7",
-                  question: "Combien d'axes de symétrie possède un rectangle non carré ?",
-                  options: ["4", "2", "1", "0"],
-                  correctIndex: 1,
-                  explanation: "2 axes : les médianes parallèles aux côtés. Les diagonales ne sont pas des axes.",
-                },
-                {
-                  objectifId: "e8",
-                  question: "Quelle propriété caractérise un parallélogramme parmi les quadrilatères ?",
-                  options: ["Il a un axe de symétrie", "Il a un centre de symétrie", "Il a 4 axes de symétrie", "Il n'a aucune symétrie"],
-                  correctIndex: 1,
-                  explanation: "Un quadrilatère est un parallélogramme si et seulement si il admet un centre de symétrie (l'intersection des diagonales).",
-                },
-                {
-                  objectifId: "e9",
-                  question: "Une figure et son image sont isométriques avec l'orientation inversée. Quelle transformation ?",
-                  options: ["Translation", "Rotation", "Symétrie axiale", "Homothétie"],
-                  correctIndex: 2,
-                  explanation: "Orientation inversée et distances conservées : c'est une symétrie axiale.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Transformations du plan",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_TRANSFORMATIONS_DU_PLAN,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Identifiez la transformation, appliquez la définition rigoureusement, puis vérifiez que les propriétés attendues sont bien conservées. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : je vérifie que j'ai compris le Cours",
-              sub: "Axes, centres et coordonnées",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : axes et centres de symétrie",
-              objectifTag: "Symétries des figures",
-              question:
-                "a) Combien d'axes de symétrie possède un rectangle non carré ? Les décrire.\nb) Un triangle isocèle non équilatéral a-t-il un centre de symétrie ?\nc) Un parallélogramme non rectangle a-t-il des axes ? Un centre ?",
-              correction: [
-                { type: "line", label: "a)", text: "2 axes : les deux médianes parallèles aux côtés. Les diagonales ne sont pas des axes." },
-                { type: "line", label: "b)", text: "Non. Le sommet opposé à la base n'aurait pas de symétrique dans la figure." },
-                { type: "line", label: "c)", text: "Aucun axe, mais un centre de symétrie : l'intersection des diagonales (propriété du parallélogramme)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : coordonnées et transformations",
-              objectifTag: "Calcul d'images",
-              enonce: "Dans un repère : M(4, 3), centre O(1, 2), vecteur v⃗ = (−2, 5).",
-              question: "a) Coordonnées de M', symétrique de M par rapport à O.\nb) Coordonnées de M'', image de M par la translation de vecteur v⃗.",
-              correction: [
-                { type: "line", label: "a)", text: "M'(2×1 − 4, 2×2 − 3) = (−2, 1). Vérif. : milieu de [MM'] = (1, 2) = O ✓." },
-                { type: "line", label: "b)", text: "M''(4 − 2, 3 + 5) = (2, 8)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : propriétés et identification",
-              sub: "Raisonner sur la conservation",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : symétrie centrale et parallélogramme",
-              objectifTag: "Démonstration",
-              enonce: "ABCD est un parallélogramme. O est l'intersection de ses diagonales.",
-              question: "a) Montrer que B est le symétrique de D par rapport à O.\nb) En déduire que A est le symétrique de C par rapport à O.",
-              correction: [
-                { type: "line", label: "a)", text: "Les diagonales d'un parallélogramme se coupent en leur milieu, donc O est le milieu de [BD] : B et D sont symétriques par rapport à O." },
-                { type: "line", label: "b)", text: "De même, O est le milieu de [AC], donc A et C sont symétriques par rapport à O." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : identifier la transformation",
-              objectifTag: "Vecteurs et invariants",
-              enonce: "Le triangle T' de sommets A'(3,5), B'(6,3), C'(5,7) est l'image du triangle T de sommets A(1,1), B(4,−1), C(3,3).",
-              question: "a) Vérifier que c'est une isométrie en comparant AB et A'B'.\nb) Calculer les vecteurs AA', BB', CC'.\nc) Identifier la transformation.",
-              correction: [
-                { type: "line", label: "a)", text: "AB = √(3² + (−2)²) = √13 et A'B' = √(3² + (−2)²) = √13 : longueurs égales, c'est une isométrie." },
-                { type: "line", label: "b)", text: "AA' = (2, 4), BB' = (2, 4), CC' = (2, 4)." },
-                { type: "line", label: "c)", text: "Tous les vecteurs sont égaux : c'est la translation de vecteur (2, 4)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : problème contextualisé",
-              sub: "Symétrie et aire",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : le jardin symétrique",
-              objectifTag: "Symétrie axiale, aire",
-              enonce: "Une moitié de jardin est un triangle A(0,0), B(6,0), C(3,4) (en mètres). L'autre moitié est son symétrique par rapport à l'axe d'équation x = 6.",
-              question: "a) Calculer les coordonnées de A', B', C', symétriques par rapport à x = 6.\nb) L'axe x = 6 est-il un axe de symétrie du jardin complet ?\nc) La surface totale vaut-elle le double de celle de ABC ?",
-              correction: [
-                { type: "line", label: "a)", text: "Pour M(x, y), M'(12 − x, y) : A'(12, 0), B'(6, 0), C'(9, 4)." },
-                { type: "line", label: "b)", text: "Oui : le jardin complet est sa propre image par cette symétrie, donc x = 6 en est un axe de symétrie." },
-                { type: "line", label: "c)", text: "Oui : la symétrie axiale conserve les aires, et le triangle (entièrement à gauche de x = 6) et son image ne se chevauchent pas — ils ne se touchent qu'au sommet B(6, 0). Aire(ABC) = ½ × 6 × 4 = 12 m², donc surface totale = 24 m²." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Cet exercice reproduit le format d'un sujet de concours : il combine nature d'un quadrilatère, symétries et pavage par translations. Comptez environ 25 minutes, en conditions réelles.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 4 : le carrelage de la salle de classe",
-              objectifTag: "Quadrilatère, symétries, pavage",
-              enonce:
-                "Une enseignante crée un pavage décoratif à partir d'un motif de base : le quadrilatère ABCD avec A(0,0), B(2,0), C(3,2), D(1,2). Elle génère le pavage en translatant le motif.",
-              question:
-                "1.1 Identifier la nature de ABCD à l'aide des vecteurs AB⃗ et DC⃗.\n1.2 ABCD a-t-il un axe de symétrie ? Un centre de symétrie ?\n2.1 Calculer les coordonnées du motif translaté de vecteur v⃗₁ = (2, 0).\n2.2 Calculer les coordonnées du motif translaté de vecteur v⃗₂ = (1, 2).\n2.3 Pourquoi les translations sont-elles adaptées pour générer un pavage sans chevauchement ?",
-              correction: [
-                { type: "line", label: "1.1", text: "AB⃗ = (2, 0) et DC⃗ = C − D = (2, 0). AB⃗ = DC⃗, donc ABCD est un parallélogramme." },
-                { type: "line", label: "1.2", text: "AB⃗ = (2, 0) et AD⃗ = (1, 2) : côtés ni perpendiculaires ni de même longueur, donc parallélogramme quelconque. Pas d'axe de symétrie, mais un centre : le milieu de [AC] = (1,5 ; 1)." },
-                { type: "line", label: "2.1", text: "v⃗₁ = (2, 0) : A₁(2,0), B₁(4,0), C₁(5,2), D₁(3,2)." },
-                { type: "line", label: "2.2", text: "v⃗₂ = (1, 2) : A₂(1,2), B₂(3,2), C₂(4,4), D₂(2,4)." },
-                { type: "line", label: "2.3", text: "La translation est une isométrie : elle conserve la forme et l'aire du motif. En répétant le motif par deux vecteurs non colinéaires, on recouvre le plan sans trou ni chevauchement." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces erreurs reproduisent des fautes réelles de candidats. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 5 : diagonales prises pour des axes",
-              objectifTag: "Axes de symétrie",
-              enonce: "**Copie d'un candidat :** « Un rectangle a 4 axes de symétrie : les 2 diagonales et les 2 médianes. »",
-              question: "a) Identifier l'erreur.\nb) Donner la bonne réponse.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : les diagonales d'un rectangle non carré ne sont pas des axes de symétrie.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Par réflexion autour d'une diagonale, le rectangle ne se superpose pas à lui-même." },
-                    { text: "Le rectangle non carré a 2 axes : les médianes parallèles aux côtés." },
-                    { text: "Le carré, lui, en a 4 (2 médianes + 2 diagonales)." },
-                  ],
-                },
-                { type: "note", text: "Les diagonales sont axes uniquement pour le losange et le carré." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 6 : orientation et symétrie axiale",
-              objectifTag: "Propriétés conservées",
-              enonce: "**Copie d'un candidat :** « La symétrie axiale est une isométrie, donc elle conserve l'orientation comme la translation. »",
-              question: "a) Identifier l'erreur.\nb) Corriger.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : la symétrie axiale inverse l'orientation.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Elle conserve bien les distances, les angles et les aires, mais retourne la figure." },
-                    { text: "Un triangle antihoraire devient horaire après une symétrie axiale." },
-                    { text: "C'est la seule isométrie inversante ; translation, rotation et symétrie centrale conservent l'orientation." },
-                  ],
-                },
-                { type: "note", text: "Penser au miroir : il retourne l'image." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 7 : homothétie et angles",
-              objectifTag: "Homothétie",
-              enonce: "**Copie d'un candidat :** « On applique une homothétie de rapport 3 à un triangle rectangle : les angles sont multipliés par 3 comme les longueurs. »",
-              question: "a) Identifier l'erreur.\nb) Corriger.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : une homothétie conserve les angles.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Multiplier des angles par 3 dépasserait vite 180° : impossible." },
-                    { text: "Seules les longueurs sont multipliées par |k| (×3) et les aires par k² (×9)." },
-                    { text: "Le triangle image reste rectangle, avec les mêmes angles : il est semblable à l'original." },
-                  ],
-                },
-                { type: "note", text: "Homothétie : longueurs ×k, aires ×k², angles inchangés." },
-              ],
+              type: "corrigerCopies",
+              title: "Transformations du plan",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_TRANSFORMATIONS_DU_PLAN,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous. Formulées comme des questions de jury d'oral.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Définir la symétrie axiale. Quelle propriété caractérise le point image ?",
-                  answer:
-                    "M' est le symétrique de M par rapport à l'axe d si et seulement si d est la médiatrice de [MM'] (d ⊥ (MM') et d coupe [MM'] en son milieu). Conserve distances, angles et aires.",
-                  astuce: "La symétrie axiale inverse l'orientation : c'est la seule isométrie inversante.",
-                },
-                {
-                  question: "Définir la symétrie centrale et la formule des coordonnées de l'image.",
-                  answer:
-                    "M' est le symétrique de M par rapport à O si O est le milieu de [MM']. Si O = (a, b) et M = (x, y), alors M' = (2a − x, 2b − y). Conserve distances, angles, aires et orientation.",
-                },
-                {
-                  question: "Définir la translation. Comment construire l'image d'un point ?",
-                  answer:
-                    "La translation de vecteur v⃗ envoie M sur M' tel que MM'⃗ = v⃗. Si v⃗ = (a, b), alors M(x, y) → M'(x + a, y + b). Conserve tout, dont l'orientation.",
-                },
-                {
-                  question: "Qu'est-ce qu'une rotation ? Ses cas particuliers ?",
-                  answer:
-                    "Rotation de centre O et d'angle α : M' tel que OM = OM' et l'angle (OM⃗, OM'⃗) = α. Conserve distances, angles, aires, orientation. α = 180° donne la symétrie centrale, α = 360° l'identité.",
-                },
-                {
-                  question: "Définir l'homothétie. Qu'est-ce qui est conservé ?",
-                  answer:
-                    "Homothétie de centre O et de rapport k : M' tel que OM'⃗ = k × OM⃗. Conserve les angles, la forme et l'orientation (si k > 0). Les longueurs sont multipliées par |k|, les aires par k². k = −1 donne la symétrie centrale.",
-                  astuce: "Ce n'est une isométrie que si |k| = 1.",
-                },
-                {
-                  question: "Tableau : quelle transformation conserve quoi ?",
-                  answer:
-                    "Les quatre isométries (axiale, centrale, translation, rotation) conservent distances, angles et aires. Seule la symétrie axiale inverse l'orientation. L'homothétie (k ≠ ±1) multiplie les longueurs par |k| et les aires par k², en conservant les angles.",
-                },
-                {
-                  question: "Axes et centres de symétrie : rectangle, losange, carré, cercle ?",
-                  answer:
-                    "Rectangle : 2 axes (médianes), 1 centre. Losange : 2 axes (diagonales), 1 centre. Carré : 4 axes (2 médianes + 2 diagonales), 1 centre. Cercle : une infinité d'axes (tout diamètre), 1 centre.",
-                  astuce: "Rectangle non carré : les diagonales ne sont pas des axes.",
-                },
-                {
-                  question: "Lien entre parallélogramme et symétrie centrale ?",
-                  answer:
-                    "Un quadrilatère est un parallélogramme si et seulement si il admet un centre de symétrie : le point d'intersection des diagonales. Il n'a pas d'axe en général (sauf rectangle, losange, carré).",
-                },
-                {
-                  question: "Comment identifier une translation à partir d'une figure et de son image ?",
-                  answer:
-                    "On calcule les vecteurs AA', BB', CC' pour les sommets et leurs images. S'ils sont tous égaux, c'est la translation de ce vecteur. Sinon, ce n'est pas une translation.",
-                },
-                {
-                  question: "Composée de deux symétries axiales ? De deux symétries centrales ?",
-                  answer:
-                    "Deux symétries axiales d'axes parallèles : translation. D'axes sécants : rotation (centre = intersection, angle = double de l'angle entre les axes). Deux symétries centrales : translation.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche : un outil pour réviser rapidement avant le jour J, une fois chaque partie travaillée.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Transformations", subtitle: "isométries + homothétie" },
@@ -835,17 +478,6 @@ export const ficheTransformationsDuPlan: Fiche = {
                   lines: ["carré : 4 axes, 1 centre", "parallélogramme : 1 centre"],
                 },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },

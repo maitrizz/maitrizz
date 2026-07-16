@@ -1,15 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { COPIES_CALCUL_LITTERAL } from "./copies-calcul-litteral";
+import { EXERCICES_CALCUL_LITTERAL } from "./exercices-calcul-litteral";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "e1", label: "Je distingue variable (expression) et inconnue (équation), et je n'applique pas « = 0 » à une expression à développer" },
-  { id: "e2", label: "Je réduis une expression en regroupant correctement les termes semblables" },
-  { id: "e3", label: "Je développe avec la distributivité simple et double, en distribuant le signe − sur tous les termes" },
-  { id: "e4", label: "Je connais les 3 identités remarquables et je les applique dans les deux sens" },
-  { id: "e5", label: "Je factorise par facteur commun et je pousse jusqu'à la factorisation maximale" },
-  { id: "e6", label: "Je traduis un programme de calcul en expression littérale, je la développe et je conclus" },
-  { id: "e7", label: "Je prouve un résultat général par le calcul (formes 2k, 2k+1, entiers consécutifs) avec une conclusion rédigée" },
-  { id: "e8", label: "Je sais expliquer pourquoi des exemples numériques ne constituent pas une preuve" },
+export const SAVOIR_FAIRE = [
+  { id: "reduire", label: "Réduire une expression" },
+  { id: "developper", label: "Développer (distributivité)" },
+  { id: "identites", label: "Utiliser les identités remarquables" },
+  { id: "factoriser", label: "Factoriser au maximum" },
+  { id: "programme", label: "Traduire un programme de calcul" },
+  { id: "prouver", label: "Prouver par le calcul" },
 ];
 
 export const ficheCalculLitteral: Fiche = {
@@ -29,46 +28,13 @@ export const ficheCalculLitteral: Fiche = {
     "Fiche CRPE sur le calcul littéral : variable et inconnue, réduire, développer (distributivité simple et double), factoriser, les 3 identités remarquables, programmes de calcul et preuve par le calcul. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                {
-                  number: "①",
-                  title: "Variable et inconnue",
-                  text: "Une lettre, deux rôles : généraliser ou chercher une valeur précise.",
-                },
-                {
-                  number: "②",
-                  title: "Réduire et développer",
-                  text: "Regrouper les termes semblables, puis supprimer les parenthèses par distributivité.",
-                },
-                {
-                  number: "③",
-                  title: "Factoriser et identités remarquables",
-                  text: "L'opération inverse du développement, et trois formules à connaître par cœur.",
-                },
-                {
-                  number: "④",
-                  title: "Prouver par le calcul",
-                  text: "Programmes de calcul et démonstrations : ce que le jury valorise vraiment.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -511,450 +477,58 @@ export const ficheCalculLitteral: Fiche = {
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Entraînez-vous.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
-            },
-            {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "e1",
-                  question: "Dans l'expression 3x + 1 (sans signe =), quel est le rôle de x ?",
-                  options: ["Une inconnue à trouver", "Une variable : x peut prendre toutes les valeurs", "Une constante", "Un coefficient"],
-                  correctIndex: 1,
-                  explanation: "Sans égalité contraignante, x est une variable : l'expression prend une valeur différente selon x. Dans 3x + 1 = 7, x serait une inconnue.",
-                },
-                {
-                  objectifId: "e2",
-                  question: "Réduire 4x² + 3x − x² − 7x.",
-                  options: ["3x² − 4x", "5x² − 4x", "3x² + 10x", "−x⁴"],
-                  correctIndex: 0,
-                  explanation: "On regroupe les semblables : (4x² − x²) + (3x − 7x) = 3x² − 4x. On ne mélange jamais x² et x.",
-                },
-                {
-                  objectifId: "e3",
-                  question: "Développer −(3x − 2).",
-                  options: ["−3x − 2", "−3x + 2", "3x − 2", "−3x + 2x"],
-                  correctIndex: 1,
-                  explanation: "Le signe − change le signe de chaque terme : −(3x − 2) = −3x + 2. C'est l'erreur la plus fréquente.",
-                },
-                {
-                  objectifId: "e4",
-                  question: "Développer (x + 3)².",
-                  options: ["x² + 9", "x² + 3x + 9", "x² + 6x + 9", "x² + 6x + 3"],
-                  correctIndex: 2,
-                  explanation: "(a + b)² = a² + 2ab + b² : (x + 3)² = x² + 2 × x × 3 + 9 = x² + 6x + 9. Le terme 2ab ne disparaît jamais.",
-                },
-                {
-                  objectifId: "e7",
-                  question: "Pour prouver que la somme de trois entiers consécutifs est un multiple de 3, comment les modéliser ?",
-                  options: [
-                    "Tester trois exemples au hasard",
-                    "n, n + 1, n + 2 (n entier) : leur somme vaut 3n + 3 = 3(n + 1)",
-                    "2k et 2k + 1",
-                    "Écrire trois carrés",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Trois consécutifs s'écrivent n, n + 1, n + 2. Leur somme n + (n + 1) + (n + 2) = 3n + 3 = 3(n + 1) est multiple de 3 pour tout entier n. Des exemples n'auraient rien prouvé.",
-                },
-                {
-                  objectifId: "e5",
-                  question: "Factoriser au maximum 12x² − 8x.",
-                  options: ["4(3x² − 2x)", "4x(3x − 2)", "2x(6x − 4)", "x(12x − 8)"],
-                  correctIndex: 1,
-                  explanation: "Facteur commun : PGCD(12, 8) = 4 et un x commun, soit 4x. 12x² − 8x = 4x(3x − 2).",
-                },
-                {
-                  objectifId: "e6",
-                  question: "Programme : choisir x, multiplier par lui-même, ajouter le double de x, ajouter 1. Quel résultat ?",
-                  options: ["x² + 1, jamais un carré", "(x + 1)², toujours un carré parfait", "2x + 1", "x² + 2"],
-                  correctIndex: 1,
-                  explanation: "x² + 2x + 1 = (x + 1)² : le résultat est toujours le carré du nombre qui suit x.",
-                },
-                {
-                  objectifId: "e8",
-                  question: "Un élève vérifie une propriété pour n = 1, 2, 3, 4 et conclut qu'elle est vraie pour tous les entiers. Est-ce une preuve ?",
-                  options: ["Oui, 4 exemples suffisent", "Non : des exemples illustrent mais ne prouvent pas pour tous les entiers", "Oui, si les exemples sont bien choisis", "Cela dépend de la propriété"],
-                  correctIndex: 1,
-                  explanation: "Aucun nombre d'exemples positifs ne prouve une propriété pour TOUS les entiers. Seul un raisonnement avec une lettre le fait ; un contre-exemple, lui, suffit à réfuter.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
+              type: "exerciceBank",
+              title: "Calcul littéral et expressions algébriques",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_CALCUL_LITTERAL,
             },
           ],
         },
         {
-          id: "appli",
-          label: "Application",
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "success",
-              text: "Lisez bien la consigne : « développer », « factoriser » et « prouver » ne se traitent pas de la même façon. Vérifiez chaque résultat avec une valeur. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              label: "Échauffement : je vérifie que j'ai compris le Cours",
-              sub: "Réduire et développer",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 1 : réduire et calculer",
-              objectifTag: "Réduire",
-              question: "On donne A = 3x² − 5x + 2 + x² + 4x − 7 et B = (x + 2)(x − 2).\na) Réduire A.\nb) Développer B et nommer l'identité utilisée.\nc) Calculer A et B pour x = 3.",
-              correction: [
-                { type: "line", label: "a)", text: "A = (3x² + x²) + (−5x + 4x) + (2 − 7) = 4x² − x − 5." },
-                { type: "line", label: "b)", text: "Identité (a + b)(a − b) = a² − b² : B = x² − 4." },
-                { type: "line", label: "c)", text: "A(3) = 36 − 3 − 5 = 28 ; B(3) = 9 − 4 = 5." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Question 2 : développer et réduire",
-              objectifTag: "Distributivité et identités",
-              question: "Développer et réduire :\na) 3(2x + 1) − 2(x − 4)\nb) (x + 5)(x − 2)\nc) (3x − 1)²\nd) (x + 7)(x − 7)",
-              correction: [
-                { type: "line", label: "a)", text: "6x + 3 − 2x + 8 = 4x + 11." },
-                { type: "line", label: "b)", text: "x² − 2x + 5x − 10 = x² + 3x − 10." },
-                { type: "line", label: "c)", text: "(3x)² − 2 × 3x × 1 + 1² = 9x² − 6x + 1." },
-                { type: "line", label: "d)", text: "x² − 7² = x² − 49." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n1",
-              stars: "★☆☆",
-              label: "Niveau 1 : factoriser",
-              sub: "Facteur commun et identités",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 1 : factoriser au maximum",
-              objectifTag: "Factorisation",
-              question: "Factoriser le plus possible :\na) 5x + 15\nb) x² − 9x\nc) 4x² − 1\nd) x² + 6x + 9\ne) 2x² − 8",
-              correction: [
-                { type: "line", label: "a)", text: "5(x + 3)." },
-                { type: "line", label: "b)", text: "x(x − 9)." },
-                { type: "line", label: "c)", text: "(2x)² − 1² = (2x + 1)(2x − 1)." },
-                { type: "line", label: "d)", text: "x² + 2 × x × 3 + 3² = (x + 3)²." },
-                { type: "line", label: "e)", text: "2(x² − 4) = 2(x + 2)(x − 2) : facteur commun 2, puis identité 3." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n1",
-              title: "Exercice 2 : calcul malin",
-              objectifTag: "Identités remarquables",
-              question: "À l'aide d'une identité remarquable, sans calculatrice :\na) 98 × 102\nb) 47² (avec 47 = 50 − 3)\nc) 99 × 101",
-              correction: [
-                { type: "line", label: "a)", text: "(100 − 2)(100 + 2) = 100² − 2² = 10 000 − 4 = 9 996." },
-                { type: "line", label: "b)", text: "(50 − 3)² = 2 500 − 300 + 9 = 2 209." },
-                { type: "line", label: "c)", text: "(100 − 1)(100 + 1) = 10 000 − 1 = 9 999." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : programmes de calcul et aires",
-              sub: "Traduire, développer, interpréter",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 3 : le carreleur",
-              objectifTag: "Mise en équation et aires",
-              enonce: "Un carreleur pose un carré de côté x mètres, puis une bordure de 2 mètres de large tout autour.",
-              question:
-                "a) Exprimer l'aire totale (carré + bordure) en fonction de x, puis développer.\nb) En déduire l'aire de la seule bordure, réduite.\nc) Vérifier pour x = 4.",
-              correction: [
-                { type: "line", label: "a)", text: "Côté total = x + 2 + 2 = x + 4. Aire totale = (x + 4)² = x² + 8x + 16." },
-                { type: "line", label: "b)", text: "Aire bordure = (x + 4)² − x² = 8x + 16." },
-                { type: "line", label: "c)", text: "x = 4 : aire totale = 8² = 64 ; bordure = 8 × 4 + 16 = 48, et 64 − 16 = 48 ✓." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 4 : le programme du magicien",
-              objectifTag: "Programme de calcul",
-              enonce: "Programme : « Choisir un nombre, ajouter 4, multiplier le résultat par le nombre de départ, ajouter 4. »",
-              question:
-                "a) Vérifier avec x = 3 et x = 5.\nb) Traduire chaque étape en expression algébrique (x = nombre de départ).\nc) Développer et factoriser pour montrer que le résultat est toujours un carré parfait.",
-              correction: [
-                { type: "line", label: "a)", text: "x = 3 : (3 + 4) × 3 + 4 = 25 = 5² ; x = 5 : (5 + 4) × 5 + 4 = 49 = 7²." },
-                { type: "line", label: "b)", text: "x → x + 4 → x(x + 4) = x² + 4x → x² + 4x + 4." },
-                { type: "line", label: "c)", text: "x² + 4x + 4 = (x + 2)² : toujours le carré du nombre de départ augmenté de 2." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : preuves niveau CRPE",
-              sub: "Démontrer, conjecturer, prendre du recul",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 5 : pairs, impairs, consécutifs",
-              objectifTag: "Preuve par le calcul",
-              question:
-                "a) Montrer que le produit de deux entiers impairs est toujours impair.\nb) Montrer que la différence des carrés de deux entiers consécutifs est toujours impaire.",
-              correction: [
-                { type: "line", label: "a)", text: "Soient 2a + 1 et 2b + 1 impairs. (2a + 1)(2b + 1) = 4ab + 2a + 2b + 1 = 2(2ab + a + b) + 1 : de la forme 2 × entier + 1, donc impair." },
-                { type: "line", label: "b)", text: "Deux consécutifs n et n + 1 : (n + 1)² − n² = (2n + 1) × 1 = 2n + 1, impair pour tout n." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 6 : la piscine et sa bordure",
-              objectifTag: "Aires et factorisation",
-              enonce: "Une piscine carrée de côté x mètres est entourée d'une bordure de 1 mètre de large.",
-              question:
-                "a) Exprimer l'aire totale (piscine + bordure) en fonction de x.\nb) En déduire l'aire de la bordure B(x), développée et réduite.\nc) Factoriser B(x) et l'interpréter.\nd) Vérifier pour x = 5.",
-              correction: [
-                { type: "line", label: "a)", text: "Carré de côté (x + 2) : aire totale = (x + 2)²." },
-                { type: "line", label: "b)", text: "B(x) = (x + 2)² − x² = x² + 4x + 4 − x² = 4x + 4." },
-                { type: "line", label: "c)", text: "B(x) = 4(x + 1) : on retrouve les 4 bandes de la bordure, de longueur (x + 1)." },
-                { type: "line", label: "d)", text: "x = 5 : total 7² = 49, piscine 25, bordure 24 ; et 4 × 5 + 4 = 24 ✓." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Cet exercice reproduit le format et les exigences d'un sujet de concours, où calcul pur et programme de calcul sont toujours associés. Comptez 20 à 25 minutes, en conditions réelles.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Type CRPE · Exercice 7 : les deux programmes rivaux",
-              objectifTag: "Programme de calcul, preuve, factorisation",
-              enonce:
-                "Deux élèves proposent un programme de calcul.\nAlice : « Choisir un nombre, le multiplier par lui-même, ajouter le triple du nombre, retrancher 4. »\nBob : « Choisir un nombre, y soustraire 1, multiplier le résultat par le nombre augmenté de 4. »",
-              question:
-                "1.1 Appliquer le programme d'Alice pour x = 2 et x = −1.\n1.2 Appliquer le programme de Bob pour x = 2 et x = −1.\n2.1 En appelant x le nombre de départ, exprimer le résultat d'Alice, développé et réduit.\n2.2 Faire de même pour Bob.\n2.3 Les deux programmes donnent-ils toujours le même résultat ? Justifier.\n3.1 Factoriser l'expression de 2.1.\n3.2 En déduire les valeurs de x pour lesquelles le résultat d'Alice est nul.\n4.1 À quel niveau ces activités sont-elles inscrites au programme, et quel est leur intérêt ?\n4.2 Un élève de 4e dit : « J'ai testé pour x = 0, 1, 2, 3, c'est donc prouvé. » Que lui répondre ?",
-              correction: [
-                { type: "line", label: "1.1", text: "Alice : x = 2 → 4 + 6 − 4 = 6 ; x = −1 → 1 − 3 − 4 = −6." },
-                { type: "line", label: "1.2", text: "Bob : x = 2 → 1 × 6 = 6 ; x = −1 → (−2) × 3 = −6." },
-                { type: "line", label: "2.1", text: "Alice : x² + 3x − 4." },
-                { type: "line", label: "2.2", text: "Bob : (x − 1)(x + 4) = x² + 4x − x − 4 = x² + 3x − 4." },
-                { type: "line", label: "2.3", text: "Oui : les deux se réduisent à x² + 3x − 4, identiques pour tout x." },
-                { type: "line", label: "3.1", text: "x² + 3x − 4 = (x − 1)(x + 4) (vérification : x² + 4x − x − 4 = x² + 3x − 4)." },
-                { type: "line", label: "3.2", text: "(x − 1)(x + 4) = 0 ⟺ x = 1 ou x = −4 (propriété du produit nul, détaillée en [N°9](fiche:equations-inequations-systemes))." },
-                { type: "line", label: "4.1", text: "Programmes de calcul au cycle 4 (BOEN 2020), domaine calcul littéral : point d'entrée dans l'algèbre, ils donnent du sens à la variable et montrent que l'algèbre prouve ce que l'arithmétique illustre." },
-                { type: "line", label: "4.2", text: "« Tu as vérifié pour 4 valeurs : c'est utile pour détecter une erreur, mais pas une preuve. En montrant que les deux expressions se réduisent à x² + 3x − 4, on prouve l'égalité pour tout x en une seule fois. »" },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              text: "Ces erreurs reproduisent des fautes réelles de candidats. Identifier une erreur et la corriger rigoureusement est une compétence directement valorisée au CRPE.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 8 : le signe − devant une parenthèse",
-              objectifTag: "Distributivité du signe −",
-              enonce: "**Copie d'un candidat :** développer et réduire A = (x + 5) − (2x − 3).\n*Réponse produite :* « A = x + 5 − 2x − 3 = −x + 2 ».",
-              question: "a) Identifier l'erreur.\nb) Donner le calcul correct.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : le signe − n'a pas été distribué sur tous les termes.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Le candidat a écrit −(2x − 3) = −2x − 3, en oubliant de changer le signe de −3." },
-                    { text: "−(2x − 3) = −2x + 3 (chaque signe intérieur est retourné)." },
-                    { text: "Correct : A = x + 5 − 2x + 3 = −x + 8." },
-                  ],
-                },
-                { type: "note", text: "Astuce : voir le − comme × (−1) appliqué à toute la parenthèse." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 9 : (a + b)² = a² + b²",
-              objectifTag: "Identités remarquables",
-              enonce: "**Copie d'un candidat :** développer (x + 4)².\n*Réponse produite :* « (x + 4)² = x² + 16 ».",
-              question: "a) Identifier l'erreur.\nb) Donner le développement correct et une vérification.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : le terme du milieu 2ab a été oublié.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "(a + b)² n'est pas égal à a² + b² : il manque 2ab." },
-                    { text: "(x + 4)² = x² + 2 × x × 4 + 16 = x² + 8x + 16." },
-                    { text: "Vérification x = 1 : (1 + 4)² = 25 ; la formule juste donne 1 + 8 + 16 = 25 ✓ (la fausse donnait 17)." },
-                  ],
-                },
-                { type: "note", text: "Réciter l'identité en entier détecte systématiquement cette erreur." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Erreur type · Exercice 10 : confondre variable et inconnue",
-              objectifTag: "Variable vs inconnue",
-              enonce: "**Copie d'un candidat :** on demande de factoriser 2x + 6.\n*Réponse produite :* « 2x + 6 = 0 donc x = −3 ».",
-              question: "a) Identifier l'erreur conceptuelle.\nb) Donner la réponse à la vraie question.",
-              correction: [
-                { type: "paragraph", text: "**Erreur : une expression a été transformée en équation.**" },
-                {
-                  type: "checklist",
-                  items: [
-                    { bad: true, text: "Le candidat a posé « = 0 » de lui-même : il a traité x comme une inconnue alors que la consigne demandait de manipuler une expression." },
-                    { text: "Factoriser 2x + 6 = 2(x + 3)." },
-                    { text: "Résoudre 2x + 6 = 0 donnerait bien x = −3, mais ce n'était pas la question." },
-                  ],
-                },
-                { type: "note", text: "« Développer » ou « factoriser » → x est une variable. « Résoudre » ou « trouver x » → x est une inconnue." },
-              ],
+              type: "corrigerCopies",
+              title: "Calcul littéral et expressions algébriques",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
+              copies: COPIES_CALCUL_LITTERAL,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              text: "Essayez de répondre dans votre tête avant de révéler la réponse, puis évaluez-vous. Formulées comme des questions de jury d'oral.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Variable ou inconnue : quelle différence ?",
-                  answer:
-                    "Variable : lettre qui peut prendre toutes les valeurs, pour écrire une formule générale (dans 3x + 1, x est une variable). Inconnue : lettre dont on cherche la valeur précise qui rend une équation vraie (dans 3x + 1 = 7, x = 2).",
-                  astuce: "Même lettre, rôle différent selon qu'on a une expression ou une équation.",
-                },
-                {
-                  question: "Développer, réduire : que signifient ces mots ?",
-                  answer:
-                    "Développer : transformer un produit en somme en distribuant, 3(x + 2) = 3x + 6. Réduire : regrouper les termes semblables (même partie littérale), 3x + 5x = 8x. On ne réduit pas 4x² + 2x (pas semblables).",
-                },
-                {
-                  question: "Factoriser : qu'est-ce que c'est ?",
-                  answer:
-                    "L'inverse de développer : transformer une somme en produit en mettant un facteur commun en évidence. 6x + 9 = 3(2x + 3). On vérifie toujours en redéveloppant, et on factorise au maximum.",
-                },
-                {
-                  question: "Énoncer les 3 identités remarquables.",
-                  answer:
-                    "(a + b)² = a² + 2ab + b² ; (a − b)² = a² − 2ab + b² ; (a + b)(a − b) = a² − b². Elles servent dans les deux sens, développement et factorisation.",
-                  astuce: "(a + b)² ≠ a² + b² : le terme 2ab ne disparaît jamais.",
-                },
-                {
-                  question: "Comment reconnaître a² − b² pour factoriser ?",
-                  answer:
-                    "Deux termes séparés par un −, tous deux des carrés parfaits. 9x² − 16 = (3x)² − 4² = (3x + 4)(3x − 4). Application : 99 × 101 = (100 − 1)(100 + 1) = 100² − 1² = 9 999.",
-                },
-                {
-                  question: "Comment appliquer la double distributivité ?",
-                  answer:
-                    "Chaque terme du 1er facteur multiplie chaque terme du 2e : (a + b)(c + d) = ac + ad + bc + bd, soit 4 produits avant réduction. (x + 3)(x − 2) = x² − 2x + 3x − 6 = x² + x − 6.",
-                },
-                {
-                  question: "Comment écrire un entier pair, impair, trois consécutifs ?",
-                  answer:
-                    "Pair : 2k. Impair : 2k + 1. Multiple de 3 : 3k. Deux consécutifs : n et n + 1. Trois consécutifs : n − 1, n, n + 1 (milieu n, somme 3n). Ces formes sont la base des preuves sur les entiers.",
-                },
-                {
-                  question: "Comment prouver une propriété par le calcul ?",
-                  answer:
-                    "1) Modéliser avec des lettres (pair = 2k, impair = 2k + 1, consécutifs = n et n + 1). 2) Calculer et simplifier. 3) Conclure par une phrase reliant le résultat à la propriété. Des exemples illustrent mais ne prouvent jamais.",
-                },
-                {
-                  question: "Pourquoi un exemple ne suffit-il pas à prouver ?",
-                  answer:
-                    "Un exemple vérifie la propriété pour ces valeurs seulement : il peut exister un contre-exemple non testé. La preuve littérale couvre tous les cas en une fois, car la lettre représente toutes les valeurs. Un contre-exemple suffit à réfuter, mille exemples ne prouvent pas.",
-                },
-                {
-                  question: "Comment vérifier un développement ou une factorisation ?",
-                  answer:
-                    "Substituer une valeur simple (x = 0 ou x = 1) dans les deux expressions : elles doivent donner le même résultat. Exemple : (x + 3)² = x² + 6x + 9, pour x = 1 : 16 = 16 ✓. Cela ne prouve pas mais détecte la quasi-totalité des erreurs.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
           icon: "",
           blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              title: "Toute la notion en un coup d'œil",
-              text: "La carte mentale de la fiche : un outil pour réviser rapidement avant le jour J, une fois chaque partie travaillée.",
-            },
             {
               type: "mindmapLite",
               center: { title: "Calcul littéral", subtitle: "Raisonner sur tous les nombres" },
@@ -991,17 +565,6 @@ export const ficheCalculLitteral: Fiche = {
                   lines: ["Pair 2k, impair 2k + 1", "Un exemple ne prouve pas", "Conclure par une phrase"],
                 },
               ],
-            },
-          ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [
-            {
-              type: "autoEvalChecklist",
-              items: OBJECTIFS,
             },
           ],
         },
