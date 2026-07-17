@@ -36,6 +36,26 @@ const logoSvg = readFileSync(join(process.cwd(), "src/app/icon.svg"), "utf8").re
 );
 const LOGO_DATA_URI = `data:image/svg+xml;base64,${Buffer.from(logoSvg).toString("base64")}`;
 
+// Quelques symboles maths (ensembles ℚ ℝ ℤ ℕ ℂ ℙ, application ↦) ne figurent dans
+// AUCUNE des polices embarquées : satori les rendrait en case vide dans la vignette.
+// On les translittère POUR L'IMAGE UNIQUEMENT (ℚ→Q, ↦→→…). Les données de fiche
+// (title/subtitle affichés en HTML, dans des polices système complètes) restent
+// intactes. Les symboles présents dans au moins une police (√ ≤ ≥ → × ÷ π α…) sont
+// gérés automatiquement par le repli multi-polices de satori et ne sont pas listés.
+const OG_GLYPH_FALLBACK: Record<string, string> = {
+  "ℚ": "Q",
+  "ℝ": "R",
+  "ℤ": "Z",
+  "ℕ": "N",
+  "ℂ": "C",
+  "ℙ": "P",
+  "↦": "→",
+  "⟼": "→",
+};
+function ogSafe(s: string): string {
+  return s.replace(/[ℚℝℤℕℂℙ↦⟼]/g, (c) => OG_GLYPH_FALLBACK[c] ?? c);
+}
+
 export function generateStaticParams() {
   return NIVEAUX.flatMap((niveau) =>
     MATIERES.flatMap((matiere) =>
@@ -59,13 +79,15 @@ export default async function OgImage({
     isValidNiveau(niveau) && isValidMatiere(matiere) ? getFiche(niveau, matiere, slug) : null;
 
   const matiereLabel = isValidMatiere(matiere) ? MATIERE_LABELS[matiere] : "CRPE";
-  const title = fiche
-    ? fiche.numero > 0 && fiche.kind !== "sujet"
-      ? `Notion ${fiche.numero} : ${fiche.title}`
-      : fiche.title
-    : "Fiche de révision";
-  const partie = fiche?.partie ?? "";
-  const subtitle = fiche?.subtitle ?? "";
+  const title = ogSafe(
+    fiche
+      ? fiche.numero > 0 && fiche.kind !== "sujet"
+        ? `Notion ${fiche.numero} : ${fiche.title}`
+        : fiche.title
+      : "Fiche de révision"
+  );
+  const partie = ogSafe(fiche?.partie ?? "");
+  const subtitle = ogSafe(fiche?.subtitle ?? "");
   // Titre long : on réduit la taille pour garder une mise en page équilibrée.
   const titleSize = title.length > 46 ? 54 : title.length > 32 ? 62 : 70;
 
