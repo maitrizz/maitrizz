@@ -22,7 +22,7 @@ export const ficheTrigonometrieTriangleRectangle: Fiche = {
     { label: "★★★ Quasiment chaque sujet", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Trigonométrie dans le triangle rectangle (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Trigonométrie dans le triangle rectangle · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur la trigonométrie du triangle rectangle : définitions de sin, cos et tan (SOH-CAH-TOA), calcul de longueurs et d'angles, valeurs remarquables, sin²+cos²=1, applications pente et hauteur inaccessible. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

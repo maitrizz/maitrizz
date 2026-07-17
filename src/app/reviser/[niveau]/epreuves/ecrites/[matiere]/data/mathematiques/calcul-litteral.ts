@@ -23,7 +23,7 @@ export const ficheCalculLitteral: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
   ],
-  metaTitle: "Calcul littéral et identités remarquables (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Calcul littéral et identités remarquables · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur le calcul littéral : variable et inconnue, réduire, développer (distributivité simple et double), factoriser, les 3 identités remarquables, programmes de calcul et preuve par le calcul. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

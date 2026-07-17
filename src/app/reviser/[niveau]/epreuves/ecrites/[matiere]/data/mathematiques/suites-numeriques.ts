@@ -23,7 +23,7 @@ export const ficheSuitesNumeriques: Fiche = {
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Programme Seconde", variant: "info" },
   ],
-  metaTitle: "Suites arithmétiques et géométriques (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Suites arithmétiques et géométriques · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les suites numériques : suites arithmétiques et géométriques, raison, terme général, somme des premiers termes, reconnaître le type, modéliser une situation et lire un graphique. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

@@ -23,7 +23,7 @@ export const ficheProportionnalitePourcentages: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },
   ],
-  metaTitle: "Proportionnalité et pourcentages (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Proportionnalité et pourcentages · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur la proportionnalité et les pourcentages : coefficient, quatrième proportionnelle, ratio, coefficient multiplicateur, valeur initiale, successions de pourcentages, échelle, vitesse, masse volumique et débit. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

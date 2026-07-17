@@ -26,8 +26,8 @@ function ficheSectionsReperageEspace(niveau: Niveau): Fiche {
     { label: l3 ? "Cycle 4 · Programme 2025 · Espace et géométrie" : "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
   metaTitle: l3
-    ? "Sections et repérage dans l'espace (CRPE) · Fiche de révision | Maitrizz"
-    : "Sections, repérage dans l'espace et sur la sphère (CRPE) · Fiche de révision | Maitrizz",
+    ? "Sections et repérage dans l'espace · Fiche de révision CRPE"
+    : "Sections, repérage dans l'espace et sur la sphère · Fiche de révision CRPE",
   metaDescription: l3
     ? "Fiche CRPE sur la géométrie dans l'espace : section d'un solide par un plan, sections des solides usuels, repère orthonormé de l'espace, Pythagore dans l'espace. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation."
     : "Fiche CRPE sur la géométrie dans l'espace : section d'un solide par un plan, sections des solides usuels, repère orthonormé de l'espace, Pythagore dans l'espace, repérage sur la sphère par latitude et longitude. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",

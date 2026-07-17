@@ -26,7 +26,7 @@ function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },
   ],
-  metaTitle: "Statistiques descriptives (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Statistiques descriptives · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les statistiques : effectifs et fréquences, moyenne, médiane, quartiles, écart interquartile, boîte à moustaches, choix du graphique et lecture critique. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

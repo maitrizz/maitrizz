@@ -23,7 +23,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème C", variant: "info" },
   ],
-  metaTitle: "Durées, masses et grandeurs composées (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Durées, masses et grandeurs composées · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les durées, masses et grandeurs composées : conversions de durées en base 60, heures décimales, masses, vitesse moyenne, masse volumique, débit et prix unitaire. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

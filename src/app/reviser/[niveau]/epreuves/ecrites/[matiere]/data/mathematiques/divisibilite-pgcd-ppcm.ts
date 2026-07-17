@@ -23,7 +23,7 @@ export const ficheDivisibilitePgcdPpcm: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
   ],
-  metaTitle: "Divisibilité, PGCD, PPCM, nombres premiers (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Divisibilité, PGCD, PPCM, nombres premiers · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur l'arithmétique : divisibilité et critères, division euclidienne, nombres premiers, décomposition en facteurs premiers, PGCD (algorithme d'Euclide), PPCM et problèmes de conjonction. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

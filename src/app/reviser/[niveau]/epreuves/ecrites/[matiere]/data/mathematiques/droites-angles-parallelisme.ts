@@ -22,7 +22,7 @@ export const ficheDroitesAnglesParallelisme: Fiche = {
     { label: "★★★ Présent dans presque tous les sujets", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Droites, angles et parallélisme (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Droites, angles et parallélisme · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les angles : types d'angles, complémentaires et supplémentaires, somme des angles d'un triangle et d'un polygone, angles alternes-internes et correspondants, parallélisme, médiatrice et bissectrice. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

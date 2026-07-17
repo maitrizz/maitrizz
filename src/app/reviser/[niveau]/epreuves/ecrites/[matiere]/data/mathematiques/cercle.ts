@@ -23,7 +23,7 @@ export const ficheCercle: Fiche = {
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Cercle et configurations remarquables (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Cercle et configurations remarquables · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur le cercle : vocabulaire, tangente perpendiculaire au rayon, médiatrice d'une corde, cercle inscrit et circonscrit, théorème de l'angle inscrit, angle dans un demi-cercle, longueur d'arc et aire de secteur. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

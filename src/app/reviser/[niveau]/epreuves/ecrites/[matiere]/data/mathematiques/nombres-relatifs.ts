@@ -23,7 +23,7 @@ export const ficheNombresRelatifs: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
   ],
-  metaTitle: "Nombres relatifs ℤ (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Nombres relatifs · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les nombres relatifs : ensembles de nombres, droite graduée, opposé, valeur absolue, ordre, règles des signes, priorités opératoires et puissances. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

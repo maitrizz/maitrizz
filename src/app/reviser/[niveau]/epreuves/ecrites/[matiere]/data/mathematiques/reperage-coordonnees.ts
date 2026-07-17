@@ -23,7 +23,7 @@ export const ficheReperageCoordonnees: Fiche = {
     { label: "★★★ Incontournable", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Repérage et coordonnées dans le plan (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Repérage et coordonnées dans le plan · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur le repérage dans le plan : repère orthonormé, coordonnées d'un point, distance entre deux points, milieu d'un segment, équation d'une droite y = ax + b et lecture graphique. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

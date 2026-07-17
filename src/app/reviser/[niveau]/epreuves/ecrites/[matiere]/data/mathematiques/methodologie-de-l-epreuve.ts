@@ -51,7 +51,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
     },
   ],
   metaTitle:
-    "Méthodologie de l'épreuve écrite de mathématiques (CRPE) · Fiche de révision | Maitrizz",
+    "Méthodologie de l'épreuve écrite de mathématiques · Fiche de révision CRPE",
   metaDescription: l3
     ? "Méthodologie de la partie mathématiques du CRPE L3 : épreuve commune français et mathématiques (4 h), barème, note éliminatoire, exercices indépendants, programme de référence (cycle 4), ce que le jury évalue, stratégie et gestion du temps. Conseils et auto-évaluation."
     : "Méthodologie de l'épreuve écrite de mathématiques du CRPE M2 (3 h) : format, coefficient, barème, note éliminatoire, exercices indépendants, programme de référence (cycle 4 et Seconde), ce que le jury évalue, stratégie et gestion du temps. Conseils et auto-évaluation.",

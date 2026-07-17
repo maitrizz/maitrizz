@@ -23,7 +23,7 @@ export const ficheCalculNumeriquePriorites: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
   ],
-  metaTitle: "Calcul numérique et priorités opératoires (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Calcul numérique et priorités opératoires · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur le calcul numérique : priorités opératoires, quatre opérations, division euclidienne, distributivité, calcul mental, ordre de grandeur, et les algorithmes posés à l'école primaire. Cours, méthode, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

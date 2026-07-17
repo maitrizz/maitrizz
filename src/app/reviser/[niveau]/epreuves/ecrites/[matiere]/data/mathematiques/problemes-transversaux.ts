@@ -34,7 +34,7 @@ export const ficheProblemesTransversaux: Fiche = {
     { label: "Transversal · toutes parties", variant: "info" },
   ],
   metaTitle:
-    "Problèmes transversaux de mathématiques (CRPE) · Fiche de révision | Maitrizz",
+    "Problèmes transversaux de mathématiques · Fiche de révision CRPE",
   metaDescription:
     "Problèmes transversaux du CRPE : s'entraîner à combiner proportionnalité, pourcentages, géométrie, grandeurs et fonctions dans un même problème, comme à l'épreuve écrite. Méthode pour décoder un énoncé, problèmes progressifs corrigés et auto-évaluation.",
   tabGroups: [

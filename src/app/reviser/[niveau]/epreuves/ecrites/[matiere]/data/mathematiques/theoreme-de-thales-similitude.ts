@@ -22,7 +22,7 @@ export const ficheTheoremeDeThalesSimilitude: Fiche = {
     { label: "★★★ Quasiment chaque sujet", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Théorème de Thalès et similitude (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Théorème de Thalès et similitude · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur le théorème de Thalès : configurations triangle et papillon, réciproque, calcul de longueurs, preuve du parallélisme, triangles semblables, coefficient de similitude et homothétie. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

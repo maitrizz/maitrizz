@@ -21,7 +21,7 @@ export const ficheAlgorithmiqueScratchTableur: Fiche = {
     { label: "★★★ Quasiment chaque sujet", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème E", variant: "info" },
   ],
-  metaTitle: "Algorithmique, Scratch et tableur (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Algorithmique, Scratch et tableur · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur l'algorithmique et la pensée informatique : notion d'algorithme, variables, boucles et conditionnelles, lecture et écriture de scripts Scratch, formules de tableur, référence absolue, fonction SI et géométrie dynamique. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

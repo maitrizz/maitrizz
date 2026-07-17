@@ -23,7 +23,7 @@ export const ficheDenombrement: Fiche = {
     { label: "★★ Très fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },
   ],
-  metaTitle: "Dénombrement et combinatoire (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Dénombrement et combinatoire · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur le dénombrement : principes additif et multiplicatif, arbre de choix, tableau à double entrée, avec et sans remise, arrangements A(n, p) et permutations (factorielle). Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

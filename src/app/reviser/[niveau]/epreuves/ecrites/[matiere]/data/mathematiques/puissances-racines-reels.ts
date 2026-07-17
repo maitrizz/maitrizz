@@ -23,7 +23,7 @@ export const fichePuissancesRacinesReels: Fiche = {
     { label: "★★ Très fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
   ],
-  metaTitle: "Puissances, racines carrées et réels ℝ (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Puissances, racines carrées et réels · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les puissances, les racines carrées et les réels : les 5 règles des puissances, carrés parfaits, simplification de racines, irrationalité de √2, ensemble ℝ, encadrements décimaux. Cours, méthode, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

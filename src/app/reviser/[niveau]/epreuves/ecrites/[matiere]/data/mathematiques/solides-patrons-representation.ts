@@ -22,7 +22,7 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
     { label: "★★★ Quasiment chaque sujet", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Solides, représentation et patrons (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Solides, représentation et patrons · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les solides : prismes, pyramides, cylindres, cônes et sphères, formule d'Euler, perspective cavalière, vues et patrons. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

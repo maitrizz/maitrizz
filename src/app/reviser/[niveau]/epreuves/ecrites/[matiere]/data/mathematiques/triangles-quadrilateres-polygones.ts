@@ -23,7 +23,7 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
     { label: "★★★ Très fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Triangles, quadrilatères et polygones (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Triangles, quadrilatères et polygones · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE de géométrie plane : types de triangles, inégalité triangulaire, somme des angles, cas d'égalité, parallélogramme et sa hiérarchie (rectangle, losange, carré), trapèze, cerf-volant et polygones réguliers. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

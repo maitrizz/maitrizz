@@ -24,7 +24,7 @@ export const ficheEquationsInequationsSystemes: Fiche = {
     { label: "Cycle 4 · BOEN 2020", variant: "info" },
     { label: "Intervalles et |x| : programme Seconde", variant: "info" },
   ],
-  metaTitle: "Équations, inéquations et systèmes (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Équations, inéquations et systèmes · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les équations : équation du 1er degré, mise en équation, équation-produit, systèmes à 2 inconnues (substitution et combinaison), inéquations, intervalles et valeur absolue. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

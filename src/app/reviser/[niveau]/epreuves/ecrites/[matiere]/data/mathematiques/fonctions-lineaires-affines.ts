@@ -23,7 +23,7 @@ export const ficheFonctionsLineairesAffines: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },
   ],
-  metaTitle: "Fonctions linéaires et affines (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Fonctions linéaires et affines · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les fonctions : notion de fonction, image et antécédent, notations f(x), tableau de valeurs, lecture graphique, fonction linéaire f(x) = ax, fonction affine f(x) = ax + b et intersection de deux droites. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

@@ -23,7 +23,7 @@ export const ficheFractionsDecimaux: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
   ],
-  metaTitle: "Fractions et décimaux ℚ (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Fractions et décimaux · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les fractions et les décimaux : les trois sens d'une fraction, fraction irréductible et PGCD, les quatre opérations, conversion fraction-décimal, développement fini ou périodique, ensemble ℚ. Cours, méthode, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

@@ -24,7 +24,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
     { label: "Programme Seconde · Nombres et calculs", variant: "info" },
   ],
-  metaTitle: "Numération et systèmes de bases (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Numération et systèmes de bases · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE complète sur la numération : principe positionnel, conversions binaire/octal/hexadécimal, notation scientifique, préfixes du SI et règles d'écriture en lettres. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

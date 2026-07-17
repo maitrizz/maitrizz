@@ -23,7 +23,7 @@ export const fichePerimetresAiresVolumes: Fiche = {
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème C", variant: "info" },
   ],
-  metaTitle: "Périmètres, aires, volumes et conversions (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Périmètres, aires, volumes et conversions · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les grandeurs et mesures : périmètres et aires des figures usuelles, volumes des solides, conversions d'unités (longueur, aire, volume), figures composites et effet d'un agrandissement (k, k², k³). Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [

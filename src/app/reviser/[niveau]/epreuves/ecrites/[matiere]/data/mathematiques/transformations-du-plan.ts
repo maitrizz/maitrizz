@@ -22,7 +22,7 @@ export const ficheTransformationsDuPlan: Fiche = {
     { label: "★★★ Quasiment chaque sujet", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
-  metaTitle: "Transformations du plan (CRPE) · Fiche de révision | Maitrizz",
+  metaTitle: "Transformations du plan · Fiche de révision CRPE",
   metaDescription:
     "Fiche CRPE sur les transformations du plan : symétrie axiale, symétrie centrale, translation, rotation et homothétie, propriétés conservées, axes et centres de symétrie, frises et pavages. Cours, méthode pas-à-pas, exercices corrigés, flashcards et auto-évaluation.",
   tabGroups: [
