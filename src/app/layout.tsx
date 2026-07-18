@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   title: "Maitrizz - Révise ton concours CRPE",
   description:
     "Plateforme de révision pour le concours CRPE (professeurs des écoles). Fiches, quiz et exercices pour réussir le concours INSPE.",
+  verification: { google: "WrGx2EvcFkV8l4Gz1zTMZeGTTkashlCZglY8nwqw5oI" },
 };
 
 export default function RootLayout({

@@ -444,34 +444,25 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
     case "piegeCard": {
       const style = PIEGE_STYLES[block.variant];
       return (
-        <div className={`rounded-xl border-2 ${style.border} overflow-hidden`}>
-          <div className={`px-4 py-2.5 text-sm font-bold flex items-center justify-between gap-3 ${style.header}`}>
-            <span>{block.title}</span>
+        <div className={`flex flex-col gap-1.5 border-l-[3px] py-1 pl-4 ${style.border}`}>
+          <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+            <span className="text-sm font-bold text-base-content">{block.title}</span>
             {block.badge && (
-              <span className="bg-white/20 rounded px-2 py-0.5 text-xs font-semibold shrink-0">{block.badge}</span>
+              <span className="text-[10px] font-semibold uppercase tracking-wide text-base-content/40">{block.badge}</span>
             )}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2">
-            <div className="bg-error/5 p-4 flex flex-col gap-2 border-b sm:border-b-0 sm:border-r border-base-200">
-              <p className="text-[10px] font-black uppercase tracking-widest text-error">✗ Erreur fréquente</p>
-              <p className="text-sm text-base-content/80 leading-relaxed">
-                <RichText text={block.faux} />
-              </p>
-            </div>
-            <div className="bg-secondary/5 p-4 flex flex-col gap-2">
-              <p className="text-[10px] font-black uppercase tracking-widest text-secondary">✓ À retenir</p>
-              <p className="text-sm text-base-content/80 leading-relaxed">
-                <RichText text={block.vrai} />
-              </p>
-            </div>
-          </div>
+          <p className="text-sm leading-relaxed text-base-content/80">
+            <span className="mr-1.5 text-xs font-semibold text-error/80">On croit :</span>
+            <RichText text={block.faux} />
+          </p>
+          <p className="text-sm leading-relaxed text-base-content/80">
+            <span className="mr-1.5 text-xs font-semibold text-secondary">En réalité :</span>
+            <RichText text={block.vrai} />
+          </p>
           {block.methode && (
-            <div className="bg-primary/5 border-t border-base-200 px-4 py-3 flex gap-2.5 items-start">
-              <span className="text-base shrink-0">💡</span>
-              <p className="text-xs text-base-content/70 leading-relaxed">
-                <RichText text={block.methode} />
-              </p>
-            </div>
+            <p className="text-xs italic leading-relaxed text-base-content/60">
+              <RichText text={block.methode} />
+            </p>
           )}
         </div>
       );
@@ -479,16 +470,22 @@ export function RenderBlock({ block, ficheSlug, onNavigateTab }: RenderBlockProp
 
     case "primaireBox":
       return (
-        <div className="rounded-xl border-2 border-secondary bg-secondary/5 p-4 flex flex-col gap-2">
-          <p className="font-bold text-secondary text-sm">{block.title}</p>
-          <div className="text-sm text-base-content/80 leading-relaxed flex flex-col gap-2">
+        <details className="group rounded-xl border border-base-200 bg-base-100">
+          <summary className="flex items-start gap-2.5 cursor-pointer list-none select-none px-4 py-3 [&::-webkit-details-marker]:hidden">
+            <span className="mt-1 text-[10px] text-secondary transition-transform group-open:rotate-90">▶</span>
+            <span className="flex flex-col gap-0.5">
+              <span className="text-[10px] font-black uppercase tracking-widest text-secondary/70">Côté prof</span>
+              <span className="text-sm font-bold leading-snug text-secondary">{block.title}</span>
+            </span>
+          </summary>
+          <div className="flex flex-col gap-2 px-4 pb-4 pl-9 text-sm leading-relaxed text-base-content/80">
             {block.text.split("\n\n").map((para, i) => (
               <p key={i}>
                 <RichText text={para} />
               </p>
             ))}
           </div>
-        </div>
+        </details>
       );
 
     case "niveauBanner":

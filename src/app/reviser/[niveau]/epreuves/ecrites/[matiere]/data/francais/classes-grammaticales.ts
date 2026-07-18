@@ -322,7 +322,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   type: "highlightBox",
                   variant: "marine",
-                  title: "4 mots, plusieurs natures possibles",
+                  title: "Sept mots-caméléons à connaître",
                   blocks: [
                     {
                       type: "cardGrid",
@@ -362,20 +362,6 @@ export const ficheClassesGrammaticales: Fiche = {
                             "Répond à une négation → **adverbe** (d'affirmation) (Mais si !)",
                           ],
                         },
-                      ],
-                    },
-                  ],
-                },
-                {
-                  type: "highlightBox",
-                  variant: "marine",
-                  title: "3 autres formes, plusieurs natures possibles : leur, même, des",
-                  blocks: [
-                    {
-                      type: "cardGrid",
-                      columns: 2,
-                      variant: "info",
-                      cards: [
                         {
                           title: "leur",
                           lines: [
@@ -410,7 +396,7 @@ export const ficheClassesGrammaticales: Fiche = {
                 {
                   type: "highlightBox",
                   variant: "marine",
-                  title: "Zoom sur « que » : le mot-caméléon à surveiller",
+                  title: "Zoom sur « que » : le cas le plus fréquent",
                   blocks: [
                     {
                       type: "cardGrid",
@@ -454,56 +440,6 @@ export const ficheClassesGrammaticales: Fiche = {
                   ],
                 },
               ],
-            },
-            {
-              type: "piegeCard",
-              variant: "rouge",
-              title: "Piège n°1 · Adverbe confondu avec adjectif",
-              badge: "Très fréquent",
-              faux: "« rapidement » = adjectif qualificatif · « fort » dans « Il parle fort » = adjectif",
-              vrai: "Si un mot est invariable, c'est un adverbe, jamais un adjectif.",
-              methode: "Test : tenter l'accord au féminin pluriel. « rapidement/rapidements » → impossible → adverbe. « grand/grande/grands/grandes » → possible → adjectif.",
-            },
-            {
-              type: "piegeCard",
-              variant: "orange",
-              title: "Piège n°2 · L'infinitif n'est pas un nom",
-              badge: "Très fréquent",
-              faux: "« Écrire » dans « Écrire est difficile » = nom commun",
-              vrai: "Un infinitif reste un VERBE même quand il est employé comme sujet.",
-              methode: "Sa nature reste verbale (verbe à l'infinitif), même employé comme un nom (ici, comme sujet). Ne jamais l'appeler « nom verbal » : cette catégorie n'existe pas.",
-            },
-            {
-              type: "piegeCard",
-              variant: "orange",
-              title: "Piège n°3 · Terminologie : déterminant, pas adjectif",
-              badge: "Formulation attendue",
-              faux: "« mon », « ce », « chaque » = adjectifs possessif / démonstratif / indéfini",
-              vrai: "Ce sont tous des DÉTERMINANTS. La classe « adjectif » ne couvre plus les mots qui introduisent un nom.",
-              methode: "Règle simple : le mot introduit un nom sans le qualifier → déterminant. Il qualifie le nom (exprime une qualité) → adjectif qualificatif.",
-            },
-            {
-              type: "piegeCard",
-              variant: "bleu",
-              title: "Piège n°4 · Préposition ou adverbe ? Le piège de « avant », « après », « contre »",
-              badge: "Même mot, deux natures",
-              faux: "« Il était déjà parti avant. » → préposition",
-              vrai: "Suivi d'un GN ou d'un infinitif → **préposition** (« avant la nuit »). Seul, sans rien après → **adverbe** (« il était parti avant »).",
-              methode: "Test : ce mot peut-il se retrouver seul en fin de phrase ? Si oui → adverbe. S'il lui faut obligatoirement un groupe après lui → préposition. S'applique à « avant », « après », « contre », « dessous », « dessus »…",
-            },
-            {
-              type: "piegeCard",
-              variant: "rouge",
-              title: "Piège n°5 · « leur » : déterminant ou pronom ?",
-              badge: "Très fréquent",
-              faux: "« Je **leur** ai rendu **leur** copie. » → deux fois la même nature",
-              vrai: "« leur » devant un verbe (« je **leur** parle ») = pronom personnel, invariable. « leur(s) » devant un nom (« **leurs** copies ») = déterminant possessif, qui s'accorde en nombre.",
-              methode: "Test décisif : essayez d'ajouter un -s. « leurs copies » fonctionne (déterminant) ; « je leurs parle » est impossible (pronom, jamais de -s).",
-            },
-            {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** aucune terminologie grammaticale encore. Les élèves manipulent la langue à l'oral, enrichissent leur vocabulaire et perçoivent peu à peu que les mots servent à **nommer** (un objet, une personne) ou à dire **ce qu'on fait** (une action). C'est le terreau implicite sur lequel le classement des mots s'appuiera ensuite.\n\n**Cycle 2 (CP-CE2) :** les élèves découvrent progressivement le **nom**, le **verbe**, l'**adjectif** et le **déterminant**, souvent via des activités de tri (« la chasse aux verbes », « je classe les mots »).\n\n**Cycle 3 (CM1-6e) :** introduction du **pronom**, de l'**adverbe**, puis des autres classes invariables. Le tableau de classement des natures de mots devient un outil régulier de la leçon de grammaire. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « La classe grammaticale est une notion qu'on construit progressivement : implicitement en maternelle (nommer / agir), puis classe par classe du CP au cycle 3, en partant de manipulations concrètes (tri, classement) avant la terminologie. Le repère qui structure tout l'enseignement : la nature d'un mot est stable. »",
             },
             {
               type: "ctaBox",
@@ -657,6 +593,71 @@ export const ficheClassesGrammaticales: Fiche = {
             },
           ],
         },
+        {
+          id: "pieges",
+          label: "Pièges",
+          icon: "",
+          blocks: [
+            {
+              type: "callout",
+              variant: "warning",
+              icon: "⚠️",
+              title: "Les erreurs qui coûtent des points",
+              text: "Les confusions qui reviennent le plus souvent au concours sur la nature des mots. Lisez-les une fois, repassez-y avant l'épreuve : les éviter, c'est déjà des points de gagnés.",
+            },
+            {
+              type: "piegeCard",
+              variant: "rouge",
+              title: "Adverbe confondu avec adjectif",
+              badge: "Très fréquent",
+              faux: "« rapidement » = adjectif qualificatif · « fort » dans « Il parle fort » = adjectif",
+              vrai: "Si un mot est invariable, c'est un adverbe, jamais un adjectif.",
+              methode: "Test : tenter l'accord au féminin pluriel. « rapidement/rapidements » → impossible → adverbe. « grand/grande/grands/grandes » → possible → adjectif.",
+            },
+            {
+              type: "piegeCard",
+              variant: "orange",
+              title: "L'infinitif n'est pas un nom",
+              badge: "Très fréquent",
+              faux: "« Écrire » dans « Écrire est difficile » = nom commun",
+              vrai: "Un infinitif reste un VERBE même quand il est employé comme sujet.",
+              methode: "Sa nature reste verbale (verbe à l'infinitif), même employé comme un nom (ici, comme sujet). Ne jamais l'appeler « nom verbal » : cette catégorie n'existe pas.",
+            },
+            {
+              type: "piegeCard",
+              variant: "orange",
+              title: "Terminologie : déterminant, pas adjectif",
+              badge: "Formulation attendue",
+              faux: "« mon », « ce », « chaque » = adjectifs possessif / démonstratif / indéfini",
+              vrai: "Ce sont tous des DÉTERMINANTS. La classe « adjectif » ne couvre plus les mots qui introduisent un nom.",
+              methode: "Règle simple : le mot introduit un nom sans le qualifier → déterminant. Il qualifie le nom (exprime une qualité) → adjectif qualificatif.",
+            },
+            {
+              type: "piegeCard",
+              variant: "bleu",
+              title: "Préposition ou adverbe ? Le piège de « avant », « après », « contre »",
+              badge: "Même mot, deux natures",
+              faux: "« Il était déjà parti avant. » → préposition",
+              vrai: "Suivi d'un GN ou d'un infinitif → **préposition** (« avant la nuit »). Seul, sans rien après → **adverbe** (« il était parti avant »).",
+              methode: "Test : ce mot peut-il se retrouver seul en fin de phrase ? Si oui → adverbe. S'il lui faut obligatoirement un groupe après lui → préposition. S'applique à « avant », « après », « contre », « dessous », « dessus »…",
+            },
+            {
+              type: "piegeCard",
+              variant: "rouge",
+              title: "« leur » : déterminant ou pronom ?",
+              badge: "Très fréquent",
+              faux: "« Je **leur** ai rendu **leur** copie. » → deux fois la même nature",
+              vrai: "« leur » devant un verbe (« je **leur** parle ») = pronom personnel, invariable. « leur(s) » devant un nom (« **leurs** copies ») = déterminant possessif, qui s'accorde en nombre.",
+              methode: "Test décisif : essayez d'ajouter un -s. « leurs copies » fonctionne (déterminant) ; « je leurs parle » est impossible (pronom, jamais de -s).",
+            },
+            {
+              type: "ctaBox",
+              text: "Pour vous entraîner à les déjouer →",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
+            },
+          ],
+        },
       ],
     },
     {
@@ -683,14 +684,10 @@ export const ficheClassesGrammaticales: Fiche = {
           icon: "",
           blocks: [
             {
-              type: "callout",
-              variant: "info",
-              icon: "",
-              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
-            },
-            {
               type: "corrigerCopies",
               title: "Classes grammaticales",
+              intro:
+                "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
               copies: COPIES_CLASSES_GRAMMATICALES,
             },
           ],

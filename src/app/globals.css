@@ -124,3 +124,33 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(8px);
   border: 1px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
+
+/*
+  ── Ajouts prototype « la belle copie » (/proto/notion) ─────────────────────
+  Seyès sémantique : les lignes d'écriture n'apparaissent que là où le
+  candidat ÉCRIT (zones de réponse), jamais en décor dans la fiche imprimée.
+  Interligne calé sur line-height 1.9 ; `background-attachment: local` fait
+  défiler les lignes avec le texte dans un textarea.
+*/
+.seyes-ecriture {
+  line-height: 1.9;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(1.9em - 1px),
+    rgba(12, 67, 78, 0.16) calc(1.9em - 1px),
+    rgba(12, 67, 78, 0.16) 1.9em
+  );
+  background-attachment: local;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+
+/*
+  07/15 — retrait du surligneur (.marque) et de l'encre teal du gras (.prose-cle) :
+  cumulés avec les étiquettes-mots et les panneaux terracotta, ils faisaient trop
+  d'accents concurrents (retour cliente : lourd, rien ne ressort vraiment). Le
+  gras redevient un simple gras d'encre, sans traitement de couleur ajouté. Seuls
+  deux signaux subsistent dans la fiche : les étiquettes-mots (mémorisation d'une
+  liste) et les panneaux terracotta (une règle à retenir), tous deux rares.
+*/

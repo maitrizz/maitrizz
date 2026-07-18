@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { FicheHeader } from "@/components/fiche/FicheHeader";
+import { FicheScroll } from "@/components/fiche/FicheScroll";
 import { FicheTabs } from "@/components/fiche/FicheTabs";
 import { MaitriseVoyants } from "@/components/fiche/MaitriseVoyants";
 import {
@@ -146,6 +147,78 @@ export default async function FichePage({
       item: entry.item,
     })),
   };
+
+  // Mise en page « scroll libre » (FicheScroll) : déployée sur le français et
+  // les maths (18/07). Les sciences restent sur l'ancienne mise en page à
+  // onglets tant que leur chantier n'a pas basculé.
+  const scrollLibre = matiere === "francais" || matiere === "mathematiques";
+
+  if (scrollLibre) {
+    return (
+      <div className="min-h-screen bg-[#fffdf8]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        />
+
+        <div className="mx-auto w-full max-w-[68rem] px-4 py-8 md:px-8">
+          {/* Fil d'Ariane */}
+          <div className="mb-6 flex flex-wrap items-center gap-2 font-ui text-[13px] text-on-surface-variant">
+            <Link href="/" className="transition-colors hover:text-secondary">Accueil</Link>
+            <span>›</span>
+            <Link href="/reviser" className="transition-colors hover:text-secondary">Réviser</Link>
+            <span>›</span>
+            <Link href={`/reviser/${niveau}/epreuves`} className="transition-colors hover:text-secondary">Épreuves</Link>
+            <span>›</span>
+            <Link href={`/reviser/${niveau}/epreuves/ecrites`} className="transition-colors hover:text-secondary">Écrites</Link>
+            <span>›</span>
+            <Link href={base} className="transition-colors hover:text-secondary">{label}</Link>
+          </div>
+
+          <FicheScroll fiche={fiche} niveau={niveau} matiere={matiere}>
+            {fiche.maitriseNotionSlug && (
+              <div className="mt-6">
+                <MaitriseVoyants
+                  notionSlug={fiche.maitriseNotionSlug}
+                  extraItems={collectMaitriseItems(fiche.tabGroups)}
+                />
+              </div>
+            )}
+          </FicheScroll>
+
+          {/* Navigation précédent / suivant */}
+          {(prev || next) && (
+            <div className="mt-12 flex items-center justify-between gap-4 border-t border-outline-variant/50 pt-5">
+              {prev ? (
+                <Link
+                  href={`${base}/${prev.slug}`}
+                  className="font-ui text-sm font-semibold text-primary transition-colors hover:text-secondary"
+                >
+                  ← {prev.numero > 0 ? `Notion ${prev.numero} : ${prev.title}` : prev.title}
+                </Link>
+              ) : (
+                <span />
+              )}
+              {next ? (
+                <Link
+                  href={`${base}/${next.slug}`}
+                  className="text-right font-ui text-sm font-semibold text-primary transition-colors hover:text-secondary"
+                >
+                  {next.numero > 0 ? `Notion ${next.numero} : ${next.title}` : next.title} →
+                </Link>
+              ) : (
+                <span />
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-base-100">
