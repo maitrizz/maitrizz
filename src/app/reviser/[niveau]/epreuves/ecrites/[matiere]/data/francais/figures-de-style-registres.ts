@@ -20,7 +20,7 @@ export const ficheFiguresRegistres: Fiche = {
   subtitle: "Comparaison, métaphore, personnification, métonymie, synecdoque, hyperbole, litote, antithèse, registres de langue et littéraires",
   badges: [
       {
-          "label": "★★★ Tombe à chaque session",
+          "label": "★★★ Tombe chaque année",
           "variant": "hot"
       },
       {

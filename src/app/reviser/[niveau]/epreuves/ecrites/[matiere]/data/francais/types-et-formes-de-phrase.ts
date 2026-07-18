@@ -20,7 +20,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
   subtitle: "Ce que fait la phrase (déclarer, interroger, ordonner) et comment elle le fait (exclamative, négative, emphatique, impersonnelle, passive)",
   badges: [
       {
-          "label": "★★☆ Fréquent",
+          "label": "★★ Fréquent",
           "variant": "hot"
       },
       {

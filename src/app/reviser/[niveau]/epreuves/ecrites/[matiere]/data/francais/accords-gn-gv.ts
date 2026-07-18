@@ -19,7 +19,7 @@ export const ficheAccordsGnGv: Fiche = {
   subtitle: "Accord du nom et de l'adjectif, accord sujet-verbe, chaîne d'accord et cas difficiles",
   badges: [
       {
-          "label": "★★★ Très fréquent",
+          "label": "★★ Fréquent",
           "variant": "hot"
       },
       {

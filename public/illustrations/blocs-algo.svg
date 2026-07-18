@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Des blocs d'instructions reliés par une flèche.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- les deux blocs emboîtés -->
+    <path d="M18 12 C 18 18 18 24 19 30 C 32 31 46 31 59 30 C 60 24 60 18 59 12 C 46 11 31 12 18 12 Z"/>
+    <path d="M37 38 C 37 44 37 50 38 56 C 51 57 64 57 77 56 C 78 50 78 44 77 38 C 64 37 50 38 37 38 Z"/>
+    <!-- la flèche qui relie -->
+    <path d="M64 30 C 70 32 72 34 71 38"/>
+    <path d="M71 38 L 66 35 M71 38 L 74 33"/>
+  </g>
+</svg>

@@ -20,7 +20,7 @@ export const ficheCoherenceTextuelle: Fiche = {
   subtitle: "Reprises anaphoriques, chaîne référentielle, progression du texte, connecteurs logiques et champ lexical",
   badges: [
       {
-          "label": "★★☆ Fréquent · utile aux Parties 1, 2 et 3",
+          "label": "★★ Fréquent · utile aux Parties 1, 2 et 3",
           "variant": "hot"
       },
       {

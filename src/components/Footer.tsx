@@ -11,8 +11,8 @@ export default function Footer() {
   if (pathname?.startsWith("/proto")) return null;
 
   return (
-    <footer className="border-t border-outline-variant/30 bg-white/50 px-5 py-20 md:px-16">
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 md:grid-cols-4">
+    <footer className="border-t border-outline-variant/30 bg-white/50 px-5 py-14 md:px-16">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-10 md:grid-cols-4">
         <div className="space-y-6 md:col-span-2">
           <Logo />
           <p className="max-w-sm font-ui text-base leading-relaxed text-on-surface-variant">
@@ -22,10 +22,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-6 font-ui text-xs font-bold uppercase tracking-widest text-primary">
+          <h4 className="mb-4 font-ui text-xs font-bold uppercase tracking-widest text-primary">
             Explorer
           </h4>
-          <ul className="space-y-4 font-ui text-sm text-on-surface-variant">
+          <ul className="space-y-3 font-ui text-sm text-on-surface-variant">
             <li>
               <Link href="/reviser" className="transition-colors hover:text-secondary">
                 Réviser
@@ -40,10 +40,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-6 font-ui text-xs font-bold uppercase tracking-widest text-primary">
+          <h4 className="mb-4 font-ui text-xs font-bold uppercase tracking-widest text-primary">
             Légal
           </h4>
-          <ul className="space-y-4 font-ui text-sm text-on-surface-variant">
+          <ul className="space-y-3 font-ui text-sm text-on-surface-variant">
             <li>
               <Link href="#" className="transition-colors hover:text-secondary">
                 Mentions légales
@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-20 max-w-[1440px] border-t border-outline-variant/20 pt-8 text-center">
+      <div className="mx-auto mt-12 max-w-[1440px] border-t border-outline-variant/20 pt-6 text-center">
         <p className="font-ui text-xs font-medium uppercase tracking-widest text-on-surface-variant/60">
           © {new Date().getFullYear()} Maitrizz. Conçu pour l&apos;école de demain.
         </p>

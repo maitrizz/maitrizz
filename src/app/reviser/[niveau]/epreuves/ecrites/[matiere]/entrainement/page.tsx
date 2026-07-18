@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { HubEntrainement } from "@/components/fiche/HubEntrainement";
+import { HubHeader, Souligne } from "../../../../../_components/hub";
 import { MATIERE_LABELS, NIVEAUX, isValidMatiere, isValidNiveau } from "../data";
 
 // Le hub d'entraînement espacé n'existe (pilote) que pour le français écrit.
@@ -41,29 +41,24 @@ export default async function HubPage({
   const label = MATIERE_LABELS[matiere];
 
   return (
-    <div className="min-h-screen">
-      <div className="bg-primary grid-paper-light py-16 relative overflow-hidden">
-        <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/5 rounded-full pointer-events-none" />
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2 text-white/50 text-sm mb-4 flex-wrap">
-            <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
-            <span>›</span>
-            <Link href="/reviser" className="hover:text-white transition-colors">Réviser</Link>
-            <span>›</span>
-            <Link href={`/reviser/${niveau}/epreuves/ecrites/${matiere}`} className="hover:text-white transition-colors">
-              {label}
-            </Link>
-            <span>›</span>
-            <span className="text-white/90 font-medium">Entraînement</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-2">Entraînement espacé</h1>
-          <p className="text-white/70 text-lg">
-            Entretenir le geste dans la durée, toutes notions mêlées. La fiche construit le geste ; ici, on l&apos;entretient.
-          </p>
-        </div>
-      </div>
+    <div className="bg-seyes min-h-screen">
+      <HubHeader
+        maxWidth="max-w-3xl"
+        crumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Réviser", href: "/reviser" },
+          { label, href: `/reviser/${niveau}/epreuves/ecrites/${matiere}` },
+          { label: "Entraînement" },
+        ]}
+        title={
+          <>
+            Entraînement <Souligne>espacé</Souligne>
+          </>
+        }
+        subtitle="Entretenir le geste dans la durée, toutes notions mêlées. La fiche construit le geste ; ici, on l'entretient."
+      />
 
-      <div className="bg-base-100 max-w-3xl mx-auto px-6 lg:px-8 py-14">
+      <div className="mx-auto max-w-3xl px-5 pb-20 pt-12 md:px-12">
         <HubEntrainement />
       </div>
     </div>

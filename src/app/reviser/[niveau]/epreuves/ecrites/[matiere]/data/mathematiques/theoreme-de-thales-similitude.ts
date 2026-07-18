@@ -19,7 +19,7 @@ export const ficheTheoremeDeThalesSimilitude: Fiche = {
   subtitle:
     "Configurations triangle et papillon · réciproque · calculer une longueur · prouver des droites parallèles · triangles semblables · coefficient de similitude · homothétie",
   badges: [
-    { label: "★★★ Quasiment chaque sujet", variant: "hot" },
+    { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
   metaTitle: "Théorème de Thalès et similitude · Fiche de révision CRPE",

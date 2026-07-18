@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-label="Une copie en cours de rédaction et une tasse fumante.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- la copie et sa marge -->
+    <path d="M72 26 C 71 55 71 85 73 114 C 94 116 118 116 139 114 C 141 85 140 56 139 27 C 117 25 94 26 72 26 Z"/>
+    <path d="M86 26 C 86 55 86 85 87 114"/>
+    <!-- les lignes écrites -->
+    <path d="M95 44 C 106 43 117 44 129 44"/>
+    <path d="M95 57 C 105 58 116 57 128 58"/>
+    <path d="M95 70 C 106 69 116 70 127 70"/>
+    <path d="M95 83 C 105 83 115 84 125 83"/>
+    <path d="M95 96 C 102 96 109 97 116 96"/>
+    <!-- la vapeur -->
+    <path d="M181 74 C 179 68 185 64 183 58"/>
+    <path d="M193 74 C 191 68 197 64 195 58"/>
+    <!-- le sol -->
+    <path d="M163 114 C 178 116 197 116 212 114"/>
+  </g>
+  <!-- la tasse terracotta, seul accent -->
+  <path d="M173 84 C 173 96 177 107 187 108 C 197 107 201 96 201 84 C 192 82 182 82 173 84 Z" fill="#c36648"/>
+  <path d="M201 88 C 209 87 211 99 200 101" fill="none" stroke="#c36648" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

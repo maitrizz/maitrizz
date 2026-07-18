@@ -44,7 +44,7 @@ function ficheReferentielCulturel(): Fiche {
     subtitle:
       "Un recueil d'œuvres classées par thème pour nourrir la Partie 3 : pour chacune, un résumé, des idées à défendre et une formulation type prête à adapter",
     badges: [
-      { label: "★★☆ Recueil pour la Partie 3", variant: "hot" },
+      { label: "★★ Recueil pour la Partie 3", variant: "hot" },
       { label: "Références à mobiliser", variant: "info" },
     ],
     metaTitle: "Culture littéraire · Fiche de révision CRPE",

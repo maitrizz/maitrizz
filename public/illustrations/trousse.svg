@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-label="Une trousse d'écolier ouverte avec ses crayons.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- le corps de la trousse -->
+    <path d="M66 76 C 64 88 64 100 66 110 C 96 113 144 113 174 110 C 176 100 176 88 174 76 C 144 73 96 73 66 76 Z"/>
+    <!-- la fermeture éclair, rabat ouvert -->
+    <path d="M66 76 C 96 70 144 70 174 76"/>
+    <path d="M78 73 L 78 68 M96 71 L 96 66 M114 70 L 114 65 M132 70 L 132 65 M150 71 L 150 66 M162 72 L 162 67"/>
+    <!-- le crayon teal qui dépasse -->
+    <path d="M96 72 C 92 58 88 44 84 31 C 87 27 91 26 94 28 C 98 42 102 57 106 71"/>
+    <path d="M89 39 C 92 37 95 37 99 38"/>
+    <!-- le sol -->
+    <path d="M48 114 C 94 117 146 117 192 114"/>
+  </g>
+  <!-- le crayon terracotta, seul accent -->
+  <path d="M138 71 C 141 57 145 42 149 28 L 158 30 C 155 44 151 59 148 72 Z" fill="#c36648"/>
+  <path d="M149 28 C 150 23 155 21 158 23 C 160 25 160 28 158 30" fill="none" stroke="#c36648" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

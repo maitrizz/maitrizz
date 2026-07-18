@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un graphique en barres.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- les axes -->
+    <path d="M20 10 C 20 26 20 42 21 56"/>
+    <path d="M21 56 C 40 57 60 57 80 56"/>
+    <!-- les trois barres -->
+    <path d="M30 56 L 30 42 C 34 41 38 41 41 42 L 41 56"/>
+    <path d="M48 56 L 48 30 C 52 29 56 29 59 30 L 59 56"/>
+    <path d="M66 56 L 66 18 C 70 17 74 17 77 18 L 77 56"/>
+  </g>
+</svg>

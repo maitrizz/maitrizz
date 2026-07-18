@@ -18,7 +18,7 @@ export const ficheAlgorithmiqueScratchTableur: Fiche = {
   subtitle:
     "Notion d'algorithme · variables · boucles et conditionnelles · lire et écrire un script Scratch · formules de tableur · référence absolue · géométrie dynamique",
   badges: [
-    { label: "★★★ Quasiment chaque sujet", variant: "hot" },
+    { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème E", variant: "info" },
   ],
   metaTitle: "Algorithmique, Scratch et tableur · Fiche de révision CRPE",

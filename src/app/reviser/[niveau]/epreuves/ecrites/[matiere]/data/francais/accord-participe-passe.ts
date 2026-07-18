@@ -18,7 +18,7 @@ export const ficheAccordParticipePasse: Fiche = {
   subtitle: "PP seul, avec être, avec avoir (COD antéposé), verbes pronominaux et piège infinitif / participe passé",
   badges: [
       {
-          "label": "★★★ Très fréquent",
+          "label": "★★ Fréquent",
           "variant": "hot"
       },
       {

@@ -20,7 +20,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
   subtitle: "Discours ancré / récit coupé, embrayeurs, discours direct, indirect, indirect libre, récit de paroles et concordance des temps",
   badges: [
       {
-          "label": "★★☆ Fréquent",
+          "label": "★★ Fréquent",
           "variant": "hot"
       },
       {

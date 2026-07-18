@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="128 22 164 188" role="img" aria-label="Un panneau indicateur avec deux flèches, L3 et M2.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- poteau, trait légèrement irrégulier -->
+    <path d="M209 198 C 210 162 209 116 210 62"/>
+    <!-- flèche du haut, pointe à gauche : L3 (fond plein pour masquer le poteau) -->
+    <path d="M256 71 C 226 72 196 72 163 73 C 154 78 147 83 140 89 C 148 95 156 100 164 105 C 196 104 226 104 257 103 C 256 92 257 82 256 71 Z" fill="#ffffff"/>
+    <!-- flèche du bas, pointe à droite : M2 -->
+    <path d="M164 117 C 196 116 226 116 259 117 C 267 122 274 127 281 133 C 273 139 266 144 258 149 C 226 148 196 148 165 147 C 166 136 165 127 164 117 Z" fill="#ffffff"/>
+    <!-- L3 -->
+    <path d="M185 79 L 185 96 L 196 96"/>
+    <path d="M205 81 C 214 77 220 84 210 87 C 221 89 216 99 205 96"/>
+    <!-- M2 -->
+    <path d="M183 141 L 184 124 L 192 134 L 200 124 L 200 141"/>
+    <path d="M210 128 C 214 120 226 123 221 131 C 218 135 213 138 210 141 L 224 141"/>
+    <!-- sol et herbe -->
+    <path d="M152 200 C 190 202 230 201 268 200"/>
+    <path d="M160 199 L 156 191 M165 199 L 167 192"/>
+    <path d="M258 199 L 262 192 M253 199 L 251 192"/>
+    <!-- pattes de l'oiseau -->
+    <path d="M206 62 L 206 55 M214 62 L 214 55"/>
+  </g>
+  <!-- l'oiseau terracotta, seul accent -->
+  <path d="M199 50 C 197 40 208 34 216 38 C 218 33 223 33 226 36 C 224 38 222 39 221 41 C 223 48 216 56 207 55 C 210 52 211 50 211 48 C 207 50 202 51 199 50 Z" fill="#c36648"/>
+  <path d="M226 36 L 233 38 L 226 40" fill="#c36648"/>
+  <circle cx="220" cy="38" r="1.3" fill="#fbf9f4"/>
+</svg>

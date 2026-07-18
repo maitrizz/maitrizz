@@ -6,14 +6,14 @@ export default function NewsletterSection() {
   const [email, setEmail] = useState("");
 
   return (
-    <section id="newsletter" className="px-5 py-16 md:px-16">
+    <section id="newsletter" className="px-5 pb-16 pt-4 md:px-16">
       <div className="mx-auto max-w-[1440px]">
-        <div className="bg-seyes-dark relative overflow-hidden rounded-3xl bg-primary px-8 py-20 text-center text-on-primary shadow-2xl md:px-24">
-          <div className="relative z-10 mx-auto max-w-3xl space-y-8">
-            <h2 className="text-balance text-4xl font-black leading-tight">
-              Prêt·e à devenir professeur des écoles ?
+        <div className="bg-seyes-dark relative overflow-hidden rounded-xl bg-primary px-8 py-14 text-center text-on-primary shadow-lg md:px-24">
+          <div className="relative z-10 mx-auto max-w-3xl space-y-6">
+            <h2 className="text-balance text-3xl font-bold leading-tight text-white lg:text-4xl">
+              Prêt·e à devenir professeur des écoles&nbsp;?
             </h2>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-on-primary-container">
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/90 lg:text-lg">
               Laissez votre adresse : vous serez prévenu·e dès l&apos;ouverture
               de la plateforme, et vous recevrez nos conseils de révision
               d&apos;ici là.
@@ -25,6 +25,10 @@ export default function NewsletterSection() {
             >
               <input
                 type="email"
+                name="email"
+                required
+                autoComplete="email"
+                aria-label="Votre adresse e-mail"
                 placeholder="votre.email@exemple.fr"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -38,7 +42,7 @@ export default function NewsletterSection() {
               </button>
             </form>
 
-            <p className="font-ui text-sm text-on-primary-container/70">
+            <p className="font-ui text-sm text-white/80">
               Pas de spam. Désinscription en un clic à tout moment.
             </p>
           </div>

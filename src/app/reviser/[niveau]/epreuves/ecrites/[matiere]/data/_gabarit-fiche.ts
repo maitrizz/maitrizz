@@ -238,7 +238,7 @@ export const ficheGabarit: Fiche = {
           icon: "🎯",
           // Rôle : exercices progressifs — niveauBanner puis exerciceCard(s),
           // toujours dans cet ordre : echauffement (✅) → n1 (★☆☆) →
-          // n2 (★★☆) → n3 (★★★). Victoires faciles d'abord → confiance.
+          // n2 (★★) → n3 (★★★). Victoires faciles d'abord → confiance.
           blocks: [
             {
               type: "callout",
@@ -279,7 +279,7 @@ export const ficheGabarit: Fiche = {
             {
               type: "niveauBanner",
               level: "n2",
-              stars: "★★☆",
+              stars: "★★",
               label: "Niveau 2 — Mise en contexte",
               sub: "Problèmes concrets, plusieurs étapes",
             },

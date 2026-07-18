@@ -19,7 +19,7 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
   subtitle:
     "Prismes · pyramides · cylindres · cônes · sphères · formule d'Euler · perspective cavalière · vues · patrons",
   badges: [
-    { label: "★★★ Quasiment chaque sujet", variant: "hot" },
+    { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
   metaTitle: "Solides, représentation et patrons · Fiche de révision CRPE",

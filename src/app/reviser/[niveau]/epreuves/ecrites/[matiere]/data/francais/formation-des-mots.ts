@@ -20,7 +20,7 @@ export const ficheFormationDesMots: Fiche = {
   subtitle: "Mots simples et construits, dérivation, composition, familles de mots, préfixes, suffixes et radicaux",
   badges: [
       {
-          "label": "★★★ Tombe à chaque session",
+          "label": "★★★ Tombe chaque année",
           "variant": "hot"
       },
       {

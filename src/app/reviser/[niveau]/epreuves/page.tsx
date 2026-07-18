@@ -2,6 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { NIVEAUX, isValidNiveau } from "./ecrites/[matiere]/data";
+import {
+  HUB_CARD,
+  HubCardCtaOutline,
+  HubHeader,
+  HubLabel,
+  Souligne,
+} from "../../_components/hub";
 
 export async function generateStaticParams() {
   return NIVEAUX.map((niveau) => ({ niveau }));
@@ -26,22 +33,6 @@ export async function generateMetadata({
   };
 }
 
-function PenIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-    </svg>
-  );
-}
-
-function MicIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-    </svg>
-  );
-}
-
 export default async function EpreuvesPage({
   params,
 }: {
@@ -53,76 +44,94 @@ export default async function EpreuvesPage({
     notFound();
   }
 
+  const n = niveau.toUpperCase();
   const base = `/reviser/${niveau}`;
 
+  const etapes = [
+    {
+      href: `${base}/epreuves/ecrites`,
+      icon: "/illustrations/copie-stylo.svg",
+      label: "Étape 1 · Admissibilité",
+      titre: "Épreuves écrites",
+      desc: "Français et mathématiques : fiches de cours, méthode et exercices corrigés.",
+      cta: "Préparer les écrits",
+    },
+    {
+      href: `${base}/epreuves/orales`,
+      icon: "/illustrations/bulles-oral.svg",
+      label: "Étape 2 · Admission",
+      titre: "Épreuves orales",
+      desc: "La leçon de français et de mathématiques, puis l'entretien avec le jury.",
+      cta: "Préparer les oraux",
+    },
+  ];
+
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="bg-primary grid-paper-light py-16 relative overflow-hidden">
-        <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/5 rounded-full pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2 text-white/50 text-sm mb-4">
-            <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
-            <span>›</span>
-            <Link href="/reviser" className="hover:text-white transition-colors">Réviser</Link>
-            <span>›</span>
-            <span className="text-white/90 font-medium">Épreuves</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-2">
-            Type d&apos;épreuves
-          </h1>
-          <p className="text-white/70 text-lg">
-            Choisissez l&apos;épreuve que vous souhaitez préparer.
-          </p>
-        </div>
-      </div>
+    <div className="bg-seyes flex-1">
+      <HubHeader
+        crumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Réviser", href: "/reviser" },
+          { label: `CRPE ${n}` },
+        ]}
+        stamp={niveau === "l3" ? "Voie licence" : "Voie master"}
+        title={
+          <>
+            Les <Souligne>épreuves</Souligne> du CRPE {n}
+          </>
+        }
+        subtitle="Tout ce qu'il faut pour préparer chaque étape du concours."
+        note={
+          <>
+            l&apos;écrit d&apos;abord,
+            <br />
+            l&apos;oral ensuite
+          </>
+        }
+      />
 
-      {/* Contenu */}
-      <div className="bg-base-100 max-w-5xl mx-auto px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {/* Épreuves écrites — actif */}
-          <Link
-            href={`${base}/epreuves/ecrites`}
-            className="bg-base-100 grid-paper border-2 border-base-300 rounded-2xl p-8 flex flex-col gap-5 hover:border-primary/40 hover:shadow-lg transition-all duration-200 group"
-          >
-            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-              <PenIcon />
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-base-content group-hover:text-primary transition-colors mb-1">
-                Épreuves écrites
-              </h2>
-              <p className="text-sm text-base-content/55 leading-relaxed">
-                Français, Mathématiques — préparation aux écrits d&apos;admissibilité.
-              </p>
-            </div>
-            <span className="text-sm font-semibold text-primary mt-auto">
-              Accéder →
-            </span>
-          </Link>
+      {/* Rythme vertical en multiples de 32px, le pas de la grille Seyès. */}
+      <section className="px-5 pb-24 pt-16 md:px-12">
+        <div className="mx-auto grid max-w-[1080px] gap-8 md:grid-cols-2">
+          {etapes.map((etape) => (
+            <Link
+              key={etape.titre}
+              href={etape.href}
+              className={`${HUB_CARD} p-8 md:p-10`}
+            >
+              <div className="flex items-start justify-between border-b border-dashed border-outline-variant/60 pb-6">
+                <img
+                  src={etape.icon}
+                  alt=""
+                  aria-hidden
+                  className="h-14 w-auto"
+                />
+                <HubLabel>{etape.label}</HubLabel>
+              </div>
 
-          {/* Épreuves orales — actif */}
-          <Link
-            href={`${base}/epreuves/orales`}
-            className="bg-base-100 grid-paper border-2 border-base-300 rounded-2xl p-8 flex flex-col gap-5 hover:border-primary/40 hover:shadow-lg transition-all duration-200 group"
-          >
-            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-              <MicIcon />
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-base-content group-hover:text-primary transition-colors mb-1">
-                Épreuves orales
-              </h2>
-              <p className="text-sm text-base-content/55 leading-relaxed">
-                Leçon, entretien avec le jury, connaissance du système éducatif.
-              </p>
-            </div>
-            <span className="text-sm font-semibold text-primary mt-auto">
-              Accéder →
-            </span>
-          </Link>
+              <div className="flex-1">
+                <h2 className="mt-6 text-2xl font-bold text-primary lg:text-3xl">
+                  {etape.titre}
+                </h2>
+                <p className="mt-2 font-ui leading-relaxed text-on-surface-variant">
+                  {etape.desc}
+                </p>
+              </div>
+
+              <HubCardCtaOutline>{etape.cta}</HubCardCtaOutline>
+            </Link>
+          ))}
         </div>
-      </div>
+
+        {/* Le vide du bas de page est habité par un dessin au trait :
+            le chemin en deux étapes qui mène à l'école. */}
+        <img
+          src="/illustrations/parcours-ecole.svg"
+          alt=""
+          aria-hidden
+          className="mx-auto mt-16 w-80 md:w-96"
+        />
+      </section>
     </div>
   );
 }

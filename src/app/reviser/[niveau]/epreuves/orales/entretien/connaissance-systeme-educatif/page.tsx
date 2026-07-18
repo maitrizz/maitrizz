@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import MasteryBadge from "@/components/MasteryBadge";
 import { NIVEAUX, isValidNiveau } from "@/lib/niveau";
+import { HUB_CARD, HubHeader, HubLabel } from "../../../../../_components/hub";
 import { modules } from "./data";
 
 export async function generateStaticParams() {
@@ -19,121 +20,109 @@ export default async function CSEPage({
     notFound();
   }
 
+  const n = niveau.toUpperCase();
   const BASE = `/reviser/${niveau}/epreuves/orales/entretien/connaissance-systeme-educatif`;
 
   return (
-    <div className="min-h-screen">
+    <div className="bg-seyes min-h-screen">
+      <HubHeader
+        crumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Réviser", href: "/reviser" },
+          { label: `CRPE ${n}`, href: `/reviser/${niveau}/epreuves` },
+          { label: "Épreuves orales", href: `/reviser/${niveau}/epreuves/orales` },
+          { label: "Système éducatif" },
+        ]}
+        stamp="Entretien · Admission"
+        title="Connaissance du système éducatif"
+        subtitle="Sept modules pour l'entretien : cours, QCM et mises en situation professionnelle."
+      />
 
-      {/* Header */}
-      <div className="bg-primary grid-paper-light py-16 relative overflow-hidden">
-        <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/5 rounded-full pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2 text-white/50 text-sm mb-4 flex-wrap">
-            <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
-            <span>›</span>
-            <Link href="/reviser" className="hover:text-white transition-colors">Réviser</Link>
-            <span>›</span>
-            <Link href={`/reviser/${niveau}/epreuves/orales`} className="hover:text-white transition-colors">Orales</Link>
-            <span>›</span>
-            <span className="text-white/90 font-medium">Système éducatif</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-2">
-            Connaissance du système éducatif
-          </h1>
-          <p className="text-white/70 text-lg">7 modules</p>
-        </div>
-      </div>
+      <section className="px-5 pb-20 pt-12 md:px-12 lg:pt-14">
+        <div className="mx-auto flex max-w-[1080px] flex-col gap-12">
+          {/* Modules */}
+          <div>
+            <h2 className="mb-5 border-b border-dashed border-outline-variant/60 pb-3 text-xl font-bold text-primary">
+              Modules
+            </h2>
+            <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+              {[1, 2, 3, 4, 5, 6, 7].map((num) => {
+                const moduleData = modules[`module-${num}`];
+                const subtitle = moduleData.label.includes(" - ")
+                  ? moduleData.label.split(" - ").slice(1).join(" - ")
+                  : null;
+                const isAvailable = num === 1;
 
-      {/* Contenu */}
-      <div className="bg-base-100 max-w-5xl mx-auto px-6 lg:px-8 py-14 flex flex-col gap-12">
-
-        {/* Modules grid */}
-        <div>
-          <h2 className="text-xl font-black text-base-content mb-6">Modules</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7].map((n) => {
-              const moduleData = modules[`module-${n}`];
-              const subtitle = moduleData.label.includes(" - ")
-                ? moduleData.label.split(" - ").slice(1).join(" - ")
-                : null;
-              const isAvailable = n === 1;
-
-              if (!isAvailable) {
-                return (
-                  <div
-                    key={n}
-                    className="border-2 border-dashed border-base-300 rounded-2xl p-5 flex flex-col gap-2 min-h-44 opacity-50 cursor-not-allowed"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-base-content/40 uppercase tracking-widest">
-                        Module
-                      </span>
-                      <span className="w-6 h-6 rounded-full bg-base-300 flex items-center justify-center text-xs font-black text-base-content/40">
-                        {n}
+                if (!isAvailable) {
+                  return (
+                    <div
+                      key={num}
+                      className="flex min-h-44 flex-col rounded-xl border border-dashed border-outline-variant/60 bg-white/50 p-5"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <span className="font-serif text-3xl font-bold leading-none text-on-surface-variant/40">
+                          {num}
+                        </span>
+                        <HubLabel>Module</HubLabel>
+                      </div>
+                      <div className="flex-1" />
+                      <span className="font-ui text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/70">
+                        À venir
                       </span>
                     </div>
-                    <div className="flex-1" />
-                    <span className="text-xs text-base-content/40 font-medium">
-                      À venir
-                    </span>
-                  </div>
-                );
-              }
+                  );
+                }
 
-              return (
-                <Link
-                  key={n}
-                  href={`${BASE}/module-${n}`}
-                  className="bg-base-100 grid-paper border-2 border-base-300 rounded-2xl p-5 flex flex-col gap-3 min-h-44 hover:border-primary/40 hover:shadow-lg transition-all group"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <p className="text-xs font-semibold text-base-content/60 leading-snug flex-1">
-                      {subtitle ?? `Module ${n}`}
+                return (
+                  <Link
+                    key={num}
+                    href={`${BASE}/module-${num}`}
+                    className={`${HUB_CARD} min-h-44 p-5`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <span className="font-serif text-3xl font-bold leading-none text-secondary">
+                        {num}
+                      </span>
+                      <HubLabel>Module</HubLabel>
+                    </div>
+                    <p className="mt-3 flex-1 font-ui text-sm font-semibold leading-snug text-primary">
+                      {subtitle ?? `Module ${num}`}
                     </p>
-                    <span className="w-6 h-6 rounded-full bg-base-300 flex items-center justify-center text-xs font-black text-base-content/60 shrink-0 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                      {n}
-                    </span>
-                  </div>
-                  <div className="flex-1 flex items-end">
-                    <MasteryBadge value={0} />
-                  </div>
-                </Link>
-              );
-            })}
+                    <div className="mt-3 flex items-end">
+                      <MasteryBadge value={0} size="sm" />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Trainer */}
+          <div className="flex flex-col items-start justify-between gap-8 rounded-xl bg-primary bg-seyes-dark p-8 shadow-md md:flex-row md:items-center md:p-10">
+            <div>
+              <h2 className="text-2xl font-bold text-white">Trainer</h2>
+              <p className="mt-2 max-w-sm font-ui text-sm leading-relaxed text-white/75">
+                Questions et mises en situation aléatoires, tous modules
+                confondus.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href={`${BASE}/trainer/qcm-aleatoire`}
+                className="rounded-xl bg-secondary px-7 py-3.5 font-ui text-xs font-bold uppercase tracking-widest text-white shadow-md shadow-secondary/20 transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
+              >
+                QCM aléatoire
+              </Link>
+              <Link
+                href={`${BASE}/trainer/msp-aleatoire`}
+                className="rounded-xl border border-white/30 px-7 py-3.5 font-ui text-xs font-bold uppercase tracking-widest text-white transition-all hover:bg-white/10 active:scale-95"
+              >
+                MSP aléatoire
+              </Link>
+            </div>
           </div>
         </div>
-
-        {/* Trainer */}
-        <div className="bg-primary grid-paper-light rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/5 rounded-full pointer-events-none" />
-          <div className="relative z-10">
-            <h2 className="text-2xl font-black text-white mb-1">Trainer</h2>
-            <p className="text-white/70 text-sm max-w-sm">
-              Questions et mises en situation aléatoires - tous modules confondus.
-            </p>
-          </div>
-          <div className="flex gap-3 relative z-10">
-            <Link
-              href={`${BASE}/trainer/qcm-aleatoire`}
-              className="btn bg-white text-primary border-none rounded-full font-semibold hover:bg-white/90 shadow"
-            >
-              QCM aléatoire
-            </Link>
-            <Link
-              href={`${BASE}/trainer/msp-aleatoire`}
-              className="btn rounded-full font-medium"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.12)",
-                color: "white",
-                borderColor: "rgba(255,255,255,0.25)",
-              }}
-            >
-              MSP aléatoire
-            </Link>
-          </div>
-        </div>
-
-      </div>
+      </section>
     </div>
   );
 }

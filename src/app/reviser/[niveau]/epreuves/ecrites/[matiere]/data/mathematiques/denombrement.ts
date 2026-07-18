@@ -20,7 +20,7 @@ export const ficheDenombrement: Fiche = {
   subtitle:
     "Compter sans lister · principe additif · principe multiplicatif · arbre de choix · tableau à double entrée · arrangements · permutations (factorielle)",
   badges: [
-    { label: "★★ Très fréquent", variant: "hot" },
+    { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },
   ],
   metaTitle: "Dénombrement et combinatoire · Fiche de révision CRPE",

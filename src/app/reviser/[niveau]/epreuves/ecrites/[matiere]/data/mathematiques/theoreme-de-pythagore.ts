@@ -19,7 +19,7 @@ export const ficheTheoremeDePythagore: Fiche = {
   subtitle:
     "Énoncé et démonstration par les aires · réciproque · contraposée · calculer une longueur · triplets pythagoriciens · applications dans les solides",
   badges: [
-    { label: "★★★ Quasiment chaque sujet", variant: "hot" },
+    { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
   metaTitle: "Théorème de Pythagore (CRPE) · Fiche de révision | Maitrizz",

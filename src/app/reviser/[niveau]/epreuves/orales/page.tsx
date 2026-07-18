@@ -1,17 +1,43 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { NIVEAUX, isValidNiveau } from "../ecrites/[matiere]/data";
+import {
+  HUB_CARD,
+  HubHeader,
+  HubLabel,
+  LockIcon,
+  Souligne,
+} from "../../../_components/hub";
 
 export async function generateStaticParams() {
   return NIVEAUX.map((niveau) => ({ niveau }));
 }
 
-function LockIcon({ size = "md" }: { size?: "sm" | "md" }) {
-  const cls = size === "sm" ? "w-4 h-4" : "w-5 h-5";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ niveau: string }>;
+}): Promise<Metadata> {
+  const { niveau } = await params;
+  if (!isValidNiveau(niveau)) return {};
+  const n = niveau.toUpperCase();
+  const canonicalUrl = `/reviser/${niveau}/epreuves/orales`;
+  const title = `Oraux du CRPE ${n} : entretien et leçon | Maitrizz`;
+  const description = `Préparez les épreuves orales du CRPE ${n} : entretien avec le jury (système éducatif, EPS, motivation) et leçon. Fiches et méthode pour l'admission.`;
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { title, description, url: canonicalUrl, type: "website" },
+  };
+}
+
+function LockedRow({ children }: { children: React.ReactNode }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className={`${cls} text-base-content/40`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-    </svg>
+    <div className="flex items-center justify-between rounded-xl border border-dashed border-outline-variant/60 px-4 py-3.5 font-ui text-sm text-on-surface-variant/70">
+      {children}
+      <LockIcon />
+    </div>
   );
 }
 
@@ -26,84 +52,103 @@ export default async function OralesPage({
     notFound();
   }
 
+  const n = niveau.toUpperCase();
   const base = `/reviser/${niveau}`;
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="bg-primary grid-paper-light py-16 relative overflow-hidden">
-        <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/5 rounded-full pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2 text-white/50 text-sm mb-4 flex-wrap">
-            <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
-            <span>›</span>
-            <Link href="/reviser" className="hover:text-white transition-colors">Réviser</Link>
-            <span>›</span>
-            <Link href={`${base}/epreuves`} className="hover:text-white transition-colors">Épreuves</Link>
-            <span>›</span>
-            <span className="text-white/90 font-medium">Orales</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-2">
-            Épreuves orales
-          </h1>
-          <p className="text-white/70 text-lg">
-            Prépare chaque composante de l&apos;oral d&apos;admission.
-          </p>
-        </div>
-      </div>
+    <div className="bg-seyes flex-1">
+      <HubHeader
+        crumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Réviser", href: "/reviser" },
+          { label: `CRPE ${n}`, href: `${base}/epreuves` },
+          { label: "Épreuves orales" },
+        ]}
+        stamp="Admission"
+        title={
+          <>
+            Épreuves <Souligne>orales</Souligne>
+          </>
+        }
+        subtitle="Ce qui vous attend face au jury, et comment vous y préparer."
+        note={
+          <>
+            l&apos;oral aussi
+            <br />
+            se prépare
+          </>
+        }
+      />
 
-      {/* Contenu */}
-      <div className="bg-base-100 max-w-5xl mx-auto px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-
-          {/* Leçon — verrouillé */}
-          <div className="bg-base-100 border-2 border-base-300 rounded-2xl p-6 flex flex-col gap-4 opacity-50 cursor-not-allowed">
-            <h2 className="text-xl font-black text-base-content">Leçon</h2>
-            <div className="flex flex-col gap-2 flex-1">
-              <div className="border-2 border-dashed border-base-300 rounded-xl px-4 py-3 text-sm text-base-content/50 text-center">
-                Français
-              </div>
-              <div className="border-2 border-dashed border-base-300 rounded-xl px-4 py-3 text-sm text-base-content/50 text-center">
-                Mathématiques
-              </div>
+      {/* Rythme vertical en multiples de 32px, le pas de la grille Seyès. */}
+      <section className="px-5 pb-24 pt-16 md:px-12">
+        <div className="mx-auto grid max-w-[1080px] gap-8 md:grid-cols-2">
+          {/* Entretien — à venir */}
+          <div className="flex flex-col rounded-xl border border-dashed border-outline-variant/60 bg-white/50 p-8 md:p-10">
+            <div className="flex items-start justify-between border-b border-dashed border-outline-variant/50 pb-5">
+              <img
+                src="/illustrations/bulles-oral.svg"
+                alt=""
+                aria-hidden
+                className="h-12 w-auto opacity-40"
+              />
+              <HubLabel>À venir</HubLabel>
             </div>
-            <div className="flex items-center gap-2 pt-2 border-t border-base-300">
+            <h2 className="mt-6 text-2xl font-bold text-on-surface-variant lg:text-3xl">
+              Entretien
+            </h2>
+            <p className="mt-2 font-ui text-sm leading-relaxed text-on-surface-variant">
+              Trois composantes, à travailler séparément.
+            </p>
+            <div className="mt-5 flex flex-col gap-2.5">
+              <LockedRow>Connaissance du système éducatif</LockedRow>
+              <LockedRow>EPS</LockedRow>
+              <LockedRow>Motivation</LockedRow>
+            </div>
+            <div className="mt-8 flex items-center gap-2 font-ui text-xs font-bold uppercase tracking-widest text-on-surface-variant/70">
               <LockIcon />
-              <span className="text-xs font-medium text-base-content/40">Bientôt disponible</span>
+              Bientôt disponible
             </div>
           </div>
 
-          {/* Entretien — actif */}
-          <div className="bg-base-100 grid-paper border-2 border-primary/30 rounded-2xl p-6 flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-black text-base-content">Entretien</h2>
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary">
-                Disponible
-              </span>
+          {/* Leçon — à venir */}
+          <div className="flex flex-col rounded-xl border border-dashed border-outline-variant/60 bg-white/50 p-8 md:p-10">
+            <div className="flex items-start justify-between border-b border-dashed border-outline-variant/50 pb-5">
+              <img
+                src="/illustrations/tableau-chevalet.svg"
+                alt=""
+                aria-hidden
+                className="h-12 w-auto opacity-40"
+              />
+              <HubLabel>À venir</HubLabel>
             </div>
-            <div className="flex flex-col gap-2 flex-1">
-              {/* EPS — verrouillé */}
-              <div className="border-2 border-dashed border-base-300 rounded-xl px-4 py-3 flex items-center justify-between opacity-50 cursor-not-allowed">
-                <span className="text-sm text-base-content/50">EPS</span>
-                <LockIcon size="sm" />
-              </div>
-              {/* Motivation — verrouillé */}
-              <div className="border-2 border-dashed border-base-300 rounded-xl px-4 py-3 flex items-center justify-between opacity-50 cursor-not-allowed">
-                <span className="text-sm text-base-content/50">Motivation</span>
-                <LockIcon size="sm" />
-              </div>
-              {/* CSE — actif */}
-              <Link
-                href={`${base}/epreuves/orales/entretien/connaissance-systeme-educatif`}
-                className="border-2 border-primary/30 bg-primary/5 rounded-xl px-4 py-3 text-sm font-semibold text-primary hover:bg-primary/10 hover:border-primary/60 transition-all text-center"
-              >
-                Connaissance du système éducatif →
-              </Link>
+            <h2 className="mt-6 text-2xl font-bold text-on-surface-variant lg:text-3xl">
+              Leçon
+            </h2>
+            <p className="mt-2 font-ui text-sm leading-relaxed text-on-surface-variant">
+              Concevoir une séance d&apos;enseignement, puis la présenter et la
+              défendre.
+            </p>
+            <div className="mt-5 flex flex-col gap-2.5">
+              <LockedRow>Français</LockedRow>
+              <LockedRow>Mathématiques</LockedRow>
+            </div>
+            <div className="mt-8 flex items-center gap-2 font-ui text-xs font-bold uppercase tracking-widest text-on-surface-variant/70">
+              <LockIcon />
+              Bientôt disponible
             </div>
           </div>
-
         </div>
-      </div>
+
+        {/* Le vide du bas de page est habité par un dessin au trait :
+            le micro et les ondes de la voix. */}
+        <img
+          src="/illustrations/micro-oral.svg"
+          alt=""
+          aria-hidden
+          className="mx-auto mt-16 w-56 md:w-64"
+        />
+      </section>
     </div>
   );
 }

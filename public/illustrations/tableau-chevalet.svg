@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un tableau sur chevalet.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- le tableau, trait légèrement irrégulier -->
+    <path d="M28 12 C 27 24 27 36 28 46 C 42 47 58 47 72 46 C 73 35 73 23 72 12 C 58 11 42 11 28 12 Z"/>
+    <!-- les pieds du chevalet -->
+    <path d="M34 47 L 25 63"/>
+    <path d="M66 47 L 75 63"/>
+    <path d="M50 47 L 50 61"/>
+    <!-- les lignes à la craie -->
+    <path d="M36 23 C 44 22 52 23 60 23"/>
+    <path d="M36 31 C 42 31 48 32 54 31"/>
+  </g>
+</svg>

@@ -19,7 +19,7 @@ export const ficheDroitesAnglesParallelisme: Fiche = {
   subtitle:
     "Types d'angles · complémentaires et supplémentaires · somme des angles d'un triangle et d'un polygone · alternes-internes et correspondants · médiatrice · bissectrice",
   badges: [
-    { label: "★★★ Présent dans presque tous les sujets", variant: "hot" },
+    { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
   metaTitle: "Droites, angles et parallélisme · Fiche de révision CRPE",

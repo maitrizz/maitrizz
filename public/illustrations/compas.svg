@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un compas qui trace un arc.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- la tête et la molette -->
+    <circle cx="48" cy="13" r="4"/>
+    <path d="M48 4 L 48 9"/>
+    <!-- les deux branches -->
+    <path d="M46 17 C 42 30 37 43 32 55"/>
+    <path d="M50 17 C 54 30 59 43 64 55"/>
+    <!-- la pointe et la mine -->
+    <path d="M32 55 L 31 61"/>
+    <path d="M64 55 L 66 61"/>
+  </g>
+  <!-- l'arc tracé -->
+  <path d="M26 62 C 39 66 57 66 70 62" fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 8"/>
+</svg>

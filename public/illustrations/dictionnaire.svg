@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un dictionnaire fermé avec son marque-page.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- la couverture et la tranche -->
+    <path d="M24 14 C 23 27 23 41 24 54 C 26 58 29 60 33 60 C 46 61 59 60 72 60 C 72 47 72 33 72 20 C 59 19 46 19 33 20 C 29 20 26 18 24 14 Z"/>
+    <path d="M24 14 C 26 10 29 8 33 8 C 45 7 57 8 69 8 C 70 12 71 16 72 20"/>
+    <path d="M33 20 C 33 33 33 46 33 60"/>
+    <!-- le marque-page -->
+    <path d="M52 8 C 52 14 52 20 52 26 L 57 21 L 62 26 C 62 20 62 14 62 8"/>
+  </g>
+</svg>

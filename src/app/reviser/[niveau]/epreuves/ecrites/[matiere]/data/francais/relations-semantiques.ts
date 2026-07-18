@@ -20,7 +20,7 @@ export const ficheRelationsSemantiques: Fiche = {
   subtitle: "Synonymie, antonymie, hyperonymie, hyponymie, polysémie, sens propre et figuré, champ lexical et champ sémantique",
   badges: [
       {
-          "label": "★★★ Tombe à chaque session",
+          "label": "★★★ Tombe chaque année",
           "variant": "hot"
       },
       {

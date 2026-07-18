@@ -19,7 +19,7 @@ export const ficheTrigonometrieTriangleRectangle: Fiche = {
   subtitle:
     "Définitions sin · cos · tan · calculer une longueur ou un angle · valeurs remarquables 30° · 45° · 60° · sin²+cos²=1 · tan = sin/cos · applications pente et hauteur",
   badges: [
-    { label: "★★★ Quasiment chaque sujet", variant: "hot" },
+    { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
   metaTitle: "Trigonométrie dans le triangle rectangle · Fiche de révision CRPE",

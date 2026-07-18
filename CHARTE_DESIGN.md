@@ -50,6 +50,7 @@ Un cahier d'écolier sérieux et chaleureux : **serif teal** + **surlignage terr
 | CTA fort (accent) | `bg-secondary text-white rounded-xl px-8 py-3.5 font-ui font-bold shadow-md shadow-secondary/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95` | un seul par section, l'action qu'on veut vraiment |
 | Secondaire (outline) | `border border-primary/20 bg-white/60 text-primary rounded-xl px-8 py-3.5 font-ui font-bold hover:bg-white active:scale-95` | action alternative, moins prioritaire |
 
+- **Cartes de hub : toujours le bouton contour** (`HubCardCtaOutline`), la carte entière étant cliquable. Le terracotta plein est réservé à l'action prioritaire unique d'un écran (bandeau « S'entraîner », bouton CSE) : s'il y a deux boutons pleins visibles, l'un des deux est de trop.
 - Coins toujours arrondis (`rounded-xl`, `rounded-md` pour les petits badges).
 - Micro-interaction systématique : `active:scale-95` au clic, `hover:-translate-y-0.5` ou changement de fond au survol.
 - États désactivés : `disabled:opacity-50 disabled:cursor-not-allowed`.
@@ -87,5 +88,6 @@ Un cahier d'écolier sérieux et chaleureux : **serif teal** + **surlignage terr
 ## 9. État d'avancement
 
 - ✅ Page d'accueil (Hero, Features, Status, Pricing, Newsletter), Navbar, Footer, Logo, favicon.
-- ⏳ Reste à passer dans cette identité : pages « réviser », blog, fiches individuelles, formulaires (login/inscription).
+- ✅ Toutes les pages de navigation du parcours réviser : `/reviser`, `/reviser/[niveau]/epreuves`, écrites, orales, page matière (`ecrites/[matiere]`), hub entraînement espacé, hub CSE (modules + trainer), pages d'attente EPS/Motivation. Langage « édition scolaire » du proto v3 : tout sur le papier Seyès (pas de bande de couleur), en-tête dans la marge du cahier (filet terracotta) avec tampon incliné et une annotation manuscrite Caveat au plus par page, cartes « feuille de copie » (`ring` fin + `.shadow-copy`), hiérarchie de boutons plein/contour. Éléments partagés dans `src/app/reviser/_components/hub.tsx`.
+- ⏳ Reste à passer dans cette identité : blog, pages module CSE et écrans du trainer CSE, formulaires (login/inscription). Les fiches individuelles sont traitées par la mise en page « scroll libre » (FicheScroll).
 - Voir mémoire `project_design_chantier` pour le détail du chantier (worktree, ports, organisation git).

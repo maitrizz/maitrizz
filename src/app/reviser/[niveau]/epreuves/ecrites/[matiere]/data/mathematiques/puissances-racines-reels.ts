@@ -20,7 +20,7 @@ export const fichePuissancesRacinesReels: Fiche = {
   subtitle:
     "Puissances entières positives et négatives · règles de calcul · racines carrées · √2 irrationnel · ensemble ℝ · encadrements décimaux",
   badges: [
-    { label: "★★ Très fréquent", variant: "hot" },
+    { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },
   ],
   metaTitle: "Puissances, racines carrées et réels · Fiche de révision CRPE",

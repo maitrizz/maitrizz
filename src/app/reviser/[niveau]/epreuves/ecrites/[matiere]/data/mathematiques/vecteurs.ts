@@ -592,7 +592,7 @@ export const ficheVecteurs: Fiche = {
             {
               type: "niveauBanner",
               level: "n2",
-              stars: "★★☆",
+              stars: "★★",
               label: "Niveau 2 : combiner les outils",
               sub: "Milieu, parallélisme, construction",
             },

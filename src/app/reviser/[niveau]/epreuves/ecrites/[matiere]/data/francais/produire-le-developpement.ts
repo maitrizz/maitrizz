@@ -490,7 +490,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
                 question: "Transformez la question en une problématique :\n« Quel est l'intérêt de garder une correspondance écrite ? »",
                 correction: [{ type: "line", text: "Par exemple : « Pourquoi conserver et relire les lettres que l'on a échangées ? » On garde la notion et on annonce une recherche de raisons, sans recopier la consigne." }],
               },
-              { type: "niveauBanner", level: "n2", stars: "★★☆", label: "Niveau 2 : Trouver des axes et des appuis", sub: "Axes distincts, appui texte + culture" },
+              { type: "niveauBanner", level: "n2", stars: "★★", label: "Niveau 2 : Trouver des axes et des appuis", sub: "Axes distincts, appui texte + culture" },
               {
                 type: "exerciceCard",
                 variant: "standard",
@@ -1128,7 +1128,7 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
                 question: "Transformez la consigne en une problématique :\n« Qu'est-ce qui rend ce passage inquiétant ? »",
                 correction: [{ type: "line", text: "Par exemple : « Par quels moyens ce passage installe-t-il un climat inquiétant ? » On garde le lien au texte et on annonce une recherche de moyens." }],
               },
-              { type: "niveauBanner", level: "n2", stars: "★★☆", label: "Niveau 2 : Deux axes appuyés sur le texte", sub: "Axes distincts, citations" },
+              { type: "niveauBanner", level: "n2", stars: "★★", label: "Niveau 2 : Deux axes appuyés sur le texte", sub: "Axes distincts, citations" },
               {
                 type: "exerciceCard",
                 variant: "standard",

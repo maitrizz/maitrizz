@@ -1,32 +1,39 @@
-const sources = ["Programmes officiels de l'Éducation nationale", "Rapports de jury du CRPE"];
+const sources = [
+  "Programmes officiels de l'Éducation nationale",
+  "Guides et ressources Éduscol",
+  "Rapports de jury du CRPE",
+];
 
 export default function SourcesSection() {
   return (
-    <section className="bg-surface-container/40 px-5 py-32 md:px-16">
-      <div className="mx-auto grid max-w-[1440px] items-center gap-16 lg:grid-cols-2">
+    <section className="bg-seyes px-5 py-16 md:px-16 lg:py-24">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-12 lg:grid-cols-2">
         <div>
-          <h2 className="mb-6 text-balance text-4xl font-bold leading-tight text-primary">
-            Des contenus construits à partir de références officielles
+          <span className="mb-5 inline-block -rotate-1 rounded-sm border-2 border-secondary/50 px-3 py-1.5 font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-secondary/90">
+            Qui est derrière Maitrizz&nbsp;?
+          </span>
+          <h2 className="mb-5 text-balance text-3xl font-bold leading-tight text-primary lg:text-4xl">
+            Des contenus sourcés, rédigés par une enseignante en poste
           </h2>
-          <p className="mb-10 max-w-xl text-lg leading-relaxed text-on-surface-variant">
+          <p className="mb-5 max-w-xl text-base leading-relaxed text-on-surface-variant lg:text-lg">
             Chaque fiche Maitrizz s&apos;appuie sur les programmes officiels et
-            les rapports de jury du CRPE. Nous traduisons cette matière dense
-            en parcours clairs, sans en trahir l&apos;exigence.
+            les rapports de jury du CRPE, et cite ses sources. Cette matière
+            dense est traduite en parcours clairs, sans en trahir
+            l&apos;exigence.
+          </p>
+          <p className="mb-8 max-w-xl text-base leading-relaxed text-on-surface-variant lg:text-lg">
+            Derrière chaque fiche, une seule plume : celle d&apos;une
+            professeure des écoles depuis trois ans, classée deuxième au CRPE,
+            passée à mi-temps pour construire l&apos;outil qu&apos;elle aurait
+            voulu avoir en préparant le concours.
           </p>
 
           <div className="flex flex-wrap gap-3">
             {sources.map((s) => (
               <span
                 key={s}
-                className="inline-flex items-center gap-2 rounded-full border border-outline-variant/40 bg-white px-4 py-2 font-ui text-xs font-bold text-primary"
+                className="inline-flex items-center rounded-md border border-dashed border-outline-variant/70 bg-white/70 px-4 py-2 font-ui text-xs font-bold uppercase tracking-wider text-primary"
               >
-                <svg
-                  className="h-4 w-4 text-secondary"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
-                </svg>
                 {s}
               </span>
             ))}

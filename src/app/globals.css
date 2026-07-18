@@ -118,6 +118,17 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 32px 32px, 32px 32px, 32px 8px;
 }
 
+/*
+  Ombres « feuille de copie » : douces, diffuses, teintées d'encre teal.
+  Utilisées par les cartes du parcours réviser (posées sur le Seyès).
+*/
+.shadow-copy {
+  box-shadow: 0 18px 50px -28px color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+.shadow-copy-lg {
+  box-shadow: 0 30px 70px -28px color-mix(in srgb, var(--color-primary) 45%, transparent);
+}
+
 /* Carte translucide (glass) sur le quadrillage */
 .glass-card {
   background: rgba(251, 249, 244, 0.85);

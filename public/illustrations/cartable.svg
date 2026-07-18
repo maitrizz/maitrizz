@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-label="Un cartable d'écolier posé au sol.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- la poignée -->
+    <path d="M104 57 C 104 46 136 46 136 57"/>
+    <!-- le corps du cartable, trait légèrement irrégulier -->
+    <path d="M60 60 C 58 78 58 96 60 112 C 90 115 150 115 180 112 C 182 96 182 78 180 60 C 150 57 90 57 60 60 Z"/>
+    <!-- le rabat -->
+    <path d="M60 60 L 64 84"/>
+    <path d="M180 60 L 176 84"/>
+    <path d="M64 84 C 92 80 148 80 176 84"/>
+    <!-- la couture pointillée du rabat -->
+    <path d="M72 74 C 102 70 138 70 168 74" stroke-dasharray="1 7"/>
+    <!-- le sol -->
+    <path d="M44 116 C 90 119 150 119 196 116"/>
+  </g>
+  <!-- la boucle terracotta, seul accent -->
+  <path d="M114 82 C 112 88 114 94 120 95 C 126 94 128 88 126 82 C 122 80 118 80 114 82 Z" fill="#c36648"/>
+</svg>

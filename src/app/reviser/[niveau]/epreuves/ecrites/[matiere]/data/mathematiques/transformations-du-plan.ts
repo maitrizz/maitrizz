@@ -19,7 +19,7 @@ export const ficheTransformationsDuPlan: Fiche = {
   subtitle:
     "Symétrie axiale · symétrie centrale · translation · rotation · homothétie · conservation des distances et des angles · axes et centres de symétrie · frises et pavages",
   badges: [
-    { label: "★★★ Quasiment chaque sujet", variant: "hot" },
+    { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
   metaTitle: "Transformations du plan · Fiche de révision CRPE",

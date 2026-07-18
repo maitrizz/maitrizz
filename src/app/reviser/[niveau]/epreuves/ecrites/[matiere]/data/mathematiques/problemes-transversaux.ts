@@ -238,7 +238,7 @@ export const ficheProblemesTransversaux: Fiche = {
             {
               type: "niveauBanner",
               level: "n2",
-              stars: "★★☆",
+              stars: "★★",
               label: "Niveau 2 · Trois notions et plusieurs étapes",
               sub: "Mise en contexte plus longue",
             },

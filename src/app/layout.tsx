@@ -27,9 +27,17 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.maitrizz.fr"),
-  title: "Maitrizz - Révise ton concours CRPE",
+  title: "Maitrizz · Préparez le concours CRPE de professeur des écoles",
   description:
-    "Plateforme de révision pour le concours CRPE (professeurs des écoles). Fiches, quiz et exercices pour réussir le concours INSPE.",
+    "Préparez le CRPE avec des fiches de cours, des exercices corrigés et des sujets blancs construits à partir des programmes officiels et des rapports de jury.",
+  // Bloc volontairement minimal : pas de og:title/og:description globaux, pour
+  // que chaque page partagée retombe sur son propre <title> plutôt que sur
+  // celui de l'accueil.
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Maitrizz",
+  },
   verification: { google: "WrGx2EvcFkV8l4Gz1zTMZeGTTkashlCZglY8nwqw5oI" },
 };
 
@@ -42,7 +50,7 @@ export default function RootLayout({
     <html lang="fr" data-theme="maitrizz" className={`${sourceSerif.variable} ${workSans.variable} ${caveat.variable}`}>
       <body className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
       </body>
     </html>

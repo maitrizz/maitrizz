@@ -20,7 +20,7 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
   subtitle:
     "Types de triangles · inégalité triangulaire · somme des angles · cas d'égalité · parallélogramme, rectangle, losange, carré · trapèze et cerf-volant · polygones réguliers",
   badges: [
-    { label: "★★★ Très fréquent", variant: "hot" },
+    { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },
   ],
   metaTitle: "Triangles, quadrilatères et polygones · Fiche de révision CRPE",

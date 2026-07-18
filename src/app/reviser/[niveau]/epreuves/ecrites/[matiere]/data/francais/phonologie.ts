@@ -20,7 +20,7 @@ export const fichePhonologie: Fiche = {
   subtitle: "Phonème, graphème, lettre, transcription API, correspondances grapho-phonémiques et valeurs d'une lettre",
   badges: [
       {
-          "label": "★★☆ Fréquent",
+          "label": "★★ Fréquent",
           "variant": "hot"
       },
       {
