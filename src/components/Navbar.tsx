@@ -39,12 +39,6 @@ export default function Navbar() {
           >
             Réviser
           </Link>
-          <Link
-            href="/blog"
-            className="font-ui font-semibold text-xs uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors"
-          >
-            Blog
-          </Link>
         </div>
 
         <div className="flex items-center gap-6">
@@ -81,9 +75,6 @@ export default function Navbar() {
         <div className="md:hidden bg-surface px-5 py-4 space-y-1 border-t border-outline-variant/30">
           <Link href="/reviser" className="block py-2 font-ui font-semibold text-sm text-on-surface-variant hover:text-secondary transition-colors" onClick={() => setMenuOpen(false)}>
             Réviser
-          </Link>
-          <Link href="/blog" className="block py-2 font-ui font-semibold text-sm text-on-surface-variant hover:text-secondary transition-colors" onClick={() => setMenuOpen(false)}>
-            Blog
           </Link>
         </div>
       )}

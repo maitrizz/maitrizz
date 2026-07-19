@@ -31,11 +31,6 @@ export default function Footer() {
                 Réviser
               </Link>
             </li>
-            <li>
-              <Link href="/blog" className="transition-colors hover:text-secondary">
-                Blog
-              </Link>
-            </li>
           </ul>
         </div>
 

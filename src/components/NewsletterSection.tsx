@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 const PARCOURS_OPTIONS = [
-  { value: "", label: "Où en es-tu ?" },
   { value: "licence", label: "Licence" },
   { value: "master1", label: "Master 1" },
   { value: "master2", label: "Master 2" },
@@ -101,6 +100,7 @@ export default function NewsletterSection() {
                   />
                   <select
                     name="parcours"
+                    required
                     aria-label="Votre parcours actuel"
                     value={parcours}
                     onChange={(e) => setParcours(e.target.value)}
@@ -110,6 +110,9 @@ export default function NewsletterSection() {
                         : "text-on-surface"
                     }`}
                   >
+                    <option value="" disabled hidden>
+                      Où en es-tu ?
+                    </option>
                     {PARCOURS_OPTIONS.map((option) => (
                       <option key={option.value} value={option.value}>
                         {option.label}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { useState } from "react";
 import { articles, categories } from "./data";
 import type { Article } from "./data";
@@ -113,7 +114,11 @@ function FeaturedArticle({ article }: { article: Article }) {
   );
 }
 
+const BLOG_DISABLED = true;
+
 export default function BlogsPage() {
+  if (BLOG_DISABLED) notFound();
+
   const [activeCategory, setActiveCategory] = useState<
     Article["category"] | "Tous"
   >("Tous");

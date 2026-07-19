@@ -52,11 +52,15 @@ export async function POST(request: Request) {
     );
   }
 
-  const parcours: Parcours | null = PARCOURS_VALIDES.includes(body.parcours as Parcours)
-    ? (body.parcours as Parcours)
-    : null;
+  if (!PARCOURS_VALIDES.includes(body.parcours as Parcours)) {
+    return NextResponse.json(
+      { error: "Merci d'indiquer où tu en es." },
+      { status: 400 },
+    );
+  }
+  const parcours = body.parcours as Parcours;
 
-  const attributes = parcours ? { PARCOURS: parcours } : undefined;
+  const attributes = { PARCOURS: parcours };
   const doiTemplateId = Number(process.env.BREVO_DOI_TEMPLATE_ID);
   const useDoubleOptin = Number.isInteger(doiTemplateId) && doiTemplateId > 0;
 

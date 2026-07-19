@@ -437,6 +437,8 @@ function EpreuvesTable() {
   );
 }
 
+const BLOG_DISABLED = true;
+
 const SCHEMAS: Record<string, React.ReactNode> = {
   "concours-types": <ConcoursTypesSchema />,
   "reforme-2026": <ReformeSchema />,
@@ -708,6 +710,8 @@ export default async function ArticlePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  if (BLOG_DISABLED) notFound();
+
   const { slug } = await params;
   const article = getArticleBySlug(slug);
 
