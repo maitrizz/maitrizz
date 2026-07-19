@@ -31,24 +31,17 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        {/* Liens desktop */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="flex items-center gap-3 md:gap-6 ml-auto">
           <Link
             href="/reviser"
-            className="font-ui font-semibold text-xs uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors"
+            className={`hidden md:block font-ui font-bold text-xs uppercase tracking-widest px-5 py-2.5 rounded-xl border-2 transition-all active:scale-95 ${
+              pathname?.startsWith("/reviser")
+                ? "border-primary bg-primary/10 text-primary"
+                : "border-primary/30 text-primary hover:border-primary hover:bg-primary/5"
+            }`}
           >
             Réviser
           </Link>
-        </div>
-
-        <div className="flex items-center gap-6">
-          <button
-            className="hidden sm:block font-ui font-bold text-xs uppercase tracking-widest text-primary hover:text-secondary transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled
-            title="Disponible à l'ouverture de la plateforme"
-          >
-            Connexion
-          </button>
           <Link
             href="/#newsletter"
             className="bg-primary text-white px-6 py-2.5 rounded-xl font-ui font-bold text-xs uppercase tracking-widest shadow-sm hover:bg-primary-container transition-all active:scale-95"

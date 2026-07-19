@@ -117,7 +117,7 @@ export default function RemarqueWidget() {
                 rows={4}
                 maxLength={4000}
                 aria-label="Votre remarque"
-                placeholder="Dites-moi tout : un bug, une coquille dans une fiche, une idée…"
+                placeholder="Dites-moi tout : un bug, une coquille dans une fiche, une idée, ou juste un petit mot d'encouragement…"
                 className="w-full resize-none rounded-xl border border-outline-variant/40 bg-white px-4 py-2.5 text-sm leading-relaxed text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none"
               />
 

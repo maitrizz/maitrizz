@@ -39,14 +39,14 @@ export function Fleche({ className = "" }: { className?: string }) {
       className={`overflow-visible text-secondary ${className}`}
     >
       <path
-        d="M75 6 C 50 4 18 12 8 38"
+        d="M72 10 C 48 5 22 16 11 39"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
       <path
-        d="M8 38 L 16 30 M8 38 L 18 40"
+        d="M11 39 L 19 33 M11 39 L 10 29"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
