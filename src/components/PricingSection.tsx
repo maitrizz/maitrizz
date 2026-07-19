@@ -21,12 +21,16 @@ export default function PricingSection() {
         </p>
 
         <div className="relative mx-auto max-w-lg rounded-xl bg-white p-8 ring-1 ring-primary/10 shadow-copy md:p-10">
+          <span className="mb-5 inline-block -rotate-1 rounded-sm border-2 border-secondary/50 px-3 py-1.5 font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-secondary/90">
+            Gratuit pendant le lancement, jusqu&apos;en septembre
+          </span>
+
           <span className="mb-5 block font-ui text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant">
-            Abonnement mensuel
+            Abonnement mensuel, à l&apos;ouverture de la plateforme
           </span>
 
           <div className="mb-7 flex items-baseline justify-center gap-2">
-            <span className="text-5xl font-bold text-primary">6&nbsp;€</span>
+            <span className="text-5xl font-bold text-primary">12,90&nbsp;€</span>
             <span className="font-ui text-lg text-on-surface-variant">/ mois</span>
           </div>
 
@@ -40,13 +44,14 @@ export default function PricingSection() {
           </ul>
 
           <Link
-            href="#newsletter"
+            href="/reviser"
             className="mb-4 block w-full rounded-xl bg-primary py-3.5 font-ui text-base font-bold text-white transition-all hover:bg-primary-container active:scale-[0.98]"
           >
-            Être prévenu·e du lancement
+            Commencer gratuitement
           </Link>
           <p className="font-ui text-xs text-on-surface-variant">
-            Disponible à l&apos;ouverture de la plateforme.
+            Ce tarif s&apos;appliquera à l&apos;ouverture officielle de la
+            plateforme, en septembre.
           </p>
         </div>
       </div>

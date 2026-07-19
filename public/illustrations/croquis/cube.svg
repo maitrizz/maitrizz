@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un cube en perspective.">
+  <g fill="none" stroke="#0c434e" stroke-linecap="round" stroke-linejoin="round">
+    <!-- la face avant : quatre traits qui se croisent aux coins -->
+    <path d="M26 22.5 C 26 34 26 45.5 27 58.5" stroke-width="3.4"/>
+    <path d="M24.5 24 C 37 23 49.5 23 63.5 24" stroke-width="2.2"/>
+    <path d="M62 22.5 C 62 34 62 45.5 62 58.5" stroke-width="3.4"/>
+    <path d="M24.5 57 C 37 58 49.5 58 63.5 57" stroke-width="2.2"/>
+    <!-- reprise sur le montant gauche -->
+    <path d="M26.5 28 C 26.3 36 26.5 44 26.4 51" stroke-width="1.3" opacity=".55"/>
+    <!-- les fuyantes, en terracotta : la perspective est l'histoire -->
+    <g stroke="#c36648" stroke-width="2.4">
+      <path d="M26 24 L 40 11"/>
+      <path d="M39 11 C 50.5 10 61.5 10 74.5 11"/>
+      <path d="M62 24 L 74 11.5"/>
+      <path d="M74 10 C 74 21 74 32 74 43.5"/>
+      <path d="M74.5 43 L 62.5 57"/>
+    </g>
+    <!-- hachures d'ombre au pied du cube -->
+    <path d="M32 62.5 L 36 60.5 M39 63 L 43 61 M46 62.5 L 50 60.5" stroke-width="1.2" opacity=".45"/>
+  </g>
+</svg>

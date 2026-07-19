@@ -21,20 +21,20 @@ const SITE_URL = "https://www.maitrizz.fr";
 
 /* Dessin main levée associé à chaque tête de section, par mot-clé. */
 const SECTION_ICONS: { match: RegExp; icon: string }[] = [
-  { match: /méthodologie/i, icon: "/illustrations/copie-stylo.svg" },
-  { match: /nombres et calcul/i, icon: "/illustrations/operations.svg" },
-  { match: /données|fonctions/i, icon: "/illustrations/graphique-barres.svg" },
-  { match: /grandeurs/i, icon: "/illustrations/balance.svg" },
-  { match: /géométrie plane/i, icon: "/illustrations/compas.svg" },
-  { match: /dans l'espace/i, icon: "/illustrations/cube.svg" },
-  { match: /algorithmique/i, icon: "/illustrations/blocs-algo.svg" },
+  { match: /méthodologie/i, icon: "/illustrations/croquis/copie-stylo.svg" },
+  { match: /nombres et calcul/i, icon: "/illustrations/croquis/operations.svg" },
+  { match: /données|fonctions/i, icon: "/illustrations/croquis/graphique-barres.svg" },
+  { match: /grandeurs/i, icon: "/illustrations/croquis/balance.svg" },
+  { match: /géométrie plane/i, icon: "/illustrations/croquis/compas.svg" },
+  { match: /dans l'espace/i, icon: "/illustrations/croquis/cube.svg" },
+  { match: /algorithmique/i, icon: "/illustrations/croquis/blocs-algo.svg" },
   {
     match: /entraînement|conditions réelles/i,
-    icon: "/illustrations/chronometre.svg",
+    icon: "/illustrations/croquis/chronometre.svg",
   },
-  { match: /lexique/i, icon: "/illustrations/dictionnaire.svg" },
-  { match: /développement rédigé/i, icon: "/illustrations/plume.svg" },
-  { match: /grammaire/i, icon: "/illustrations/loupe-phrase.svg" },
+  { match: /lexique/i, icon: "/illustrations/croquis/dictionnaire.svg" },
+  { match: /développement rédigé/i, icon: "/illustrations/croquis/plume.svg" },
+  { match: /grammaire/i, icon: "/illustrations/croquis/loupe-phrase.svg" },
 ];
 
 /* Ancre HTML d'une section du sommaire (« Partie 1 · Lexique » → « partie-1-lexique »). */
@@ -331,7 +331,7 @@ export default async function MatierePage({
           {/* Le vide du bas de page est habité par un dessin au trait :
               la trousse ouverte et ses crayons. */}
           <img
-            src="/illustrations/trousse.svg"
+            src="/illustrations/croquis/trousse.svg"
             alt=""
             aria-hidden
             className="mx-auto mt-16 w-56 md:w-64"

@@ -60,7 +60,7 @@ export default function Footer() {
 
       <div className="mx-auto mt-12 max-w-[1440px] border-t border-outline-variant/20 pt-6 text-center">
         <p className="font-ui text-xs font-medium uppercase tracking-widest text-on-surface-variant/60">
-          © {new Date().getFullYear()} Maitrizz. Conçu pour l&apos;école de demain.
+          © {new Date().getFullYear()} Maitrizz.
         </p>
       </div>
     </footer>

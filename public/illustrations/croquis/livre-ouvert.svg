@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un livre ouvert.">
+  <g fill="none" stroke="#0c434e" stroke-linecap="round" stroke-linejoin="round">
+    <!-- page de gauche : traits séparés qui se croisent -->
+    <path d="M48.5 16 C 40 8.5 26 8.5 14.5 12.8" stroke-width="3.4"/>
+    <path d="M15.5 11 C 14.2 25 14.2 39.5 15.3 53.5" stroke-width="2.2"/>
+    <path d="M13.5 52.5 C 24.5 48.3 39 49.3 48.5 55.8" stroke-width="3.2"/>
+    <!-- page de droite -->
+    <path d="M47.5 16 C 55.5 8.5 70 8.5 81.5 12.8" stroke-width="2.4"/>
+    <path d="M80.5 11 C 81.8 25 81.8 39.5 80.7 53.5" stroke-width="3.4"/>
+    <path d="M82.5 52.5 C 71.5 48.3 57 49.3 47.5 55.8" stroke-width="2.2"/>
+    <!-- reliure, double passage -->
+    <path d="M48 15 C 48 28.5 48 42 48 56" stroke-width="2.6"/>
+    <path d="M48.6 20 C 48.4 30 48.6 40 48.4 49" stroke-width="1.3" opacity=".55"/>
+    <!-- lignes lues, pression variable ; une ligne soulignée terracotta -->
+    <path d="M23 26 C 29 24 36 25 41 26" stroke-width="2.6"/>
+    <path d="M23 34 C 29 33 35 34 41 35" stroke-width="1.8"/>
+    <path d="M55 26 C 61 25 68 24 74 26" stroke-width="2.6"/>
+    <path d="M55 35 C 61 34 67 33 73 34" stroke-width="1.8"/>
+    <path d="M55 39.5 C 60 38.8 65 38.5 70 39" stroke-width="2.6" stroke="#c36648"/>
+    <!-- hachures d'ombre sous le livre -->
+    <path d="M28 61 L 32 59 M35 61.5 L 39 59.5 M42 61 L 46 59" stroke-width="1.2" opacity=".45"/>
+  </g>
+</svg>

@@ -53,7 +53,7 @@ export default function ProtoFooter() {
 
       <div className="mx-auto mt-14 w-full max-w-[1080px] border-t border-on-surface/[0.07] px-5 pt-8 md:px-12">
         <p className="font-ui text-xs text-on-surface-variant/70">
-          © 2026 Maitrizz. Conçu pour l&apos;école de demain.
+          © 2026 Maitrizz.
         </p>
       </div>
     </footer>

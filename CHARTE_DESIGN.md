@@ -69,6 +69,14 @@ Un cahier d'écolier sérieux et chaleureux : **serif teal** + **surlignage terr
 - Favicon assorti : `src/app/icon.svg` (le « M » serif + même surlignage).
 - Planche d'exploration des anciens concepts conservée hors ligne : `design/logo-explorations.html` (à rouvrir avec `open` si besoin de revenir sur le choix).
 
+## 6 bis. Illustrations
+
+- Style « croquis à l'encre » : trait teal (`#0c434e`, caps/joins `round`) à épaisseur variable — contours principaux en 3.2–3.6, traits secondaires en 2.2–2.6, détails légers en 1.8. Les formes fermées sont dessinées en **traits séparés qui se croisent et dépassent aux angles** (jamais un rectangle propre), ou en deux arcs qui ne se referment pas exactement.
+- Gestes signature, avec parcimonie : une **reprise de trait** (`stroke-width 1.3, opacity .55`) le long d'un bord, et 2–3 **hachures d'ombre** (`stroke-width 1.2, opacity .45`) sous l'objet.
+- Un **seul accent terracotta** (`#c36648`) par motif, sur l'élément qui raconte (mot repéré par la loupe, liquide de la fiole, barre du jour, point d'interrogation…).
+- Fichiers : `public/illustrations/croquis/*.svg` (23 motifs, mêmes noms que les originaux trait fin de `public/illustrations/`). Toutes les pages (accueil et `/reviser`) utilisent les versions croquis ; les originaux ne servent plus que de source pour redessiner. ViewBox commun `0 0 96 68` (sauf trousse/copie-tasse/micro-oral `240 140`, parcours-ecole `420 170`, panneau-l3-m2 `128 22 164 188`).
+- Directions alternatives gardées en réserve : « deux encres/riso » (aplats terracotta décalés, fichiers conservés dans `public/illustrations/riso/`) et planche comparative des trois pistes dans `design/illustrations-explorations.html`.
+
 ## 7. Mise en page
 
 - Largeur max de section : `max-w-[1440px] mx-auto`.

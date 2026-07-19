@@ -50,7 +50,7 @@ export default async function EpreuvesPage({
   const etapes = [
     {
       href: `${base}/epreuves/ecrites`,
-      icon: "/illustrations/copie-stylo.svg",
+      icon: "/illustrations/croquis/copie-stylo.svg",
       label: "Étape 1 · Admissibilité",
       titre: "Épreuves écrites",
       desc: "Français et mathématiques : fiches de cours, méthode et exercices corrigés.",
@@ -58,7 +58,7 @@ export default async function EpreuvesPage({
     },
     {
       href: `${base}/epreuves/orales`,
-      icon: "/illustrations/bulles-oral.svg",
+      icon: "/illustrations/croquis/bulles-oral.svg",
       label: "Étape 2 · Admission",
       titre: "Épreuves orales",
       desc: "La leçon de français et de mathématiques, puis l'entretien avec le jury.",
@@ -126,7 +126,7 @@ export default async function EpreuvesPage({
         {/* Le vide du bas de page est habité par un dessin au trait :
             le chemin en deux étapes qui mène à l'école. */}
         <img
-          src="/illustrations/parcours-ecole.svg"
+          src="/illustrations/croquis/parcours-ecole.svg"
           alt=""
           aria-hidden
           className="mx-auto mt-16 w-80 md:w-96"

@@ -99,7 +99,7 @@ export default function ReviserPage() {
         {/* Le vide du bas de page est habité par un dessin au trait :
             le panneau indicateur des deux voies. */}
         <img
-          src="/illustrations/panneau-l3-m2.svg"
+          src="/illustrations/croquis/panneau-l3-m2.svg"
           alt=""
           aria-hidden
           className="mx-auto mt-16 w-40 md:w-44"

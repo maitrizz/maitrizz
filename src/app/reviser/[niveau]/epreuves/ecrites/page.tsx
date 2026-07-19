@@ -43,9 +43,9 @@ export async function generateMetadata({
 
 /* Dessins main levée partagés (public/illustrations), un par matière. */
 const MATIERE_ICONS: Record<Matiere, string> = {
-  mathematiques: "/illustrations/regle-equerre.svg",
-  francais: "/illustrations/livre-ouvert.svg",
-  sciences: "/illustrations/fiole.svg",
+  mathematiques: "/illustrations/croquis/regle-equerre.svg",
+  francais: "/illustrations/croquis/livre-ouvert.svg",
+  sciences: "/illustrations/croquis/fiole.svg",
 };
 
 const MATIERE_CTA: Record<Matiere, string> = {
@@ -61,8 +61,8 @@ const MATIERES_NON_PUBLIEES: Matiere[] = ["sciences"];
 // Matières du concours pas encore rédigées : simples cartes « À venir »,
 // même liste que la section « Où en est la plateforme » de l'accueil.
 const MATIERES_A_VENIR = [
-  { label: "Histoire et géographie", icon: "/illustrations/globe-terrestre.svg" },
-  { label: "Enseignements artistiques", icon: "/illustrations/palette-peinture.svg" },
+  { label: "Histoire et géographie", icon: "/illustrations/croquis/globe-terrestre.svg" },
+  { label: "Enseignements artistiques", icon: "/illustrations/croquis/palette-peinture.svg" },
 ];
 
 export default async function EcritesPage({
@@ -190,7 +190,7 @@ export default async function EcritesPage({
         {/* Le vide du bas de page est habité par un dessin au trait :
             la copie en cours et la tasse fumante. */}
         <img
-          src="/illustrations/copie-tasse.svg"
+          src="/illustrations/croquis/copie-tasse.svg"
           alt=""
           aria-hidden
           className="mx-auto mt-16 w-56 md:w-64"

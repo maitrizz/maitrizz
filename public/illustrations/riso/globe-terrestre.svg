@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un globe terrestre de classe sur son pied.">
+  <!-- aplat terracotta décalé : la sphère -->
+  <path fill="#c36648" opacity=".78" d="M45 12.5 C 34.5 13.5 27 22 28 32.5 C 29 43 38 50.5 48.5 49.5 C 59 48.5 66.5 39.5 65.5 29 C 64.5 18.5 55.5 11.5 45 12.5 Z"/>
+  <g fill="none" stroke="#0c434e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="48" cy="29" r="20"/>
+    <path d="M48 9 C 39 14 39 44 48 49"/>
+    <path d="M28.5 31 C 36 34.5 60 34.5 67.5 31"/>
+    <path d="M52 18 C 56 17 60 19 61 23 C 58 25 54 24 52 21 Z"/>
+    <path d="M48 49 L 48 57"/>
+    <path d="M36 60 C 42 58.5 54 58.5 60 60"/>
+  </g>
+</svg>

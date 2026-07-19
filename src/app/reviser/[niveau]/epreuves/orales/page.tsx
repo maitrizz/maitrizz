@@ -87,7 +87,7 @@ export default async function OralesPage({
           <div className="flex flex-col rounded-xl border border-dashed border-outline-variant/60 bg-white/50 p-8 md:p-10">
             <div className="flex items-start justify-between border-b border-dashed border-outline-variant/50 pb-5">
               <img
-                src="/illustrations/bulles-oral.svg"
+                src="/illustrations/croquis/bulles-oral.svg"
                 alt=""
                 aria-hidden
                 className="h-12 w-auto opacity-40"
@@ -115,7 +115,7 @@ export default async function OralesPage({
           <div className="flex flex-col rounded-xl border border-dashed border-outline-variant/60 bg-white/50 p-8 md:p-10">
             <div className="flex items-start justify-between border-b border-dashed border-outline-variant/50 pb-5">
               <img
-                src="/illustrations/tableau-chevalet.svg"
+                src="/illustrations/croquis/tableau-chevalet.svg"
                 alt=""
                 aria-hidden
                 className="h-12 w-auto opacity-40"
@@ -143,7 +143,7 @@ export default async function OralesPage({
         {/* Le vide du bas de page est habité par un dessin au trait :
             le micro et les ondes de la voix. */}
         <img
-          src="/illustrations/micro-oral.svg"
+          src="/illustrations/croquis/micro-oral.svg"
           alt=""
           aria-hidden
           className="mx-auto mt-16 w-56 md:w-64"

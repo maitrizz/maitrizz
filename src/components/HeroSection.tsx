@@ -20,21 +20,25 @@ function FichePreview() {
               Français
             </span>
             <span className="font-ui text-xs font-semibold text-on-surface-variant">
-              Orthographe grammaticale
+              Grammaire de la phrase
             </span>
           </div>
-          <svg className="h-5 w-5 text-primary/40" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17 3H7a2 2 0 00-2 2v16l7-3 7 3V5a2 2 0 00-2-2z" />
-          </svg>
+          <img
+            src="/illustrations/croquis/loupe-phrase.svg"
+            alt=""
+            aria-hidden
+            className="h-8 w-auto opacity-60"
+          />
         </div>
 
         {/* Titre de la fiche (une vraie fiche du site) */}
         <h3 className="mb-3 text-xl font-bold leading-snug text-primary">
-          Les accords dans le GN et le GV
+          Classes grammaticales · Nature des mots
         </h3>
         <p className="mb-5 text-sm leading-relaxed text-on-surface-variant">
-          Le déterminant et l&apos;adjectif épithète s&apos;accordent en genre et
-          en nombre avec le nom noyau du groupe nominal.
+          À ne pas confondre avec la <strong>fonction</strong> : la nature d&apos;un
+          mot ou d&apos;un groupe est <strong>stable</strong>, sa fonction change
+          selon la phrase.
         </p>
 
         {/* Encadré exemple */}
@@ -43,19 +47,19 @@ function FichePreview() {
             Exemple
           </p>
           <p className="text-sm text-on-surface">
-            les <span className="font-semibold text-primary">grandes</span> écoles
-            maternelles
+            « Je regarde <span className="font-semibold text-primary">le chat</span>. »
+            → nature : groupe nominal — fonction : COD
           </p>
         </div>
 
         {/* Pied : progression */}
         <div className="flex items-center justify-between border-t border-outline-variant/40 pt-4">
-          <span className="font-ui text-xs text-on-surface-variant">Notion 11 / 21</span>
+          <span className="font-ui text-xs text-on-surface-variant">Notion 1 / 21</span>
           <div className="flex items-center gap-2">
             <div className="h-1.5 w-24 overflow-hidden rounded-full bg-surface-container">
-              <div className="h-full w-[78%] rounded-full bg-primary" />
+              <div className="h-full w-[92%] rounded-full bg-primary" />
             </div>
-            <span className="font-ui text-xs font-bold text-primary">78%</span>
+            <span className="font-ui text-xs font-bold text-primary">92%</span>
           </div>
         </div>
       </div>
@@ -63,7 +67,7 @@ function FichePreview() {
       {/* Une seule annotation manuscrite, pointée sur le suivi de progression */}
       <div className="absolute -bottom-9 right-6 flex -rotate-2 items-end gap-1.5">
         <span className="font-hand text-2xl text-secondary">
-          déjà 11 notions revues !
+          le piège classe/fonction, maîtrisé !
         </span>
         <svg
           aria-hidden
@@ -97,7 +101,7 @@ export default function HeroSection() {
         <div className="text-center lg:text-left">
           {/* Tampon légèrement incliné, même langage que les pages du parcours. */}
           <div className="mb-6">
-            <span className="inline-block -rotate-1 rounded-sm border-2 border-secondary/50 px-4 py-2 font-ui text-[10px] font-bold uppercase tracking-[0.2em] text-secondary/90 lg:text-xs">
+            <span className="inline-block -rotate-1 rounded-sm border-2 border-secondary/50 px-4 py-1.5 font-ui text-[10px] font-bold uppercase leading-8 tracking-[0.2em] text-secondary/90 lg:text-xs">
               Préparation au CRPE · écrit et oral
             </span>
           </div>
@@ -119,17 +123,18 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-on-surface-variant lg:mx-0 lg:text-lg">
-            Fiches de cours, méthode, exercices corrigés et sujets blancs,
-            construits à partir des programmes officiels et des rapports de
-            jury. Votre progression se construit sous vos yeux, notion après
-            notion.
-          </p>
+          <div className="mt-6 translate-y-[11px]">
+            <p className="mx-auto max-w-xl text-base leading-8 text-on-surface-variant lg:mx-0 lg:text-lg">
+              Fiches de cours, méthode, exercices corrigés et sujets blancs,
+              construits à partir des programmes officiels et des rapports de
+              jury. Votre progression se construit sous vos yeux, notion après
+              notion.
+            </p>
 
-          <p className="mx-auto mt-4 max-w-xl text-base italic leading-relaxed text-on-surface-variant lg:mx-0">
-            Conçu par une professeure des écoles en poste, classée deuxième au
-            concours.
-          </p>
+            <p className="mx-auto max-w-xl text-base italic leading-8 text-on-surface-variant lg:mx-0">
+              Conçu par une enseignante classée deuxième au concours.
+            </p>
+          </div>
 
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
             <Link

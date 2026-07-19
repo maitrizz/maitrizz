@@ -82,31 +82,31 @@ function GroupeModules({ titre, modules }: { titre: string; modules: Module[] })
 export default function StatusSection() {
   const ecrits: Module[] = [
     {
-      icon: "/illustrations/livre-ouvert.svg",
+      icon: "/illustrations/croquis/livre-ouvert.svg",
       label: "Français",
       statut: "enLigne",
       etat: "En ligne",
     },
     {
-      icon: "/illustrations/regle-equerre.svg",
+      icon: "/illustrations/croquis/regle-equerre.svg",
       label: "Mathématiques",
       statut: "enLigne",
       etat: "En ligne",
     },
     {
-      icon: "/illustrations/fiole.svg",
+      icon: "/illustrations/croquis/fiole.svg",
       label: "Sciences et technologie",
       statut: "aVenir",
       etat: "À venir",
     },
     {
-      icon: "/illustrations/globe-terrestre.svg",
+      icon: "/illustrations/croquis/globe-terrestre.svg",
       label: "Histoire et géographie",
       statut: "aVenir",
       etat: "À venir",
     },
     {
-      icon: "/illustrations/palette-peinture.svg",
+      icon: "/illustrations/croquis/palette-peinture.svg",
       label: "Enseignements artistiques",
       statut: "aVenir",
       etat: "À venir",
@@ -115,14 +115,14 @@ export default function StatusSection() {
 
   const oraux: Module[] = [
     {
-      icon: "/illustrations/tableau-chevalet.svg",
+      icon: "/illustrations/croquis/tableau-chevalet.svg",
       label: "Leçon",
       detail: "Français et mathématiques",
       statut: "aVenir",
       etat: "À venir",
     },
     {
-      icon: "/illustrations/bulles-oral.svg",
+      icon: "/illustrations/croquis/bulles-oral.svg",
       label: "Entretien avec le jury",
       detail: "EPS, motivation et système éducatif",
       statut: "aVenir",
@@ -141,9 +141,11 @@ export default function StatusSection() {
             Où en est la plateforme
           </h2>
           <p className="max-w-xl font-ui text-base leading-relaxed text-on-surface-variant lg:text-lg">
-            Les épreuves écrites de français et de mathématiques sont en ligne
-            dans leur intégralité. Les autres modules arrivent progressivement,
-            chacun mis en ligne une fois rédigé, relu et vérifié.
+            Pour le moment, seules les épreuves écrites de français et de
+            mathématiques sont en ligne, en intégralité, pour les deux
+            niveaux. Les modules suivants arrivent progressivement&nbsp;:
+            chaque fiche passe par plusieurs relectures avant d&apos;être
+            publiée, un travail de fond qui prend du temps.
           </p>
           <Link
             href="/reviser"

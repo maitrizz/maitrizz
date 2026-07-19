@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un graphique en barres qui progresse.">
+  <g fill="none" stroke="#0c434e" stroke-linecap="round" stroke-linejoin="round">
+    <!-- axes qui se croisent au coin -->
+    <path d="M18 8 C 17.5 25 18.5 42 18 62" stroke-width="3.2"/>
+    <path d="M13 58.5 C 34 59.5 58 58.5 84 59.3" stroke-width="3.2"/>
+    <!-- barres esquissées : deux montants + trait de sommet -->
+    <g stroke-width="2.6">
+      <path d="M28 58 C 28.5 52 28 47 28.3 43"/>
+      <path d="M37 58 C 36.7 52.5 37.2 47.5 37 43.5"/>
+      <path d="M28.3 43 C 31 42.4 34.5 43.2 37 43.3"/>
+      <path d="M46 58 C 46.3 49 45.8 39 46.2 30"/>
+      <path d="M55 58 C 54.8 49.5 55.3 40 55 30.6"/>
+      <path d="M46.2 30 C 49 29.5 52.5 30.3 55 30.2"/>
+    </g>
+    <!-- barre du jour, en terracotta plus appuyée -->
+    <g stroke="#c36648" stroke-width="3.2">
+      <path d="M64 58 C 64.4 45 63.8 31 64.3 18"/>
+      <path d="M73 58 C 72.7 45.5 73.3 31.5 73 18.6"/>
+      <path d="M64.3 18 C 67 17.4 70.5 18.3 73 18.2"/>
+      <path d="M66.5 24 L 71 21.5 M66.5 31 L 71 28.5 M66.5 38 L 71 35.5 M66.5 45 L 71 42.5 M66.5 52 L 71 49.5" stroke-width="1.6"/>
+    </g>
+    <!-- hachures des barres teal -->
+    <path d="M30 49 L 35 46.5 M30 55 L 35 52.5" stroke-width="1.4" opacity=".55"/>
+    <path d="M48 37 L 53 34.5 M48 44 L 53 41.5 M48 51 L 53 48.5" stroke-width="1.4" opacity=".55"/>
+    <!-- petite flèche de progression -->
+    <path d="M79 30 C 82 24 84.5 18 86 12.5 M86 12.5 L 81.5 15 M86 12.5 L 87 18" stroke-width="2"/>
+  </g>
+</svg>
