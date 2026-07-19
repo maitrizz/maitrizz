@@ -3,6 +3,7 @@ import { Caveat, Source_Serif_4, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RemarqueWidget from "@/components/RemarqueWidget";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
+        <RemarqueWidget />
       </body>
     </html>
   );
