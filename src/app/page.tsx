@@ -2,7 +2,6 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import StatusSection from "@/components/StatusSection";
 import SourcesSection from "@/components/SourcesSection";
-import PricingSection from "@/components/PricingSection";
 import NewsletterSection from "@/components/NewsletterSection";
 
 // Données structurées de la page d'accueil : le site et la marque, même
@@ -28,7 +27,6 @@ export default function Home() {
       <FeaturesSection />
       <SourcesSection />
       <StatusSection />
-      <PricingSection />
       <NewsletterSection />
     </>
   );

@@ -14,6 +14,18 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
+      {/* Bandeau bêta : visible sur tout le site tant que la plateforme est gratuite. */}
+      <div className="bg-primary bg-seyes-dark">
+        <p className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-x-3 gap-y-1 px-5 py-2 text-center font-ui text-[11px] font-semibold uppercase tracking-widest text-white md:px-16">
+          <span>Bêta ouverte : tout est gratuit jusqu&apos;au lancement de septembre</span>
+          <Link
+            href="/#newsletter"
+            className="underline decoration-secondary decoration-2 underline-offset-4 transition-colors hover:text-secondary"
+          >
+            Me prévenir du lancement
+          </Link>
+        </p>
+      </div>
       <nav className="flex items-center justify-between h-20 max-w-[1440px] mx-auto px-5 md:px-16">
         <Link href="/" aria-label="Accueil Maitrizz">
           <Logo />
@@ -43,13 +55,12 @@ export default function Navbar() {
           >
             Connexion
           </button>
-          <button
-            className="bg-primary text-white px-6 py-2.5 rounded-xl font-ui font-bold text-xs uppercase tracking-widest shadow-sm hover:bg-primary-container transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled
-            title="Disponible à l'ouverture de la plateforme"
+          <Link
+            href="/#newsletter"
+            className="bg-primary text-white px-6 py-2.5 rounded-xl font-ui font-bold text-xs uppercase tracking-widest shadow-sm hover:bg-primary-container transition-all active:scale-95"
           >
-            S&apos;inscrire
-          </button>
+            Rejoindre la bêta
+          </Link>
 
           {/* Burger mobile */}
           <button
