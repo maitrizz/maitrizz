@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-label="Une trousse d'écolier ouverte avec ses crayons.">
+  <g fill="none" stroke="#0c434e" stroke-linecap="round" stroke-linejoin="round">
+    <!-- le corps de la trousse : flancs épais, bas plus léger, coins qui se croisent -->
+    <path d="M66.5 74 C 64 87 64 100 66.5 112" stroke-width="3.4"/>
+    <path d="M64.5 110 C 95 113.5 145 113.5 175.5 110" stroke-width="2.2"/>
+    <path d="M173.5 74 C 176 87 176 100 173.5 112" stroke-width="3.4"/>
+    <!-- reprise sur le flanc gauche -->
+    <path d="M66 82 C 65.3 90 65.5 98 65.8 105" stroke-width="1.3" opacity=".55"/>
+    <!-- le rabat ouvert et la fermeture éclair -->
+    <path d="M64.5 76.5 C 95 70.3 145 70.3 175.5 76.5" stroke-width="2.6"/>
+    <path d="M78 73 L 78 68 M96 71 L 96 66 M114 70 L 114 65 M132 70 L 132 65 M150 71 L 150 66 M162 72 L 162 67" stroke-width="1.8"/>
+    <!-- le crayon teal qui dépasse -->
+    <path d="M96 72 C 92 58 88 44 84 31" stroke-width="3.2"/>
+    <path d="M84 31 C 87 27 91 26 94 28" stroke-width="2.2"/>
+    <path d="M94 28 C 98 42 102 57 106 71" stroke-width="2.4"/>
+    <path d="M89 39 C 92 37 95 37 99 38" stroke-width="1.8"/>
+    <!-- le sol, trait léger qui dépasse -->
+    <path d="M46 114.5 C 94 117.5 146 117.5 194 114.5" stroke-width="1.8"/>
+    <!-- hachures d'ombre sous la trousse -->
+    <path d="M84 120 L 92 116 M98 121 L 106 117 M112 120 L 120 116" stroke-width="1.4" opacity=".45"/>
+  </g>
+  <!-- le crayon terracotta, seul accent -->
+  <path d="M138 71 C 141 57 145 42 149 28 L 158 30 C 155 44 151 59 148 72 Z" fill="#c36648"/>
+  <path d="M149 28 C 150 23 155 21 158 23 C 160 25 160 28 158 30" fill="none" stroke="#c36648" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

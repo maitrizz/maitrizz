@@ -2,7 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { FicheHeader } from "@/components/fiche/FicheHeader";
+import { FicheScroll } from "@/components/fiche/FicheScroll";
 import { FicheTabs } from "@/components/fiche/FicheTabs";
+import { MaitriseVoyants } from "@/components/fiche/MaitriseVoyants";
 import {
   MATIERES,
   MATIERE_LABELS,
@@ -10,9 +12,33 @@ import {
   getFiche,
   getFicheMetas,
   getAdjacentFiches,
+  getCanonicalNiveau,
   isValidMatiere,
   isValidNiveau,
 } from "../data";
+import { getMatiereLastModified } from "@/lib/seo-dates";
+import type { FicheTabGroup } from "@/components/fiche/types";
+
+const SITE_URL = "https://www.maitrizz.fr";
+
+// Recroise les surfaces de la fiche pour les voyants « Où j'en suis » : on récupère les
+// items tagués `savoirFaire` de « Appliquer » (exercices) pour qu'ils comptent dans la
+// maîtrise, en plus de la banque du hub (§5).
+// NB : « Corriger des erreurs » n'est volontairement PAS agrégé (juger une copie teste la
+// reconnaissance, pas la production ; ce suivi reste local à son onglet). Décision 02/07/2026.
+function collectMaitriseItems(tabGroups: FicheTabGroup[]): { id: string; savoirFaire: string[] }[] {
+  const items: { id: string; savoirFaire: string[] }[] = [];
+  for (const group of tabGroups) {
+    for (const tab of group.tabs) {
+      for (const block of tab.blocks) {
+        if (block.type === "exerciceBank") {
+          for (const ex of block.exercices) items.push({ id: ex.id, savoirFaire: ex.savoirFaire });
+        }
+      }
+    }
+  }
+  return items;
+}
 
 export async function generateStaticParams() {
   return NIVEAUX.flatMap((niveau) =>
@@ -37,15 +63,18 @@ export async function generateMetadata({
   const fiche = getFiche(niveau, matiere, slug);
   if (!fiche) return {};
 
-  const url = `/reviser/${niveau}/epreuves/ecrites/${matiere}/${slug}`;
+  // Contenu identique en L3/M2 => canonical vers le niveau de référence, pour
+  // éviter le contenu dupliqué. Sinon, la fiche est sa propre canonique.
+  const canonicalNiveau = getCanonicalNiveau(niveau, matiere, slug);
+  const canonicalUrl = `/reviser/${canonicalNiveau}/epreuves/ecrites/${matiere}/${slug}`;
   return {
     title: fiche.metaTitle,
     description: fiche.metaDescription,
-    alternates: { canonical: url },
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: fiche.metaTitle,
       description: fiche.metaDescription,
-      url,
+      url: canonicalUrl,
       type: "article",
     },
   };
@@ -70,11 +99,18 @@ export default async function FichePage({
   const label = MATIERE_LABELS[matiere];
   const { prev, next } = getAdjacentFiches(niveau, matiere, slug);
   const base = `/reviser/${niveau}/epreuves/ecrites/${matiere}`;
+  const pageName =
+    fiche.numero > 0 && fiche.kind !== "sujet" ? `Notion ${fiche.numero} : ${fiche.title}` : fiche.title;
+  const lastModified = getMatiereLastModified(matiere);
+  // URL canonique (cf. getCanonicalNiveau) : c'est elle que doit référencer le
+  // JSON-LD quand le contenu est partagé entre L3 et M2.
+  const canonicalNiveau = getCanonicalNiveau(niveau, matiere, slug);
+  const canonicalUrl = `${SITE_URL}/reviser/${canonicalNiveau}/epreuves/ecrites/${matiere}/${slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LearningResource",
-    name: fiche.numero > 0 ? `Notion ${fiche.numero} : ${fiche.title}` : fiche.title,
+    name: pageName,
     description: fiche.metaDescription,
     inLanguage: "fr",
     isAccessibleForFree: true,
@@ -82,14 +118,117 @@ export default async function FichePage({
     educationalLevel: "CRPE",
     about: fiche.partie,
     teaches: fiche.subtitle,
-    url: `https://www.maitrizz.fr${base}/${slug}`,
+    keywords: [fiche.title, label, "CRPE", "fiche de révision", fiche.partie],
+    ...(lastModified ? { dateModified: lastModified } : {}),
+    publisher: {
+      "@type": "Organization",
+      name: "Maitrizz",
+      url: SITE_URL,
+    },
+    url: canonicalUrl,
   };
+
+  // Fil d'Ariane en données structurées : reflète exactement la navigation
+  // visible ci-dessous, pour le rich result « breadcrumb » de Google.
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { name: "Accueil", item: `${SITE_URL}/` },
+      { name: "Réviser", item: `${SITE_URL}/reviser` },
+      { name: "Épreuves", item: `${SITE_URL}/reviser/${niveau}/epreuves` },
+      { name: "Écrites", item: `${SITE_URL}/reviser/${niveau}/epreuves/ecrites` },
+      { name: label, item: `${SITE_URL}${base}` },
+      { name: pageName, item: `${SITE_URL}${base}/${slug}` },
+    ].map((entry, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: entry.name,
+      item: entry.item,
+    })),
+  };
+
+  // Mise en page « scroll libre » (FicheScroll) : déployée sur le français et
+  // les maths (18/07). Les sciences restent sur l'ancienne mise en page à
+  // onglets tant que leur chantier n'a pas basculé.
+  const scrollLibre = matiere === "francais" || matiere === "mathematiques";
+
+  if (scrollLibre) {
+    return (
+      <div className="min-h-screen bg-[#fffdf8]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        />
+
+        <div className="mx-auto w-full max-w-[68rem] px-4 py-8 md:px-8">
+          {/* Fil d'Ariane */}
+          <div className="mb-6 flex flex-wrap items-center gap-2 font-ui text-[13px] text-on-surface-variant">
+            <Link href="/" className="transition-colors hover:text-secondary">Accueil</Link>
+            <span>›</span>
+            <Link href="/reviser" className="transition-colors hover:text-secondary">Réviser</Link>
+            <span>›</span>
+            <Link href={`/reviser/${niveau}/epreuves`} className="transition-colors hover:text-secondary">Épreuves</Link>
+            <span>›</span>
+            <Link href={`/reviser/${niveau}/epreuves/ecrites`} className="transition-colors hover:text-secondary">Écrites</Link>
+            <span>›</span>
+            <Link href={base} className="transition-colors hover:text-secondary">{label}</Link>
+          </div>
+
+          <FicheScroll fiche={fiche} niveau={niveau} matiere={matiere}>
+            {fiche.maitriseNotionSlug && (
+              <div className="mt-6">
+                <MaitriseVoyants
+                  notionSlug={fiche.maitriseNotionSlug}
+                  extraItems={collectMaitriseItems(fiche.tabGroups)}
+                />
+              </div>
+            )}
+          </FicheScroll>
+
+          {/* Navigation précédent / suivant */}
+          {(prev || next) && (
+            <div className="mt-12 flex items-center justify-between gap-4 border-t border-outline-variant/50 pt-5">
+              {prev ? (
+                <Link
+                  href={`${base}/${prev.slug}`}
+                  className="font-ui text-sm font-semibold text-primary transition-colors hover:text-secondary"
+                >
+                  ← {prev.numero > 0 ? `Notion ${prev.numero} : ${prev.title}` : prev.title}
+                </Link>
+              ) : (
+                <span />
+              )}
+              {next ? (
+                <Link
+                  href={`${base}/${next.slug}`}
+                  className="text-right font-ui text-sm font-semibold text-primary transition-colors hover:text-secondary"
+                >
+                  {next.numero > 0 ? `Notion ${next.numero} : ${next.title}` : next.title} →
+                </Link>
+              ) : (
+                <span />
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-base-100">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       <div className="max-w-4xl mx-auto px-6 lg:px-8 py-8 flex flex-col gap-6">
@@ -107,6 +246,13 @@ export default async function FichePage({
         </div>
 
         <FicheHeader fiche={fiche} />
+
+        {fiche.maitriseNotionSlug && (
+          <MaitriseVoyants
+            notionSlug={fiche.maitriseNotionSlug}
+            extraItems={collectMaitriseItems(fiche.tabGroups)}
+          />
+        )}
 
         <FicheTabs tabGroups={fiche.tabGroups} ficheSlug={fiche.slug} niveau={niveau} matiere={matiere} />
 

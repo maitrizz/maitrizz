@@ -3,8 +3,10 @@ import {
   MATIERES,
   NIVEAUX,
   getFicheMetas,
+  getCanonicalNiveau,
 } from "./reviser/[niveau]/epreuves/ecrites/[matiere]/data";
 import { articles } from "./blog/data";
+import { getMatiereLastModified } from "@/lib/seo-dates";
 
 const BASE_URL = "https://www.maitrizz.fr";
 
@@ -44,18 +46,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const matierePages: MetadataRoute.Sitemap = NIVEAUX.flatMap((niveau) =>
     MATIERES.map((matiere) => ({
       url: `${BASE_URL}/reviser/${niveau}/epreuves/ecrites/${matiere}`,
+      lastModified: getMatiereLastModified(matiere),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     }))
   );
 
+  // Le sitemap ne liste que les URL canoniques : une fiche partagée à l'identique
+  // entre L3 et M2 n'apparaît qu'une fois (sur son niveau de référence), pour ne
+  // pas déclarer de contenu dupliqué. Les variantes propres à un niveau restent
+  // listées des deux côtés.
   const fichePages: MetadataRoute.Sitemap = NIVEAUX.flatMap((niveau) =>
     MATIERES.flatMap((matiere) =>
-      getFicheMetas(niveau, matiere).map((fiche) => ({
-        url: `${BASE_URL}/reviser/${niveau}/epreuves/ecrites/${matiere}/${fiche.slug}`,
-        changeFrequency: "monthly" as const,
-        priority: 0.9,
-      }))
+      getFicheMetas(niveau, matiere)
+        .filter((fiche) => getCanonicalNiveau(niveau, matiere, fiche.slug) === niveau)
+        .map((fiche) => ({
+          url: `${BASE_URL}/reviser/${niveau}/epreuves/ecrites/${matiere}/${fiche.slug}`,
+          lastModified: getMatiereLastModified(matiere),
+          changeFrequency: "monthly" as const,
+          priority: 0.9,
+        }))
     )
   );
 

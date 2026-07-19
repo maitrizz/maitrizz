@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un livre ouvert.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- les deux pages, trait légèrement irrégulier -->
+    <path d="M48 16 C 40 9 26 9 15 13 C 14 26 14 40 15 52 C 25 48 39 49 48 55"/>
+    <path d="M48 16 C 56 9 70 9 81 13 C 82 26 82 40 81 52 C 71 48 57 49 48 55"/>
+    <path d="M48 16 C 48 29 48 42 48 55"/>
+    <!-- les lignes écrites -->
+    <path d="M23 26 C 29 24 36 25 41 26"/>
+    <path d="M23 34 C 29 33 35 34 41 35"/>
+    <path d="M55 26 C 61 25 68 24 74 26"/>
+    <path d="M55 35 C 61 34 67 33 73 34"/>
+  </g>
+</svg>

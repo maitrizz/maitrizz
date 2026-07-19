@@ -20,7 +20,7 @@ const LEVEL_STYLES: Record<NonNullable<ExerciceCardBlock["level"]>, { border: st
   n3: { border: "border-error", header: "bg-error text-error-content" },
 };
 
-function CorrectionLine({ item }: { item: CorrectionItem }) {
+export function CorrectionLine({ item }: { item: CorrectionItem }) {
   switch (item.type) {
     case "line":
       return (
@@ -87,6 +87,23 @@ function CorrectionLine({ item }: { item: CorrectionItem }) {
       return (
         <div className="bg-accent/10 border border-accent/30 rounded-lg px-3 py-2 text-sm text-base-content/80">
           <RichText text={item.text} />
+        </div>
+      );
+
+    case "formulationCrpe":
+      return (
+        <div className="rounded-lg border-2 border-primary/40 bg-primary/5 overflow-hidden">
+          <div className="bg-primary text-primary-content px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide flex items-center gap-1.5">
+            <span>✍️</span>
+            <span>Formulation CRPE</span>
+          </div>
+          <div className="px-3 py-2.5 text-sm leading-relaxed text-base-content/80 flex flex-col gap-1.5">
+            {item.text.split("\n").map((para, i) => (
+              <p key={i}>
+                <RichText text={para} />
+              </p>
+            ))}
+          </div>
         </div>
       );
 

@@ -1,14 +1,14 @@
 import type { Fiche } from "@/components/fiche/types";
+import { EXERCICES_GROUPE_VERBAL } from "./exercices-groupe-verbal";
+import { COPIES_GROUPE_VERBAL } from "./copies-groupe-verbal";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "gv1", label: "Je sais que le groupe verbal s'organise autour d'un verbe noyau, second constituant obligatoire de la phrase avec le groupe sujet" },
-  { id: "gv2", label: "Je distingue une construction intransitive, transitive (directe ou indirecte) et attributive" },
-  { id: "gv3", label: "Je reconnais une construction transitive directe (COD), indirecte (COI) ou comportant plusieurs compléments d'objet" },
-  { id: "gv4", label: "Je reconnais les verbes transitifs indirects construits avec une préposition, comme obéir à, ressembler à ou jouer de" },
-  { id: "gv5", label: "Je distingue un verbe attributif (verbe d'état + attribut) d'un transitif direct (COD), et je connais les verbes d'état" },
-  { id: "gv6", label: "Je reconnais les principaux emplois de la voix pronominale et la voix impersonnelle" },
-  { id: "gv7", label: "Je sais analyser la voix passive et la construction factitive « faire + infinitif »" },
+export const SAVOIR_FAIRE = [
+  { id: "verbe-noyau", label: "Verbe noyau" },
+  { id: "complements-verbe", label: "Compléments du verbe" },
+  { id: "attributs", label: "Attributs" },
+  { id: "voix-passive", label: "Voix passive" },
+  { id: "pronominalisation", label: "Pronominalisation" },
+  { id: "periphrases", label: "Périphrases" },
 ];
 
 export const ficheGroupeVerbal: Fiche = {
@@ -17,57 +17,29 @@ export const ficheGroupeVerbal: Fiche = {
   numero: 4,
   partie: "Partie 1 : Grammaire de la phrase",
   title: "Le groupe verbal",
-  subtitle:
-    "Identifier la construction du verbe : transitivité, verbes pronominaux et impersonnels, voix passive",
+  subtitle: "Identifier la construction du verbe : transitivité, verbes pronominaux et impersonnels, voix passive",
   badges: [
-    { label: "★★★ Tombe chaque année", variant: "hot" },
-    { label: "Cycle 4 + lycée", variant: "info" },
+      {
+          "label": "★★★ Tombe chaque année",
+          "variant": "hot"
+      },
+      {
+          "label": "Cycle 4 + lycée",
+          "variant": "info"
+      }
   ],
-  metaTitle: "Le groupe verbal (CRPE) · Fiche de révision | Maitrizz",
-  metaDescription:
-    "Fiche CRPE complète sur le groupe verbal : verbe noyau, GV transitifs, intransitifs et attributifs, voix pronominale, voix impersonnelle, voix passive et construction factitive « faire + infinitif ». Cours, méthode, exercices corrigés, flashcards et auto-évaluation.",
+  metaTitle: "Groupe verbal · Fiche de révision CRPE",
+  metaDescription: "Le groupe verbal au CRPE : verbe noyau, constructions transitive, intransitive, attributive, voix pronominale, passive, impersonnelle. Exercices corrigés.",
+  maitriseNotionSlug: "groupe-verbal",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              items: [
-                {
-                  number: "①",
-                  title: "Le groupe verbal et son noyau",
-                  text: "Le GV s'organise autour d'un verbe. C'est sa construction qui commande les fonctions de ses compléments.",
-                },
-                {
-                  number: "②",
-                  title: "Trois constructions à reconnaître",
-                  text: "Verbe sans objet, avec un complément d'objet, ou avec un attribut : on observe d'abord la phrase avant de nommer la construction.",
-                },
-                {
-                  number: "③",
-                  title: "Voix pronominale et impersonnelle",
-                  text: "On observe le rôle du sujet dans les emplois pronominaux et le « il » impersonnel sans référent.",
-                },
-                {
-                  number: "④",
-                  title: "Voix passive et voix factitive",
-                  text: "Deux constructions à savoir analyser : le COD qui devient sujet au passif et le noyau verbal « faire + infinitif ».",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -75,7 +47,7 @@ export const ficheGroupeVerbal: Fiche = {
               variant: "info",
               icon: "",
               title: "Avant de commencer",
-              text: "Dans la notion 2, vous avez appris à identifier la fonction des groupes liés au verbe. Ici, on change de point de vue : on part du **verbe** et on observe comment il construit le groupe verbal. Il peut être employé seul, appeler un complément d'objet direct ou indirect, ou relier le sujet à un attribut.",
+              text: "« Le verbe souligné est-il transitif, intransitif ou attributif ? À quelle voix est-il employé ? » Voilà une double question typique que le jury peut poser sur le groupe verbal.\n\nPour y répondre sans hésiter, on part toujours du **verbe noyau** et on observe deux choses : comment il se **construit** (employé seul, avec un objet, ou avec un attribut), et comment l'action s'**organise autour du sujet** (sa voix : active, passive, pronominale, impersonnelle). C'est l'objet de cette fiche.",
             },
             {
               type: "subsection",
@@ -173,6 +145,12 @@ export const ficheGroupeVerbal: Fiche = {
                   text: "Certains verbes comme **donner, offrir, envoyer** ou **montrer** admettent deux compléments : « Il offre **des fleurs** à **sa mère**. » « des fleurs » est COD ; « à sa mère » est COI. On analyse chaque complément séparément.",
                 },
                 {
+                  type: "callout",
+                  variant: "warning",
+                  title: "Un même verbe change souvent de construction selon la phrase",
+                  text: "Beaucoup de verbes très courants n'ont pas une construction fixe : c'est le contexte qui tranche. **monter, descendre, sortir, rentrer, passer, sentir, tourner** sont transitifs directs avec un COD (« Il **monte** l'escalier ») et intransitifs sans complément (« Il **monte** »). « passer » peut même devenir attributif (« Il **passe pour** un génie »). On n'étiquette donc jamais un verbe dans l'absolu : on observe sa construction **dans la phrase étudiée**.",
+                },
+                {
                   type: "paragraph",
                   text: "**3. La construction attributive**\nLe verbe ne reçoit pas d'objet : il relie le sujet à une qualité, un état ou une identité.",
                 },
@@ -193,9 +171,20 @@ export const ficheGroupeVerbal: Fiche = {
                   ],
                 },
                 {
+                  type: "table",
+                  title: "Les quatre constructions en un coup d'œil",
+                  headers: ["Construction", "Le verbe…", "Test décisif", "Exemple"],
+                  rows: [
+                    ["**Intransitive**", "n'a aucun complément d'objet", "« quoi ? / qui ? » après le verbe est impossible", "« Il **dort**. »"],
+                    ["**Transitive directe**", "a un COD, sans préposition", "« quoi ? / qui ? » sans préposition ; pronom *le/la/les* ; passif souvent possible", "« Elle lit **un roman**. »"],
+                    ["**Transitive indirecte**", "a un COI, introduit par une préposition (*à, de*)", "« à / de qui ? quoi ? » ; pronom *lui/leur, y, en* ; passif impossible", "« Il obéit **à ses parents**. »"],
+                    ["**Attributive**", "relie le sujet à un attribut, via un verbe d'état", "remplacement par *être* ; accord avec le sujet ; passif impossible", "« Elle semble **fatiguée**. »"],
+                  ],
+                },
+                {
                   type: "callout",
                   variant: "info",
-                  text: "Les étiquettes COD, COI et attribut caractérisent la construction observée. Pour identifier précisément la fonction d'un groupe, voir la notion 2.",
+                  text: "Les étiquettes COD, COI et attribut caractérisent la construction observée. Pour identifier précisément la fonction d'un groupe, voir la [notion 2 sur les fonctions syntaxiques](fiche:fonctions-syntaxiques).",
                 },
               ],
             },
@@ -222,7 +211,7 @@ export const ficheGroupeVerbal: Fiche = {
                         "**À sens passif :** « Ce livre **se vend** bien » : il est bien vendu",
                         "**À sens actif :** « Elle **se souvient** » : verbe essentiellement pronominal",
                       ],
-                      piege: "Le pronom réfléchi « se » peut être COD ou COI : « Elle se lave » (se = COD) mais « Elle se lave les mains » (se = COI, les mains = COD). Cette distinction commande l'accord du participe passé, traité dans la notion 11.",
+                      piege: "Le pronom réfléchi « se » peut être COD ou COI : « Elle se lave » (se = COD) mais « Elle se lave les mains » (se = COI, les mains = COD). Cette distinction commande l'accord du participe passé, traité dans la [notion 12 sur l'accord du participe passé](fiche:accord-participe-passe).",
                       test: "Pour analyser « se », retrouver la construction du verbe : laver quelqu'un → COD ; parler à quelqu'un → COI. Ce test ne s'applique pas mécaniquement aux verbes essentiellement pronominaux.",
                     },
                     {
@@ -269,6 +258,11 @@ export const ficheGroupeVerbal: Fiche = {
                       variant: "warning",
                       text: "⚠️ La présence de l'auxiliaire « être » ne suffit pas. Pour vérifier un passif, reconstituez la phrase active : « Les portes ont été ouvertes » → « Quelqu'un a ouvert les portes. » En revanche, « Il est parti » ne peut pas être transformé ainsi : c'est un passé composé, pas un passif.",
                     },
+                    {
+                      type: "callout",
+                      variant: "info",
+                      text: "💡 **Passif impersonnel** : avec certains verbes, le passif se construit avec un « il » impersonnel, sans sujet réel, le vrai propos suivant le verbe : « **Il** a été décidé que la séance serait reportée », « **Il** est interdit de fumer ». Tournure fréquente dans les textes administratifs et juridiques.",
+                    },
                   ],
                 },
                 {
@@ -278,8 +272,20 @@ export const ficheGroupeVerbal: Fiche = {
                   blocks: [
                     {
                       type: "paragraph",
-                      text: "Dans « Elle **fait travailler** ses élèves », ce n'est pas elle qui travaille : elle fait accomplir l'action par ses élèves. On appelle cela la **construction factitive**. Pour le concours, retenez surtout que « faire + infinitif » s'analyse comme un seul noyau verbal : « fait travailler ». L'infinitif « travailler » n'est donc pas COD de « faire ».",
+                      text: "Dans « Elle **fait travailler** ses élèves », ce n'est pas elle qui travaille : elle fait accomplir l'action par ses élèves. On appelle cela la **construction factitive**. Pour le concours, retenez surtout que « faire + infinitif » s'analyse comme un seul noyau verbal : « fait travailler ». L'infinitif « travailler » n'est donc pas COD de « faire ».\n\nLe verbe **laisser** et les verbes de perception (**voir, entendre, sentir, regarder**) fonctionnent de façon voisine avec un infinitif : « Elle **laisse partir** les invités », « J'ai **vu se rouvrir** les portes ». On parle alors de proposition infinitive ou de noyau verbal complexe ; ces analyses sont reprises dans la [notion 10 sur les formes non conjuguées](fiche:formes-non-conjuguees).",
                     },
+                  ],
+                },
+                {
+                  type: "table",
+                  title: "Les voix en un coup d'œil",
+                  headers: ["Voix", "Rôle du sujet", "Marque / forme", "Exemple"],
+                  rows: [
+                    ["**Active**", "le sujet accomplit l'action", "forme verbale ordinaire", "« Léa **lave** la voiture. »"],
+                    ["**Passive**", "le sujet subit l'action", "*être* + participe passé accordé (+ complément d'agent)", "« La voiture **est lavée** par Léa. »"],
+                    ["**Pronominale**", "le sujet est associé à un pronom de même personne", "pronom *me, te, se, nous, vous*", "« Elle **se lave**. »"],
+                    ["**Impersonnelle**", "le sujet *il* ne renvoie à rien", "*il* sujet grammatical sans référent", "« **Il** pleut. »"],
+                    ["**Factitive** (pour aller plus loin)", "le sujet fait accomplir l'action", "*faire* + infinitif = un seul noyau verbal", "« Elle **fait travailler** ses élèves. »"],
                   ],
                 },
               ],
@@ -323,9 +329,18 @@ export const ficheGroupeVerbal: Fiche = {
               methode: "Repérer le bloc « faire + infinitif » : le sujet fait réaliser le procès exprimé par l'infinitif.",
             },
             {
+              type: "piegeCard",
+              variant: "rouge",
+              title: "Piège n°5 · Passé composé avec « être » pris pour un passif",
+              badge: "Très fréquent",
+              faux: "Dans « Elle est partie ce matin », « est partie » est analysé comme une voix passive.",
+              vrai: "C'est un **passé composé** : certains verbes de mouvement ou d'état (partir, arriver, venir, tomber, rester…) forment leur passé composé avec l'auxiliaire « être ». Il n'y a ni action subie, ni complément d'agent possible.",
+              methode: "Test : essayer de reconstruire une phrase active où le sujet deviendrait COD. « Quelqu'un a parti Elle » est impossible → ce n'est pas un passif. Pour un vrai passif, « Les portes ont été ouvertes » donne « Quelqu'un a ouvert les portes ».",
+            },
+            {
               type: "primaireBox",
               title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** les élèves repèrent le verbe, puis distinguent peu à peu le verbe de son complément.\n\n**Cycle 3 :** on introduit le complément du verbe (COD, COI) et l'attribut du sujet, souvent par manipulation. La transitivité n'est pas nécessairement nommée, mais on observe la construction du verbe.\n\n**Ce que vous devez savoir dire :** « On part du verbe, noyau du groupe verbal. On observe s'il est employé seul, avec un complément direct ou indirect, ou avec un attribut. »",
+              text: "**Cycle 1 (maternelle) :** aucune terminologie. À l'oral, les élèves construisent des phrases où l'on comprend « qui fait quoi » : le verbe est implicitement le mot de l'action. C'est le socle du futur repérage du verbe noyau.\n\n**Cycle 2 (CP-CE2) :** les élèves repèrent le **verbe** dans la phrase, puis distinguent peu à peu le verbe de ce qui le complète, surtout par manipulation (changer le temps, remplacer le groupe).\n\n**Cycle 3 (CM1-6e) :** on installe le **complément du verbe** (équivalent du COD/COI, non déplaçable) et on le distingue du **complément de phrase** (déplaçable, supprimable). L'**attribut du sujet** est introduit. La transitivité n'est pas nommée, mais la construction du verbe est observée. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « On part du verbe, noyau du groupe verbal. On observe s'il est employé seul, avec un complément d'objet direct ou indirect, ou avec un attribut relié par un verbe d'état. Le métalangage du concours (transitivité, COD, COI, attribut) précise des repères que les élèves construisent dès le cycle 3 par la manipulation. »",
             },
             {
               type: "ctaBox",
@@ -352,31 +367,32 @@ export const ficheGroupeVerbal: Fiche = {
               number: "①",
               title: "Identifier la construction d'un verbe pas à pas",
               intro:
-                "**Question typique :** « Le verbe souligné est-il employé dans une construction intransitive, transitive ou attributive ? Justifiez. »\n\n**Exemple fil rouge :** « Le candidat <u>répond</u> à la question. »",
+                "*Question typique : « Dans la phrase “Le candidat <u>répond</u> à la question.”, le verbe souligné est-il employé dans une construction intransitive, transitive ou attributive ? Justifiez votre réponse. »*",
               steps: [
                 {
                   number: "1",
-                  text: "**Vérifier si le verbe est attributif.** Le remplacement de « répond » par « est » est impossible : « répondre » n'est pas ici un verbe d'état.",
+                  text: "**Vérifier d'abord si le verbe est attributif.** On essaie de remplacer « répond » par « est » : « Le candidat est à la question » n'a pas de sens. « répondre » n'est donc pas ici un verbe d'état, et la construction n'est pas attributive.",
                   example: { lines: ["« répond » n'équivaut pas à « est » → construction non attributive"] },
                 },
                 {
                   number: "2",
-                  text: "**Chercher si le verbe appelle un complément d'objet.** On pose la question après le verbe : « Le candidat répond à quoi ? » → « à la question ». Le verbe n'est donc pas intransitif dans cette phrase.",
+                  text: "**Chercher si le verbe appelle un complément d'objet.** On pose la question après le verbe : « Le candidat répond à quoi ? » → « à la question ». Le verbe reçoit bien un complément : il n'est donc pas intransitif dans cette phrase.",
                   example: { lines: ["répond **à quoi ?** → à la question"] },
                 },
                 {
                   number: "3",
-                  text: "**Observer la présence d'une préposition.** Le complément « à la question » est introduit par « à » : il est COI. Le verbe « répondre » est donc employé dans une construction **transitive indirecte**.",
+                  text: "**Observer la présence d'une préposition.** Le complément « à la question » est introduit par la préposition « à », imposée par le verbe (« répondre à quelque chose ») : c'est donc un COI, et non un COD. La construction est **transitive indirecte**.",
                   example: {
                     lines: [
-                      "« Le candidat **y** répond » → la pronominalisation confirme l'analyse",
+                      "« Le candidat **y** répond » → la pronominalisation par « y » confirme l'analyse",
                     ],
                   },
+                  warn: "⚠️ Le geste décisif : c'est la **préposition** appelée par le verbe (et non le sens) qui sépare le COI du COD.",
                 },
                 {
-                  number: "💡",
-                  text: "**Réponse complète :** « répondre » est employé dans une construction transitive indirecte ; « à la question » est un COI, comme le confirme la pronominalisation par « y ».",
-                  warn: "⚠️ Dans une autre phrase, la même démarche peut conduire à une construction intransitive, transitive directe ou attributive.",
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « Le verbe *répondre* est employé dans une construction **transitive indirecte** : il se construit avec la préposition *à* (répondre à quelque chose), et son complément *à la question* est un **COI**, comme le confirme la pronominalisation par *y* (le candidat *y* répond). »",
+                  warn: "⚠️ Dans une autre phrase, la même démarche peut conduire à une construction intransitive, transitive directe ou attributive : c'est l'observation des compléments, jamais le verbe pris isolément, qui décide.",
                 },
               ],
             },
@@ -387,7 +403,8 @@ export const ficheGroupeVerbal: Fiche = {
               badge: "30 secondes",
               question: "Donnez la construction du verbe : « Elle ressemble <u>à sa mère</u>. »",
               correction: [
-                { type: "line", text: "« ressembler à » est **transitif indirect** : « à sa mère » = COI (pronominalisation : « Elle lui ressemble » ; passif impossible)." },
+                { type: "line", text: "**Explication :** le verbe se construit *ressembler à quelqu'un* ; le complément *à sa mère*, introduit par la préposition *à*, est donc un COI. La pronominalisation par *lui* (« Elle **lui** ressemble ») le confirme, et le passif est impossible." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « Le verbe *ressembler* est employé dans une construction **transitive indirecte** ; *à sa mère* est un **COI** (ressembler à quelqu'un, pronominalisation par *lui*). »" },
                 {
                   type: "note",
                   text: "Trouvé du premier coup ? Vous maîtrisez cette méthode. Sinon, relisez l'étape 3 et le piège n°1.",
@@ -399,7 +416,7 @@ export const ficheGroupeVerbal: Fiche = {
               number: "②",
               title: "Distinguer la voix active et la voix passive",
               intro:
-                "**Question typique :** « Le verbe souligné est-il à la voix active ou à la voix passive ? Justifiez. »\n\n**Exemple fil rouge :** « Les copies <u>ont été corrigées</u> par le jury. »",
+                "*Question typique : « Dans la phrase “Les copies <u>ont été corrigées</u> par le jury.”, le verbe souligné est-il à la voix active ou à la voix passive ? Justifiez votre réponse. »*",
               steps: [
                 {
                   number: "1",
@@ -417,12 +434,12 @@ export const ficheGroupeVerbal: Fiche = {
                   example: { lines: ["« Le jury a corrigé les copies » → phrase active correspondante"] },
                 },
                 {
-                  number: "💡",
-                  text: "**Réponse complète :** « La forme verbale “ont été corrigées” est à la **voix passive** : elle est formée de l'auxiliaire “être” et du participe passé “corrigées”, le sujet “les copies” subit l'action et la phrase peut être transformée à la voix active : “Le jury a corrigé les copies”. »",
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « La forme verbale *ont été corrigées* est à la **voix passive** : elle est formée de l'auxiliaire *être* et du participe passé *corrigées* (accordé avec le sujet), le sujet *les copies* subit l'action, et la phrase peut être ramenée à l'actif (*Le jury a corrigé les copies*), où le complément d'agent *par le jury* redevient sujet. »",
                 },
                 {
                   number: "⚠️",
-                  text: "**Attention au faux passif :** la présence de « être » ne suffit pas. « Il est parti » est un passé composé, car on ne peut pas construire une phrase active dans laquelle « il » serait COD.",
+                  text: "**Attention au faux passif :** la présence de « être » ne suffit pas. « Il est parti » est un passé composé, car on ne peut pas construire une phrase active dans laquelle « il » serait COD (voir le piège n°5).",
                 },
               ],
             },
@@ -433,612 +450,104 @@ export const ficheGroupeVerbal: Fiche = {
               badge: "30 secondes",
               question: "« Les portes furent ouvertes par le gardien. » Voix active ou passive ? Justifiez.",
               correction: [
-                { type: "line", text: "**Voix passive** : « être + participe passé accordé » (ouvertes, féminin pluriel), complément d'agent « par le gardien ». La phrase active est « Le gardien ouvrit les portes »." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "line", text: "**Explication :** la forme verbale associe l'auxiliaire *être* (*furent*) au participe passé *ouvertes*, accordé avec le sujet (féminin pluriel). Le sujet *les portes* subit l'action, *par le gardien* est complément d'agent, et l'actif correspondant est « Le gardien ouvrit les portes »." },
+                { type: "line", text: "**Réponse attendue (formulation jury) :** « *furent ouvertes* est à la **voix passive** : auxiliaire *être* + participe passé accordé, sujet qui subit l'action et complément d'agent *par le gardien* (actif : Le gardien ouvrit les portes). »" },
+                { type: "note", text: "@nav Méthode en tête ? Direction S’entraîner." },
+              ],
+            },
+            {
+              type: "methodeGroup",
+              number: "③",
+              title: "Analyser un verbe à la voix pronominale",
+              intro:
+                "*Question typique : « Dans la phrase “Les deux sœurs <u>se sont écrit</u> tout l'été.”, identifiez l'emploi du verbe pronominal souligné et la fonction du pronom “se”. »*",
+              steps: [
+                {
+                  number: "1",
+                  text: "**Vérifier qu'on est bien à la voix pronominale.** Le verbe est précédé d'un pronom (*se*) de la même personne que le sujet *les deux sœurs*. C'est la marque de la voix pronominale.",
+                  example: { lines: ["sujet *les deux sœurs* + pronom *se* de même personne → voix pronominale"] },
+                },
+                {
+                  number: "2",
+                  text: "**Identifier l'emploi.** Les sœurs s'écrivent l'une à l'autre : le pronom marque la réciprocité, c'est un emploi **réfléchi réciproque**. (Pour mémoire : réflexif = le sujet agit sur lui-même ; sens passif = *ce livre se vend* (= est vendu) ; sens actif = verbe essentiellement pronominal comme *se souvenir*.)",
+                  example: { lines: ["*se sont écrit* = elles ont écrit l'une à l'autre → réciproque"] },
+                },
+                {
+                  number: "3",
+                  text: "**Retrouver la construction du verbe pour analyser “se”.** On dit *écrire à quelqu'un* : la construction est indirecte, donc le pronom *se* est **COI**, et non COD.",
+                  example: { lines: ["*écrire **à** quelqu'un* → *se* = COI (et non COD)"] },
+                  warn: "⚠️ Le geste décisif : *se* n'est pas automatiquement COD. On retrouve toujours la construction du verbe (*laver quelqu'un* → COD ; *écrire à quelqu'un* → COI). Cette analyse commande l'accord du participe passé, traité dans la [notion 12](fiche:accord-participe-passe) : ici *écrit* reste invariable, car *se* est COI.",
+                },
+                {
+                  number: "✅",
+                  text: "**Réponse attendue (formulation modèle) :** « *se sont écrit* est un verbe à la **voix pronominale**, en emploi **réciproque** (les sœurs s'écrivent l'une à l'autre) ; le pronom *se* est **COI**, car on écrit *à* quelqu'un. »",
+                },
+              ],
+            },
+            {
+              type: "exerciceCard",
+              variant: "standard",
+              title: "Checkpoint : à vous de jouer",
+              badge: "30 secondes",
+              question: "Identifiez l'emploi pronominal et la fonction de « se » : « Ils <u>se sont battus</u> dans la cour. »",
+              correction: [
+                { type: "line", text: "**Explication :** *se battre* est un verbe essentiellement pronominal (il n'existe pas sans le pronom au même sens) : l'emploi est **à sens actif**. Le pronom *se* est ici soudé au verbe et ne s'analyse pas séparément comme COD ou COI." },
+                { type: "note", text: "Pour les verbes essentiellement pronominaux, on ne décompose pas « se » : c'est ce qui les distingue des pronominaux réfléchis comme « se laver »." },
               ],
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Passez à l’application.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
+          icon: "",
+          blocks: [
+            {
+              type: "exerciceBank",
+              title: "Le groupe verbal",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_GROUPE_VERBAL,
+            },
+          ],
+        },
+        {
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
             },
             {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "gv1",
-                  question: "Le groupe verbal s'organise autour de :",
-                  options: ["un nom noyau", "un verbe noyau", "un déterminant", "une préposition"],
-                  correctIndex: 1,
-                  explanation:
-                    "Le GV s'organise autour d'un verbe noyau ; c'est le second constituant obligatoire de la phrase, avec le groupe sujet.",
-                },
-                {
-                  objectifId: "gv3",
-                  question: "Quel test fournit un indice fort d'une construction transitive directe ?",
-                  options: [
-                    "Le verbe est suivi d'une préposition",
-                    "La mise au passif est possible (le COD devient sujet)",
-                    "La pronominalisation par lui / leur",
-                    "Le verbe est invariable",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Lorsqu'une passivation est possible, le COD devient sujet : c'est un indice fort d'une construction transitive directe. Certains COD, notamment après des verbes de mesure, ne se prêtent toutefois pas au passif.",
-                },
-                {
-                  objectifId: "gv4",
-                  question: "Dans « Il obéit à ses parents », le verbe « obéir » se construit avec :",
-                  options: ["un COD", "un COI", "un attribut du sujet", "aucun complément"],
-                  correctIndex: 1,
-                  explanation:
-                    "« obéir À » est transitif indirect : « à ses parents » est un COI (pronominalisation : « Il leur obéit » ; passif impossible).",
-                },
-                {
-                  objectifId: "gv5",
-                  question: "Dans « Il devient médecin », « médecin » est :",
-                  options: ["COD", "Attribut du sujet", "COI", "CC"],
-                  correctIndex: 1,
-                  explanation:
-                    "« devient » est un verbe d'état : « médecin » est attribut du sujet « il » (passivation impossible, accord avec le sujet).",
-                },
-                {
-                  objectifId: "gv2",
-                  question: "Dans « Il offre des fleurs à sa mère », comment se construit le GV ?",
-                  options: ["Avec deux COD", "Avec un COD et un COI", "Avec deux attributs", "Sans complément d'objet"],
-                  correctIndex: 1,
-                  explanation:
-                    "Le GV transitif comporte deux compléments d'objet : « des fleurs » est COD et « à sa mère » est COI.",
-                },
-                {
-                  objectifId: "gv6",
-                  question: "Dans « Ce livre se vend bien », quel est le sous-type de verbe pronominal ?",
-                  options: ["Réfléchi", "Réciproque", "Pronominal à sens passif", "Essentiellement pronominal"],
-                  correctIndex: 2,
-                  explanation:
-                    "« se vend » a un sens passif (= est vendu) : c'est un pronominal à sens passif.",
-                },
-                {
-                  objectifId: "gv7",
-                  question: "À la voix passive, quel complément de la phrase active devient sujet ?",
-                  options: ["Le COI", "Le COD", "Le complément circonstanciel", "L'attribut du sujet"],
-                  correctIndex: 1,
-                  explanation:
-                    "Seul le COD peut devenir sujet passif : la voix passive est réservée aux verbes transitifs directs.",
-                },
-                {
-                  objectifId: "gv7",
-                  question: "Dans « Elle fait travailler ses élèves », quel est le noyau verbal ?",
-                  options: ["fait", "fait travailler", "travailler ses élèves", "ses élèves"],
-                  correctIndex: 1,
-                  explanation:
-                    "Dans la construction factitive, le semi-auxiliaire « faire » et l'infinitif forment ensemble le noyau verbal : « fait travailler ».",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
-            },
-          ],
-        },
-        {
-          id: "appli",
-          label: "Application",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Progression en 3 niveaux. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              stars: "★☆☆",
-              label: "Niveau 1 : Identifier",
-              sub: "Type de construction, compléments essentiels, phrases simples",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 1 : Classer les verbes selon leur construction",
-              objectifTag: "Types de construction",
-              question:
-                "Classez chaque verbe souligné : intransitif · transitif direct · transitif indirect · attributif.\na) « Elle <u>dort</u> paisiblement. »   b) « Il <u>mange</u> une pomme. »   c) « Elle <u>parle</u> à son ami. »   d) « Il <u>semble</u> fatigué. »   e) « Ils <u>arrivent</u> demain. »",
-              correction: [
-                { type: "line", label: "a)", text: "**dort** → intransitif (« dort quoi ? » impossible)" },
-                { type: "line", label: "b)", text: "**mange** → transitif direct (« une pomme » = COD ; « Il la mange »)" },
-                { type: "line", label: "c)", text: "**parle** → transitif indirect (« à son ami » = COI ; « Elle lui parle »)" },
-                { type: "line", label: "d)", text: "**semble** → attributif (verbe d'état + attribut du sujet « fatigué »)" },
-                { type: "line", label: "e)", text: "**arrivent** → intransitif (« demain » = CC de temps, extérieur au GV)" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 2 : Vrai ou faux, justifiez",
-              question:
-                "Vrai ou faux, justifiez en une phrase :\na) « obéir » est un verbe transitif direct.\nb) Dans « Il devient professeur », « professeur » est COD.\nc) « Il pleut » est un verbe impersonnel.\nd) « se souvenir » est un verbe essentiellement pronominal.",
-              correction: [
-                { type: "line", label: "a)", text: "**Faux.** « obéir À » est transitif indirect : il se construit avec un COI." },
-                { type: "line", label: "b)", text: "**Faux.** « devient » est un verbe d'état : « professeur » est attribut du sujet." },
-                { type: "line", label: "c)", text: "**Vrai.** « il » est un sujet grammatical impersonnel, sans référent réel." },
-                { type: "line", label: "d)", text: "**Vrai.** « souvenir » n'existe pas sans le pronom réfléchi : verbe essentiellement pronominal." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 3 : Verbes d'état et attribut du sujet",
-              objectifTag: "Attributif / verbes d'état",
-              question:
-                "Identifiez le verbe d'état et l'attribut du sujet :\na) « Il paraît épuisé. »   b) « Elle reste debout. »   c) « Il passe pour un génie. »   d) « Cette solution s'avère efficace. »   e) « Il a l'air soucieux. »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Phrase", "Verbe d'état", "Attribut du sujet"],
-                  rows: [
-                    ["Il paraît épuisé", "paraît", "épuisé (adjectif qualificatif)"],
-                    ["Elle reste debout", "reste", "debout (adverbe employé comme attribut)"],
-                    ["Il passe pour un génie", "passe pour", "un génie (GN)"],
-                    ["Cette solution s'avère efficace", "s'avère", "efficace (adjectif qualificatif)"],
-                    ["Il a l'air soucieux", "a l'air", "soucieux (adjectif qualificatif)"],
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 4 : Principaux emplois de la voix pronominale",
-              objectifTag: "Verbes pronominaux",
-              question:
-                "Identifiez l'emploi principal : réfléchi réflexif · réfléchi réciproque · à sens passif · à sens actif.\na) « Elle <u>se regarde</u> dans le miroir. »   b) « Ils <u>se téléphonent</u> chaque soir. »   c) « Ce livre <u>se lit</u> facilement. »   d) « Il <u>s'enfuit</u> sans se retourner. »   e) « Elle <u>se méfie</u> de tout. »",
-              correction: [
-                { type: "line", label: "a)", text: "**se regarde** → réfléchi réflexif (elle regarde elle-même)" },
-                { type: "line", label: "b)", text: "**se téléphonent** → réfléchi réciproque (l'un à l'autre)" },
-                { type: "line", label: "c)", text: "**se lit** → à sens passif (= est lu)" },
-                { type: "line", label: "d)", text: "**s'enfuit** → à sens actif ; verbe essentiellement pronominal" },
-                { type: "line", label: "e)", text: "**se méfie** → à sens actif ; verbe essentiellement pronominal" },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : Analyser",
-              sub: "Verbes à double emploi, tests, justification exigée",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 5 : Verbes à double emploi",
-              objectifTag: "Transitif / intransitif",
-              question:
-                "Le verbe change de construction selon le sens. Identifiez le type de GV dans chaque emploi :\na) « Il monte l'escalier. » / « Il monte. »   b) « Il passe l'examen. » / « Il passe pour un génie. »   c) « Il sent la rose. » / « Cette fleur sent bon. »",
-              correction: [
-                { type: "line", label: "a)", text: "« monte l'escalier » → transitif direct (« l'escalier » = COD) / « monte » → emploi intransitif" },
-                { type: "line", label: "b)", text: "« passe l'examen » → transitif direct (COD) / « passe pour un génie » → attributif (« passer pour » = verbe d'état)" },
-                { type: "line", label: "c)", text: "« sent la rose » → transitif direct (« la rose » = COD) / « sent bon » → emploi intransitif (« bon » est ici un adverbe)" },
-                { type: "note", text: "⚠️ Verbes à double emploi : monter, sortir, passer, sentir, tourner, rentrer, descendre changent de construction selon le contexte." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 6 : Le test passif",
-              objectifTag: "Transitif direct / indirect",
-              question:
-                "Mettez à la voix passive si c'est possible ; sinon, expliquez pourquoi et donnez la construction.\na) « Elle lit un roman. »   b) « Il parle à son ami. »   c) « Il est médecin. »   d) « Il ressemble à son père. »",
-              correction: [
-                { type: "line", label: "a)", text: "« Un roman est lu par elle. » : passif possible → transitif direct." },
-                { type: "line", label: "b)", text: "Passif impossible → transitif indirect (un COI ne peut pas devenir sujet passif)." },
-                { type: "line", label: "c)", text: "Passif impossible → attributif (un attribut ne peut pas devenir sujet passif)." },
-                { type: "line", label: "d)", text: "Passif impossible → transitif indirect (« ressembler à »)." },
-                { type: "note", text: "💡 Lorsqu'un groupe devient sujet au passif, il était COD à l'actif. L'impossibilité du passif ne suffit toutefois pas, à elle seule, à exclure tout COD." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 7 : Corriger la construction",
-              question:
-                "Repérez l'erreur d'analyse et donnez la construction correcte :\na) « Il ressemble à son père. » → « à son père » = CC de comparaison\nb) « Elle se souvient de son enfance. » → « de son enfance » = CC de cause\nc) « Il devient médecin. » → « médecin » = COD\nd) « Elle fait travailler ses élèves. » → « ses élèves » = sujet de « travailler »",
-              correction: [
-                { type: "line", label: "a)", text: "« à son père » n'est pas un CC : « ressembler à » est transitif indirect → COI (« Il lui ressemble »)." },
-                { type: "line", label: "b)", text: "« de son enfance » n'est pas un CC : « se souvenir de » est transitif indirect → COI (« Elle s'en souvient »)." },
-                { type: "line", label: "c)", text: "« médecin » n'est pas un COD : « devient » est un verbe d'état → attribut du sujet (passivation impossible)." },
-                { type: "line", label: "d)", text: "« fait travailler » forme le noyau verbal factitif. « ses élèves » désigne les agents qui réalisent l'action de travailler." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 8 : Verbes impersonnels",
-              objectifTag: "Verbes impersonnels",
-              question:
-                "Pour chaque construction impersonnelle, identifiez le sujet grammatical et le complément du verbe impersonnel :\na) « Il arrive des problèmes. »   b) « Il faut travailler. »   c) « Il est possible qu'il vienne. »   d) « Il y a trois personnes. »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Phrase", "Sujet grammatical", "Complément du verbe impersonnel"],
-                  rows: [
-                    ["Il arrive des problèmes", "il (impersonnel)", "des problèmes"],
-                    ["Il faut travailler", "il (impersonnel)", "travailler (infinitif)"],
-                    ["Il est possible qu'il vienne", "il (impersonnel)", "qu'il vienne (proposition subordonnée conjonctive)"],
-                    ["Il y a trois personnes", "il (impersonnel)", "trois personnes"],
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 9 : Le pronom réfléchi « se », COD ou COI ?",
-              question:
-                "Dans chaque phrase, « se » est-il COD ou COI ? Justifiez par la construction du verbe.\na) « Elle se lave. »   b) « Elle se lave les mains. »   c) « Ils se regardent. »   d) « Ils se sourient. »",
-              correction: [
-                { type: "line", label: "a)", text: "« laver quelqu'un » (COD) → « se » = COD (elle se lave elle-même)." },
-                { type: "line", label: "b)", text: "« laver les mains À elle » → « se » = COI, « les mains » = COD." },
-                { type: "line", label: "c)", text: "« regarder quelqu'un » (COD) → « se » = COD (l'un regarde l'autre)." },
-                { type: "line", label: "d)", text: "« sourire À quelqu'un » (COI) → « se » = COI." },
-                { type: "note", text: "💡 On ne déduit pas automatiquement la fonction de « se » de la présence d'un autre COD : on retrouve toujours la construction du verbe (laver quelqu'un, sourire à quelqu'un)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : Maîtriser",
-              sub: "Extraits littéraires, conditions proches du concours",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 10 · Extrait littéraire : Émile Zola",
-              enonce:
-                "« Une femme passa, tenant par la main un petit garçon. Elle se hâtait, pressée d'atteindre sa maison avant la nuit. »\n*(Émile Zola, Germinal, 1885)*",
-              question: "Analysez la construction de chaque GV souligné : « <u>passa</u> » · « <u>se hâtait</u> » · « <u>atteindre</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Construction", "Compléments essentiels"],
-                  rows: [
-                    ["passa", "Intransitif", "Aucun complément d'objet (« tenant… » est une épithète détachée)"],
-                    ["se hâtait", "Pronominal (essentiellement pronominal)", "Aucun COD : « se » est intégré au verbe"],
-                    ["atteindre", "Transitif direct (infinitif)", "COD : « sa maison » (« atteindre quoi ? »)"],
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 11 · Extrait littéraire : Guy de Maupassant",
-              enonce:
-                "« Il aimait les promenades solitaires, et il sentait le vide de sa vie s'étendre autour de lui. »\n*(Guy de Maupassant, Bel-Ami, 1885)*",
-              question: "Analysez la construction de chaque GV souligné : « <u>aimait</u> » · « <u>sentait … s'étendre</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Construction", "Compléments essentiels"],
-                  rows: [
-                    ["aimait", "Transitif direct", "COD : « les promenades solitaires »"],
-                    ["sentait … s'étendre", "Transitif direct + proposition infinitive", "COD : « le vide de sa vie s'étendre autour de lui » = proposition subordonnée infinitive (verbe de perception + sujet propre)"],
-                  ],
-                },
-                { type: "note", text: "⚠️ Après un verbe de perception (voir, entendre, sentir, regarder) suivi d'un GN et d'un infinitif ayant son propre sujet, on a une proposition subordonnée infinitive COD." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 12 · Extrait littéraire : Colette",
-              enonce:
-                "« Ma mère regardait les enfants jouer dans le jardin. Elle souriait, muette, heureuse, et ne disait rien. »\n*(Colette, La Maison de Claudine, 1922)*",
-              question: "Analysez la construction de chaque GV souligné : « <u>regardait … jouer</u> » · « <u>souriait</u> » · « <u>ne disait rien</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Construction", "Compléments essentiels"],
-                  rows: [
-                    ["regardait … jouer", "Transitif direct + proposition infinitive", "COD : « les enfants jouer dans le jardin » = proposition subordonnée infinitive"],
-                    ["souriait", "Intransitif", "Aucun complément d'objet (« muette, heureuse » = épithètes détachées du sujet)"],
-                    ["ne disait rien", "Transitif direct (à la forme négative)", "COD : « rien » (pronom indéfini)"],
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              text: "Ces exercices reprennent le format de l'étude de la langue au CRPE : une phrase ou un extrait à analyser et une réponse grammaticale justifiée. Le badge ✦ signale un support issu d'une annale, avec une question adaptée à cette notion.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 1 : phrase d'entraînement",
-              enonce:
-                "« Elle <u>rêvait</u> des contrées lointaines, des rivages lumineux, des palais de marbre où des fontaines <u>jaillissaient</u> sous des ciels toujours bleus. »",
-              question: "Analysez la construction de chaque verbe souligné : « <u>rêvait</u> » · « <u>jaillissaient</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Construction", "Compléments essentiels"],
-                  rows: [
-                    ["rêvait", "Transitif indirect", "COI : « des contrées lointaines, des rivages lumineux, des palais de marbre » (« rêver DE » ; « Elle en rêvait »)"],
-                    ["jaillissaient", "Intransitif", "Aucun complément d'objet (« sous des ciels toujours bleus » = CC de lieu)"],
-                  ],
-                },
-                { type: "note", text: "⚠️ « rêver de » est transitif indirect : ses compléments sont des COI, malgré l'absence apparente de préposition devant chaque GN coordonné (la préposition « de » est dans « des »)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 2 : phrase d'entraînement",
-              enonce:
-                "« Les misérables ne <u>manquent</u> pas sur la terre. Partout, les souffrances <u>sont</u> grandes et les hommes <u>sont</u> las de ne plus croire. »",
-              question: "Analysez la construction de chaque verbe souligné : « <u>manquent</u> » · « <u>sont</u> grandes » · « <u>sont</u> las »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Construction", "Compléments essentiels"],
-                  rows: [
-                    ["ne manquent pas", "Intransitif (forme négative)", "Aucun complément d'objet (« sur la terre » = CC de lieu)"],
-                    ["sont grandes", "Attributif", "Attribut du sujet : « grandes » (accord avec « souffrances »)"],
-                    ["sont las", "Attributif", "Attribut du sujet : « las de ne plus croire » (« de ne plus croire » complète l'adjectif « las »)"],
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Support issu d'une annale",
-              title: "Exercice 3 : Lola Lafon, Quand tu écouteras cette chanson",
-              enonce:
-                "« Écrire n'<u>est</u> pas tout à fait un choix : c'est un aveu d'impuissance. On <u>écrit</u> parce qu'on ne sait par quel autre biais attraper le réel. »\n*(Lola Lafon, Quand tu écouteras cette chanson, 2022)*",
-              question: "Question adaptée à cette notion · Analysez la construction de chaque verbe souligné : « <u>est</u> » · « <u>écrit</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Construction", "Compléments essentiels / sujet"],
-                  rows: [
-                    ["n'est pas … un choix", "Attributif (forme négative)", "Attribut du sujet : « un choix » · sujet : « Écrire » (verbe à l'infinitif employé comme sujet)"],
-                    ["écrit", "Transitif direct en emploi absolu", "Aucun COD exprimé · « parce qu'on ne sait… » = CC de cause"],
-                  ],
-                },
-                { type: "note", text: "⚠️ « Écrire » reste un verbe à l'infinitif, même employé comme sujet de « est ». On n'écrit jamais « nom verbal » : cette catégorie n'existe pas (voir notion 1)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Support issu d'une annale",
-              title: "Exercice 4 : Marguerite Yourcenar, Comment Wang-Fô fut sauvé",
-              enonce:
-                "« J'ai vu se rouvrir les portes qui me séparaient du monde ; je suis monté sur la terrasse du palais pour regarder les nuages, mais ils étaient moins beaux que ceux de tes crépuscules. »\n*(Marguerite Yourcenar, Nouvelles orientales, 1963)*",
-              question:
-                "Question adaptée à cette notion · Analysez la construction de chaque verbe souligné : « <u>ai vu</u> … se rouvrir » · « <u>suis monté</u> » · « <u>étaient</u> moins beaux »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Construction", "Compléments essentiels"],
-                  rows: [
-                    ["ai vu … se rouvrir", "Transitif direct + proposition infinitive", "COD : la proposition subordonnée infinitive « se rouvrir les portes » ; « les portes » est le sujet postposé de « se rouvrir » et la relative « qui me séparaient du monde » complète ce nom"],
-                    ["suis monté", "Intransitif", "Aucun complément d'objet (« sur la terrasse » = CC de lieu, « pour regarder les nuages » = CC de but)"],
-                    ["étaient moins beaux", "Attributif", "Attribut du sujet « ils » : « moins beaux » (adjectif au comparatif d'infériorité)"],
-                  ],
-                },
-                { type: "note", text: "💡 « suis monté » est un passé composé avec l'auxiliaire « être » (verbe de mouvement), à ne pas confondre avec une voix passive." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              badge: "Pour aller plus loin",
-              title: "Exercice 5 : phrase d'entraînement",
-              enonce:
-                "« Ces récits nous <u>font</u> rêver ; une joie nouvelle <u>monte</u> en nous. »",
-              question: "Analysez la construction de chaque verbe souligné : « <u>font</u> rêver » · « <u>monte</u> »",
-              correction: [
-                {
-                  type: "table",
-                  headers: ["Verbe", "Construction", "Compléments essentiels / sujet"],
-                  rows: [
-                    ["font rêver", "Voix factitive (« faire + infinitif »)", "Noyau verbal : « font rêver » · sujet : « ces récits » · COD : « nous »"],
-                    ["monte", "Intransitif", "Aucun complément d'objet · sujet : « une joie nouvelle » · « en nous » = CC de lieu au sens figuré"],
-                  ],
-                },
-                { type: "note", text: "⚠️ « faire » est ici un semi-auxiliaire factitif : on analyse ensemble « font rêver » comme noyau verbal." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              icon: "",
-              text: "Ces exercices reproduisent des erreurs fréquentes relevées dans les copies. Repérer ce qui cloche dans une copie, c'est aussi ce que vous ferez plus tard avec vos élèves.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : « à son père »",
-              enonce: "Réponse d'un candidat : « **à son père** : CC de comparaison », pour *« Il ressemble à son père. »*",
-              question: "Identifiez l'erreur et rédigez la réponse attendue.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Erreur : COI confondu avec CC", bad: true },
-                    { text: "Le verbe impose la préposition « à » : on dit « ressembler à quelqu'un »" },
-                    { text: "La pronominalisation confirme que le groupe dépend du verbe : « Il lui ressemble »" },
-                    { text: "Réponse attendue : « ressembler » est employé dans une construction transitive indirecte ; « à son père » est COI" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 2 · Réponse à corriger : « médecin »",
-              enonce: "Réponse d'un candidat : « **médecin** : COD du verbe devenir », pour *« Il devient médecin. »*",
-              question: "Identifiez l'erreur et justifiez précisément votre réponse.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Erreur : attribut du sujet confondu avec COD", bad: true },
-                    { text: "« devenir » est ici un verbe d'état : il relie le sujet « il » à une identité, « médecin »" },
-                    { text: "Le remplacement par « être » conserve cette relation : « Il est médecin »" },
-                    { text: "Réponse attendue : « médecin » est un nom, attribut du sujet « il » ; « devenir » est employé dans une construction attributive" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : « rêver »",
-              enonce: "Réponse d'un candidat : « **rêver** : sujet du verbe font », pour *« Ces récits nous font rêver. »*",
-              question: "Identifiez l'erreur et rédigez la réponse attendue.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Erreur : l'infinitif est analysé isolément, sans reconnaître la construction factitive", bad: true },
-                    { text: "Le sujet du noyau verbal « font rêver » est le GN « ces récits » ; « nous » en est le COD" },
-                    { text: "Réponse attendue : « font rêver » est un noyau verbal à la voix factitive, formé de « faire » semi-auxiliaire et de l'infinitif « rêver »" },
-                  ],
-                },
-                { type: "note", text: "Le sujet fait naître chez quelqu'un le procès exprimé par l'infinitif : c'est le sens factitif." },
-              ],
+              type: "corrigerCopies",
+              title: "Le groupe verbal",
+              copies: COPIES_GROUPE_VERBAL,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              icon: "",
-              text: "Cliquez sur chaque carte pour révéler la réponse. Questions formulées comme le jury.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "Quelles constructions du verbe faut-il savoir reconnaître ?",
-                  answer:
-                    "**Intransitive** : aucun complément d'objet (« Il dort »).\n**Transitive directe** : un COD (« Il lit un roman »).\n**Transitive indirecte** : un COI (« Il répond à la question »).\n**Attributive** : un attribut du sujet après un verbe d'état (« Il semble inquiet »).",
-                },
-                {
-                  question: "Quelle différence y a-t-il entre la construction et la voix d'un verbe ?",
-                  answer:
-                    "La **construction** indique les compléments appelés par le verbe. La **voix** indique comment l'action est organisée autour du sujet.\nDans « Les copies sont corrigées par le jury », « corriger » est transitif direct et la forme verbale est à la voix passive.",
-                },
-                {
-                  question: "Comment distinguer une construction transitive directe d'une construction transitive indirecte ?",
-                  answer:
-                    "Le complément est relié au verbe **sans préposition** : construction transitive directe, avec un COD (« Il lit un roman »).\nIl est introduit par une **préposition imposée par le verbe** : construction transitive indirecte, avec un COI (« Il obéit à ses parents » → « Il leur obéit »).",
-                },
-                {
-                  question: "Comment distinguer un COD d'un attribut du sujet ?",
-                  answer:
-                    "Le **COD** complète un verbe transitif direct : « Il mange une pomme ».\nL'**attribut du sujet** caractérise le sujet par l'intermédiaire d'un verbe d'état : « Il devient médecin ». Il s'accorde avec le sujet et ne peut pas devenir sujet d'une phrase passive.",
-                },
-                {
-                  question: "Quels sont les principaux verbes d'état ?",
-                  answer:
-                    "Être, paraître, sembler, devenir, rester, demeurer, avoir l'air, passer pour, se révéler, s'avérer.\nIls relient le sujet à un attribut : « Elle semble fatiguée ».",
-                },
-                {
-                  question: "Quels sont les principaux emplois de la voix pronominale ?",
-                  answer:
-                    "**Réfléchi** : réflexif (« se laver ») ou réciproque (« se parler »).\n**À sens passif** : « ce livre se vend » (= est vendu).\n**À sens actif** : notamment les verbes essentiellement pronominaux (« se souvenir »).",
-                },
-                {
-                  question: "Comment reconnaître une construction impersonnelle ?",
-                  answer:
-                    "Elle est construite avec un pronom « il » qui ne renvoie à personne ni à rien : « Il pleut », « Il faut de la patience ».\n« Il » est le sujet grammatical ; le groupe qui suit éventuellement le verbe est un complément du verbe impersonnel.",
-                },
-                {
-                  question: "Comment reconnaître et justifier la voix passive ?",
-                  answer:
-                    "Le verbe prend la forme **être + participe passé accordé** et le sujet subit l'action. On vérifie en reconstruisant l'actif : « Les copies sont corrigées par le jury » → « Le jury corrige les copies ».\nSeul un verbe transitif direct peut être mis au passif.",
-                  astuce: "⚠️ « Il est parti » est un passé composé, pas un passif.",
-                },
-                {
-                  question: "Pour aller plus loin : qu'est-ce que la construction factitive ?",
-                  answer:
-                    "Le sujet fait accomplir l'action exprimée par l'infinitif : « Elle fait travailler ses élèves ». L'ensemble **faire + infinitif** forme un seul noyau verbal : « fait travailler ».",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
@@ -1082,12 +591,6 @@ export const ficheGroupeVerbal: Fiche = {
               ],
             },
           ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
         },
       ],
     },

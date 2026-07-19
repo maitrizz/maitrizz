@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Le prototype (/proto) a son propre header.
+  if (pathname?.startsWith("/proto")) return null;
 
   return (
     <header className="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30">
@@ -34,12 +39,14 @@ export default function Navbar() {
           <button
             className="hidden sm:block font-ui font-bold text-xs uppercase tracking-widest text-primary hover:text-secondary transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             disabled
+            title="Disponible à l'ouverture de la plateforme"
           >
             Connexion
           </button>
           <button
-            className="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-ui font-bold text-xs uppercase tracking-widest shadow-sm hover:bg-primary-container transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-primary text-white px-6 py-2.5 rounded-xl font-ui font-bold text-xs uppercase tracking-widest shadow-sm hover:bg-primary-container transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled
+            title="Disponible à l'ouverture de la plateforme"
           >
             S&apos;inscrire
           </button>
@@ -48,7 +55,8 @@ export default function Navbar() {
           <button
             className="md:hidden text-primary"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={menuOpen}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />

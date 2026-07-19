@@ -1,75 +1,45 @@
 import type { Fiche } from "@/components/fiche/types";
+import { EXERCICES_RELATIONS_SEMANTIQUES } from "./exercices-relations-semantiques";
+import { COPIES_RELATIONS_SEMANTIQUES } from "./copies-relations-semantiques";
 
-// Objectifs de la fiche, utilisés en aperçu (Vue d'ensemble) et en auto-évaluation
-const OBJECTIFS = [
-  { id: "rs1", label: "Je sais que la synonymie parfaite n'existe pas : je choisis un synonyme adapté au contexte et je justifie la nuance" },
-  { id: "rs2", label: "Je distingue les trois types d'antonymie : graduable, complémentaire, réciproque (conversive)" },
-  { id: "rs3", label: "Je distingue l'hyperonyme (terme générique) de l'hyponyme (terme spécifique)" },
-  { id: "rs4", label: "Je reconnais la polysémie et je distingue le sens propre du sens figuré en contexte" },
-  { id: "rs5", label: "Je distingue la dénotation de la connotation, et je repère les connotations ambivalentes" },
-  { id: "rs6", label: "Je distingue le champ lexical (mots d'un thème) du champ sémantique (sens d'un mot)" },
-  { id: "rs7", label: "Je réponds aux questions de lexique en contexte : synonyme adapté, sens figuré, champ lexical analysé dans son effet" },
+export const SAVOIR_FAIRE = [
+  { id: "synonymie", label: "Synonymie" },
+  { id: "antonymie", label: "Antonymie" },
+  { id: "hyperonymie", label: "Hyperonymie" },
+  { id: "polysemie", label: "Polysémie" },
+  { id: "champ-lexical", label: "Champ lexical" },
+  { id: "sens-propre-figure", label: "Sens propre/figuré" },
 ];
 
 export const ficheRelationsSemantiques: Fiche = {
   slug: "relations-semantiques",
   matiere: "francais",
-  numero: 17,
+  numero: 18,
   partie: "Partie 2 : Lexique",
   title: "Les relations sémantiques",
-  subtitle:
-    "Synonymie, antonymie, hyperonymie, hyponymie, polysémie, sens propre et figuré, champ lexical et champ sémantique",
+  subtitle: "Synonymie, antonymie, hyperonymie, hyponymie, polysémie, sens propre et figuré, champ lexical et champ sémantique",
   badges: [
-    { label: "★★★ Tombe à chaque session", variant: "hot" },
-    { label: "Cycle 3-4 · BOEN n°1 du 22 janvier 2019", variant: "info" },
+      {
+          "label": "★★★ Tombe chaque année",
+          "variant": "hot"
+      },
+      {
+          "label": "Cycle 3-4 · BOEN n°1 du 22 janvier 2019",
+          "variant": "info"
+      }
   ],
-  metaTitle: "Les relations sémantiques (CRPE) · Fiche de révision | Maitrizz",
-  metaDescription:
-    "Fiche CRPE complète sur les relations sémantiques : synonymie, antonymie (graduable, complémentaire, réciproque), hyperonymie et hyponymie, polysémie, sens propre et figuré, dénotation et connotation, champ lexical et champ sémantique. Méthode du sens en contexte, exercices corrigés, flashcards et auto-évaluation.",
+  metaTitle: "Relations sémantiques · Fiche de révision CRPE",
+  metaDescription: "Les relations sémantiques au CRPE : synonymie, antonymie, hyperonymie, polysémie, sens propre et figuré, dénotation et connotation. Exercices corrigés.",
+  maitriseNotionSlug: "relations-semantiques",
   tabGroups: [
     {
-      id: "decouvrir",
-      label: "Découvrir",
+      id: "apprendre",
+      label: "Apprendre",
       icon: "",
       tabs: [
         {
-          id: "vue-d-ensemble",
-          label: "Vue d'ensemble",
-          icon: "",
-          blocks: [
-            {
-              type: "sommaireApercu",
-              title: "Le programme en 4 étapes",
-              intro:
-                "Les mots entrent en relation de sens. Au concours, les questions portent presque toujours sur le sens en contexte : la précision est décisive.",
-              items: [
-                {
-                  number: "①",
-                  title: "Synonymie et antonymie",
-                  text: "Sens proche (jamais identique) et sens contraire (trois types d'opposition).",
-                },
-                {
-                  number: "②",
-                  title: "Hyperonymie et hyponymie",
-                  text: "Les relations d'inclusion : un terme générique englobe des termes spécifiques.",
-                },
-                {
-                  number: "③",
-                  title: "Polysémie, sens propre et figuré",
-                  text: "Un mot, plusieurs sens ; sens premier concret ou sens dérivé métaphorique ; dénotation et connotation.",
-                },
-                {
-                  number: "④",
-                  title: "Champ lexical et champ sémantique",
-                  text: "Plusieurs mots autour d'un thème, ou plusieurs sens d'un même mot.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cours",
-          label: "Cours",
+          id: "comprendre",
+          label: "Comprendre",
           icon: "",
           blocks: [
             {
@@ -197,7 +167,7 @@ export const ficheRelationsSemantiques: Fiche = {
                 {
                   type: "comparisonGrid",
                   rows: [
-                    { label: "Champ lexical (un thème, plusieurs mots)", good: "Tous les mots d'un texte liés à un même thème : nuit, ombre, obscur, lune… (voir la notion 13)" },
+                    { label: "Champ lexical (un thème, plusieurs mots)", good: "Tous les mots d'un texte liés à un même thème : nuit, ombre, obscur, lune… (voir la notion 14)" },
                     { label: "Champ sémantique (un mot, plusieurs sens)", good: "Tous les sens d'un même mot : « vol » = déplacement aérien / larcin / nuée d'oiseaux" },
                   ],
                 },
@@ -287,7 +257,7 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "①",
               title: "Proposer un synonyme en contexte",
               intro:
-                "**Question typique :** « Dans la phrase “Elle se hâtait, les yeux baissés, *pressée* d'atteindre sa maison avant la nuit”, proposez un synonyme en contexte de l'adjectif souligné *pressée* et justifiez votre choix. »",
+                "*Question typique : « Dans la phrase “Elle se hâtait, les yeux baissés, <u>pressée</u> d'atteindre sa maison avant la nuit”, proposez un synonyme en contexte de l'adjectif souligné <u>pressée</u> et justifiez votre choix. »*",
               steps: [
                 {
                   number: "1",
@@ -326,7 +296,7 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "②",
               title: "Expliquer le sens d'un mot en contexte",
               intro:
-                "**Question typique :** « Dans la phrase “L'écrivain cherche à *attraper le réel* avec des mots”, expliquez le sens de l'expression soulignée *attraper le réel*. »",
+                "*Question typique : « Dans la phrase “L'écrivain cherche à <u>attraper le réel</u> avec des mots”, expliquez le sens de l'expression soulignée <u>attraper le réel</u>. »*",
               steps: [
                 {
                   number: "1",
@@ -365,7 +335,7 @@ export const ficheRelationsSemantiques: Fiche = {
               number: "③",
               title: "Dégager et analyser un champ lexical",
               intro:
-                "**Question typique :** « Dans le passage “La *nuit* tombait, *obscure* ; l'*ombre* envahissait la pièce que la *lune* éclairait *faiblement*”, relevez le champ lexical de la nuit et analysez l'effet produit. »",
+                "*Question typique : « Dans le passage “La <u>nuit</u> tombait, <u>obscure</u> ; l'<u>ombre</u> envahissait la pièce que la <u>lune</u> éclairait <u>faiblement</u>”, relevez le champ lexical de la nuit et analysez l'effet produit. »*",
               steps: [
                 {
                   number: "1",
@@ -396,465 +366,62 @@ export const ficheRelationsSemantiques: Fiche = {
               question: "Dans « muette, heureuse, et ne disait rien », quel champ lexical, et quel effet ?",
               correction: [
                 { type: "line", text: "Champ lexical du **silence** (muette, ne disait rien) associé au bonheur (heureuse). Effet : le silence n'est pas vide mais plein, l'émotion se lit sur le visage plutôt qu'elle ne se dit." },
-                { type: "note", text: "Méthode bien en tête ? Direction le Quiz éclair." },
+                { type: "note", text: "@nav Méthode en tête ? Direction S’entraîner." },
               ],
             },
             {
               type: "ctaBox",
-              text: "Méthode bien en tête ? Testez-vous.",
-              buttonLabel: "Lancer le Quiz éclair",
-              targetTab: "quiz",
+              text: "Méthode bien en tête ? Passez à l’application.",
+              buttonLabel: "Aller à Appliquer",
+              targetTab: "appliquer",
             },
           ],
         },
       ],
     },
     {
-      id: "pratiquer",
-      label: "Pratiquer",
+      id: "entrainer",
+      label: "S'entraîner",
       icon: "",
       tabs: [
         {
-          id: "quiz",
-          label: "Quiz éclair",
+          id: "appliquer",
+          label: "Appliquer",
+          icon: "",
+          blocks: [
+            {
+              type: "exerciceBank",
+              title: "Les relations sémantiques",
+              savoirFaire: SAVOIR_FAIRE,
+              exercices: EXERCICES_RELATIONS_SEMANTIQUES,
+            },
+          ],
+        },
+        {
+          id: "corriger",
+          label: "Corriger des erreurs",
           icon: "",
           blocks: [
             {
               type: "callout",
               variant: "info",
               icon: "",
-              title: "Avant de passer aux exercices",
-              text: "8 questions rapides pour vérifier que le Cours et la Méthode sont bien ancrés. Le détail objectif par objectif est dans l'onglet Auto-évaluation.",
+              text: "**Vous passez de l'autre côté de la copie.** Pour chaque candidat, dites si la réponse est correcte ; si elle ne l'est pas, corrigez-la. Se mettre à la place du jury, c'est une excellente façon de voir ce qu'on attend de vous.",
             },
             {
-              type: "quizBlock",
-              questions: [
-                {
-                  objectifId: "rs1",
-                  question: "Pourquoi la synonymie parfaite n'existe-t-elle pas ?",
-                  options: [
-                    "Parce que deux mots ne se prononcent jamais pareil",
-                    "Parce que chaque synonyme apporte une nuance de sens, de registre ou de connotation",
-                    "Parce que les synonymes sont rares",
-                    "Parce que le dictionnaire l'interdit",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Deux mots distincts ne peuvent pas avoir exactement les mêmes propriétés : il y a toujours une nuance, et le contexte décide.",
-                },
-                {
-                  objectifId: "rs2",
-                  question: "« acheter / vendre » est une antonymie :",
-                  options: ["graduable", "complémentaire", "réciproque (conversive)", "ce ne sont pas des antonymes"],
-                  correctIndex: 2,
-                  explanation:
-                    "L'un implique l'autre dans la relation inverse : on ne peut acheter sans que quelqu'un vende. C'est une antonymie réciproque.",
-                },
-                {
-                  objectifId: "rs3",
-                  question: "Dans « chêne / arbre », quel est l'hyperonyme ?",
-                  options: ["chêne", "arbre", "les deux", "aucun"],
-                  correctIndex: 1,
-                  explanation:
-                    "« arbre » est le terme générique qui englobe « chêne » : c'est l'hyperonyme. « chêne » est l'hyponyme.",
-                },
-                {
-                  objectifId: "rs4",
-                  question: "Dans « brûler d'impatience », « brûler » est employé au sens :",
-                  options: ["propre", "figuré", "littéral", "technique"],
-                  correctIndex: 1,
-                  explanation:
-                    "Sens figuré : non « consumer par le feu » (propre), mais « éprouver un désir intense ».",
-                },
-                {
-                  objectifId: "rs5",
-                  question: "« serpent » évoque la trahison et la ruse : c'est sa :",
-                  options: ["dénotation", "connotation", "polysémie", "antonymie"],
-                  correctIndex: 1,
-                  explanation:
-                    "La dénotation est « reptile » (sens objectif) ; la trahison et la ruse sont des connotations (valeurs culturelles).",
-                },
-                {
-                  objectifId: "rs6",
-                  question: "« nuit, ombre, obscur, lune » dans un texte forment :",
-                  options: ["un champ sémantique", "un champ lexical", "une polysémie", "une famille de mots"],
-                  correctIndex: 1,
-                  explanation:
-                    "Plusieurs mots autour d'un thème (la nuit) : c'est un champ lexical. Le champ sémantique, ce sont les sens d'un seul mot.",
-                },
-                {
-                  objectifId: "rs6",
-                  question: "Les sens « déplacement aérien / larcin / nuée d'oiseaux » de « vol » forment :",
-                  options: ["un champ lexical", "le champ sémantique du mot vol", "une antonymie", "une synonymie"],
-                  correctIndex: 1,
-                  explanation:
-                    "Les différents sens d'un même mot constituent son champ sémantique (sa polysémie).",
-                },
-                {
-                  objectifId: "rs7",
-                  question: "Pour « proposez un synonyme en contexte », il faut :",
-                  options: [
-                    "donner le premier synonyme qui vient",
-                    "choisir un mot qui peut remplacer dans cette phrase précise",
-                    "donner un antonyme",
-                    "recopier la définition du dictionnaire",
-                  ],
-                  correctIndex: 1,
-                  explanation:
-                    "Le synonyme doit convenir à la phrase précise, sans la dénaturer, et de même classe grammaticale.",
-                },
-              ],
-            },
-            {
-              type: "ctaBox",
-              text: "Quiz terminé ? Direction l'Application.",
-              buttonLabel: "Voir l'Application",
-              targetTab: "appli",
-            },
-          ],
-        },
-        {
-          id: "appli",
-          label: "Application",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              text: "Progression en 3 niveaux. Corrigez chaque exercice avant de passer au suivant.",
-            },
-            {
-              type: "niveauBanner",
-              level: "echauffement",
-              stars: "★☆☆",
-              label: "Niveau 1 : Identifier les relations",
-              sub: "Synonyme, antonyme, hyperonyme, sens propre/figuré",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 1 : Quelle relation sémantique ?",
-              objectifTag: "Relations",
-              question:
-                "Synonymie, antonymie ou hyperonymie/hyponymie ?\na) rapide / lent · b) chêne / arbre · c) débuter / commencer · d) vivant / mort · e) roman / récit · f) triste / mélancolique",
-              correction: [
-                { type: "line", text: "a) antonymie (graduable) · b) hyponymie (chêne hyponyme d'arbre) · c) synonymie · d) antonymie (complémentaire) · e) hyponymie (roman hyponyme de récit) · f) synonymie." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 2 : Synonymes avec nuance",
-              objectifTag: "Synonymie",
-              question: "Donnez deux synonymes en précisant une nuance :\nregarder · peur · parler",
-              correction: [
-                { type: "line", text: "**regarder** : observer (attention active) / contempler (durée, admiration)." },
-                { type: "line", text: "**peur** : crainte (moins intense) / terreur (plus intense)." },
-                { type: "line", text: "**parler** : s'exprimer (soutenu) / bavarder (familier, durée)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "echauffement",
-              title: "Exercice 3 : Sens propre ou figuré ?",
-              question:
-                "a) « une lumière brûlante » · b) « brûler d'impatience » · c) « les yeux baissés » · d) « un regard glacial »",
-              correction: [
-                { type: "line", text: "a) sens propre (chaleur physique) · b) sens figuré (désir intense) · c) sens propre (position des yeux) · d) sens figuré (froideur, indifférence hostile)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n2",
-              stars: "★★☆",
-              label: "Niveau 2 : Sens en contexte",
-              sub: "Synonyme contextuel, champ lexical, nuances",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 4 : Synonymes en contexte",
-              enonce: "« Elle se hâtait, les yeux baissés, pressée d'atteindre sa maison avant la nuit. » (Zola)",
-              question: "Proposez un synonyme en contexte pour « se hâtait », « pressée » et « atteindre », et justifiez la nuance.",
-              correction: [
-                { type: "line", text: "**se hâtait** → se dépêchait / pressait le pas (urgence ; « courait » serait inexact, elle marche)." },
-                { type: "line", text: "**pressée** → poussée par l'urgence (sous pression, non enthousiaste)." },
-                { type: "line", text: "**atteindre** → rejoindre / gagner (« atteindre » implique un effort pour parvenir)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 5 : Champ lexical et analyse",
-              enonce: "« Ma mère, dont le regard ne vieillissait pas, regardait les enfants jouer. Elle souriait, muette, heureuse, et ne disait rien. » (Colette)",
-              question: "a) Relevez le champ lexical du silence et de la retenue. b) « muette » est-il synonyme de « silencieuse » ici ?",
-              correction: [
-                { type: "line", label: "a)", text: "Champ du silence : « muette », « ne disait rien », « souriait » (expression sans parole), le « regard » qui remplace les mots." },
-                { type: "line", label: "b)", text: "Non : « silencieuse » = absence de bruit (neutre) ; « muette » = absence délibérée de parole, avec une émotion retenue, un indicible. « Muette » suggère une plénitude que les mots ne pourraient contenir." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n2",
-              title: "Exercice 6 : Champ lexical vs champ sémantique",
-              question: "Pour le mot « lumière » : donnez son champ sémantique (ses sens), puis construisez un champ lexical de la lumière (mots d'un thème).",
-              correction: [
-                { type: "line", text: "**Champ sémantique de « lumière »** : (1) rayonnement visible ; (2) source lumineuse ; (3) sens figuré : intelligence, savoir (« les Lumières »)." },
-                { type: "line", text: "**Champ lexical de la lumière** : soleil, flamme, rayon, lueur, éclat, briller, éclairer (mots de natures variées autour du thème)." },
-              ],
-            },
-            {
-              type: "niveauBanner",
-              level: "n3",
-              stars: "★★★",
-              label: "Niveau 3 : Analyse fine",
-              sub: "Polysémie, connotation ambivalente, format jury",
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 7 : Jeu sur la polysémie",
-              enonce: "« Mes romans me mènent en bateau, donc ils me baladent. » (Lola Lafon)",
-              question: "Expliquez la polysémie de « balader » et comment l'autrice joue sur les deux sens. Rédigez au format jury.",
-              correction: [
-                { type: "line", text: "« balader » est polysémique : (1) se promener, déambuler ; (2) sens familier : mener en bateau, tromper. L'autrice cite d'abord « mener en bateau » puis conclut par « me baladent », activant les deux sens." },
-                { type: "paragraph", text: "**Formule jury :** « Le verbe “balader” est polysémique. En contexte, Lafon active simultanément son sens premier (être emporté, errer) et son sens familier (être mené en bateau, trompé). Ce jeu exprime l'ambivalence de son rapport à l'écriture : à la fois errance libératrice et perte de contrôle. »" },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "standard",
-              level: "n3",
-              title: "Exercice 8 : Connotation ambivalente",
-              enonce: "« En écrivant, je suis comme une apatride. » (d'après Lola Lafon)",
-              question: "Expliquez en contexte le sens d'« apatride » : sens propre, sens figuré, et connotations.",
-              correction: [
-                { type: "line", text: "**Sens propre** : personne sans nationalité (juridique). **Sens figuré** : l'écriture contraint l'autrice à quitter ses repères, comme si elle changeait de pays." },
-                { type: "line", text: "**Connotations ambivalentes** : négative (déracinement, perte de repères, angoisse) ET positive (liberté de l'errance, disponibilité créatrice). Signaler cette ambivalence est valorisé : c'est une lecture experte." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "crpe",
-          label: "Type CRPE",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "success",
-              icon: "",
-              text: "Ces exercices reproduisent le format des questions de lexique en Partie 2 (sens en contexte). Les exercices calqués sur des sujets récents portent le badge ✦.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format identique au concours",
-              title: "Exercice 1 : expliquer un emploi figuré",
-              enonce: "« la langue n'est pas un objet inerte… j'écris comme une apatride. » (d'après Lola Lafon)",
-              question: "Expliquez en contexte le sens de l'adjectif « apatride » : sens propre, sens figuré, connotations.",
-              correction: [
-                { type: "line", text: "**Sens propre** : personne sans nationalité reconnue (juridique)." },
-                { type: "line", text: "**Sens figuré** : l'écriture arrache l'autrice à son univers familier, à ses repères identitaires, comme un changement de pays." },
-                { type: "line", text: "**Connotations** : négative (déracinement, angoisse) et positive (liberté, ouverture créatrice). Reconnaître cette ambivalence est valorisé." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "annale",
-              badge: "✦ Format identique au concours",
-              title: "Exercice 2 : synonyme en contexte",
-              enonce: "« La narratrice essuie les sarcasmes de sa famille lorsqu'elle lit en cachette. »",
-              question: "Proposez deux synonymes en contexte de « sarcasmes » et justifiez votre choix.",
-              correction: [
-                { type: "line", text: "**railleries** (moqueries dérisoires) et **moqueries** (plus neutre). « sarcasmes » = railleries acérées, avec intention de blesser." },
-                { type: "line", text: "À éviter : « critiques » (trop général, sans l'ironie blessante) et « insultes » (trop fort : un sarcasme n'est pas une insulte directe)." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 3 : antonymie en contexte",
-              enonce: "« Il avait grandi dans la déraison des enfances paysannes, loin des livres et de la sagesse humaine. » (d'après Sartre)",
-              question: "a) Quel est l'antonyme de « déraison » dans ce passage ? b) Expliquez la relation des deux termes opposés.",
-              correction: [
-                { type: "line", label: "a)", text: "L'antonyme est **« sagesse »** : déraison = absence de raison ; sagesse = plénitude du discernement." },
-                { type: "line", label: "b)", text: "« déraison » (ignorance, absence de culture) s'oppose à « sagesse humaine » (savoir acquis par les livres). L'opposition porte la thèse : l'accès aux livres conditionne l'accès à la raison." },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "crpe",
-              title: "Exercice 4 : polysémie ou homonymie ?",
-              enonce: "« vol » (déplacement aérien / larcin) et « louer » (donner en location / féliciter)",
-              question: "Lequel relève de la polysémie, lequel de l'homonymie ? Justifiez.",
-              correction: [
-                { type: "line", text: "**« vol » : polysémie** : un seul mot, des sens liés par une histoire commune (les sens dérivent l'un de l'autre)." },
-                { type: "line", text: "**« louer » : homonymie** : deux mots distincts d'origines latines différentes (locare / laudare), sans lien sémantique." },
-                { type: "note", text: "💡 La polysémie est bien plus fréquente dans les questions de lexique du concours." },
-              ],
-            },
-          ],
-        },
-        {
-          id: "cote-prof",
-          label: "Côté prof",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "warning",
-              icon: "",
-              text: "Ces exercices reproduisent des **erreurs fréquentes** dans les questions de lexique. Repérer ce qui cloche et corriger rigoureusement est une compétence directement valorisée au concours.",
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 1 · Réponse à corriger : seulement le sens propre",
-              enonce: "Réponse d'un candidat à « expliquez en contexte le sens d'apatride » : « Apatride signifie une personne sans nationalité, sans pays. »",
-              question: "Identifiez et corrigez l'erreur.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Le candidat donne seulement le sens propre, sans voir l'emploi figuré", bad: true },
-                    { text: "En contexte, le mot ne possède pas son sens premier" },
-                    { text: "Réponse attendue : sens figuré (l'écriture arrache aux repères, comme un changement de pays), avec ses connotations ambivalentes" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 2 · Réponse à corriger : synonyme hors contexte",
-              enonce: "Copie d'un candidat : synonyme de « se hâtait » (une femme qui marche vite, yeux baissés) → « courait ».",
-              question: "Identifiez et corrigez l'erreur.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "« courir » trahit le contexte : la femme « passa » et marche vite, elle ne court pas", bad: true },
-                    { text: "Un synonyme doit être cohérent avec toute la phrase" },
-                    { text: "Réponse attendue : « se dépêchait », « pressait le pas », « s'empressait »" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 3 · Réponse à corriger : champ « sémantique »",
-              enonce: "Réponse d'un candidat : « Le champ sémantique de l'écriture comprend : plume, roman, page, encre, auteur. »",
-              question: "Identifiez et corrigez l'erreur de terminologie.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Le candidat dit « champ sémantique » alors qu'il décrit un champ lexical", bad: true },
-                    { text: "Le champ sémantique = les sens d'un seul mot ; le champ lexical = des mots d'un thème" },
-                    { text: "Réponse attendue : « le **champ lexical** de l'écriture comprend : plume, roman, page, encre, auteur »" },
-                  ],
-                },
-              ],
-            },
-            {
-              type: "exerciceCard",
-              variant: "err-type",
-              title: "Exercice 4 · Réponse à corriger : relever sans analyser",
-              enonce: "Réponse d'un candidat : « Il y a beaucoup de mots liés à l'écriture comme langue, mots, écrire. Ces mots montrent que le texte parle de l'écriture. »",
-              question: "Identifiez et corrigez l'erreur.",
-              correction: [
-                {
-                  type: "checklist",
-                  items: [
-                    { text: "Relevé sans analyse, et justification circulaire (le texte parle d'écriture car il y a des mots sur l'écriture)", bad: true },
-                    { text: "Il faut analyser l'effet du champ lexical dans le texte" },
-                    { text: "Réponse attendue : montrer que les métaphores corporelles (« va mal », « habit trop lâche », « m'empêtre ») font de l'écriture une nécessité vitale et une expérience d'inadéquation" },
-                  ],
-                },
-              ],
+              type: "corrigerCopies",
+              title: "Les relations sémantiques",
+              copies: COPIES_RELATIONS_SEMANTIQUES,
             },
           ],
         },
       ],
     },
     {
-      id: "reviser",
-      label: "Réviser",
+      id: "memo",
+      label: "Mémo",
       icon: "",
       tabs: [
-        {
-          id: "flash",
-          label: "Flashcards",
-          icon: "",
-          blocks: [
-            {
-              type: "callout",
-              variant: "info",
-              icon: "",
-              text: "Cliquez sur chaque carte pour révéler la réponse. Essayez de répondre dans votre tête avant.",
-            },
-            {
-              type: "flashcardDeck",
-              cards: [
-                {
-                  question: "La règle d'or pour proposer un synonyme ?",
-                  answer:
-                    "Toujours **en contexte** : un mot qui peut se substituer dans la phrase précise, de même classe grammaticale. La synonymie parfaite n'existe pas : préciser la nuance.",
-                  astuce: "⚠️ Erreur typique : donner le premier synonyme générique sans vérifier la phrase.",
-                },
-                {
-                  question: "Les trois types d'antonymie ?",
-                  answer:
-                    "**Graduable** : échelle, intermédiaires (chaud / froid).\n**Complémentaire** : binaire, sans intermédiaire (vivant / mort).\n**Réciproque** : l'un implique l'autre (acheter / vendre).",
-                  astuce: "💡 L'antonymie dépend du contexte (léger / lourd ou léger / grave).",
-                },
-                {
-                  question: "Hyperonyme ou hyponyme : comment trancher ?",
-                  answer:
-                    "Test : « un X est un type de Y » → X est l'**hyponyme**, Y l'**hyperonyme**.\n« Un chêne est un type d'arbre » → chêne (hyponyme), arbre (hyperonyme).",
-                },
-                {
-                  question: "Sens propre et sens figuré ?",
-                  answer:
-                    "**Sens propre** : sens premier, concret (« brûler » = consumer par le feu).\n**Sens figuré** : sens dérivé, métaphorique (« brûler d'impatience »).",
-                  astuce: "⚠️ Toujours vérifier si le mot est au sens propre ou figuré dans le texte.",
-                },
-                {
-                  question: "Dénotation et connotation ?",
-                  answer:
-                    "**Dénotation** : sens objectif, du dictionnaire (serpent = reptile).\n**Connotation** : valeurs affectives ou culturelles (serpent = trahison, ruse).",
-                  astuce: "💡 La connotation ambivalente (positive et négative) est valorisée par les jurys.",
-                },
-                {
-                  question: "Champ lexical ou champ sémantique ?",
-                  answer:
-                    "**Champ lexical** : plusieurs mots d'un texte autour d'un thème (nuit, ombre, lune).\n**Champ sémantique** : les sens d'un seul mot (vol = vol aérien / larcin).",
-                  astuce: "💡 Lexical = Liste de mots ; Sémantique = Sens d'un mot.",
-                },
-                {
-                  question: "Polysémie ou homonymie ?",
-                  answer:
-                    "**Polysémie** : un mot, plusieurs sens **liés** par une histoire commune (vol).\n**Homonymie** : deux mots distincts d'origines différentes, prononcés ou écrits pareil (louer / louer).",
-                },
-                {
-                  question: "Comment analyser un champ lexical sans s'arrêter au relevé ?",
-                  answer:
-                    "1) **Relever** les mots (toutes natures) ; 2) **nommer** le thème ; 3) **analyser l'effet** dans le texte (atmosphère, intention).",
-                  astuce: "⚠️ Un relevé sans analyse de l'effet est la principale perte de points.",
-                },
-              ],
-            },
-          ],
-        },
         {
           id: "memo",
           label: "Mémo",
@@ -891,19 +458,13 @@ export const ficheRelationsSemantiques: Fiche = {
                 },
                 {
                   title: "Renvois",
-                  lines: ["Champ lexical → notion 13", "Formation des mots → notion 16", "Figures et registres → notion 18"],
+                  lines: ["Champ lexical → notion 14", "Formation des mots → notion 17", "Figures et registres → notion 19"],
                   variant: "purple",
                   dashed: true,
                 },
               ],
             },
           ],
-        },
-        {
-          id: "autoeval",
-          label: "Auto-évaluation",
-          icon: "",
-          blocks: [{ type: "autoEvalChecklist", items: OBJECTIFS }],
         },
       ],
     },

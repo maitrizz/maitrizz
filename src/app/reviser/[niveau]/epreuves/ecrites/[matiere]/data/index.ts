@@ -30,18 +30,20 @@ import { ficheSectionsReperageEspaceM2, ficheSectionsReperageEspaceL3 } from "./
 import { ficheAlgorithmiqueScratchTableur } from "./mathematiques/algorithmique-scratch-tableur";
 import { ficheMethodologieMathematiquesM2, ficheMethodologieMathematiquesL3 } from "./mathematiques/methodologie-de-l-epreuve";
 import { ficheVecteurs } from "./mathematiques/vecteurs";
+import { ficheProblemesTransversaux } from "./mathematiques/problemes-transversaux";
 import { ficheClassesGrammaticales } from "./francais/classes-grammaticales";
 import { ficheFonctionsSyntaxiques } from "./francais/fonctions-syntaxiques";
 import { ficheGroupeNominalExpansions } from "./francais/groupe-nominal-expansions";
 import { ficheGroupeVerbal } from "./francais/groupe-verbal";
 import { fichePhraseComplexe } from "./francais/phrase-complexe";
+import { ficheTypesEtFormesDePhrase } from "./francais/types-et-formes-de-phrase";
 import { ficheModesEtTemps } from "./francais/modes-et-temps";
 import { ficheTempsDuPasse } from "./francais/temps-du-passe";
 import { fichePresentFuturConditionnelSubjonctif } from "./francais/present-futur-conditionnel-subjonctif";
-import { ficheFormesNonConjugueesPassivePronominale } from "./francais/formes-non-conjuguees-passive-pronominale";
+import { ficheFormesNonConjuguees } from "./francais/formes-non-conjuguees";
 import { ficheAccordsGnGv } from "./francais/accords-gn-gv";
 import { ficheAccordParticipePasse } from "./francais/accord-participe-passe";
-import { ficheHomophonesPonctuation } from "./francais/homophones-grammaticaux-ponctuation";
+import { ficheHomophonesGrammaticaux } from "./francais/homophones-grammaticaux";
 import { ficheCoherenceTextuelle } from "./francais/coherence-textuelle";
 import { ficheEnonciationDiscoursRapporte } from "./francais/enonciation-discours-rapporte";
 import { fichePhonologie } from "./francais/phonologie";
@@ -57,6 +59,10 @@ import {
   ficheCultureLitteraireM2,
 } from "./francais/culture-litteraire";
 import {
+  ficheSujetBlancHugoL3,
+  ficheSujetBlancHugoM2,
+} from "./francais/sujet-blanc-hugo";
+import {
   ficheMethodologieL3,
   ficheMethodologieM2,
 } from "./francais/methodologie-de-l-epreuve";
@@ -71,6 +77,7 @@ export { NIVEAUX, NIVEAU_LABELS, isValidNiveau };
 export type FicheMeta = {
   slug: string;
   numero: number;
+  kind?: "notion" | "sujet";
   partie: string;
   title: string;
   subtitle: string;
@@ -93,7 +100,10 @@ export const MATIERE_LABELS: Record<Matiere, string> = {
 // Mathématiques. Les 27 notions disciplinaires sont en grande partie communes
 // L3/M2 ; MATHEMATIQUES_NOTIONS donne l'ordre et les variantes M2.
 const MATHEMATIQUES_NOTIONS: Fiche[] = [ficheNumerationSystemesDeBases, ficheNombresRelatifs, ficheFractionsDecimaux, fichePuissancesRacinesReels, ficheCalculNumeriquePriorites, ficheDivisibilitePgcdPpcm, ficheDenombrement, ficheCalculLitteral, ficheEquationsInequationsSystemes, ficheSuitesNumeriques, ficheStatistiquesDescriptivesM2, ficheProbabilites, ficheProportionnalitePourcentages, ficheFonctionsLineairesAffines, fichePerimetresAiresVolumes, ficheDureesMassesGrandeursComposees, ficheReperageCoordonnees, ficheDroitesAnglesParallelisme, ficheTrianglesQuadrilateresPolygones, ficheCercle, ficheTheoremeDePythagore, ficheTheoremeDeThalesSimilitude, ficheTrigonometrieTriangleRectangle, ficheTransformationsDuPlan, ficheSolidesPatronsRepresentation, ficheSectionsReperageEspaceM2, ficheAlgorithmiqueScratchTableur];
-const MATHEMATIQUES_M2: Fiche[] = [ficheMethodologieMathematiquesM2, ...MATHEMATIQUES_NOTIONS];
+// La fiche « Problèmes transversaux » (n°28, Partie 7) est pour l'instant M2
+// uniquement : tous ses problèmes relèvent déjà du cycle 4, sa dérivation L3
+// (ajout à MATHEMATIQUES_L3) sera faite dans un second temps.
+const MATHEMATIQUES_M2: Fiche[] = [ficheMethodologieMathematiquesM2, ...MATHEMATIQUES_NOTIONS, ficheProblemesTransversaux];
 
 // L3 : programme cycle 4 (2025). Dérivation fidèle à partir du M2 :
 //  - « suites » retirée (hors cycle 4) ;
@@ -112,22 +122,24 @@ const MATHEMATIQUES_L3: Fiche[] = [
   }),
 ];
 
-// Français : notions 01-18 communes L3/M2. La divergence commence à la
-// notion 19 (Partie 3) — les fiches propres à chaque niveau sont ajoutées
+// Français : notions 01-19 communes L3/M2. La divergence commence à la
+// notion 20 (Partie 3) : les fiches propres à chaque niveau sont ajoutées
 // aux listes FRANCAIS_L3 / FRANCAIS_M2 ci-dessous.
-const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjugueesPassivePronominale, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesPonctuation, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres];
+const FRANCAIS_COMMUN: Fiche[] = [ficheClassesGrammaticales, ficheFonctionsSyntaxiques, ficheGroupeNominalExpansions, ficheGroupeVerbal, fichePhraseComplexe, ficheTypesEtFormesDePhrase, ficheModesEtTemps, ficheTempsDuPasse, fichePresentFuturConditionnelSubjonctif, ficheFormesNonConjuguees, ficheAccordsGnGv, ficheAccordParticipePasse, ficheHomophonesGrammaticaux, ficheCoherenceTextuelle, ficheEnonciationDiscoursRapporte, fichePhonologie, ficheFormationDesMots, ficheRelationsSemantiques, ficheFiguresRegistres];
 
 const FRANCAIS_L3: Fiche[] = [
   ficheMethodologieL3,
   ...FRANCAIS_COMMUN,
   ficheProduireDeveloppementL3,
   ficheCultureLitteraireL3,
+  ficheSujetBlancHugoL3,
 ];
 const FRANCAIS_M2: Fiche[] = [
   ficheMethodologieM2,
   ...FRANCAIS_COMMUN,
   ficheProduireDeveloppementM2,
   ficheCultureLitteraireM2,
+  ficheSujetBlancHugoM2,
 ];
 
 // Sciences et technologie : chantier en cours (plan dans SUIVI_FICHES_SCIENCES.md).
@@ -159,10 +171,35 @@ export function getFiche(
   return getFiches(niveau, matiere).find((f) => f.slug === slug);
 }
 
+// Niveau de référence pour le canonical des fiches partagées à l'identique entre
+// L3 et M2 (mêmes objets réutilisés des deux côtés, ex. les 19 notions de
+// grammaire du français). Voir getCanonicalNiveau.
+const CANONICAL_NIVEAU: Niveau = "m2";
+
+// Détermine le niveau « canonique » d'une fiche pour le SEO.
+// Quand le contenu est strictement identique en L3 et M2 (le code réutilise le
+// MÊME objet Fiche des deux côtés), les deux URL sont du contenu dupliqué : on
+// fait pointer leur canonical vers un seul niveau de référence, pour que Google
+// consolide le classement sur une page au lieu de le diluer sur deux.
+// Une variante propre au niveau (objet distinct, ex. statistiques L3 vs M2) ou
+// une fiche présente d'un seul côté reste sa propre canonique.
+export function getCanonicalNiveau(
+  niveau: Niveau,
+  matiere: Matiere,
+  slug: string
+): Niveau {
+  const here = getFiche(niveau, matiere, slug);
+  if (!here) return niveau;
+  const other: Niveau = niveau === "m2" ? "l3" : "m2";
+  const twin = getFiche(other, matiere, slug);
+  return twin && twin === here ? CANONICAL_NIVEAU : niveau;
+}
+
 function toMeta(fiche: Fiche): FicheMeta {
   return {
     slug: fiche.slug,
     numero: fiche.numero,
+    kind: fiche.kind,
     partie: fiche.partie,
     title: fiche.title,
     subtitle: fiche.subtitle,

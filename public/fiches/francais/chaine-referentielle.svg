@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Une chaîne référentielle au fil du texte. L'antécédent « Un vieux professeur » est introduit en premier. Il est ensuite repris deux fois : par « L'homme », reprise nominale infidèle de type hyperonyme, puis par le pronom « Il », reprise pronominale. Toutes ces expressions désignent le même référent et assurent la continuité du texte sans répétition.">
+  <defs>
+    <marker id="back" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0f766e"/>
+    </marker>
+    <marker id="flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <style>
+    .tag { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 700; letter-spacing: .06em; fill: #0f766e; }
+    .box { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 700; fill: #0f172a; }
+    .typ { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 600; fill: #0f766e; }
+    .flow { font-family: ui-sans-serif, system-ui, sans-serif; font-weight: 700; letter-spacing: .06em; fill: #64748b; }
+  </style>
+
+  <!-- arcs de reprise (vers l'antécédent) -->
+  <path d="M 340 150 Q 225 66 116 150" fill="none" stroke="#0f766e" stroke-width="2.2" marker-end="url(#back)"/>
+  <path d="M 540 150 Q 330 34 116 148" fill="none" stroke="#0f766e" stroke-width="2.2" marker-end="url(#back)"/>
+  <text class="typ" x="225" y="60" text-anchor="middle" font-size="12.5">reprise nominale infidèle (hyperonyme)</text>
+  <text class="typ" x="330" y="28" text-anchor="middle" font-size="12.5">reprise pronominale</text>
+
+  <!-- Antécédent -->
+  <rect x="30" y="150" width="172" height="46" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2.5"/>
+  <text class="box" x="116" y="179" text-anchor="middle" font-size="16">Un vieux professeur</text>
+  <text class="tag" x="116" y="216" text-anchor="middle" font-size="12">ANTÉCÉDENT</text>
+
+  <!-- Reprise 1 -->
+  <rect x="280" y="150" width="120" height="46" rx="10" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2"/>
+  <text class="box" x="340" y="179" text-anchor="middle" font-size="16">L'homme</text>
+
+  <!-- Reprise 2 -->
+  <rect x="480" y="150" width="120" height="46" rx="10" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2"/>
+  <text class="box" x="540" y="179" text-anchor="middle" font-size="16">Il</text>
+
+  <!-- fil du texte -->
+  <line x1="30" y1="252" x2="620" y2="252" stroke="#94a3b8" stroke-width="2" marker-end="url(#flow)"/>
+  <text class="flow" x="636" y="256" font-size="11">FIL DU TEXTE</text>
+</svg>

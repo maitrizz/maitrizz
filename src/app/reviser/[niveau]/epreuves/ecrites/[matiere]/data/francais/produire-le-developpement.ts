@@ -44,7 +44,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
   return {
     slug: "produire-le-developpement",
     matiere: "francais",
-    numero: 19,
+    numero: 20,
     partie: "Partie 3 : Développement rédigé",
     title: "Produire le développement rédigé",
     subtitle:
@@ -53,10 +53,8 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
       { label: "★★★ Le cœur de la Partie 3", variant: "hot" },
       { label: "Épreuve écrite de français · 3 h", variant: "info" },
     ],
-    metaTitle:
-      "Produire le développement rédigé (M2) : Partie 3 du CRPE · Fiche de révision | Maitrizz",
-    metaDescription:
-      "Fiche CRPE M2 sur la Partie 3 (réflexion et développement) : analyser la question, formuler une problématique, choisir un plan, mobiliser le texte et sa culture, rédiger l'introduction, les paragraphes et la conclusion d'une réflexion argumentée. Méthode déroulée sur le sujet officiel 2026, exercices d'après les sujets réels, flashcards et auto-évaluation.",
+    metaTitle: "Produire le développement rédigé · Fiche de révision CRPE",
+    metaDescription: "Partie 3 du CRPE L3 : analyser la question, poser une problématique, bâtir un plan et rédiger un développement argumenté. Méthode et exercices corrigés.",
     tabGroups: [
       {
         id: "decouvrir",
@@ -492,7 +490,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
                 question: "Transformez la question en une problématique :\n« Quel est l'intérêt de garder une correspondance écrite ? »",
                 correction: [{ type: "line", text: "Par exemple : « Pourquoi conserver et relire les lettres que l'on a échangées ? » On garde la notion et on annonce une recherche de raisons, sans recopier la consigne." }],
               },
-              { type: "niveauBanner", level: "n2", stars: "★★☆", label: "Niveau 2 : Trouver des axes et des appuis", sub: "Axes distincts, appui texte + culture" },
+              { type: "niveauBanner", level: "n2", stars: "★★", label: "Niveau 2 : Trouver des axes et des appuis", sub: "Axes distincts, appui texte + culture" },
               {
                 type: "exerciceCard",
                 variant: "standard",
@@ -559,7 +557,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
                 title: "Exercice 1 : Construire le développement",
                 enonce: "Texte support : Amin Maalouf, *Le Périple de Baldassare* (le narrateur tient son journal pendant l'incendie de Londres de 1666). Source : [sujets officiels du CRPE](https://www.devenirenseignant.gouv.fr/les-sujets-des-epreuves-ecrites-et-rapports-des-jurys-des-crpe-1163).",
                 question: "Consigne (9 points) : « Quel est, selon vous, l'intérêt pour une personne de mettre par écrit ses expériences vécues ? » Construisez le plan détaillé (problématique, axes, appuis texte et culture).",
-                correction: [{ type: "paragraph", text: "**Problématique** : pourquoi une personne éprouve-t-elle le besoin de consigner par écrit ce qu'elle a vécu ? **Axe 1, garder une trace contre l'oubli** : texte (« j'ai écrit pour le feu », le « pitoyable Sisyphe ») · culture (le *Journal* d'Anne Frank). **Axe 2, se comprendre soi-même** : texte (« rendre compte de tout ce qui m'arrivait ») · culture (les *Essais* de Montaigne, les *Confessions* de Rousseau). **Axe 3, transmettre et témoigner** : texte (écrire pour laisser un récit) · culture (les mémoires, les témoignages d'époque)." }],
+                correction: [{ type: "formulationCrpe", text: "**Problématique** : pourquoi une personne éprouve-t-elle le besoin de consigner par écrit ce qu'elle a vécu ? **Axe 1, garder une trace contre l'oubli** : texte (« j'ai écrit pour le feu », le « pitoyable Sisyphe ») · culture (le *Journal* d'Anne Frank). **Axe 2, se comprendre soi-même** : texte (« rendre compte de tout ce qui m'arrivait ») · culture (les *Essais* de Montaigne, les *Confessions* de Rousseau). **Axe 3, transmettre et témoigner** : texte (écrire pour laisser un récit) · culture (les mémoires, les témoignages d'époque)." }],
               },
               {
                 type: "exerciceCard",
@@ -568,7 +566,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
                 title: "Exercice 2 : Rédiger l'introduction",
                 enonce: "Texte support : Marguerite Yourcenar (*Comment Wang-Fô fut sauvé*).",
                 question: "Consigne : « En vous appuyant sur cette citation et le texte de Marguerite Yourcenar, sur votre culture, vos lectures et vos réflexions personnelles, vous interrogerez les liens que l'art entretient avec le réel. » Proposez une problématique, deux axes, et rédigez l'introduction.",
-                correction: [{ type: "paragraph", text: "**Problématique** : l'art se contente-t-il de reproduire le réel, ou le transforme-t-il ? **Axe 1, l'art imite et donne à voir le réel** · **Axe 2, l'art le transforme et en révèle une autre vérité.** **Introduction** : « Dans le conte de Marguerite Yourcenar, un peintre est accusé de mentir sur le monde par sa peinture (amorce). On peut se demander quels liens l'art entretient avec le réel (problématique). Nous verrons d'abord que l'art imite le réel pour le donner à voir, puis qu'il le transforme pour en révéler une vérité plus profonde (annonce). »" }],
+                correction: [{ type: "formulationCrpe", text: "**Problématique** : l'art se contente-t-il de reproduire le réel, ou le transforme-t-il ? **Axe 1, l'art imite et donne à voir le réel** · **Axe 2, l'art le transforme et en révèle une autre vérité.** **Introduction** : « Dans le conte de Marguerite Yourcenar, un peintre est accusé de mentir sur le monde par sa peinture (amorce). On peut se demander quels liens l'art entretient avec le réel (problématique). Nous verrons d'abord que l'art imite le réel pour le donner à voir, puis qu'il le transforme pour en révéler une vérité plus profonde (annonce). »" }],
               },
             ],
           },
@@ -658,7 +656,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
                   { title: "Arguments", lines: ["Appui texte (citation)", "Appui culture (œuvre, auteur)", "Une analyse qui relie"], variant: "green" },
                   { title: "Rédiger", lines: ["Intro : amorce, problématique, annonce", "Paragraphe : idée, appui, analyse", "Conclusion : bilan, ouverture"], variant: "green" },
                   { title: "Pièges classiques", lines: ["Commentaire de procédés", "Culture absente ou plaquée", "Paraphrase du texte"], variant: "yellow" },
-                  { title: "Renvois", lines: ["Cohérence, connecteurs → notion 13", "Procédés, lexique → notions 16-18", "Culture et références → notion 20"], variant: "purple", dashed: true },
+                  { title: "Renvois", lines: ["Cohérence, connecteurs → notion 14", "Procédés, lexique → notions 16-18", "Culture et références → notion 21"], variant: "purple", dashed: true },
                 ],
               },
             ],
@@ -689,7 +687,7 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
   return {
     slug: "produire-le-developpement",
     matiere: "francais",
-    numero: 19,
+    numero: 20,
     partie: "Partie 3 : Développement rédigé",
     title: "Produire le développement rédigé",
     subtitle:
@@ -1130,7 +1128,7 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
                 question: "Transformez la consigne en une problématique :\n« Qu'est-ce qui rend ce passage inquiétant ? »",
                 correction: [{ type: "line", text: "Par exemple : « Par quels moyens ce passage installe-t-il un climat inquiétant ? » On garde le lien au texte et on annonce une recherche de moyens." }],
               },
-              { type: "niveauBanner", level: "n2", stars: "★★☆", label: "Niveau 2 : Deux axes appuyés sur le texte", sub: "Axes distincts, citations" },
+              { type: "niveauBanner", level: "n2", stars: "★★", label: "Niveau 2 : Deux axes appuyés sur le texte", sub: "Axes distincts, citations" },
               {
                 type: "exerciceCard",
                 variant: "standard",
@@ -1190,7 +1188,7 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
                 title: "Exercice 1 : Construire le développement",
                 enonce: "Texte support : Charles Perrault, *La Barbe bleue* (1697). Source : [exemples de sujets bac+3](https://www.devenirenseignant.gouv.fr/exemples-de-sujets-des-concours-externes-bac3-de-recrutement-d-enseignants-1405).",
                 question: "Consigne (10 points) : « Qu'est-ce qui rend cette page d'un conte du XVIIe siècle toujours significative dans le cadre d'une réflexion sur l'égalité entre homme et femme ? » Construisez le plan détaillé (problématique, deux axes, appuis du texte).",
-                correction: [{ type: "paragraph", text: "**Problématique** : en quoi cette scène ancienne éclaire-t-elle encore la question de l'égalité entre les femmes et les hommes ? **Axe 1, un rapport de domination donné à voir** : le mari détient un pouvoir de vie et de mort (« Il faut mourir, Madame »), la femme est soumise et terrorisée (« plus pâle que la mort », « se jeta aux pieds de son mari »). **Axe 2, une portée qui dépasse l'époque** : la solidarité qui sauve l'héroïne (« Anne, ma sœur Anne, ne vois-tu rien venir ? », l'arrivée des frères) et la mise en garde, toujours actuelle, contre les violences faites aux femmes. Chaque axe s'appuie sur des citations courtes du texte." }],
+                correction: [{ type: "formulationCrpe", text: "**Problématique** : en quoi cette scène ancienne éclaire-t-elle encore la question de l'égalité entre les femmes et les hommes ? **Axe 1, un rapport de domination donné à voir** : le mari détient un pouvoir de vie et de mort (« Il faut mourir, Madame »), la femme est soumise et terrorisée (« plus pâle que la mort », « se jeta aux pieds de son mari »). **Axe 2, une portée qui dépasse l'époque** : la solidarité qui sauve l'héroïne (« Anne, ma sœur Anne, ne vois-tu rien venir ? », l'arrivée des frères) et la mise en garde, toujours actuelle, contre les violences faites aux femmes. Chaque axe s'appuie sur des citations courtes du texte." }],
               },
               {
                 type: "exerciceCard",
@@ -1199,8 +1197,10 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
                 enonce: "Même sujet que l'exercice 1 (Perrault, *La Barbe bleue*).",
                 question: "Rédigez l'introduction (trois temps) et la conclusion (bilan + ouverture), au format attendu (bref).",
                 correction: [
-                  { type: "line", text: "**Introduction** : « Dans cette page de *La Barbe bleue*, Perrault met en scène une épouse que son mari condamne à mort pour avoir désobéi (amorce). On peut se demander en quoi cette scène éclaire encore l'égalité entre les femmes et les hommes (problématique). Nous verrons d'abord un rapport de domination, puis la portée actuelle de cette page (annonce). »" },
-                  { type: "line", text: "**Conclusion** : « Cette page reste significative parce qu'elle expose un rapport de domination et de violence que seule la solidarité vient contrer. Elle invite à réfléchir, aujourd'hui encore, aux violences faites aux femmes (ouverture). »" },
+                  {
+                    type: "formulationCrpe",
+                    text: "**Introduction** : « Dans cette page de *La Barbe bleue*, Perrault met en scène une épouse que son mari condamne à mort pour avoir désobéi (amorce). On peut se demander en quoi cette scène éclaire encore l'égalité entre les femmes et les hommes (problématique). Nous verrons d'abord un rapport de domination, puis la portée actuelle de cette page (annonce). »\n**Conclusion** : « Cette page reste significative parce qu'elle expose un rapport de domination et de violence que seule la solidarité vient contrer. Elle invite à réfléchir, aujourd'hui encore, aux violences faites aux femmes (ouverture). »",
+                  },
                 ],
               },
             ],
@@ -1291,7 +1291,7 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
                   { title: "Arguments", lines: ["Appui texte (citation)", "Lecture en appoint", "Une analyse qui relie"], variant: "green" },
                   { title: "Rédiger bref", lines: ["Intro : amorce, problématique, annonce", "Paragraphe : idée, citation, analyse", "Conclusion : bilan, ouverture"], variant: "green" },
                   { title: "Pièges classiques", lines: ["Paraphrase / commentaire", "Hors-sujet (oublier le texte)", "Développement inachevé"], variant: "yellow" },
-                  { title: "Renvois", lines: ["Cohérence, connecteurs → notion 13", "Procédés, lexique → notions 16-18", "Culture et références → notion 20"], variant: "purple", dashed: true },
+                  { title: "Renvois", lines: ["Cohérence, connecteurs → notion 14", "Procédés, lexique → notions 16-18", "Culture et références → notion 21"], variant: "purple", dashed: true },
                 ],
               },
             ],

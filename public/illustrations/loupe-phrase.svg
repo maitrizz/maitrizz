@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Une loupe posée sur des lignes de texte.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- les lignes de texte -->
+    <path d="M14 22 C 26 21 38 22 50 22"/>
+    <path d="M14 34 C 22 34 30 35 38 34"/>
+    <path d="M14 46 C 24 46 34 47 44 46"/>
+    <!-- la loupe -->
+    <path d="M62 20 C 53 21 48 29 50 37 C 52 44 60 48 67 46 C 74 44 78 36 75 29 C 73 23 68 19 62 20 Z"/>
+    <path d="M69 46 C 73 51 77 56 81 61"/>
+  </g>
+</svg>

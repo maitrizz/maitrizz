@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-label="Un micro sur pied qui diffuse la voix.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- le pied du micro -->
+    <path d="M120 112 C 120 96 120 78 120 62"/>
+    <path d="M104 116 C 114 119 128 119 138 116"/>
+    <path d="M112 112 C 117 113 124 113 129 112"/>
+    <!-- les ondes de la voix -->
+    <g stroke-dasharray="1 7">
+      <path d="M143 40 C 148 45 148 54 143 59"/>
+      <path d="M153 33 C 161 41 161 57 153 65"/>
+      <path d="M97 40 C 92 45 92 54 97 59"/>
+      <path d="M87 33 C 79 41 79 57 87 65"/>
+    </g>
+  </g>
+  <!-- la capsule terracotta, seul accent -->
+  <path d="M109 52 C 106 42 114 34 121 35 C 129 36 133 45 129 53 C 126 59 117 60 112 57 C 110 56 109 54 109 52 Z" fill="#c36648"/>
+  <path d="M114 60 C 116 62 124 62 126 60" fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

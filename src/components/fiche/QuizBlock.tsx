@@ -86,7 +86,7 @@ export function QuizBlock({ block, ficheSlug }: { block: QuizBlockData; ficheSlu
             let style = "border-base-300 hover:border-primary/40";
             if (answered) {
               if (i === question.correctIndex) {
-                style = "border-secondary bg-secondary/10 text-secondary";
+                style = "border-success bg-success/10 text-success";
               } else if (i === selected) {
                 style = "border-error bg-error/10 text-error";
               } else {
@@ -113,7 +113,7 @@ export function QuizBlock({ block, ficheSlug }: { block: QuizBlockData; ficheSlu
           <div className="flex flex-col gap-2">
             <div
               className={`rounded-lg px-4 py-2.5 text-sm font-semibold ${
-                isCorrect ? "bg-secondary/10 text-secondary" : "bg-error/10 text-error"
+                isCorrect ? "bg-success/10 text-success" : "bg-error/10 text-error"
               }`}
             >
               {isCorrect ? "✅ Bonne réponse !" : "❌ Pas tout à fait."}

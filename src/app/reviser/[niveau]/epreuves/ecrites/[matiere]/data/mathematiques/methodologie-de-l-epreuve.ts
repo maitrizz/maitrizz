@@ -51,7 +51,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
     },
   ],
   metaTitle:
-    "Méthodologie de l'épreuve écrite de mathématiques (CRPE) · Fiche de révision | Maitrizz",
+    "Méthodologie de l'épreuve écrite de mathématiques · Fiche de révision CRPE",
   metaDescription: l3
     ? "Méthodologie de la partie mathématiques du CRPE L3 : épreuve commune français et mathématiques (4 h), barème, note éliminatoire, exercices indépendants, programme de référence (cycle 4), ce que le jury évalue, stratégie et gestion du temps. Conseils et auto-évaluation."
     : "Méthodologie de l'épreuve écrite de mathématiques du CRPE M2 (3 h) : format, coefficient, barème, note éliminatoire, exercices indépendants, programme de référence (cycle 4 et Seconde), ce que le jury évalue, stratégie et gestion du temps. Conseils et auto-évaluation.",
@@ -340,7 +340,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                   example: { lines: ["Ce sont des points accessibles à prendre tôt"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Noter le barème de chaque exercice** s'il est indiqué : il guide la répartition du temps.",
                   warn: "⚠️ Ne pas commencer par l'exercice le plus dur juste parce qu'il est en premier.",
                 },
@@ -364,7 +364,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                   example: { lines: ["Une question bloquante ne doit pas manger un autre exercice"] },
                 },
                 {
-                  number: "💡",
+                  number: "3",
                   text: "**Si vous bloquez**, laisser un blanc propre et passer à la suite : on revient à la fin s'il reste du temps.",
                   warn: "⚠️ Le perfectionnisme sur un exercice est l'ennemi de la note globale.",
                 },
@@ -400,7 +400,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
               ],
               steps: [
                 {
-                  number: "💡",
+                  number: "1",
                   text: "**Si vous êtes en retard** : assurer au moins le début de chaque exercice restant (les premières questions sont souvent les plus accessibles).",
                   warn: "⚠️ Quelques questions traitées dans chaque exercice valent mieux qu'un seul exercice complet et les autres vides.",
                 },
@@ -428,7 +428,7 @@ function ficheMethodologie(niveau: Niveau): Fiche {
                   example: { lines: ["Une probabilité est entre 0 et 1 ; une longueur est positive"] },
                 },
                 {
-                  number: "💡",
+                  number: "4",
                   text: "**Soigner la langue et les notations** sur toute la copie : l'orthographe et la clarté sont évaluées, même en mathématiques.",
                   warn: "⚠️ Garder un vrai temps de relecture en fin d'épreuve.",
                 },

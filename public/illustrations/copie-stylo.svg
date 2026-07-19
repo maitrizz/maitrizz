@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Une copie et un stylo.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- la feuille de copie, trait légèrement irrégulier -->
+    <path d="M16 10 C 15 26 16 44 17 60 C 30 61 43 60 56 61 C 57 44 56 27 57 11 C 43 10 29 11 16 10 Z"/>
+    <!-- les lignes écrites -->
+    <path d="M24 22 C 32 21 41 22 49 22"/>
+    <path d="M24 30 C 32 31 40 30 48 31"/>
+    <path d="M24 38 C 30 38 37 39 43 38"/>
+    <!-- le stylo posé en travers -->
+    <path d="M52 54 C 62 44 72 34 82 24"/>
+    <path d="M58 60 C 68 50 78 40 88 30"/>
+    <path d="M82 24 C 85 21 89 24 88 30"/>
+    <path d="M52 54 L 47 63 L 58 60"/>
+  </g>
+</svg>

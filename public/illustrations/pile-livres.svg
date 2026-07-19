@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-label="Une pile de livres et un crayon.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- les trois livres empilés, légèrement décalés -->
+    <path d="M62 112 C 62 105 62 99 63 93 C 95 92 130 92 165 93 C 166 99 166 106 166 112 C 130 113 96 113 62 112 Z"/>
+    <path d="M70 92 C 70 86 70 80 71 74 C 101 73 134 73 172 74 C 173 80 173 86 173 92"/>
+    <path d="M58 73 C 58 67 58 61 59 55 C 91 54 124 54 156 55 C 157 61 157 67 157 73"/>
+    <!-- les tranches -->
+    <path d="M155 98 C 158 98 161 98 163 98"/>
+    <path d="M162 79 C 165 79 167 79 169 79"/>
+    <path d="M146 60 C 149 60 151 60 153 60"/>
+    <!-- le sol -->
+    <path d="M46 113 C 90 115 150 115 194 113"/>
+  </g>
+  <!-- le crayon terracotta appuyé contre la pile, seul accent -->
+  <path d="M182 111 C 188 97 195 83 202 69 L 211 74 C 204 88 197 101 191 115 Z" fill="#c36648"/>
+  <path d="M202 69 C 204 65 207 63 210 64 C 212 66 212 70 211 74" fill="none" stroke="#c36648" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

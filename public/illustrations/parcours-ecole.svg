@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" role="img" aria-label="Un chemin en deux étapes qui mène à l'école.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- l'école, au bout du chemin -->
+    <path d="M330 130 C 329 112 330 94 331 76 C 352 75 372 76 392 75 C 393 93 392 112 393 130"/>
+    <path d="M321 78 C 334 67 348 57 361 47 C 375 57 388 67 401 77"/>
+    <path d="M352 130 C 352 118 352 110 353 104 C 359 98 367 98 372 104 C 373 110 373 118 373 130"/>
+    <path d="M310 132 C 340 134 375 133 406 132"/>
+    <path d="M361 47 L 361 29"/>
+    <!-- les deux drapeaux d'étape plantés sur le chemin -->
+    <path d="M138 147 C 138 139 138 131 139 123"/>
+    <path d="M139 123 C 145 124 151 126 156 128 C 151 131 145 133 139 134"/>
+    <path d="M248 138 C 248 130 248 122 249 114"/>
+    <path d="M249 114 C 255 115 261 117 266 119 C 261 122 255 124 249 125"/>
+  </g>
+  <!-- le fanion terracotta de l'école, seul accent -->
+  <path d="M361 29 C 368 30 375 32 381 34 C 375 37 368 38 361 39 Z" fill="#c36648"/>
+  <!-- le chemin pointillé -->
+  <path d="M24 152 C 100 150 180 145 260 136 C 290 133 320 130 348 128" fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 10"/>
+  <circle cx="18" cy="153" r="4" fill="#0c434e"/>
+</svg>

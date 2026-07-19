@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un dictionnaire fermé avec son marque-page.">
+  <g fill="none" stroke="#0c434e" stroke-linecap="round" stroke-linejoin="round">
+    <!-- la tranche avant : traits qui se croisent aux coins -->
+    <path d="M24 12.5 C 23 27 23 41 24 55.5" stroke-width="3.4"/>
+    <path d="M23 53.5 C 25.3 58 28.8 60 33 60 C 46 61 59 60 72.8 60" stroke-width="2.2"/>
+    <path d="M72 61.5 C 72 47.5 72 33.5 72 18.5" stroke-width="3.4"/>
+    <path d="M73.5 20 C 59.5 19 46.5 19 33 20 C 29 20 26 18 23.5 13.5" stroke-width="2.2"/>
+    <!-- le dessus de la couverture -->
+    <path d="M24 14 C 26 9.8 29.2 8 33 8 C 45 7 57 8 69.5 8" stroke-width="2.4"/>
+    <path d="M69 7 C 70 11.3 71 15.7 72 20.5" stroke-width="2.4"/>
+    <!-- le mors, plus léger -->
+    <path d="M33 20 C 33 33 33 46 33 60" stroke-width="1.8"/>
+    <!-- reprise sur la tranche -->
+    <path d="M24.5 19 C 24.2 28 24.4 37 24.2 45" stroke-width="1.3" opacity=".55"/>
+    <!-- le marque-page, en terracotta -->
+    <path d="M52 8 C 52 14 52 20 52 26.5 L 57 21.5 L 62 26.5 C 62 20 62 14 62 8" stroke="#c36648" stroke-width="2.6"/>
+    <!-- hachures d'ombre sous le livre -->
+    <path d="M32 64.5 L 36 62.5 M39 65 L 43 63 M46 64.5 L 50 62.5" stroke-width="1.2" opacity=".45"/>
+  </g>
+</svg>

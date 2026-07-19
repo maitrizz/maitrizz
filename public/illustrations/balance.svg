@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Une balance à deux plateaux.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- le pied et le fléau -->
+    <path d="M48 12 C 48 26 48 42 48 54"/>
+    <path d="M36 58 C 44 60 52 60 60 58"/>
+    <path d="M20 18 C 39 15 57 15 76 18"/>
+    <!-- les fils des plateaux -->
+    <path d="M20 18 L 14 34 M20 18 L 26 34"/>
+    <path d="M76 18 L 70 34 M76 18 L 82 34"/>
+    <!-- les plateaux -->
+    <path d="M10 35 C 16 39 24 39 30 35"/>
+    <path d="M66 35 C 72 39 80 39 86 35"/>
+  </g>
+</svg>

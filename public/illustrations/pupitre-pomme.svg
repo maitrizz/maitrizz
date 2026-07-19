@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-label="Un pupitre d'écolier avec une pomme posée dessus.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- le plateau du pupitre -->
+    <path d="M52 74 C 92 72 148 72 188 74"/>
+    <path d="M56 81 C 94 79 146 79 184 81"/>
+    <path d="M52 74 L 56 81"/>
+    <path d="M188 74 L 184 81"/>
+    <!-- les pieds et la barre -->
+    <path d="M66 81 C 64 95 62 109 61 121"/>
+    <path d="M174 81 C 176 95 178 109 179 121"/>
+    <path d="M64 102 C 102 104 138 104 176 102"/>
+    <!-- la queue et la feuille de la pomme -->
+    <path d="M118 58 C 118 54 119 51 121 48"/>
+    <path d="M121 48 C 124 43 129 42 132 44 C 129 48 125 49 121 48 Z"/>
+  </g>
+  <!-- la pomme terracotta, seul accent -->
+  <path d="M117 57 C 108 55 103 62 105 68 C 106 73 111 76 117 76 C 123 76 128 73 129 68 C 131 62 126 55 117 57 Z" fill="#c36648"/>
+</svg>

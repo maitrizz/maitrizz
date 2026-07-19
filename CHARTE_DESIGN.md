@@ -50,6 +50,7 @@ Un cahier d'écolier sérieux et chaleureux : **serif teal** + **surlignage terr
 | CTA fort (accent) | `bg-secondary text-white rounded-xl px-8 py-3.5 font-ui font-bold shadow-md shadow-secondary/20 hover:-translate-y-0.5 hover:shadow-lg active:scale-95` | un seul par section, l'action qu'on veut vraiment |
 | Secondaire (outline) | `border border-primary/20 bg-white/60 text-primary rounded-xl px-8 py-3.5 font-ui font-bold hover:bg-white active:scale-95` | action alternative, moins prioritaire |
 
+- **Cartes de hub : toujours le bouton contour** (`HubCardCtaOutline`), la carte entière étant cliquable. Le terracotta plein est réservé à l'action prioritaire unique d'un écran (bandeau « S'entraîner », bouton CSE) : s'il y a deux boutons pleins visibles, l'un des deux est de trop.
 - Coins toujours arrondis (`rounded-xl`, `rounded-md` pour les petits badges).
 - Micro-interaction systématique : `active:scale-95` au clic, `hover:-translate-y-0.5` ou changement de fond au survol.
 - États désactivés : `disabled:opacity-50 disabled:cursor-not-allowed`.
@@ -67,6 +68,14 @@ Un cahier d'écolier sérieux et chaleureux : **serif teal** + **surlignage terr
 - Construction : mot-symbole serif teal + trait manuscrit fin terracotta en soulignage (SVG, pas de bordure CSS classique).
 - Favicon assorti : `src/app/icon.svg` (le « M » serif + même surlignage).
 - Planche d'exploration des anciens concepts conservée hors ligne : `design/logo-explorations.html` (à rouvrir avec `open` si besoin de revenir sur le choix).
+
+## 6 bis. Illustrations
+
+- Style « croquis à l'encre » : trait teal (`#0c434e`, caps/joins `round`) à épaisseur variable — contours principaux en 3.2–3.6, traits secondaires en 2.2–2.6, détails légers en 1.8. Les formes fermées sont dessinées en **traits séparés qui se croisent et dépassent aux angles** (jamais un rectangle propre), ou en deux arcs qui ne se referment pas exactement.
+- Gestes signature, avec parcimonie : une **reprise de trait** (`stroke-width 1.3, opacity .55`) le long d'un bord, et 2–3 **hachures d'ombre** (`stroke-width 1.2, opacity .45`) sous l'objet.
+- Un **seul accent terracotta** (`#c36648`) par motif, sur l'élément qui raconte (mot repéré par la loupe, liquide de la fiole, barre du jour, point d'interrogation…).
+- Fichiers : `public/illustrations/croquis/*.svg` (23 motifs, mêmes noms que les originaux trait fin de `public/illustrations/`). Toutes les pages (accueil et `/reviser`) utilisent les versions croquis ; les originaux ne servent plus que de source pour redessiner. ViewBox commun `0 0 96 68` (sauf trousse/copie-tasse/micro-oral `240 140`, parcours-ecole `420 170`, panneau-l3-m2 `128 22 164 188`).
+- Directions alternatives gardées en réserve : « deux encres/riso » (aplats terracotta décalés, fichiers conservés dans `public/illustrations/riso/`) et planche comparative des trois pistes dans `design/illustrations-explorations.html`.
 
 ## 7. Mise en page
 
@@ -87,5 +96,6 @@ Un cahier d'écolier sérieux et chaleureux : **serif teal** + **surlignage terr
 ## 9. État d'avancement
 
 - ✅ Page d'accueil (Hero, Features, Status, Pricing, Newsletter), Navbar, Footer, Logo, favicon.
-- ⏳ Reste à passer dans cette identité : pages « réviser », blog, fiches individuelles, formulaires (login/inscription).
+- ✅ Toutes les pages de navigation du parcours réviser : `/reviser`, `/reviser/[niveau]/epreuves`, écrites, orales, page matière (`ecrites/[matiere]`), hub entraînement espacé, hub CSE (modules + trainer), pages d'attente EPS/Motivation. Langage « édition scolaire » du proto v3 : tout sur le papier Seyès (pas de bande de couleur), en-tête dans la marge du cahier (filet terracotta) avec tampon incliné et une annotation manuscrite Caveat au plus par page, cartes « feuille de copie » (`ring` fin + `.shadow-copy`), hiérarchie de boutons plein/contour. Éléments partagés dans `src/app/reviser/_components/hub.tsx`.
+- ⏳ Reste à passer dans cette identité : blog, pages module CSE et écrans du trainer CSE, formulaires (login/inscription). Les fiches individuelles sont traitées par la mise en page « scroll libre » (FicheScroll).
 - Voir mémoire `project_design_chantier` pour le détail du chantier (worktree, ports, organisation git).

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un globe terrestre de classe sur son pied.">
+  <g fill="none" stroke="#0c434e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- la sphère -->
+    <circle cx="48" cy="29" r="20"/>
+    <!-- le méridien -->
+    <path d="M48 9 C 39 14 39 44 48 49"/>
+    <!-- l'équateur -->
+    <path d="M28.5 31 C 36 34.5 60 34.5 67.5 31"/>
+    <!-- un continent esquissé -->
+    <path d="M52 18 C 56 17 60 19 61 23 C 58 25 54 24 52 21 Z"/>
+    <!-- le pied et le socle -->
+    <path d="M48 49 L 48 57"/>
+    <path d="M36 60 C 42 58.5 54 58.5 60 60"/>
+  </g>
+</svg>

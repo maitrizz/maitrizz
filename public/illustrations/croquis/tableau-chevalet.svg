@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 68" role="img" aria-label="Un tableau sur chevalet.">
+  <g fill="none" stroke="#0c434e" stroke-linecap="round" stroke-linejoin="round">
+    <!-- tableau : quatre traits qui se croisent aux coins -->
+    <path d="M28 9.5 C 27 22 27 35 28 48" stroke-width="3.4"/>
+    <path d="M25.5 12 C 40 11 56 11 74.5 12" stroke-width="2.2"/>
+    <path d="M72 9.5 C 73 22 73 35 72 48" stroke-width="3.4"/>
+    <path d="M25.5 46 C 40 47 56 47 74.5 46" stroke-width="2.2"/>
+    <!-- reprise sur le montant gauche -->
+    <path d="M28.5 16 C 28 25 28.3 34 28.1 41" stroke-width="1.3" opacity=".55"/>
+    <!-- pieds du chevalet, appuyés -->
+    <path d="M34 47 L 24.5 63.5" stroke-width="3.2"/>
+    <path d="M66 47 L 75.5 63.5" stroke-width="3.2"/>
+    <path d="M50 47 L 50 61.5" stroke-width="2.4"/>
+    <!-- lignes à la craie, la deuxième en terracotta -->
+    <path d="M36 22.5 C 44 21.5 52 22.5 60 22.5" stroke-width="2.6"/>
+    <path d="M36 30.5 C 42 30.5 48 31.5 54 30.5" stroke-width="2.6" stroke="#c36648"/>
+    <path d="M36 38 C 41 38 45.5 38.5 50 38" stroke-width="1.8"/>
+    <!-- hachures d'ombre entre les pieds -->
+    <path d="M40 64.5 L 44 62.5 M47 65 L 51 63 M54 64.5 L 58 62.5" stroke-width="1.2" opacity=".45"/>
+  </g>
+</svg>
