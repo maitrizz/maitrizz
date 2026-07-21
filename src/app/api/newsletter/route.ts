@@ -9,6 +9,12 @@ import { NextResponse } from "next/server";
 //   sinon le contact est ajouté directement à la liste.
 // - BREVO_DOI_REDIRECT_URL (optionnel) : page affichée après confirmation,
 //   par défaut la page d'accueil.
+// - NEWSLETTER_NOTIF_EMAILS (optionnel) : liste d'adresses séparées par des
+//   virgules à notifier à chaque inscription, par défaut brevo@maitrizz.fr.
+//   L'envoi passe par l'API transactionnelle Brevo, avec l'email et le
+//   parcours du contact écrits directement dans le message (pas de variable
+//   de personnalisation Brevo, qui se résout sur le destinataire et pas sur
+//   le contact inscrit dans une automatisation envoyée à une adresse fixe).
 
 const PARCOURS_VALIDES = [
   "licence",
@@ -19,7 +25,47 @@ const PARCOURS_VALIDES = [
 ] as const;
 type Parcours = (typeof PARCOURS_VALIDES)[number];
 
+const LIBELLES_PARCOURS: Record<Parcours, string> = {
+  licence: "Licence (voie L3)",
+  master1: "Master 1",
+  master2: "Master 2 (voie M2)",
+  reconversion: "Reconversion",
+  renseignement: "Se renseigne",
+};
+
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+async function notifierInscription(apiKey: string, email: string, parcours: Parcours) {
+  const destinataires = (
+    process.env.NEWSLETTER_NOTIF_EMAILS ?? "brevo@maitrizz.fr"
+  )
+    .split(",")
+    .map((a) => a.trim())
+    .filter(Boolean);
+
+  try {
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "api-key": apiKey,
+        "content-type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        sender: { name: "Bêta Maitrizz", email: "brevo@maitrizz.fr" },
+        to: destinataires.map((a) => ({ email: a })),
+        subject: `[Maitrizz] Nouvelle inscription bêta : ${email}`,
+        htmlContent: `<p><strong>Email :</strong> ${email}</p><p><strong>Parcours :</strong> ${LIBELLES_PARCOURS[parcours]}</p>`,
+      }),
+    });
+    if (!response.ok) {
+      const detail = await response.text();
+      console.error(`newsletter: notification Brevo ${response.status}`, detail);
+    }
+  } catch (error) {
+    console.error("newsletter: envoi de la notification impossible", error);
+  }
+}
 
 export async function POST(request: Request) {
   const apiKey = process.env.BREVO_API_KEY;
@@ -91,6 +137,10 @@ export async function POST(request: Request) {
 
     // 201 : créé ; 204 : déjà connu et mis à jour. Les deux sont un succès.
     if (response.ok || response.status === 204) {
+      // Sans double opt-in, l'inscription est immédiate : on notifie tout de
+      // suite. Avec double opt-in, on attend la confirmation par email avant
+      // de considérer l'inscription comme acquise.
+      if (!useDoubleOptin) await notifierInscription(apiKey, email, parcours);
       return NextResponse.json({ ok: true });
     }
 
