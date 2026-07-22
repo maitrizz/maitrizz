@@ -4,7 +4,8 @@ import { NextResponse } from "next/server";
 // l'API transactionnelle de Brevo.
 // Variables d'environnement :
 // - BREVO_API_KEY (obligatoire, déjà utilisée par la newsletter).
-// - REMARQUES_EMAIL (optionnel) : destinataire, par défaut claude@maitrizz.fr.
+// - REMARQUES_EMAIL (optionnel) : destinataire(s), séparés par des virgules,
+//   par défaut claude@maitrizz.fr.
 
 const TYPES_VALIDES = [
   "bug",
@@ -34,7 +35,11 @@ function echapperHtml(texte: string): string {
 
 export async function POST(request: Request) {
   const apiKey = process.env.BREVO_API_KEY;
-  const destinataire = process.env.REMARQUES_EMAIL ?? "claude@maitrizz.fr";
+  const destinataires = (process.env.REMARQUES_EMAIL ?? "claude@maitrizz.fr")
+    .split(",")
+    .map((a) => a.trim())
+    .filter(Boolean);
+  const expediteur = destinataires[0];
   if (!apiKey) {
     console.error("remarques: BREVO_API_KEY manquant");
     return NextResponse.json(
@@ -79,7 +84,7 @@ export async function POST(request: Request) {
     `<p><strong>Type :</strong> ${LIBELLES[type]}</p>`,
     page ? `<p><strong>Page :</strong> ${echapperHtml(page)}</p>` : "",
     email ? `<p><strong>Contact :</strong> ${echapperHtml(email)}</p>` : "",
-    "<hr>",
+    `<p><strong>Message :</strong></p>`,
     `<p>${echapperHtml(message.slice(0, MAX_MESSAGE)).replaceAll("\n", "<br>")}</p>`,
   ]
     .filter(Boolean)
@@ -94,8 +99,8 @@ export async function POST(request: Request) {
         accept: "application/json",
       },
       body: JSON.stringify({
-        sender: { name: "Boîte à remarques Maitrizz", email: destinataire },
-        to: [{ email: destinataire }],
+        sender: { name: "Boîte à remarques Maitrizz", email: expediteur },
+        to: destinataires.map((a) => ({ email: a })),
         replyTo: email ? { email } : undefined,
         subject: `[Maitrizz] ${LIBELLES[type]}${page ? ` · ${page}` : ""}`,
         htmlContent: contenuHtml,
