@@ -17,7 +17,7 @@ export const ficheTheoremeDeThalesSimilitude: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Théorème de Thalès et similitude",
   subtitle:
-    "Configurations triangle et papillon · réciproque · calculer une longueur · prouver des droites parallèles · triangles semblables · coefficient de similitude · homothétie",
+    "Configurations triangle et papillon · réciproque · calculer une longueur · prouver des droites parallèles · triangles semblables · coefficient de similitude · homothétie.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

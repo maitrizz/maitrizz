@@ -17,7 +17,7 @@ export const ficheModesEtTemps: Fiche = {
   numero: 7,
   partie: "Partie 1 : Le verbe",
   title: "Modes et temps",
-  subtitle: "Identifier le mode et le temps d'une forme verbale : morphologie, terminaisons, formes irrégulières",
+  subtitle: "Identifier le mode et le temps d'une forme verbale : morphologie, terminaisons, formes irrégulières.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

@@ -15,7 +15,7 @@ export const ficheAccordParticipePasse: Fiche = {
   numero: 12,
   partie: "Partie 1 : Orthographe grammaticale",
   title: "L'accord du participe passé",
-  subtitle: "PP seul, avec être, avec avoir (COD antéposé), verbes pronominaux et piège infinitif / participe passé",
+  subtitle: "PP seul, avec être, avec avoir (COD antéposé), verbes pronominaux et piège infinitif / participe passé.",
   badges: [
       {
           "label": "★★ Fréquent",

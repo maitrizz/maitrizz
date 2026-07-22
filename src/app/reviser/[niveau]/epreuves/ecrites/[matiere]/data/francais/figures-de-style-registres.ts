@@ -17,7 +17,7 @@ export const ficheFiguresRegistres: Fiche = {
   numero: 19,
   partie: "Partie 2 : Lexique",
   title: "Les figures de style et les registres",
-  subtitle: "Comparaison, métaphore, personnification, métonymie, synecdoque, hyperbole, litote, antithèse, registres de langue et littéraires",
+  subtitle: "Comparaison, métaphore, personnification, métonymie, synecdoque, hyperbole, litote, antithèse, registres de langue et littéraires.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

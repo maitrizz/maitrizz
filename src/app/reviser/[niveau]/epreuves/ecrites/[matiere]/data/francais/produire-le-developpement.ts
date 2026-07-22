@@ -48,7 +48,7 @@ function ficheProduireDeveloppementM2Builder(): Fiche {
     partie: "Partie 3 : Développement rédigé",
     title: "Produire le développement rédigé",
     subtitle:
-      "Analyser la question, problématiser, bâtir un plan, mobiliser le texte et sa culture, puis rédiger une réflexion argumentée structurée",
+      "Analyser la question, problématiser, bâtir un plan, mobiliser le texte et sa culture, puis rédiger une réflexion argumentée structurée.",
     badges: [
       { label: "★★★ Le cœur de la Partie 3", variant: "hot" },
       { label: "Épreuve écrite de français · 3 h", variant: "info" },
@@ -691,7 +691,7 @@ function ficheProduireDeveloppementL3Builder(): Fiche {
     partie: "Partie 3 : Développement rédigé",
     title: "Produire le développement rédigé",
     subtitle:
-      "Analyser une question posée sur le texte, problématiser, bâtir un plan court, puis rédiger une réflexion argumentée d'une trentaine de lignes, sous contrainte de temps",
+      "Analyser une question posée sur le texte, problématiser, bâtir un plan court, puis rédiger une réflexion argumentée d'une trentaine de lignes, sous contrainte de temps.",
     badges: [
       { label: "★★★ Le cœur de la Partie 3", variant: "hot" },
       { label: "Épreuve commune français + maths · 4 h", variant: "info" },

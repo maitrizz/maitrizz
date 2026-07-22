@@ -159,44 +159,157 @@ function OuJenSuis({
 /* ═══ Mindmap allégée ═══════════════════════════════════════════════════════ */
 type MindmapBlock = Extract<Block, { type: "mindmapLite" }>;
 
-const BRANCH_ACCENT: Record<MindmapBlock["branches"][number]["variant"], string> = {
-  blue: "border-l-primary/60",
-  green: "border-l-secondary/60",
-  yellow: "border-l-secondary/40",
-  purple: "border-l-outline-variant",
+/* Accent par variante pour les branches principales (blue = teal, green = vert). */
+const MAIN_ACCENT: Record<"blue" | "green", { text: string; dot: string; num: string }> = {
+  blue: { text: "text-primary", dot: "bg-primary", num: "border-primary/60 text-primary" },
+  green: { text: "text-success", dot: "bg-success", num: "border-success/60 text-success" },
 };
 
-export function ProtoMindmap({ block }: { block: MindmapBlock }) {
-  // Vraie arborescence tracée en filets fins (esprit « copie »), pas une grille
-  // de cartes : le nœud central en tête, une épine verticale, chaque branche
-  // accrochée par un filet horizontal. La position spatiale des branches (le
-  // long de l'épine) est stable, donc mémorisable ; l'ancien centre en aplat
-  // sombre était le seul gros aplat de la page.
+/* Soulignement dessiné « à l'encre » sous les titres de branche (terracotta),
+   posé à la largeur du texte via un span inline-block relatif. */
+function TraitMain({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className={`flex flex-col p-5 ${FEUILLE}`}>
-      <div className="self-start rounded-sm border border-primary/40 bg-primary/[0.04] px-4 py-2.5">
-        <div className="font-serif text-base font-bold text-primary">{sansEmoji(block.center.title)}</div>
-        {block.center.subtitle && <div className="mt-0.5 font-ui text-xs text-on-surface-variant">{block.center.subtitle}</div>}
+    <span className={`relative inline-block ${className}`}>
+      {children}
+      <svg
+        aria-hidden
+        className="absolute -bottom-1.5 left-0 w-full"
+        height="6"
+        viewBox="0 0 120 8"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M2 5 C 25 1, 45 8, 70 4 S 110 2, 118 5"
+          fill="none"
+          stroke="var(--color-secondary)"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          opacity="0.85"
+        />
+      </svg>
+    </span>
+  );
+}
+
+export function ProtoMindmap({ block }: { block: MindmapBlock }) {
+  // Piste « sketchnote » : une page de révision manuscrite sur papier Seyès.
+  // Le « fait main » vient de l'habillage (cercle du centre, soulignements et
+  // connecteurs dessinés en SVG, titres en Caveat) — jamais d'une image : le
+  // contenu reste du texte (accessible, indexable, éditable).
+  //
+  // Partition pilotée par la donnée, valable sur toutes les fiches :
+  //   blue / green  → branches principales (grille numérotée)
+  //   yellow (pièges) / purple (renvois, souvent dashed) → annotations de marge.
+  const main = block.branches.filter((b) => b.variant === "blue" || b.variant === "green");
+  const aside = block.branches.filter((b) => b.variant === "yellow" || b.variant === "purple");
+  // Largeur d'une colonne : deux par ligne dès sm, mais un item seul (ou le
+  // dernier d'un nombre impair) se recentre au lieu de rester collé à gauche.
+  const colMain = main.length === 1 ? "w-full" : "w-full sm:w-[calc(50%-1rem)]";
+  const colAside = aside.length === 1 ? "w-full" : "w-full sm:w-[calc(50%-1rem)]";
+
+  return (
+    <div className="relative overflow-hidden rounded-md bg-seyes p-6 ring-1 ring-primary/[0.1] shadow-[0_10px_24px_-18px_rgba(12,67,78,0.3)] sm:p-8">
+      {/* ── Nœud central : cerclé à l'encre teal ── */}
+      <div className="relative mx-auto mb-8 w-max max-w-full px-6 py-3 text-center">
+        <svg
+          aria-hidden
+          className="absolute -inset-x-3 -inset-y-3.5 -z-0 h-[calc(100%+1.75rem)] w-[calc(100%+1.5rem)] overflow-visible"
+          viewBox="0 0 320 130"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M18 40 C 30 8, 120 4, 165 8 C 250 12, 308 10, 304 55 C 312 100, 250 122, 160 122 C 70 124, 8 118, 16 68 C 14 55, 14 48, 18 40 Z"
+            fill="none"
+            stroke="var(--color-primary)"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            opacity="0.85"
+          />
+        </svg>
+        <div className="relative font-serif text-xl font-bold leading-tight text-primary">
+          {sansEmoji(block.center.title)}
+        </div>
+        {block.center.subtitle && (
+          <div className="relative mt-0.5 font-hand text-xl leading-none text-secondary">
+            {sansEmoji(block.center.subtitle)}
+          </div>
+        )}
       </div>
-      <div className="ml-5 flex flex-col gap-3 border-l border-primary/25 pb-1 pt-4">
-        {block.branches.map((branch, i) => (
-          <div key={i} className="relative pl-6">
-            <span aria-hidden className="absolute left-0 top-[1.15rem] h-px w-6 bg-primary/25" />
-            <div
-              className={`rounded-sm border-l-[3px] bg-surface-container/40 px-4 py-3 ${BRANCH_ACCENT[branch.variant]} ${
-                branch.dashed ? "border-dashed" : ""
-              }`}
-            >
-              <div className="mb-1.5 font-serif text-sm font-bold text-primary">{sansEmoji(branch.title)}</div>
+
+      {/* ── Liaison courte centre → branches (desktop) ── */}
+      {main.length >= 2 && (
+        <svg
+          aria-hidden
+          className="mx-auto -mt-6 mb-4 hidden h-[26px] w-3/5 max-w-[360px] overflow-visible sm:block"
+          viewBox="0 0 200 26"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g fill="none" stroke="var(--color-secondary)" strokeWidth="1.6" strokeLinecap="round" opacity="0.35">
+            <path d="M100 1 C 96 12, 60 12, 30 24" />
+            <path d="M100 1 C 104 12, 140 12, 170 24" />
+          </g>
+        </svg>
+      )}
+
+      {/* ── Branches principales : numérotées, repliées et recentrées ── */}
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-5">
+        {main.map((branch, i) => {
+          const accent = MAIN_ACCENT[branch.variant as "blue" | "green"];
+          return (
+            <div key={i} className={colMain}>
+              <div className={`mb-1.5 flex items-baseline gap-2 ${accent.text}`}>
+                <span
+                  className={`inline-flex h-5 w-5 flex-none -translate-y-0.5 items-center justify-center rounded-full border font-ui text-[0.6rem] font-semibold ${accent.num}`}
+                >
+                  {i + 1}
+                </span>
+                <TraitMain className="font-hand text-2xl leading-none">{sansEmoji(branch.title)}</TraitMain>
+              </div>
               <ul className="flex flex-col gap-1">
                 {branch.lines.map((line, j) => (
-                  <li key={j} className="text-xs leading-relaxed text-on-surface/75">{line}</li>
+                  <li key={j} className="relative pl-4 font-serif text-sm leading-relaxed text-on-surface">
+                    <span
+                      aria-hidden
+                      className={`absolute left-0 top-[0.6em] h-1.5 w-1.5 rounded-full opacity-55 ${accent.dot}`}
+                    />
+                    {sansEmoji(line)}
+                  </li>
                 ))}
               </ul>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
+
+      {/* ── Annotations de marge : pièges (jaune) et renvois (violet) ── */}
+      {aside.length > 0 && (
+        <div className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-4 border-t border-dashed border-secondary/40 pt-5">
+          {aside.map((branch, i) => (
+            <div key={i} className={`relative pl-4 ${colAside}`}>
+              <span
+                aria-hidden
+                className={`absolute left-0 top-1.5 bottom-0.5 w-0.5 rounded ${
+                  branch.variant === "purple" ? "bg-outline-variant" : "bg-secondary/45"
+                }`}
+              />
+              <span
+                className={`mb-1 block font-hand text-xl leading-none ${
+                  branch.variant === "purple" ? "text-on-surface-variant" : "text-secondary"
+                }`}
+              >
+                {sansEmoji(branch.title)}
+              </span>
+              <ul className="flex flex-col gap-0.5">
+                {branch.lines.map((line, j) => (
+                  <li key={j} className="font-serif text-sm leading-relaxed text-on-surface/85">
+                    {sansEmoji(line)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

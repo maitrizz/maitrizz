@@ -18,7 +18,7 @@ export const ficheProportionnalitePourcentages: Fiche = {
   partie: "Partie 2 : Organisation, données, fonctions",
   title: "Proportionnalité et pourcentages",
   subtitle:
-    "Coefficient et quatrième proportionnelle · ratio · pourcentages et coefficient multiplicateur · valeur initiale · successions · échelle · vitesse · masse volumique · débit",
+    "Coefficient et quatrième proportionnelle · ratio · pourcentages et coefficient multiplicateur · valeur initiale · successions · échelle · vitesse · masse volumique · débit.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },

@@ -17,7 +17,7 @@ export const ficheTransformationsDuPlan: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Transformations du plan",
   subtitle:
-    "Symétrie axiale · symétrie centrale · translation · rotation · homothétie · conservation des distances et des angles · axes et centres de symétrie · frises et pavages",
+    "Symétrie axiale · symétrie centrale · translation · rotation · homothétie · conservation des distances et des angles · axes et centres de symétrie · frises et pavages.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

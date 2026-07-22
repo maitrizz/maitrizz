@@ -18,7 +18,7 @@ export const ficheFonctionsSyntaxiques: Fiche = {
   partie: "Partie 1 : Grammaire de la phrase",
   title: "Fonctions syntaxiques",
   subtitle:
-    "Identifier le rôle de chaque mot ou groupe dans la phrase : la question du tableau nature + fonction",
+    "Identifier le rôle de chaque mot ou groupe dans la phrase : la question du tableau nature + fonction.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 + lycée", variant: "info" },

@@ -15,7 +15,7 @@ export const fichePhraseComplexe: Fiche = {
   numero: 5,
   partie: "Partie 1 : Grammaire de la phrase",
   title: "La phrase complexe et sa ponctuation",
-  subtitle: "Compter et nommer les propositions, comprendre leurs liens et justifier la ponctuation syntaxique",
+  subtitle: "Compter et nommer les propositions, comprendre leurs liens et justifier la ponctuation syntaxique.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

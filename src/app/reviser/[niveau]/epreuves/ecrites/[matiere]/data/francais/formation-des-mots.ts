@@ -17,7 +17,7 @@ export const ficheFormationDesMots: Fiche = {
   numero: 17,
   partie: "Partie 2 : Lexique",
   title: "La formation des mots",
-  subtitle: "Mots simples et construits, dérivation, composition, familles de mots, préfixes, suffixes et radicaux",
+  subtitle: "Mots simples et construits, dérivation, composition, familles de mots, préfixes, suffixes et radicaux.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

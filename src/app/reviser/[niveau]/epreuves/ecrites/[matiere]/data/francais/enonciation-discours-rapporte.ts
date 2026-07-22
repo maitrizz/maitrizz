@@ -17,7 +17,7 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
   numero: 15,
   partie: "Partie 1 : Grammaire du texte et du discours",
   title: "L'énonciation et le discours rapporté",
-  subtitle: "Discours ancré / récit coupé, embrayeurs, discours direct, indirect, indirect libre, récit de paroles et concordance des temps",
+  subtitle: "Discours ancré / récit coupé, embrayeurs, discours direct, indirect, indirect libre, récit de paroles et concordance des temps.",
   badges: [
       {
           "label": "★★ Fréquent",

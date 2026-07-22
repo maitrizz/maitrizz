@@ -18,7 +18,7 @@ export const ficheFonctionsLineairesAffines: Fiche = {
   partie: "Partie 2 : Organisation, données, fonctions",
   title: "Fonctions : notion, linéaires et affines",
   subtitle:
-    "Image et antécédent · notations f(x) et x ↦ f(x) · tableau de valeurs · lecture graphique · fonction linéaire f(x) = ax · fonction affine f(x) = ax + b · intersection de droites",
+    "Image et antécédent · notations f(x) et x ↦ f(x) · tableau de valeurs · lecture graphique · fonction linéaire f(x) = ax · fonction affine f(x) = ax + b · intersection de droites.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },

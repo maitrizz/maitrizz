@@ -18,7 +18,7 @@ export const ficheNumerationSystemesDeBases: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Numération · Systèmes de bases",
   subtitle:
-    "Comprendre la numération décimale · Convertir entre bases · Lire et écrire tout entier · Notations scientifiques et préfixes",
+    "Comprendre la numération décimale · Convertir entre bases · Lire et écrire tout entier · Notations scientifiques et préfixes.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },

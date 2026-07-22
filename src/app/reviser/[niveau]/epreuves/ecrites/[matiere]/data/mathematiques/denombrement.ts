@@ -18,7 +18,7 @@ export const ficheDenombrement: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Dénombrement et combinatoire élémentaire",
   subtitle:
-    "Compter sans lister · principe additif · principe multiplicatif · arbre de choix · tableau à double entrée · arrangements · permutations (factorielle)",
+    "Compter sans lister · principe additif · principe multiplicatif · arbre de choix · tableau à double entrée · arrangements · permutations (factorielle).",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },

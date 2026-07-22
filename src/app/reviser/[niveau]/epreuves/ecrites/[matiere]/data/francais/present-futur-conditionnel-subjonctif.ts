@@ -17,7 +17,7 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
   numero: 9,
   partie: "Partie 1 : Le verbe",
   title: "Présent, futur, conditionnel et subjonctif",
-  subtitle: "Nommer les valeurs du présent, du futur et du conditionnel, et reconnaître les emplois du subjonctif",
+  subtitle: "Nommer les valeurs du présent, du futur et du conditionnel, et reconnaître les emplois du subjonctif.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

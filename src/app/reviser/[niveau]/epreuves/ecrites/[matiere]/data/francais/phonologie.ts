@@ -17,7 +17,7 @@ export const fichePhonologie: Fiche = {
   numero: 16,
   partie: "Partie 1 : Grammaire du texte et du discours",
   title: "La phonologie",
-  subtitle: "Phonème, graphème, lettre, transcription API, correspondances grapho-phonémiques et valeurs d'une lettre",
+  subtitle: "Phonème, graphème, lettre, transcription API, correspondances grapho-phonémiques et valeurs d'une lettre.",
   badges: [
       {
           "label": "★★ Fréquent",

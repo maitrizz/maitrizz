@@ -16,7 +16,7 @@ export const ficheAlgorithmiqueScratchTableur: Fiche = {
   partie: "Partie 6 : Algorithmique et pensée informatique",
   title: "Algorithmique, Scratch, tableur et GeoGebra",
   subtitle:
-    "Notion d'algorithme · variables · boucles et conditionnelles · lire et écrire un script Scratch · formules de tableur · référence absolue · géométrie dynamique",
+    "Notion d'algorithme · variables · boucles et conditionnelles · lire et écrire un script Scratch · formules de tableur · référence absolue · géométrie dynamique.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème E", variant: "info" },

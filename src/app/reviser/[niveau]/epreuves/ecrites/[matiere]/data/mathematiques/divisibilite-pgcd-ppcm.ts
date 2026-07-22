@@ -18,7 +18,7 @@ export const ficheDivisibilitePgcdPpcm: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Divisibilité, PGCD, PPCM, nombres premiers",
   subtitle:
-    "Multiples et diviseurs · critères de divisibilité · division euclidienne · nombres premiers · décomposition en facteurs premiers · algorithme d'Euclide · PPCM",
+    "Multiples et diviseurs · critères de divisibilité · division euclidienne · nombres premiers · décomposition en facteurs premiers · algorithme d'Euclide · PPCM.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },

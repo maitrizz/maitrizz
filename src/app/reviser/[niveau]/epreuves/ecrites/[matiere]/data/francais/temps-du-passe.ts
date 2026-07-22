@@ -17,7 +17,7 @@ export const ficheTempsDuPasse: Fiche = {
   numero: 8,
   partie: "Partie 1 : Le verbe",
   title: "Les temps du passé",
-  subtitle: "Nommer la valeur de l'imparfait, du passé simple, du passé composé et du plus-que-parfait",
+  subtitle: "Nommer la valeur de l'imparfait, du passé simple, du passé composé et du plus-que-parfait.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

@@ -17,7 +17,7 @@ export const ficheRelationsSemantiques: Fiche = {
   numero: 18,
   partie: "Partie 2 : Lexique",
   title: "Les relations sémantiques",
-  subtitle: "Synonymie, antonymie, hyperonymie, hyponymie, polysémie, sens propre et figuré, champ lexical et champ sémantique",
+  subtitle: "Synonymie, antonymie, hyperonymie, hyponymie, polysémie, sens propre et figuré, champ lexical et champ sémantique.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

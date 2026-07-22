@@ -18,7 +18,7 @@ export const ficheNombresRelatifs: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Nombres relatifs",
   subtitle:
-    "Entiers positifs et négatifs · droite graduée · opposé et valeur absolue · règles des signes · priorités opératoires",
+    "Entiers positifs et négatifs · droite graduée · opposé et valeur absolue · règles des signes · priorités opératoires.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },

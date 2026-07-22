@@ -16,7 +16,7 @@ export const ficheFormesNonConjuguees: Fiche = {
   numero: 10,
   partie: "Partie 1 : Le verbe",
   title: "Infinitif, participes et gérondif",
-  subtitle: "Analyser une forme verbale non conjuguée dans une phrase",
+  subtitle: "Analyser une forme verbale non conjuguée dans une phrase.",
   badges: [
       {
           "label": "★★ Fréquent",

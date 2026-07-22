@@ -17,7 +17,7 @@ export const ficheGroupeNominalExpansions: Fiche = {
   numero: 3,
   partie: "Partie 1 : Grammaire de la phrase",
   title: "Le groupe nominal et ses expansions",
-  subtitle: "Analyser la structure interne du GN : épithète, complément du nom, proposition subordonnée relative",
+  subtitle: "Analyser la structure interne du GN : épithète, complément du nom, proposition subordonnée relative.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

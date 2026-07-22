@@ -19,8 +19,8 @@ function ficheSectionsReperageEspace(niveau: Niveau): Fiche {
   partie: "Partie 5 : Géométrie dans l'espace",
   title: l3 ? "Sections et repérage dans l'espace" : "Sections, repérage dans l'espace et sur la sphère",
   subtitle: l3
-    ? "Section par un plan · sections des solides usuels · repère orthonormé de l'espace · Pythagore dans l'espace"
-    : "Section par un plan · sections des solides usuels · repère orthonormé de l'espace · Pythagore dans l'espace · repérage sur la sphère (latitude, longitude)",
+    ? "Section par un plan · sections des solides usuels · repère orthonormé de l'espace · Pythagore dans l'espace."
+    : "Section par un plan · sections des solides usuels · repère orthonormé de l'espace · Pythagore dans l'espace · repérage sur la sphère (latitude, longitude).",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: l3 ? "Cycle 4 · Programme 2025 · Espace et géométrie" : "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

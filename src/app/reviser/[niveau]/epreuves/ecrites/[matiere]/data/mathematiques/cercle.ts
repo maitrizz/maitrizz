@@ -18,7 +18,7 @@ export const ficheCercle: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Cercle et configurations remarquables",
   subtitle:
-    "Vocabulaire du cercle · tangente · médiatrice et cercle · cercle inscrit et circonscrit · angle inscrit et angle au centre · longueur d'arc et aire de secteur",
+    "Vocabulaire du cercle · tangente · médiatrice et cercle · cercle inscrit et circonscrit · angle inscrit et angle au centre · longueur d'arc et aire de secteur.",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

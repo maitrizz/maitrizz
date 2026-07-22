@@ -17,7 +17,7 @@ export const ficheCoherenceTextuelle: Fiche = {
   numero: 14,
   partie: "Partie 1 : Grammaire du texte et du discours",
   title: "La cohérence textuelle",
-  subtitle: "Reprises anaphoriques, chaîne référentielle, progression du texte, connecteurs logiques et champ lexical",
+  subtitle: "Reprises anaphoriques, chaîne référentielle, progression du texte, connecteurs logiques et champ lexical.",
   badges: [
       {
           "label": "★★ Fréquent · utile aux Parties 1, 2 et 3",

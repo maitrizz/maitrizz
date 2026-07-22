@@ -8,7 +8,7 @@ import { createContext, useContext } from "react";
  * sans coder le niveau en dur dans les données : la même fiche peut ainsi être
  * affichée sous /m2/… comme sous /l3/… avec des renvois corrects.
  */
-type FicheRoute = { niveau: string; matiere: string };
+type FicheRoute = { niveau: string; matiere: string; kind?: string };
 
 const FicheRouteContext = createContext<FicheRoute | null>(null);
 

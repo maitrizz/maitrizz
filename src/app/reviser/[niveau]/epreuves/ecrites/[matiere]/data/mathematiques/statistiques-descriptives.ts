@@ -21,7 +21,7 @@ function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
   partie: "Partie 2 : Organisation, données, fonctions",
   title: "Statistiques descriptives",
   subtitle:
-    "Séries statistiques · effectifs et fréquences · représentations graphiques · indicateurs de position (moyenne, médiane, quartiles) · dispersion · lecture critique",
+    "Séries statistiques · effectifs et fréquences · représentations graphiques · indicateurs de position (moyenne, médiane, quartiles) · dispersion · lecture critique.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },

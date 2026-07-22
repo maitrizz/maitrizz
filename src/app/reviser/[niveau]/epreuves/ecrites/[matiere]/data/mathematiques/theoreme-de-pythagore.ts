@@ -17,7 +17,7 @@ export const ficheTheoremeDePythagore: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Théorème de Pythagore",
   subtitle:
-    "Énoncé et démonstration par les aires · réciproque · contraposée · calculer une longueur · triplets pythagoriciens · applications dans les solides",
+    "Énoncé et démonstration par les aires · réciproque · contraposée · calculer une longueur · triplets pythagoriciens · applications dans les solides.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

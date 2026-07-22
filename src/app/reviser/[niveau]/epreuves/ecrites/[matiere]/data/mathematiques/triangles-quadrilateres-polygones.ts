@@ -18,7 +18,7 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Triangles, quadrilatères, polygones",
   subtitle:
-    "Types de triangles · inégalité triangulaire · somme des angles · cas d'égalité · parallélogramme, rectangle, losange, carré · trapèze et cerf-volant · polygones réguliers",
+    "Types de triangles · inégalité triangulaire · somme des angles · cas d'égalité · parallélogramme, rectangle, losange, carré · trapèze et cerf-volant · polygones réguliers.",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

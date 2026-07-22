@@ -18,7 +18,7 @@ export const ficheProbabilites: Fiche = {
   partie: "Partie 2 : Organisation, données, fonctions",
   title: "Probabilités",
   subtitle:
-    "Expérience aléatoire · événements · équiprobabilité · complémentaire · événements incompatibles · arbres pondérés · loi des grands nombres · simulation tableur",
+    "Expérience aléatoire · événements · équiprobabilité · complémentaire · événements incompatibles · arbres pondérés · loi des grands nombres · simulation tableur.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème B", variant: "info" },

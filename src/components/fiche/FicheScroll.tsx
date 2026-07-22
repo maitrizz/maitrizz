@@ -201,7 +201,7 @@ export function FicheScroll({
   if (!group) return null;
 
   return (
-    <FicheRouteProvider value={{ niveau, matiere }}>
+    <FicheRouteProvider value={{ niveau, matiere, kind: fiche.kind }}>
       <div className="flex flex-col">
         {/* En-tête : sobre, sans bandeau décoratif */}
         <div className="flex flex-col gap-3 border-b border-outline-variant/50 pb-6">

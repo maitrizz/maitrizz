@@ -5,6 +5,7 @@ import { RenderBlock } from "./RenderBlock";
 import type { Block, Step } from "@/components/fiche/types";
 import { BTN_PRIMARY, FEUILLE, FeuilleHeader, Kicker, Label, RichTextSobre, sansEmoji, splitTitle } from "../ui";
 import { useDemoOverlays } from "./demoOverlays";
+import { useFicheRoute } from "../FicheRouteContext";
 import {
   ProtoCorrigerCopies,
   ProtoExerciceBank,
@@ -39,11 +40,40 @@ const CALLOUT_RETENIR: Record<
   danger: { panel: "border-error/60 bg-error/[0.05]", label: "text-error" },
 };
 
+// Chiffre plein d'un numéro de section (①②③ → 1 2 3) pour la pastille teal des
+// fiches méthodologie. Renvoie tel quel si ce n'est pas un chiffre entouré.
+const CERCLES = "①②③④⑤⑥⑦⑧⑨⑩";
+function chiffrePlein(n: string): string {
+  const i = CERCLES.indexOf(n.trim());
+  return i >= 0 ? String(i + 1) : n;
+}
+
 // Pièges : la couleur du bandeau porte le degré de gravité.
 const PIEGE: Record<Extract<Block, { type: "piegeCard" }>["variant"], string> = {
   rouge: "text-error",
   orange: "text-secondary",
   bleu: "text-primary",
+};
+
+// Fiches méthodo : le PANNEAU du piège suit sa gravité (rouge / terracotta /
+// teal) au lieu du pêche unique. Répandre ces trois teintes sur les pièges
+// casse le « tons sur tons » d'une page très dense en encadrés.
+const PIEGE_PANEL_METHODO: Record<Extract<Block, { type: "piegeCard" }>["variant"], string> = {
+  rouge: "border-error/70 bg-error/[0.06]",
+  orange: "border-secondary/70 bg-secondary/[0.06]",
+  bleu: "border-primary/45 bg-primary/[0.05]",
+};
+
+// Cartes de comparaison des fiches méthodo (ex. Français / Maths, ou les trois
+// sous-parties) : chaque carte prend une teinte douce selon sa variante, le
+// nombre de points passe en pastille colorée, les lignes en liste à puces. Sur
+// les notions (non-méthodo), la carte reste sobre (rendu historique conservé).
+type CardVariant = NonNullable<Extract<Block, { type: "cardGrid" }>["cards"][number]["variant"]>;
+const CARD_TONE_METHODO: Record<CardVariant, { panel: string; badge: string; dot: string }> = {
+  info: { panel: "border-primary/30 bg-primary/[0.045]", badge: "bg-primary/10 text-primary", dot: "bg-primary/55" },
+  success: { panel: "border-secondary/35 bg-secondary/[0.05]", badge: "bg-secondary/10 text-secondary", dot: "bg-secondary/55" },
+  warning: { panel: "border-secondary/35 bg-secondary/[0.05]", badge: "bg-secondary/10 text-secondary", dot: "bg-secondary/55" },
+  neutral: { panel: "border-outline-variant/60 bg-on-surface/[0.02]", badge: "bg-on-surface/[0.06] text-on-surface/70", dot: "bg-on-surface/30" },
 };
 
 // Un exemple de carte notion s'écrit « **Sous-classe :** exemple… ». On isole le
@@ -271,6 +301,10 @@ function StepRow({ step, ficheSlug, onNavigateTab, isLast }: {
 
 export function ProtoBlock({ block, ficheSlug, onNavigateTab }: Props) {
   const { rappels: rappelsDemo } = useDemoOverlays();
+  // Fiches méthodologie : contraste renforcé (sections en pastille pleine,
+  // tableaux teintés + zébrés). Ces fiches, très denses en tableaux, viraient
+  // au « tons sur tons » ; les notions figées, elles, gardent leur rendu sobre.
+  const methodo = useFicheRoute()?.kind === "methodo";
   switch (block.type) {
     case "paragraph":
       return (
@@ -286,6 +320,29 @@ export function ProtoBlock({ block, ficheSlug, onNavigateTab }: Props) {
           <div className="flex flex-col gap-1 border-l-2 border-primary/70 py-0.5 pl-5">
             {block.title && <p className="font-serif text-[1em] font-semibold text-primary">{sansEmoji(block.title)}</p>}
             <div className="text-[1em] leading-[1.75] text-on-surface/80">
+              <RichTextSobre text={block.text} />
+            </div>
+          </div>
+        );
+      }
+      // Avertissement critique (note éliminatoire) sur une fiche méthodo : ton
+      // rouge affirmé + pastille « ! » — c'est LE panneau qui doit alarmer, pas
+      // se fondre dans les « à retenir » terracotta qui l'entourent.
+      if (methodo && block.variant === "danger") {
+        return (
+          <div className="flex flex-col gap-1.5 rounded-sm border-l-4 border-error bg-error/[0.08] px-5 py-4">
+            {block.title && (
+              <p className="flex items-center gap-2 font-ui text-[11px] font-bold uppercase tracking-[0.14em] text-error">
+                <span
+                  aria-hidden
+                  className="flex h-4 w-4 items-center justify-center rounded-full bg-error text-[10px] font-black leading-none text-white"
+                >
+                  !
+                </span>
+                {sansEmoji(block.title)}
+              </p>
+            )}
+            <div className="text-[1em] leading-[1.75] text-on-surface/90">
               <RichTextSobre text={block.text} />
             </div>
           </div>
@@ -311,12 +368,24 @@ export function ProtoBlock({ block, ficheSlug, onNavigateTab }: Props) {
       const rappel = rappelsDemo[`${ficheSlug}::${block.number}`];
       return (
         <section className="relative flex flex-col gap-5">
-          <h2 className="flex items-baseline gap-3 border-b border-outline-variant/60 pb-2.5 font-serif text-xl font-bold text-primary">
-            <span className="text-2xl leading-none text-primary/60 md:absolute md:-left-[3.6rem] md:top-0">
-              {block.number}
-            </span>
-            <span>{sansEmoji(block.title)}</span>
-          </h2>
+          {methodo ? (
+            // Méthodo : la section devient un chapitre nettement marqué —
+            // pastille teal pleine (le seul aplat sombre de la page) + filet
+            // appuyé, pour rythmer un long défilé de tableaux.
+            <h2 className="flex items-center gap-3.5 border-b-2 border-primary/20 pb-3 font-serif text-[1.35rem] font-bold text-primary">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary font-serif text-base font-bold text-white">
+                {chiffrePlein(block.number)}
+              </span>
+              <span>{sansEmoji(block.title)}</span>
+            </h2>
+          ) : (
+            <h2 className="flex items-baseline gap-3 border-b border-outline-variant/60 pb-2.5 font-serif text-xl font-bold text-primary">
+              <span className="text-2xl leading-none text-primary/60 md:absolute md:-left-[3.6rem] md:top-0">
+                {block.number}
+              </span>
+              <span>{sansEmoji(block.title)}</span>
+            </h2>
+          )}
           <div className="flex flex-col gap-5">
             {block.blocks.map((b, i) => (
               <ProtoBlock key={i} block={b} ficheSlug={ficheSlug} onNavigateTab={onNavigateTab} />
@@ -350,7 +419,7 @@ export function ProtoBlock({ block, ficheSlug, onNavigateTab }: Props) {
             <table className="w-full border-collapse text-left">
               {/* Tête de tableau façon imprimé : filet appuyé, pas d'aplat */}
               <thead>
-                <tr className="border-b-2 border-primary/50">
+                <tr className={`border-b-2 border-primary/50 ${methodo ? "bg-primary/[0.08]" : ""}`}>
                   {block.headers.map((h, i) => (
                     <th key={i} className="px-4 py-2.5 font-ui text-[11px] font-bold uppercase tracking-[0.08em] text-primary">
                       {h}
@@ -360,7 +429,12 @@ export function ProtoBlock({ block, ficheSlug, onNavigateTab }: Props) {
               </thead>
               <tbody>
                 {block.rows.map((row, i) => (
-                  <tr key={i} className="border-b border-outline-variant/30 last:border-0">
+                  <tr
+                    key={i}
+                    className={`border-b border-outline-variant/30 last:border-0 ${
+                      methodo && i % 2 === 1 ? "bg-primary/[0.03]" : ""
+                    }`}
+                  >
                     {row.map((cell, j) => (
                       <td key={j} className="px-4 py-2.5 align-top text-[0.9em] leading-relaxed text-on-surface/85">
                         <RichTextSobre text={cell} />
@@ -395,6 +469,39 @@ export function ProtoBlock({ block, ficheSlug, onNavigateTab }: Props) {
     }
 
     case "cardGrid":
+      if (methodo) {
+        return (
+          <div className={`grid grid-cols-1 gap-3.5 ${block.columns === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
+            {block.cards.map((card, i) => {
+              const tone = CARD_TONE_METHODO[card.variant ?? block.variant ?? "neutral"];
+              return (
+                <div key={i} className={`flex flex-col gap-3 rounded-md border p-4 md:p-[1.15rem] ${tone.panel}`}>
+                  {(card.title || card.value) && (
+                    <div className="flex items-start justify-between gap-2.5">
+                      {card.title && (
+                        <span className="font-serif text-[1.05em] font-semibold leading-tight text-on-surface">{card.title}</span>
+                      )}
+                      {card.value && (
+                        <span className={`mt-0.5 shrink-0 rounded-full px-2.5 py-0.5 font-ui text-[0.78em] font-bold ${tone.badge}`}>
+                          {card.value}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  <ul className="flex flex-col gap-1.5">
+                    {card.lines.map((line, j) => (
+                      <li key={j} className="flex gap-2 text-[0.88em] leading-relaxed text-on-surface/80">
+                        <span aria-hidden className={`mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full ${tone.dot}`} />
+                        <span><RichTextSobre text={line} /></span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        );
+      }
       return (
         <div className={`grid grid-cols-1 gap-3 ${block.columns === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
           {block.cards.map((card, i) => (
@@ -491,10 +598,19 @@ export function ProtoBlock({ block, ficheSlug, onNavigateTab }: Props) {
       // « En sourdine » (1b) : plus de carte deux colonnes ✗/✓, juste un
       // intertitre discret + filet coloré à gauche, en fil de lecture.
       const accent = PIEGE[block.variant];
+      const piegePanel = methodo
+        ? PIEGE_PANEL_METHODO[block.variant]
+        : "border-secondary/60 bg-secondary/[0.05]";
       return (
-        <div className="flex flex-col gap-2.5 rounded-sm border-l-[3px] border-secondary/60 bg-secondary/[0.05] px-5 py-4">
+        <div className={`flex flex-col gap-2.5 rounded-sm border-l-[3px] px-5 py-4 ${piegePanel}`}>
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <Kicker>Le piège de la fiche</Kicker>
+            {methodo ? (
+              <span className={`font-ui text-xs font-bold uppercase tracking-[0.1em] ${accent}`}>
+                Le piège de la fiche
+              </span>
+            ) : (
+              <Kicker>Le piège de la fiche</Kicker>
+            )}
             {block.badge && <Label>{block.badge}</Label>}
           </div>
           <p className={`font-serif text-[1.1em] font-bold ${accent}`}>{sansEmoji(block.title)}</p>
@@ -538,6 +654,48 @@ export function ProtoBlock({ block, ficheSlug, onNavigateTab }: Props) {
           </button>
         </div>
       );
+
+    // Feuille de route en tête de fiche (« Le programme en N étapes ») : c'est
+    // la première chose qu'on voit sur les fiches méthodologie. On reprend le
+    // MÊME glyphe ①②③ teal que les sous-sections plus bas, pour que le lecteur
+    // relie chaque étape de l'aperçu à la section qui lui répond.
+    case "sommaireApercu": {
+      const { tag, title } = splitTitle(block.title);
+      return (
+        <div className={`overflow-hidden ${FEUILLE}`}>
+          <FeuilleHeader tone="teal" tag={tag ?? "Au programme"} title={title} />
+          <div className="flex flex-col p-5 md:px-6">
+            {block.intro && (
+              <p className="mb-3 font-serif text-[0.95em] italic leading-relaxed text-on-surface-variant">
+                <RichTextSobre text={block.intro} />
+              </p>
+            )}
+            <ol className="flex flex-col">
+              {block.items.map((item, i) => (
+                <li
+                  key={i}
+                  className={`flex items-start gap-4 py-3 ${
+                    i < block.items.length - 1 ? "border-b border-outline-variant/40" : ""
+                  }`}
+                >
+                  <span className="mt-0.5 w-6 shrink-0 text-center font-serif text-2xl leading-none text-primary/55">
+                    {item.number}
+                  </span>
+                  <div className="flex min-w-0 flex-col gap-0.5">
+                    <span className="font-serif text-[1.05em] font-semibold leading-snug text-primary">
+                      {sansEmoji(item.title)}
+                    </span>
+                    <span className="text-[0.9em] leading-relaxed text-on-surface/80">
+                      <RichTextSobre text={item.text} />
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      );
+    }
 
     // Blocs interactifs réhabillés « copie corrigée » (logique intacte, style local).
     case "mindmapLite":

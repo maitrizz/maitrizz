@@ -28,7 +28,7 @@ export const ficheVecteurs: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Vecteurs",
   subtitle:
-    "Définition et égalité · lien avec la translation · somme et relation de Chasles · produit par un réel et colinéarité · coordonnées, norme et milieu",
+    "Définition et égalité · lien avec la translation · somme et relation de Chasles · produit par un réel et colinéarité · coordonnées, norme et milieu.",
   badges: [
     { label: "★★ Nouveauté du programme 2025", variant: "hot" },
     { label: "Cycle 4 · Programme 2025 · Espace et géométrie", variant: "info" },

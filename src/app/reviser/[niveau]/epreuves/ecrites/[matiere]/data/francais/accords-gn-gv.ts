@@ -16,7 +16,7 @@ export const ficheAccordsGnGv: Fiche = {
   numero: 11,
   partie: "Partie 1 : Orthographe grammaticale",
   title: "Les accords dans le GN et le GV",
-  subtitle: "Accord du nom et de l'adjectif, accord sujet-verbe, chaîne d'accord et cas difficiles",
+  subtitle: "Accord du nom et de l'adjectif, accord sujet-verbe, chaîne d'accord et cas difficiles.",
   badges: [
       {
           "label": "★★ Fréquent",

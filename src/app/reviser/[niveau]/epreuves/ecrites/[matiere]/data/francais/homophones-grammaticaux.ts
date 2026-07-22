@@ -17,7 +17,7 @@ export const ficheHomophonesGrammaticaux: Fiche = {
   numero: 13,
   partie: "Partie 1 : Orthographe grammaticale",
   title: "Les homophones grammaticaux",
-  subtitle: "a/à, est/et, son/sont, on/ont, ou/où, ce/se, ses/ces, leur/leurs, mais/mes, davantage/d'avantage(s), c'est/s'est, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous, peu/peut/peux, quand/quant/qu'en, près/prêt",
+  subtitle: "a/à, est/et, son/sont, on/ont, ou/où, ce/se, ses/ces, leur/leurs, mais/mes, davantage/d'avantage(s), c'est/s'est, sa/ça, la/là/l'a/l'as, quel/qu'elle, tout/tous, peu/peut/peux, quand/quant/qu'en, près/prêt.",
   badges: [
       {
           "label": "★★ Fréquent",

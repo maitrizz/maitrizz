@@ -18,7 +18,7 @@ export const ficheSuitesNumeriques: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Suites numériques",
   subtitle:
-    "Suite arithmétique (raison d, terme général, somme) · suite géométrique (raison q, terme général, somme) · reconnaître le type · modélisation · représentation graphique",
+    "Suite arithmétique (raison d, terme général, somme) · suite géométrique (raison q, terme général, somme) · reconnaître le type · modélisation · représentation graphique.",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Programme Seconde", variant: "info" },

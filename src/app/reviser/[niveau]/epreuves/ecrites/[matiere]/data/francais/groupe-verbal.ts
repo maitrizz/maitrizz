@@ -17,7 +17,7 @@ export const ficheGroupeVerbal: Fiche = {
   numero: 4,
   partie: "Partie 1 : Grammaire de la phrase",
   title: "Le groupe verbal",
-  subtitle: "Identifier la construction du verbe : transitivité, verbes pronominaux et impersonnels, voix passive",
+  subtitle: "Identifier la construction du verbe : transitivité, verbes pronominaux et impersonnels, voix passive.",
   badges: [
       {
           "label": "★★★ Tombe chaque année",

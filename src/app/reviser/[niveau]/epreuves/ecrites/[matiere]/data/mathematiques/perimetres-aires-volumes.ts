@@ -18,7 +18,7 @@ export const fichePerimetresAiresVolumes: Fiche = {
   partie: "Partie 3 : Grandeurs et mesures",
   title: "Périmètres, aires, volumes et conversions",
   subtitle:
-    "Longueurs et périmètres · aires des figures usuelles · volumes des solides · conversions (×10, ×100, ×1 000) · effet d'un agrandissement (×k, ×k², ×k³)",
+    "Longueurs et périmètres · aires des figures usuelles · volumes des solides · conversions (×10, ×100, ×1 000) · effet d'un agrandissement (×k, ×k², ×k³).",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème C", variant: "info" },

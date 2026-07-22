@@ -28,7 +28,7 @@ export const ficheProblemesTransversaux: Fiche = {
   partie: "Partie 7 : Entraînement transversal",
   title: "Problèmes transversaux",
   subtitle:
-    "S'entraîner à combiner plusieurs notions dans un même problème, comme le fait l'épreuve réelle",
+    "S'entraîner à combiner plusieurs notions dans un même problème, comme le fait l'épreuve réelle.",
   badges: [
     { label: "★★★ Le format de l'épreuve", variant: "hot" },
     { label: "Transversal · toutes parties", variant: "info" },

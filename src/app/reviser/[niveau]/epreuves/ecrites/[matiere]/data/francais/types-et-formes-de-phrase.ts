@@ -17,7 +17,7 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
   numero: 6,
   partie: "Partie 1 : Grammaire de la phrase",
   title: "Types et formes de phrase",
-  subtitle: "Ce que fait la phrase (déclarer, interroger, ordonner) et comment elle le fait (exclamative, négative, emphatique, impersonnelle, passive)",
+  subtitle: "Ce que fait la phrase (déclarer, interroger, ordonner) et comment elle le fait (exclamative, négative, emphatique, impersonnelle, passive).",
   badges: [
       {
           "label": "★★ Fréquent",

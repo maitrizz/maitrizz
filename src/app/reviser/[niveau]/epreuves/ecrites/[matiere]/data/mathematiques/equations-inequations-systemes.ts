@@ -18,7 +18,7 @@ export const ficheEquationsInequationsSystemes: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Équations, inéquations, systèmes",
   subtitle:
-    "Équation du 1er degré · mise en équation · équation-produit · systèmes à 2 inconnues · inéquations · intervalles · valeur absolue",
+    "Équation du 1er degré · mise en équation · équation-produit · systèmes à 2 inconnues · inéquations · intervalles · valeur absolue.",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020", variant: "info" },

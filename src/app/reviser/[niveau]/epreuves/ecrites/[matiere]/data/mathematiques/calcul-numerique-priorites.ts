@@ -18,7 +18,7 @@ export const ficheCalculNumeriquePriorites: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Calcul numérique et priorités",
   subtitle:
-    "Les quatre opérations · algorithmes posés · priorités opératoires · distributivité · calcul mental · estimation et ordre de grandeur",
+    "Les quatre opérations · algorithmes posés · priorités opératoires · distributivité · calcul mental · estimation et ordre de grandeur.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },

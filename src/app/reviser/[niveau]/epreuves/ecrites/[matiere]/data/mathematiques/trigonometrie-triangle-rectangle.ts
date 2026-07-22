@@ -17,7 +17,7 @@ export const ficheTrigonometrieTriangleRectangle: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Trigonométrie dans le triangle rectangle",
   subtitle:
-    "Définitions sin · cos · tan · calculer une longueur ou un angle · valeurs remarquables 30° · 45° · 60° · sin²+cos²=1 · tan = sin/cos · applications pente et hauteur",
+    "Définitions sin · cos · tan · calculer une longueur ou un angle · valeurs remarquables 30° · 45° · 60° · sin²+cos²=1 · tan = sin/cos · applications pente et hauteur.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

@@ -18,7 +18,7 @@ export const ficheDureesMassesGrandeursComposees: Fiche = {
   partie: "Partie 3 : Grandeurs et mesures",
   title: "Durées, masses et grandeurs composées",
   subtitle:
-    "Conversions de durées (base 60) · heures décimales · masses (base 10) · vitesse · masse volumique · débit · prix unitaire",
+    "Conversions de durées (base 60) · heures décimales · masses (base 10) · vitesse · masse volumique · débit · prix unitaire.",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème C", variant: "info" },

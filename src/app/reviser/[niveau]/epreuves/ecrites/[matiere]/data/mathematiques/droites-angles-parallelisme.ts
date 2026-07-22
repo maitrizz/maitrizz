@@ -17,7 +17,7 @@ export const ficheDroitesAnglesParallelisme: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Droites, angles, parallélisme",
   subtitle:
-    "Types d'angles · complémentaires et supplémentaires · somme des angles d'un triangle et d'un polygone · alternes-internes et correspondants · médiatrice · bissectrice",
+    "Types d'angles · complémentaires et supplémentaires · somme des angles d'un triangle et d'un polygone · alternes-internes et correspondants · médiatrice · bissectrice.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

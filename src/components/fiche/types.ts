@@ -434,7 +434,9 @@ export type Fiche = {
   // "notion" (défaut) : fiche de cours numérotée, affichée « Notion N : … ».
   // "sujet" : sujet blanc (entraînement en conditions réelles), affiché sans
   // préfixe « Notion ».
-  kind?: "notion" | "sujet";
+  // "methodo" : fiche méthodologie d'ouverture (contraste visuel renforcé,
+  // cf. ProtoBlock — sections en pastille pleine, tableaux teintés).
+  kind?: "notion" | "sujet" | "methodo";
   numero: number;
   partie: string; // ex: "Partie 1 — Nombres et calcul"
   title: string; // ex: "Numération · Systèmes de bases"

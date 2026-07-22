@@ -18,7 +18,7 @@ export const fichePuissancesRacinesReels: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Puissances, racines et réels",
   subtitle:
-    "Puissances entières positives et négatives · règles de calcul · racines carrées · √2 irrationnel · ensemble ℝ · encadrements décimaux",
+    "Puissances entières positives et négatives · règles de calcul · racines carrées · √2 irrationnel · ensemble ℝ · encadrements décimaux.",
   badges: [
     { label: "★★ Fréquent", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },

@@ -77,7 +77,7 @@ export { NIVEAUX, NIVEAU_LABELS, isValidNiveau };
 export type FicheMeta = {
   slug: string;
   numero: number;
-  kind?: "notion" | "sujet";
+  kind?: "notion" | "sujet" | "methodo";
   partie: string;
   title: string;
   subtitle: string;

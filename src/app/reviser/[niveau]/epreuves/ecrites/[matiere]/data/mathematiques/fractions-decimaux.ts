@@ -18,7 +18,7 @@ export const ficheFractionsDecimaux: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Fractions et décimaux",
   subtitle:
-    "Sens d'une fraction · fraction irréductible · opérations · nombres décimaux · développements fini et périodique · ensemble ℚ",
+    "Sens d'une fraction · fraction irréductible · opérations · nombres décimaux · développements fini et périodique · ensemble ℚ.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },

@@ -18,7 +18,7 @@ export const ficheCalculLitteral: Fiche = {
   partie: "Partie 1 : Nombres et calcul",
   title: "Calcul littéral et expressions algébriques",
   subtitle:
-    "Variable et inconnue · réduire · développer · factoriser · distributivité · identités remarquables · prouver par le calcul · programmes de calcul",
+    "Variable et inconnue · réduire · développer · factoriser · distributivité · identités remarquables · prouver par le calcul · programmes de calcul.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème A", variant: "info" },

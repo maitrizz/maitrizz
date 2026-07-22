@@ -17,7 +17,7 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
   partie: "Partie 5 : Géométrie dans l'espace",
   title: "Solides, représentation et patrons",
   subtitle:
-    "Prismes · pyramides · cylindres · cônes · sphères · formule d'Euler · perspective cavalière · vues · patrons",
+    "Prismes · pyramides · cylindres · cônes · sphères · formule d'Euler · perspective cavalière · vues · patrons.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

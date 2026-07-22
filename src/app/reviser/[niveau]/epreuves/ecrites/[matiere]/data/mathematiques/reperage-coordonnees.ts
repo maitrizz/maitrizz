@@ -18,7 +18,7 @@ export const ficheReperageCoordonnees: Fiche = {
   partie: "Partie 4 : Espace et géométrie plane",
   title: "Repérage et coordonnées dans le plan",
   subtitle:
-    "Repère orthonormé · coordonnées d'un point · distance entre deux points · milieu d'un segment · équation d'une droite y = ax + b · lecture graphique",
+    "Repère orthonormé · coordonnées d'un point · distance entre deux points · milieu d'un segment · équation d'une droite y = ax + b · lecture graphique.",
   badges: [
     { label: "★★★ Incontournable", variant: "hot" },
     { label: "Cycle 4 · BOEN 2020 · Thème D", variant: "info" },

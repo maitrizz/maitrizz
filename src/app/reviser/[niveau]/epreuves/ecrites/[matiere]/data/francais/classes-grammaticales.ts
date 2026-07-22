@@ -27,7 +27,7 @@ export const ficheClassesGrammaticales: Fiche = {
   partie: "Partie 1 : Grammaire de la phrase",
   title: "Classes grammaticales · Nature des mots",
   subtitle:
-    "Identifier la nature de tout mot ou groupe : la question de classe grammaticale qui tombe chaque année",
+    "Identifier la nature de tout mot ou groupe : la question de classe grammaticale qui tombe chaque année.",
   badges: [
     { label: "★★★ Tombe chaque année", variant: "hot" },
     { label: "Cycle 3-4 · Terminologie grammaticale", variant: "info" },
