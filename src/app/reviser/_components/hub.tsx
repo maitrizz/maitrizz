@@ -39,14 +39,14 @@ export function Fleche({ className = "" }: { className?: string }) {
       className={`overflow-visible text-secondary ${className}`}
     >
       <path
-        d="M72 10 C 48 5 22 16 11 39"
+        d="M78 8 C 52 4 18 12 6 36"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
       <path
-        d="M11 39 L 19 33 M11 39 L 10 29"
+        d="M6 36 L 15 30 M6 36 L 9 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
@@ -97,6 +97,8 @@ export function HubHeader({
   subtitle,
   stamp,
   note,
+  arrow = true,
+  arrowClassName = "-ml-4 mt-0.5 h-16 w-48",
   maxWidth = "max-w-[1080px]",
 }: {
   crumbs: Crumb[];
@@ -105,6 +107,10 @@ export function HubHeader({
   subtitle: string;
   stamp?: string;
   note?: React.ReactNode;
+  /* Certaines notes (une confidence, un aparté) ne désignent rien : pas
+     besoin d'y accrocher une flèche qui pointerait dans le vide. */
+  arrow?: boolean;
+  arrowClassName?: string;
   maxWidth?: string;
 }) {
   return (
@@ -138,7 +144,7 @@ export function HubHeader({
           ))}
         </nav>
 
-        <div className="mt-8 flex items-end justify-between gap-10 lg:mt-10">
+        <div className="mt-8 flex items-end justify-between gap-6 lg:mt-10">
           {/* La marge du cahier : filet terracotta à gauche du titre. */}
           <div className="border-l-2 border-secondary/70 pl-6 md:pl-8">
             {stamp && (
@@ -154,11 +160,13 @@ export function HubHeader({
             </p>
           </div>
 
-          {/* Une seule annotation manuscrite par page, en marge droite. */}
+          {/* Une seule annotation manuscrite par page, en marge droite : la
+              flèche referme le geste vers le titre, elle ne pointe jamais
+              dans le vide. Certaines notes s'en passent (cf. `arrow`). */}
           {note && (
             <div className="pointer-events-none hidden w-56 shrink-0 pb-1 text-right lg:block">
               <Hand className="block text-[1.6rem] leading-tight">{note}</Hand>
-              <Fleche className="ml-auto mt-1 h-12 w-20" />
+              {arrow && <Fleche className={arrowClassName} />}
             </div>
           )}
         </div>

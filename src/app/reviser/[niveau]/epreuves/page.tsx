@@ -83,9 +83,9 @@ export default async function EpreuvesPage({
         subtitle="Tout ce qu'il faut pour préparer chaque étape du concours."
         note={
           <>
-            l&apos;écrit d&apos;abord,
+            d&apos;abord admissible,
             <br />
-            l&apos;oral ensuite
+            puis admis
           </>
         }
       />

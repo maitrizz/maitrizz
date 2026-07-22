@@ -197,11 +197,12 @@ export default async function MatierePage({
         subtitle="Toutes les fiches de révision, classées par grande partie du programme."
         note={
           <>
-            une notion,
+            cours et exercices,
             <br />
-            une fiche
+            notion par notion
           </>
         }
+        arrowClassName="-ml-4 mt-0.5 h-24 w-40"
       />
 
       {/* Rythme vertical en multiples de 32px, le pas de la grille Seyès. */}

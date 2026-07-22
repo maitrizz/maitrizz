@@ -94,12 +94,6 @@ export default async function EcritesPage({
           </>
         }
         subtitle="Choisissez votre matière et avancez fiche par fiche."
-        note={
-          <>
-            une matière
-            <br />à la fois
-          </>
-        }
       />
 
       {/* Rythme vertical en multiples de 32px, le pas de la grille Seyès. */}
