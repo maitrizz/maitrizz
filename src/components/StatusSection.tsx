@@ -141,11 +141,11 @@ export default function StatusSection() {
             Où en est la plateforme
           </h2>
           <p className="max-w-xl font-ui text-base leading-relaxed text-on-surface-variant lg:text-lg">
-            Pour le moment, seules les épreuves écrites de français et de
-            mathématiques sont en ligne, en intégralité, pour les deux
-            niveaux. Les modules suivants arrivent progressivement&nbsp;:
-            chaque fiche passe par plusieurs relectures avant d&apos;être
-            publiée, un travail de fond qui prend du temps.
+            À ce jour, l&apos;intégralité de l&apos;écrit de français et de
+            mathématiques est en ligne, pour les deux niveaux. Les matières et
+            épreuves suivantes s&apos;ajoutent au fil de leur rédaction. Cette
+            rigueur est volontaire&nbsp;: elle vous assure des fiches exactes,
+            à jour et prêtes pour l&apos;épreuve.
           </p>
           <Link
             href="/reviser"

@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import AuthorSection from "@/components/AuthorSection";
 import StatusSection from "@/components/StatusSection";
 import SourcesSection from "@/components/SourcesSection";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -25,6 +26,7 @@ export default function Home() {
       />
       <HeroSection />
       <FeaturesSection />
+      <AuthorSection />
       <SourcesSection />
       <StatusSection />
       <NewsletterSection />

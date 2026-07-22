@@ -10,18 +10,18 @@ export default function SourcesSection() {
       <div className="mx-auto grid max-w-[1440px] items-center gap-12 lg:grid-cols-2">
         <div>
           <span className="mb-5 inline-block -rotate-1 rounded-sm border-2 border-secondary/50 px-3 py-1.5 font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-secondary/90">
-            Qui est derrière Maitrizz&nbsp;?
+            Comment c&apos;est construit
           </span>
           <h2 className="mb-5 text-balance text-3xl font-bold leading-tight text-primary lg:text-4xl">
-            Une enseignante en poste, des contenus sourcés
+            Des contenus fondés sur les textes officiels
           </h2>
           <p className="mb-8 max-w-xl text-base leading-relaxed text-on-surface-variant lg:text-lg">
-            Derrière chaque fiche, une seule plume : la mienne. Professeure
-            des écoles depuis trois ans, classée deuxième au CRPE, je suis
-            passée à mi-temps pour construire l&apos;outil que j&apos;aurais
-            voulu avoir en préparant le concours. Chaque fiche s&apos;appuie
-            sur les textes officiels et les rapports de jury, et cite ses
-            sources.
+            Pour chaque notion, je m&apos;appuie sur les textes de
+            référence&nbsp;: les
+            programmes de l&apos;Éducation nationale, les ressources Éduscol et
+            les rapports de jury. Ce sont eux qui fixent ce qu&apos;il faut
+            savoir et la façon dont l&apos;épreuve est évaluée. Ces sources
+            sont citées directement dans les fiches.
           </p>
 
           <div className="flex flex-wrap gap-3">
