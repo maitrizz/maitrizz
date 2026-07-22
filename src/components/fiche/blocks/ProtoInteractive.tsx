@@ -202,10 +202,11 @@ export function ProtoMindmap({ block }: { block: MindmapBlock }) {
   //   yellow (pièges) / purple (renvois, souvent dashed) → annotations de marge.
   const main = block.branches.filter((b) => b.variant === "blue" || b.variant === "green");
   const aside = block.branches.filter((b) => b.variant === "yellow" || b.variant === "purple");
-  // Largeur d'une colonne : deux par ligne dès sm, mais un item seul (ou le
-  // dernier d'un nombre impair) se recentre au lieu de rester collé à gauche.
-  const colMain = main.length === 1 ? "w-full" : "w-full sm:w-[calc(50%-1rem)]";
-  const colAside = aside.length === 1 ? "w-full" : "w-full sm:w-[calc(50%-1rem)]";
+  // Largeur d'une colonne : deux par ligne dès sm. Un item seul (ou le dernier
+  // d'un nombre impair) garde cette largeur de colonne : le justify-center du
+  // conteneur le recentre alors, au lieu de le laisser collé à gauche.
+  const colMain = "w-full sm:w-[calc(50%-1rem)]";
+  const colAside = "w-full sm:w-[calc(50%-1rem)]";
 
   return (
     <div className="relative overflow-hidden rounded-md bg-seyes p-6 ring-1 ring-primary/[0.1] shadow-[0_10px_24px_-18px_rgba(12,67,78,0.3)] sm:p-8">
@@ -281,8 +282,24 @@ export function ProtoMindmap({ block }: { block: MindmapBlock }) {
         })}
       </div>
 
-      {/* ── Annotations de marge : pièges (jaune) et renvois (violet) ── */}
-      {aside.length > 0 && (
+      {/* ── Une seule annotation : bandeau d'alerte pleine largeur, centré.
+             Le format « note de marge » ne tient pas seul (il colle à gauche) ;
+             le bandeau englobe les branches comme un avertissement commun. ── */}
+      {aside.length === 1 && (
+        <div className="mt-6 rounded-xl border border-dashed border-secondary/55 bg-secondary/[0.07] px-5 py-4 text-center">
+          <span className="mb-1 inline-block font-hand text-2xl leading-none text-secondary">
+            {sansEmoji(aside[0].title)}
+          </span>
+          <div className="mx-auto flex max-w-[46ch] flex-col font-serif text-sm leading-relaxed text-on-surface">
+            {aside[0].lines.map((line, j) => (
+              <span key={j}>{sansEmoji(line)}</span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ── Deux annotations ou plus : notes de marge en colonnes ── */}
+      {aside.length > 1 && (
         <div className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-4 border-t border-dashed border-secondary/40 pt-5">
           {aside.map((branch, i) => (
             <div key={i} className={`relative pl-4 ${colAside}`}>
