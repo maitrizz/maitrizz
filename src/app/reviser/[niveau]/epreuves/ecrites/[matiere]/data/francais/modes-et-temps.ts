@@ -262,11 +262,6 @@ export const ficheModesEtTemps: Fiche = {
               methode: "Après le mode et le temps, préciser la valeur dans le contexte. L'analyse détaillée des valeurs est traitée dans les notions 7 et 8.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** premières conjugaisons au présent, futur, imparfait et passé composé, surtout par mémorisation des terminaisons les plus régulières.\n\n**Cycle 3 :** consolidation des temps de l'indicatif, introduction du passé simple (en lecture) et de la notion de mode (impératif, conditionnel). Les terminaisons sont travaillées par tris et régularités.\n\n**Ce que vous devez savoir dire :** « On apprend d'abord à reconnaître les terminaisons régulières, puis à raisonner par familles. Le futur antérieur ou le plus-que-parfait s'expliquent par l'auxiliaire. La conjugaison se construit sur des régularités, pas sur du par-cœur isolé. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

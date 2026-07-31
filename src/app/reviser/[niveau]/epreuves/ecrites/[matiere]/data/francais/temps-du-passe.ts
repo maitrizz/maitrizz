@@ -281,11 +281,6 @@ export const ficheTempsDuPasse: Fiche = {
               methode: "Dès qu'imparfait et passé simple cohabitent dans l'extrait, commenter leur rôle respectif (arrière-plan / premier plan).",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** premiers emplois de l'imparfait et du passé composé, sans métalangage sur les valeurs.\n\n**Cycle 3 :** on oppose explicitement imparfait (décrire, dire ce qui durait) et passé simple (raconter ce qui s'est passé), souvent à partir de contes. Le passé composé apparaît surtout à l'oral et dans les écrits du quotidien.\n\n**Ce que vous devez savoir dire :** « On fait sentir aux élèves que l'imparfait peint le décor et que le passé simple raconte les événements. C'est cette opposition, plus que les terminaisons, qui donne sens aux temps du récit. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

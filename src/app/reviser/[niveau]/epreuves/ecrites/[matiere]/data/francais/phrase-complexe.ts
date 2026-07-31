@@ -312,11 +312,6 @@ export const fichePhraseComplexe: Fiche = {
               methode: "Comparer le sujet du participe et celui de la principale. Même sujet : épithète détachée. Sujet distinct : participiale.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** tout se joue à l'oral. L'enfant passe de la juxtaposition de mots à des phrases de plus en plus longues, et commence à relier ses idées avec « et », « parce que », « quand ». C'est la première forme de complexité, sans aucun terme savant.\n\n**Cycle 2 (CP-CE2) :** les élèves travaillent surtout la phrase simple à l'écrit, repèrent le verbe conjugué et observent les signes de ponctuation (point, virgule, point d'interrogation).\n\n**Cycle 3 (CM1-6e) :** on introduit la phrase complexe par observation : compter les verbes conjugués, repérer les mots de liaison (et, mais, parce que, qui, que). Les termes savants (subordonnée, principale) arrivent au cycle 4. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « On part du verbe conjugué : autant de verbes conjugués, autant de propositions. On observe ensuite comment elles sont reliées (juxtaposition, coordination, subordination). Cette démarche se prépare à l'oral dès la maternelle, puis se construit à l'écrit du cycle 2 au cycle 3. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

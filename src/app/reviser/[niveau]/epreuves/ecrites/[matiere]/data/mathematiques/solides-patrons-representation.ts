@@ -229,11 +229,6 @@ export const ficheSolidesPatronsRepresentation: Fiche = {
               methode: "La question est « est-ce UN patron valide », pas « est-ce LE patron ».",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2 (CP-CE2), les élèves manipulent des solides concrets (cubes, boîtes), les décrivent et les trient selon leurs propriétés visibles (faces planes ou courbes). Le vocabulaire face, arête, sommet est introduit progressivement.\n\nAu cycle 3 (CM1-6e), les élèves construisent des patrons, reproduisent des solides et calculent des aires de patrons. La formule d'Euler est étudiée en 6e. Les vues en plan (dessus, face, côté) sont travaillées en lien avec la lecture de plans de bâtiments.\n\nPour le CRPE : savoir passer du solide au patron et inversement, calculer une aire latérale ou totale, et vérifier qu'un patron donné correspond bien à un solide (via Euler ou le comptage des faces).",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

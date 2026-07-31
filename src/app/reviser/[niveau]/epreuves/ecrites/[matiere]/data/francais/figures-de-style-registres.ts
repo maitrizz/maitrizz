@@ -270,11 +270,6 @@ export const ficheFiguresRegistres: Fiche = {
               methode: "Après avoir nommé la figure, toujours expliquer ce qu'elle produit dans le texte (la paraphrase ne suffit pas).",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** on joue avec les sonorités et le langage (comptines, rimes, formulettes), et les enfants rencontrent des expressions imagées sans aucune analyse.\n\n**Cycle 2 :** on distingue le sens propre du sens figuré (« il pleut des cordes »), on explique des expressions imagées du quotidien et on travaille les niveaux de langue à l'oral (adapter sa façon de parler selon la situation).\n\n**Cycle 3 :** les élèves découvrent la comparaison puis la métaphore simples, et commencent à percevoir l'effet d'une image dans un texte lu ; l'écart entre langage courant et langage soutenu se précise.\n\n**Ce que vous devez savoir dire :** « On enseigne d'abord la comparaison (repérable à “comme”) avant la métaphore, car elle est plus explicite. L'objectif n'est pas d'étiqueter des figures, mais de faire sentir ce qu'une image apporte au texte. » (voir [Éduscol, Lexique et culture](https://eduscol.education.fr/255/lexique-et-culture) et l'[étude de la langue cycles 2 et 3](https://eduscol.education.fr/248/francais-cycles-2-et-3-etude-de-la-langue))",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

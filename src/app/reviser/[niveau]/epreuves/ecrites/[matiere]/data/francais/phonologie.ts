@@ -373,11 +373,6 @@ export const fichePhonologie: Fiche = {
               methode: "Vérifier la position : <s> entre deux voyelles → /z/ ; ailleurs (initiale, près d'une consonne, doublé) → /s/.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** tout commence ici, à l'oral et **sans aucune lettre**. Les élèves développent la **conscience phonologique** par le jeu : scander les syllabes, repérer les rimes, isoler un son dans un mot, jouer avec les sonorités (comptines, virelangues). On travaille uniquement le **phonème**, jamais encore son écriture.\n\n**Cycle 2 :** la phonologie devient le cœur de l'**apprentissage de la lecture**. Les élèves relient désormais les sons aux lettres en apprenant les **correspondances grapho-phonémiques** : associer un graphème à un phonème pour **décoder** (lire), et inversement pour **encoder** (écrire).\n\n**Cycle 3 :** les acquis se consolident sur des mots plus longs et les graphies rares ou irrégulières.\n\n**Ce que vous devez savoir dire :** « Distinguer phonème, graphème et lettre n'est pas qu'une question d'examen : c'est le socle de l'apprentissage de la lecture, préparé dès la maternelle à l'oral (conscience phonologique), puis construit au CP avec le code (correspondances grapho-phonémiques). »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

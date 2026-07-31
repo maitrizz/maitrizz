@@ -209,11 +209,6 @@ export const ficheCercle: Fiche = {
               methode: "Tangente ⊥ rayon, uniquement. Ne pas confondre rayon et corde.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2, les élèves tracent des cercles au compas et apprennent centre, rayon, diamètre ; ils comprennent que tous les rayons sont égaux, raison pour laquelle le compas trace un cercle.\n\nAu cycle 3, ils calculent périmètre et aire du disque, construisent des cercles passant par des points donnés et découvrent la médiatrice. Les configurations (tangente, inscrit/circonscrit, angle inscrit) relèvent du cycle 4 : non attendues à l'école, mais le socle qu'il faut maîtriser pour enseigner avec recul.\n\nCe que le jury valorise : savoir pourquoi la construction au compas du cercle passant par trois points fonctionne (équidistance, donc médiatrices), pour enseigner avec profondeur et non par mimétisme.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

@@ -234,11 +234,6 @@ export const ficheTransformationsDuPlan: Fiche = {
               methode: "Homothétie : longueurs ×k, aires ×k², angles inchangés. La figure image est semblable.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2 (CP-CE2), les élèves reconnaissent des axes de symétrie dans des figures simples, plient une feuille pour vérifier une symétrie, et reproduisent des figures symétriques sur papier quadrillé : la symétrie est intuitive, « la figure se replie sur elle-même ».\n\nAu cycle 3 (CM1-6e), la symétrie axiale, la symétrie centrale et la translation sont au programme. Les élèves construisent les images de figures, identifient axes et centres des polygones usuels, et étudient les frises. La rotation et l'homothétie apparaissent ensuite au cycle 4.\n\nCe qu'il faut maîtriser pour le CRPE : construire l'image d'un point ou d'une figure par chaque transformation, connaître le tableau des propriétés conservées, et identifier les symétries d'une figure ou d'un pavage. La distinction isométrie / non-isométrie est discriminante.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

@@ -253,11 +253,6 @@ export const ficheVecteurs: Fiche = {
               methode: "Penser « B moins A » dans le même ordre que le nom du vecteur AB⃗.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Les vecteurs ne sont pas enseignés à l'école primaire : ils apparaissent au cycle 4 (3e) avec le programme 2025. Mais l'idée de déplacement est préparée bien avant : au cycle 3, les élèves codent des déplacements sur quadrillage (« avance de 3 cases vers la droite »), ce qui est exactement l'intuition d'un vecteur.\n\nPour le concours L3 : maîtriser la notation (le sens et l'ordre des lettres comptent), la relation de Chasles, le lien égalité de vecteurs / parallélogramme, et le calcul des coordonnées et de la norme dans un repère.\n\nLe vecteur fait le pont entre plusieurs notions déjà vues : la translation (transformation), l'alignement et le parallélisme, et le repérage dans le plan.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

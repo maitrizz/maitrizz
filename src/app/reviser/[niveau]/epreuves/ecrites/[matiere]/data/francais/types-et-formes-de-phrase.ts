@@ -294,11 +294,6 @@ export const ficheTypesEtFormesDePhrase: Fiche = {
                 },
               ],
             },
-            {
-              type: "primaireBox",
-              title: "Le regard du futur enseignant",
-              text: "**Au primaire, les types de phrase passent d'abord par la ponctuation.** Dès le **cycle 2** (CP-CE2), les élèves identifient la phrase et ses signes de fin (point, point d'interrogation, point d'exclamation) et produisent des phrases déclaratives, interrogatives et injonctives, à l'oral comme à l'écrit. Au **cycle 3** (CM1-6e), on observe et on nomme les types de phrase, et on travaille la phrase négative ainsi que le passage de la forme affirmative à la forme négative (voir les [programmes en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3)).\n\n**Erreurs d'élèves à savoir repérer :** oublier le point d'interrogation à l'écrit ; écrire la négation sans « ne » (« j'ai pas vu »), calquée sur l'oral ; croire qu'un point d'exclamation fait un « type exclamatif », alors que l'exclamation est une **forme** qui se superpose au type (déclaratif, injonctif…). **Ce que vous devez savoir dire :** la marque écrite (ponctuation de fin, « ne » de négation) est justement ce que l'école construit, parce qu'elle ne va pas de soi à l'oral.",
-            },
           ],
         },
         {

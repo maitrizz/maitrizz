@@ -220,11 +220,6 @@ export const fichePerimetresAiresVolumes: Fiche = {
               methode: "Toujours écrire π dans la formule : valeur exacte (16π) puis valeur approchée (≈ 50,3).",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2, on compare des longueurs et on mesure à la règle, avec les unités usuelles (cm, m), sans formules.\n\nAu cycle 3 (BO 2024), on construit les périmètres et aires des figures usuelles, les unités et conversions, et on introduit le volume avec des cubes. Les élèves construisent les formules par manipulation avant de les mémoriser.\n\nAu cycle 4, on aborde les volumes des solides (prisme, cylindre, pyramide, cône, sphère) et l'effet des agrandissements.\n\nCe que le jury attend : savoir expliquer pourquoi l'aire d'un rectangle est L × l, en le pavant de carrés-unités (L colonnes de l carrés), pas seulement appliquer la formule. À l'école, le sens précède la mémorisation.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

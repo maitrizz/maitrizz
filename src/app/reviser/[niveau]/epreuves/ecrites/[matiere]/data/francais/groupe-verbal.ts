@@ -338,11 +338,6 @@ export const ficheGroupeVerbal: Fiche = {
               methode: "Test : essayer de reconstruire une phrase active où le sujet deviendrait COD. « Quelqu'un a parti Elle » est impossible → ce n'est pas un passif. Pour un vrai passif, « Les portes ont été ouvertes » donne « Quelqu'un a ouvert les portes ».",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** aucune terminologie. À l'oral, les élèves construisent des phrases où l'on comprend « qui fait quoi » : le verbe est implicitement le mot de l'action. C'est le socle du futur repérage du verbe noyau.\n\n**Cycle 2 (CP-CE2) :** les élèves repèrent le **verbe** dans la phrase, puis distinguent peu à peu le verbe de ce qui le complète, surtout par manipulation (changer le temps, remplacer le groupe).\n\n**Cycle 3 (CM1-6e) :** on installe le **complément du verbe** (équivalent du COD/COI, non déplaçable) et on le distingue du **complément de phrase** (déplaçable, supprimable). L'**attribut du sujet** est introduit. La transitivité n'est pas nommée, mais la construction du verbe est observée. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « On part du verbe, noyau du groupe verbal. On observe s'il est employé seul, avec un complément d'objet direct ou indirect, ou avec un attribut relié par un verbe d'état. Le métalangage du concours (transitivité, COD, COI, attribut) précise des repères que les élèves construisent dès le cycle 3 par la manipulation. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

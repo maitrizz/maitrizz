@@ -245,11 +245,6 @@ export const ficheTrianglesQuadrilateresPolygones: Fiche = {
               methode: "Pour conclure, utiliser une propriété caractéristique (condition suffisante), pas une simple propriété.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2, les élèves reconnaissent et nomment les figures par la vue et le toucher (carré, rectangle, triangle, cercle), et construisent avec règle et équerre : ils reconnaissent, ils ne démontrent pas encore.\n\nAu cycle 3, ils décrivent rigoureusement avec le vocabulaire géométrique (côtés, angles, diagonales) et commencent à justifier : ils distinguent un carré d'un losange par ses angles, un rectangle d'un parallélogramme par ses angles droits. L'inégalité triangulaire et la somme des angles du triangle apparaissent en 6e.\n\nCe que le jury attend : la rigueur du cycle 4 (définitions, propriétés caractéristiques, démonstrations) et la conscience de la hiérarchie des quadrilatères. Savoir d'où viennent ces notions permet d'enseigner avec pertinence.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

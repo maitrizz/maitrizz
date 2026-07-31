@@ -299,11 +299,6 @@ export const ficheCalculLitteral: Fiche = {
               methode: "Un contre-exemple suffit à réfuter, mais aucun nombre d'exemples positifs ne prouve pour TOUS les entiers.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Le calcul littéral n'est pas formalisé à l'école, mais la pensée algébrique s'y construit, et le jury valorise ce lien.\n\n**Cycles 2 et 3 :** les élèves rencontrent déjà l'idée à travers les suites à compléter (□ + 3 = 7), les « machines à calculer » et les formules (périmètre d'un rectangle = 2 × (L + l)). La lettre est d'abord un raccourci d'écriture, pas encore un objet manipulé.\n\n**Cycle 4 :** le calcul littéral se développe pleinement (développer, factoriser, identités remarquables, prouver par le calcul, formuler et valider une conjecture).\n\nCe qu'il faut savoir dire au jury : « À l'école, on ne parle pas de variable ni d'expression algébrique : on dit qu'on cherche un nombre ou qu'on écrit une formule. Les programmes de calcul sont un excellent pont entre l'arithmétique du cycle 3 et l'algèbre du cycle 4 : ils construisent le sens de la variable avant le formalisme. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

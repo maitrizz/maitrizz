@@ -341,11 +341,6 @@ export const ficheCoherenceTextuelle: Fiche = {
               methode: "Repérer d'abord ce qui reste stable : même thème repris = thème constant ; information nouvelle reprise phrase après phrase = progression linéaire ; thème général décliné en sous-thèmes = thèmes dérivés.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 3 :** les élèves apprennent à éviter les répétitions (reprises pronominales) et à relier leurs idées par des connecteurs simples (d'abord, ensuite, mais, donc).\n\n**Cycle 4 :** on travaille la progression et la cohérence d'un texte entier en production écrite.\n\n**Ce que vous devez savoir dire :** « La cohérence d'un texte s'enseigne par des outils concrets : substituts du nom pour éviter les répétitions, connecteurs pour expliciter les liens. C'est ce que j'attends aussi de ma propre rédaction en Partie 3. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

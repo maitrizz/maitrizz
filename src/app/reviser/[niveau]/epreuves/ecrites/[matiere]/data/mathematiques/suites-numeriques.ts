@@ -214,11 +214,6 @@ export const ficheSuitesNumeriques: Fiche = {
               methode: "Taux de +t % → q = 1 + t/100 ; taux de −t % → q = 1 − t/100.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Aux cycles 2 et 3, les élèves travaillent déjà des suites sans les nommer : suites de nombres pairs, tables de multiplication, régularités dans les figures. Compter de 5 en 5, c'est déjà une suite arithmétique de raison 5.\n\nCe qu'il faut maîtriser : reconnaître qu'un phénomène courant (épargne, croissance, population) se modélise par une suite, en identifier le type, et appliquer les formules pour répondre à des questions de prévision.\n\nLes suites arithmétiques sont implicitement au cœur de la numération et du calcul en primaire. Savoir qu'ajouter toujours le même nombre construit une suite arithmétique permet d'enseigner avec plus de profondeur les régularités que les élèves observent.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

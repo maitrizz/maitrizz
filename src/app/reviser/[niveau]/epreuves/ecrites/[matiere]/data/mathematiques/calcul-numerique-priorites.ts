@@ -194,11 +194,6 @@ export const ficheCalculNumeriquePriorites: Fiche = {
               methode: "« Quotient et reste » → euclidienne. « Valeur exacte » ou « résultat » → décimale.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "Le PE doit savoir enseigner le calcul, pas seulement calculer. Le jury demande souvent d'identifier l'erreur d'un élève, d'expliquer un algorithme ou de comparer deux méthodes.\n\n**Addition (CE1-CE2) :** la retenue est un groupement de 10 qui change de rang. On l'enseigne avec des manipulations (bûchettes, abaques) avant l'écriture formelle. Un élève qui la vit comme une règle mécanique l'oublie ou la place mal.\n\n**Soustraction (CE2-CM) :** deux méthodes valides coexistent (par emprunt, la plus répandue aujourd'hui ; par compensation, dominante avant les années 1980). Le BOEN 2020 n'en impose aucune. Les élèves doivent comprendre que soustraire, c'est trouver une différence, pas seulement enlever.\n\n**Multiplication (CE1 à CM2) :** la clé est de comprendre pourquoi on décale les produits partiels. Dans 34 × 26, le 2 vaut 20 : le produit 34 × 20 = 680 est décalé d'un rang. Le décalage traduit la valeur positionnelle, ce n'est pas une convention arbitraire.\n\n**Division (CM1-CM2) :** l'algorithme le plus exigeant du cycle 3. On passe d'abord par les soustractions successives, plus intuitives, avant l'algorithme posé. La difficulté est l'estimation du chiffre du quotient. Le sens (partage et groupement) doit précéder la technique.\n\n**Les priorités opératoires** ne sont pas enseignées formellement au primaire (elles arrivent au cycle 4), mais le PE doit les maîtriser pour ne pas induire ses élèves en erreur au tableau.",
-            },
-            {
               type: "table",
               title: "Progression des algorithmes posés (cycles 2 et 3)",
               headers: ["Niveau", "Addition", "Soustraction", "Multiplication", "Division"],

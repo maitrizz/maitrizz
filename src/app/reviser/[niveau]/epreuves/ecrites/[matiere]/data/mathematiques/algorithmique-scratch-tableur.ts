@@ -219,11 +219,6 @@ export const ficheAlgorithmiqueScratchTableur: Fiche = {
               methode: "L'affectation n'est pas une égalité : x prend une nouvelle valeur calculée à partir de l'ancienne.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "L'initiation à la programmation commence au cycle 2, surtout au cycle 3 (CM1-CM2), avec des activités de déplacement (coder un trajet sur quadrillage, programmer un robot ou un lutin Scratch). Les élèves travaillent le repérage, l'orientation, et la décomposition d'un problème en étapes : c'est la pensée informatique.\n\nScratch est explicitement cité dans les programmes du cycle 3. Les notions de séquence, de boucle et d'instruction se construisent d'abord sans écran (activités débranchées), puis avec le logiciel.\n\nPour le CRPE : lire et compléter un script, prédire le résultat d'une boucle, écrire une formule de tableur avec référence absolue, et savoir relier ces outils aux apprentissages du primaire (repérage, proportionnalité, traitement de données).",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

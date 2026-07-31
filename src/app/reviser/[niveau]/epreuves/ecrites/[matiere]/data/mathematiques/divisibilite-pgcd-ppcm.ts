@@ -310,11 +310,6 @@ export const ficheDivisibilitePgcdPpcm: Fiche = {
               methode: "La justification repose sur PGCD(a, b) = PGCD(b, r).",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "Le mot « PGCD » n'apparaît pas à l'école, mais la notion de diviseur commun s'y construit, et le jury valorise ce lien.\n\n**Cycles 2 et 3 :** les tables de multiplication font découvrir implicitement la divisibilité (18 est dans la table de 2, 3, 6, 9). Le programme (BOEN 2020) introduit explicitement en cycle 3 les notions de multiple et de diviseur, les critères de divisibilité par 2, 3, 4, 5, 9 et 10, et la simplification de fractions par diviseurs communs visibles (sans PGCD formel).\n\n**Justifier un critère dès le CM2 :** « 100 = 99 + 1 = 33 × 3 + 1, donc 100 a le même reste que 1 dans la division par 3. » Expliquer pourquoi un critère fonctionne, c'est déjà enseigner le raisonnement. L'arithmétique est un domaine privilégié pour le raisonnement par disjonction de cas, par l'absurde ou par contre-exemple, ce que le jury apprécie.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

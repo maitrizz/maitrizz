@@ -261,11 +261,6 @@ export const ficheTheoremeDeThalesSimilitude: Fiche = {
               methode: "Nommer le théorème : « Thalès » pour calculer, « réciproque du théorème de Thalès » pour le parallélisme.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 3 (CM1 à 6e), les élèves travaillent les agrandissements et réductions de figures : reproduire une figure sur quadrillage en doublant les dimensions, calculer les dimensions d'une maquette à l'échelle. C'est la base intuitive de la similitude et de la proportionnalité géométrique, qui prépare Thalès. Le théorème lui-même et l'homothétie sont introduits au cycle 4.\n\nCe qu'il faut maîtriser pour le CRPE : les deux configurations (triangle et papillon), énoncer la réciproque avec précision, rédiger correctement (nommer les points, justifier l'ordre), et utiliser le coefficient de similitude pour les aires et les volumes.\n\nUne idée fausse très répandue chez les élèves : doubler les côtés double l'aire. Savoir l'expliquer concrètement (quatre petits carrés tiennent dans un carré de côté double) est une compétence directement attendue du futur enseignant.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

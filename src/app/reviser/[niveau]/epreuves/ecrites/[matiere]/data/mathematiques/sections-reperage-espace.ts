@@ -247,13 +247,6 @@ function ficheSectionsReperageEspace(niveau: Niveau): Fiche {
               methode: "Diagonale d'une face : a√2. Grande diagonale du cube : a√3. Deux résultats différents.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: l3
-                ? "Au cycle 3 (CM1-6e), les élèves réalisent des coupes de solides concrets (fruits, fromages, boîtes) et observent les formes obtenues. La section d'un cube est étudiée vers la 6e-5e, le repère de l'espace en 4e.\n\nPour le CRPE : savoir décrire et construire une section dans les cas usuels, calculer une diagonale ou une hauteur par Pythagore en deux étapes, et utiliser les coordonnées 3D pour une distance ou un milieu."
-                : "Au cycle 3 (CM1-6e), les élèves réalisent des coupes de solides concrets (fruits, fromages, boîtes) et observent les formes obtenues. La section d'un cube est étudiée vers la 6e-5e, le repère de l'espace en 4e.\n\nLe repérage sur la sphère relie naturellement les mathématiques et la géographie (latitude, longitude, méridiens, parallèles, fuseaux horaires) : une situation interdisciplinaire classique.\n\nPour le CRPE : savoir décrire et construire une section dans les cas usuels, calculer une diagonale ou une hauteur par Pythagore en deux étapes, et utiliser les coordonnées 3D pour une distance ou un milieu.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

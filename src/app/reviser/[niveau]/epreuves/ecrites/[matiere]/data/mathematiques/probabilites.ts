@@ -252,11 +252,6 @@ export const ficheProbabilites: Fiche = {
               methode: "La fréquence estime la probabilité. Pas de conclusion sur un petit nombre d'essais.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2, les élèves perçoivent l'aléatoire par des jeux de dés et de cartes, et distinguent ce qui est certain, impossible ou aléatoire : la fondation, sans probabilité formelle.\n\nAu cycle 3, les programmes introduisent la notion de probabilité, la fréquence, et le lien fréquence / probabilité. Les élèves simulent des expériences (dés, puis tableur ou Scratch) pour observer la stabilisation des fréquences : la loi des grands nombres à leur niveau.\n\nCe qu'il faut apporter : comprendre pourquoi « lancer 10 fois un dé et obtenir 3 fois le 6 » ne contredit pas P(6) = 1/6. La simulation informatique, en multipliant les essais, rend cette loi observable, ce qui est impossible à la main.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

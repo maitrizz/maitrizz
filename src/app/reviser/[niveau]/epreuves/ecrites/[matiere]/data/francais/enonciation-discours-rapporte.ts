@@ -334,11 +334,6 @@ export const ficheEnonciationDiscoursRapporte: Fiche = {
               methode: "Faire trois vérifications : personne (je → elle), possession (mon → son), repères (ici → là ; demain → le lendemain).",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 3 :** les élèves apprennent à reconnaître et à ponctuer le dialogue (discours direct), puis à transposer au discours indirect.\n\n**Cycle 4 :** la distinction des systèmes d'énonciation et le discours indirect libre relèvent surtout de l'expertise du professeur.\n\n**Ce que vous devez savoir dire :** « On enseigne d'abord le discours direct par la ponctuation du dialogue, avant la transposition au discours indirect, qui demande de manipuler pronoms, temps et indicateurs. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

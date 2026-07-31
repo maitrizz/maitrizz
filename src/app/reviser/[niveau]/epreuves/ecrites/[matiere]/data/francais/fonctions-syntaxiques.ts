@@ -369,11 +369,6 @@ export const ficheFonctionsSyntaxiques: Fiche = {
               methode: "Supprimer le groupe : « Tu m'as menti » reste complet, donc apostrophe. Toujours signaler qu'elle est hors syntaxe.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** aucune terminologie syntaxique. Les élèves comprennent à l'oral « qui fait quoi » dans une phrase simple (qui fait l'action, sur quoi elle porte). C'est le socle implicite du futur repérage du sujet et du complément.\n\n**Cycle 2 (CP-CE2) :** on installe le **sujet** et le **verbe** par manipulation (déplacer, remplacer par un pronom, encadrer par « c'est… qui »). Les élèves repèrent « de qui ou de quoi on parle » (le sujet) et « ce qu'on en dit » (le verbe et son groupe).\n\n**Cycle 3 (CM1-6e) :** la phrase s'analyse en **sujet**, **prédicat** (ce qu'on dit du sujet, autour du verbe), puis **complément de phrase** (déplaçable et supprimable, équivalent du CC) et **complément du verbe** (non déplaçable, équivalent du COD/COI). On introduit aussi le **complément du nom** et l'**attribut du sujet**. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « À l'école, on ne parle pas tout de suite de COD ou de COI : on construit d'abord le couple sujet / prédicat au cycle 3, puis on distingue le complément de phrase (déplaçable, supprimable) du complément du verbe (lié au verbe). Le métalangage du concours (COD, COI, CC, attribut) prolonge et précise ces repères construits dès le cycle 2 par la manipulation. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

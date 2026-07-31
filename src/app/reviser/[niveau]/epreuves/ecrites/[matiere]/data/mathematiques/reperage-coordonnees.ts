@@ -199,11 +199,6 @@ export const ficheReperageCoordonnees: Fiche = {
               methode: "Quand une coordonnée est négative, l'écrire entre parenthèses : 1 − (−3) = 1 + 3.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 3, les élèves découvrent le repérage sur quadrillage et sur droite graduée : ils placent des points, lisent des coordonnées et représentent des données dans un tableau. C'est la base pour lire les graphiques de toutes les disciplines.\n\nAu cycle 4, le repère orthonormé est formalisé (coordonnées négatives, distance entre deux points, équations de droites). Le jury attend qu'on relie « repérage » et « fonctions » : une droite dans un repère est la représentation graphique d'une fonction affine.\n\nCe que le jury valorise : savoir que le repérage est une compétence transversale, et que les élèves confondent souvent abscisse et ordonnée. D'où l'importance d'ancrer tôt la convention x = horizontal, y = vertical.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

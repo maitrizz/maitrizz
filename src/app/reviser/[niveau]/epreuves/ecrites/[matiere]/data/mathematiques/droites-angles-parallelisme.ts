@@ -229,11 +229,6 @@ export const ficheDroitesAnglesParallelisme: Fiche = {
               methode: "La construction au compas (arcs depuis A et B) donne automatiquement les deux.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2, les élèves reconnaissent et reproduisent l'angle droit avec l'équerre, et distinguent perpendiculaires et parallèles dans leur environnement.\n\nAu cycle 3, ils mesurent et construisent des angles au rapporteur, reconnaissent aigu/droit/obtus, et découvrent que la somme des angles d'un triangle vaut 180°, souvent par pliage : on déchire les trois angles et on les aligne pour former un angle plat.\n\nCe que le jury valorise : savoir que les angles alternes-internes sont un résultat du cycle 4 à ne pas confondre avec les correspondants, et savoir expliquer la somme 180° par le pliage plutôt que par une démonstration formelle à l'école.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

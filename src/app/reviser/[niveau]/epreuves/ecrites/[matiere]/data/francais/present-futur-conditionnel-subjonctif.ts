@@ -259,11 +259,6 @@ export const fichePresentFuturConditionnelSubjonctif: Fiche = {
               methode: "Observer la portée de l'énoncé. Sujet précis + marqueur de répétition : habitude. Sujet générique + affirmation valable au-delà d'une situation particulière : vérité générale. Le test « d'habitude » peut confirmer l'analyse.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** présent et futur d'usage courant ; le subjonctif et le conditionnel ne sont pas étudiés comme tels.\n\n**Cycle 3 :** on observe les emplois du présent (récit, vérité générale dans les documentaires), le futur (consignes, projets) et les premières formes du conditionnel (politesse) et du subjonctif (après « il faut que »), sans en faire une étude systématique.\n\n**Ce que vous devez savoir dire :** « Les valeurs des temps se construisent par l'usage et la lecture avant d'être nommées. On fait sentir qu'un même temps peut dire des choses différentes selon le contexte. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

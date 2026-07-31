@@ -131,11 +131,6 @@ export const fichePuissancesRacinesReels: Fiche = {
                   title: "⚠️ Toutes les racines ne sont pas irrationnelles",
                   text: "**√n est irrationnel dès que n n'est pas un carré parfait.** Si n est un carré parfait, √n est un entier (√9 = 3). Entre 1 et 100, seuls 10 nombres sont des carrés parfaits : les 90 autres ont une racine irrationnelle.",
                 },
-                {
-                  type: "primaireBox",
-                  title: "Ce que le jury attend",
-                  text: "Savoir que √2 ∈ ℝ et √2 ∉ ℚ, et l'expliquer simplement : « √2 est irrationnel, on ne peut pas l'écrire exactement sous forme de fraction ni de décimale, la calculatrice en donne une valeur approchée. » Concrètement : quand un élève calcule la diagonale d'un carré de côté 1 cm avec Pythagore, il obtient √2 cm ; il faut pouvoir lui expliquer que 1,414… est une approximation et que la valeur exacte s'écrit √2.",
-                },
               ],
             },
             {
@@ -232,11 +227,6 @@ export const fichePuissancesRacinesReels: Fiche = {
               faux: "« √3 ≈ 1,7 à 0,1 près » sans calcul.",
               vrai: "Vérifier : 1,7² = 2,89 < 3 et 1,8² = 3,24 > 3 → **1,7 < √3 < 1,8**.",
               methode: "Un encadrement se prouve : les deux calculs de carré doivent figurer dans la copie.",
-            },
-            {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "Les puissances et les racines ne sont pas au programme du primaire, mais leur logique est partout.\n\n**Puissances de 10 (cycles 2-3) :** quand un élève comprend que 1 centaine = 100 unités, il manipule 10² = 100. La forme développée 4 000 + 300 + 20 + 5 = 4×10³ + 3×10² + 2×10 + 5 est une décomposition en puissances de 10.\n\n**Le carré en géométrie (cycle 3) :** l'aire d'un carré de côté 5 cm est 5² = 25 cm².\n\n**Pourquoi √2 pour un futur PE :** √2 apparaît dès qu'on calcule la diagonale d'un carré (Pythagore). Savoir qu'il est irrationnel permet d'expliquer pourquoi la calculatrice n'en donne qu'une approximation. C'est le recul que le jury valorise.",
             },
             {
               type: "ctaBox",

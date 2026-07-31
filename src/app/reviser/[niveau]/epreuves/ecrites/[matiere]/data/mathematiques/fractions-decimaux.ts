@@ -207,11 +207,6 @@ export const ficheFractionsDecimaux: Fiche = {
               methode: "Le diviseur doit être commun au numérateur ET au dénominateur, et on divise toujours les deux.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** premiers partages (moitié, quart, tiers) sans notation fractionnaire.\n\n**Cycle 3 (CM1-6e) :** fractions et décimaux s'installent. Le programme (BOEN 2020) précise de construire les décimaux à partir des fractions décimales (1/10, 1/100…), puis d'introduire l'écriture à virgule comme convention. Éduscol insiste : ne pas présenter le décimal comme « deux nombres séparés par une virgule », mais comme un nombre à part entière.\n\n**Ce que vous devez savoir dire :** « Les fractions et les décimaux s'enseignent en lien étroit au cycle 3. Les décimaux se construisent comme cas particulier des fractions. Le passage de la fraction à l'écriture à virgule est une convention à expliciter, pas seulement à appliquer. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode",

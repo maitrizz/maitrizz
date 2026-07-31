@@ -255,11 +255,6 @@ export const ficheNombresRelatifs: Fiche = {
               methode: "La valeur absolue est toujours ≥ 0 ; l'opposé peut être négatif, nul ou positif.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "Les négatifs n'apparaissent pas au programme de l'école primaire : ils entrent officiellement en cycle 4 (5e). Mais les comprendre est indispensable pour deux raisons.\n\n**Le sens des opérations :** la soustraction à l'école (8 − 3 = 5) est en réalité une addition avec un relatif. Comprendre cela aide à expliquer pourquoi on ne peut pas faire 3 − 8 dans ℕ, et prépare le terrain pour ℤ au collège.\n\n**La droite graduée :** les élèves de CE2 travaillent la droite numérique avec les positifs. C'est le même outil, qu'il suffit d'étendre vers la gauche pour entrer dans ℤ. Le jury apprécie qu'on fasse ce lien explicitement.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode",

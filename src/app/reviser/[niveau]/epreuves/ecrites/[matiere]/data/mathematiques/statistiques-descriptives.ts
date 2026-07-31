@@ -231,11 +231,6 @@ function ficheStatistiquesDescriptives(niveau: Niveau): Fiche {
               methode: "Classes inégales : utiliser la densité de fréquence (hauteur = fréquence ÷ largeur).",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Au cycle 2, les élèves organisent des données dans des tableaux simples et les représentent par des pictogrammes ou des diagrammes en barres, sans calcul d'indicateur : l'enjeu est de lire et communiquer des données.\n\nAu cycle 3, ils lisent des graphiques (barres, circulaires), calculent une moyenne arithmétique simple et rencontrent la notion de médiane, et repèrent des valeurs aberrantes.\n\nCe que le CRPE attend : expliquer à un élève de CM2 pourquoi « 5 + 9 + 12 + 14 + 20 ÷ 5 = 12 » est faux (parenthèses manquantes, priorités) ; construire une situation concrète pour distinguer moyenne et médiane (les salaires d'une entreprise où un dirigeant tire la moyenne vers le haut).",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

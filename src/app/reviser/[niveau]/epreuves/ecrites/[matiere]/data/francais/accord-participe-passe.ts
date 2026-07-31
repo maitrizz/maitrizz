@@ -324,11 +324,6 @@ export const ficheAccordParticipePasse: Fiche = {
               methode: "Monter, descendre, sortir, passer, rentrer, retourner : vérifier d'abord l'auxiliaire, puis la position du COD.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 3 :** l'accord du participe passé employé avec être et l'accord de l'attribut sont introduits, en lien avec le repérage du sujet.\n\n**Cycle 4 :** l'accord avec avoir et la règle du COD antéposé sont étudiés progressivement ; les verbes pronominaux relèvent surtout du lycée et de l'expertise du professeur.\n\n**Ce que vous devez savoir dire :** « On enseigne d'abord le participe passé avec être, dont l'accord ressemble à celui de l'adjectif, avant la règle plus difficile du COD antéposé avec avoir. Le geste de relecture (repérer l'auxiliaire, puis chercher le COD) est à automatiser. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

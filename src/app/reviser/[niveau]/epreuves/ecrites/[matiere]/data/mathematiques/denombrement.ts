@@ -262,11 +262,6 @@ export const ficheDenombrement: Fiche = {
               methode: "Le principe additif simple ne vaut que si les ensembles sont totalement disjoints.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "On ne parle ni d'arrangements ni de factorielles à l'école : on construit l'intuition par des situations concrètes.\n\n**Cycle 2 :** les élèves dénombrent intuitivement (« combien de façons de mettre 3 enfants en rang ? ») par manipulation et tri, sans formalisme.\n\n**Cycle 3 :** les arbres de possibilités apparaissent dans le cadre des probabilités. C'est le premier contact avec le principe multiplicatif, sans que le terme soit employé.\n\n**Cycle 4 :** le BOEN 2020 mentionne explicitement les tableaux à double entrée, les arbres de choix, le principe multiplicatif et les arrangements, en pont vers les probabilités.\n\nCe qu'il faut savoir dire au jury : « On construit l'intuition par des situations concrètes (tenues, menus, tirages) et on représente avec des arbres ou des tableaux. L'objectif est que l'élève comprenne pourquoi on multiplie : parce que chaque branche de l'arbre se subdivise de façon indépendante. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

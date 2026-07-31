@@ -300,11 +300,6 @@ export const ficheEquationsInequationsSystemes: Fiche = {
               methode: "≤ ou ≥ → crochet fermé ; < ou > → crochet ouvert. L'infini garde toujours un crochet ouvert.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école : le regard du futur enseignant",
-              text: "Aux cycles 2 et 3, les élèves résolvent des problèmes par essais-ajustements ou par « remontée » (« si 2 crayons coûtent 6 €, 1 crayon coûte 3 € »). C'est une approche arithmétique, sans lettre, que les programmes du cycle 3 développent en demandant de formuler et résoudre des problèmes : cela prépare implicitement la mise en équation.\n\nSavoir modéliser un problème par une équation est exactement la compétence que le jury évalue. Écrire « soit x la quantité cherchée, alors… » avant de résoudre montre qu'on comprend la démarche, pas seulement qu'on manipule des symboles. Les situations de recherche proposées en primaire (partages, prix, mesures) sont les mêmes que celles modélisées par des équations au collège : comprendre cette continuité permet d'enseigner avec cohérence.",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

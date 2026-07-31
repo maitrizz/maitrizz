@@ -279,11 +279,6 @@ export const ficheGroupeNominalExpansions: Fiche = {
               methode: "Test : supprimer la relative. Le sens change, donc déterminative ; le sens se conserve, donc explicative.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** aucune terminologie, mais on enrichit déjà l'oral. L'enfant passe de « le chien » à « le gros chien noir » : c'est le tout premier geste d'expansion du nom, par imitation et reformulation.\n\n**Cycle 2 (CP-CE2) :** les élèves repèrent le nom et son déterminant, puis enrichissent peu à peu le groupe nominal (ajouter un adjectif pour préciser : « un chat » → « un gros chat noir »). On commence à manipuler : ajouter, retirer, remplacer un mot du GN.\n\n**Cycle 3 (CM1-6e) :** le groupe nominal devient un objet d'étude à part entière. On identifie le nom noyau, on ajoute ou on supprime des expansions (adjectif, complément du nom), on manipule des relatives simples. Les attendus par cycle figurent dans les [programmes de français en vigueur](https://eduscol.education.fr/137/cycle-2-et-cycle-3).\n\n**Ce que vous devez savoir dire :** « Le groupe nominal se construit autour d'un nom noyau. On apprend d'abord à le repérer, puis à l'enrichir et à l'alléger par manipulation, avant de nommer les expansions. C'est une compétence d'expansion et de réduction de phrase, travaillée dès la maternelle et nommée à partir du cycle 3. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

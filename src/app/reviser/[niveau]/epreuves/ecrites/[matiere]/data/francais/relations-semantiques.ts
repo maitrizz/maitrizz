@@ -216,11 +216,6 @@ export const ficheRelationsSemantiques: Fiche = {
               methode: "Relever, nommer le thème, puis expliquer ce que ce champ produit dans le texte.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** on construit le vocabulaire à l'oral et on amorce les relations de sens par le jeu (trouver le contraire de « grand », des mots qui veulent dire à peu près la même chose), sans terminologie.\n\n**Cycle 2 :** les élèves catégorisent les mots (termes génériques et particuliers : « fruit » englobe « pomme, poire ») et rencontrent synonymes et contraires pour préciser leur expression.\n\n**Cycle 3 :** on structure les réseaux de mots (synonymes, antonymes, familles, termes génériques et spécifiques), on travaille le sens propre et le sens figuré, et on apprend à choisir le mot juste selon le contexte.\n\n**Ce que vous devez savoir dire :** « On enrichit le vocabulaire en organisant les mots par relations de sens : synonymes pour nuancer, antonymes pour contraster, mots génériques pour catégoriser. Amorcé à l'oral dès la maternelle, ce travail se structure aux cycles 2 et 3, où comprendre le sens en contexte devient l'objectif central. » (voir [Éduscol, Lexique et culture](https://eduscol.education.fr/255/lexique-et-culture) et l'[étude de la langue cycles 2 et 3](https://eduscol.education.fr/248/francais-cycles-2-et-3-etude-de-la-langue))",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

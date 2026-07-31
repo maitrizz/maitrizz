@@ -188,11 +188,6 @@ export const ficheFormesNonConjuguees: Fiche = {
               ],
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** les élèves rencontrent l'infinitif et le participe passé dans les temps composés.\n\n**Cycle 3 :** ils consolident la distinction entre verbe conjugué, infinitif et participe passé. Le gérondif peut être observé comme une manière d'exprimer simultanéité ou manière, sans étude systématique.\n\n**Ce que vous devez savoir dire :** « On part des formes rencontrées dans les phrases, puis on compare leur construction et leur rôle avant de les nommer. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

@@ -354,11 +354,6 @@ export const ficheFormationDesMots: Fiche = {
               methode: "Toujours conclure par le sens global et une vérification dans le passage étudié.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 1 (maternelle) :** pas encore d'analyse morphologique, mais un travail oral du vocabulaire et des jeux sur les mots d'une même famille (jardin, jardinier, jardiner).\n\n**Cycle 2 :** les familles de mots aident à orthographier (le « d » muet de « grand » se justifie par « grande », « grandeur »).\n\n**Cycle 3 :** la dérivation devient un outil pour comprendre et enrichir le vocabulaire (former des mots à partir d'un radical, repérer préfixes et suffixes, deviner le sens d'un mot construit).\n\n**Ce que vous devez savoir dire :** « Comprendre la morphologie d'un mot aide à l'écrire (familles de mots) et à en deviner le sens (préfixes, suffixes, radicaux). C'est un levier pour le vocabulaire et l'orthographe, amorcé à l'oral dès la maternelle puis analysé aux cycles 2 et 3. » (voir [Éduscol, étude de la langue cycles 2 et 3](https://eduscol.education.fr/248/francais-cycles-2-et-3-etude-de-la-langue))",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",

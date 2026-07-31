@@ -259,11 +259,6 @@ export const ficheAccordsGnGv: Fiche = {
               methode: "Repérer le nom placé après « la plupart de » : s'il est au pluriel, le verbe est au pluriel.",
             },
             {
-              type: "primaireBox",
-              title: "Ce que ça donne à l'école primaire : le regard du futur enseignant",
-              text: "**Cycle 2 (CP-CE2) :** premiers accords dans le GN (déterminant, nom, adjectif) et accord sujet-verbe au présent, travaillés par manipulation et par la couleur des marques.\n\n**Cycle 3 :** consolidation de la chaîne d'accord, repérage du groupe sujet (même éloigné), premiers cas difficiles. Les élèves apprennent à se relire en cherchant le donneur d'accord.\n\n**Ce que vous devez savoir dire :** « On enseigne l'accord comme une relation entre un donneur (nom noyau, sujet) et des receveurs. La relecture ciblée (souligner le noyau, encadrer le sujet) est un geste à automatiser dès le cycle 3. »",
-            },
-            {
               type: "ctaBox",
               text: "Cours bien en tête ? Passez à la méthode.",
               buttonLabel: "Voir la méthode pas-à-pas",
