@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { ecrireJSON, lireJSON } from "@/lib/store";
 import { RichText } from "./richtext";
 import { HighlightableText, type Hl } from "./highlightText";
 import type { Block } from "./types";
@@ -56,57 +57,38 @@ const DEFAULT: RunnerState = {
 // version invalide proprement les anciennes sauvegardes (forme/état différents)
 // au lieu de les restaurer dans un état incohérent (ex. corrigé déjà dévoilé).
 function key(s: string) {
-  return `maitrizz:runner:v2:${s}`;
+  return `runner:v2:${s}`;
 }
 function historyKey(s: string) {
-  return `maitrizz:runner-history:${s}`;
+  return `runner-history:${s}`;
 }
 // Surlignages/annotations du texte support : stockés à part (clé dédiée) pour
 // survivre à « Recommencer » (ils portent sur le texte, pas sur la tentative).
 function annotKey(s: string) {
-  return `maitrizz:annot:v1:${s}`;
+  return `annot:v1:${s}`;
 }
 function loadHls(slug: string): Hl[] {
-  try {
-    const raw = localStorage.getItem(annotKey(slug));
-    if (raw) return JSON.parse(raw) as Hl[];
-  } catch {
-    /* ignore */
-  }
-  return [];
+  return lireJSON<Hl[]>(annotKey(slug), []);
 }
 function loadState(slug: string): RunnerState {
-  try {
-    const raw = localStorage.getItem(key(slug));
-    if (raw) {
-      const p = JSON.parse(raw) as Record<string, unknown>;
-      if (p && typeof p === "object" && typeof p.phase === "string") {
-        return {
-          ...DEFAULT,
-          ...(p as Partial<RunnerState>),
-          // Au chargement, le chrono est toujours EN PAUSE : il ne compte pas le
-          // temps où la page était fermée. On le relance en reprenant la tentative.
-          since: null,
-          partTime: (p.partTime as Record<string, number>) ?? {},
-          activePart: (p.activePart as string) ?? "",
-          answers: (p.answers as Record<string, string>) ?? {},
-          evals: (p.evals as Record<string, QEval>) ?? {},
-        };
-      }
-    }
-  } catch {
-    /* localStorage indisponible ou illisible */
+  const p = lireJSON<Record<string, unknown> | null>(key(slug), null);
+  if (p && typeof p === "object" && typeof p.phase === "string") {
+    return {
+      ...DEFAULT,
+      ...(p as Partial<RunnerState>),
+      // Au chargement, le chrono est toujours EN PAUSE : il ne compte pas le
+      // temps où la page était fermée. On le relance en reprenant la tentative.
+      since: null,
+      partTime: (p.partTime as Record<string, number>) ?? {},
+      activePart: (p.activePart as string) ?? "",
+      answers: (p.answers as Record<string, string>) ?? {},
+      evals: (p.evals as Record<string, QEval>) ?? {},
+    };
   }
   return DEFAULT;
 }
 function loadHistory(slug: string): Attempt[] {
-  try {
-    const raw = localStorage.getItem(historyKey(slug));
-    if (raw) return JSON.parse(raw) as Attempt[];
-  } catch {
-    /* ignore */
-  }
-  return [];
+  return lireJSON<Attempt[]>(historyKey(slug), []);
 }
 
 // Temps « live » = base accumulée + segment en cours (si le chrono tourne).
@@ -184,7 +166,7 @@ const BAR: Record<"success" | "warning" | "danger", string> = {
  * questions à droite), en circulant par des onglets de partie. Le temps par
  * partie se mesure automatiquement. À la fin : correction (réponse vs attendu,
  * auto-évaluation cochable), note estimée /20, bilan par partie, récap du temps,
- * plan de révision et historique. État persisté en localStorage par fiche.
+ * plan de révision et historique. État persisté par fiche via `src/lib/store.ts`.
  */
 export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheSlug: string }) {
   const [state, setState] = useState<RunnerState>(DEFAULT);
@@ -219,19 +201,11 @@ export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheS
 
   function persist(next: RunnerState) {
     setState(next);
-    try {
-      localStorage.setItem(key(ficheSlug), JSON.stringify(next));
-    } catch {
-      /* ignore */
-    }
+    ecrireJSON(key(ficheSlug), next);
   }
   function persistHls(next: Hl[]) {
     setHls(next);
-    try {
-      localStorage.setItem(annotKey(ficheSlug), JSON.stringify(next));
-    } catch {
-      /* ignore */
-    }
+    ecrireJSON(annotKey(ficheSlug), next);
   }
   function clearHls() {
     persistHls([]);
@@ -299,11 +273,7 @@ export function ExamRunner({ block, ficheSlug }: { block: ExamRunnerData; ficheS
     };
     const next = [attempt, ...history].slice(0, 12);
     setHistory(next);
-    try {
-      localStorage.setItem(historyKey(ficheSlug), JSON.stringify(next));
-    } catch {
-      /* ignore */
-    }
+    ecrireJSON(historyKey(ficheSlug), next);
     setJustSaved(true);
   }
 

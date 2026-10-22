@@ -1,0 +1,137 @@
+<!--
+  Supabase > Authentication > Emails > Templates > Change email address
+  Objet (« Subject heading ») :
+    Confirmez votre nouvelle adresse email
+
+  Variables : {{ .ConfirmationURL }} {{ .SiteURL }} {{ .Email }} {{ .NewEmail }} {{ .Token }}
+  Ce message part aux DEUX adresses, l'ancienne et la nouvelle : c'est voulu,
+  cela permet de réagir si le changement n'a pas été demandé par le titulaire.
+  Structure et parti pris techniques : voir _squelette.md dans ce dossier.
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<style>
+  :root { color-scheme: light only; supported-color-schemes: light only; }
+  body { margin:0; padding:0; width:100% !important; -webkit-text-size-adjust:100%; }
+  a { text-decoration:none; }
+  @media only screen and (max-width:600px) {
+    .carte { width:100% !important; }
+    .pad { padding:26px 20px 28px !important; }
+    .padtete { padding:20px 18px 18px !important; }
+    .logo { font-size:20px !important; }
+    .titre { font-size:23px !important; line-height:1.3 !important; }
+    .texte { font-size:15px !important; line-height:1.65 !important; }
+    .petit { font-size:13px !important; }
+    .lien { font-size:11px !important; padding:9px 10px !important; }
+    .btn td { padding:15px 16px !important; }
+    .btn a { font-size:15px !important; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#fbf9f4;">
+
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;height:0;width:0;">
+  Confirmez le changement d'adresse de votre compte Maitrizz.
+</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fbf9f4;">
+  <tr>
+    <td align="center" style="padding:32px 12px;font-family:Georgia,'Times New Roman',serif;">
+
+      <table role="presentation" class="carte" width="560" cellpadding="0" cellspacing="0" border="0" style="width:560px;max-width:100%;background-color:#ffffff;border:1px solid #e6e2d8;border-radius:14px;">
+
+        <tr>
+          <td align="center" class="padtete" style="background-color:#0c434e;border-radius:13px 13px 0 0;padding:28px 40px 26px;">
+            <div class="logo" style="font-family:Georgia,'Times New Roman',serif;font-size:23px;font-weight:bold;letter-spacing:-0.3px;line-height:1.1;color:#ffffff;">Maitrizz</div>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:5px auto 0;">
+              <tr><td style="height:2px;width:94px;background-color:#c36648;font-size:0;line-height:0;">&nbsp;</td></tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pad" style="padding:38px 40px 36px;">
+
+            <h1 class="titre" style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.25;font-weight:bold;color:#0c434e;">
+              Changement d'adresse
+            </h1>
+
+            <p class="texte" style="margin:20px 0 0;font-size:16px;line-height:1.7;color:#1b1c19;">
+              Votre compte passerait de <strong style="color:#0c434e;">{{ .Email }}</strong> à
+              <strong style="color:#0c434e;">{{ .NewEmail }}</strong>. Confirmez ci-dessous pour
+              que le changement prenne effet.
+            </p>
+
+            <table role="presentation" class="btn" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:32px auto 0;">
+              <tr>
+                <td align="center" bgcolor="#0c434e" style="border-radius:13px;padding:16px 30px;">
+                  <!--[if mso]>
+                  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"
+                    href="{{ .ConfirmationURL }}" style="height:50px;v-text-anchor:middle;width:268px;" arcsize="26%" stroke="f" fillcolor="#0c434e">
+                    <w:anchorlock/>
+                    <center style="color:#ffffff;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;">Confirmer le changement</center>
+                  </v:roundrect>
+                  <![endif]-->
+                  <!--[if !mso]><!-->
+                  <a href="{{ .ConfirmationURL }}" style="font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;line-height:1.3;color:#ffffff;text-decoration:none;white-space:nowrap;">Confirmer le changement</a>
+                  <!--<![endif]-->
+                </td>
+              </tr>
+            </table>
+
+            <p class="petit" style="margin:26px 0 0;font-size:13px;line-height:1.6;color:#6b7173;">
+              Le bouton ne fonctionne pas ? Copiez ce lien dans votre navigateur :
+            </p>
+            <p class="lien" style="margin:8px 0 0;padding:10px 12px;background-color:#f7f5f0;border:1px solid #eceae4;border-radius:8px;font-family:'SF Mono',SFMono-Regular,Menlo,Consolas,'Courier New',monospace;font-size:12px;line-height:1.6;word-break:break-all;color:#40484a;">
+              {{ .ConfirmationURL }}
+            </p>
+
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:30px 0 0;">
+              <tr><td style="height:1px;background-color:#e6e2d8;font-size:0;line-height:0;">&nbsp;</td></tr>
+            </table>
+
+            <p class="petit" style="margin:20px 0 0;font-size:14px;line-height:1.65;color:#6b7173;">
+              Vous n'êtes pas à l'origine de cette demande ? Ne cliquez pas, et changez votre
+              mot de passe depuis la page de connexion. Tant que le lien n'est pas suivi, rien
+              ne change.
+            </p>
+
+          </td>
+        </tr>
+      </table>
+
+      <table role="presentation" class="carte" width="560" cellpadding="0" cellspacing="0" border="0" style="width:560px;max-width:100%;">
+        <tr>
+          <td align="center" style="padding:26px 22px 0;">
+
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:bold;line-height:1.1;color:#8a8f90;">Maitrizz</div>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:4px auto 0;">
+              <tr><td style="height:2px;width:68px;background-color:#c36648;font-size:0;line-height:0;">&nbsp;</td></tr>
+            </table>
+
+            <p style="margin:14px 0 0;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1.7;color:#6b7173;">
+              <a href="{{ .SiteURL }}" style="color:#0c434e;text-decoration:none;">maitrizz.fr</a>
+              <span style="color:#c36648;padding:0 9px;">&bull;</span>
+              <a href="mailto:bonjour@maitrizz.fr" style="color:#6b7173;text-decoration:none;">bonjour@maitrizz.fr</a>
+            </p>
+
+            <p style="margin:14px 0 0;font-family:Helvetica,Arial,sans-serif;font-size:11px;line-height:1.65;color:#9aa0a1;">
+              Vous recevez ce message parce qu'un changement d'adresse a été demandé sur ce
+              compte. Vous pouvez répondre à ce mail, une personne le lira.
+            </p>
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

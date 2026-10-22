@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ecrireJSON, lireJSON } from "@/lib/store";
 import { RichText } from "./richtext";
 import type { Block } from "./types";
 
@@ -16,22 +17,13 @@ type Copie = CorrigerCopiesData["copies"][number];
 type Result = "ok" | "ko";
 
 function storageKey(slug: string) {
-  return `maitrizz:copies:${slug}`;
+  return `copies:${slug}`;
 }
 function loadResults(slug: string): Record<string, Result> {
-  try {
-    const raw = localStorage.getItem(storageKey(slug));
-    return raw ? (JSON.parse(raw) as Record<string, Result>) : {};
-  } catch {
-    return {};
-  }
+  return lireJSON<Record<string, Result>>(storageKey(slug), {});
 }
 function saveResults(slug: string, results: Record<string, Result>) {
-  try {
-    localStorage.setItem(storageKey(slug), JSON.stringify(results));
-  } catch {
-    // localStorage indisponible : on ignore
-  }
+  ecrireJSON(storageKey(slug), results);
 }
 
 export function CorrigerCopies({ block, ficheSlug }: { block: CorrigerCopiesData; ficheSlug: string }) {

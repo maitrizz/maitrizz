@@ -4,10 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
+import { useCompte } from "./compte/CompteProvider";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { utilisateur, disponible } = useCompte();
 
   // Le prototype (/proto) a son propre header.
   if (pathname?.startsWith("/proto")) return null;
@@ -42,6 +44,21 @@ export default function Navbar() {
           >
             Réviser
           </Link>
+          {/* Entrée compte : affichée seulement si les comptes sont configurés,
+              pour que le site reste complet sur une installation sans Supabase. */}
+          {disponible ? (
+            <Link
+              href={utilisateur ? "/compte" : "/connexion"}
+              className={`hidden md:block font-ui font-bold text-xs uppercase tracking-widest px-5 py-2.5 rounded-xl border-2 transition-all active:scale-95 ${
+                pathname?.startsWith("/compte")
+                  ? "border-primary bg-primary/10 text-primary"
+                  : "border-primary/30 text-primary hover:border-primary hover:bg-primary/5"
+              }`}
+            >
+              {utilisateur ? "Mon compte" : "Se connecter"}
+            </Link>
+          ) : null}
+
           <Link
             href="/#newsletter"
             className="bg-primary text-white px-6 py-2.5 rounded-xl font-ui font-bold text-xs uppercase tracking-widest shadow-sm hover:bg-primary-container transition-all active:scale-95"
@@ -69,6 +86,15 @@ export default function Navbar() {
           <Link href="/reviser" className="block py-2 font-ui font-semibold text-sm text-on-surface-variant hover:text-secondary transition-colors" onClick={() => setMenuOpen(false)}>
             Réviser
           </Link>
+          {disponible ? (
+            <Link
+              href={utilisateur ? "/compte" : "/connexion"}
+              className="block py-2 font-ui font-semibold text-sm text-on-surface-variant hover:text-secondary transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              {utilisateur ? "Mon compte" : "Se connecter"}
+            </Link>
+          ) : null}
         </div>
       )}
     </header>
