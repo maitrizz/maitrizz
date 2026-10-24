@@ -45,4 +45,26 @@ export type Profil = {
   email: string;
   niveau: "l3" | "m2" | null;
   date_concours: string | null;
+  abonnement_statut: "aucun" | "actif" | "en_retard" | "annule";
+  abonnement_fin: string | null;
 };
+
+/** Champs lus partout : une seule liste, pour qu'elles ne divergent pas. */
+export const CHAMPS_PROFIL = "id, email, niveau, date_concours, abonnement_statut, abonnement_fin";
+
+/**
+ * L'accès est-il ouvert ?
+ *
+ * Un abonnement résilié reste honoré jusqu'au terme déjà payé. Même règle que
+ * la fonction `abonnement_actif` en base : si vous changez l'une, changez
+ * l'autre, sinon le site et la base ne diront pas la même chose.
+ */
+export function abonnementActif(profil: Profil | null): boolean {
+  if (!profil) return false;
+  if (profil.abonnement_statut === "actif") return true;
+  return (
+    profil.abonnement_statut === "annule" &&
+    Boolean(profil.abonnement_fin) &&
+    new Date(profil.abonnement_fin as string).getTime() > Date.now()
+  );
+}

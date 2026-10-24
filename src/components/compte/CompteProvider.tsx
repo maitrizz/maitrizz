@@ -24,7 +24,13 @@ import {
   useState,
 } from "react";
 import type { User } from "@supabase/supabase-js";
-import { comptesDisponibles, supabase, type Profil } from "@/lib/supabase";
+import {
+  CHAMPS_PROFIL,
+  abonnementActif,
+  comptesDisponibles,
+  supabase,
+  type Profil,
+} from "@/lib/supabase";
 import {
   appliquerDistant,
   brancherSynchronisation,
@@ -48,6 +54,8 @@ type ContexteCompte = {
   etatSync: EtatSync;
   /** Comptes configurés sur cette installation (sinon tout reste local). */
   disponible: boolean;
+  /** Accès payant ouvert. Résiliation honorée jusqu'au terme déjà payé. */
+  abonne: boolean;
   /** Nombre de magasins anonymes présents sur cet appareil, à rattacher éventuellement. */
   progressionLocale: number;
   rattacherProgressionLocale: () => void;
@@ -82,6 +90,7 @@ export function CompteProvider({ children }: { children: React.ReactNode }) {
   const aJour = Boolean(utilisateur) && suivi.pour === utilisateur?.id;
   const etatSync: EtatSync = !utilisateur ? "local" : aJour ? suivi.etat : "en-cours";
   const profil = aJour ? suivi.profil : null;
+  const abonne = abonnementActif(profil);
 
   /* 1. Session : au chargement, puis à chaque changement. */
   useEffect(() => {
@@ -135,7 +144,7 @@ export function CompteProvider({ children }: { children: React.ReactNode }) {
 
       const { data } = await client
         .from("profils")
-        .select("id, email, niveau, date_concours")
+        .select(CHAMPS_PROFIL)
         .eq("id", compteId)
         .maybeSingle();
       if (vivant) setSuivi({ pour: compteId, etat, profil: (data as Profil) ?? null });
@@ -207,7 +216,7 @@ export function CompteProvider({ children }: { children: React.ReactNode }) {
     if (!client || !utilisateur) return;
     const { data } = await client
       .from("profils")
-      .select("id, email, niveau, date_concours")
+      .select(CHAMPS_PROFIL)
       .eq("id", utilisateur.id)
       .maybeSingle();
     setSuivi((precedent) => ({
@@ -224,6 +233,7 @@ export function CompteProvider({ children }: { children: React.ReactNode }) {
       chargement,
       etatSync,
       disponible,
+      abonne,
       progressionLocale,
       rattacherProgressionLocale,
       ignorerProgressionLocale,
@@ -236,6 +246,7 @@ export function CompteProvider({ children }: { children: React.ReactNode }) {
       chargement,
       etatSync,
       disponible,
+      abonne,
       progressionLocale,
       rattacherProgressionLocale,
       ignorerProgressionLocale,
@@ -262,6 +273,7 @@ export function useCompte(): ContexteCompte {
       chargement: false,
       etatSync: "local",
       disponible: false,
+      abonne: false,
       progressionLocale: 0,
       rattacherProgressionLocale: () => {},
       ignorerProgressionLocale: () => {},

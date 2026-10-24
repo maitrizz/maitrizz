@@ -121,6 +121,18 @@ export function majLocale(cle: string): number {
   return lireJSON<MajLocales>(CLE_MAJ_LOCALES, {})[cle] ?? 0;
 }
 
+/**
+ * Toutes les dates d'écriture connues, en une lecture.
+ *
+ * Sert à répondre à « où en étais-je ? » sans tenir de journal d'activité :
+ * la clé la plus récemment écrite désigne la dernière notion travaillée.
+ * Information d'appareil, donc non synchronisée : sur un autre appareil, la
+ * reprise se fera à partir de ce qui y a été fait.
+ */
+export function toutesMajLocales(): MajLocales {
+  return lireJSON<MajLocales>(CLE_MAJ_LOCALES, {});
+}
+
 /** Toutes les clés connues pour un compte donné (sans leur préfixe). */
 export function clesConnues(compte: Compte = compteActif): string[] {
   if (typeof window === "undefined") return [];

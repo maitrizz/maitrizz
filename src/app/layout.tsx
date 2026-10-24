@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RemarqueWidget from "@/components/RemarqueWidget";
 import { CompteProvider } from "@/components/compte/CompteProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -60,6 +61,11 @@ export default function RootLayout({
           <Footer />
           <RemarqueWidget />
         </CompteProvider>
+        {/* Mesure d'audience Vercel : sans cookie et sans donnée personnelle,
+            donc pas de bandeau de consentement à afficher. Elle sert à savoir
+            ce que les candidats ouvrent réellement, plutôt qu'à décider au
+            jugé. Ne collecte ni adresse IP conservée, ni identifiant. */}
+        <Analytics />
       </body>
     </html>
   );

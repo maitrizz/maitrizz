@@ -48,14 +48,14 @@ export default function Navbar() {
               pour que le site reste complet sur une installation sans Supabase. */}
           {disponible ? (
             <Link
-              href={utilisateur ? "/compte" : "/connexion"}
+              href={utilisateur ? "/mon-espace" : "/connexion"}
               className={`hidden md:block font-ui font-bold text-xs uppercase tracking-widest px-5 py-2.5 rounded-xl border-2 transition-all active:scale-95 ${
-                pathname?.startsWith("/compte")
+                pathname?.startsWith("/compte") || pathname?.startsWith("/mon-espace")
                   ? "border-primary bg-primary/10 text-primary"
                   : "border-primary/30 text-primary hover:border-primary hover:bg-primary/5"
               }`}
             >
-              {utilisateur ? "Mon compte" : "Se connecter"}
+              {utilisateur ? "Mon espace" : "Se connecter"}
             </Link>
           ) : null}
 
@@ -88,11 +88,11 @@ export default function Navbar() {
           </Link>
           {disponible ? (
             <Link
-              href={utilisateur ? "/compte" : "/connexion"}
+              href={utilisateur ? "/mon-espace" : "/connexion"}
               className="block py-2 font-ui font-semibold text-sm text-on-surface-variant hover:text-secondary transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              {utilisateur ? "Mon compte" : "Se connecter"}
+              {utilisateur ? "Mon espace" : "Se connecter"}
             </Link>
           ) : null}
         </div>

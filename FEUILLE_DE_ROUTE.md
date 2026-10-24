@@ -10,6 +10,26 @@ fiche par fiche.
 
 ---
 
+## Positionnement retenu (24/10/2026)
+
+**« La préparation de l'écrit du CRPE par la répétition espacée. »**
+
+Périmètre assumé : les trois épreuves écrites, français, mathématiques, sciences,
+avec le moteur d'entraînement espacé et les voyants de maîtrise comme argument
+central. C'est ce qui n'existe nulle part ailleurs sur ce concours.
+
+**Ce que cela implique, et qu'il faut tenir :**
+
+- **Les oraux sortent du périmètre de lancement** (axe 1 ci-dessous, conservé
+  pour mémoire mais repoussé). Les pages verrouillées doivent le dire
+  honnêtement plutôt que promettre « bientôt ».
+- **Sciences et maths L3 deviennent prioritaires** : ce sont les deux seuls
+  trous dans le périmètre annoncé. Tant qu'ils sont ouverts, la promesse est
+  fausse.
+- **Aucune nouvelle fonctionnalité** tant que le contenu du périmètre n'est pas
+  complet. Le travail de finition est gratifiant, l'écriture de fiches est
+  ingrate : c'est précisément pour cela qu'il faut l'écrire ici.
+
 ## Les trois axes
 
 Issus de l'analyse du 22 octobre 2026. Ils répondent à la question : qu'est-ce qui
@@ -37,7 +57,7 @@ bien servi par la concurrence, qui vend surtout du contenu écrit.
 | 2.1 | **Comptes et synchronisation** (voir le détail plus bas) | 🔄 |
 | 2.2 | **Planning adaptatif** jusqu'à la date du concours : « il vous reste 14 semaines, voici les 3 notions de cette semaine », calculé depuis les voyants de maîtrise et `date_concours` | ⬜ |
 | 2.3 | **Tableau de bord** : maîtrise par partie d'épreuve, points faibles, historique des sujets blancs, prévision de note | ⬜ |
-| 2.4 | **Paiement** : abonnement Stripe à 12,90 €/mois, annoncé sur la page d'accueil et aujourd'hui impossible à encaisser | ⬜ |
+| 2.4 | **Paiement** : offre fondateur Stripe à 7,90 €/mois verrouillée à vie. Code écrit le 24/10/2026 (migration 0002, trois routes `/api/paiement`, page `/abonnement`, verrou du hub). **Reste à faire côté Stripe et côté légal, voir plus bas** | 🔄 |
 
 ### Axe 3 — Fermer la boucle sur les productions ouvertes
 
@@ -83,6 +103,36 @@ Construite le 22 octobre 2026 sur la branche `feat/comptes-synchronisation`.
 | f | Décider si l'accès au site reste libre sans compte (parti pris actuel : oui) | ⏸️ |
 
 ---
+
+## Abonnement : ce qui reste avant d'encaisser
+
+Décisions du 24/10/2026 : **tarif fondateur 7,90 €/mois verrouillé à vie**, fiches
+de cours en **accès libre**, **hub d'entraînement réservé** aux abonnés.
+
+### Côté Stripe et configuration
+
+| | Tâche | État |
+|---|---|---|
+| p.1 | Créer le compte Stripe, le produit « Abonnement fondateur » et son tarif récurrent à 7,90 €/mois | ⬜ |
+| p.2 | Appliquer `supabase/migrations/0002_abonnement.sql` | ⬜ |
+| p.3 | Poser les variables dans `.env.local` **et sur Vercel** : `STRIPE_SECRET_KEY`, `STRIPE_PRICE_FONDATEUR`, `STRIPE_WEBHOOK_SECRET`, `SUPABASE_SERVICE_ROLE_KEY` | ⬜ |
+| p.4 | Déclarer le webhook `https://www.maitrizz.fr/api/paiement/webhook` sur les événements `checkout.session.completed` et `customer.subscription.*` | ⬜ |
+| p.5 | Activer le portail client Stripe (gestion de carte, factures, résiliation) | ⬜ |
+| p.6 | Tester un paiement en mode test, carte `4242 4242 4242 4242` | ⬜ |
+| p.7 | Poser `NEXT_PUBLIC_ACCES_RESERVE=1` **seulement** quand le reste fonctionne. Sans cette variable, rien n'est verrouillé : c'est volontaire, le site ne doit pas se fermer tout seul | ⬜ |
+
+### Côté légal, obligatoire avant le premier euro
+
+Vendre un abonnement à des particuliers en France impose, sous peine de sanction
+et de refus de validation du compte Stripe :
+
+| | Tâche | État |
+|---|---|---|
+| l.1 | **Mentions légales** : identité de l'éditeur, statut, numéro SIREN, hébergeur | ⬜ |
+| l.2 | **Conditions générales de vente** : prix, durée, reconduction, résiliation | ⬜ |
+| l.3 | **Droit de rétractation de 14 jours**, avec la renonciation expresse pour un contenu numérique fourni immédiatement. Sans cette case, un abonné peut se faire rembourser 14 jours après avoir tout consulté | ⬜ |
+| l.4 | **Politique de confidentialité** : ce que Supabase, Stripe et Brevo conservent | ⬜ |
+| l.5 | Vérifier le **statut juridique** : encaisser des abonnements suppose une structure déclarée. Point à traiter avec un comptable, pas avec moi | ⬜ |
 
 ## Contenu
 

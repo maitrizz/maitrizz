@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { HubEntrainement } from "@/components/fiche/HubEntrainement";
+import { AccesReserve } from "@/components/compte/AccesReserve";
 import { HubHeader, Souligne } from "../../../../../_components/hub";
 import { MATIERE_LABELS, NIVEAUX, isValidMatiere, isValidNiveau } from "../data";
 
@@ -59,7 +60,12 @@ export default async function HubPage({
       />
 
       <div className="mx-auto max-w-3xl px-5 pb-20 pt-12 md:px-12">
-        <HubEntrainement />
+        {/* L'entraînement espacé est ce qui distingue Maitrizz d'un manuel :
+            c'est donc lui qu'on réserve, et non le cours. Le verrou ne
+            s'applique que si `NEXT_PUBLIC_ACCES_RESERVE` est posé. */}
+        <AccesReserve argument="L'entraînement espacé ramène chaque question au moment où vous alliez l'oublier. C'est ce qui fait tenir une notion jusqu'au concours plutôt que jusqu'au lendemain.">
+          <HubEntrainement />
+        </AccesReserve>
       </div>
     </div>
   );

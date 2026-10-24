@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NIVEAU_LABELS, NIVEAUX, type Niveau } from "@/lib/niveau";
@@ -12,6 +13,7 @@ export default function ComptePage() {
   const {
     utilisateur,
     profil,
+    abonne,
     chargement,
     etatSync,
     progressionLocale,
@@ -25,6 +27,21 @@ export default function ComptePage() {
   const [dateConcours, setDateConcours] = useState("");
   const [enregistre, setEnregistre] = useState(false);
   const [enCours, setEnCours] = useState(false);
+  const [portailEnCours, setPortailEnCours] = useState(false);
+
+  // Le portail Stripe s'ouvre par une adresse à usage unique, créée côté
+  // serveur : rien d'identifiant ne circule dans le navigateur.
+  async function ouvrirPortail() {
+    setPortailEnCours(true);
+    try {
+      const reponse = await fetch("/api/paiement/portail", { method: "POST" });
+      const donnees = await reponse.json();
+      if (donnees.url) window.location.href = donnees.url;
+      else setPortailEnCours(false);
+    } catch {
+      setPortailEnCours(false);
+    }
+  }
 
   // Personne connectée : on renvoie vers la connexion plutôt que d'afficher
   // une page vide.
@@ -136,6 +153,48 @@ export default function ComptePage() {
         </BoutonPrincipal>
       </form>
 
+      {/* Abonnement. La gestion et la résiliation passent par le portail
+          Stripe : c'est lui qui tient les factures et les moyens de paiement,
+          et une résiliation doit rester facile à trouver. */}
+      <div className="mt-8 border-t border-outline-variant/40 pt-6">
+        <p className="font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-on-surface-variant">
+          Abonnement
+        </p>
+        {abonne ? (
+          <>
+            <p className="mt-3 font-ui text-sm leading-relaxed text-on-surface">
+              Abonné fondateur
+              {profil?.abonnement_statut === "annule" && profil.abonnement_fin
+                ? `, jusqu'au ${new Date(profil.abonnement_fin).toLocaleDateString("fr-FR")}`
+                : ""}
+              .
+            </p>
+            <button
+              type="button"
+              onClick={ouvrirPortail}
+              disabled={portailEnCours}
+              className="mt-4 rounded-xl border border-primary/20 bg-white px-5 py-2.5 font-ui text-sm font-bold text-primary transition-all hover:bg-surface active:scale-95 disabled:opacity-60"
+            >
+              {portailEnCours ? "Un instant…" : "Gérer mon abonnement"}
+            </button>
+          </>
+        ) : (
+          <>
+            <p className="mt-3 font-ui text-sm leading-relaxed text-on-surface-variant">
+              {profil?.abonnement_statut === "en_retard"
+                ? "Votre dernier paiement n'est pas passé. Mettez votre carte à jour pour retrouver l'entraînement espacé."
+                : "Vous n'êtes pas abonné. Les fiches restent libres d'accès."}
+            </p>
+            <Link
+              href="/abonnement"
+              className="mt-4 inline-block rounded-xl border border-primary/20 bg-white px-5 py-2.5 font-ui text-sm font-bold text-primary transition-all hover:bg-surface active:scale-95"
+            >
+              Voir l&apos;offre fondateur
+            </Link>
+          </>
+        )}
+      </div>
+
       <div className="mt-8 border-t border-outline-variant/40 pt-6">
         <p className="font-ui text-xs leading-relaxed text-on-surface-variant">
           {etatSync === "a-jour"
@@ -143,6 +202,14 @@ export default function ComptePage() {
             : etatSync === "en-cours"
               ? "Synchronisation en cours…"
               : "Synchronisation indisponible pour le moment. Vos révisions restent enregistrées sur cet appareil et repartiront toutes seules."}
+        </p>
+        <p className="mt-4">
+          <Link
+            href="/mon-espace"
+            className="font-ui text-sm text-primary underline decoration-secondary/60 decoration-2 underline-offset-4 transition-colors hover:text-secondary"
+          >
+            ← Retour à mon espace
+          </Link>
         </p>
         <button
           type="button"

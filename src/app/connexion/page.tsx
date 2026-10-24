@@ -41,8 +41,9 @@ function Formulaire() {
       return;
     }
     // La synchronisation démarre toute seule : le fournisseur de compte voit
-    // la session changer et descend la progression.
-    router.push("/compte");
+    // la session changer et descend la progression. On arrive donc sur
+    // « Mon espace », où cette progression est justement ce qu'on regarde.
+    router.push("/mon-espace");
   }
 
   return (
