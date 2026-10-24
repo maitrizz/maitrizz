@@ -8,7 +8,7 @@
  * 1. **Un interrupteur explicite** (`NEXT_PUBLIC_ACCES_RESERVE`). Tant qu'il
  *    n'est pas posé, rien n'est verrouillé. On ne veut surtout pas d'un site
  *    qui se ferme tout seul le jour où Stripe est configuré, alors que la page
- *    d'accueil promet encore la gratuité jusqu'au lancement.
+ *    d'accueil promet encore la gratuité pendant la bêta.
  *
  * 2. **On n'affiche jamais le mur pendant le chargement.** Le temps que la
  *    session et le profil arrivent, un abonné verrait sinon une porte fermée

@@ -19,7 +19,7 @@ export default function Navbar() {
       {/* Bandeau bêta : visible sur tout le site tant que la plateforme est gratuite. */}
       <div className="bg-primary bg-seyes-dark">
         <p className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-x-3 gap-y-1 px-5 py-2 text-center font-ui text-[11px] font-semibold uppercase tracking-widest text-white md:px-16">
-          <span>Bêta ouverte : tout est gratuit jusqu&apos;au lancement de septembre</span>
+          <span>Bêta ouverte : tout est gratuit pendant la phase de test</span>
           <Link
             href="/#newsletter"
             className="underline decoration-secondary decoration-2 underline-offset-4 transition-colors hover:text-secondary"

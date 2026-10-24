@@ -22,7 +22,7 @@ export default function PricingSection() {
 
         <div className="relative mx-auto max-w-lg rounded-xl bg-white p-8 ring-1 ring-primary/10 shadow-copy md:p-10">
           <span className="mb-5 inline-block -rotate-1 rounded-sm border-2 border-secondary/50 px-3 py-1.5 font-ui text-[11px] font-bold uppercase tracking-[0.18em] text-secondary/90">
-            Gratuit pendant le lancement, jusqu&apos;en septembre
+            Gratuit pendant la bêta
           </span>
 
           <span className="mb-5 block font-ui text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant">
@@ -51,7 +51,7 @@ export default function PricingSection() {
           </Link>
           <p className="font-ui text-xs text-on-surface-variant">
             Ce tarif s&apos;appliquera à l&apos;ouverture officielle de la
-            plateforme, en septembre.
+            plateforme. Vous serez prévenu·e à l&apos;avance.
           </p>
         </div>
       </div>

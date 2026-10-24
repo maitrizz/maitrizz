@@ -4,7 +4,7 @@
  * L'offre fondateur.
  *
  * Parti pris d'honnêteté, et il n'est pas négociable : on vend l'état RÉEL du
- * contenu, pas celui de septembre prochain. Ce qui manque est écrit noir sur
+ * contenu, pas celui qu'il sera dans six mois. Ce qui manque est écrit noir sur
  * blanc, au même endroit que ce qui est inclus. Un candidat qui découvre après
  * paiement que les sciences sont vides se fait rembourser et le dit autour de
  * lui, ce qui coûte infiniment plus cher qu'un abonnement non vendu.

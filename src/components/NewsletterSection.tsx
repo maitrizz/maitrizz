@@ -37,12 +37,12 @@ export default function NewsletterSection() {
       } else {
         setStatut("erreur");
         setMessageErreur(
-          data?.error ?? "L'inscription n'a pas abouti. Réessaie dans un instant.",
+          data?.error ?? "L'inscription n'a pas abouti. Réessayez dans un instant.",
         );
       }
     } catch {
       setStatut("erreur");
-      setMessageErreur("L'inscription n'a pas abouti. Vérifie ta connexion et réessaie.");
+      setMessageErreur("L'inscription n'a pas abouti. Vérifiez votre connexion et réessayez.");
     }
   }
 
@@ -56,8 +56,7 @@ export default function NewsletterSection() {
             </h2>
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/90 lg:text-lg">
               Laissez votre adresse pour recevoir nos conseils de révision et
-              être prévenu·e du lancement officiel de la plateforme, en
-              septembre.
+              être prévenu·e de l&rsquo;ouverture officielle de la plateforme.
             </p>
 
             {statut === "succes" ? (
@@ -65,8 +64,8 @@ export default function NewsletterSection() {
                 role="status"
                 className="mx-auto max-w-md rounded-xl bg-white/10 px-6 py-5 text-base leading-relaxed text-white"
               >
-                C&rsquo;est presque fini&nbsp;: un e-mail vient de partir dans ta
-                boîte. Clique sur le lien qu&rsquo;il contient pour confirmer ton
+                C&rsquo;est presque fini&nbsp;: un e-mail vient de partir dans votre
+                boîte. Cliquez sur le lien qu&rsquo;il contient pour confirmer votre
                 inscription.
               </p>
             ) : (
@@ -111,7 +110,7 @@ export default function NewsletterSection() {
                     }`}
                   >
                     <option value="" disabled hidden>
-                      Où en es-tu ?
+                      Où en êtes-vous ?
                     </option>
                     {PARCOURS_OPTIONS.map((option) => (
                       <option key={option.value} value={option.value}>
