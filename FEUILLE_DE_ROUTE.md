@@ -95,8 +95,8 @@ Construite le 22 octobre 2026 sur la branche `feat/comptes-synchronisation`.
 
 | | Tâche | État |
 |---|---|---|
-| a | **Test de bout en bout** : réviser sans compte, créer un compte, rattacher, vérifier les lignes dans `progression`, se reconnecter en navigation privée et retrouver ses voyants | ⬜ |
-| b | Coller les trois modèles d'emails dans Supabase et vérifier le rendu sur un vrai envoi | 🔄 |
+| a | **Test de bout en bout** | ✅ 24/10/2026 : montée vérifiée en base (`trainer:hub-francais-ecrit`), rattachement et descente validés en navigation privée |
+| b | Modèles d'emails dans Supabase, rendu vérifié sur mobile | ✅ 22/10/2026 |
 | c | Vérifier que **Confirm email** est bien réactivé après les tests | ⬜ |
 | d | Ajouter `NEXT_PUBLIC_SUPABASE_URL` et `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` sur **Vercel** (Settings > Environment Variables) | ⬜ |
 | e | Commiter et fusionner la branche | ⬜ |
