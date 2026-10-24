@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ecrireJSON, lireJSON } from "@/lib/store";
 import { RichText } from "./richtext";
 import { CorrectionLine } from "./ExerciceCard";
 import { ETAT_STYLE, type EtatMaitrise } from "./maitrise";
@@ -38,22 +39,13 @@ const SYNTHESE: { etat: EtatMaitrise; mot: string }[] = [
 ];
 
 function storageKey(slug: string) {
-  return `maitrizz:exos:${slug}`;
+  return `exos:${slug}`;
 }
 function loadRatings(slug: string): Record<string, Rating> {
-  try {
-    const raw = localStorage.getItem(storageKey(slug));
-    return raw ? (JSON.parse(raw) as Record<string, Rating>) : {};
-  } catch {
-    return {};
-  }
+  return lireJSON<Record<string, Rating>>(storageKey(slug), {});
 }
 function saveRatings(slug: string, ratings: Record<string, Rating>) {
-  try {
-    localStorage.setItem(storageKey(slug), JSON.stringify(ratings));
-  } catch {
-    // localStorage indisponible : on ignore
-  }
+  ecrireJSON(storageKey(slug), ratings);
 }
 
 export function ExerciceBank({ block, ficheSlug }: { block: ExerciceBankData; ficheSlug: string }) {

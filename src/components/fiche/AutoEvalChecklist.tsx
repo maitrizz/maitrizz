@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ecrireJSON, lireJSON } from "@/lib/store";
 import { loadFicheProgress, formatReviewDate, type FicheProgress } from "./progress";
 
 export function AutoEvalChecklist({
@@ -10,30 +11,20 @@ export function AutoEvalChecklist({
   ficheSlug: string;
   items: { id: string; label: string }[];
 }) {
-  const storageKey = `maitrizz:autoeval:${ficheSlug}`;
+  const storageKey = `autoeval:${ficheSlug}`;
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [mastery, setMastery] = useState<FicheProgress>({});
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(storageKey);
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrate persisted checklist from localStorage after mount
-      if (raw) setChecked(JSON.parse(raw));
-    } catch {
-      // localStorage indisponible (navigation privée...) : on ignore
-    }
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrate quiz mastery from localStorage after mount
+    setChecked(lireJSON<Record<string, boolean>>(storageKey, {}));
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrate quiz mastery from the store after mount
     setMastery(loadFicheProgress(ficheSlug));
   }, [ficheSlug, storageKey]);
 
   function toggle(id: string) {
     setChecked((prev) => {
       const next = { ...prev, [id]: !prev[id] };
-      try {
-        localStorage.setItem(storageKey, JSON.stringify(next));
-      } catch {
-        // localStorage indisponible : on ignore la persistance
-      }
+      ecrireJSON(storageKey, next);
       return next;
     });
   }

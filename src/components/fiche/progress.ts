@@ -3,9 +3,12 @@
  *
  * Logique inspirée des boîtes de Leitner : une bonne réponse fait avancer
  * l'objectif d'une boîte (intervalle de révision plus long), une erreur le
- * renvoie en boîte 0 (à revoir dès le lendemain). Persisté en localStorage,
- * par fiche.
+ * renvoie en boîte 0 (à revoir dès le lendemain). Persisté par fiche via le
+ * magasin `src/lib/store.ts`, qui s'occupe du navigateur et, si le candidat a
+ * un compte, de la synchronisation entre ses appareils.
  */
+
+import { ecrireJSON, lireJSON } from "@/lib/store";
 
 export type ObjectifMastery = {
   box: number; // 0 à 4 : intervalle de révision croissant (REVIEW_INTERVALS_DAYS)
@@ -21,16 +24,11 @@ export type FicheProgress = Record<string, ObjectifMastery>;
 const REVIEW_INTERVALS_DAYS = [1, 3, 7, 16, 30];
 
 function storageKey(ficheSlug: string) {
-  return `maitrizz:mastery:${ficheSlug}`;
+  return `mastery:${ficheSlug}`;
 }
 
 export function loadFicheProgress(ficheSlug: string): FicheProgress {
-  try {
-    const raw = localStorage.getItem(storageKey(ficheSlug));
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
-  }
+  return lireJSON<FicheProgress>(storageKey(ficheSlug), {});
 }
 
 export function recordQuizAnswer(ficheSlug: string, objectifId: string, correct: boolean): FicheProgress {
@@ -51,11 +49,7 @@ export function recordQuizAnswer(ficheSlug: string, objectifId: string, correct:
     nextReview: nextReview.toISOString(),
   };
 
-  try {
-    localStorage.setItem(storageKey(ficheSlug), JSON.stringify(progress));
-  } catch {
-    // localStorage indisponible (navigation privée...) : on ignore la persistance
-  }
+  ecrireJSON(storageKey(ficheSlug), progress);
 
   return progress;
 }

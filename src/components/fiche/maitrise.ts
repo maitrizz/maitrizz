@@ -10,9 +10,10 @@
  *    existants (exercices, trainer) avec les tags des banques. Source unique = anti-dérive (§5).
  *
  * Découpage volontaire : `computeMaitrise` est une fonction PURE (testable, sans navigateur) ;
- * les lecteurs `load…` vont chercher l'état réel dans localStorage.
+ * les lecteurs `load…` vont chercher l'état réel dans le magasin (`src/lib/store.ts`).
  */
 
+import { lireJSON } from "@/lib/store";
 import { loadTrainerState } from "./trainerProgress";
 import type { TrainerItem, TrainerExercice } from "./types";
 
@@ -26,19 +27,14 @@ export type ItemTague = { id: string; savoirFaire: string[] };
 export type DerniersResultats = Record<string, boolean>;
 
 /* ────────────────────────────────────────────────────────────
-   Lecteurs : reconstituent les « derniers résultats » depuis localStorage.
+   Lecteurs : reconstituent les « derniers résultats » depuis le magasin.
    On ne touche pas aux magasins existants, on les LIT.
 ──────────────────────────────────────────────────────────── */
 
 type RatingMap = Record<string, "ok" | "ko">;
 
 function loadRatingMap(key: string): RatingMap {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw ? (JSON.parse(raw) as RatingMap) : {};
-  } catch {
-    return {};
-  }
+  return lireJSON<RatingMap>(key, {});
 }
 
 // Tiroir Leitner partagé par le hub d'entraînement (espacé, multi-notions).
@@ -49,10 +45,10 @@ export const HUB_SLUG = "hub-francais-ecrit";
 
 /**
  * Derniers résultats d'une notion, fusionnés depuis toutes ses surfaces :
- *  - le hub d'entraînement (Leitner) `maitrizz:trainer:hub-francais-ecrit` → lastResult ok/ko ;
- *  - un éventuel trainer interne `maitrizz:trainer:<slug>` (aucun aujourd'hui : le trainer vit au hub) ;
- *  - « Appliquer » (exercices ouverts) `maitrizz:exos:<slug>` → ok/ko (auto-évaluation).
- * NB : « Corriger des erreurs » (`maitrizz:copies:<slug>`) n'est volontairement PAS agrégé :
+ *  - le hub d'entraînement (Leitner) `trainer:hub-francais-ecrit` → lastResult ok/ko ;
+ *  - un éventuel trainer interne `trainer:<slug>` (aucun aujourd'hui : le trainer vit au hub) ;
+ *  - « Appliquer » (exercices ouverts) `exos:<slug>` → ok/ko (auto-évaluation).
+ * NB : « Corriger des erreurs » (`copies:<slug>`) n'est volontairement PAS agrégé :
  * juger la copie d'un candidat teste la reconnaissance, pas la production du savoir-faire ; ce
  * suivi reste LOCAL à son onglet (barre de progression propre). Décision produit du 02/07/2026.
  * L'ordre de fusion fait primer le dernier signal connu (le hub espacé peut faire redescendre un voyant).
@@ -60,7 +56,7 @@ export const HUB_SLUG = "hub-francais-ecrit";
 export function loadDerniersResultats(notionSlug: string): DerniersResultats {
   const resultats: DerniersResultats = {};
 
-  const exos = loadRatingMap(`maitrizz:exos:${notionSlug}`);
+  const exos = loadRatingMap(`exos:${notionSlug}`);
   for (const [id, r] of Object.entries(exos)) {
     resultats[id] = r === "ok";
   }

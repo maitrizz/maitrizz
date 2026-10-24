@@ -4,11 +4,13 @@
  * À la différence de `progress.ts` (maîtrise par OBJECTIF, alimentée par le quiz),
  * ici l'unité suivie est l'ITEM. Chaque item vit dans une boîte ; une bonne réponse
  * le fait monter d'une boîte (intervalle de révision plus long), une erreur le renvoie
- * en boîte 0 (échu tout de suite). Persisté en localStorage, par fiche.
+ * en boîte 0 (échu tout de suite). Persisté par fiche via `src/lib/store.ts`
+ * (navigateur d'abord, puis synchronisation si le candidat a un compte).
  *
  * « Réviser indéfiniment » = la boucle revient au bon moment, pas un flux aléatoire.
  */
 
+import { ecrireJSON, lireJSON } from "@/lib/store";
 import type { TrainerItem } from "./types";
 
 export type ItemState = {
@@ -28,24 +30,15 @@ const MAX_BOX = TRAINER_INTERVALS_DAYS.length - 1;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
 function storageKey(ficheSlug: string) {
-  return `maitrizz:trainer:${ficheSlug}`;
+  return `trainer:${ficheSlug}`;
 }
 
 export function loadTrainerState(ficheSlug: string): TrainerState {
-  try {
-    const raw = localStorage.getItem(storageKey(ficheSlug));
-    return raw ? (JSON.parse(raw) as TrainerState) : {};
-  } catch {
-    return {};
-  }
+  return lireJSON<TrainerState>(storageKey(ficheSlug), {});
 }
 
 function saveTrainerState(ficheSlug: string, state: TrainerState) {
-  try {
-    localStorage.setItem(storageKey(ficheSlug), JSON.stringify(state));
-  } catch {
-    // localStorage indisponible (navigation privée…) : on ignore la persistance
-  }
+  ecrireJSON(storageKey(ficheSlug), state);
 }
 
 /** Met à jour l'état d'un item après une réponse et persiste. Renvoie le nouvel état complet. */
